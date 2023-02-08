@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
@@ -46,24 +45,6 @@ public class TextArt extends DrawingObject<TextArt> {
     @Override
     public ObjectType objectType() {
         return ObjectType.TextArt;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Pt0.equalElementName(name)) {
-            return new Point(ObjectType.Pt0);
-        } else if (ObjectType.Pt1.equalElementName(name)) {
-            return new Point(ObjectType.Pt1);
-        } else if (ObjectType.Pt2.equalElementName(name)) {
-            return new Point(ObjectType.Pt2);
-        } else if (ObjectType.Pt3.equalElementName(name)) {
-            return new Point(ObjectType.Pt3);
-        } else if (ObjectType.TextArtPr.equalElementName(name)) {
-            return new TextArtPr();
-        } else if (ObjectType.TextArtOutline.equalElementName(name)) {
-            return new ObjectList<Point>(ObjectType.TextArtOutline, Point.class);
-        }
-        return null;
     }
 
     public String text() {

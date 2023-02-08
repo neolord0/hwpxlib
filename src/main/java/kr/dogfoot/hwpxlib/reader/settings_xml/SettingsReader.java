@@ -35,12 +35,18 @@ public class SettingsReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (ObjectType.CaretPosition.equalElementName(name)) {
-            caretPosition((CaretPosition) child, name, attrs);
-        } else if (ObjectType.ConfigItemSet.equalElementName(name)) {
-            configItemSet((ObjectList<ConfigItem>) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.CaretPosition:
+                CaretPosition caretPosition = new CaretPosition();
+                caretPosition(caretPosition, name, attrs);
+                return caretPosition;
+            case ElementNames.ConfigItemSet:
+                ObjectList<ConfigItem> configItemSet = new ObjectList<ConfigItem>(ObjectType.ConfigItemSet, ConfigItem.class);
+                configItemSet(configItemSet, name, attrs);
+                return configItemSet;
         }
+        return null;
     }
 
     private void caretPosition(CaretPosition caretPosition, String name, Attributes attrs) {

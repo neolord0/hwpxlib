@@ -1,14 +1,11 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.ParaPr;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHead;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.header_xml.numbering.ParaHeadReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
@@ -84,22 +81,38 @@ public class ParaPrReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Align) {
-            align((Align) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Heading) {
-            heading((Heading) child, name, attrs);
-        } else if (child.objectType() == ObjectType.BreakSetting) {
-            breakSetting((BreakSetting) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ParaMargin) {
-            margin((ParaMargin) child, name, attrs);
-        } else if (child.objectType() == ObjectType.LineSpacing) {
-            lineSpacing((LineSpacing) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ParaBorder) {
-            border((ParaBorder) child, name, attrs);
-        } else if (child.objectType() == ObjectType.AutoSpacing) {
-            autoSpacing((AutoSpacing) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Align:
+                Align align = new Align();
+                align(align, name, attrs);
+                return align;
+            case ElementNames.Heading:
+                Heading heading = new Heading();
+                heading(heading, name, attrs);
+                return heading;
+            case ElementNames.BreakSetting:
+                BreakSetting breakSetting = new BreakSetting();
+                breakSetting(breakSetting, name, attrs);
+                return breakSetting;
+            case ElementNames.ParaMargin:
+                ParaMargin margin = new ParaMargin();
+                margin(margin, name, attrs);
+                return margin;
+            case ElementNames.LineSpacing:
+                LineSpacing lineSpacing = new LineSpacing();
+                lineSpacing(lineSpacing, name, attrs);
+                return lineSpacing;
+            case ElementNames.ParaBorder:
+                ParaBorder border = new ParaBorder();
+                border(border, name, attrs);
+                return border;
+            case ElementNames.AutoSpacing:
+                AutoSpacing autoSpacing = new AutoSpacing();
+                autoSpacing(autoSpacing, name, attrs);
+                return autoSpacing;
         }
+        return null;
     }
 
     private void align(Align align, String name, Attributes attrs) {

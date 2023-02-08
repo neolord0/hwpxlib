@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 /**
  * 변환 정보
@@ -18,18 +17,6 @@ public class RenderingInfo extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.RenderingInfo;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.TransMatrix.equalElementName(name)) {
-            return new TransMatrix();
-        } else if (ObjectType.ScaMatrix.equalElementName(name)) {
-            return new ScaleMatrix();
-        } else if (ObjectType.RotMatrix.equalElementName(name)) {
-            return new RotateMatrix();
-        }
-        return null;
     }
 
     public TransMatrix transMatrix() {

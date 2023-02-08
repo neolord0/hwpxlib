@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ApplyPageType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
@@ -24,14 +22,6 @@ public abstract class HeaderFooterType<ChildType> extends CtrlItem {
     private SubList subList;
 
     public HeaderFooterType() {
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.SubList.equalElementName(name)) {
-            return new SubList();
-        }
-        return null;
     }
 
     public String id() {

@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.AlignStyleType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ShadowStyle;
 
@@ -57,18 +56,6 @@ public class EffectsShadow extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.EffectsShadow;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Skew.equalElementName(name)) {
-            return new Skew();
-        } else if (ObjectType.Scale.equalElementName(name)) {
-            return new Scale();
-        } else if (ObjectType.EffectsColor.equalElementName(name)) {
-            return new EffectsColor();
-        }
-        return null;
     }
 
     public ShadowStyle style() {

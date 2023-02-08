@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 
 public class DrawText extends SwitchableObject {
@@ -33,16 +32,6 @@ public class DrawText extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.DrawText;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.TextMargin.equalElementName(name)) {
-            return new TextMargin();
-        } else if (ObjectType.SubList.equalElementName(name)) {
-            return new SubList();
-        }
-        return null;
     }
 
     public Integer lastWidth() {

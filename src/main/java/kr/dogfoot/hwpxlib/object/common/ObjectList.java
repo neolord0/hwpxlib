@@ -60,17 +60,4 @@ public class ObjectList<ItemType> extends SwitchableObject {
     public Iterable<ItemType> items() {
         return list;
     }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        ItemType instance;
-        try {
-            instance = clazz.newInstance();
-        } catch (InstantiationException e) {
-            instance = null;
-        } catch (IllegalAccessException e) {
-            instance = null;
-        }
-        return (HWPXObject) instance;
-    }
 }

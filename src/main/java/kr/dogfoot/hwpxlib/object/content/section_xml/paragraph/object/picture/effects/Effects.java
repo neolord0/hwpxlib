@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 /**
  * 이미지 효과
@@ -31,20 +30,6 @@ public class Effects extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Effects;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.EffectsShadow.equalElementName(name)) {
-            return new EffectsShadow();
-        } else if (ObjectType.EffectsGlow.equalElementName(name)) {
-            return new EffectsGlow();
-        } else if (ObjectType.EffectsSoftEdge.equalElementName(name)) {
-            return new EffectsSoftEdge();
-        } else if (ObjectType.EffectsReflection.equalElementName(name)) {
-            return new EffectsReflection();
-        }
-        return null;
     }
 
     public EffectsShadow shadow() {

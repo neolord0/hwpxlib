@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.*;
 
 /**
@@ -72,26 +71,6 @@ public class ParaPr extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.ParaPr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Align.equalElementName(name)) {
-            return new Align();
-        } else if (ObjectType.Heading.equalElementName(name)) {
-            return new Heading();
-        } else if (ObjectType.BreakSetting.equalElementName(name)) {
-            return new BreakSetting();
-        } else if (ObjectType.ParaMargin.equalElementName(name)) {
-            return new ParaMargin();
-        } else if (ObjectType.LineSpacing.equalElementName(name)) {
-            return new LineSpacing();
-        } else if (ObjectType.ParaBorder.equalElementName(name)) {
-            return new ParaBorder();
-        } else if (ObjectType.AutoSpacing.equalElementName(name)) {
-            return new AutoSpacing();
-        }
-        return null;
     }
 
     public String id() {

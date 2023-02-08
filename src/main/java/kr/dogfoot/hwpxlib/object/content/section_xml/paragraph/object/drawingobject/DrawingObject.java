@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
@@ -23,20 +21,6 @@ public abstract class DrawingObject<ChildType> extends ShapeComponent<ChildType>
      * 그림자 정보
      */
     private DrawingShadow shadow;
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.LineShape.equalElementName(name)) {
-            return new LineShape();
-        } else if (ObjectType.FillBrush.equalElementName(name)) {
-            return new FillBrush();
-        } else if (ObjectType.DrawText.equalElementName(name)) {
-            return new DrawText();
-        } else if (ObjectType.DrawingShadow.equalElementName(name)) {
-            return new DrawingShadow();
-        }
-        return super.createChildWithElementName(name);
-    }
 
     public LineShape lineShape() {
         return lineShape;

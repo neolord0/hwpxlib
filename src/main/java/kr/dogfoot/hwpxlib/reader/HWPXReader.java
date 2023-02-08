@@ -3,8 +3,8 @@ package kr.dogfoot.hwpxlib.reader;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
-import kr.dogfoot.hwpxlib.util.CommonString;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
+import kr.dogfoot.hwpxlib.util.CommonString;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

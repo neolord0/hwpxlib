@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
 
@@ -12,14 +10,6 @@ public abstract class ParaListCore extends SwitchableObject {
 
     public ParaListCore() {
         paraList = new ArrayList<Para>();
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Para.equalElementName(name)) {
-            return new Para();
-        }
-        return null;
     }
 
     public int countOfPara() {

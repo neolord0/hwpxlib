@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.GradationType;
 
 import java.util.ArrayList;
@@ -51,14 +50,6 @@ public class Gradation extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Gradation;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Color.equalElementName(name)) {
-            return new Color();
-        }
-        return null;
     }
 
     public GradationType type() {

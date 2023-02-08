@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pagepr;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.GutterMethod;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageDirection;
 
@@ -34,14 +33,6 @@ public class PagePr extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.PagePr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.PageMargin.equalElementName(name)) {
-            return new PageMargin();
-        }
-        return null;
     }
 
     public PageDirection landscape() {

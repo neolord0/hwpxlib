@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 
 public abstract class FormObject<ChildType> extends ShapeObject<ChildType> {
@@ -51,15 +49,6 @@ public abstract class FormObject<ChildType> extends ShapeObject<ChildType> {
     private Boolean editable;
     private String command;
     private FormCharPr formCharPr;
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.FormCharPr.equalElementName(name)) {
-            return new FormCharPr();
-        }
-        return super.createChildWithElementName(name);
-    }
-
 
     public String name() {
         return name;

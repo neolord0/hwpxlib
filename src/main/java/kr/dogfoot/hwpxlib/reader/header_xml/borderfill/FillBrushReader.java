@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Gradation;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.ImgBrush;
@@ -39,14 +38,22 @@ public class FillBrushReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.WinBrush) {
-            winBrush((WinBrush) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Gradation) {
-            gradation((Gradation) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ImgBrush) {
-            imageBrush((ImgBrush) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.WinBrush:
+                WinBrush winBrush = new WinBrush();
+                winBrush(winBrush, name, attrs);
+                return winBrush;
+            case ElementNames.Gradation:
+                Gradation gradation = new Gradation();
+                gradation(gradation, name, attrs);
+                return gradation;
+            case ElementNames.ImgBrush:
+                ImgBrush imgBrush = new ImgBrush();
+                imageBrush(imgBrush, name, attrs);
+                return imgBrush;
         }
+        return null;
     }
 
     private void winBrush(WinBrush winBrush, String name, Attributes attrs) {

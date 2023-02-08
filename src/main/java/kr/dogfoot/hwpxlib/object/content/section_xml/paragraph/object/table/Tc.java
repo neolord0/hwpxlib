@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 
 /**
@@ -64,22 +63,6 @@ public class Tc extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Tc;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.CellAddr.equalElementName(name)) {
-            return new CellAddr();
-        } else if (ObjectType.CellSpan.equalElementName(name)) {
-            return new CellSpan();
-        } else if (ObjectType.CellSz.equalElementName(name)) {
-            return new CellSize();
-        } else if (ObjectType.CellMargin.equalElementName(name)) {
-            return new CellMargin();
-        } else if (ObjectType.SubList.equalElementName(name)) {
-            return new SubList();
-        }
-        return null;
     }
 
     public String name() {

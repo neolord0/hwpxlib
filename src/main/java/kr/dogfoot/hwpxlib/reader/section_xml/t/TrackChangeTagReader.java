@@ -1,8 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.t;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TrackChangeType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.InsertBegin;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.inner.TrackChangeTag;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;

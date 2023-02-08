@@ -1,9 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit1;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit2;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextDirection;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.VisibilityOption;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.Visibility;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.NumberType1;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageNumPosition;
@@ -29,11 +28,6 @@ public class PageNum extends CtrlItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.PageNum;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        return null;    // no child
     }
 
     public PageNumPosition pos() {

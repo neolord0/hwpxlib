@@ -1,14 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ApplyPageType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageBorderPositionCriterion;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageFillArea;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pageborder.PageBorderFill;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pageborder.PageBorderFillOffset;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pagepr.PageMargin;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
@@ -65,10 +63,14 @@ public class PageBorderFillReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.PageBorderFillOffset) {
-            offset((PageBorderFillOffset) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.PageBorderFillOffset:
+                PageBorderFillOffset offset = new PageBorderFillOffset();
+                offset(offset, name, attrs);
+                return offset;
         }
+        return null;
     }
 
     private void offset(PageBorderFillOffset offset, String name, Attributes attrs) {

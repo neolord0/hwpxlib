@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 public abstract class NoteShape extends SwitchableObject {
@@ -20,18 +18,6 @@ public abstract class NoteShape extends SwitchableObject {
 
     public AutoNumFormat autoNumFormat() {
         return autoNumFormat;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.AutoNumFormat.equalElementName(name)) {
-            return new AutoNumFormat();
-        } else if (ObjectType.NoteLine.equalElementName(name)) {
-            return new NoteLine();
-        } else if (ObjectType.NoteSpacing.equalElementName(name)) {
-            return new NoteSpacing();
-        }
-        return null;
     }
 
     public void createAutoNumFormat() {

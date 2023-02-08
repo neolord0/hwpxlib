@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.bullet;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Bullet;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
@@ -55,12 +54,18 @@ public class BulletReader extends ElementReader {
    }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Img) {
-            img((Image) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ParaHead) {
-            paraHead((ParaHead) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Img:
+                Image image = new Image();
+                img(image, name, attrs);
+                return image;
+            case ElementNames.ParaHead:
+                ParaHead paraHead = new ParaHead();
+                paraHead(paraHead, name, attrs);
+                return paraHead;
         }
+        return null;
     }
 
     private void img(Image img, String name, Attributes attrs) {

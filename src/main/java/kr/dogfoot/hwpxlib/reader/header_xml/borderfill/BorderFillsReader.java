@@ -1,9 +1,8 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.BorderFill;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
@@ -28,10 +27,14 @@ public class BorderFillsReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.BorderFill) {
-            borderFill((BorderFill) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.BorderFill:
+                BorderFill borderFill = new BorderFill();
+                borderFill(borderFill, name, attrs);
+                return borderFill;
         }
+        return null;
     }
 
     private void borderFill(BorderFill borderFill, String name, Attributes attrs) {

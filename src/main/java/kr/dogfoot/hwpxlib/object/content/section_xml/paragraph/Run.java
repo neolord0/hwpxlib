@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.SecPr;
 
@@ -33,66 +32,6 @@ public class Run extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Run;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.SecPr.equalElementName(name)) {
-            return new SecPr();
-        } else if (ObjectType.Ctrl.equalElementName(name)) {
-            return new Ctrl();
-        } else if (ObjectType.T.equalElementName(name)) {
-            return new T();
-        } else if (ObjectType.Tbl.equalElementName(name)) {
-            return new Table();
-        } else if (ObjectType.Pic.equalElementName(name)) {
-            return new Picture();
-        } else if (ObjectType.Container.equalElementName(name)) {
-            return new Container();
-        } else if (ObjectType.OLE.equalElementName(name)) {
-            return new OLE();
-        } else if (ObjectType.Equation.equalElementName(name)) {
-            return new Equation();
-        } else if (ObjectType.Line.equalElementName(name)) {
-            return new Line();
-        } else if (ObjectType.Rect.equalElementName(name)) {
-            return new Rectangle();
-        } else if (ObjectType.Ellipse.equalElementName(name)) {
-            return new Ellipse();
-        } else if (ObjectType.Arc.equalElementName(name)) {
-            return new Arc();
-        } else  if (ObjectType.Polygon.equalElementName(name)) {
-            return new Polygon();
-        } else if (ObjectType.Curve.equalElementName(name)) {
-            return new Curve();
-        } else if (ObjectType.ConnectLine.equalElementName(name)) {
-            return new ConnectLine();
-        } else if (ObjectType.TextArt.equalElementName(name)) {
-            return new TextArt();
-        } else if (ObjectType.Compose.equalElementName(name)) {
-            return new Compose();
-        } else if (ObjectType.Dutmal.equalElementName(name)) {
-            return new Dutmal();
-        } else if (ObjectType.Btn.equalElementName(name)) {
-            return new Button();
-        } else if (ObjectType.RadioBtn.equalElementName(name)) {
-            return new RadioButton();
-        } else if (ObjectType.CheckBtn.equalElementName(name)) {
-            return new CheckButton();
-        } else if (ObjectType.ComboBox.equalElementName(name)) {
-            return new ComboBox();
-        } else if (ObjectType.ListBox.equalElementName(name)) {
-            return new ListBox();
-        }  else if (ObjectType.Edit.equalElementName(name)) {
-            return new Edit();
-        } else if (ObjectType.ScrollBar.equalElementName(name)) {
-            return new ScrollBar();
-        } else if (ObjectType.Video.equalElementName(name)) {
-            return new Video();
-        } else if (ObjectType.Chart.equalElementName(name)) {
-            return new Chart();
-        }
-        return null;
     }
 
     public String charPrIDRef() {

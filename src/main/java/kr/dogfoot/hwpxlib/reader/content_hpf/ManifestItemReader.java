@@ -2,10 +2,10 @@ package kr.dogfoot.hwpxlib.reader.content_hpf;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 
 public class ManifestItemReader extends ElementReader {
     private ManifestItem item;

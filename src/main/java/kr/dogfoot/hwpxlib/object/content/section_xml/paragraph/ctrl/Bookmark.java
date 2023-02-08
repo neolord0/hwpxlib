@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
 
@@ -19,11 +18,6 @@ public class Bookmark extends CtrlItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.Bookmark;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        return null;    // no child
     }
 
     public String name() {

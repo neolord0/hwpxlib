@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.common.parameter;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 public class StringParam extends Param<StringParam> {
@@ -12,11 +11,6 @@ public class StringParam extends Param<StringParam> {
     @Override
     public ObjectType objectType() {
         return ObjectType.StringParam;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        return null;    // no child
     }
 
     public String value() {

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
@@ -26,16 +25,6 @@ public class Indexmark extends CtrlItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.Indexmark;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.FirstKey.equalElementName(name)) {
-            return new FirstKey();
-        } else if (ObjectType.SecondKey.equalElementName(name)) {
-            return new SecondKey();
-        }
-        return null;
     }
 
     public HasOnlyText firstKey() {

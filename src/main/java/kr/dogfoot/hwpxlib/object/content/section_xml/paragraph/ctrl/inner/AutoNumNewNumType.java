@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.AutoNumFormat;
@@ -22,14 +20,6 @@ public abstract class AutoNumNewNumType<ChildType> extends CtrlItem {
      * 번호 서식
      */
     private AutoNumFormat autoNumFormat;
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.AutoNumFormat.equalElementName(name)) {
-            return new AutoNumFormat();
-        }
-        return null;
-    }
 
     public Integer num() {
         return num;

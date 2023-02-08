@@ -1,10 +1,8 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.GutterMethod;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.LineNumberRestartType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageDirection;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pagepr.PageMargin;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pagepr.PagePr;
@@ -56,10 +54,14 @@ public class PagePrReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.PageMargin) {
-            margin((PageMargin) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.PageMargin:
+                PageMargin margin = new PageMargin();
+                margin(margin, name, attrs);
+                return margin;
         }
+        return null;
     }
 
     private void margin(PageMargin margin, String name, Attributes attrs) {

@@ -16,6 +16,4 @@ public abstract class SwitchableObject extends HWPXObject {
     public void removeSwitchObject() {
         switchObject = null;
     }
-
-    public abstract HWPXObject createChildWithElementName(String name);
 }

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingObject;
@@ -28,16 +27,6 @@ public class Line extends DrawingObject<Line> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Line;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.StartPt.equalElementName(name)) {
-            return new Point(ObjectType.StartPt);
-        } else if (ObjectType.EndPt.equalElementName(name)) {
-            return new Point(ObjectType.EndPt);
-        }
-        return super.createChildWithElementName(name);
     }
 
     public Boolean isReverseHV() {

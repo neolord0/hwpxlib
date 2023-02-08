@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit1;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextDirection;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.EndNotePr;
@@ -101,32 +100,6 @@ public class SecPr extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.SecPr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Grid.equalElementName(name)) {
-            return new Grid();
-        } else if (ObjectType.StartNum.equalElementName(name)) {
-            return new StartNum();
-        } else if (ObjectType.Visibility.equalElementName(name)) {
-            return new Visibility();
-        } else if (ObjectType.LineNumberShape.equalElementName(name)) {
-            return new LineNumberShape();
-        } else if (ObjectType.PagePr.equalElementName(name)) {
-            return new PagePr();
-        } else if (ObjectType.FootNotePr.equalElementName(name)) {
-            return new FootNotePr();
-        } else if (ObjectType.EndNotePr.equalElementName(name)) {
-            return new EndNotePr();
-        } else if (ObjectType.PageBorderFill.equalElementName(name)) {
-            return new PageBorderFill();
-        } else if (ObjectType.MasterPage.equalElementName(name)) {
-            return new MasterPage();
-        } else if (ObjectType.Presentation.equalElementName(name)) {
-            return new Presentation();
-        }
-        return null;
     }
 
     public String id() {

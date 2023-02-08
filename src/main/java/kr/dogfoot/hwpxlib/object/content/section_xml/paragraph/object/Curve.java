@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.curve.CurveSegment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingObject;
@@ -20,14 +19,6 @@ public class Curve extends DrawingObject<Curve> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Curve;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Seg.equalElementName(name)) {
-            return new CurveSegment();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public int countOfSegment() {

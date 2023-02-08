@@ -6,7 +6,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineWidth;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColLine;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
 
 public class ColLineReader extends ElementReader {

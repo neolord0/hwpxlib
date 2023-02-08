@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.metainf;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 public class FileEntry extends SwitchableObject {
     /**
@@ -28,14 +27,6 @@ public class FileEntry extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.FileEntry;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.EncryptionData.equalElementName(name)) {
-            return new EncryptionData();
-        }
-        return null;
     }
 
     public String fullPath() {

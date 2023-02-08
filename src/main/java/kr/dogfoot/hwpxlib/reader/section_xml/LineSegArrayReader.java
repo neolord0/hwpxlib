@@ -2,10 +2,8 @@ package kr.dogfoot.hwpxlib.reader.section_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.LineSeg;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Run;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.util.ElementNames;
@@ -32,10 +30,14 @@ public class LineSegArrayReader extends ElementReader {
         }
     }
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (ObjectType.LineSeg.equalElementName(name)) {
-            lineSeg((LineSeg) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.LineSeg:
+                LineSeg lineSeg = new LineSeg();
+                lineSeg(lineSeg, name, attrs);
+                return lineSeg;
         }
+        return null;
     }
 
     private void lineSeg(LineSeg lineSeg, String name, Attributes attrs) {
@@ -43,9 +45,7 @@ public class LineSegArrayReader extends ElementReader {
                 .lineSeg(lineSeg);
 
         xmlFileReader().startElement(name, attrs);
-
     }
-
 
     @Override
     public SwitchableObject switchableObject() {

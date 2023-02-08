@@ -2,10 +2,10 @@ package kr.dogfoot.hwpxlib.reader.header_xml;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.BeginNum;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 
 public class BeginNumReader extends ElementReader {
     private BeginNum beginNum;
@@ -13,6 +13,10 @@ public class BeginNumReader extends ElementReader {
     @Override
     public ElementReaderSort sort() {
         return ElementReaderSort.BeginNum;
+    }
+
+    public void beginNum(BeginNum beginNum) {
+        this.beginNum = beginNum;
     }
 
     @Override
@@ -42,9 +46,5 @@ public class BeginNumReader extends ElementReader {
     @Override
     public SwitchableObject switchableObject() {
         return null;
-    }
-
-    public void beginNum(BeginNum beginNum) {
-        this.beginNum = beginNum;
     }
 }

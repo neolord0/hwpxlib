@@ -1,11 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.XMLFile;
-
-import javax.print.Doc;
 
 /**
  * /content/header_forTestSwitch.xml
@@ -35,25 +32,6 @@ public class HeaderXMLFile extends XMLFile {
     public ObjectType objectType() {
         return ObjectType.Headers_XMLFile;
     }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.BeginNum.equalElementName(name)) {
-            return new BeginNum();
-        } else if (ObjectType.RefList.equalElementName(name)) {
-            return new RefList();
-        } else if (ObjectType.ForbiddenWordList.equalElementName(name)) {
-            return new ObjectList<ForbiddenWord>(ObjectType.ForbiddenWordList, ForbiddenWord.class);
-        } else if (ObjectType.CompatibleDocument.equalElementName(name)) {
-            return new CompatibleDocument();
-        } else if (ObjectType.DocOption.equalElementName(name)) {
-            return new DocOption();
-        } else if (ObjectType.TrackChangeConfig.equalElementName(name)) {
-            return new TrackChangeConfig();
-        }
-        return null;
-    }
-
 
     public String version() {
         return version;

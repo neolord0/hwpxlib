@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit1;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextDirection;
@@ -107,28 +106,50 @@ public class SecPrReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Grid) {
-            grid((Grid) child, name, attrs);
-        } else if (child.objectType() == ObjectType.StartNum) {
-            startNum((StartNum) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Visibility) {
-            visibility((Visibility) child, name, attrs);
-        } else if (child.objectType() == ObjectType.LineNumberShape) {
-            lineNumberShape((LineNumberShape) child, name, attrs);
-        } else if (child.objectType() == ObjectType.PagePr) {
-            pagePr((PagePr) child, name, attrs);
-        } else if (child.objectType() == ObjectType.FootNotePr) {
-            footNotePr((FootNotePr) child, name, attrs);
-        } else if (child.objectType() == ObjectType.EndNotePr) {
-            endNotePr((EndNotePr) child, name, attrs);
-        } else if (child.objectType() == ObjectType.PageBorderFill) {
-            pageBorderFill((PageBorderFill) child, name, attrs);
-        } else if (child.objectType() == ObjectType.MasterPage) {
-            masterPage((MasterPage) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Presentation) {
-            presentation((Presentation) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Grid:
+                Grid grid = new Grid();
+                grid(grid, name, attrs);
+                return grid;
+            case ElementNames.StartNum:
+                StartNum startNum = new StartNum();
+                startNum(startNum, name, attrs);
+                return startNum;
+            case ElementNames.Visibility:
+                Visibility visibility = new Visibility();
+                visibility(visibility, name, attrs);
+                return visibility;
+            case ElementNames.LineNumberShape:
+                LineNumberShape lineNumberShape = new LineNumberShape();
+                lineNumberShape(lineNumberShape, name, attrs);
+                return lineNumberShape;
+            case ElementNames.PagePr:
+                PagePr pagePr = new PagePr();
+                pagePr(pagePr, name, attrs);
+                return pagePr;
+            case ElementNames.FootNotePr:
+                FootNotePr footNotePr = new FootNotePr();
+                footNotePr(footNotePr, name, attrs);
+                return footNotePr;
+            case ElementNames.EndNotePr:
+                EndNotePr endNotePr = new EndNotePr();
+                endNotePr(endNotePr, name, attrs);
+                return endNotePr;
+            case ElementNames.PageBorderFill:
+                PageBorderFill pageBorderFill = new PageBorderFill();
+                pageBorderFill(pageBorderFill, name, attrs);
+                return pageBorderFill;
+            case ElementNames.MasterPage:
+                MasterPage masterPage = new MasterPage();
+                masterPage(masterPage, name, attrs);
+                return masterPage;
+            case ElementNames.Presentation:
+                Presentation presentation = new Presentation();
+                presentation(presentation, name, attrs);
+                return presentation;
         }
+        return null;
     }
 
     private void grid(Grid grid, String name, Attributes attrs) {

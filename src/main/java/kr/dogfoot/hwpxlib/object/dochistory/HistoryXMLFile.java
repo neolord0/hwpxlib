@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.dochistory;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.XMLFile;
 
@@ -12,14 +11,6 @@ public class HistoryXMLFile extends XMLFile {
 
     public HistoryXMLFile() {
         entryList = new ArrayList<HistoryEntry>();
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.HistoryEntry.equalElementName(name)) {
-            return new HistoryEntry();
-        }
-        return null;
     }
 
     @Override

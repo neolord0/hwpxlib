@@ -1,15 +1,14 @@
 package kr.dogfoot.hwpxlib.reader.manifest_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.metainf.EncryptionAlgorithm;
 import kr.dogfoot.hwpxlib.object.metainf.EncryptionData;
 import kr.dogfoot.hwpxlib.object.metainf.EncryptionKeyDerivation;
 import kr.dogfoot.hwpxlib.object.metainf.EncryptionStartKeyGeneration;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -52,14 +51,22 @@ public class EncryptionDataReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Algorithm) {
-            algorithm((EncryptionAlgorithm) child, name, attrs);
-        } else if (child.objectType() == ObjectType.KeyDerivation) {
-            keyDerivation((EncryptionKeyDerivation) child, name, attrs);
-        } else if (child.objectType() == ObjectType.StartKeyGeneration) {
-            startKeyGeneration((EncryptionStartKeyGeneration) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Algorithm:
+                EncryptionAlgorithm algorithm = new EncryptionAlgorithm();
+                algorithm(algorithm, name, attrs);
+                return algorithm;
+            case ElementNames.KeyDerivation:
+                EncryptionKeyDerivation keyDerivation = new EncryptionKeyDerivation();
+                keyDerivation(keyDerivation, name, attrs);
+                return keyDerivation;
+            case ElementNames.StartKeyGeneration:
+                EncryptionStartKeyGeneration startKeyGeneration = new EncryptionStartKeyGeneration();
+                startKeyGeneration(startKeyGeneration, name, attrs);
+                return startKeyGeneration;
         }
+        return null;
     }
 
     private void algorithm(EncryptionAlgorithm algorithm, String name, Attributes attrs) {

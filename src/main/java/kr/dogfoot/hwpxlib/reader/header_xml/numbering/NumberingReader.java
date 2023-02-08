@@ -1,9 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.numbering;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SymMarkSort;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Numbering;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHead;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -43,10 +41,14 @@ public class NumberingReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.ParaHead) {
-            paraHead((ParaHead) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.ParaHead:
+                ParaHead paraHead = new ParaHead();
+                paraHead(paraHead, name, attrs);
+                return paraHead;
         }
+        return null;
     }
 
     private void paraHead(ParaHead paraHead, String name, Attributes attrs) {

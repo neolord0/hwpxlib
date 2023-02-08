@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.reader;
 
-import jdk.nashorn.internal.ir.CaseNode;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -12,8 +11,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SlashType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.BorderFill;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.BackSlash;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.LeftBorder;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.BackStyle;
-import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -21,7 +18,6 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TestSwitch {

@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.AlignStyleType;
 
 /**
@@ -56,20 +55,6 @@ public class EffectsReflection extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.EffectsReflection;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Skew.equalElementName(name)) {
-            return new Skew();
-        } else if (ObjectType.Scale.equalElementName(name)) {
-            return new Scale();
-        } else if (ObjectType.Alpha.equalElementName(name)) {
-            return new Alpha();
-        } else if (ObjectType.Pos.equalElementName(name)) {
-            return new Position();
-        }
-        return null;
     }
 
     public AlignStyleType alignStyle() {

@@ -1,15 +1,13 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.ParameterSet;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TablePageBreak;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellZone;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.InMargin;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.ParameterSet;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tr;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.InsertEnd;
 
 import java.util.ArrayList;
 
@@ -69,20 +67,6 @@ public class Table extends ShapeObject<Table> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Tbl;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.InMargin.equalElementName(name)) {
-            return new InMargin();
-        } else if (ObjectType.CellZoneList.equalElementName(name)) {
-            return new ObjectList<CellZone>(ObjectType.CellZoneList, CellZone.class);
-        } else if (ObjectType.Tr.equalElementName(name)) {
-            return new Tr();
-        } else if (ObjectType.ParameterSet.equalElementName(name)) {
-            return new ParameterSet();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public TablePageBreak pageBreak() {

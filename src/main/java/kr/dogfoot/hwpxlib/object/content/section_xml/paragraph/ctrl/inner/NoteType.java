@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
 
@@ -25,14 +23,6 @@ public abstract class NoteType<ChildType> extends CtrlItem {
      * 내부 문단 리스트
      */
     private SubList subList;
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.SubList.equalElementName(name)) {
-            return new SubList();
-        }
-        return null;
-    }
 
     public Integer number() {
         return number;

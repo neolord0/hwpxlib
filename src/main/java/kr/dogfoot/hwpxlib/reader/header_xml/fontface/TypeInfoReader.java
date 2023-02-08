@@ -3,10 +3,10 @@ package kr.dogfoot.hwpxlib.reader.header_xml.fontface;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.FontFamilyType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.TypeInfo;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 
 public class TypeInfoReader extends ElementReader {
     private TypeInfo typeInfo;

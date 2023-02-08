@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ImageBrushMode;
 
 /**
@@ -24,14 +23,6 @@ public class ImgBrush extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.ImgBrush;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Img.equalElementName(name)) {
-            return new Image();
-        }
-        return null;
     }
 
     public ImageBrushMode mode() {

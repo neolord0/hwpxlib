@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 /**
  * 네온 효과
@@ -27,14 +26,6 @@ public class EffectsGlow extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.EffectsGlow;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.EffectsColor.equalElementName(name)) {
-            return new EffectsColor();
-        }
-        return null;
     }
 
     public Float alpha() {

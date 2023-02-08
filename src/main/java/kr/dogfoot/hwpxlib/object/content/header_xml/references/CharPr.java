@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.NoAttributeNoChild;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SymMarkSort;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr.*;
@@ -111,42 +110,6 @@ public class CharPr extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.CharPr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.FontRef.equalElementName(name)) {
-            return new FontRef();
-        } else if (ObjectType.Ratio.equalElementName(name)) {
-            return new Ratio();
-        } else if (ObjectType.Spacing.equalElementName(name)) {
-            return new Spacing();
-        } else if (ObjectType.RelSz.equalElementName(name)) {
-            return new RelSz();
-        } else if (ObjectType.CharOffset.equalElementName(name)) {
-            return new CharOffset();
-        } else if (ObjectType.Italic.equalElementName(name)) {
-            return new Italic();
-        } else if (ObjectType.Bold.equalElementName(name)) {
-            return new Bold();
-        } else if (ObjectType.Underline.equalElementName(name)) {
-            return new Underline();
-        } else if (ObjectType.Strikeout.equalElementName(name)) {
-            return new Strikeout();
-        } else if (ObjectType.Outline.equalElementName(name)) {
-            return new Outline();
-        } else if (ObjectType.CharShadow.equalElementName(name)) {
-            return new CharShadow();
-        } else if (ObjectType.Emboss.equalElementName(name)) {
-            return new Emboss();
-        } else if (ObjectType.Engrave.equalElementName(name)) {
-            return new Engrave();
-        } else if (ObjectType.Supscript.equalElementName(name)) {
-            return new Supscript();
-        } else if (ObjectType.Subscript.equalElementName(name)) {
-            return new Subscript();
-        }
-        return null;
     }
 
     public String id() {

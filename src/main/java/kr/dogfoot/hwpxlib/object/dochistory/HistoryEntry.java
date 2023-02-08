@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.dochistory;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
@@ -48,18 +47,6 @@ public class HistoryEntry extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.HistoryEntry;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.PackageDiff.equalElementName(name)) {
-            return new PackageDiff();
-        } else if (ObjectType.HeadDiff.equalElementName(name)) {
-            return new HeadDiff();
-        } else if (ObjectType.BodyDiff.equalElementName(name)) {
-            return new BodyDiff();
-        }
-        return null;
     }
 
     public Integer revisionNumber() {

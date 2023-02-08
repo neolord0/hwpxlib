@@ -3,14 +3,13 @@ package kr.dogfoot.hwpxlib.reader.common.compatibility;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Case;
-import kr.dogfoot.hwpxlib.reader.common.*;
+import kr.dogfoot.hwpxlib.reader.common.ElementReader;
+import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
 import org.xml.sax.Attributes;
 
 public class CaseReader extends ElementReader {
     private Case caseObject;
-    private SwitchableObject switchableObject;
-
     private ElementReaderSort switchableObjectReaderSort;
 
     @Override
@@ -29,11 +28,9 @@ public class CaseReader extends ElementReader {
 
     @Override
     public void childElement(String name, Attributes attrs) {
-        HWPXObject child = switchableObject.createChildWithElementName(name);
+        HWPXObject child = xmlFileReader().setCurrentEntryReaderInSwitch(switchableObjectReaderSort)
+                .childElementInSwitch(name, attrs);
         caseObject.addChild(child);
-
-        xmlFileReader().setCurrentEntryReaderInSwitch(switchableObjectReaderSort)
-                .childElementInSwitch(child, name, attrs);
     }
 
     @Override
@@ -43,11 +40,6 @@ public class CaseReader extends ElementReader {
 
     public CaseReader caseObjectAnd(Case caseObject) {
         this.caseObject = caseObject;
-        return this;
-    }
-
-    public CaseReader switchableObjectAnd(SwitchableObject switchableObject) {
-        this.switchableObject = switchableObject;
         return this;
     }
 

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingObject;
@@ -36,20 +35,6 @@ public class Rectangle extends DrawingObject<Rectangle> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Rect;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Pt0.equalElementName(name)) {
-            return new Point(ObjectType.Pt0);
-        } else if (ObjectType.Pt1.equalElementName(name)) {
-            return new Point(ObjectType.Pt1);
-        } else if (ObjectType.Pt2.equalElementName(name)) {
-            return new Point(ObjectType.Pt2);
-        } else if (ObjectType.Pt3.equalElementName(name)) {
-            return new Point(ObjectType.Pt3);
-        }
-        return super.createChildWithElementName(name);
     }
 
     public Short ratio() {

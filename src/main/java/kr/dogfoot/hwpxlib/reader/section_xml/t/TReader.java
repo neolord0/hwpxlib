@@ -1,15 +1,11 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.t;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.T;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColLine;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColSz;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.ColSzReader;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
@@ -25,7 +21,6 @@ public class TReader extends ElementReader {
     public void t(T t) {
         this.t = t;
     }
-
 
     @Override
     protected void setAttribute(String name, String value) {
@@ -89,30 +84,58 @@ public class TReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        switch (child.objectType()) {
-            case MarkpenBegin:
-                markpenBegin((MarkpenBegin) child, name, attrs);
-                break;
-            case TitleMark:
-                titleMark((TitleMark) child, name, attrs);
-                break;
-            case Tab:
-                tab((Tab) child, name, attrs);
-                break;
-            case InsertBegin:
-                insertBegin((InsertBegin) child, name, attrs);
-                break;
-            case InsertEnd:
-                insertEnd((InsertEnd) child, name, attrs);
-                break;
-            case DeleteBegin:
-                deleteBegin((DeleteBegin) child, name, attrs);
-                break;
-            case DeleteEnd:
-                deleteEnd((DeleteEnd) child, name, attrs);
-                break;
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.MarkpenBegin:
+                MarkpenBegin markpenBegin = new MarkpenBegin();
+                markpenBegin(markpenBegin, name, attrs);
+                return markpenBegin;
+            case ElementNames.MarkpenEnd:
+                MarkpenEnd markpenEnd = new MarkpenEnd();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return markpenEnd;
+            case ElementNames.TitleMark:
+                TitleMark titleMark = new TitleMark();
+                titleMark(titleMark, name, attrs);
+                return titleMark;
+            case ElementNames.Tab:
+                Tab tab = new Tab();
+                tab(tab, name, attrs);
+                return tab;
+            case ElementNames.LineBreak:
+                LineBreak lineBreak = new LineBreak();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return lineBreak;
+            case ElementNames.Hyphen:
+                Hyphen hyphen = new Hyphen();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return hyphen;
+            case ElementNames.NBSpace:
+                NBSpace nbSpace = new NBSpace();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return nbSpace;
+            case ElementNames.FWSpace:
+                FWSpace fwSpace = new FWSpace();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return fwSpace;
+            case ElementNames.InsertBegin:
+                InsertBegin insertBegin = new InsertBegin();
+                insertBegin(insertBegin, name, attrs);
+                return insertBegin;
+            case ElementNames.InsertEnd:
+                InsertEnd insertEnd = new InsertEnd();
+                insertEnd(insertEnd, name, attrs);
+                return insertEnd;
+            case ElementNames.DeleteBegin:
+                DeleteBegin deleteBegin = new DeleteBegin();
+                deleteBegin(deleteBegin, name, attrs);
+                return deleteBegin;
+            case ElementNames.DeleteEnd:
+                DeleteEnd deleteEnd = new DeleteEnd();
+                deleteEnd(deleteEnd, name, attrs);
+                return deleteEnd;
         }
+        return null;
     }
 
     private void markpenBegin(MarkpenBegin markpenBegin, String name, Attributes attrs) {

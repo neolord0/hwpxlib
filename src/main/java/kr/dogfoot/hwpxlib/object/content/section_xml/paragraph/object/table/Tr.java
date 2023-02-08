@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 import java.util.ArrayList;
 
@@ -16,14 +15,6 @@ public class Tr extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Tr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Tc.equalElementName(name)) {
-            return new Tc();
-        }
-        return null;
     }
 
     public int countOfTc() {

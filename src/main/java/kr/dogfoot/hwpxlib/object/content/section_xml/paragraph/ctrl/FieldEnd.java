@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
 
@@ -23,11 +22,6 @@ public class FieldEnd extends CtrlItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.FieldEnd;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        return null;    // no child
     }
 
     public String beginIDRef() {

@@ -68,12 +68,18 @@ public class ParaReader extends ElementReader {
 
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (ObjectType.Run.equalElementName(name)) {
-            run((Run) child, name, attrs);
-        } else if (ObjectType.LineSegArray.equalElementName(name)) {
-            lineSegArray((ObjectList<LineSeg>) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Run:
+                Run run = new Run();
+                run(run, name, attrs);
+                return run;
+            case ElementNames.LineSegArray:
+                ObjectList<LineSeg> lineSegArray = new ObjectList<LineSeg>(ObjectType.LineSegArray, LineSeg.class);
+                lineSegArray(lineSegArray, name, attrs);
+                return lineSegArray;
         }
+        return null;
     }
 
     private void run(Run run, String name, Attributes attrs) {

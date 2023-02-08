@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColorType;
 
 public class EffectsColor extends SwitchableObject {
@@ -49,22 +48,6 @@ public class EffectsColor extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.EffectsColor;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.ColorRGB.equalElementName(name)) {
-            return new ColorRGB();
-        } else if (ObjectType.ColorCMYK.equalElementName(name)) {
-            return new ColorCMYK();
-        } else if (ObjectType.ColorSchema.equalElementName(name)) {
-            return new ColorSchema();
-        } else if (ObjectType.ColorSystem.equalElementName(name)) {
-            return new ColorSystem();
-        } else if (ObjectType.ColorEffect.equalElementName(name)) {
-            return new ColorEffect();
-        }
-        return null;
     }
 
     public ColorType type() {

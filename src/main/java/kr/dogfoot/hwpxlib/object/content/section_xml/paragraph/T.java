@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.*;
 
@@ -31,37 +30,6 @@ public class T extends RunItem {
     public ObjectType objectType() {
         return ObjectType.T;
     }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.MarkpenBegin.equalElementName(name)) {
-            return new MarkpenBegin();
-        } else if (ObjectType.MarkpenEnd.equalElementName(name)) {
-            return new MarkpenEnd();
-        } else if (ObjectType.TitleMark.equalElementName(name)) {
-            return new TitleMark();
-        } else if (ObjectType.Tab.equalElementName(name)) {
-            return new Tab();
-        } else if (ObjectType.LineBreak.equalElementName(name)) {
-            return new LineBreak();
-        } else if (ObjectType.Hyphen.equalElementName(name)) {
-            return new Hyphen();
-        } else if (ObjectType.NBSpace.equalElementName(name)) {
-            return new NBSpace();
-        } else if (ObjectType.FWSpace.equalElementName(name)) {
-            return new FWSpace();
-        } else if (ObjectType.InsertBegin.equalElementName(name)) {
-            return new InsertBegin();
-        } else if (ObjectType.InsertEnd.equalElementName(name)) {
-            return new InsertEnd();
-        } else if (ObjectType.DeleteBegin.equalElementName(name)) {
-            return new DeleteBegin();
-        } else if (ObjectType.DeleteEnd.equalElementName(name)) {
-            return new DeleteEnd();
-        }
-        return null;
-    }
-
 
     public String charPrIDRef() {
         return charPrIDRef;

@@ -1,9 +1,5 @@
 package kr.dogfoot.hwpxlib.util;
 
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColSz;
-
-import java.util.zip.ZipInputStream;
-
 public class AttributeNames {
     public static final String hp_required_namespace = "hp:required-namespace";
     public static final String tagetApplication = "tagetApplication";

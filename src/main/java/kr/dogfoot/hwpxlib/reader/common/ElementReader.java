@@ -29,7 +29,8 @@ public abstract class ElementReader {
     public void childElement(String name, Attributes attrs) {
     }
 
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        return null;
     }
 
 

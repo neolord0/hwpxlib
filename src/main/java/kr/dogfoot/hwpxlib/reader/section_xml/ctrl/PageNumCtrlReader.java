@@ -2,12 +2,9 @@ package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ApplyPageType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColumnDirection;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.MultiColumnType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.PageNumCtrl;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
 
 public class PageNumCtrlReader extends ElementReader {

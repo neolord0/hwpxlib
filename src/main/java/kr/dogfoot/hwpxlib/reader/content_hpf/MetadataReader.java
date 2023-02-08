@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader.content_hpf;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.Language;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.Meta;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.MetaData;
@@ -39,14 +38,22 @@ public class MetadataReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Title) {
-            title((Title) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Language) {
-            language((Language) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Meta) {
-            meta((Meta) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch(name) {
+            case ElementNames.Title:
+                Title title = new Title();
+                title(title, name, attrs);
+                return title;
+            case ElementNames.Language:
+                Language language = new Language();
+                language(language, name, attrs);
+                return language;
+            case ElementNames.Meta:
+                Meta meta = new Meta();
+                meta(meta, name, attrs);
+                return meta;
         }
+        return null;
     }
 
     private void title(Title title, String name, Attributes attrs) {

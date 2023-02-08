@@ -82,30 +82,54 @@ public class RefListReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Fontfaces) {
-            fontFaces((Fontfaces) child, name, attrs);
-        } else if (child.objectType() == ObjectType.BorderFills) {
-            borderFills((ObjectList<BorderFill>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.CharProperties) {
-            charProperties((ObjectList<CharPr>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.TabProperties) {
-            tabProperties((ObjectList<TabPr>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Numberings) {
-            numberings((ObjectList<Numbering>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Bullets) {
-            bullets((ObjectList<Bullet>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ParaProperties) {
-            paraProperties((ObjectList<ParaPr>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Styles) {
-            styles((ObjectList<Style>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.MemoProperties) {
-            memoProperties((ObjectList<MemoPr>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.TrackChanges) {
-            trackChanges((ObjectList<TrackChange>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.TrackChangeAuthors) {
-            trackChangeAuthors((ObjectList<TrackChangeAuthor>) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Fontfaces:
+                Fontfaces fontfaces = new Fontfaces();
+                fontFaces(fontfaces, name, attrs);
+                return fontfaces;
+            case ElementNames.BorderFills:
+                ObjectList<BorderFill> borderFills = new ObjectList<BorderFill>(ObjectType.BorderFills, BorderFill.class);
+                borderFills(borderFills, name, attrs);
+                return borderFills;
+            case ElementNames.CharProperties:
+                ObjectList<CharPr> charProperties = new ObjectList<CharPr>(ObjectType.CharProperties, CharPr.class);
+                charProperties(charProperties, name, attrs);
+                return charProperties;
+            case ElementNames.TabProperties:
+                ObjectList<TabPr> tabProperties = new ObjectList<TabPr>(ObjectType.TabProperties, TabPr.class);
+                tabProperties(tabProperties, name, attrs);
+                return tabProperties;
+            case ElementNames.Numberings:
+                ObjectList<Numbering> numberings = new ObjectList<Numbering>(ObjectType.Numberings, Numbering.class);
+                numberings(numberings, name, attrs);
+                return numberings;
+            case ElementNames.Bullets:
+                ObjectList<Bullet> bullets = new ObjectList<Bullet>(ObjectType.Bullets, Bullet.class);
+                bullets(bullets, name, attrs);
+                return bullets;
+            case ElementNames.ParaProperties:
+                ObjectList<ParaPr> paraProperties = new ObjectList<ParaPr>(ObjectType.ParaProperties, ParaPr.class);
+                paraProperties(paraProperties, name, attrs);
+                return paraProperties;
+            case ElementNames.Styles:
+                ObjectList<Style> styles = new ObjectList<Style>(ObjectType.Styles, Style.class);
+                styles(styles, name, attrs);
+                return styles;
+            case ElementNames.MemoProperties:
+                ObjectList<MemoPr> memoProperties = new ObjectList<MemoPr>(ObjectType.MemoProperties, MemoPr.class);
+                memoProperties(memoProperties, name, attrs);
+                return memoProperties;
+            case ElementNames.TrackChanges:
+                ObjectList<TrackChange> trackChanges = new ObjectList<TrackChange>(ObjectType.TrackChanges, TrackChange.class);
+                trackChanges(trackChanges, name, attrs);
+                return trackChanges;
+            case ElementNames.TrackChangeAuthors:
+                ObjectList<TrackChangeAuthor> trackChangeAuthors = new ObjectList<TrackChangeAuthor>(ObjectType.TrackChangeAuthors, TrackChangeAuthor.class);
+                trackChangeAuthors(trackChangeAuthors, name, attrs);
+                return trackChangeAuthors;
         }
+        return null;
     }
 
     private void fontFaces(Fontfaces fontfaces, String name, Attributes attrs) {

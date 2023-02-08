@@ -1,8 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineSpacingType;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.ParaBorder;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;

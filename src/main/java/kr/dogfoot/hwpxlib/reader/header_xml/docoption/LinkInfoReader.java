@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader.header_xml.docoption;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.LinkInfo;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LanguageType;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;

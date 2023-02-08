@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.manifest_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.metainf.FileEntry;
 import kr.dogfoot.hwpxlib.object.metainf.ManifestXMLFile;
@@ -28,10 +27,14 @@ public class ManifestReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.FileEntry) {
-            fileEntry((FileEntry) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.FileEntry:
+                FileEntry fileEntry = new FileEntry();
+                fileEntry(fileEntry, name, attrs);
+                return fileEntry;
         }
+        return null;
     }
 
     private void fileEntry(FileEntry fileEntry, String name, Attributes attrs) {

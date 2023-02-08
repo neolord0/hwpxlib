@@ -1,10 +1,8 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColumnDirection;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.EndNoteNumberingType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.MultiColumnType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.ColPr;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColLine;
@@ -66,12 +64,18 @@ public class ColPrReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.ColSz) {
-            colSz((ColSz) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ColLine) {
-            colLine((ColLine) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.ColSz:
+                ColSz colSz = new ColSz();
+                colSz(colSz, name, attrs);
+                return colSz;
+            case ElementNames.ColLine:
+                ColLine colLine = new ColLine();
+                colLine(colLine, name, attrs);
+                return colLine;
         }
+        return null;
     }
 
     private void colSz(ColSz colSz, String name, Attributes attrs) {

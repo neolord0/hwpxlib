@@ -1,8 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.OLE;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 
 /**
@@ -45,24 +42,6 @@ public abstract class ShapeComponent<ChildType> extends ShapeObject<ChildType> {
      * 변환 정보
      */
     private RenderingInfo renderingInfo;
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Offset.equalElementName(name)) {
-            return new Offset();
-        } else if (ObjectType.OrgSz.equalElementName(name)){
-            return new OriginalSize();
-        } else if (ObjectType.CurSz.equalElementName(name)) {
-            return new CurrentSize();
-        } else if (ObjectType.Flip.equalElementName(name)) {
-            return new Flip();
-        } else if (ObjectType.RotationInfo.equalElementName(name)) {
-            return new RotationInfo();
-        } else if (ObjectType.RenderingInfo.equalElementName(name)) {
-            return new RenderingInfo();
-        }
-        return super.createChildWithElementName(name);
-    }
 
     public String href() {
         return href;

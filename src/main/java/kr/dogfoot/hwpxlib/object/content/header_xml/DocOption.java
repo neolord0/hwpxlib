@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 public class DocOption extends SwitchableObject {
     private LinkInfo linkinfo;
@@ -13,14 +12,6 @@ public class DocOption extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.DocOption;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.LinkInfo.equalElementName(name))  {
-            return new LinkInfo();
-        }
-        return null;
     }
 
     public LinkInfo linkInfo() {

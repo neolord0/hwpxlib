@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColumnDirection;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.MultiColumnType;
@@ -54,16 +53,6 @@ public class ColPr extends CtrlItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.ColPr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.ColSz.equalElementName(name)) {
-            return new ColSz();
-        } else if (ObjectType.ColLine.equalElementName(name)) {
-            return new ColLine();
-        }
-        return null;
     }
 
     public String id() {

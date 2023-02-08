@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 /**
@@ -22,16 +21,6 @@ public class FootNotePr extends NoteShape {
     @Override
     public ObjectType objectType() {
         return ObjectType.FootNotePr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.FootNoteNumbering.equalElementName(name)) {
-            return new FootNoteNumbering();
-        } else if (ObjectType.FootNotePlacement.equalElementName(name)) {
-            return new FootNotePlacement();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public FootNoteNumbering numbering() {

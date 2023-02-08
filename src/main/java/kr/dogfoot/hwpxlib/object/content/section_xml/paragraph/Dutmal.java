@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HorizontalAlign2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DutmalPosType;
@@ -46,16 +45,6 @@ public class Dutmal extends RunItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.Dutmal;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.MainText.equalElementName(name)) {
-            return new MainText();
-        } else if (ObjectType.SubText.equalElementName(name)) {
-            return new SubText();
-        }
-        return null;
     }
 
     public DutmalPosType posType() {

@@ -2,9 +2,9 @@ package kr.dogfoot.hwpxlib.reader.content_hpf;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.Meta;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 
 public class MetaReader extends ElementReader {
     private Meta meta;

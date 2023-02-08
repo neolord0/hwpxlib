@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.CaptionSide;
 
@@ -38,14 +37,6 @@ public class Caption extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Caption;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.SubList.equalElementName(name)) {
-            return new SubList();
-        }
-        return null;
     }
 
     public CaptionSide side() {

@@ -1,16 +1,15 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.fontface;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.FontType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.Font;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.SubstFont;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.TypeInfo;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -58,12 +57,18 @@ public class FontReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.SubstFont) {
-            substFont((SubstFont) child, name, attrs);
-        } else if (child.objectType() == ObjectType.TypeInfo) {
-            typeInfo((TypeInfo) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.SubstFont:
+                SubstFont substFont = new SubstFont();
+                substFont(substFont, name, attrs);
+                return substFont;
+            case ElementNames.TypeInfo:
+                TypeInfo typeInfo = new TypeInfo();
+                typeInfo(typeInfo, name, attrs);
+                return typeInfo;
         }
+        return null;
     }
 
     private void substFont(SubstFont substFont, String name, Attributes attrs) {

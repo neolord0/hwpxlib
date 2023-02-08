@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.common.parameter;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 public class FloatParam extends Param<FloatParam> {
@@ -12,11 +11,6 @@ public class FloatParam extends Param<FloatParam> {
     @Override
     public ObjectType objectType() {
         return ObjectType.FloatParam;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        return null;    // no child
     }
 
     public Float value() {

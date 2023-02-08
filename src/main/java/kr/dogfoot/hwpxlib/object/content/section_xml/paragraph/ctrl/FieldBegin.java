@@ -1,12 +1,10 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.Parameters;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.FieldType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.Parameters;
 
 /**
  * 필드 시작
@@ -55,16 +53,6 @@ public class FieldBegin extends CtrlItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.FieldBegin;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Parameters.equalElementName(name)) {
-            return new Parameters();
-        } else if (ObjectType.SubList.equalElementName(name)) {
-            return new SubList();
-        }
-        return null;
     }
 
     public String id() {

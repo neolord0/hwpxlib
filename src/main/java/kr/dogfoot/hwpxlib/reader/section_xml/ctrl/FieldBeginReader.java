@@ -1,15 +1,10 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColumnDirection;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.FieldType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.MultiColumnType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.FieldBegin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColLine;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColSz;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.Parameters;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
@@ -74,12 +69,18 @@ public class FieldBeginReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Parameters) {
-            parameters((Parameters) child, name, attrs);
-        } else if (child.objectType() == ObjectType.SubList) {
-            subList((SubList) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Parameters:
+                Parameters parameters = new Parameters();
+                parameters(parameters, name, attrs);
+                return parameters;
+            case ElementNames.SubList:
+                SubList subList = new SubList();
+                subList(subList, name, attrs);
+                return subList;
         }
+        return null;
     }
 
     private void parameters(Parameters parameters, String name, Attributes attrs) {

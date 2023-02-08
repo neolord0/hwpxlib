@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHead;
 
 import java.util.ArrayList;
@@ -31,14 +30,6 @@ public class Numbering extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Numbering;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.ParaHead.equalElementName(name)) {
-            return new ParaHead();
-        }
-        return null;
     }
 
     public String id() {

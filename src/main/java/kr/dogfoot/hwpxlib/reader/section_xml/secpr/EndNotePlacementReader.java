@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.EndNotePlace;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.FootNotePlace;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.EndNotePlacement;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;

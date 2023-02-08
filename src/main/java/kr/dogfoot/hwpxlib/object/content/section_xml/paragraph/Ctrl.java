@@ -1,11 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.Heading;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.*;
 
-import java.awt.print.Book;
 import java.util.ArrayList;
 
 public class Ctrl extends RunItem {
@@ -18,43 +15,6 @@ public class Ctrl extends RunItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.Ctrl;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.ColPr.equalElementName(name)) {
-            return new ColPr();
-        } else if (ObjectType.FieldBegin.equalElementName(name)) {
-            return new FieldBegin();
-        } else if (ObjectType.FieldEnd.equalElementName(name)) {
-            return new FieldEnd();
-        } else if (ObjectType.Bookmark.equalElementName(name)) {
-            return new Bookmark();
-        } else if (ObjectType.Header.equalElementName(name)) {
-            return new Header();
-        } else if (ObjectType.Footer.equalElementName(name)) {
-            return new Footer();
-        } else if (ObjectType.FootNote.equalElementName(name)) {
-            return new FootNote();
-        } else if (ObjectType.EndNote.equalElementName(name)) {
-            return new EndNote();
-        } else if (ObjectType.AutoNum.equalElementName(name)) {
-            return new AutoNum();
-        } else if (ObjectType.NewNum.equalElementName(name)) {
-            return new NewNum();
-        } else if (ObjectType.PageNumCtrl.equalElementName(name)) {
-            return new PageNumCtrl();
-        } else if (ObjectType.PageHiding.equalElementName(name)) {
-            return new PageHiding();
-        } else if (ObjectType.PageNum.equalElementName(name)) {
-            return new PageNum();
-        } else if (ObjectType.Indexmark.equalElementName(name)) {
-            return new Indexmark();
-        } else if (ObjectType.HiddenComment.equalElementName(name)) {
-            return new HiddenComment();
-        }
-
-        return null;
     }
 
     public int countOfCtrlItems() {

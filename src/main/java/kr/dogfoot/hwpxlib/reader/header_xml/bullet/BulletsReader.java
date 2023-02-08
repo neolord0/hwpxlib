@@ -1,14 +1,11 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.bullet;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Bullet;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.Numbering;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.header_xml.charpr.CharPrReader;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -30,10 +27,14 @@ public class BulletsReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Bullet) {
-            bullet((Bullet) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Bullet:
+                Bullet bullet = new Bullet();
+                bullet(bullet, name, attrs);
+                return bullet;
         }
+        return null;
     }
 
     private void bullet(Bullet bullet, String name, Attributes attrs) {

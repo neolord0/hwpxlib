@@ -2,8 +2,8 @@ package kr.dogfoot.hwpxlib.reader.container_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.metainf.ContainerXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -30,10 +30,14 @@ public class ContainerReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.RootFiles) {
-            rootFiles((ObjectList<RootFile>) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch(name) {
+            case ElementNames.RootFiles:
+                ObjectList<RootFile> rootFiles = new ObjectList<RootFile>(ObjectType.RootFiles, RootFile.class);
+                rootFiles(rootFiles, name, attrs);
+                return rootFiles;
         }
+        return null;
     }
 
     private void rootFiles(ObjectList<RootFile> rootFileObjectList, String name, Attributes attrs) {

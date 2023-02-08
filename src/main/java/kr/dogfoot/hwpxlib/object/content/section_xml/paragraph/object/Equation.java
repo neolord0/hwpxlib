@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.EquationLineMode;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.equation.Script;
@@ -45,14 +44,6 @@ public class Equation extends ShapeObject<Equation> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Equation;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Script.equalElementName(name)) {
-            return new Script();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public String version() {

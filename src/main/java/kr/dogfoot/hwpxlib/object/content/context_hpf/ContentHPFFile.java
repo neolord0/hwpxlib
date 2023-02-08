@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.context_hpf;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.XMLFile;
@@ -19,18 +18,6 @@ public class ContentHPFFile extends XMLFile {
     @Override
     public ObjectType objectType() {
         return ObjectType.Content_HPFFile;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.MetaData.equalElementName(name)) {
-            return new MetaData();
-        } else if (ObjectType.Manifest.equalElementName(name)) {
-            return new ObjectList<ManifestItem>(ObjectType.Manifest, ManifestItem.class);
-        } else if (ObjectType.Spine.equalElementName(name)) {
-            return new ObjectList<SpineItemRef>(ObjectType.Spine, SpineItemRef.class);
-        }
-        return null;
     }
 
     public String version() {

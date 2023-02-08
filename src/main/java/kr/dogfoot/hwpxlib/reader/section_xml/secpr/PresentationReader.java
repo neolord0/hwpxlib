@@ -1,12 +1,10 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PresentationEffect;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.Presentation;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pagepr.PageMargin;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.header_xml.borderfill.FillBrushReader;
@@ -62,10 +60,14 @@ public class PresentationReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.FillBrush) {
-            fillBrush((FillBrush) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.FillBrush:
+                FillBrush fillBrush = new FillBrush();
+                fillBrush(fillBrush, name, attrs);
+                return fillBrush;
         }
+        return null;
     }
 
     private void fillBrush(FillBrush fillBrush, String name, Attributes attrs) {

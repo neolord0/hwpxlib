@@ -1,9 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 import java.util.ArrayList;
 
@@ -52,16 +51,6 @@ public class Para extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Para;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Run.equalElementName(name)) {
-            return new Run();
-        } else if (ObjectType.LineSegArray.equalElementName(name)){
-            return new ObjectList<LineSeg>(ObjectType.LineSegArray, LineSeg.class);
-        }
-        return null;
     }
 
     public String id() {

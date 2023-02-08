@@ -1,8 +1,6 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ConnectLineType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.EndPoint;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.StartPoint;
@@ -31,16 +29,6 @@ public class ConnectLine extends DrawingObject<ConnectLine> {
     @Override
     public ObjectType objectType() {
         return ObjectType.ConnectLine;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.StartPt.equalElementName(name)) {
-            return new StartPoint();
-        } else if (ObjectType.EndPt.equalElementName(name)) {
-            return new EndPoint();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public ConnectLineType type() {

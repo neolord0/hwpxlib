@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.ValueAndUnit;
 
 /**
@@ -36,22 +35,6 @@ public class ParaMargin extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.ParaMargin;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Intent.equalElementName(name)) {
-            return new Intent();
-        } else if (ObjectType.Left.equalElementName(name)) {
-            return new LeftMargin();
-        } else if (ObjectType.Right.equalElementName(name)) {
-            return new RightMargin();
-        } else if (ObjectType.Prev.equalElementName(name)) {
-            return new PrevParaMargin();
-        } else if (ObjectType.Next.equalElementName(name)) {
-            return new NextParaMargin();
-        }
-        return null;
     }
 
     public ValueAndUnit intent() {

@@ -2,13 +2,10 @@ package kr.dogfoot.hwpxlib.reader.header_xml.trackchange;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.TabPr;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.TrackChange;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.header_xml.tabpr.TabPrReader;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -30,10 +27,14 @@ public class TrackChangesReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.TrackChange) {
-            trackChange((TrackChange) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.TrackChange:
+                TrackChange trackChange = new TrackChange();
+                trackChange(trackChange, name, attrs);
+                return trackChange;
         }
+        return null;
     }
 
     private void trackChange(TrackChange trackChange, String name, Attributes attrs) {

@@ -1,11 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.CenterLineSort;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.T;
 
 /**
  * BorderFill
@@ -70,28 +68,6 @@ public class BorderFill extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.BorderFill;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Slash.equalElementName(name)) {
-            return new Slash();
-        } else if (ObjectType.BackSlash.equalElementName(name)) {
-            return new BackSlash();
-        } else if (ObjectType.LeftBorder.equalElementName(name)) {
-            return new LeftBorder();
-        } else if (ObjectType.RightBorder.equalElementName(name)) {
-            return new RightBorder();
-        } else if (ObjectType.TopBorder.equalElementName(name)) {
-            return new TopBorder();
-        } else if (ObjectType.BottomBorder.equalElementName(name)) {
-            return new BottomBorder();
-        } else if (ObjectType.Diagonal.equalElementName(name)) {
-            return new DiagonalBorder();
-        } else if (ObjectType.FillBrush.equalElementName(name)) {
-            return new FillBrush();
-        }
-        return null;
     }
 
     public String id() {

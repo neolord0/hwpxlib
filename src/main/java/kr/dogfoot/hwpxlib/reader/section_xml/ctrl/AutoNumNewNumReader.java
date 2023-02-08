@@ -1,10 +1,8 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.AutoNum;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.AutoNumNewNumType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.AutoNumFormat;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -51,10 +49,14 @@ public class AutoNumNewNumReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.AutoNumFormat) {
-            autoNumFormat((AutoNumFormat) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.AutoNumFormat:
+                AutoNumFormat autoNumFormat = new AutoNumFormat();
+                autoNumFormat(autoNumFormat, name, attrs);
+                return autoNumFormat;
         }
+        return null;
     }
 
     private void autoNumFormat(AutoNumFormat autoNumFormat, String name, Attributes attrs) {

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageClip;
@@ -54,26 +53,6 @@ public class Picture extends ShapeComponent<Picture> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Pic;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.LineShape.equalElementName(name)) {
-            return new LineShape();
-        } else if (ObjectType.ImgRect.equalElementName(name)) {
-            return new ImageRect();
-        } else if (ObjectType.ImgClip.equalElementName(name)) {
-            return new ImageClip();
-        } else if (ObjectType.InMargin.equalElementName(name)) {
-            return new InMargin();
-        } else if (ObjectType.ImgDim.equalElementName(name)) {
-            return new ImageDim();
-        } else if (ObjectType.Img.equalElementName(name)) {
-            return new Image();
-        } else if (ObjectType.Effects.equalElementName(name)) {
-            return new Effects();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public Boolean reverse() {

@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.metainf;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 public class EncryptionData extends SwitchableObject {
     /**
@@ -33,18 +32,6 @@ public class EncryptionData extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.EncryptionData;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Algorithm.equalElementName(name)) {
-            return new EncryptionAlgorithm();
-        } else if (ObjectType.KeyDerivation.equalElementName(name)) {
-            return new EncryptionKeyDerivation();
-        } else if (ObjectType.StartKeyGeneration.equalElementName(name)) {
-            return new EncryptionStartKeyGeneration();
-        }
-        return null;
     }
 
     public String checksumType() {

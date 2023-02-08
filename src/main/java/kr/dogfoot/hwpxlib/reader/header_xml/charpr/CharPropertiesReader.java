@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader.header_xml.charpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.CharPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -28,10 +27,14 @@ public class CharPropertiesReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.CharPr) {
-            charPr((CharPr) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.CharPr:
+                CharPr charPr = new CharPr();
+                charPr(charPr, name, attrs);
+                return charPr;
         }
+        return null;
     }
 
     private void charPr(CharPr charPr, String name, Attributes attrs) {

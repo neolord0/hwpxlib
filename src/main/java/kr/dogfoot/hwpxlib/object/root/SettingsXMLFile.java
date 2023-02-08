@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.root;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.XMLFile;
@@ -24,16 +23,6 @@ public class SettingsXMLFile extends XMLFile {
     @Override
     public ObjectType objectType() {
         return ObjectType.Settings_XMLFile;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.CaretPosition.equalElementName(name)) {
-            return new CaretPosition();
-        } else if (ObjectType.ConfigItemSet.equalElementName(name)) {
-            return new ObjectList<ConfigItem>(ObjectType.ConfigItemSet, ConfigItem.class);
-        }
-        return null;
     }
 
     public CaretPosition caretPosition() {

@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Ctrl;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.*;
@@ -74,38 +73,70 @@ public class CtrlReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.ColPr) {
-            colPr((ColPr) child, name, attrs);
-        } else if (child.objectType() == ObjectType.FieldBegin) {
-            fieldBegin((FieldBegin) child, name, attrs);
-        } else if (child.objectType() == ObjectType.FieldEnd) {
-            fieldEnd((FieldEnd) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Bookmark) {
-            bookmark((Bookmark) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Header) {
-            header((Header) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Footer) {
-            footer((Footer) child, name, attrs);
-        } else if (child.objectType() == ObjectType.FootNote) {
-            footNote((FootNote) child, name, attrs);
-        } else if (child.objectType() == ObjectType.EndNote) {
-            endNote((EndNote) child, name, attrs);
-        } else if (child.objectType() == ObjectType.AutoNum) {
-            autoNum((AutoNum) child, name, attrs);
-        } else if (child.objectType() == ObjectType.NewNum) {
-            newNum((NewNum) child, name, attrs);
-        } else if (child.objectType() == ObjectType.PageNumCtrl) {
-            pageNumCtrl((PageNumCtrl) child, name, attrs);
-        } else if (child.objectType() == ObjectType.PageHiding) {
-            pageHiding((PageHiding) child, name, attrs);
-        } else if (child.objectType() == ObjectType.PageNum) {
-            pageNum((PageNum) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Indexmark) {
-            indexmark((Indexmark) child, name, attrs);
-        } else if (child.objectType() == ObjectType.HiddenComment) {
-            hiddenComment((HiddenComment) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.ColPr:
+                ColPr colPr = new ColPr();
+                colPr(colPr, name, attrs);
+                return colPr;
+            case ElementNames.FieldBegin:
+                FieldBegin fieldBegin = new FieldBegin();
+                fieldBegin(fieldBegin, name, attrs);
+                return fieldBegin;
+            case ElementNames.FieldEnd:
+                FieldEnd fieldEnd = new FieldEnd();
+                fieldEnd(fieldEnd, name, attrs);
+                return fieldEnd;
+            case ElementNames.Bookmark:
+                Bookmark bookmark = new Bookmark();
+                bookmark(bookmark, name, attrs);
+                return bookmark;
+            case ElementNames.Header:
+                Header header = new Header();
+                header(header, name, attrs);
+                return header;
+            case ElementNames.Footer:
+                Footer footer = new Footer();
+                footer(footer, name, attrs);
+                return footer;
+            case ElementNames.FootNote:
+                FootNote footNote = new FootNote();
+                footNote(footNote, name, attrs);
+                return footNote;
+            case ElementNames.EndNote:
+                EndNote endNote = new EndNote();
+                endNote(endNote, name, attrs);
+                return endNote;
+            case ElementNames.AutoNum:
+                AutoNum autoNum = new AutoNum();
+                autoNum(autoNum, name, attrs);
+                return autoNum;
+            case ElementNames.NewNum:
+                NewNum newNum = new NewNum();
+                newNum(newNum, name, attrs);
+                return newNum;
+            case ElementNames.PageNumCtrl:
+                PageNumCtrl pageNumCtrl = new PageNumCtrl();
+                pageNumCtrl(pageNumCtrl, name, attrs);
+                return pageNumCtrl;
+            case ElementNames.PageHiding:
+                PageHiding pageHiding = new PageHiding();
+                pageHiding(pageHiding, name, attrs);
+                return pageHiding;
+            case ElementNames.PageNum:
+                PageNum pageNum = new PageNum();
+                pageNum(pageNum, name, attrs);
+                return pageNum;
+            case ElementNames.Indexmark:
+                Indexmark indexmark = new Indexmark();
+                indexmark(indexmark, name, attrs);
+                return indexmark;
+            case ElementNames.HiddenComment:
+                HiddenComment hiddenComment = new HiddenComment();
+                hiddenComment(hiddenComment, name, attrs);
+                return hiddenComment;
         }
+        return null;
     }
 
     private void colPr(ColPr colPr, String name, Attributes attrs) {

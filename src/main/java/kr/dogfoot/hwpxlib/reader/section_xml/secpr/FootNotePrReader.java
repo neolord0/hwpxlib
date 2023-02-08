@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -48,18 +47,30 @@ public class FootNotePrReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.AutoNumFormat) {
-            autoNumFormat((AutoNumFormat) child, name, attrs);
-        } else if (child.objectType() == ObjectType.NoteLine) {
-            noteLine((NoteLine) child, name, attrs);
-        } else if (child.objectType() == ObjectType.NoteSpacing) {
-            noteSpacing((NoteSpacing) child, name, attrs);
-        } else if (child.objectType() == ObjectType.FootNoteNumbering) {
-            numbering((FootNoteNumbering) child, name, attrs);
-        } else if (child.objectType() == ObjectType.FootNotePlacement) {
-            placement((FootNotePlacement) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.AutoNumFormat:
+                AutoNumFormat autoNumFormat = new AutoNumFormat();
+                autoNumFormat(autoNumFormat, name, attrs);
+                return autoNumFormat;
+            case ElementNames.NoteLine:
+                NoteLine noteLine = new NoteLine();
+                noteLine(noteLine, name, attrs);
+                return noteLine;
+            case ElementNames.NoteSpacing:
+                NoteSpacing noteSpacing = new NoteSpacing();
+                noteSpacing(noteSpacing, name, attrs);
+                return noteSpacing;
+            case ElementNames.NoteNumbering:
+                FootNoteNumbering numbering = new FootNoteNumbering();
+                numbering(numbering, name, attrs);
+                return numbering;
+            case ElementNames.NotePlacement:
+                FootNotePlacement placement = new FootNotePlacement();
+                placement(placement, name, attrs);
+                return placement;
         }
+        return null;
     }
 
     private void autoNumFormat(AutoNumFormat autoNumFormat, String name, Attributes attrs) {

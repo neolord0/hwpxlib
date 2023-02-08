@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.tabpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.TabPr;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.tabpr.TabItem;
@@ -45,10 +44,14 @@ public class TabPrReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.TabItem) {
-            tabItem((TabItem) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.TabItem:
+                TabItem tabItem = new TabItem();
+                tabItem(tabItem, name, attrs);
+                return tabItem;
         }
+        return null;
     }
 
     private void tabItem(TabItem tabItem, String name, Attributes attrs) {

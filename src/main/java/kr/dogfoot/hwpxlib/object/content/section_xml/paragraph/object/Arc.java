@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ArcType;
@@ -33,18 +32,6 @@ public class Arc extends DrawingObject<Arc> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Arc;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Center.equalElementName(name)) {
-            return new Point(ObjectType.Center);
-        } else if (ObjectType.Ax1.equalElementName(name)) {
-            return new Point(ObjectType.Ax1);
-        } else if (ObjectType.Ax2.equalElementName(name)) {
-            return new Point(ObjectType.Ax2);
-        }
-        return super.createChildWithElementName(name);
     }
 
     public ArcType type() {

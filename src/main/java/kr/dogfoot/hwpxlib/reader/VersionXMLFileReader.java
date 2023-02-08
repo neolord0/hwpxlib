@@ -3,10 +3,10 @@ package kr.dogfoot.hwpxlib.reader;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TargetApplicationSort;
 import kr.dogfoot.hwpxlib.object.root.VersionXMLFile;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.XMLFileReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 

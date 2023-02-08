@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ArcType;
@@ -57,26 +56,6 @@ public class Ellipse extends DrawingObject<Ellipse> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Ellipse;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Center.equalElementName(name)) {
-            return new Point(ObjectType.Center);
-        } else if (ObjectType.Ax1.equalElementName(name)) {
-            return new Point(ObjectType.Ax1);
-        } else if (ObjectType.Ax2.equalElementName(name)) {
-            return new Point(ObjectType.Ax2);
-        } else if (ObjectType.Start1.equalElementName(name)) {
-            return new Point(ObjectType.Start1);
-        } else if (ObjectType.Start2.equalElementName(name)) {
-            return new Point(ObjectType.Start2);
-        } else if (ObjectType.End1.equalElementName(name)) {
-            return new Point(ObjectType.End1);
-        } else if (ObjectType.End2.equalElementName(name)) {
-            return new Point(ObjectType.End2);
-        }
-        return super.createChildWithElementName(name);
     }
 
     public Boolean intervalDirty() {

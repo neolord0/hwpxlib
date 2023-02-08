@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HorizontalAlign1;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DisplayScrollBar;
@@ -55,14 +54,6 @@ public class Edit extends FormObject<Edit> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Edit;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.EditText.equalElementName(name)) {
-            return new EditText();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public Boolean multiLine() {

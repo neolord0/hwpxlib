@@ -1,10 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.style;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HorizontalAlign1;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.NumberType1;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.StyleType;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit1;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Style;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;

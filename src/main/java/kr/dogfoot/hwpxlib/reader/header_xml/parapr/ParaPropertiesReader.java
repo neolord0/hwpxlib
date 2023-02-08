@@ -2,13 +2,10 @@ package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.Numbering;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.ParaPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.header_xml.numbering.NumberingReader;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -27,16 +24,17 @@ public class ParaPropertiesReader extends ElementReader {
                 paraPr(paraProperties.addNew(), name, attrs);
                 break;
         }
-
-        if (ObjectType.ParaPr.equalElementName(name)) {
-        }
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.ParaPr) {
-            paraPr((ParaPr) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.ParaPr:
+                ParaPr paraPr = new ParaPr();
+                paraPr(paraPr, name, attrs);
+                return paraPr;
         }
+        return null;
     }
 
     private void paraPr(ParaPr paraPr, String name, Attributes attrs) {

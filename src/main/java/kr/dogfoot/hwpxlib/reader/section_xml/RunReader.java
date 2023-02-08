@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.*;
@@ -127,60 +126,114 @@ public class RunReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.SecPr) {
-            secPr((SecPr) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Ctrl) {
-            ctrl((Ctrl) child, name, attrs);
-        } else if (child.objectType() == ObjectType.T) {
-            t((T) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Tbl) {
-            tbl((Table) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Pic) {
-            pic((Picture) child, name, attrs);
-        } else if (child.objectType() == ObjectType.OLE) {
-            ole((OLE) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Container) {
-            container((Container) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Equation) {
-            equation((Equation) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Line) {
-            line((Line) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Rect) {
-            rect((Rectangle) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Ellipse) {
-            ellipse((Ellipse) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Arc) {
-            arc((Arc) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Polygon) {
-            polygon((Polygon) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Curve) {
-            curve((Curve) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ConnectLine) {
-            connectLine((ConnectLine) child, name, attrs);
-        } else if (child.objectType() == ObjectType.TextArt) {
-            textArt((TextArt) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Compose) {
-            compose((Compose) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Dutmal) {
-            dutmal((Dutmal) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Btn) {
-            btn((Button) child, name, attrs);
-        } else if (child.objectType() == ObjectType.RadioBtn) {
-            radioBtn((RadioButton) child, name, attrs);
-        } else if (child.objectType() == ObjectType.CheckBtn) {
-            checkBtn((CheckButton) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ComboBox) {
-            comboBox((ComboBox) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Edit) {
-            edit((Edit) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ListBox) {
-            listBox((ListBox) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ScrollBar) {
-            scrollBar((ScrollBar) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Video) {
-            video((Video) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.SecPr:
+                SecPr secPr = new SecPr();
+                secPr(secPr, name, attrs);
+                return secPr;
+            case ElementNames.Ctrl:
+                Ctrl ctrl = new Ctrl();
+                ctrl(ctrl, name, attrs);
+                return ctrl;
+            case ElementNames.T:
+                T t = new T();
+                t(t, name, attrs);
+                return t;
+            case ElementNames.Tbl:
+                Table table = new Table();
+                tbl(table, name, attrs);
+                return table;
+            case ElementNames.Pic:
+                Picture picture = new Picture();
+                pic(picture, name, attrs);
+                return picture;
+            case ElementNames.OLE:
+                OLE ole = new OLE();
+                ole(ole, name, attrs);
+                return ole;
+            case ElementNames.Container:
+                Container container = new Container();
+                container(container, name, attrs);
+                return container;
+            case ElementNames.Equation:
+                Equation equation = new Equation();
+                equation(equation, name, attrs);
+                return equation;
+            case ElementNames.Line:
+                Line line = new Line();
+                line(line, name, attrs);
+                return line;
+            case ElementNames.Rect:
+                Rectangle rectangle = new Rectangle();
+                rect(rectangle, name, attrs);
+                return rectangle;
+            case ElementNames.Ellipse:
+                Ellipse ellipse = new Ellipse();
+                ellipse(ellipse, name, attrs);
+                return ellipse;
+            case ElementNames.Arc:
+                Arc arc = new Arc();
+                arc(arc, name, attrs);
+                return arc;
+            case ElementNames.Polygon:
+                Polygon polygon = new Polygon();
+                polygon(polygon, name, attrs);
+                return polygon;
+            case ElementNames.Curve:
+                Curve curve = new Curve();
+                curve(curve, name, attrs);
+                return curve;
+            case ElementNames.ConnectLine:
+                ConnectLine connectLine = new ConnectLine();
+                connectLine(connectLine, name, attrs);
+                return connectLine;
+            case ElementNames.TextArt:
+                TextArt textArt = new TextArt();
+                textArt(textArt, name, attrs);
+                return textArt;
+            case ElementNames.Compose:
+                Compose compose = new Compose();
+                compose(compose, name, attrs);
+                return compose;
+            case ElementNames.Dutmal:
+                Dutmal dutmal = new Dutmal();
+                dutmal(dutmal, name, attrs);
+                return dutmal;
+            case ElementNames.Btn:
+                Button button = new Button();
+                btn(button, name, attrs);
+                return button;
+            case ElementNames.RadioBtn:
+                RadioButton radioButton = new RadioButton();
+                radioBtn(radioButton, name, attrs);
+                return radioButton;
+            case ElementNames.CheckBtn:
+                CheckButton checkButton = new CheckButton();
+                checkBtn(checkButton, name, attrs);
+                return checkButton;
+            case ElementNames.ComboBox:
+                ComboBox comboBox = new ComboBox();
+                comboBox(comboBox, name, attrs);
+                return comboBox;
+            case ElementNames.Edit:
+                Edit edit = new Edit();
+                edit(edit, name, attrs);
+                return edit;
+            case ElementNames.ListBox:
+                ListBox listBox = new ListBox();
+                listBox(listBox, name, attrs);
+                return listBox;
+            case ElementNames.ScrollBar:
+                ScrollBar scrollBar = new ScrollBar();
+                scrollBar(scrollBar, name, attrs);
+                return scrollBar;
+            case ElementNames.Video:
+                Video video = new Video();
+                video(video, name, attrs);
+                return video;
         }
+        return null;
     }
 
 

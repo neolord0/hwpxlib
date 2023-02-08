@@ -36,10 +36,8 @@ public class TabReader extends ElementReader {
         }
     }
 
-
     @Override
     public SwitchableObject switchableObject() {
         return null;
     }
-
 }

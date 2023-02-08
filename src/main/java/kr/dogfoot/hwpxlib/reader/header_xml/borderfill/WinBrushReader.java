@@ -3,10 +3,10 @@ package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HatchStyle;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 
 public class WinBrushReader extends ElementReader {
     private WinBrush winBrush;

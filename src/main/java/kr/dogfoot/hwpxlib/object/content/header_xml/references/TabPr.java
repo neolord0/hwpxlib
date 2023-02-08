@@ -1,10 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.tabpr.TabItem;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.T;
 
 import java.util.ArrayList;
 
@@ -36,14 +34,6 @@ public class TabPr extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.TabPr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.TabItem.equalElementName(name)) {
-            return new TabItem();
-        }
-        return null;
     }
 
     public String id() {

@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.textart;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.FontType2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextArtAlign;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextArtShape;
@@ -51,11 +50,6 @@ public class TextArtPr extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.TextArtPr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        return null;
     }
 
     public String fontName() {

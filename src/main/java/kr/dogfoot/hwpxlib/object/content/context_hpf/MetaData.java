@@ -1,9 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.context_hpf;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.T;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 import java.util.ArrayList;
 
@@ -20,18 +18,6 @@ public class MetaData extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.MetaData;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Title.equalElementName(name)) {
-            return new Title();
-        } else if (ObjectType.Language.equalElementName(name)) {
-            return new Language();
-        } else if (ObjectType.Meta.equalElementName(name)) {
-            return new Meta();
-        }
-        return null;
     }
 
     public Title title() {

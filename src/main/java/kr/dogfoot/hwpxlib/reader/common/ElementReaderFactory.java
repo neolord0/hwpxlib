@@ -1,9 +1,5 @@
 package kr.dogfoot.hwpxlib.reader.common;
 
-import com.sun.java.accessibility.util.EventID;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Equation;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.EndNotePr;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.NoteLine;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.CaseReader;
@@ -51,8 +47,6 @@ import kr.dogfoot.hwpxlib.reader.settings_xml.CaretPositionReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.ConfigItemReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.ConfigItemSetReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.SettingsReader;
-
-import java.awt.event.ContainerAdapter;
 
 public class ElementReaderFactory {
     public static ElementReader create(ElementReaderSort sort) {

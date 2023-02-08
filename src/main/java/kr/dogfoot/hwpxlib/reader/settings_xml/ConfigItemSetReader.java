@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader.settings_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.root.ConfigItem;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -28,10 +27,14 @@ public class ConfigItemSetReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (ObjectType.ConfigItem.equalElementName(name)) {
-            configItem((ConfigItem) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.ConfigItem:
+                ConfigItem configItem = new ConfigItem();
+                configItem(configItem, name, attrs);
+                return configItem;
         }
+        return null;
     }
 
     private void configItem(ConfigItem configItem, String name, Attributes attrs) {

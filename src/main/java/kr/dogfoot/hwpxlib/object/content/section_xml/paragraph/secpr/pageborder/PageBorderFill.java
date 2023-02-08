@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pageborder;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ApplyPageType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageBorderPositionCriterion;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageFillArea;
@@ -46,14 +45,6 @@ public class PageBorderFill extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.PageBorderFill;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.PageBorderFillOffset.equalElementName(name)) {
-            return new PageBorderFillOffset();
-        }
-        return null;
     }
 
     public ApplyPageType type() {

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.dochistory;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 import java.util.ArrayList;
@@ -25,18 +24,6 @@ public class UpdateDiff extends DiffItem<UpdateDiff> {
     @Override
     public ObjectType objectType() {
         return ObjectType.UpdateDiff;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.InsertDiff.equalElementName(name)) {
-            return new InsertDiff();
-        } else if (ObjectType.UpdateDiff.equalElementName(name)) {
-            return new UpdateDiff();
-        } else if (ObjectType.DeleteDiff.equalElementName(name)) {
-            return new DeleteDiff();
-        }
-        return null;
     }
 
     public String oldValue() {

@@ -2,14 +2,13 @@ package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.CenterLineSort;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.BorderFill;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.*;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -81,24 +80,42 @@ public class BorderFillReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Slash) {
-            slash((Slash) child, name, attrs);
-        } else if (child.objectType() == ObjectType.BackSlash) {
-            backSlash((BackSlash) child, name, attrs);
-        } else if (child.objectType() == ObjectType.LeftBorder) {
-            leftBorder((LeftBorder) child, name, attrs);
-        } else if (child.objectType() == ObjectType.RightBorder) {
-            rightBorder((RightBorder) child, name, attrs);
-        } else if (child.objectType() == ObjectType.TopBorder) {
-            topBorder((TopBorder) child, name, attrs);
-        } else if (child.objectType() == ObjectType.BottomBorder) {
-            bottomBorder((BottomBorder) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Diagonal) {
-            diagonal((DiagonalBorder) child, name, attrs);
-        } else if (child.objectType() == ObjectType.FillBrush) {
-            fillBrush((FillBrush) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Slash:
+                Slash slash = new Slash();
+                slash(slash, name, attrs);
+                return slash;
+            case ElementNames.BackSlash:
+                BackSlash backSlash = new BackSlash();
+                backSlash(backSlash, name, attrs);
+                return backSlash;
+            case ElementNames.LeftBorder:
+                LeftBorder leftBorder = new LeftBorder();
+                leftBorder(leftBorder, name, attrs);
+                return leftBorder;
+            case ElementNames.RightBorder:
+                RightBorder rightBorder = new RightBorder();
+                rightBorder(rightBorder, name, attrs);
+                return rightBorder;
+            case ElementNames.TopBorder:
+                TopBorder topBorder = new TopBorder();
+                topBorder(topBorder, name, attrs);
+                return topBorder;
+            case ElementNames.BottomBorder:
+                BottomBorder bottomBorder = new BottomBorder();
+                bottomBorder(bottomBorder, name, attrs);
+                return bottomBorder;
+            case ElementNames.Diagonal:
+                DiagonalBorder diagonal = new DiagonalBorder();
+                diagonal(diagonal, name, attrs);
+                return diagonal;
+            case ElementNames.FillBrush:
+                FillBrush fillBrush = new FillBrush();
+                fillBrush(fillBrush, name, attrs);
+                return fillBrush;
         }
+        return null;
     }
 
     private void slash(Slash slash, String name, Attributes attrs) {

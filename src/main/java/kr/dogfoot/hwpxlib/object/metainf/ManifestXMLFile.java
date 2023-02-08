@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.metainf;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.XMLFile;
 
@@ -16,14 +15,6 @@ public class ManifestXMLFile extends XMLFile {
     @Override
     public ObjectType objectType() {
         return ObjectType.Manifest_XMLFIle;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.FileEntry.equalElementName(name)) {
-            return new FileEntry();
-        }
-        return null;
     }
 
     public int countOfFileEntry() {

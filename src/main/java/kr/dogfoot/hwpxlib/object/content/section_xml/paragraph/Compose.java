@@ -1,8 +1,6 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.CharPr;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ComposeCircleType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ComposeType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.compose.ComposeCharPr;
@@ -41,14 +39,6 @@ public class Compose extends RunItem {
     @Override
     public ObjectType objectType() {
         return ObjectType.Compose;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.ComposeCharPr.equalElementName(name)) {
-            return new ComposeCharPr();
-        }
-        return null;
     }
 
     public ComposeCircleType circleType() {

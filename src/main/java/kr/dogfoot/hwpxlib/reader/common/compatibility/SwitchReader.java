@@ -2,10 +2,8 @@ package kr.dogfoot.hwpxlib.reader.common.compatibility;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.manifest_xml.EncryptionDataReader;
 import org.xml.sax.Attributes;
 
 public class SwitchReader extends ElementReader {
@@ -28,7 +26,6 @@ public class SwitchReader extends ElementReader {
     private void caseObject(String name, Attributes attrs) {
         ((CaseReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Case))
                 .caseObjectAnd(switchableObject.switchObject().addNewCaseObject())
-                .switchableObjectAnd(switchableObject)
                 .switchableObjectReaderSort(previousReader().sort());
 
         xmlFileReader().startElement(name, attrs);
@@ -39,7 +36,6 @@ public class SwitchReader extends ElementReader {
         switchableObject.switchObject().createDefaultObject();
         ((DefaultReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Default))
                 .defaultObjectAnd(switchableObject.switchObject().defaultObject())
-                .switchableObjectAnd(switchableObject)
                 .switchableObjectReaderSort(previousReader().sort());
 
         xmlFileReader().startElement(name, attrs);

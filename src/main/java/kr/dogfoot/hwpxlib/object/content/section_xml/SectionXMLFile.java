@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 /**

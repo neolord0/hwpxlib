@@ -1,12 +1,11 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.Indexmark;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColLine;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColSz;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.FirstKey;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.SecondKey;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
@@ -40,12 +39,18 @@ public class IndexmarkReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.FirstKey) {
-            firstKeySecondKey((HasOnlyText) child, name, attrs);
-        } else if (child.objectType() == ObjectType.SecondKey) {
-            firstKeySecondKey((HasOnlyText) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.FirstKey:
+                FirstKey firstKey = new FirstKey();
+                firstKeySecondKey(firstKey, name, attrs);
+                return firstKey;
+            case ElementNames.SecondKey:
+                SecondKey secondKey = new SecondKey();
+                firstKeySecondKey(secondKey, name, attrs);
+                return secondKey;
         }
+        return null;
     }
 
     private void firstKeySecondKey(HasOnlyText firstKeySecondKey, String name, Attributes attrs) {

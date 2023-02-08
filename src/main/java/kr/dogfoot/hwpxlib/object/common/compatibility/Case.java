@@ -1,9 +1,6 @@
 package kr.dogfoot.hwpxlib.object.common.compatibility;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-
-import java.util.ArrayList;
 
 public class Case extends InSwitchObject {
     private String requiredNamespace;

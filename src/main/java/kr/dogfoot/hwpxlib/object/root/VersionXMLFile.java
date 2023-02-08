@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.root;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.XMLFile;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TargetApplicationSort;
@@ -35,11 +34,6 @@ public class VersionXMLFile extends XMLFile {
     @Override
     public ObjectType objectType() {
         return ObjectType.Version_XMLFile;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        return null;    // no child
     }
 
     public TargetApplicationSort targetApplication() {

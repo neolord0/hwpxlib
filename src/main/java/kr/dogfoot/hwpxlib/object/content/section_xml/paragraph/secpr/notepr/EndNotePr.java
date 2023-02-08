@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 /**
@@ -22,16 +21,6 @@ public class EndNotePr extends NoteShape {
     @Override
     public ObjectType objectType() {
         return ObjectType.EndNotePr;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.EndNoteNumbering.equalElementName(name)) {
-            return new EndNoteNumbering();
-        } else if (ObjectType.EndNotePlacement.equalElementName(name)) {
-            return new EndNotePlacement();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public EndNoteNumbering numbering() {

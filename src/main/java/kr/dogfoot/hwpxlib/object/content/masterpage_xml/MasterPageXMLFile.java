@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.masterpage_xml;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.XMLFile;
 import kr.dogfoot.hwpxlib.object.content.masterpage_xml.enumtype.MasterPageType;
@@ -39,14 +38,6 @@ public class MasterPageXMLFile extends XMLFile {
     public ObjectType objectType() {
         return ObjectType.MasterPage_XMLFile;
     }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.SubList.equalElementName(name)) {
-            return new SubList();
-        }
-        return null;
-     }
 
     public String id() {
         return id;

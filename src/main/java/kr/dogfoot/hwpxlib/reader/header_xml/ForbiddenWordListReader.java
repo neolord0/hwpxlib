@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader.header_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.ForbiddenWord;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -29,10 +28,14 @@ public class ForbiddenWordListReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.TrackChangeAuthor) {
-            forbiddenWord((ForbiddenWord) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.ForbiddenWord:
+                ForbiddenWord forbiddenWord = new ForbiddenWord();
+                forbiddenWord(forbiddenWord, name, attrs);
+                return forbiddenWord;
         }
+        return null;
     }
 
     private void forbiddenWord(ForbiddenWord forbiddenWord, String name, Attributes attrs) {

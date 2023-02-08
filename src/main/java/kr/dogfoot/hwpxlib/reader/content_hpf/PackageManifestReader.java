@@ -1,9 +1,8 @@
 package kr.dogfoot.hwpxlib.reader.content_hpf;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
@@ -28,10 +27,14 @@ public class PackageManifestReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.ManifestItem) {
-            item((ManifestItem) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch(name) {
+            case ElementNames.ManifestItem:
+                ManifestItem item = new ManifestItem();
+                item(item, name, attrs);
+                return item;
         }
+        return null;
     }
 
 

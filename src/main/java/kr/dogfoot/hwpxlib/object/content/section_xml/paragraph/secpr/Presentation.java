@@ -1,8 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PresentationEffect;
 
@@ -42,14 +41,6 @@ public class Presentation extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Presentation;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.FillBrush.equalElementName(name)) {
-            return new FillBrush();
-        }
-        return null;
     }
 
     public PresentationEffect effect() {

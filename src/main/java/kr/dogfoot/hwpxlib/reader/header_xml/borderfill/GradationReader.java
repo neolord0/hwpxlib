@@ -2,14 +2,13 @@ package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.GradationType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Color;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Gradation;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -58,10 +57,14 @@ public class GradationReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Color) {
-            color((Color) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Color:
+                Color color = new Color();
+                color(color, name, attrs);
+                return color;
         }
+        return null;
     }
 
     private void color(Color color, String name, Attributes attrs) {

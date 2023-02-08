@@ -1,14 +1,13 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.fontface;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LanguageType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Fontface;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.Font;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -39,10 +38,14 @@ public class FontfaceReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Font) {
-            font((Font) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Font:
+                Font font = new Font();
+                font(font, name, attrs);
+                return font;
         }
+        return null;
     }
 
     private void font(Font font, String name, Attributes attrs) {

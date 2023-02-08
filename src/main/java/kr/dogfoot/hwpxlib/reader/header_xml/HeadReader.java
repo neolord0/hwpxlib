@@ -5,12 +5,12 @@ import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.*;
-import kr.dogfoot.hwpxlib.reader.header_xml.compatibledocument.CompatibleDocumentReader;
-import kr.dogfoot.hwpxlib.reader.header_xml.docoption.DocOptionReader;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.reader.header_xml.compatibledocument.CompatibleDocumentReader;
+import kr.dogfoot.hwpxlib.reader.header_xml.docoption.DocOptionReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -69,20 +69,34 @@ public class HeadReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.BeginNum) {
-            beginNum((BeginNum) child, name, attrs);
-        } else if (child.objectType() == ObjectType.RefList) {
-            refList((RefList) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ForbiddenWordList) {
-            forbiddenWordList((ObjectList<ForbiddenWord>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.CompatibleDocument) {
-             compatibleDocument((CompatibleDocument) child, name, attrs);
-        } else if (child.objectType() == ObjectType.DocOption) {
-            docOption((DocOption) child, name, attrs);
-        } else if (child.objectType() == ObjectType.TrackChangeConfig) {
-            trackChangeConfig((TrackChangeConfig) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.BeginNum:
+                BeginNum beginNum = new BeginNum();
+                beginNum(beginNum, name, attrs);
+                return beginNum;
+            case ElementNames.RefList:
+                RefList refList = new RefList();
+                refList(refList, name, attrs);
+                return refList;
+            case ElementNames.ForbiddenWordList:
+                ObjectList<ForbiddenWord> forbiddenWordList = new ObjectList<ForbiddenWord>(ObjectType.ForbiddenWordList, ForbiddenWord.class);
+                forbiddenWordList(forbiddenWordList, name, attrs);
+                return forbiddenWordList;
+            case ElementNames.CompatibleDocument:
+                CompatibleDocument compatibleDocument = new CompatibleDocument();
+                compatibleDocument(compatibleDocument, name, attrs);
+                return compatibleDocument;
+            case ElementNames.DocOption:
+                DocOption docOption = new DocOption();
+                docOption(docOption, name, attrs);
+                return docOption;
+            case ElementNames.TrackChangeConfig:
+                TrackChangeConfig trackChangeConfig = new TrackChangeConfig();
+                trackChangeConfig(trackChangeConfig, name, attrs);
+                return trackChangeConfig;
         }
+        return null;
     }
 
     private void beginNum(BeginNum beginNum, String name, Attributes attrs) {

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.combobox.ListItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormObject;
@@ -35,14 +34,6 @@ public class ListBox extends FormObject<ListBox> {
     @Override
     public ObjectType objectType() {
         return ObjectType.ListBox;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.ListItem.equalElementName(name)) {
-            return new ListItem();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public Integer itemHeight() {

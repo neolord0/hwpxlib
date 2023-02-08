@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.OLEDrawAspect;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.OLEObjectType;
@@ -47,16 +46,6 @@ public class OLE extends ShapeComponent<OLE> {
     @Override
     public ObjectType objectType() {
         return ObjectType.OLE;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Extent.equalElementName(name)) {
-            return new Extent();
-        } else if (ObjectType.LineShape.equalElementName(name)) {
-            return new LineShape();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public OLEObjectType _objectType() {

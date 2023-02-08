@@ -1,10 +1,7 @@
 package kr.dogfoot.hwpxlib.reader;
 
-import javafx.scene.SubScene;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
 
 import static org.testng.AssertJUnit.fail;
 

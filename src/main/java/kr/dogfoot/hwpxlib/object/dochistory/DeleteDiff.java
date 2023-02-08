@@ -21,11 +21,6 @@ public class DeleteDiff extends DiffItem<DeleteDiff> {
         return ObjectType.DeleteDiff;
     }
 
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        return null;    // no child
-    }
-
     public HWPXObject deletedObject() {
         return deletedObject;
     }

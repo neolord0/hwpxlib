@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.HiddenComment;
@@ -33,10 +32,14 @@ public class HiddenCommentReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.SubList) {
-            subList((SubList) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.SubList:
+                SubList subList = new SubList();
+                subList(subList, name, attrs);
+                return subList;
         }
+        return null;
     }
 
     private void subList(SubList subList, String name, Attributes attrs) {

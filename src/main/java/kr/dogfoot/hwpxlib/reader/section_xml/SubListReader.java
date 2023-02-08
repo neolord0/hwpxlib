@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.LineWrapMethod;
@@ -73,10 +72,14 @@ public class SubListReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (ObjectType.Para.equalElementName(name)) {
-            para((Para) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Para:
+                Para para = new Para();
+                para(para, name, attrs);
+                return para;
         }
+        return null;
     }
 
     private void para(Para para, String name, Attributes attrs) {

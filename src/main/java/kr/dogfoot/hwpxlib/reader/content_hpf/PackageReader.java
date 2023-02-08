@@ -2,15 +2,15 @@ package kr.dogfoot.hwpxlib.reader.content_hpf;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ContentHPFFile;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.MetaData;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.SpineItemRef;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -56,14 +56,22 @@ public class PackageReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.MetaData) {
-            metadata((MetaData) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Manifest) {
-            manifest((ObjectList<ManifestItem>) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Spine) {
-            spine((ObjectList<SpineItemRef>) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.MetaData:
+                MetaData metaData = new MetaData();
+                metadata(metaData, name, attrs);
+                return metaData;
+            case ElementNames.Manifest:
+                ObjectList<ManifestItem> manifest = new ObjectList<ManifestItem>(ObjectType.Manifest, ManifestItem.class);
+                manifest(manifest, name, attrs);
+                return manifest;
+            case ElementNames.Spine:
+                ObjectList<SpineItemRef> spine = new ObjectList<SpineItemRef>(ObjectType.Spine, SpineItemRef.class);
+                spine(spine, name, attrs);
+                return spine;
         }
+        return null;
     }
 
     private void metadata(MetaData metaData, String name, Attributes attrs) {

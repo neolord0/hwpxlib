@@ -1,12 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.FontFamilyType;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LanguageType;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.Font;
 
 import java.util.ArrayList;
 
@@ -26,14 +22,6 @@ public class Fontfaces extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Fontfaces;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Fontface.equalElementName(name)) {
-            return new Fontface();
-        }
-        return null;
     }
 
     public int countOfFontface() {

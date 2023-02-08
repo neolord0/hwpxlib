@@ -1,10 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.CurrentSize;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
-import org.omg.PortableServer.POA;
 
 import java.util.ArrayList;
 
@@ -21,32 +18,6 @@ public class Container extends ShapeComponent<Container> {
     @Override
     public ObjectType objectType() {
         return ObjectType.Container;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Container.equalElementName(name)) {
-            return new Container();
-        } else if (ObjectType.Line.equalElementName(name)) {
-            return new Line();
-        } else if (ObjectType.Rect.equalElementName(name)) {
-            return new Rectangle();
-        } else if (ObjectType.Ellipse.equalElementName(name)) {
-            return new Ellipse();
-        } else if (ObjectType.Arc.equalElementName(name)) {
-            return new Arc();
-        } else if (ObjectType.Polygon.equalElementName(name)) {
-            return new Polygon();
-        } else if (ObjectType.Curve.equalElementName(name)) {
-            return new Curve();
-        } else if (ObjectType.ConnectLine.equalElementName(name)) {
-            return new ConnectLine();
-        } else if (ObjectType.Pic.equalElementName(name)) {
-            return new Picture();
-        } else if (ObjectType.OLE.equalElementName(name)) {
-            return new OLE();
-        }
-        return super.createChildWithElementName(name);
     }
 
     public int countOfChild() {

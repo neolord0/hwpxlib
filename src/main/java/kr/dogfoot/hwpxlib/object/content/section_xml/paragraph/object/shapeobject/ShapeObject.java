@@ -1,8 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DropCapStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumberingType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextFlowSide;
@@ -61,22 +58,6 @@ public abstract class ShapeObject<ChildType> extends RunItem {
      * 설명문
      */
     private ShapeComment shapeComment;
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.ShapeSz.equalElementName(name)) {
-            return new ShapeSize();
-        } else if (ObjectType.ShapePos.equalElementName(name)) {
-            return new ShapePosition();
-        } else if (ObjectType.OutMargin.equalElementName(name)) {
-            return new OutMargin();
-        } else if (ObjectType.Caption.equalElementName(name)) {
-            return new Caption();
-        } else if (ObjectType.ShapeComment.equalElementName(name)) {
-            return new ShapeComment();
-        }
-        return null;
-    }
 
     public String id() {
         return id;

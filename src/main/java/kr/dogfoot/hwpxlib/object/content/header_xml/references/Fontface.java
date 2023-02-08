@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LanguageType;
@@ -19,14 +18,6 @@ public class Fontface extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.Fontface;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.Font.equalElementName(name)) {
-            return new Font();
-        }
-        return null;
     }
 
     public LanguageType lang() {

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
@@ -25,32 +24,6 @@ public class RefList extends SwitchableObject {
     @Override
     public ObjectType objectType() {
         return ObjectType.RefList;
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.BorderFills.equalElementName(name)) {
-            return new ObjectList<BorderFill>(ObjectType.BorderFills, BorderFill.class);
-        } else if (ObjectType.CharProperties.equalElementName(name)) {
-            return new ObjectList<CharPr>(ObjectType.CharProperties, CharPr.class);
-        } else if (ObjectType.TabProperties.equalElementName(name)) {
-            return new ObjectList<TabPr>(ObjectType.TabProperties, TabPr.class);
-        } else if (ObjectType.Numberings.equalElementName(name)) {
-            return new ObjectList<Numbering>(ObjectType.Numberings, Numbering.class);
-        } else if (ObjectType.Bullets.equalElementName(name)) {
-            return new ObjectList<Bullet>(ObjectType.Bullets, Bullet.class);
-        } else if (ObjectType.ParaProperties.equalElementName(name)) {
-            return new ObjectList<ParaPr>(ObjectType.ParaProperties, ParaPr.class);
-        } else if (ObjectType.Styles.equalElementName(name)) {
-            return new ObjectList<Style>(ObjectType.Styles, Style.class);
-        } else if (ObjectType.MemoProperties.equalElementName(name)) {
-            return new ObjectList<MemoPr>(ObjectType.MemoProperties, MemoPr.class);
-        } else if (ObjectType.TrackChanges.equalElementName(name)) {
-            return new ObjectList<TrackChange>(ObjectType.TrackChanges, TrackChange.class);
-        } else if (ObjectType.TrackChangeAuthors.equalElementName(name)) {
-            return new ObjectList<TrackChangeAuthor>(ObjectType.TrackChangeAuthors, TrackChangeAuthor.class);
-        }
-        return null;
     }
 
     public Fontfaces fontfaces() {

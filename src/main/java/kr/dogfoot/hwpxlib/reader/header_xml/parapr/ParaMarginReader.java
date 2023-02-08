@@ -1,11 +1,9 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.ValueAndUnit;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.ParaPr;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.ParaMargin;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.util.ElementNames;
@@ -45,18 +43,30 @@ public class ParaMarginReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.Intent) {
-            valueAndUnit((ValueAndUnit) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Left) {
-            valueAndUnit((ValueAndUnit) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Right) {
-            valueAndUnit((ValueAndUnit) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Prev) {
-            valueAndUnit((ValueAndUnit) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Next) {
-            valueAndUnit((ValueAndUnit) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.Intent:
+                Intent intent = new Intent();
+                valueAndUnit(intent, name, attrs);
+                return intent;
+            case ElementNames.Left:
+                LeftMargin leftMargin = new LeftMargin();
+                valueAndUnit(leftMargin, name, attrs);
+                return leftMargin;
+            case ElementNames.Right:
+                RightMargin rightMargin = new RightMargin();
+                valueAndUnit(rightMargin, name, attrs);
+                return rightMargin;
+            case ElementNames.Prev:
+                PrevParaMargin prevParaMargin = new PrevParaMargin();
+                valueAndUnit(prevParaMargin, name, attrs);
+                return prevParaMargin;
+            case ElementNames.Next:
+                NextParaMargin nextParaMargin = new NextParaMargin();
+                valueAndUnit(nextParaMargin, name, attrs);
+                return nextParaMargin;
         }
+        return null;
     }
 
     private void valueAndUnit(ValueAndUnit valueAndUnit, String name, Attributes attrs) {

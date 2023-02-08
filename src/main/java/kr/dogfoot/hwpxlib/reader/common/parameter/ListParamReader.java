@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.common.parameter;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.parameter.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -53,18 +52,30 @@ public class ListParamReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.IntegerParam) {
-            integerParam((IntegerParam) child, name, attrs);
-        } else if (child.objectType() == ObjectType.StringParam) {
-            stringParam((StringParam) child, name, attrs);
-        } else if (child.objectType() == ObjectType.BooleanParam) {
-            booleanParam((BooleanParam) child, name, attrs);
-        } else if (child.objectType() == ObjectType.FloatParam) {
-            floatParam((FloatParam) child, name, attrs);
-        } else if (child.objectType() == ObjectType.ListParam) {
-            listParam((ListParam) child, name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.IntegerParam:
+                IntegerParam integerParam = new IntegerParam();
+                integerParam(integerParam, name, attrs);
+                return integerParam;
+            case ElementNames.StringParam:
+                StringParam stringParam = new StringParam();
+                stringParam(stringParam, name, attrs);
+                return stringParam;
+            case ElementNames.BooleanParam:
+                BooleanParam booleanParam = new BooleanParam();
+                booleanParam(booleanParam, name, attrs);
+                return booleanParam;
+            case ElementNames.FloatParam:
+                FloatParam floatParam = new FloatParam();
+                floatParam(floatParam, name, attrs);
+                return floatParam;
+            case ElementNames.ListParam:
+                ListParam listParam = new ListParam();
+                listParam(listParam, name, attrs);
+                return listParam;
         }
+        return null;
     }
 
     private void integerParam(IntegerParam integerParam, String name, Attributes attrs) {

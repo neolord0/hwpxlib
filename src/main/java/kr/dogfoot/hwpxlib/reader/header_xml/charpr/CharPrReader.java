@@ -1,15 +1,14 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.charpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SymMarkSort;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.CharPr;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr.*;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
+import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
@@ -118,38 +117,70 @@ public class CharPrReader extends ElementReader {
     }
 
     @Override
-    public void childElementInSwitch(HWPXObject child, String name, Attributes attrs) {
-        if (child.objectType() == ObjectType.FontRef) {
-            fontRef((FontRef) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Ratio) {
-            ratio((Ratio) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Spacing) {
-            spacing((Spacing) child, name, attrs);
-        } else if (child.objectType() == ObjectType.RelSz) {
-            relSz((RelSz) child, name, attrs);
-        } else if (child.objectType() == ObjectType.CharOffset) {
-            offset((CharOffset) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Bold) {
-            xmlFileReader().noAttributeNoChild(name, attrs);
-        } else if (child.objectType() == ObjectType.Italic) {
-            xmlFileReader().noAttributeNoChild(name, attrs);
-        } else if (child.objectType() == ObjectType.Underline) {
-            underline((Underline) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Strikeout) {
-            strikeout((Strikeout) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Outline) {
-            outline((Outline) child, name, attrs);
-        } else if (child.objectType() == ObjectType.CharShadow) {
-            shadow((CharShadow) child, name, attrs);
-        } else if (child.objectType() == ObjectType.Emboss) {
-            xmlFileReader().noAttributeNoChild(name, attrs);
-        } else if (child.objectType() == ObjectType.Engrave) {
-            xmlFileReader().noAttributeNoChild(name, attrs);
-        } else if (child.objectType() == ObjectType.Supscript) {
-            xmlFileReader().noAttributeNoChild(name, attrs);
-        } else if (child.objectType() == ObjectType.Subscript) {
-            xmlFileReader().noAttributeNoChild(name, attrs);
+    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
+        switch (name) {
+            case ElementNames.FontRef:
+                FontRef fontRef = new FontRef();
+                fontRef(fontRef, name, attrs);
+                return fontRef;
+            case ElementNames.Ratio:
+                Ratio ratio = new Ratio();
+                ratio(ratio, name, attrs);
+                return ratio;
+            case ElementNames.Spacing:
+                Spacing spacing = new Spacing();
+                spacing(spacing, name, attrs);
+                return spacing;
+            case ElementNames.RelSz:
+                RelSz relSz = new RelSz();
+                relSz(relSz, name, attrs);
+                return relSz;
+            case ElementNames.CharOffset:
+                CharOffset offset = new CharOffset();
+                offset(offset, name, attrs);
+                return offset;
+            case ElementNames.Bold:
+                Bold bold = new Bold();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return bold;
+            case ElementNames.Italic:
+                Italic italic = new Italic();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return italic;
+            case ElementNames.Underline:
+                Underline underline = new Underline();
+                underline(underline, name, attrs);
+                return underline;
+            case ElementNames.Strikeout:
+                Strikeout strikeout = new Strikeout();
+                strikeout(strikeout, name, attrs);
+                return strikeout;
+            case ElementNames.Outline:
+                Outline outline = new Outline();
+                outline(outline, name, attrs);
+                return outline;
+            case ElementNames.CharShadow:
+                CharShadow shadow = new CharShadow();
+                shadow(shadow, name, attrs);
+                return shadow;
+            case ElementNames.Emboss:
+                Emboss emboss = new Emboss();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return emboss;
+            case ElementNames.Engrave:
+                Engrave engrave = new Engrave();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return engrave;
+            case ElementNames.Supscript:
+                Supscript supscript = new Supscript();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return supscript;
+            case ElementNames.Subscript:
+                Subscript subscript = new Subscript();
+                xmlFileReader().noAttributeNoChild(name, attrs);
+                return subscript;
         }
+        return null;
     }
 
 

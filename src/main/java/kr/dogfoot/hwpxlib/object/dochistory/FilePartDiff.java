@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.dochistory;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 import java.util.ArrayList;
@@ -15,18 +13,6 @@ public abstract class FilePartDiff<ChildType> extends SwitchableObject {
 
     public FilePartDiff() {
         childDiffList = new ArrayList<DiffItem>();
-    }
-
-    @Override
-    public HWPXObject createChildWithElementName(String name) {
-        if (ObjectType.InsertDiff.equalElementName(name)) {
-            return new InsertDiff();
-        } else if (ObjectType.UpdateDiff.equalElementName(name)) {
-            return new UpdateDiff();
-        } else if (ObjectType.DeleteDiff.equalElementName(name)) {
-            return new DeleteDiff();
-        }
-        return null;
     }
 
     public String href() {
