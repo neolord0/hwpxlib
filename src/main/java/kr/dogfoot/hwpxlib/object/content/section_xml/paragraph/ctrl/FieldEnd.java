@@ -1,0 +1,58 @@
+package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
+
+import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
+
+/**
+ * 필드 끝
+ */
+public class FieldEnd extends CtrlItem {
+    /**
+     * 짝이 되는 <hp:fieldBegin>의 id
+     */
+    private String beginIDRef;
+    /**
+     * 짝이 되는 <hp:fieldBegin>의 fieldid
+     */
+    private String fieldid;
+
+    public FieldEnd() {
+    }
+
+    @Override
+    public ObjectType objectType() {
+        return ObjectType.FieldEnd;
+    }
+
+    @Override
+    public HWPXObject createChildWithElementName(String name) {
+        return null;    // no child
+    }
+
+    public String beginIDRef() {
+        return beginIDRef;
+    }
+
+    public void beginIDRef(String beginIDRef) {
+        this.beginIDRef = beginIDRef;
+    }
+
+    public FieldEnd beginIDRefAnd(String beginIDRef) {
+        this.beginIDRef = beginIDRef;
+        return this;
+    }
+
+    public String fieldid() {
+        return fieldid;
+    }
+
+    public void fieldid(String fieldid) {
+        this.fieldid = fieldid;
+    }
+
+    public FieldEnd fieldidAnd(String fieldid) {
+        this.fieldid = fieldid;
+        return this;
+    }
+}

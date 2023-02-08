@@ -1,0 +1,36 @@
+package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
+
+/**
+ * 라인 끝 처리
+ */
+public enum LineCap {
+    /**
+     * 둥글게
+     */
+    ROUND("ROUND"),
+    /**
+     * 평평하게
+     */
+    FLAT("FLAT");
+
+    private String str;
+
+    LineCap(String str) {
+        this.str = str;
+    }
+
+    public String str() {
+        return str;
+    }
+
+    public static LineCap fromString(String str) {
+        if (str != null) {
+            for (LineCap item : values()) {
+                if (item.str.equals(str)) {
+                    return item;
+                }
+            }
+        }
+        return null;
+    }
+}

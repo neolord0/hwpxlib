@@ -1,0 +1,48 @@
+package kr.dogfoot.hwpxlib.object.root;
+
+
+import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
+
+/**
+ * <config-item/>
+ */
+public class ConfigItem extends HWPXObject {
+    private String name;
+    private String type;
+
+    public ConfigItem() {
+    }
+
+    @Override
+    public ObjectType objectType() {
+        return ObjectType.ConfigItem;
+    }
+
+    public String name() {
+        return name;
+    }
+
+    public void name(String name) {
+        this.name = name;
+    }
+
+    public ConfigItem nameAnd(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public String type() {
+        return type;
+    }
+
+    public void type(String type) {
+        this.type = type;
+    }
+
+    public ConfigItem typeAnd(String type) {
+        this.type = type;
+        return this;
+    }
+}
+

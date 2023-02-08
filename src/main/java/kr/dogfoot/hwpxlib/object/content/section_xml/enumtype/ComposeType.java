@@ -1,0 +1,38 @@
+package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
+
+/**
+ * 글자 겹침 종류
+ */
+public enum ComposeType {
+    /**
+     * 나열하기
+     */
+    SPREAD("SPREAD"),
+    /**
+     * 겹치기
+     */
+    OVERLAP("OVERLAP");
+
+
+    private String str;
+
+    ComposeType(String str) {
+        this.str = str;
+    }
+
+    public String str() {
+        return str;
+    }
+
+    public static ComposeType fromString(String str) {
+        if (str != null) {
+            String STR = str.toUpperCase();
+            for (ComposeType item : values()) {
+                if (item.str.equals(STR)) {
+                    return item;
+                }
+            }
+        }
+        return null;
+    }
+}

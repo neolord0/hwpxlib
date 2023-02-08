@@ -1,0 +1,29 @@
+package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
+
+public enum TargetProgramSort {
+    HWP201X("HWP201X"),
+    HWP200X("HWP200X"),
+    MS_WORD("MS_WORD");
+
+    private String str;
+
+    TargetProgramSort(String str) {
+        this.str = str;
+    }
+
+    public String str() {
+        return str;
+    }
+
+    public static TargetProgramSort fromString(String str) {
+        if (str != null) {
+            String STR = str.toUpperCase();
+            for (TargetProgramSort item : values()) {
+                if (item.str.equals(STR)) {
+                    return item;
+                }
+            }
+        }
+        return null;
+    }
+}
