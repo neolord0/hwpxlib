@@ -7,7 +7,7 @@ public class LeftBorder extends Border<LeftBorder> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.LeftBorder;
+    public ObjectType _objectType() {
+        return ObjectType.hh_leftBorder;
     }
 }

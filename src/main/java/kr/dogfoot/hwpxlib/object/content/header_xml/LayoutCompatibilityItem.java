@@ -11,8 +11,8 @@ public class LayoutCompatibilityItem extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.LayoutCompatibilityItem;
+    public ObjectType _objectType() {
+        return ObjectType.each_layoutCompatibilityItem;
     }
 
     public String name() {

@@ -29,8 +29,8 @@ public class Video extends ShapeComponent<Video> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Video;
+    public ObjectType _objectType() {
+        return ObjectType.hp_video;
     }
 
     public VideoType videotype() {

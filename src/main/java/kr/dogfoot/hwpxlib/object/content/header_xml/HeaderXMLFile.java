@@ -29,8 +29,8 @@ public class HeaderXMLFile extends XMLFile {
 
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Headers_XMLFile;
+    public ObjectType _objectType() {
+        return ObjectType.hh_head;
     }
 
     public String version() {
@@ -88,7 +88,7 @@ public class HeaderXMLFile extends XMLFile {
     }
 
     public void createForbiddenWordList() {
-        forbiddenWordList = new ObjectList<ForbiddenWord>(ObjectType.ForbiddenWordList, ForbiddenWord.class);
+        forbiddenWordList = new ObjectList<ForbiddenWord>(ObjectType.hh_forbiddenWordList, ForbiddenWord.class);
     }
 
     public void removeForbiddenWordList() {

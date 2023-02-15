@@ -7,7 +7,7 @@ public class HeadDiff extends FilePartDiff<HeadDiff> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.HeadDiff;
+    public ObjectType _objectType() {
+        return ObjectType.hhs_headDiff;
     }
 }

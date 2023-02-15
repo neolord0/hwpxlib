@@ -26,8 +26,8 @@ public class LineSpacing extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.LineSpacing;
+    public ObjectType _objectType() {
+        return ObjectType.hh_lineSpacing;
     }
 
     public LineSpacingType type() {

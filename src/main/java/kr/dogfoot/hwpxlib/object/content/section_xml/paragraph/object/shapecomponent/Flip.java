@@ -20,8 +20,8 @@ public class Flip extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Flip;
+    public ObjectType _objectType() {
+        return ObjectType.hp_flip;
     }
 
     public Boolean horizontal() {

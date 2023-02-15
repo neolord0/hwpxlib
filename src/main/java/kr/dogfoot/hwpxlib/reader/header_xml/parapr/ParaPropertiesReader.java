@@ -20,7 +20,7 @@ public class ParaPropertiesReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ParaPr:
+            case ElementNames.hh_paraPr:
                 paraPr(paraProperties.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class ParaPropertiesReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ParaPr:
+            case ElementNames.hh_paraPr:
                 ParaPr paraPr = new ParaPr();
                 paraPr(paraPr, name, attrs);
                 return paraPr;

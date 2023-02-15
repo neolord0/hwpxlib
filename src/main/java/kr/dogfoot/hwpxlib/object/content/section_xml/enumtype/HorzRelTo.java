@@ -3,7 +3,8 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 public enum HorzRelTo {
     PAPER("PAPER"),
     PAGE("PAGE"),
-    PARA("PARA");
+    PARA("PARA"),
+    COLUMN("COLUMN");
 
     private String str;
 

@@ -16,8 +16,8 @@ public class MasterPage extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.MasterPage;
+    public ObjectType _objectType() {
+        return ObjectType.hp_masterPage;
     }
 
     public String idRef() {

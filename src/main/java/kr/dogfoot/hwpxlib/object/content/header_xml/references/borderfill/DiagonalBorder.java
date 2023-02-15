@@ -7,7 +7,7 @@ public class DiagonalBorder extends Border<BottomBorder> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Diagonal;
+    public ObjectType _objectType() {
+        return ObjectType.hh_diagonal;
     }
 }

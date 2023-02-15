@@ -20,8 +20,8 @@ public class ImageDim extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ImgDim;
+    public ObjectType _objectType() {
+        return ObjectType.hp_imgDim;
     }
 
     public Integer dimwidth() {

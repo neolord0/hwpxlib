@@ -9,8 +9,8 @@ public class BooleanParam extends Param<BooleanParam> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.BooleanParam;
+    public ObjectType _objectType() {
+        return ObjectType.hp_booleanParam;
     }
 
     public Boolean value() {

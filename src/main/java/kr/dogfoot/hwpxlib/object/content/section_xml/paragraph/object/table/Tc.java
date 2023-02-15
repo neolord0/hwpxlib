@@ -61,8 +61,8 @@ public class Tc extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Tc;
+    public ObjectType _objectType() {
+        return ObjectType.hp_tc;
     }
 
     public String name() {

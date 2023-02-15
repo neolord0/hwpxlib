@@ -22,7 +22,7 @@ public class ContainerReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch(name) {
-            case ElementNames.RootFiles:
+            case ElementNames.ocf_rootfiles:
                 containerXMLFile.createRootFiles();
                 rootFiles(containerXMLFile.rootFiles(), name, attrs);
                 break;
@@ -32,8 +32,8 @@ public class ContainerReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch(name) {
-            case ElementNames.RootFiles:
-                ObjectList<RootFile> rootFiles = new ObjectList<RootFile>(ObjectType.RootFiles, RootFile.class);
+            case ElementNames.ocf_rootfiles:
+                ObjectList<RootFile> rootFiles = new ObjectList<RootFile>(ObjectType.ocf_rootfiles, RootFile.class);
                 rootFiles(rootFiles, name, attrs);
                 return rootFiles;
         }

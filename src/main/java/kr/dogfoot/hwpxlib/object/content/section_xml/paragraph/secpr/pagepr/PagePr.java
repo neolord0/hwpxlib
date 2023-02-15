@@ -31,8 +31,8 @@ public class PagePr extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.PagePr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_pagePr;
     }
 
     public PageDirection landscape() {

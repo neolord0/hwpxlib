@@ -11,7 +11,7 @@ public class TextMargin extends LeftRightTopBottom {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TextMargin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_textMargin;
     }
 }

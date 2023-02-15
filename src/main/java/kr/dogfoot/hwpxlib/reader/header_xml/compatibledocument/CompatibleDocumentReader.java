@@ -34,7 +34,7 @@ public class CompatibleDocumentReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.LayoutCompatibility:
+            case ElementNames.hh_layoutCompatibility:
                 compatibleDocument.createLayoutCompatibility();
                 layoutCompatibility(compatibleDocument.layoutCompatibility(), name, attrs);
                 break;
@@ -44,8 +44,8 @@ public class CompatibleDocumentReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.LayoutCompatibility:
-                ObjectList<LayoutCompatibilityItem> layoutCompatibility = new ObjectList<LayoutCompatibilityItem>(ObjectType.LayoutCompatibility, LayoutCompatibilityItem.class);
+            case ElementNames.hh_layoutCompatibility:
+                ObjectList<LayoutCompatibilityItem> layoutCompatibility = new ObjectList<LayoutCompatibilityItem>(ObjectType.hh_layoutCompatibility, LayoutCompatibilityItem.class);
                 layoutCompatibility(layoutCompatibility, name, attrs);
                 return layoutCompatibility;
         }

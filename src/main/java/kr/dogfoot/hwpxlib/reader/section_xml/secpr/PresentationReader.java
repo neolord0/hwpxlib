@@ -52,7 +52,7 @@ public class PresentationReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.FillBrush:
+            case ElementNames.hc_fillBrush:
                 presentation.createFillBrush();
                 fillBrush(presentation.fillBrush(), name, attrs);
                 break;
@@ -62,7 +62,7 @@ public class PresentationReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.FillBrush:
+            case ElementNames.hc_fillBrush:
                 FillBrush fillBrush = new FillBrush();
                 fillBrush(fillBrush, name, attrs);
                 return fillBrush;

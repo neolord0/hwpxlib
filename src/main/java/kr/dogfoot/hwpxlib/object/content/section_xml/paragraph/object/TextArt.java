@@ -43,8 +43,8 @@ public class TextArt extends DrawingObject<TextArt> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TextArt;
+    public ObjectType _objectType() {
+        return ObjectType.hp_textart;
     }
 
     public String text() {
@@ -65,7 +65,7 @@ public class TextArt extends DrawingObject<TextArt> {
     }
 
     public void createPt0() {
-        pt0 = new Point(ObjectType.Pt0);
+        pt0 = new Point(ObjectType.hc_pt0);
     }
 
     public void removePt0() {
@@ -77,7 +77,7 @@ public class TextArt extends DrawingObject<TextArt> {
     }
 
     public void createPt1() {
-        pt1 = new Point(ObjectType.Pt1);
+        pt1 = new Point(ObjectType.hc_pt1);
     }
 
     public void removePt1() {
@@ -89,7 +89,7 @@ public class TextArt extends DrawingObject<TextArt> {
     }
 
     public void createPt2() {
-        pt2 = new Point(ObjectType.Pt2);
+        pt2 = new Point(ObjectType.hc_pt2);
     }
 
     public void removePt2() {
@@ -101,7 +101,7 @@ public class TextArt extends DrawingObject<TextArt> {
     }
 
     public void createPt3() {
-        pt3 = new Point(ObjectType.Pt3);
+        pt3 = new Point(ObjectType.hc_pt3);
     }
 
     public void removePt3() {
@@ -125,7 +125,7 @@ public class TextArt extends DrawingObject<TextArt> {
     }
 
     public void createOutline() {
-        outline = new ObjectList<Point>(ObjectType.TextArtOutline, Point.class);
+        outline = new ObjectList<Point>(ObjectType.hp_outline, Point.class);
     }
 
     public void removeOutline() {

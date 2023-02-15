@@ -41,27 +41,27 @@ public class HeadReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.BeginNum:
+            case ElementNames.hh_beginNum:
                 headerXMLFile.createBeginNum();
                 beginNum(headerXMLFile.beginNum(), name, attrs);
                 break;
-            case ElementNames.RefList:
+            case ElementNames.hh_refList:
                 headerXMLFile.createRefList();
                 refList(headerXMLFile.refList(), name, attrs);
                 break;
-            case ElementNames.ForbiddenWordList:
+            case ElementNames.hh_forbiddenWordList:
                 headerXMLFile.createForbiddenWordList();
                 forbiddenWordList(headerXMLFile.forbiddenWordList(), name, attrs);
                 break;
-            case ElementNames.CompatibleDocument:
+            case ElementNames.hh_compatibleDocument:
                 headerXMLFile.createCompatibleDocument();
                 compatibleDocument(headerXMLFile.compatibleDocument(), name, attrs);
                 break;
-            case ElementNames.DocOption:
+            case ElementNames.hh_docOption:
                 headerXMLFile.createDocOption();
                 docOption(headerXMLFile.docOption(), name, attrs);
                 break;
-            case ElementNames.TrackChangeConfig:
+            case ElementNames.hh_trackchageConfig:
                 headerXMLFile.createTrackChangeConfig();
                 trackChangeConfig(headerXMLFile.trackChangeConfig(), name, attrs);
                 break;
@@ -71,27 +71,27 @@ public class HeadReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.BeginNum:
+            case ElementNames.hh_beginNum:
                 BeginNum beginNum = new BeginNum();
                 beginNum(beginNum, name, attrs);
                 return beginNum;
-            case ElementNames.RefList:
+            case ElementNames.hh_refList:
                 RefList refList = new RefList();
                 refList(refList, name, attrs);
                 return refList;
-            case ElementNames.ForbiddenWordList:
-                ObjectList<ForbiddenWord> forbiddenWordList = new ObjectList<ForbiddenWord>(ObjectType.ForbiddenWordList, ForbiddenWord.class);
+            case ElementNames.hh_forbiddenWordList:
+                ObjectList<ForbiddenWord> forbiddenWordList = new ObjectList<ForbiddenWord>(ObjectType.hh_forbiddenWordList, ForbiddenWord.class);
                 forbiddenWordList(forbiddenWordList, name, attrs);
                 return forbiddenWordList;
-            case ElementNames.CompatibleDocument:
+            case ElementNames.hh_compatibleDocument:
                 CompatibleDocument compatibleDocument = new CompatibleDocument();
                 compatibleDocument(compatibleDocument, name, attrs);
                 return compatibleDocument;
-            case ElementNames.DocOption:
+            case ElementNames.hh_docOption:
                 DocOption docOption = new DocOption();
                 docOption(docOption, name, attrs);
                 return docOption;
-            case ElementNames.TrackChangeConfig:
+            case ElementNames.hh_trackchageConfig:
                 TrackChangeConfig trackChangeConfig = new TrackChangeConfig();
                 trackChangeConfig(trackChangeConfig, name, attrs);
                 return trackChangeConfig;

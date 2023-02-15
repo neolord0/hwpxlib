@@ -54,8 +54,8 @@ public class EffectsShadow extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EffectsShadow;
+    public ObjectType _objectType() {
+        return ObjectType.hp_shadow_for_effects;
     }
 
     public ShadowStyle style() {

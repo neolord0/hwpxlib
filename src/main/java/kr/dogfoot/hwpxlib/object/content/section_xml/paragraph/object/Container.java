@@ -16,8 +16,8 @@ public class Container extends ShapeComponent<Container> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Container;
+    public ObjectType _objectType() {
+        return ObjectType.hp_container;
     }
 
     public int countOfChild() {
@@ -90,6 +90,12 @@ public class Container extends ShapeComponent<Container> {
         OLE ole = new OLE();
         childList.add(ole);
         return ole;
+    }
+
+    public TextArt addNewTextArt() {
+        TextArt textArt = new TextArt();
+        childList.add(textArt);
+        return textArt;
     }
 
     public void insertChild(ShapeComponent child, int position) {

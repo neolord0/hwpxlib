@@ -10,8 +10,8 @@ public class DocOption extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.DocOption;
+    public ObjectType _objectType() {
+        return ObjectType.hh_docOption;
     }
 
     public LinkInfo linkInfo() {

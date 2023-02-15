@@ -36,8 +36,8 @@ public class BeginNum extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.BeginNum;
+    public ObjectType _objectType() {
+        return ObjectType.hh_beginNum;
     }
 
     public Integer page() {

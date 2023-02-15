@@ -9,8 +9,8 @@ public class FloatParam extends Param<FloatParam> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FloatParam;
+    public ObjectType _objectType() {
+        return ObjectType.hp_floatParam;
     }
 
     public Float value() {

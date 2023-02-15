@@ -23,23 +23,23 @@ public class FootNotePrReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.AutoNumFormat:
+            case ElementNames.hp_autoNumFormat:
                 footNotePr.createAutoNumFormat();
                 autoNumFormat(footNotePr.autoNumFormat(), name, attrs);
                 break;
-            case ElementNames.NoteLine:
+            case ElementNames.hp_noteLine:
                 footNotePr.createNoteLine();
                 noteLine(footNotePr.noteLine(), name, attrs);
                 break;
-            case ElementNames.NoteSpacing:
+            case ElementNames.hp_noteSpacing:
                 footNotePr.createNoteSpacing();
                 noteSpacing(footNotePr.noteSpacing(), name, attrs);
                 break;
-            case ElementNames.NoteNumbering:
+            case ElementNames.hp_numbering:
                 footNotePr.createNumbering();
                 numbering(footNotePr.numbering(), name, attrs);
                 break;
-            case ElementNames.NotePlacement:
+            case ElementNames.hp_placement:
                 footNotePr.createPlacement();
                 placement(footNotePr.placement(), name, attrs);
                 break;
@@ -49,23 +49,23 @@ public class FootNotePrReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.AutoNumFormat:
+            case ElementNames.hp_autoNumFormat:
                 AutoNumFormat autoNumFormat = new AutoNumFormat();
                 autoNumFormat(autoNumFormat, name, attrs);
                 return autoNumFormat;
-            case ElementNames.NoteLine:
+            case ElementNames.hp_noteLine:
                 NoteLine noteLine = new NoteLine();
                 noteLine(noteLine, name, attrs);
                 return noteLine;
-            case ElementNames.NoteSpacing:
+            case ElementNames.hp_noteSpacing:
                 NoteSpacing noteSpacing = new NoteSpacing();
                 noteSpacing(noteSpacing, name, attrs);
                 return noteSpacing;
-            case ElementNames.NoteNumbering:
+            case ElementNames.hp_numbering:
                 FootNoteNumbering numbering = new FootNoteNumbering();
                 numbering(numbering, name, attrs);
                 return numbering;
-            case ElementNames.NotePlacement:
+            case ElementNames.hp_placement:
                 FootNotePlacement placement = new FootNotePlacement();
                 placement(placement, name, attrs);
                 return placement;

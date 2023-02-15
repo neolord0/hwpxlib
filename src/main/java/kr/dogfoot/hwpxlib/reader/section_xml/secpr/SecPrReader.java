@@ -64,41 +64,41 @@ public class SecPrReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Grid:
+            case ElementNames.hp_grid:
                 secPr.createGrid();
                 grid(secPr.grid(), name, attrs);
                 break;
-            case ElementNames.StartNum:
+            case ElementNames.hp_startNum:
                 secPr.createStartNum();
                 startNum(secPr.startNum(), name, attrs);
                 break;
-            case ElementNames.Visibility:
+            case ElementNames.hp_visibility:
                 secPr.createVisibility();
                 visibility(secPr.visibility(), name, attrs);
                 break;
-            case ElementNames.LineNumberShape:
+            case ElementNames.hp_lineNumberShape:
                 secPr.createLineNumberShape();
                 lineNumberShape(secPr.lineNumberShape(), name, attrs);
                 break;
-            case ElementNames.PagePr:
+            case ElementNames.hp_pagePr:
                 secPr.createPagePr();
                 pagePr(secPr.pagePr(), name, attrs);
                 break;
-            case ElementNames.FootNotePr:
+            case ElementNames.hp_footNotePr:
                 secPr.createFootNotePr();
                 footNotePr(secPr.footNotePr(), name, attrs);
                 break;
-            case ElementNames.EndNotePr:
+            case ElementNames.hp_endNotePr:
                 secPr.createEndNotePr();
                 endNotePr(secPr.endNotePr(), name, attrs);
                 break;
-            case ElementNames.PageBorderFill:
+            case ElementNames.hp_pageBorderFill:
                 pageBorderFill(secPr.addNewPageBorderFill(), name, attrs);
                 break;
-            case ElementNames.MasterPage:
+            case ElementNames.hp_masterPage:
                 masterPage(secPr.addNewMasterPage(), name, attrs);
                 break;
-            case ElementNames.Presentation:
+            case ElementNames.hp_presentation:
                 secPr.createPresentation();
                 presentation(secPr.presentation(), name, attrs);
                 break;
@@ -108,43 +108,43 @@ public class SecPrReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Grid:
+            case ElementNames.hp_grid:
                 Grid grid = new Grid();
                 grid(grid, name, attrs);
                 return grid;
-            case ElementNames.StartNum:
+            case ElementNames.hp_startNum:
                 StartNum startNum = new StartNum();
                 startNum(startNum, name, attrs);
                 return startNum;
-            case ElementNames.Visibility:
+            case ElementNames.hp_visibility:
                 Visibility visibility = new Visibility();
                 visibility(visibility, name, attrs);
                 return visibility;
-            case ElementNames.LineNumberShape:
+            case ElementNames.hp_lineNumberShape:
                 LineNumberShape lineNumberShape = new LineNumberShape();
                 lineNumberShape(lineNumberShape, name, attrs);
                 return lineNumberShape;
-            case ElementNames.PagePr:
+            case ElementNames.hp_pagePr:
                 PagePr pagePr = new PagePr();
                 pagePr(pagePr, name, attrs);
                 return pagePr;
-            case ElementNames.FootNotePr:
+            case ElementNames.hp_footNotePr:
                 FootNotePr footNotePr = new FootNotePr();
                 footNotePr(footNotePr, name, attrs);
                 return footNotePr;
-            case ElementNames.EndNotePr:
+            case ElementNames.hp_endNotePr:
                 EndNotePr endNotePr = new EndNotePr();
                 endNotePr(endNotePr, name, attrs);
                 return endNotePr;
-            case ElementNames.PageBorderFill:
+            case ElementNames.hp_pageBorderFill:
                 PageBorderFill pageBorderFill = new PageBorderFill();
                 pageBorderFill(pageBorderFill, name, attrs);
                 return pageBorderFill;
-            case ElementNames.MasterPage:
+            case ElementNames.hp_masterPage:
                 MasterPage masterPage = new MasterPage();
                 masterPage(masterPage, name, attrs);
                 return masterPage;
-            case ElementNames.Presentation:
+            case ElementNames.hp_presentation:
                 Presentation presentation = new Presentation();
                 presentation(presentation, name, attrs);
                 return presentation;

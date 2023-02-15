@@ -33,8 +33,8 @@ public class Image extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Img;
+    public ObjectType _objectType() {
+        return ObjectType.hc_img;
     }
 
     public String binaryItemIDRef() {

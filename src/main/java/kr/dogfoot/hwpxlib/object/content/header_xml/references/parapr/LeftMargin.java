@@ -11,7 +11,7 @@ public class LeftMargin extends ValueAndUnit<LeftMargin> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Left;
+    public ObjectType _objectType() {
+        return ObjectType.hc_left;
     }
 }

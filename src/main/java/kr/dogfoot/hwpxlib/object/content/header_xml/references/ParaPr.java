@@ -69,8 +69,8 @@ public class ParaPr extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ParaPr;
+    public ObjectType _objectType() {
+        return ObjectType.hh_paraPr;
     }
 
     public String id() {

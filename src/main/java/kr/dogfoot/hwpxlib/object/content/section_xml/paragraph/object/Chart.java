@@ -17,8 +17,8 @@ public class Chart extends ShapeObject<Chart> {
     private String chartIDRef;
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Chart;
+    public ObjectType _objectType() {
+        return ObjectType.hp_chart;
     }
 
     public Float version() {

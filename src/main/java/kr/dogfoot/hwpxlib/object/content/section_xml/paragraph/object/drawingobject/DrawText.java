@@ -30,8 +30,8 @@ public class DrawText extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.DrawText;
+    public ObjectType _objectType() {
+        return ObjectType.hp_drawText;
     }
 
     public Integer lastWidth() {

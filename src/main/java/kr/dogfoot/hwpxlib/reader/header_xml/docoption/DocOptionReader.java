@@ -20,7 +20,7 @@ public class DocOptionReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.LinkInfo:
+            case ElementNames.hh_linkinfo:
                 docOption.createLinkInfo();
                 linkInfo(docOption.linkInfo(), name, attrs);
                 break;
@@ -30,7 +30,7 @@ public class DocOptionReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.LinkInfo:
+            case ElementNames.hh_linkinfo:
                 LinkInfo linkInfo = new LinkInfo();
                 linkInfo(linkInfo, name, attrs);
                 return linkInfo;

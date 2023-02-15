@@ -28,8 +28,8 @@ public class EndPoint extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EndPt;
+    public ObjectType _objectType() {
+        return ObjectType.hc_endPt;
     }
 
     public Integer x() {

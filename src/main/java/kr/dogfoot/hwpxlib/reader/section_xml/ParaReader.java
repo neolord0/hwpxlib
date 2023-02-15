@@ -56,10 +56,10 @@ public class ParaReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Run:
+            case ElementNames.hp_run:
                 run(para.addNewRun(), name, attrs);
                 break;
-            case ElementNames.LineSegArray:
+            case ElementNames.hp_linesegarray:
                 para.createLineSegArray();
                 lineSegArray(para.lineSegArray(), name, attrs);
                 break;
@@ -70,12 +70,12 @@ public class ParaReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Run:
+            case ElementNames.hp_run:
                 Run run = new Run();
                 run(run, name, attrs);
                 return run;
-            case ElementNames.LineSegArray:
-                ObjectList<LineSeg> lineSegArray = new ObjectList<LineSeg>(ObjectType.LineSegArray, LineSeg.class);
+            case ElementNames.hp_linesegarray:
+                ObjectList<LineSeg> lineSegArray = new ObjectList<LineSeg>(ObjectType.hp_linesegarray, LineSeg.class);
                 lineSegArray(lineSegArray, name, attrs);
                 return lineSegArray;
         }

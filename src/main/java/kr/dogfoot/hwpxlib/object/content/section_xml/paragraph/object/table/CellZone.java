@@ -32,8 +32,8 @@ public class CellZone extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CellZone;
+    public ObjectType _objectType() {
+        return ObjectType.hp_cellzone;
     }
 
     public Short startRowAddr() {

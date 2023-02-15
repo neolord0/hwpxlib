@@ -65,8 +65,8 @@ public class Table extends ShapeObject<Table> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Tbl;
+    public ObjectType _objectType() {
+        return ObjectType.hp_tbl;
     }
 
     public TablePageBreak pageBreak() {
@@ -177,7 +177,7 @@ public class Table extends ShapeObject<Table> {
     }
 
     public void createCellzoneList() {
-        cellzoneList = new ObjectList<CellZone>(ObjectType.CellZoneList, CellZone.class);
+        cellzoneList = new ObjectList<CellZone>(ObjectType.hp_cellzoneList, CellZone.class);
     }
 
     public void removeCellzoneList() {

@@ -7,7 +7,7 @@ public class BodyDiff extends FilePartDiff<BodyDiff> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.BodyDiff;
+    public ObjectType _objectType() {
+        return ObjectType.hhs_bodyDiff;
     }
 }

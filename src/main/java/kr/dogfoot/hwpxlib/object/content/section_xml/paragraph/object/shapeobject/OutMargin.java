@@ -11,7 +11,7 @@ public class OutMargin extends LeftRightTopBottom<OutMargin> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.OutMargin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_outMargin;
     }
 }

@@ -11,7 +11,7 @@ public class Italic extends NoAttributeNoChild<Italic> {
     }
 
     @Override
-    public ObjectType objectType() {
+    public ObjectType _objectType() {
         return ObjectType.Italic;
     }
 }

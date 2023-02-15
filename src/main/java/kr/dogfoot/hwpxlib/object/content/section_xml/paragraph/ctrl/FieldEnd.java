@@ -20,8 +20,8 @@ public class FieldEnd extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FieldEnd;
+    public ObjectType _objectType() {
+        return ObjectType.hp_fieldEnd;
     }
 
     public String beginIDRef() {

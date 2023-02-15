@@ -4,7 +4,7 @@ import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 public class Default extends InSwitchObject {
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Default;
+    public ObjectType _objectType() {
+        return ObjectType.hp_default;
     }
 }

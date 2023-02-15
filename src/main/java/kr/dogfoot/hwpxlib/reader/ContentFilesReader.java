@@ -2,6 +2,7 @@ package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.XMLFileReader;
@@ -9,6 +10,7 @@ import kr.dogfoot.hwpxlib.reader.header_xml.HeadReader;
 import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SecReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.SettingsReader;
+import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
@@ -35,7 +37,6 @@ public class ContentFilesReader extends XMLFileReader {
     public void read(HWPXFile hwpxFile, String filepath, ZipFile zipFile) throws ParserConfigurationException, IOException, SAXException {
         this.hwpxFile = hwpxFile;
         currentEntryReader = null;
-
         read(zipFile, filepath);
     }
 
@@ -44,26 +45,29 @@ public class ContentFilesReader extends XMLFileReader {
         if (currentEntryReader == null) {
             topEntryName = name;
 
-            if (ObjectType.Headers_XMLFile.equalElementName(name)) {
-                ((HeadReader) setCurrentEntryReader(ElementReaderSort.Head))
-                        .headerXMLFile(hwpxFile.headerXMLFile());
+            switch (name) {
+                case ElementNames.hh_head:
+                    ((HeadReader) setCurrentEntryReader(ElementReaderSort.Head))
+                            .headerXMLFile(hwpxFile.headerXMLFile());
+                    super.startElement(uri, localName, name, attrs);
+                    break;
+                case ElementNames.hs_sec:
+                    ((SecReader) setCurrentEntryReader(ElementReaderSort.Sec))
+                            .sectionXMLFile(hwpxFile.sectionXMLFileList().addNew());
+                    super.startElement(uri, localName, name, attrs);
+                    break;
+                case ElementNames.masterPage:
+                    ((MasterPageReader) setCurrentEntryReader(ElementReaderSort.MasterPage))
+                            .masterPageXMLFile(hwpxFile.masterPageXMLFileList().addNew());
 
-                super.startElement(uri, localName, name, attrs);
-            } else if (ObjectType.Section_XMLFile.equalElementName(name)) {
-                ((SecReader) setCurrentEntryReader(ElementReaderSort.Sec))
-                        .sectionXMLFile(hwpxFile.sectionXMLFileList().addNew());
+                    super.startElement(uri, localName, name, attrs);
+                    break;
+                case ElementNames.ha_HWPApplicationSetting:
+                    ((SettingsReader) setCurrentEntryReader(ElementReaderSort.Settings))
+                            .settingsXMLFile(hwpxFile.settingsXMLFile());
 
-                super.startElement(uri, localName, name, attrs);
-            } else if (ObjectType.MasterPage_XMLFile.equalElementName(name)) {
-                ((MasterPageReader) setCurrentEntryReader(ElementReaderSort.MasterPage))
-                        .masterPageXMLFile(hwpxFile.masterPageXMLFileList().addNew());
-
-                super.startElement(uri, localName, name, attrs);
-            } else if (ObjectType.Settings_XMLFile.equalElementName(name)) {
-                ((SettingsReader) setCurrentEntryReader(ElementReaderSort.Settings))
-                        .settingsXMLFile(hwpxFile.settingsXMLFile());
-
-                super.startElement(uri, localName, name, attrs);
+                    super.startElement(uri, localName, name, attrs);
+                    break;
             }
         } else {
             super.startElement(uri, localName, name, attrs);

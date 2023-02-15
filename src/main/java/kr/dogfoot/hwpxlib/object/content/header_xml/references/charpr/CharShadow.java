@@ -29,8 +29,8 @@ public class CharShadow extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CharShadow;
+    public ObjectType _objectType() {
+        return ObjectType.hh_shadow;
     }
 
     public CharShadowType type() {

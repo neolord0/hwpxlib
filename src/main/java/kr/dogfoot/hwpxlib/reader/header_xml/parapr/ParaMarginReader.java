@@ -19,23 +19,23 @@ public class ParaMarginReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Intent:
+            case ElementNames.hc_intent:
                 margin.createIntent();
                 valueAndUnit(margin.intent(), name, attrs);
                 break;
-            case ElementNames.Left:
+            case ElementNames.hc_left:
                 margin.createLeft();
                 valueAndUnit(margin.left(), name, attrs);
                 break;
-            case ElementNames.Right:
+            case ElementNames.hc_right:
                 margin.createRight();
                 valueAndUnit(margin.right(), name, attrs);
                 break;
-            case ElementNames.Prev:
+            case ElementNames.hc_prev:
                 margin.createPrev();
                 valueAndUnit(margin.prev(), name, attrs);
                 break;
-            case ElementNames.Next:
+            case ElementNames.hc_next:
                 margin.createNext();
                 valueAndUnit(margin.next(), name, attrs);
                 break;
@@ -45,23 +45,23 @@ public class ParaMarginReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Intent:
+            case ElementNames.hc_intent:
                 Intent intent = new Intent();
                 valueAndUnit(intent, name, attrs);
                 return intent;
-            case ElementNames.Left:
+            case ElementNames.hc_left:
                 LeftMargin leftMargin = new LeftMargin();
                 valueAndUnit(leftMargin, name, attrs);
                 return leftMargin;
-            case ElementNames.Right:
+            case ElementNames.hc_right:
                 RightMargin rightMargin = new RightMargin();
                 valueAndUnit(rightMargin, name, attrs);
                 return rightMargin;
-            case ElementNames.Prev:
+            case ElementNames.hc_prev:
                 PrevParaMargin prevParaMargin = new PrevParaMargin();
                 valueAndUnit(prevParaMargin, name, attrs);
                 return prevParaMargin;
-            case ElementNames.Next:
+            case ElementNames.hc_next:
                 NextParaMargin nextParaMargin = new NextParaMargin();
                 valueAndUnit(nextParaMargin, name, attrs);
                 return nextParaMargin;

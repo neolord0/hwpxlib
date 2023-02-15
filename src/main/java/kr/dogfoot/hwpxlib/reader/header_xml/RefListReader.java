@@ -34,47 +34,47 @@ public class RefListReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Fontfaces:
+            case ElementNames.hh_fontfaces:
                 refList.createFontfaces();
                 fontFaces(refList.fontfaces(), name, attrs);
                 break;
-            case ElementNames.BorderFills:
+            case ElementNames.hh_borderFills:
                 refList.createBorderFills();
                 borderFills(refList.borderFills(), name, attrs);
                 break;
-            case ElementNames.CharProperties:
+            case ElementNames.hh_charProperties:
                 refList.createCharProperties();
                 charProperties(refList.charProperties(), name, attrs);
                 break;
-            case ElementNames.TabProperties:
+            case ElementNames.hh_tabProperties:
                 refList.createTabProperties();
                 tabProperties(refList.tabProperties(), name, attrs);
                 break;
-            case ElementNames.Numberings:
+            case ElementNames.hh_numberings:
                 refList.createNumberings();
                 numberings(refList.numberings(), name, attrs);
                 break;
-            case ElementNames.Bullets:
+            case ElementNames.hh_bullets:
                 refList.createBullets();
                 bullets(refList.bullets(), name, attrs);
                 break;
-            case ElementNames.ParaProperties:
+            case ElementNames.hh_paraProperties:
                 refList.createParaProperties();
                 paraProperties(refList.paraProperties(), name, attrs);
                 break;
-            case ElementNames.Styles:
+            case ElementNames.hh_styles:
                 refList.createStyles();
                 styles(refList.styles(), name, attrs);
                 break;
-            case ElementNames.MemoProperties:
+            case ElementNames.hh_memoProperties:
                 refList.createMemoProperties();
                 memoProperties(refList.memoProperties(), name, attrs);
                 break;
-            case ElementNames.TrackChanges:
+            case ElementNames.hh_trackChanges:
                 refList.createTrackChanges();
                 trackChanges(refList.trackChanges(), name, attrs);
                 break;
-            case ElementNames.TrackChangeAuthors:
+            case ElementNames.hh_trackChangeAuthors:
                 refList.createTrackChangeAuthors();
                 trackChangeAuthors(refList.trackChangeAuthors(), name, attrs);
                 break;
@@ -84,48 +84,48 @@ public class RefListReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Fontfaces:
+            case ElementNames.hh_fontfaces:
                 Fontfaces fontfaces = new Fontfaces();
                 fontFaces(fontfaces, name, attrs);
                 return fontfaces;
-            case ElementNames.BorderFills:
-                ObjectList<BorderFill> borderFills = new ObjectList<BorderFill>(ObjectType.BorderFills, BorderFill.class);
+            case ElementNames.hh_borderFills:
+                ObjectList<BorderFill> borderFills = new ObjectList<BorderFill>(ObjectType.hh_borderFills, BorderFill.class);
                 borderFills(borderFills, name, attrs);
                 return borderFills;
-            case ElementNames.CharProperties:
-                ObjectList<CharPr> charProperties = new ObjectList<CharPr>(ObjectType.CharProperties, CharPr.class);
+            case ElementNames.hh_charProperties:
+                ObjectList<CharPr> charProperties = new ObjectList<CharPr>(ObjectType.hh_charProperties, CharPr.class);
                 charProperties(charProperties, name, attrs);
                 return charProperties;
-            case ElementNames.TabProperties:
-                ObjectList<TabPr> tabProperties = new ObjectList<TabPr>(ObjectType.TabProperties, TabPr.class);
+            case ElementNames.hh_tabProperties:
+                ObjectList<TabPr> tabProperties = new ObjectList<TabPr>(ObjectType.hh_tabProperties, TabPr.class);
                 tabProperties(tabProperties, name, attrs);
                 return tabProperties;
-            case ElementNames.Numberings:
-                ObjectList<Numbering> numberings = new ObjectList<Numbering>(ObjectType.Numberings, Numbering.class);
+            case ElementNames.hh_numberings:
+                ObjectList<Numbering> numberings = new ObjectList<Numbering>(ObjectType.hh_numberings, Numbering.class);
                 numberings(numberings, name, attrs);
                 return numberings;
-            case ElementNames.Bullets:
-                ObjectList<Bullet> bullets = new ObjectList<Bullet>(ObjectType.Bullets, Bullet.class);
+            case ElementNames.hh_bullets:
+                ObjectList<Bullet> bullets = new ObjectList<Bullet>(ObjectType.hh_bullets, Bullet.class);
                 bullets(bullets, name, attrs);
                 return bullets;
-            case ElementNames.ParaProperties:
-                ObjectList<ParaPr> paraProperties = new ObjectList<ParaPr>(ObjectType.ParaProperties, ParaPr.class);
+            case ElementNames.hh_paraProperties:
+                ObjectList<ParaPr> paraProperties = new ObjectList<ParaPr>(ObjectType.hh_paraProperties, ParaPr.class);
                 paraProperties(paraProperties, name, attrs);
                 return paraProperties;
-            case ElementNames.Styles:
-                ObjectList<Style> styles = new ObjectList<Style>(ObjectType.Styles, Style.class);
+            case ElementNames.hh_styles:
+                ObjectList<Style> styles = new ObjectList<Style>(ObjectType.hh_styles, Style.class);
                 styles(styles, name, attrs);
                 return styles;
-            case ElementNames.MemoProperties:
-                ObjectList<MemoPr> memoProperties = new ObjectList<MemoPr>(ObjectType.MemoProperties, MemoPr.class);
+            case ElementNames.hh_memoProperties:
+                ObjectList<MemoPr> memoProperties = new ObjectList<MemoPr>(ObjectType.hh_memoProperties, MemoPr.class);
                 memoProperties(memoProperties, name, attrs);
                 return memoProperties;
-            case ElementNames.TrackChanges:
-                ObjectList<TrackChange> trackChanges = new ObjectList<TrackChange>(ObjectType.TrackChanges, TrackChange.class);
+            case ElementNames.hh_trackChanges:
+                ObjectList<TrackChange> trackChanges = new ObjectList<TrackChange>(ObjectType.hh_trackChanges, TrackChange.class);
                 trackChanges(trackChanges, name, attrs);
                 return trackChanges;
-            case ElementNames.TrackChangeAuthors:
-                ObjectList<TrackChangeAuthor> trackChangeAuthors = new ObjectList<TrackChangeAuthor>(ObjectType.TrackChangeAuthors, TrackChangeAuthor.class);
+            case ElementNames.hh_trackChangeAuthors:
+                ObjectList<TrackChangeAuthor> trackChangeAuthors = new ObjectList<TrackChangeAuthor>(ObjectType.hh_trackChangeAuthors, TrackChangeAuthor.class);
                 trackChangeAuthors(trackChangeAuthors, name, attrs);
                 return trackChangeAuthors;
         }

@@ -11,7 +11,7 @@ public class Footer extends HeaderFooterType<Footer> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Footer;
+    public ObjectType _objectType() {
+        return ObjectType.hp_footer;
     }
 }

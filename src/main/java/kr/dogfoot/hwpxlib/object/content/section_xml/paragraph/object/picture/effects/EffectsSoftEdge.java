@@ -16,8 +16,8 @@ public class EffectsSoftEdge extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EffectsSoftEdge;
+    public ObjectType _objectType() {
+        return ObjectType.hp_softEdge;
     }
 
     public Float radius() {

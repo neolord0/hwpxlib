@@ -27,8 +27,8 @@ public class ConnectLine extends DrawingObject<ConnectLine> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ConnectLine;
+    public ObjectType _objectType() {
+        return ObjectType.hp_connectLine;
     }
 
     public ConnectLineType type() {

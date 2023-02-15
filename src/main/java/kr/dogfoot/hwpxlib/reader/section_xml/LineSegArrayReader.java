@@ -24,7 +24,7 @@ public class LineSegArrayReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.LineSeg:
+            case ElementNames.hp_lineseg:
                 lineSeg(lineSegArray.addNew(), name, attrs);
                 break;
         }
@@ -32,7 +32,7 @@ public class LineSegArrayReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.LineSeg:
+            case ElementNames.hp_lineseg:
                 LineSeg lineSeg = new LineSeg();
                 lineSeg(lineSeg, name, attrs);
                 return lineSeg;

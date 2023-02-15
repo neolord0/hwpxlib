@@ -27,8 +27,8 @@ public class T extends RunItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.T;
+    public ObjectType _objectType() {
+        return ObjectType.hp_t;
     }
 
     public String charPrIDRef() {

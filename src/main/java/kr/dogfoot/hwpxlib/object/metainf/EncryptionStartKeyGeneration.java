@@ -11,8 +11,8 @@ public class EncryptionStartKeyGeneration extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.StartKeyGeneration;
+    public ObjectType _objectType() {
+        return ObjectType.odf_start_key_generation;
     }
 
     public String startKeyGenerationName() {

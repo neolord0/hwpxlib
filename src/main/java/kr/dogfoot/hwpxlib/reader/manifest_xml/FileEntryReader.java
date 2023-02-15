@@ -37,7 +37,7 @@ public class FileEntryReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.EncryptionData:
+            case ElementNames.odf_encryption_data:
                 fileEntry.createEncryptionData();
                 encryptionData(fileEntry.encryptionData(), name, attrs);
                 break;
@@ -47,7 +47,7 @@ public class FileEntryReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.EncryptionData:
+            case ElementNames.odf_encryption_data:
                 EncryptionData encryptionData = new EncryptionData();
                 encryptionData(encryptionData, name, attrs);
                 return encryptionData;

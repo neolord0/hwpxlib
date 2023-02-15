@@ -16,8 +16,8 @@ public class MetaData extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.MetaData;
+    public ObjectType _objectType() {
+        return ObjectType.opf_metadata;
     }
 
     public Title title() {

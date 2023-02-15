@@ -46,7 +46,7 @@ public class PagePrReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.PageMargin:
+            case ElementNames.hp_margin:
                 pagePr.createMargin();
                 margin(pagePr.margin(), name, attrs);
                 break;
@@ -56,7 +56,7 @@ public class PagePrReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.PageMargin:
+            case ElementNames.hp_margin:
                 PageMargin margin = new PageMargin();
                 margin(margin, name, attrs);
                 return margin;

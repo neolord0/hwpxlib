@@ -35,15 +35,15 @@ public class EncryptionDataReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Algorithm:
+            case ElementNames.odf_algorithm:
                 encryptionData.createAlgorithm();
                 algorithm(encryptionData.algorithm(), name, attrs);
                 break;
-            case ElementNames.KeyDerivation:
+            case ElementNames.odf_key_derivation:
                 encryptionData.createKeyDerivation();
                 keyDerivation(encryptionData.keyDerivation(), name, attrs);
                 break;
-            case ElementNames.StartKeyGeneration:
+            case ElementNames.odf_start_key_generation:
                 encryptionData.createStartKeyGeneration();
                 startKeyGeneration(encryptionData.startKeyGeneration(), name, attrs);
                 break;
@@ -53,15 +53,15 @@ public class EncryptionDataReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Algorithm:
+            case ElementNames.odf_algorithm:
                 EncryptionAlgorithm algorithm = new EncryptionAlgorithm();
                 algorithm(algorithm, name, attrs);
                 return algorithm;
-            case ElementNames.KeyDerivation:
+            case ElementNames.odf_key_derivation:
                 EncryptionKeyDerivation keyDerivation = new EncryptionKeyDerivation();
                 keyDerivation(keyDerivation, name, attrs);
                 return keyDerivation;
-            case ElementNames.StartKeyGeneration:
+            case ElementNames.odf_start_key_generation:
                 EncryptionStartKeyGeneration startKeyGeneration = new EncryptionStartKeyGeneration();
                 startKeyGeneration(startKeyGeneration, name, attrs);
                 return startKeyGeneration;

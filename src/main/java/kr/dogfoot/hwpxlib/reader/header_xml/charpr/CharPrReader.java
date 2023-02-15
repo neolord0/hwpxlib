@@ -53,65 +53,65 @@ public class CharPrReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.FontRef:
+            case ElementNames.hh_fontRef:
                 charPr.createFontRef();
                 fontRef(charPr.fontRef(), name, attrs);
                 break;
-            case ElementNames.Ratio:
+            case ElementNames.hh_ratio:
                 charPr.createRatio();
                 ratio(charPr.ratio(), name, attrs);
                 break;
-            case ElementNames.Spacing:
+            case ElementNames.hh_spacing:
                 charPr.createSpacing();
                 spacing(charPr.spacing(), name, attrs);
                 break;
-            case ElementNames.RelSz:
+            case ElementNames.hh_relSz:
                 charPr.createRelSz();
                 relSz(charPr.relSz(), name, attrs);
                 break;
-            case ElementNames.CharOffset:
+            case ElementNames.hh_offset:
                 charPr.createOffset();
                 offset(charPr.offset(), name, attrs);
                 break;
-            case ElementNames.Bold:
+            case ElementNames.hh_bold:
                 charPr.createBold();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.Italic:
+            case ElementNames.hh_italic:
                 charPr.createItalic();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.Underline:
+            case ElementNames.hh_underline:
                 charPr.createUnderline();
                 underline(charPr.underline(), name, attrs);
                 break;
-            case ElementNames.Strikeout:
+            case ElementNames.hh_strikeout:
                 charPr.createStrikeout();
                 strikeout(charPr.strikeout(), name, attrs);
                 break;
-            case ElementNames.Outline:
+            case ElementNames.hh_outline:
                 charPr.createOutline();
                 outline(charPr.outline(), name, attrs);
                 break;
-            case ElementNames.CharShadow:
+            case ElementNames.hh_shadow:
                 charPr.createShadow();
                 shadow(charPr.shadow(), name, attrs);
                 break;
-            case ElementNames.Emboss:
+            case ElementNames.hh_emboss:
                 charPr.createEmboss();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.Engrave:
+            case ElementNames.hh_engrave:
                 charPr.createEngrave();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.Supscript:
+            case ElementNames.hh_supscript:
                 charPr.createSupscript();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.Subscript:
+            case ElementNames.hh_subscript:
                 charPr.createSubscript();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
         }
     }
@@ -119,65 +119,65 @@ public class CharPrReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.FontRef:
+            case ElementNames.hh_fontRef:
                 FontRef fontRef = new FontRef();
                 fontRef(fontRef, name, attrs);
                 return fontRef;
-            case ElementNames.Ratio:
+            case ElementNames.hh_ratio:
                 Ratio ratio = new Ratio();
                 ratio(ratio, name, attrs);
                 return ratio;
-            case ElementNames.Spacing:
+            case ElementNames.hh_spacing:
                 Spacing spacing = new Spacing();
                 spacing(spacing, name, attrs);
                 return spacing;
-            case ElementNames.RelSz:
+            case ElementNames.hh_relSz:
                 RelSz relSz = new RelSz();
                 relSz(relSz, name, attrs);
                 return relSz;
-            case ElementNames.CharOffset:
+            case ElementNames.hh_offset:
                 CharOffset offset = new CharOffset();
                 offset(offset, name, attrs);
                 return offset;
-            case ElementNames.Bold:
+            case ElementNames.hh_bold:
                 Bold bold = new Bold();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return bold;
-            case ElementNames.Italic:
+            case ElementNames.hh_italic:
                 Italic italic = new Italic();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return italic;
-            case ElementNames.Underline:
+            case ElementNames.hh_underline:
                 Underline underline = new Underline();
                 underline(underline, name, attrs);
                 return underline;
-            case ElementNames.Strikeout:
+            case ElementNames.hh_strikeout:
                 Strikeout strikeout = new Strikeout();
                 strikeout(strikeout, name, attrs);
                 return strikeout;
-            case ElementNames.Outline:
+            case ElementNames.hh_outline:
                 Outline outline = new Outline();
                 outline(outline, name, attrs);
                 return outline;
-            case ElementNames.CharShadow:
+            case ElementNames.hh_shadow:
                 CharShadow shadow = new CharShadow();
                 shadow(shadow, name, attrs);
                 return shadow;
-            case ElementNames.Emboss:
+            case ElementNames.hh_emboss:
                 Emboss emboss = new Emboss();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return emboss;
-            case ElementNames.Engrave:
+            case ElementNames.hh_engrave:
                 Engrave engrave = new Engrave();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return engrave;
-            case ElementNames.Supscript:
+            case ElementNames.hh_supscript:
                 Supscript supscript = new Supscript();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return supscript;
-            case ElementNames.Subscript:
+            case ElementNames.hh_subscript:
                 Subscript subscript = new Subscript();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return subscript;
         }
         return null;

@@ -17,8 +17,8 @@ public class RootFile extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.RootFile;
+    public ObjectType _objectType() {
+        return ObjectType.ocf_rootfile;
     }
 
     public String fullPath() {

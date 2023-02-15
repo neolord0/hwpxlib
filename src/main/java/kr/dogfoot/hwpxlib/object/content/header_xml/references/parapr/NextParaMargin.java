@@ -11,7 +11,7 @@ public class NextParaMargin extends ValueAndUnit<NextParaMargin> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Next;
+    public ObjectType _objectType() {
+        return ObjectType.hc_next;
     }
 }

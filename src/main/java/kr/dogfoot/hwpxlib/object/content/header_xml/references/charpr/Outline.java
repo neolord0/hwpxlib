@@ -17,8 +17,8 @@ public class Outline extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Outline;
+    public ObjectType _objectType() {
+        return ObjectType.hh_outline;
     }
 
     public LineType1 type() {

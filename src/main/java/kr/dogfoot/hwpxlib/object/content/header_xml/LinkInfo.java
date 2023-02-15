@@ -12,8 +12,8 @@ public class LinkInfo extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.LinkInfo;
+    public ObjectType _objectType() {
+        return ObjectType.hh_linkinfo;
     }
 
     public String path() {

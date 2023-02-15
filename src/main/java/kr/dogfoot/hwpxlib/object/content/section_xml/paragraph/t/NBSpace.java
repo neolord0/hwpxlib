@@ -11,7 +11,7 @@ public class NBSpace extends TItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.NBSpace;
+    public ObjectType _objectType() {
+        return ObjectType.hp_nbSpace;
     }
 }

@@ -33,8 +33,8 @@ public class DrawingShadow extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.DrawingShadow;
+    public ObjectType _objectType() {
+        return ObjectType.hp_shadow_for_drawingObject;
     }
 
     public DrawingShadowType type() {

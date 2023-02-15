@@ -12,8 +12,8 @@ public class ListParam extends Param<ListParam> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ListParam;
+    public ObjectType _objectType() {
+        return ObjectType.hp_ListParam;
     }
 
     public int cnt() {

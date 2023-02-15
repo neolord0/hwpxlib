@@ -20,7 +20,7 @@ public class BulletsReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Bullet:
+            case ElementNames.hh_bullet:
                 bullet(bullets.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class BulletsReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Bullet:
+            case ElementNames.hh_bullet:
                 Bullet bullet = new Bullet();
                 bullet(bullet, name, attrs);
                 return bullet;

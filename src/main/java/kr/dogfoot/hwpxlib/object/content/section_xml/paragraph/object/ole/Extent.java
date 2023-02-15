@@ -8,7 +8,7 @@ public class Extent extends XAndY<Extent> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Extent;
+    public ObjectType _objectType() {
+        return ObjectType.hc_extent;
     }
 }

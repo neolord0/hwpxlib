@@ -20,8 +20,8 @@ public class ManifestItem extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ManifestItem;
+    public ObjectType _objectType() {
+        return ObjectType.opf_item;
     }
 
     public String id() {

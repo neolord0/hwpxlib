@@ -20,8 +20,8 @@ public class ListItem extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ListItem;
+    public ObjectType _objectType() {
+        return ObjectType.hp_listItem;
     }
 
     public String displayText() {

@@ -43,11 +43,11 @@ public class BulletReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Img:
+            case ElementNames.hc_img:
                 bullet.createImg();
                 img(bullet.img(), name, attrs);
                 break;
-            case ElementNames.ParaHead:
+            case ElementNames.hh_paraHead:
                 paraHead(bullet.addNewParaHead(), name, attrs);
                 break;
         }
@@ -56,11 +56,11 @@ public class BulletReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Img:
+            case ElementNames.hc_img:
                 Image image = new Image();
                 img(image, name, attrs);
                 return image;
-            case ElementNames.ParaHead:
+            case ElementNames.hh_paraHead:
                 ParaHead paraHead = new ParaHead();
                 paraHead(paraHead, name, attrs);
                 return paraHead;

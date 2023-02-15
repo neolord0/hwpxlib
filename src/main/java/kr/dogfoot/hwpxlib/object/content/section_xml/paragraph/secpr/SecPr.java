@@ -98,8 +98,8 @@ public class SecPr extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.SecPr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_secPr;
     }
 
     public String id() {

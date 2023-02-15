@@ -32,8 +32,8 @@ public class ListBox extends FormObject<ListBox> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ListBox;
+    public ObjectType _objectType() {
+        return ObjectType.hp_listBox;
     }
 
     public Integer itemHeight() {

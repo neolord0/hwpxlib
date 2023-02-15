@@ -8,7 +8,7 @@ public class Title extends HasOnlyText<Title> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Title;
+    public ObjectType _objectType() {
+        return ObjectType.opf_title;
     }
 }

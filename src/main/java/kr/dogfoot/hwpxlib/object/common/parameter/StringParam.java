@@ -9,8 +9,8 @@ public class StringParam extends Param<StringParam> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.StringParam;
+    public ObjectType _objectType() {
+        return ObjectType.hp_stringParam;
     }
 
     public String value() {

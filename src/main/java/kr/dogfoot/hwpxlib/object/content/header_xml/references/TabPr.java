@@ -32,8 +32,8 @@ public class TabPr extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TabPr;
+    public ObjectType _objectType() {
+        return ObjectType.hh_tabPr;
     }
 
     public String id() {

@@ -46,8 +46,8 @@ public class EffectsColor extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EffectsColor;
+    public ObjectType _objectType() {
+        return ObjectType.hp_effectsColor;
     }
 
     public ColorType type() {

@@ -21,8 +21,8 @@ public class FootNotePlacement extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FootNotePlacement;
+    public ObjectType _objectType() {
+        return ObjectType.hp_placement_for_footnote;
     }
 
     public FootNotePlace place() {

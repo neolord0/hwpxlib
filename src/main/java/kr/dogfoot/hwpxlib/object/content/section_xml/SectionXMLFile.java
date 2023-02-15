@@ -10,7 +10,7 @@ public class SectionXMLFile extends ParaListCore {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Section_XMLFile;
+    public ObjectType _objectType() {
+        return ObjectType.hs_sec;
     }
 }

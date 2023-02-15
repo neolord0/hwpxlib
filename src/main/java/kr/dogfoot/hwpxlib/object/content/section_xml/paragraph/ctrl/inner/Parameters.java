@@ -8,7 +8,7 @@ public class Parameters extends ParameterListCore<Parameters> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Parameters;
+    public ObjectType _objectType() {
+        return ObjectType.hp_parameters;
     }
 }

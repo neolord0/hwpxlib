@@ -7,7 +7,7 @@ public class FontRef extends ValuesByLanguage<String, FontRef> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FontRef;
+    public ObjectType _objectType() {
+        return ObjectType.hh_fontRef;
     }
 }

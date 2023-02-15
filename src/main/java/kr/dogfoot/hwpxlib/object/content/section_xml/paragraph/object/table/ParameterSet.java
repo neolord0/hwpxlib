@@ -8,8 +8,8 @@ public class ParameterSet extends ParameterListCore<ParameterSet> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ParameterSet;
+    public ObjectType _objectType() {
+        return ObjectType.hp_parameterset;
     }
 }
 

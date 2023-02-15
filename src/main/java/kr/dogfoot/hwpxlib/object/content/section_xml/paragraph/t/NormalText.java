@@ -10,7 +10,7 @@ public class NormalText extends TItem {
     }
 
     @Override
-    public ObjectType objectType() {
+    public ObjectType _objectType() {
         return null;
     }
 

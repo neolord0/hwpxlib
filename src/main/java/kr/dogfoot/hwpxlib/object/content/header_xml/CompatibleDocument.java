@@ -13,8 +13,8 @@ public class CompatibleDocument extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CompatibleDocument;
+    public ObjectType _objectType() {
+        return ObjectType.hh_compatibleDocument;
     }
 
     public TargetProgramSort targetProgram() {
@@ -35,7 +35,7 @@ public class CompatibleDocument extends SwitchableObject {
     }
 
     public void createLayoutCompatibility() {
-        layoutCompatibility = new ObjectList<LayoutCompatibilityItem>(ObjectType.LayoutCompatibility, LayoutCompatibilityItem.class);
+        layoutCompatibility = new ObjectList<LayoutCompatibilityItem>(ObjectType.hh_layoutCompatibility, LayoutCompatibilityItem.class);
     }
 
     public void removeLayoutCompatibility() {

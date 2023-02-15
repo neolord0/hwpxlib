@@ -34,8 +34,8 @@ public class ShapeSize extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ShapeSz;
+    public ObjectType _objectType() {
+        return ObjectType.hp_sz;
     }
 
     public Integer width() {

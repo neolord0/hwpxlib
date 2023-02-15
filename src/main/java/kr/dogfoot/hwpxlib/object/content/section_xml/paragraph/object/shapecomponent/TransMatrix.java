@@ -11,7 +11,7 @@ public class TransMatrix extends Matrix<TransMatrix> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TransMatrix;
+    public ObjectType _objectType() {
+        return ObjectType.hc_transMatrix;
     }
 }

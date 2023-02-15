@@ -23,8 +23,8 @@ public class TabItem extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TabItem;
+    public ObjectType _objectType() {
+        return ObjectType.hh_tabItem;
     }
 
     public Integer pos() {

@@ -45,8 +45,8 @@ public class HistoryEntry extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.HistoryEntry;
+    public ObjectType _objectType() {
+        return ObjectType.hhs_historyEntry;
     }
 
     public Integer revisionNumber() {

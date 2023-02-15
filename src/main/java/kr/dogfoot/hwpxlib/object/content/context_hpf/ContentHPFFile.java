@@ -16,8 +16,8 @@ public class ContentHPFFile extends XMLFile {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Content_HPFFile;
+    public ObjectType _objectType() {
+        return ObjectType.opf_package;
     }
 
     public String version() {
@@ -76,7 +76,7 @@ public class ContentHPFFile extends XMLFile {
     }
 
     public void createManifest() {
-        manifest = new ObjectList<ManifestItem>(ObjectType.Manifest, ManifestItem.class);
+        manifest = new ObjectList<ManifestItem>(ObjectType.opf_manifest, ManifestItem.class);
     }
 
     public void removeManifest() {
@@ -88,7 +88,7 @@ public class ContentHPFFile extends XMLFile {
     }
 
     public void createSpine() {
-        spine = new ObjectList<SpineItemRef>(ObjectType.Spine, SpineItemRef.class);
+        spine = new ObjectList<SpineItemRef>(ObjectType.opf_spine, SpineItemRef.class);
     }
 
     public void removeSpine() {

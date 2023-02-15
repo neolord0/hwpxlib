@@ -44,35 +44,35 @@ public class BorderFillReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Slash:
+            case ElementNames.hh_slash:
                 borderFill.createSlash();
                 slash(borderFill.slash(), name, attrs);
                 break;
-            case ElementNames.BackSlash:
+            case ElementNames.hh_backSlash:
                 borderFill.createBackSlash();
                 backSlash(borderFill.backSlash(), name, attrs);
                 break;
-            case ElementNames.LeftBorder:
+            case ElementNames.hh_leftBorder:
                 borderFill.createLeftBorder();
                 leftBorder(borderFill.leftBorder(), name, attrs);
                 break;
-            case ElementNames.RightBorder:
+            case ElementNames.hh_rightBorder:
                 borderFill.createRightBorder();
                 rightBorder(borderFill.rightBorder(), name, attrs);
                 break;
-            case ElementNames.TopBorder:
+            case ElementNames.hh_topBorder:
                 borderFill.createTopBorder();
                 topBorder(borderFill.topBorder(), name, attrs);
                 break;
-            case ElementNames.BottomBorder:
+            case ElementNames.hh_bottomBorder:
                 borderFill.createBottomBorder();
                 bottomBorder(borderFill.bottomBorder(), name, attrs);
                 break;
-            case ElementNames.Diagonal:
+            case ElementNames.hh_diagonal:
                 borderFill.createDiagonal();
                 diagonal(borderFill.diagonal(), name, attrs);
                 break;
-            case ElementNames.FillBrush:
+            case ElementNames.hc_fillBrush:
                 borderFill.createFillBrush();
                 fillBrush(borderFill.fillBrush(), name, attrs);
                 break;
@@ -82,35 +82,35 @@ public class BorderFillReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Slash:
+            case ElementNames.hh_slash:
                 Slash slash = new Slash();
                 slash(slash, name, attrs);
                 return slash;
-            case ElementNames.BackSlash:
+            case ElementNames.hh_backSlash:
                 BackSlash backSlash = new BackSlash();
                 backSlash(backSlash, name, attrs);
                 return backSlash;
-            case ElementNames.LeftBorder:
+            case ElementNames.hh_leftBorder:
                 LeftBorder leftBorder = new LeftBorder();
                 leftBorder(leftBorder, name, attrs);
                 return leftBorder;
-            case ElementNames.RightBorder:
+            case ElementNames.hh_rightBorder:
                 RightBorder rightBorder = new RightBorder();
                 rightBorder(rightBorder, name, attrs);
                 return rightBorder;
-            case ElementNames.TopBorder:
+            case ElementNames.hh_topBorder:
                 TopBorder topBorder = new TopBorder();
                 topBorder(topBorder, name, attrs);
                 return topBorder;
-            case ElementNames.BottomBorder:
+            case ElementNames.hh_bottomBorder:
                 BottomBorder bottomBorder = new BottomBorder();
                 bottomBorder(bottomBorder, name, attrs);
                 return bottomBorder;
-            case ElementNames.Diagonal:
+            case ElementNames.hh_diagonal:
                 DiagonalBorder diagonal = new DiagonalBorder();
                 diagonal(diagonal, name, attrs);
                 return diagonal;
-            case ElementNames.FillBrush:
+            case ElementNames.hc_fillBrush:
                 FillBrush fillBrush = new FillBrush();
                 fillBrush(fillBrush, name, attrs);
                 return fillBrush;

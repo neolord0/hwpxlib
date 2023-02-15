@@ -8,7 +8,7 @@ public class Language extends HasOnlyText<Language> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Language;
+    public ObjectType _objectType() {
+        return ObjectType.opf_language;
     }
 }

@@ -8,7 +8,7 @@ public class FirstKey extends HasOnlyText<FirstKey> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FirstKey;
+    public ObjectType _objectType() {
+        return ObjectType.hp_firstKey;
     }
 }

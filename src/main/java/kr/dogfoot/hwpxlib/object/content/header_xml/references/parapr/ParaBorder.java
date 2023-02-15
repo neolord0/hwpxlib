@@ -40,8 +40,8 @@ public class ParaBorder extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ParaBorder;
+    public ObjectType _objectType() {
+        return ObjectType.hh_border;
     }
 
     public String borderFillIDRef() {

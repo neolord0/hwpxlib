@@ -11,7 +11,7 @@ public class Subscript extends NoAttributeNoChild<Subscript> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Subscript;
+    public ObjectType _objectType() {
+        return ObjectType.hh_subscript;
     }
 }

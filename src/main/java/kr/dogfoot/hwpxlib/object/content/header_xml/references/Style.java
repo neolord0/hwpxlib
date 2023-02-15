@@ -49,8 +49,8 @@ public class Style extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Style;
+    public ObjectType _objectType() {
+        return ObjectType.hh_style;
     }
 
     public String id() {

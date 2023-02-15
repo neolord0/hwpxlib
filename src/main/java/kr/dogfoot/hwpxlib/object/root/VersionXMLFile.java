@@ -32,8 +32,8 @@ public class VersionXMLFile extends XMLFile {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Version_XMLFile;
+    public ObjectType _objectType() {
+        return ObjectType.hv_HCFVersion;
     }
 
     public TargetApplicationSort targetApplication() {

@@ -45,8 +45,8 @@ public class ScrollBar extends FormObject<ScrollBar> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ScrollBar;
+    public ObjectType _objectType() {
+        return ObjectType.hp_scrollBar;
     }
 
     public Integer delay() {

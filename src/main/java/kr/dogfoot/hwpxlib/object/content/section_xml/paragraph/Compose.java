@@ -37,8 +37,8 @@ public class Compose extends RunItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Compose;
+    public ObjectType _objectType() {
+        return ObjectType.hp_compose;
     }
 
     public ComposeCircleType circleType() {

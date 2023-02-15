@@ -14,8 +14,8 @@ public class HistoryXMLFile extends XMLFile {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.History_XMLFile;
+    public ObjectType _objectType() {
+        return ObjectType.hhs_history;
     }
 
     public String version() {

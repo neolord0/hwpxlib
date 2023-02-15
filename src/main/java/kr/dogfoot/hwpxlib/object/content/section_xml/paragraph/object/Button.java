@@ -13,7 +13,7 @@ public class Button extends ButtonObject<Button> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Btn;
+    public ObjectType _objectType() {
+        return ObjectType.hp_btn;
     }
 }

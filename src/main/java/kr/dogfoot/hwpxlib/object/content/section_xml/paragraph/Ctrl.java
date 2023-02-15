@@ -13,8 +13,8 @@ public class Ctrl extends RunItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Ctrl;
+    public ObjectType _objectType() {
+        return ObjectType.hp_ctrl;
     }
 
     public int countOfCtrlItems() {

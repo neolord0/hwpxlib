@@ -20,7 +20,7 @@ public class ManifestReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.FileEntry:
+            case ElementNames.odf_file_entry:
                 fileEntry(manifestXMLFile.addNewFileEntry(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class ManifestReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.FileEntry:
+            case ElementNames.odf_file_entry:
                 FileEntry fileEntry = new FileEntry();
                 fileEntry(fileEntry, name, attrs);
                 return fileEntry;

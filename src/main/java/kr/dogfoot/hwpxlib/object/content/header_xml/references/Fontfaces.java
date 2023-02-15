@@ -20,8 +20,8 @@ public class Fontfaces extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Fontfaces;
+    public ObjectType _objectType() {
+        return ObjectType.hh_fontfaces;
     }
 
     public int countOfFontface() {

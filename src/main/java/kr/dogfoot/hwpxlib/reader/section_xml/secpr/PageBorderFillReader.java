@@ -55,7 +55,7 @@ public class PageBorderFillReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.PageBorderFillOffset:
+            case ElementNames.hp_offset:
                 pageBorderFill.createOffset();
                 offset(pageBorderFill.offset(), name, attrs);
                 break;
@@ -65,7 +65,7 @@ public class PageBorderFillReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.PageBorderFillOffset:
+            case ElementNames.hp_offset:
                 PageBorderFillOffset offset = new PageBorderFillOffset();
                 offset(offset, name, attrs);
                 return offset;

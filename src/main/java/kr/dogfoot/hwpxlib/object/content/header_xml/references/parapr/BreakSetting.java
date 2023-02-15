@@ -43,8 +43,8 @@ public class BreakSetting extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.BreakSetting;
+    public ObjectType _objectType() {
+        return ObjectType.hh_breakSetting;
     }
 
     public LineBreakForLatin breakLatinWord() {

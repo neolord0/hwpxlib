@@ -11,7 +11,7 @@ public class CellMargin extends LeftRightTopBottom<CellMargin> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CellMargin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_cellMargin;
     }
 }

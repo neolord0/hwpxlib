@@ -43,8 +43,8 @@ public class Dutmal extends RunItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Dutmal;
+    public ObjectType _objectType() {
+        return ObjectType.hp_dutmal;
     }
 
     public DutmalPosType posType() {

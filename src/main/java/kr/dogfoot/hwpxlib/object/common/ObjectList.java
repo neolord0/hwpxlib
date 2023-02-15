@@ -18,7 +18,7 @@ public class ObjectList<ItemType> extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
+    public ObjectType _objectType() {
         return objectType;
     }
 

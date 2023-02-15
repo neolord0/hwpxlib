@@ -20,8 +20,8 @@ public class CellSpan extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CellSpan;
+    public ObjectType _objectType() {
+        return ObjectType.hp_cellSpan;
     }
 
     public Short colSpan() {

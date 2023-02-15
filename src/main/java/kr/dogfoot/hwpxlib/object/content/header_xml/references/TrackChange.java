@@ -41,8 +41,8 @@ public class TrackChange extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TrackChange;
+    public ObjectType _objectType() {
+        return ObjectType.hh_trackChange;
     }
 
     public String id() {

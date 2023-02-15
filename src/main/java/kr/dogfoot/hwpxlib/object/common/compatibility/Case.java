@@ -8,8 +8,8 @@ public class Case extends InSwitchObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Case;
+    public ObjectType _objectType() {
+        return ObjectType.hp_case;
     }
 
     public String requiredNamespace() {

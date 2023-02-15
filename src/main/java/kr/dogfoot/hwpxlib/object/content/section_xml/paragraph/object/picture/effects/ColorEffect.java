@@ -15,8 +15,8 @@ public class ColorEffect extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ColorEffect;
+    public ObjectType _objectType() {
+        return ObjectType.hp_effect;
     }
 
     public ColorEffectType type() {

@@ -66,8 +66,8 @@ public class BorderFill extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.BorderFill;
+    public ObjectType _objectType() {
+        return ObjectType.hh_borderFill;
     }
 
     public String id() {

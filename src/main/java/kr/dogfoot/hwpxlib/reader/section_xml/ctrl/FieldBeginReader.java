@@ -57,11 +57,11 @@ public class FieldBeginReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Parameters:
+            case ElementNames.hp_parameters:
                 fieldBegin.createParameters();
                 parameters(fieldBegin.parameters(), name, attrs);
                 break;
-            case ElementNames.SubList:
+            case ElementNames.hp_subList:
                 fieldBegin.createSubList();
                 subList(fieldBegin.subList(), name, attrs);
                 break;
@@ -71,11 +71,11 @@ public class FieldBeginReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Parameters:
+            case ElementNames.hp_parameters:
                 Parameters parameters = new Parameters();
                 parameters(parameters, name, attrs);
                 return parameters;
-            case ElementNames.SubList:
+            case ElementNames.hp_subList:
                 SubList subList = new SubList();
                 subList(subList, name, attrs);
                 return subList;

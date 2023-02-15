@@ -31,7 +31,7 @@ public class ImageBrushReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Img:
+            case ElementNames.hc_img:
                 imgBrush.createImg();
                 image(imgBrush.img(), name, attrs);
                 break;
@@ -41,7 +41,7 @@ public class ImageBrushReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Img:
+            case ElementNames.hc_img:
                 Image image = new Image();
                 image(image, name, attrs);
                 return image;

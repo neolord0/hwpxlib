@@ -11,8 +11,8 @@ public class EncryptionAlgorithm extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Algorithm;
+    public ObjectType _objectType() {
+        return ObjectType.odf_algorithm;
     }
 
     public String algorithmName() {

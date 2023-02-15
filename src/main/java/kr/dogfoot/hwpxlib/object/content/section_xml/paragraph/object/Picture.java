@@ -51,8 +51,8 @@ public class Picture extends ShapeComponent<Picture> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Pic;
+    public ObjectType _objectType() {
+        return ObjectType.hp_pic;
     }
 
     public Boolean reverse() {

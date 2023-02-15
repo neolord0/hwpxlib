@@ -65,8 +65,8 @@ public class LineShape extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.LineShape;
+    public ObjectType _objectType() {
+        return ObjectType.hp_lineShape;
     }
 
     public String color() {

@@ -7,7 +7,7 @@ public class Spacing extends ValuesByLanguage<Short, Spacing> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Spacing;
+    public ObjectType _objectType() {
+        return ObjectType.hh_spacing;
     }
 }

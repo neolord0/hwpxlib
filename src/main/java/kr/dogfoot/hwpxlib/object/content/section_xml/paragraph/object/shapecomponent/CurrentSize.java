@@ -8,7 +8,7 @@ public class CurrentSize extends WidthAndHeight<CurrentSize> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CurSz;
+    public ObjectType _objectType() {
+        return ObjectType.hp_curSz;
     }
 }

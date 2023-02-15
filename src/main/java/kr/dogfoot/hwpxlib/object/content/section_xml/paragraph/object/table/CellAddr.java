@@ -20,8 +20,8 @@ public class CellAddr extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CellAddr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_cellAddr;
     }
 
     public Short colAddr() {

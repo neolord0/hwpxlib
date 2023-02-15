@@ -42,8 +42,8 @@ public class Font extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Font;
+    public ObjectType _objectType() {
+        return ObjectType.hh_font;
     }
 
     public String id() {

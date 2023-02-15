@@ -8,7 +8,7 @@ public class SubText extends HasOnlyText<SubText> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.SubText;
+    public ObjectType _objectType() {
+        return ObjectType.hp_subText;
     }
 }

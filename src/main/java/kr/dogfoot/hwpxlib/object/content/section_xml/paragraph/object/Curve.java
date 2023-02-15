@@ -17,8 +17,8 @@ public class Curve extends DrawingObject<Curve> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Curve;
+    public ObjectType _objectType() {
+        return ObjectType.hp_curve;
     }
 
     public int countOfSegment() {

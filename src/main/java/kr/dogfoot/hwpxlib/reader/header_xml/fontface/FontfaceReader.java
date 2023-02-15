@@ -31,7 +31,7 @@ public class FontfaceReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Font:
+            case ElementNames.hh_font:
                 font(fontface.addNewFont(), name, attrs);
                 break;
         }
@@ -40,7 +40,7 @@ public class FontfaceReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Font:
+            case ElementNames.hh_font:
                 Font font = new Font();
                 font(font, name, attrs);
                 return font;

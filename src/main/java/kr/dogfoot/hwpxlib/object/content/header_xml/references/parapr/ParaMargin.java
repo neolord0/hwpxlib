@@ -33,8 +33,8 @@ public class ParaMargin extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ParaMargin;
+    public ObjectType _objectType() {
+        return ObjectType.hh_margin;
     }
 
     public ValueAndUnit intent() {

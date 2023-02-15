@@ -13,8 +13,8 @@ public class TitleMark extends TItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TitleMark;
+    public ObjectType _objectType() {
+        return ObjectType.hp_titleMark;
     }
 
     public Boolean ignore() {

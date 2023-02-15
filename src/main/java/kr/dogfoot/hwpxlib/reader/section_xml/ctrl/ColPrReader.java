@@ -53,10 +53,10 @@ public class ColPrReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ColSz:
+            case ElementNames.hp_colSz:
                 colSz(colPr.addNewColSz(), name, attrs);
                 break;
-            case ElementNames.ColLine:
+            case ElementNames.hp_colLine:
                 colPr.createColLine();
                 colLine(colPr.colLine(), name, attrs);
                 break;
@@ -66,11 +66,11 @@ public class ColPrReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ColSz:
+            case ElementNames.hp_colSz:
                 ColSz colSz = new ColSz();
                 colSz(colSz, name, attrs);
                 return colSz;
-            case ElementNames.ColLine:
+            case ElementNames.hp_colLine:
                 ColLine colLine = new ColLine();
                 colLine(colLine, name, attrs);
                 return colLine;

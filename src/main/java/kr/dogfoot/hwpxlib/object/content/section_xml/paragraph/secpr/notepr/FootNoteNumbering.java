@@ -21,8 +21,8 @@ public class FootNoteNumbering extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FootNoteNumbering;
+    public ObjectType _objectType() {
+        return ObjectType.hp_numbering_for_footnote;
     }
 
     public FootNoteNumberingType type() {

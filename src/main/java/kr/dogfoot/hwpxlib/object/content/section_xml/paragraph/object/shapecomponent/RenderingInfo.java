@@ -15,8 +15,8 @@ public class RenderingInfo extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.RenderingInfo;
+    public ObjectType _objectType() {
+        return ObjectType.hp_renderingInfo;
     }
 
     public TransMatrix transMatrix() {

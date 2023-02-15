@@ -22,23 +22,23 @@ public class EndNotePrReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.AutoNumFormat:
+            case ElementNames.hp_autoNumFormat:
                 endNotePr.createAutoNumFormat();
                 autoNumFormat(endNotePr.autoNumFormat(), name, attrs);
                 break;
-            case ElementNames.NoteLine:
+            case ElementNames.hp_noteLine:
                 endNotePr.createNoteLine();
                 noteLine(endNotePr.noteLine(), name, attrs);
                 break;
-            case ElementNames.NoteSpacing:
+            case ElementNames.hp_noteSpacing:
                 endNotePr.createNoteSpacing();
                 noteSpacing(endNotePr.noteSpacing(), name, attrs);
                 break;
-            case ElementNames.NoteNumbering:
+            case ElementNames.hp_numbering:
                 endNotePr.createNumbering();
                 numbering(endNotePr.numbering(), name, attrs);
                 break;
-            case ElementNames.NotePlacement:
+            case ElementNames.hp_placement:
                 endNotePr.createPlacement();
                 placement(endNotePr.placement(), name, attrs);
                 break;
@@ -48,23 +48,23 @@ public class EndNotePrReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.AutoNumFormat:
+            case ElementNames.hp_autoNumFormat:
                 AutoNumFormat autoNumFormat = new AutoNumFormat();
                 autoNumFormat(autoNumFormat, name, attrs);
                 return autoNumFormat;
-            case ElementNames.NoteLine:
+            case ElementNames.hp_noteLine:
                 NoteLine noteLine = new NoteLine();
                 noteLine(noteLine, name, attrs);
                 return noteLine;
-            case ElementNames.NoteSpacing:
+            case ElementNames.hp_noteSpacing:
                 NoteSpacing noteSpacing = new NoteSpacing();
                 noteSpacing(noteSpacing, name, attrs);
                 return noteSpacing;
-            case ElementNames.NoteNumbering:
+            case ElementNames.hp_numbering:
                 EndNoteNumbering numbering = new EndNoteNumbering();
                 numbering(numbering, name, attrs);
                 return numbering;
-            case ElementNames.NotePlacement:
+            case ElementNames.hp_placement:
                 EndNotePlacement placement = new EndNotePlacement();
                 placement(placement, name, attrs);
                 return placement;

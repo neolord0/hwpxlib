@@ -7,7 +7,7 @@ public class BackSlash extends SlashCore<BackSlash> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.BackSlash;
+    public ObjectType _objectType() {
+        return ObjectType.hh_backSlash;
     }
 }

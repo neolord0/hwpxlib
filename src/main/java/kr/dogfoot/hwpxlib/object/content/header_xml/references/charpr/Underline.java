@@ -26,8 +26,8 @@ public class Underline extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Underline;
+    public ObjectType _objectType() {
+        return ObjectType.hh_underline;
     }
 
     public UnderlineType type() {

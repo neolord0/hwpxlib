@@ -30,8 +30,8 @@ public class SubstFont extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.SubstFont;
+    public ObjectType _objectType() {
+        return ObjectType.hh_substFont;
     }
 
     public String face() {

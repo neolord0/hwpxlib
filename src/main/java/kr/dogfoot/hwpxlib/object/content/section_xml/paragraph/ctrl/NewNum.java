@@ -11,7 +11,7 @@ public class NewNum extends AutoNumNewNumType<NewNum> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.NewNum;
+    public ObjectType _objectType() {
+        return ObjectType.hp_newNum;
     }
 }

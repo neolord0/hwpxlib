@@ -36,8 +36,8 @@ public class PageHiding extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.PageHiding;
+    public ObjectType _objectType() {
+        return ObjectType.hp_pageHiding;
     }
 
     public Boolean hideHeader() {

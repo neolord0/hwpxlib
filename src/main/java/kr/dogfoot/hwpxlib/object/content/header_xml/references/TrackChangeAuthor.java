@@ -28,8 +28,8 @@ public class TrackChangeAuthor extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TrackChangeAuthor;
+    public ObjectType _objectType() {
+        return ObjectType.hh_trackChangeAuthor;
     }
 
     public String id() {

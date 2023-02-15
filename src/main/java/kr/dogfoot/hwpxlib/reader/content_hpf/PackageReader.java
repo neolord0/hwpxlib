@@ -40,15 +40,15 @@ public class PackageReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.MetaData:
+            case ElementNames.opf_metadata:
                 contentHPFFile.createMetaData();
                 metadata(contentHPFFile.metaData(), name, attrs);
                 break;
-            case ElementNames.Manifest:
+            case ElementNames.opf_manifest:
                 contentHPFFile.createManifest();
                 manifest(contentHPFFile.manifest(), name, attrs);
                 break;
-            case ElementNames.Spine:
+            case ElementNames.opf_spine:
                 contentHPFFile.createSpine();
                 spine(contentHPFFile.spine(), name, attrs);
                 break;
@@ -58,16 +58,16 @@ public class PackageReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.MetaData:
+            case ElementNames.opf_metadata:
                 MetaData metaData = new MetaData();
                 metadata(metaData, name, attrs);
                 return metaData;
-            case ElementNames.Manifest:
-                ObjectList<ManifestItem> manifest = new ObjectList<ManifestItem>(ObjectType.Manifest, ManifestItem.class);
+            case ElementNames.opf_manifest:
+                ObjectList<ManifestItem> manifest = new ObjectList<ManifestItem>(ObjectType.opf_manifest, ManifestItem.class);
                 manifest(manifest, name, attrs);
                 return manifest;
-            case ElementNames.Spine:
-                ObjectList<SpineItemRef> spine = new ObjectList<SpineItemRef>(ObjectType.Spine, SpineItemRef.class);
+            case ElementNames.opf_spine:
+                ObjectList<SpineItemRef> spine = new ObjectList<SpineItemRef>(ObjectType.opf_spine, SpineItemRef.class);
                 spine(spine, name, attrs);
                 return spine;
         }

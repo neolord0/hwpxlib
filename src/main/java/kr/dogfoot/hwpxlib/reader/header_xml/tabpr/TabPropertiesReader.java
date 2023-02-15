@@ -20,7 +20,7 @@ public class TabPropertiesReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.TabPr:
+            case ElementNames.hh_tabPr:
                 tabPr(tabProperties.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class TabPropertiesReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.TabPr:
+            case ElementNames.hh_tabPr:
                 TabPr tabPr = new TabPr();
                 tabPr(tabPr, name, attrs);
                 return tabPr;

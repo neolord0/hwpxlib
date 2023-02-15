@@ -12,7 +12,7 @@ public class Engrave extends NoAttributeNoChild<Engrave> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Engrave;
+    public ObjectType _objectType() {
+        return ObjectType.hh_engrave;
     }
 }

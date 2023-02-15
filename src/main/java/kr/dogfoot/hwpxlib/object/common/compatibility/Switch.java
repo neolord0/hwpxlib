@@ -14,8 +14,8 @@ public class Switch extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Switch;
+    public ObjectType _objectType() {
+        return ObjectType.hp_switch;
     }
 
 

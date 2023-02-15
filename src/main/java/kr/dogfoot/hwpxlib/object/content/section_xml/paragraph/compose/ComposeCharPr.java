@@ -16,8 +16,8 @@ public class ComposeCharPr extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ComposeCharPr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_charPr;
     }
 
     public String prIDRef() {

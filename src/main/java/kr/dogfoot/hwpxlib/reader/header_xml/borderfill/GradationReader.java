@@ -50,7 +50,7 @@ public class GradationReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Color:
+            case ElementNames.hc_color:
                 color(gradation.addNewColor(), name, attrs);
                 break;
         }
@@ -59,7 +59,7 @@ public class GradationReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Color:
+            case ElementNames.hc_color:
                 Color color = new Color();
                 color(color, name, attrs);
                 return color;

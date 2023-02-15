@@ -11,7 +11,7 @@ public class PrevParaMargin extends ValueAndUnit<PrevParaMargin> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Prev;
+    public ObjectType _objectType() {
+        return ObjectType.hc_prev;
     }
 }

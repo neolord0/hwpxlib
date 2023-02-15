@@ -11,8 +11,8 @@ public class ContainerXMLFile extends XMLFile {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Container_XMLFile;
+    public ObjectType _objectType() {
+        return ObjectType.ocf_container;
     }
 
     public ObjectList<RootFile> rootFiles() {
@@ -20,7 +20,7 @@ public class ContainerXMLFile extends XMLFile {
     }
 
     public void createRootFiles() {
-        rootFiles = new ObjectList<RootFile>(ObjectType.RootFiles, RootFile.class);
+        rootFiles = new ObjectList<RootFile>(ObjectType.ocf_rootfiles, RootFile.class);
     }
 
     public void removeRootFiles() {

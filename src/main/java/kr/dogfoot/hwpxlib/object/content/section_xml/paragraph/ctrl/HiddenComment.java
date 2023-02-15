@@ -17,8 +17,8 @@ public class HiddenComment extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.HiddenComment;
+    public ObjectType _objectType() {
+        return ObjectType.hp_hiddenComment;
     }
 
     public SubList subList() {

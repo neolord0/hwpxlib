@@ -54,8 +54,8 @@ public class Ellipse extends DrawingObject<Ellipse> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Ellipse;
+    public ObjectType _objectType() {
+        return ObjectType.hp_ellipse;
     }
 
     public Boolean intervalDirty() {
@@ -102,7 +102,7 @@ public class Ellipse extends DrawingObject<Ellipse> {
     }
 
     public void createCenter() {
-        center = new Point(ObjectType.Center);
+        center = new Point(ObjectType.hc_center);
     }
 
     public void removeCenter() {
@@ -114,7 +114,7 @@ public class Ellipse extends DrawingObject<Ellipse> {
     }
 
     public void createAx1() {
-        ax1 = new Point(ObjectType.Ax1);
+        ax1 = new Point(ObjectType.hc_ax1);
     }
 
     public void removeAx1() {
@@ -126,7 +126,7 @@ public class Ellipse extends DrawingObject<Ellipse> {
     }
 
     public void createAx2() {
-        ax2 = new Point(ObjectType.Ax2);
+        ax2 = new Point(ObjectType.hc_ax2);
     }
 
     public void removeAx2() {
@@ -138,7 +138,7 @@ public class Ellipse extends DrawingObject<Ellipse> {
     }
 
     public void createStart1() {
-        start1 = new Point(ObjectType.Start1);
+        start1 = new Point(ObjectType.hc_start1);
     }
 
     public void removeStart1() {
@@ -150,7 +150,7 @@ public class Ellipse extends DrawingObject<Ellipse> {
     }
 
     public void createStart2() {
-        start2 = new Point(ObjectType.Start2);
+        start2 = new Point(ObjectType.hc_start2);
     }
 
     public void removeStart2() {
@@ -162,7 +162,7 @@ public class Ellipse extends DrawingObject<Ellipse> {
     }
 
     public void createEnd1() {
-        end1 = new Point(ObjectType.End1);
+        end1 = new Point(ObjectType.hc_end1);
     }
 
     public void removeEnd1() {
@@ -174,7 +174,7 @@ public class Ellipse extends DrawingObject<Ellipse> {
     }
 
     public void createEnd2() {
-        end2 = new Point(ObjectType.End2);
+        end2 = new Point(ObjectType.hc_end2);
     }
 
     public void removeEnd2() {

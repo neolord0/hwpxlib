@@ -7,7 +7,7 @@ public class Ratio extends ValuesByLanguage<Short, Ratio> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Ratio;
+    public ObjectType _objectType() {
+        return ObjectType.hh_ratio;
     }
 }

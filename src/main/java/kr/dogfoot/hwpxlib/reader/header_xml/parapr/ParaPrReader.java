@@ -49,31 +49,31 @@ public class ParaPrReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Align:
+            case ElementNames.hh_align:
                 paraPr.createAlign();
                 align(paraPr.align(), name, attrs);
                 break;
-            case ElementNames.Heading:
+            case ElementNames.hh_heading:
                 paraPr.createHeading();
                 heading(paraPr.heading(), name, attrs);
                 break;
-            case ElementNames.BreakSetting:
+            case ElementNames.hh_breakSetting:
                 paraPr.createBreakSetting();
                 breakSetting(paraPr.breakSetting(), name, attrs);
                 break;
-            case ElementNames.ParaMargin:
+            case ElementNames.hh_margin:
                 paraPr.createMargin();
                 margin(paraPr.margin(), name, attrs);
                 break;
-            case ElementNames.LineSpacing:
+            case ElementNames.hh_lineSpacing:
                 paraPr.createLineSpacing();
                 lineSpacing(paraPr.lineSpacing(), name, attrs);
                 break;
-            case ElementNames.ParaBorder:
+            case ElementNames.hh_border:
                 paraPr.createBorder();
                 border(paraPr.border(), name, attrs);
                 break;
-            case ElementNames.AutoSpacing:
+            case ElementNames.hh_autoSpacing:
                 paraPr.createAutoSpacing();
                 autoSpacing(paraPr.autoSpacing(), name, attrs);
                 break;
@@ -83,31 +83,31 @@ public class ParaPrReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Align:
+            case ElementNames.hh_align:
                 Align align = new Align();
                 align(align, name, attrs);
                 return align;
-            case ElementNames.Heading:
+            case ElementNames.hh_heading:
                 Heading heading = new Heading();
                 heading(heading, name, attrs);
                 return heading;
-            case ElementNames.BreakSetting:
+            case ElementNames.hh_breakSetting:
                 BreakSetting breakSetting = new BreakSetting();
                 breakSetting(breakSetting, name, attrs);
                 return breakSetting;
-            case ElementNames.ParaMargin:
+            case ElementNames.hh_margin:
                 ParaMargin margin = new ParaMargin();
                 margin(margin, name, attrs);
                 return margin;
-            case ElementNames.LineSpacing:
+            case ElementNames.hh_lineSpacing:
                 LineSpacing lineSpacing = new LineSpacing();
                 lineSpacing(lineSpacing, name, attrs);
                 return lineSpacing;
-            case ElementNames.ParaBorder:
+            case ElementNames.hh_border:
                 ParaBorder border = new ParaBorder();
                 border(border, name, attrs);
                 return border;
-            case ElementNames.AutoSpacing:
+            case ElementNames.hh_autoSpacing:
                 AutoSpacing autoSpacing = new AutoSpacing();
                 autoSpacing(autoSpacing, name, attrs);
                 return autoSpacing;

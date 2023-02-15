@@ -7,7 +7,7 @@ public class CharOffset extends ValuesByLanguage<Short, CharOffset> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CharOffset;
+    public ObjectType _objectType() {
+        return ObjectType.hh_offset;
     }
 }

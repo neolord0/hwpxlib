@@ -25,8 +25,8 @@ public class FormCharPr extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FormCharPr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_formCharPr;
     }
 
     public String charPrIDRef() {

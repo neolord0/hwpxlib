@@ -53,8 +53,8 @@ public class TypeInfo extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TypeInfo;
+    public ObjectType _objectType() {
+        return ObjectType.hh_typeInfo;
     }
 
     public FontFamilyType familyType() {

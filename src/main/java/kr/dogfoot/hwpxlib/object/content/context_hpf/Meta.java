@@ -18,8 +18,8 @@ public class Meta extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Meta;
+    public ObjectType _objectType() {
+        return ObjectType.opf_meta;
     }
 
     public String name() {

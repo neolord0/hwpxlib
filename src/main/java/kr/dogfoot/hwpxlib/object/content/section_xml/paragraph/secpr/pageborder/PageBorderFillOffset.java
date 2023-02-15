@@ -8,7 +8,7 @@ public class PageBorderFillOffset extends LeftRightTopBottom<PageBorderFillOffse
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.PageBorderFillOffset;
+    public ObjectType _objectType() {
+        return ObjectType.hp_offset_for_pageBorderFill;
     }
 }

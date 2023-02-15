@@ -21,7 +21,7 @@ public class ForbiddenWordListReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ForbiddenWord:
+            case ElementNames.hh_forbiddenWord:
                 forbiddenWord(forbiddenWordList.addNew(), name, attrs);
                 break;
         }
@@ -30,7 +30,7 @@ public class ForbiddenWordListReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ForbiddenWord:
+            case ElementNames.hh_forbiddenWord:
                 ForbiddenWord forbiddenWord = new ForbiddenWord();
                 forbiddenWord(forbiddenWord, name, attrs);
                 return forbiddenWord;

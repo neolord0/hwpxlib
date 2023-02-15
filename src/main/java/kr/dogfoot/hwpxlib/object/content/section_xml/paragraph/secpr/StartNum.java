@@ -33,8 +33,8 @@ public class StartNum extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.StartNum;
+    public ObjectType _objectType() {
+        return ObjectType.hp_startNum;
     }
 
     public PageStartON pageStartsOn() {

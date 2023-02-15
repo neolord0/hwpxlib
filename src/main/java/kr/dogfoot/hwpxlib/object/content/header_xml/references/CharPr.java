@@ -108,8 +108,8 @@ public class CharPr extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CharPr;
+    public ObjectType _objectType() {
+        return ObjectType.hh_charPr;
     }
 
     public String id() {

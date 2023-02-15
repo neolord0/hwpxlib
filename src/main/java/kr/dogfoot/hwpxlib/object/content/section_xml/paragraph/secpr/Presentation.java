@@ -39,8 +39,8 @@ public class Presentation extends SwitchableObject {
     private FillBrush fillBrush;
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Presentation;
+    public ObjectType _objectType() {
+        return ObjectType.hp_presentation;
     }
 
     public PresentationEffect effect() {

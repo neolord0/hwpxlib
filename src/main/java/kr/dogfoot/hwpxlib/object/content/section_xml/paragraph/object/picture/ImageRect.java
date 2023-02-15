@@ -26,8 +26,8 @@ public class ImageRect extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ImgRect;
+    public ObjectType _objectType() {
+        return ObjectType.hp_imgRect;
     }
 
     public Point pt0() {
@@ -35,7 +35,7 @@ public class ImageRect extends SwitchableObject {
     }
 
     public void createPt0() {
-        pt0 = new Point(ObjectType.Pt0);
+        pt0 = new Point(ObjectType.hc_pt0);
     }
 
     public void removePt0() {
@@ -47,7 +47,7 @@ public class ImageRect extends SwitchableObject {
     }
 
     public void createPt1() {
-        pt1 = new Point(ObjectType.Pt1);
+        pt1 = new Point(ObjectType.hc_pt1);
     }
 
     public void removePt1() {
@@ -59,7 +59,7 @@ public class ImageRect extends SwitchableObject {
     }
 
     public void createPt2() {
-        pt2 = new Point(ObjectType.Pt2);
+        pt2 = new Point(ObjectType.hc_pt2);
     }
 
     public void removePt2() {
@@ -71,7 +71,7 @@ public class ImageRect extends SwitchableObject {
     }
 
     public void createPt3() {
-        pt3 = new Point(ObjectType.Pt3);
+        pt3 = new Point(ObjectType.hc_pt3);
     }
 
     public void removePt3() {

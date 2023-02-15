@@ -15,8 +15,8 @@ public class ColorRGB extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ColorRGB;
+    public ObjectType _objectType() {
+        return ObjectType.hp_rgb;
     }
 
     public Short r() {

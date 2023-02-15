@@ -23,8 +23,8 @@ public class Indexmark extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Indexmark;
+    public ObjectType _objectType() {
+        return ObjectType.hp_indexmark;
     }
 
     public HasOnlyText firstKey() {

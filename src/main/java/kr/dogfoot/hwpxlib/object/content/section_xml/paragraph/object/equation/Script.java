@@ -8,7 +8,7 @@ public class Script extends HasOnlyText<Script> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Script;
+    public ObjectType _objectType() {
+        return ObjectType.hp_script;
     }
 }

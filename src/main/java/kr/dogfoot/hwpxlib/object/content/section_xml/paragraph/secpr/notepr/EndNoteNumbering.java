@@ -21,8 +21,8 @@ public class EndNoteNumbering extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EndNoteNumbering;
+    public ObjectType _objectType() {
+        return ObjectType.hp_numbering_for_endnote;
     }
 
     public EndNoteNumberingType type() {

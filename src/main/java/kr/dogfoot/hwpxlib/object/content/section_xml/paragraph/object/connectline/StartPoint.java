@@ -28,8 +28,8 @@ public class StartPoint extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.StartPt;
+    public ObjectType _objectType() {
+        return ObjectType.hc_startPt;
     }
 
     public Integer x() {

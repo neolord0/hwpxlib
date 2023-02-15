@@ -10,8 +10,8 @@ public class Color extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Color;
+    public ObjectType _objectType() {
+        return ObjectType.hc_color;
     }
 
     public String value() {

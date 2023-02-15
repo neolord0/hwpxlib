@@ -43,8 +43,8 @@ public class PageBorderFill extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.PageBorderFill;
+    public ObjectType _objectType() {
+        return ObjectType.hp_pageBorderFill;
     }
 
     public ApplyPageType type() {

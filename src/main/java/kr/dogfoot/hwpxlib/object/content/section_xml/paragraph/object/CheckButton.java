@@ -13,7 +13,7 @@ public class CheckButton extends ButtonObject<Button> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CheckBtn;
+    public ObjectType _objectType() {
+        return ObjectType.hp_checkBtn;
     }
 }

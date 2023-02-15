@@ -16,8 +16,8 @@ public class Bookmark extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Bookmark;
+    public ObjectType _objectType() {
+        return ObjectType.hp_bookmark;
     }
 
     public String name() {

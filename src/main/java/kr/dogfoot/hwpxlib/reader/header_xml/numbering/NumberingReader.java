@@ -34,7 +34,7 @@ public class NumberingReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ParaHead:
+            case ElementNames.hh_paraHead:
                 paraHead(numbering.addNewParaHead(), name, attrs);
                 break;
         }
@@ -43,7 +43,7 @@ public class NumberingReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ParaHead:
+            case ElementNames.hh_paraHead:
                 ParaHead paraHead = new ParaHead();
                 paraHead(paraHead, name, attrs);
                 return paraHead;

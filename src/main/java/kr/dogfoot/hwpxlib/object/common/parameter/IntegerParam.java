@@ -9,8 +9,8 @@ public class IntegerParam extends Param<IntegerParam> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.IntegerParam;
+    public ObjectType _objectType() {
+        return ObjectType.hp_integerParam;
     }
 
     public Integer value() {

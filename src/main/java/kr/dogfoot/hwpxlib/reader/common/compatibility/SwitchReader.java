@@ -4,6 +4,7 @@ import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
 public class SwitchReader extends ElementReader {
@@ -16,9 +17,9 @@ public class SwitchReader extends ElementReader {
 
     @Override
     public void childElement(String name, Attributes attrs) {
-        if (ObjectType.Case.equalElementName(name)) {
+        if (ElementNames.hp_case.equals(name)) {
             caseObject(name, attrs);
-        } else if (ObjectType.Default.equalElementName(name)) {
+        } else if (ElementNames.hp_default.equals(name)) {
             defaultObject(name, attrs);
         }
     }

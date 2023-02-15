@@ -30,8 +30,8 @@ public class EncryptionData extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EncryptionData;
+    public ObjectType _objectType() {
+        return ObjectType.odf_encryption_data;
     }
 
     public String checksumType() {

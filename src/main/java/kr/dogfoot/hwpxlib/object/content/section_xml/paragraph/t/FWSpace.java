@@ -11,7 +11,7 @@ public class FWSpace extends TItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FWSpace;
+    public ObjectType _objectType() {
+        return ObjectType.hp_fwSpace;
     }
 }

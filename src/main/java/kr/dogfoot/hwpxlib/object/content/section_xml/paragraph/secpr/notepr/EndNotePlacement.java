@@ -21,8 +21,8 @@ public class EndNotePlacement extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EndNotePlacement;
+    public ObjectType _objectType() {
+        return ObjectType.hp_placement_for_endnote;
     }
 
     public EndNotePlace place() {

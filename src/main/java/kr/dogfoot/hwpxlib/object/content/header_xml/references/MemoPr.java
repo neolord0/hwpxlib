@@ -47,8 +47,8 @@ public class MemoPr extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.MemoPr;
+    public ObjectType _objectType() {
+        return ObjectType.hh_memoPr;
     }
 
     public String id() {

@@ -11,7 +11,7 @@ public class Intent extends ValueAndUnit<Intent> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Intent;
+    public ObjectType _objectType() {
+        return ObjectType.hc_intent;
     }
 }

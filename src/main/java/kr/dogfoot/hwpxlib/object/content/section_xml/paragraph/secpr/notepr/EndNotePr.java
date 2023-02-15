@@ -19,8 +19,8 @@ public class EndNotePr extends NoteShape {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EndNotePr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_endNotePr;
     }
 
     public EndNoteNumbering numbering() {

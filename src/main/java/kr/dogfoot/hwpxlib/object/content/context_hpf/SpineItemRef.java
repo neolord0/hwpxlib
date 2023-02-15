@@ -16,8 +16,8 @@ public class SpineItemRef extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.SpineItemRef;
+    public ObjectType _objectType() {
+        return ObjectType.opf_itemref;
     }
 
     public String idref() {

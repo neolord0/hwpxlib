@@ -20,7 +20,7 @@ public class BorderFillsReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.BorderFill:
+            case ElementNames.hh_borderFill:
                 borderFill(borderFills.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class BorderFillsReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.BorderFill:
+            case ElementNames.hh_borderFill:
                 BorderFill borderFill = new BorderFill();
                 borderFill(borderFill, name, attrs);
                 return borderFill;

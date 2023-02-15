@@ -30,8 +30,8 @@ public class Run extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Run;
+    public ObjectType _objectType() {
+        return ObjectType.hp_run;
     }
 
     public String charPrIDRef() {

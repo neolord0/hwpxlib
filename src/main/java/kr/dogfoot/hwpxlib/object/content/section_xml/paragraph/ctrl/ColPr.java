@@ -51,8 +51,8 @@ public class ColPr extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ColPr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_colPr;
     }
 
     public String id() {

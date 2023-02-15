@@ -11,7 +11,7 @@ public class InMargin extends LeftRightTopBottom<InMargin> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.InMargin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_inMargin;
     }
 }

@@ -21,8 +21,8 @@ public class ImgBrush extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ImgBrush;
+    public ObjectType _objectType() {
+        return ObjectType.hc_imgBrush;
     }
 
     public ImageBrushMode mode() {

@@ -23,15 +23,15 @@ public class MetadataReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch(name) {
-            case ElementNames.Title:
+            case ElementNames.opf_title:
                 metaData.createTitle();
                 title(metaData.title(), name, attrs);
                 break;
-            case ElementNames.Language:
+            case ElementNames.opf_language:
                 metaData.createLanguage();
                 language(metaData.language(), name, attrs);
                 break;
-            case ElementNames.Meta:
+            case ElementNames.opf_meta:
                 meta(metaData.addNewMeta(), name, attrs);
                 break;
         }
@@ -40,15 +40,15 @@ public class MetadataReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch(name) {
-            case ElementNames.Title:
+            case ElementNames.opf_title:
                 Title title = new Title();
                 title(title, name, attrs);
                 return title;
-            case ElementNames.Language:
+            case ElementNames.opf_language:
                 Language language = new Language();
                 language(language, name, attrs);
                 return language;
-            case ElementNames.Meta:
+            case ElementNames.opf_meta:
                 Meta meta = new Meta();
                 meta(meta, name, attrs);
                 return meta;

@@ -36,8 +36,8 @@ public class NoteLine extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.NoteLine;
+    public ObjectType _objectType() {
+        return ObjectType.hp_noteLine;
     }
 
 

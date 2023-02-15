@@ -11,7 +11,7 @@ public class MarkpenEnd extends TItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.MarkpenEnd;
+    public ObjectType _objectType() {
+        return ObjectType.hp_markpenEnd;
     }
 }

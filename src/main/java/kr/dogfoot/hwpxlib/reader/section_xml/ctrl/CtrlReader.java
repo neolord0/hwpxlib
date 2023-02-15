@@ -24,49 +24,49 @@ public class CtrlReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ColPr:
+            case ElementNames.hp_colPr:
                 colPr(ctrl.addNewColPr(), name, attrs);
                 break;
-            case ElementNames.FieldBegin:
+            case ElementNames.hp_fieldBegin:
                 fieldBegin(ctrl.addNewFieldBegin(), name, attrs);
                 break;
-            case ElementNames.FieldEnd:
+            case ElementNames.hp_fieldEnd:
                 fieldEnd(ctrl.addNewFieldEnd(), name, attrs);
                 break;
-            case ElementNames.Bookmark:
+            case ElementNames.hp_bookmark:
                 bookmark(ctrl.addNewBookmark(), name, attrs);
                 break;
-            case ElementNames.Header:
+            case ElementNames.hp_header:
                 header(ctrl.addNewHeader(), name, attrs);
                 break;
-            case ElementNames.Footer:
+            case ElementNames.hp_footer:
                 footer(ctrl.addNewFooter(), name, attrs);
                 break;
-            case ElementNames.FootNote:
+            case ElementNames.hp_footNote:
                 footNote(ctrl.addNewFootNote(), name, attrs);
                 break;
-            case ElementNames.EndNote:
+            case ElementNames.hp_endNote:
                 endNote(ctrl.addNewEndNote(), name, attrs);
                 break;
-            case ElementNames.AutoNum:
+            case ElementNames.hp_autoNum:
                 autoNum(ctrl.addNewAutoNum(), name, attrs);
                 break;
-            case ElementNames.NewNum:
+            case ElementNames.hp_newNum:
                 newNum(ctrl.addNewNewNum(), name, attrs);
                 break;
-            case ElementNames.PageNumCtrl:
+            case ElementNames.hp_pageNumCtrl:
                 pageNumCtrl(ctrl.addNewPageNumCtrl(), name, attrs);
                 break;
-            case ElementNames.PageHiding:
+            case ElementNames.hp_pageHiding:
                 pageHiding(ctrl.addNewPageHiding(), name, attrs);
                 break;
-            case ElementNames.PageNum:
+            case ElementNames.hp_pageNum:
                 pageNum(ctrl.addNewPageNum(), name, attrs);
                 break;
-            case ElementNames.Indexmark:
+            case ElementNames.hp_indexmark:
                 indexmark(ctrl.addNewIndexmark(), name, attrs);
                 break;
-            case ElementNames.HiddenComment:
+            case ElementNames.hp_hiddenComment:
                 hiddenComment(ctrl.addNewHiddenComment(), name, attrs);
                 break;
         }
@@ -75,63 +75,63 @@ public class CtrlReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ColPr:
+            case ElementNames.hp_colPr:
                 ColPr colPr = new ColPr();
                 colPr(colPr, name, attrs);
                 return colPr;
-            case ElementNames.FieldBegin:
+            case ElementNames.hp_fieldBegin:
                 FieldBegin fieldBegin = new FieldBegin();
                 fieldBegin(fieldBegin, name, attrs);
                 return fieldBegin;
-            case ElementNames.FieldEnd:
+            case ElementNames.hp_fieldEnd:
                 FieldEnd fieldEnd = new FieldEnd();
                 fieldEnd(fieldEnd, name, attrs);
                 return fieldEnd;
-            case ElementNames.Bookmark:
+            case ElementNames.hp_bookmark:
                 Bookmark bookmark = new Bookmark();
                 bookmark(bookmark, name, attrs);
                 return bookmark;
-            case ElementNames.Header:
+            case ElementNames.hp_header:
                 Header header = new Header();
                 header(header, name, attrs);
                 return header;
-            case ElementNames.Footer:
+            case ElementNames.hp_footer:
                 Footer footer = new Footer();
                 footer(footer, name, attrs);
                 return footer;
-            case ElementNames.FootNote:
+            case ElementNames.hp_footNote:
                 FootNote footNote = new FootNote();
                 footNote(footNote, name, attrs);
                 return footNote;
-            case ElementNames.EndNote:
+            case ElementNames.hp_endNote:
                 EndNote endNote = new EndNote();
                 endNote(endNote, name, attrs);
                 return endNote;
-            case ElementNames.AutoNum:
+            case ElementNames.hp_autoNum:
                 AutoNum autoNum = new AutoNum();
                 autoNum(autoNum, name, attrs);
                 return autoNum;
-            case ElementNames.NewNum:
+            case ElementNames.hp_newNum:
                 NewNum newNum = new NewNum();
                 newNum(newNum, name, attrs);
                 return newNum;
-            case ElementNames.PageNumCtrl:
+            case ElementNames.hp_pageNumCtrl:
                 PageNumCtrl pageNumCtrl = new PageNumCtrl();
                 pageNumCtrl(pageNumCtrl, name, attrs);
                 return pageNumCtrl;
-            case ElementNames.PageHiding:
+            case ElementNames.hp_pageHiding:
                 PageHiding pageHiding = new PageHiding();
                 pageHiding(pageHiding, name, attrs);
                 return pageHiding;
-            case ElementNames.PageNum:
+            case ElementNames.hp_pageNum:
                 PageNum pageNum = new PageNum();
                 pageNum(pageNum, name, attrs);
                 return pageNum;
-            case ElementNames.Indexmark:
+            case ElementNames.hp_indexmark:
                 Indexmark indexmark = new Indexmark();
                 indexmark(indexmark, name, attrs);
                 return indexmark;
-            case ElementNames.HiddenComment:
+            case ElementNames.hp_hiddenComment:
                 HiddenComment hiddenComment = new HiddenComment();
                 hiddenComment(hiddenComment, name, attrs);
                 return hiddenComment;

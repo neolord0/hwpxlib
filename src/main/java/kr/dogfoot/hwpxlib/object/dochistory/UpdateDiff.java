@@ -22,8 +22,8 @@ public class UpdateDiff extends DiffItem<UpdateDiff> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.UpdateDiff;
+    public ObjectType _objectType() {
+        return ObjectType.hhs_update;
     }
 
     public String oldValue() {

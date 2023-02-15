@@ -52,8 +52,8 @@ public class Edit extends FormObject<Edit> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Edit;
+    public ObjectType _objectType() {
+        return ObjectType.hp_edit;
     }
 
     public Boolean multiLine() {

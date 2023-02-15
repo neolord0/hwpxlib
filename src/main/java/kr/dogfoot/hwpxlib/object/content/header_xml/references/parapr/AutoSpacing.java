@@ -20,8 +20,8 @@ public class AutoSpacing extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.AutoSpacing;
+    public ObjectType _objectType() {
+        return ObjectType.hh_autoSpacing;
     }
 
     public Boolean eAsianEng() {

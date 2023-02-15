@@ -27,8 +27,8 @@ public class AutoNumFormat extends HWPXObject {
     private Boolean supscript;
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.AutoNumFormat;
+    public ObjectType _objectType() {
+        return ObjectType.hp_autoNumFormat;
     }
 
     public NumberType2 type() {

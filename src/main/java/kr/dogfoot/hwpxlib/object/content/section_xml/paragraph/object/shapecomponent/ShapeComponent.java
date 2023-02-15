@@ -17,7 +17,7 @@ public abstract class ShapeComponent<ChildType> extends ShapeObject<ChildType> {
     /**
      * 개체 아이디
      */
-    private Integer instid;
+    private String instid;
     /**
      * 그룹 개체 안에 개별 개체의 위치
      */
@@ -69,15 +69,15 @@ public abstract class ShapeComponent<ChildType> extends ShapeObject<ChildType> {
         return this;
     }
 
-    public Integer instid() {
+    public String instid() {
         return instid;
     }
 
-    public void instid(Integer instid) {
+    public void instid(String instid) {
         this.instid = instid;
     }
 
-    public ShapeComponent instidAnd(Integer instid) {
+    public ShapeComponent instidAnd(String instid) {
         this.instid = instid;
         return this;
     }

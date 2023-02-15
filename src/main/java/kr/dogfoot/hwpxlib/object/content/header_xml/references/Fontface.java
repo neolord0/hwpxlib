@@ -16,8 +16,8 @@ public class Fontface extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Fontface;
+    public ObjectType _objectType() {
+        return ObjectType.hh_fontface;
     }
 
     public LanguageType lang() {

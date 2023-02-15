@@ -4,4 +4,5 @@ public enum ElementReaderType {
     Basic,
     Header,
     Section_MasterPage,
+    Controls,
 }

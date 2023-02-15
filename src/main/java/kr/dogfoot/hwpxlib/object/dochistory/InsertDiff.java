@@ -18,8 +18,8 @@ public class InsertDiff extends DiffItem<InsertDiff> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.InsertDiff;
+    public ObjectType _objectType() {
+        return ObjectType.hhs_insert;
     }
 
     public int countOfChildDiff() {

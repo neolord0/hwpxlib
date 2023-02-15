@@ -29,8 +29,8 @@ public class WinBrush extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.WinBrush;
+    public ObjectType _objectType() {
+        return ObjectType.hc_winBrush;
     }
 
     public String faceColor() {

@@ -24,8 +24,8 @@ public class CaretPosition extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CaretPosition;
+    public ObjectType _objectType() {
+        return ObjectType.ha_CaretPosition;
     }
 
     public Integer listIDRef() {

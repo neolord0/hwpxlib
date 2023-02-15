@@ -48,8 +48,8 @@ public class TextArtPr extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TextArtPr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_textartPr;
     }
 
     public String fontName() {

@@ -15,8 +15,8 @@ public class ColorSchema extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ColorSchema;
+    public ObjectType _objectType() {
+        return ObjectType.hp_scheme;
     }
 
     public Short r() {

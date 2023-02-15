@@ -20,7 +20,7 @@ public class ConfigItemSetReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ConfigItem:
+            case ElementNames.config_item:
                 configItem(configItemSet.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class ConfigItemSetReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.ConfigItem:
+            case ElementNames.config_item:
                 ConfigItem configItem = new ConfigItem();
                 configItem(configItem, name, attrs);
                 return configItem;

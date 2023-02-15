@@ -39,7 +39,7 @@ public class HeaderFooterReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.SubList:
+            case ElementNames.hp_subList:
                 headerFooter.createSubList();
                 subList(headerFooter.subList(), name, attrs);
                 break;
@@ -49,7 +49,7 @@ public class HeaderFooterReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.SubList:
+            case ElementNames.hp_subList:
                 SubList subList = new SubList();
                 subList(subList, name, attrs);
                 return subList;

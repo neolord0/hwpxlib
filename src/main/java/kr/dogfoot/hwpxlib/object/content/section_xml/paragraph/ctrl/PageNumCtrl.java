@@ -14,8 +14,8 @@ public class PageNumCtrl extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.PageNumCtrl;
+    public ObjectType _objectType() {
+        return ObjectType.hp_pageNumCtrl;
     }
 
     public ApplyPageType pageStartsOn() {

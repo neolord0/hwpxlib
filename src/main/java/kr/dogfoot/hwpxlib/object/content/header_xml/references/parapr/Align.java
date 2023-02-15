@@ -22,8 +22,8 @@ public class Align extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Align;
+    public ObjectType _objectType() {
+        return ObjectType.hh_align;
     }
 
 

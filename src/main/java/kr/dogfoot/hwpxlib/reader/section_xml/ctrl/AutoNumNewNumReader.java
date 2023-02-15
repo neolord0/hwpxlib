@@ -41,7 +41,7 @@ public class AutoNumNewNumReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.AutoNumFormat:
+            case ElementNames.hp_autoNumFormat:
                 autoNumNewNum.createAutoNumFormat();
                 autoNumFormat(autoNumNewNum.autoNumFormat(), name, attrs);
                 break;
@@ -51,7 +51,7 @@ public class AutoNumNewNumReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.AutoNumFormat:
+            case ElementNames.hp_autoNumFormat:
                 AutoNumFormat autoNumFormat = new AutoNumFormat();
                 autoNumFormat(autoNumFormat, name, attrs);
                 return autoNumFormat;

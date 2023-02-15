@@ -7,7 +7,7 @@ public class RelSz extends ValuesByLanguage<Short, RelSz> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.RelSz;
+    public ObjectType _objectType() {
+        return ObjectType.hh_relSz;
     }
 }

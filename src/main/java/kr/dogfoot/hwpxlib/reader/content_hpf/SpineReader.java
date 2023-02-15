@@ -21,7 +21,7 @@ public class SpineReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.SpineItemRef:
+            case ElementNames.opf_itemref:
                 itemRef(spine.addNew(), name, attrs);
                 break;
         }
@@ -30,7 +30,7 @@ public class SpineReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.SpineItemRef:
+            case ElementNames.opf_itemref:
                 SpineItemRef itemRef = new SpineItemRef();
                 itemRef(itemRef, name, attrs);
                 return itemRef;

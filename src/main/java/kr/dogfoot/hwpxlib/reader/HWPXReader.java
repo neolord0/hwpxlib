@@ -38,6 +38,7 @@ public class HWPXReader {
 
     private static final String Entry_MineType = "mimetype";
     private static final String MineType_HWPX = "application/hwp+zip";
+    private static final String MineType_XML = "application/xml";
 
     private ZipFile zipFile;
     private HWPXFile hwpxFile;
@@ -108,11 +109,14 @@ public class HWPXReader {
         return null;
     }
 
+
     private void readContentFiles() throws Exception {
         ContentFilesReader contentFilesReader = new ContentFilesReader(entryReaderManager);
 
         for (ManifestItem item : hwpxFile.contentHPFFile().manifest().items()) {
-            contentFilesReader.read(hwpxFile, item.href(), zipFile);
+            if (MineType_XML.equals(item.mediaType())) {
+                contentFilesReader.read(hwpxFile, item.href(), zipFile);
+            }
         }
     }
 

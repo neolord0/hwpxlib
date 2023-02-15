@@ -7,7 +7,7 @@ public class BottomBorder extends Border<BottomBorder> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.BottomBorder;
+    public ObjectType _objectType() {
+        return ObjectType.hh_bottomBorder;
     }
 }

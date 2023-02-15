@@ -48,8 +48,8 @@ public class Gradation extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Gradation;
+    public ObjectType _objectType() {
+        return ObjectType.hc_gradation;
     }
 
     public GradationType type() {

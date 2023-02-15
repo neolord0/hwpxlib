@@ -13,8 +13,8 @@ public class ManifestXMLFile extends XMLFile {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Manifest_XMLFIle;
+    public ObjectType _objectType() {
+        return ObjectType.odf_manifest;
     }
 
     public int countOfFileEntry() {

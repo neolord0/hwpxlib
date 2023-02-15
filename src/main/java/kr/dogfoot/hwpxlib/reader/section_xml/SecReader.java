@@ -25,7 +25,7 @@ public class SecReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Para:
+            case ElementNames.hp_p:
                 para(sectionXMLFile.addNewPara(), name, attrs);
                 break;
         }
@@ -34,7 +34,7 @@ public class SecReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Para:
+            case ElementNames.hp_p:
                 Para para = new Para();
                 para(para, name, attrs);
                 return para;

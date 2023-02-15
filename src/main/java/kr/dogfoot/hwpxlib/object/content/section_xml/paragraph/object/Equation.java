@@ -42,8 +42,8 @@ public class Equation extends ShapeObject<Equation> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Equation;
+    public ObjectType _objectType() {
+        return ObjectType.hp_equation;
     }
 
     public String version() {

@@ -17,8 +17,8 @@ public class DeleteDiff extends DiffItem<DeleteDiff> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.DeleteDiff;
+    public ObjectType _objectType() {
+        return ObjectType.hhs_delete;
     }
 
     public HWPXObject deletedObject() {

@@ -40,7 +40,7 @@ public class HWPXFile extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
+    public ObjectType _objectType() {
         return ObjectType.HWPXFile;
     }
 

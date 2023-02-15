@@ -3,18 +3,18 @@ package kr.dogfoot.hwpxlib.object.common.baseobject;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 
 public abstract class HasOnlyText<ChildType> extends HWPXObject {
-    private String text;
+    private StringBuffer buffer = new StringBuffer();
 
     public String text() {
-        return text;
+        return buffer.toString();
     }
 
-    public void text(String text) {
-        this.text = text;
+    public void addText(String text) {
+        buffer.append(text);
     }
 
-    public ChildType textAnd(String text) {
-        this.text = text;
+    public ChildType addTextAnd(String text) {
+        buffer.append(text);
         return (ChildType) this;
     }
 }

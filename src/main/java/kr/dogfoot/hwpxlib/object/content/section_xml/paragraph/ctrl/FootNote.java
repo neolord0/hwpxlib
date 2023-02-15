@@ -11,7 +11,7 @@ public class FootNote extends NoteType<FootNote> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FootNote;
+    public ObjectType _objectType() {
+        return ObjectType.hp_footNote;
     }
 }

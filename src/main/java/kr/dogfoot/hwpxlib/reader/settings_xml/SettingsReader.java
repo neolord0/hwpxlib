@@ -23,11 +23,11 @@ public class SettingsReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.CaretPosition:
+            case ElementNames.ha_CaretPosition:
                 settingsXMLFile.createCaretPosition();
                 caretPosition(settingsXMLFile.caretPosition(), name, attrs);
                 break;
-            case ElementNames.ConfigItemSet:
+            case ElementNames.config_item_set:
                 settingsXMLFile.createConfigItemSet();
                 configItemSet(settingsXMLFile.configItemSet(), name, attrs);
                 break;
@@ -37,12 +37,12 @@ public class SettingsReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.CaretPosition:
+            case ElementNames.ha_CaretPosition:
                 CaretPosition caretPosition = new CaretPosition();
                 caretPosition(caretPosition, name, attrs);
                 return caretPosition;
-            case ElementNames.ConfigItemSet:
-                ObjectList<ConfigItem> configItemSet = new ObjectList<ConfigItem>(ObjectType.ConfigItemSet, ConfigItem.class);
+            case ElementNames.config_item_set:
+                ObjectList<ConfigItem> configItemSet = new ObjectList<ConfigItem>(ObjectType.config_item_set, ConfigItem.class);
                 configItemSet(configItemSet, name, attrs);
                 return configItemSet;
         }

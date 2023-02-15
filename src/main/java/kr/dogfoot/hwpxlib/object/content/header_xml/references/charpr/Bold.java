@@ -11,7 +11,7 @@ public class Bold extends NoAttributeNoChild<Bold> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Bold;
+    public ObjectType _objectType() {
+        return ObjectType.hh_bold;
     }
 }

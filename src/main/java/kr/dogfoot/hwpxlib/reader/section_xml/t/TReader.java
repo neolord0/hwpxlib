@@ -39,45 +39,45 @@ public class TReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.MarkpenBegin:
+            case ElementNames.hp_markpenBegin:
                 markpenBegin(t.addNewMarkpenBegin(), name, attrs);
                 break;
-            case ElementNames.MarkpenEnd:
+            case ElementNames.hp_markpenEnd:
                 t.addNewMarkpenEnd();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.TitleMark:
+            case ElementNames.hp_titleMark:
                 titleMark(t.addNewTitleMark(), name, attrs);
                 break;
-            case ElementNames.Tab:
+            case ElementNames.hp_tab:
                 tab(t.addNewTab(), name, attrs);
                 break;
-            case ElementNames.LineBreak:
+            case ElementNames.hp_lineBreak:
                 t.addNewLineBreak();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.Hyphen:
+            case ElementNames.hp_hyphen:
                 t.addNewHyphen();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.NBSpace:
+            case ElementNames.hp_nbSpace:
                 t.addNewNBSpace();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.FWSpace:
+            case ElementNames.hp_fwSpace:
                 t.addNewFWSpace();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.InsertBegin:
+            case ElementNames.hp_insertBegin:
                 insertBegin(t.addNewInsertBegin(), name, attrs);
                 break;
-            case ElementNames.InsertEnd:
+            case ElementNames.hp_insertEnd:
                 insertEnd(t.addNewInsertEnd(), name, attrs);
                 break;
-            case ElementNames.DeleteBegin:
+            case ElementNames.hp_deleteBegin:
                 deleteBegin(t.addNewDeleteBegin(), name, attrs);
                 break;
-            case ElementNames.DeleteEnd:
+            case ElementNames.hp_deleteEnd:
                 deleteEnd(t.addNewDeleteEnd(), name, attrs);
                 break;
         }
@@ -86,51 +86,51 @@ public class TReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.MarkpenBegin:
+            case ElementNames.hp_markpenBegin:
                 MarkpenBegin markpenBegin = new MarkpenBegin();
                 markpenBegin(markpenBegin, name, attrs);
                 return markpenBegin;
-            case ElementNames.MarkpenEnd:
+            case ElementNames.hp_markpenEnd:
                 MarkpenEnd markpenEnd = new MarkpenEnd();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return markpenEnd;
-            case ElementNames.TitleMark:
+            case ElementNames.hp_titleMark:
                 TitleMark titleMark = new TitleMark();
                 titleMark(titleMark, name, attrs);
                 return titleMark;
-            case ElementNames.Tab:
+            case ElementNames.hp_tab:
                 Tab tab = new Tab();
                 tab(tab, name, attrs);
                 return tab;
-            case ElementNames.LineBreak:
+            case ElementNames.hp_lineBreak:
                 LineBreak lineBreak = new LineBreak();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return lineBreak;
-            case ElementNames.Hyphen:
+            case ElementNames.hp_hyphen:
                 Hyphen hyphen = new Hyphen();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return hyphen;
-            case ElementNames.NBSpace:
+            case ElementNames.hp_nbSpace:
                 NBSpace nbSpace = new NBSpace();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return nbSpace;
-            case ElementNames.FWSpace:
+            case ElementNames.hp_fwSpace:
                 FWSpace fwSpace = new FWSpace();
-                xmlFileReader().noAttributeNoChild(name, attrs);
+                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
                 return fwSpace;
-            case ElementNames.InsertBegin:
+            case ElementNames.hp_insertBegin:
                 InsertBegin insertBegin = new InsertBegin();
                 insertBegin(insertBegin, name, attrs);
                 return insertBegin;
-            case ElementNames.InsertEnd:
+            case ElementNames.hp_insertEnd:
                 InsertEnd insertEnd = new InsertEnd();
                 insertEnd(insertEnd, name, attrs);
                 return insertEnd;
-            case ElementNames.DeleteBegin:
+            case ElementNames.hp_deleteBegin:
                 DeleteBegin deleteBegin = new DeleteBegin();
                 deleteBegin(deleteBegin, name, attrs);
                 return deleteBegin;
-            case ElementNames.DeleteEnd:
+            case ElementNames.hp_deleteEnd:
                 DeleteEnd deleteEnd = new DeleteEnd();
                 deleteEnd(deleteEnd, name, attrs);
                 return deleteEnd;

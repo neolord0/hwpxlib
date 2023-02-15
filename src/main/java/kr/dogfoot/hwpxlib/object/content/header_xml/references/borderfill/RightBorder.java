@@ -7,7 +7,7 @@ public class RightBorder extends Border<RightBorder> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.RightBorder;
+    public ObjectType _objectType() {
+        return ObjectType.hh_rightBorder;
     }
 }

@@ -20,7 +20,7 @@ public class RootFilesReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch(name) {
-            case ElementNames.RootFile:
+            case ElementNames.ocf_rootfile:
                 rootFile(rootFiles.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class RootFilesReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch(name) {
-            case ElementNames.RootFile:
+            case ElementNames.ocf_rootfile:
                 RootFile rootFile = new RootFile();
                 rootFile(rootFile, name, attrs);
                 return rootFile;

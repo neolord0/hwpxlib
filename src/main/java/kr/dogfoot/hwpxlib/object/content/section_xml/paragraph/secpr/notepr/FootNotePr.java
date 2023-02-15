@@ -19,8 +19,8 @@ public class FootNotePr extends NoteShape {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FootNotePr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_footNotePr;
     }
 
     public FootNoteNumbering numbering() {

@@ -33,19 +33,19 @@ public class ListParamReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.IntegerParam:
+            case ElementNames.hp_integerParam:
                 integerParam(listParam.addNewIntegerParam(), name, attrs);
                 break;
-            case ElementNames.StringParam:
+            case ElementNames.hp_stringParam:
                 stringParam(listParam.addNewStringParam(), name, attrs);
                 break;
-            case ElementNames.BooleanParam:
+            case ElementNames.hp_booleanParam:
                 booleanParam(listParam.addNewBooleanParam(), name, attrs);
                 break;
-            case ElementNames.FloatParam:
+            case ElementNames.hp_floatParam:
                 floatParam(listParam.addNewFloatParam(), name, attrs);
                 break;
-            case ElementNames.ListParam:
+            case ElementNames.hp_ListParam:
                 listParam(listParam.addNewListParam(), name, attrs);
                 break;
         }
@@ -54,23 +54,23 @@ public class ListParamReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.IntegerParam:
+            case ElementNames.hp_integerParam:
                 IntegerParam integerParam = new IntegerParam();
                 integerParam(integerParam, name, attrs);
                 return integerParam;
-            case ElementNames.StringParam:
+            case ElementNames.hp_stringParam:
                 StringParam stringParam = new StringParam();
                 stringParam(stringParam, name, attrs);
                 return stringParam;
-            case ElementNames.BooleanParam:
+            case ElementNames.hp_booleanParam:
                 BooleanParam booleanParam = new BooleanParam();
                 booleanParam(booleanParam, name, attrs);
                 return booleanParam;
-            case ElementNames.FloatParam:
+            case ElementNames.hp_floatParam:
                 FloatParam floatParam = new FloatParam();
                 floatParam(floatParam, name, attrs);
                 return floatParam;
-            case ElementNames.ListParam:
+            case ElementNames.hp_ListParam:
                 ListParam listParam = new ListParam();
                 listParam(listParam, name, attrs);
                 return listParam;

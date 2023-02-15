@@ -25,8 +25,8 @@ public class RotationInfo extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.RotationInfo;
+    public ObjectType _objectType() {
+        return ObjectType.hp_rotationInfo;
     }
 
     public Short angle() {

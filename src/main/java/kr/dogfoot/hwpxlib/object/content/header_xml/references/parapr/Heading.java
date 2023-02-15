@@ -25,8 +25,8 @@ public class Heading extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Heading;
+    public ObjectType _objectType() {
+        return ObjectType.hh_heading;
     }
 
     public ParaHeadingType type() {

@@ -8,7 +8,7 @@ public class OriginalSize extends WidthAndHeight<OriginalSize> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.OrgSz;
+    public ObjectType _objectType() {
+        return ObjectType.hp_orgSz;
     }
 }

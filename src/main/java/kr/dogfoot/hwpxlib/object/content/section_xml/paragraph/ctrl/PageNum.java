@@ -26,8 +26,8 @@ public class PageNum extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.PageNum;
+    public ObjectType _objectType() {
+        return ObjectType.hp_pageNum;
     }
 
     public PageNumPosition pos() {

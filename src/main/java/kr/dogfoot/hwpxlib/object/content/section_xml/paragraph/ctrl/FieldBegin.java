@@ -51,8 +51,8 @@ public class FieldBegin extends CtrlItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FieldBegin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_fieldBegin;
     }
 
     public String id() {

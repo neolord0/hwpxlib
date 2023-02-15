@@ -22,15 +22,15 @@ public class FillBrushReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.WinBrush:
+            case ElementNames.hc_winBrush:
                 fillBrush.createWinBrush();
                 winBrush(fillBrush.winBrush(), name, attrs);
                 break;
-            case ElementNames.Gradation:
+            case ElementNames.hc_gradation:
                 fillBrush.createGradation();
                 gradation(fillBrush.gradation(), name, attrs);
                 break;
-            case ElementNames.ImgBrush:
+            case ElementNames.hc_imgBrush:
                 fillBrush.createImgBrush();
                 imageBrush(fillBrush.imgBrush(), name, attrs);
                 break;
@@ -40,15 +40,15 @@ public class FillBrushReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.WinBrush:
+            case ElementNames.hc_winBrush:
                 WinBrush winBrush = new WinBrush();
                 winBrush(winBrush, name, attrs);
                 return winBrush;
-            case ElementNames.Gradation:
+            case ElementNames.hc_gradation:
                 Gradation gradation = new Gradation();
                 gradation(gradation, name, attrs);
                 return gradation;
-            case ElementNames.ImgBrush:
+            case ElementNames.hc_imgBrush:
                 ImgBrush imgBrush = new ImgBrush();
                 imageBrush(imgBrush, name, attrs);
                 return imgBrush;

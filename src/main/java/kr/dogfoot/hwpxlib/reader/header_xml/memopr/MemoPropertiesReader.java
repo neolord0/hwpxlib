@@ -20,7 +20,7 @@ public class MemoPropertiesReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.MemoPr:
+            case ElementNames.hh_memoPr:
                 memoPr(memoProperties.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class MemoPropertiesReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.MemoPr:
+            case ElementNames.hh_memoPr:
                 MemoPr memoPr = new MemoPr();
                 memoPr(memoPr, name, attrs);
                 return memoPr;

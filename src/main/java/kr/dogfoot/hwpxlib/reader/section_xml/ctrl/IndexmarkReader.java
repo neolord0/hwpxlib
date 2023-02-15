@@ -27,11 +27,11 @@ public class IndexmarkReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.FirstKey:
+            case ElementNames.hp_firstKey:
                 indexmark.createFirstKey();
                 firstKeySecondKey(indexmark.firstKey(), name, attrs);
                 break;
-            case ElementNames.SecondKey:
+            case ElementNames.hp_secondKey:
                 indexmark.createSecondKey();
                 firstKeySecondKey(indexmark.secondKey(), name, attrs);
                 break;
@@ -41,11 +41,11 @@ public class IndexmarkReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.FirstKey:
+            case ElementNames.hp_firstKey:
                 FirstKey firstKey = new FirstKey();
                 firstKeySecondKey(firstKey, name, attrs);
                 return firstKey;
-            case ElementNames.SecondKey:
+            case ElementNames.hp_secondKey:
                 SecondKey secondKey = new SecondKey();
                 firstKeySecondKey(secondKey, name, attrs);
                 return secondKey;

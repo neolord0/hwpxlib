@@ -35,8 +35,8 @@ public class Caption extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Caption;
+    public ObjectType _objectType() {
+        return ObjectType.hp_caption;
     }
 
     public CaptionSide side() {

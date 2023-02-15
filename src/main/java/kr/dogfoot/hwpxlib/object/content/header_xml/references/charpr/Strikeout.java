@@ -21,8 +21,8 @@ public class Strikeout extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Strikeout;
+    public ObjectType _objectType() {
+        return ObjectType.hh_strikeout;
     }
 
     public LineType2 shape() {

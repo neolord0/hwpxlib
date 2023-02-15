@@ -26,8 +26,8 @@ public class Tab extends TItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Tab;
+    public ObjectType _objectType() {
+        return ObjectType.hp_tab;
     }
 
     public Integer width() {

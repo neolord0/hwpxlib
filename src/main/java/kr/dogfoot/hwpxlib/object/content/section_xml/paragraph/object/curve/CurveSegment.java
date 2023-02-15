@@ -30,8 +30,8 @@ public class CurveSegment extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Seg;
+    public ObjectType _objectType() {
+        return ObjectType.hp_seg;
     }
 
     public CurveSegmentType type() {

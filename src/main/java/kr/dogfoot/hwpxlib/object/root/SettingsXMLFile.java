@@ -21,8 +21,8 @@ public class SettingsXMLFile extends XMLFile {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Settings_XMLFile;
+    public ObjectType _objectType() {
+        return ObjectType.ha_HWPApplicationSetting;
     }
 
     public CaretPosition caretPosition() {
@@ -42,7 +42,7 @@ public class SettingsXMLFile extends XMLFile {
     }
 
     public void createConfigItemSet() {
-        configItemSet = new ObjectList<ConfigItem>(ObjectType.ConfigItemSet, ConfigItem.class);
+        configItemSet = new ObjectList<ConfigItem>(ObjectType.config_item_set, ConfigItem.class);
     }
 
     public void removeConfigItemSet() {

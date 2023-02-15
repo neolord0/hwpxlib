@@ -11,7 +11,7 @@ public class ForbiddenWord extends HasOnlyText<ForbiddenWord> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ForbiddenWord;
+    public ObjectType _objectType() {
+        return ObjectType.hh_forbiddenWord;
     }
 }

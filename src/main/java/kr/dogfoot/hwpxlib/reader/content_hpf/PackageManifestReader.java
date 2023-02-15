@@ -20,7 +20,7 @@ public class PackageManifestReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch(name) {
-            case ElementNames.ManifestItem:
+            case ElementNames.opf_item:
                 item(manifest.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class PackageManifestReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch(name) {
-            case ElementNames.ManifestItem:
+            case ElementNames.opf_item:
                 ManifestItem item = new ManifestItem();
                 item(item, name, attrs);
                 return item;

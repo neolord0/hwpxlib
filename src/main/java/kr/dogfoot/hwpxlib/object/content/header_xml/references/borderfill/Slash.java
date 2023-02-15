@@ -7,7 +7,7 @@ public class Slash extends SlashCore<Slash> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Slash;
+    public ObjectType _objectType() {
+        return ObjectType.hh_slash;
     }
 }

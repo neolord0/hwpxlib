@@ -11,7 +11,7 @@ public class ImageClip extends LeftRightTopBottom<ImageClip> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ImgClip;
+    public ObjectType _objectType() {
+        return ObjectType.hp_imgClip;
     }
 }

@@ -16,8 +16,8 @@ public class MarkpenBegin extends TItem {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.MarkpenBegin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_markpenBegin;
     }
 
     public String beginColor() {

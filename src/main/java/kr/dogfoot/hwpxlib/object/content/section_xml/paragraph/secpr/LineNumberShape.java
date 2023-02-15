@@ -26,8 +26,8 @@ public class LineNumberShape extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.LineNumberShape;
+    public ObjectType _objectType() {
+        return ObjectType.hp_lineNumberShape;
     }
 
     public LineNumberRestartType restartType() {

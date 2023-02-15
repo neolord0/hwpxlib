@@ -25,8 +25,8 @@ public class FileEntry extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FileEntry;
+    public ObjectType _objectType() {
+        return ObjectType.odf_file_entry;
     }
 
     public String fullPath() {

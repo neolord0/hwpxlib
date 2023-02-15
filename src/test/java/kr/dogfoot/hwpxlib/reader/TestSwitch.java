@@ -27,81 +27,81 @@ public class TestSwitch {
         HWPXFile hwpxFile = new HWPXFile();
         ContentFilesReader contentFilesReader = new ContentFilesReader(manager);
         contentFilesReader.read(hwpxFile, new FileInputStream("testFile/header_forTestSwitch.xml"));
-        Assert.assertEquals(2, hwpxFile.headerXMLFile().refList().borderFills().count());
+        Assert.assertEquals(hwpxFile.headerXMLFile().refList().borderFills().count(), 2);
 
         {
             BorderFill borderFill = hwpxFile.headerXMLFile().refList().borderFills().get(0);
-            Assert.assertEquals(2, borderFill.switchObject().countOfCaseObject());
+            Assert.assertEquals(borderFill.switchObject().countOfCaseObject(), 2);
             {
                 Case caseObject = borderFill.switchObject().getCaseObject(0);
-				Assert.assertEquals("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar", caseObject.requiredNamespace());
+				Assert.assertEquals(caseObject.requiredNamespace(), "http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
 
-				Assert.assertEquals(2, caseObject.countOfChild());
+				Assert.assertEquals(caseObject.countOfChild(), 2);
 
 				{
 					HWPXObject object = caseObject.getChild(0);
-					Assert.assertEquals(ObjectType.BackSlash, object.objectType());
+					Assert.assertEquals(object._objectType(), ObjectType.hh_backSlash);
 					BackSlash backSlash = (BackSlash) object;
-					Assert.assertEquals(SlashType.NONE, backSlash.type());
-					Assert.assertEquals(false, backSlash.Crooked().booleanValue());
-					Assert.assertEquals(true, backSlash.isCounter().booleanValue());
+					Assert.assertEquals(backSlash.type(), SlashType.NONE);
+					Assert.assertEquals(backSlash.Crooked().booleanValue(), false);
+					Assert.assertEquals(backSlash.isCounter().booleanValue(), true);
 				}
 
 				{
 					HWPXObject object = caseObject.getChild(1);
-					Assert.assertEquals(ObjectType.LeftBorder, object.objectType());
+					Assert.assertEquals(object._objectType(), ObjectType.hh_leftBorder);
 					LeftBorder leftBorder = (LeftBorder) object;
-					Assert.assertEquals(LineType2.NONE, leftBorder.type());
-					Assert.assertEquals(LineWidth.MM_0_1, leftBorder.width());
-					Assert.assertEquals("#000001", leftBorder.color());
+					Assert.assertEquals(leftBorder.type(), LineType2.NONE);
+					Assert.assertEquals(leftBorder.width(), LineWidth.MM_0_1);
+					Assert.assertEquals(leftBorder.color(), "#000001");
 				}
 			}
 
 			{
 				Case caseObject = borderFill.switchObject().getCaseObject(1);
-				Assert.assertEquals("http://www.hancom.co.kr/hwpml/2022/HwpUnitChar", caseObject.requiredNamespace());
+				Assert.assertEquals(caseObject.requiredNamespace(), "http://www.hancom.co.kr/hwpml/2022/HwpUnitChar");
 
-				Assert.assertEquals(2, caseObject.countOfChild());
+				Assert.assertEquals(caseObject.countOfChild(), 2);
 
 				{
 					HWPXObject object = caseObject.getChild(0);
-					Assert.assertEquals(ObjectType.BackSlash, object.objectType());
+					Assert.assertEquals(object._objectType(), ObjectType.hh_backSlash);
 					BackSlash backSlash = (BackSlash) object;
-					Assert.assertEquals(SlashType.NONE, backSlash.type());
-					Assert.assertEquals(true, backSlash.Crooked().booleanValue());
-					Assert.assertEquals(false, backSlash.isCounter().booleanValue());
+					Assert.assertEquals(backSlash.type(), SlashType.NONE);
+					Assert.assertEquals(backSlash.Crooked().booleanValue(), true);
+					Assert.assertEquals(backSlash.isCounter().booleanValue(), false);
 				}
 
 				{
 					HWPXObject object = caseObject.getChild(1);
-					Assert.assertEquals(ObjectType.LeftBorder, object.objectType());
+					Assert.assertEquals(object._objectType(), ObjectType.hh_leftBorder);
 					LeftBorder leftBorder = (LeftBorder) object;
-					Assert.assertEquals(LineType2.NONE, leftBorder.type());
-					Assert.assertEquals(LineWidth.MM_0_2, leftBorder.width());
-					Assert.assertEquals("#000002", leftBorder.color());
+					Assert.assertEquals(leftBorder.type(), LineType2.NONE);
+					Assert.assertEquals(leftBorder.width(), LineWidth.MM_0_2);
+					Assert.assertEquals(leftBorder.color(), "#000002");
 				}
 			}
 
 			{
 				Default defaultObject = borderFill.switchObject().defaultObject();
-				Assert.assertEquals(2, defaultObject.countOfChild());
+				Assert.assertEquals(defaultObject.countOfChild(), 2);
 
 				{
 					HWPXObject object = defaultObject.getChild(0);
-					Assert.assertEquals(ObjectType.BackSlash, object.objectType());
+					Assert.assertEquals(object._objectType(), ObjectType.hh_backSlash);
 					BackSlash backSlash = (BackSlash) object;
-					Assert.assertEquals(SlashType.NONE, backSlash.type());
-					Assert.assertEquals(true, backSlash.Crooked().booleanValue());
-					Assert.assertEquals(true, backSlash.isCounter().booleanValue());
+					Assert.assertEquals(backSlash.type(), SlashType.NONE);
+					Assert.assertEquals(backSlash.Crooked().booleanValue(), true);
+					Assert.assertEquals(backSlash.isCounter().booleanValue(), true);
 				}
 
 				{
 					HWPXObject object = defaultObject.getChild(1);
-					Assert.assertEquals(ObjectType.LeftBorder, object.objectType());
+					Assert.assertEquals(object._objectType(), ObjectType.hh_leftBorder);
 					LeftBorder leftBorder = (LeftBorder) object;
-					Assert.assertEquals(LineType2.NONE, leftBorder.type());
-					Assert.assertEquals(LineWidth.MM_0_3, leftBorder.width());
-					Assert.assertEquals("#000003", leftBorder.color());
+					Assert.assertEquals(leftBorder.type(), LineType2.NONE);
+					Assert.assertEquals(leftBorder.width(), LineWidth.MM_0_3);
+					Assert.assertEquals(leftBorder.color(), "#000003");
 				}
 			}
         }

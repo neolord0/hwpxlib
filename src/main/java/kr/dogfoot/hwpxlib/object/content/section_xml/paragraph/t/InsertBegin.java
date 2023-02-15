@@ -11,7 +11,7 @@ public class InsertBegin extends TrackChangeTag<InsertBegin> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.InsertBegin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_insertBegin;
     }
 }

@@ -13,8 +13,8 @@ public class Tr extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Tr;
+    public ObjectType _objectType() {
+        return ObjectType.hp_tr;
     }
 
     public int countOfTc() {

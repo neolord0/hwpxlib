@@ -11,7 +11,7 @@ public class Emboss extends NoAttributeNoChild<Emboss> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Emboss;
+    public ObjectType _objectType() {
+        return ObjectType.hh_emboss;
     }
 }

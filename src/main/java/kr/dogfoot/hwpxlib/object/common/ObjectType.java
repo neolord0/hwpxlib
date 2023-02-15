@@ -1,377 +1,360 @@
 package kr.dogfoot.hwpxlib.object.common;
 
 public enum ObjectType {
-    Unknown(null),
-    Switch("hp:switch"),
-    Case("hp:case"),
-    Default("hp:default"),
-
-    HWPXFile(null),
+    Unknown,
+    HWPXFile,
+    hp_switch,
+    hp_case,
+    hp_default,
+    hp_parameterset,
+    hp_parameters,
+    hp_booleanParam,
+    hp_integerParam,
+    hp_floatParam,
+    hp_stringParam,
+    hp_ListParam,
 
     // Version.xml
-    Version_XMLFile("hv:HCFVersion"),
+    hv_HCFVersion,
 
     // META-INF/manifest.xml
-    Manifest_XMLFIle("odf:manifest"),
-    FileEntry("odf:file-entry"),
-    EncryptionData("odf:encryption-data"),
-    Algorithm("odf:algorithm"),
-    KeyDerivation("odf:key-derivation"),
-    StartKeyGeneration("odf:start-key-generation"),
+    odf_manifest,
+    odf_file_entry,
+    odf_encryption_data,
+    odf_algorithm,
+    odf_key_derivation,
+    odf_start_key_generation,
 
     // META-INF/container.xml
-    Container_XMLFile("ocf:container"),
-    RootFiles("ocf:rootfiles"),
-    RootFile("ocf:rootfile"),
+    ocf_container,
+    ocf_rootfiles,
+    ocf_rootfile,
 
     // Contents/content.hpf
-    Content_HPFFile("opf:package"),
-    MetaData("opf:metadata"),
-    Title("opf:title"),
-    Language("opf:language"),
-    Meta("opf:meta"),
-    Manifest("opf:manifest"),
-    ManifestItem("opf:item"),
-    Spine("opf:spine"),
-    SpineItemRef("opf:itemref"),
+    opf_package,
+    opf_metadata,
+    opf_title,
+    opf_language,
+    opf_meta,
+    opf_manifest,
+    opf_item,
+    opf_spine,
+    opf_itemref,
 
     // Settings.xml
-    Settings_XMLFile("ha:HWPApplicationSetting"),
-    CaretPosition("ha:CaretPosition"),
-    ConfigItemSet("config-item-set"),
-    ConfigItem("config-item"),
+    ha_HWPApplicationSetting,
+    ha_CaretPosition,
+    config_item_set,
+    config_item,
 
 
     // Contents/header_forTestSwitch.xml
-    Headers_XMLFile("hh:head"),
-    BeginNum("hh:beginNum"),
-    RefList("hh:refList"),
-    Fontfaces("hh:fontfaces"),
-    Fontface("hh:fontface"),
-    Font("hh:font"),
-    SubstFont("hh:substFont"),
-    TypeInfo("hh:typeInfo"),
-    BorderFills("hh:borderFills"),
-    BorderFill("hh:borderFill"),
-    Slash("hh:slash"),
-    BackSlash("hh:backSlash"),
-    LeftBorder("hh:leftBorder"),
-    RightBorder("hh:rightBorder"),
-    TopBorder("hh:topBorder"),
-    BottomBorder("hh:bottomBorder"),
-    Diagonal("hh:diagonal"),
-    FillBrush("hc:fillBrush"),
-    WinBrush("hc:winBrush"),
-    Gradation("hc:gradation"),
-    Color("hc:color"),
-    ImgBrush("hc:imgBrush"),
-    Img("hc:img"),
-    CharProperties("hh:charProperties"),
-    CharPr("hh:charPr"),
-    FontRef("hh:fontRef"),
-    Ratio("hh:ratio"),
-    Spacing("hh:spacing"),
-    RelSz("hh:relSz"),
-    CharOffset("hh:offset"),
-    Bold("hh:bold"),
-    Italic("hh:italic"),
-    Underline("hh:underline"),
-    Strikeout("hh:strikeout"),
-    Outline("hh:outline"),
-    CharShadow("hh:shadow"),
-    Emboss("hh:emboss"),
-    Engrave("hh:engrave"),
-    Supscript("hh:supscript"),
-    Subscript("hh:subscript"),
-    TabProperties("hh:tabProperties"),
-    TabPr("hh:tabPr"),
-    TabItem("hh:tabItem"),
-    Numberings("hh:numberings"),
-    Numbering("hh:numbering"),
-    ParaHead("hh:paraHead"),
-    Bullets("hh:bullets"),
-    Bullet("hh:bullet"),
-    ParaProperties("hh:paraProperties"),
-    ParaPr("hh:paraPr"),
-    Align("hh:align"),
-    Heading("hh:heading"),
-    BreakSetting("hh:breakSetting"),
-    ParaMargin("hh:margin"),
-    Intent("hc:intent"),
-    Left("hc:left"),
-    Right("hc:right"),
-    Prev("hc:prev"),
-    Next("hc:next"),
-    LineSpacing("hh:lineSpacing"),
-    ParaBorder("hh:border"),
-    AutoSpacing("hh:autoSpacing"),
-    Styles("hh:styles"),
-    Style("hh:style"),
-    MemoProperties("hh:memoProperties"),
-    MemoPr("hh:memoPr"),
-    TrackChanges("hh:trackChanges"),
-    TrackChange("hh:trackChange"),
-    TrackChangeAuthors("hh:trackChangeAuthors"),
-    TrackChangeAuthor("hh:trackChangeAuthor"),
-    ForbiddenWordList("hh:forbiddenWordList"),
-    ForbiddenWord("hh:forbiddenWord"),
-    CompatibleDocument("hh:compatibleDocument"),
-    LayoutCompatibility("hh:layoutCompatibility"),
-    LayoutCompatibilityItem(null), // 다양한 이름
-    DocOption("hh:docOption"),
-    LinkInfo("hh:linkinfo"),
-    TrackChangeConfig("hh:trackchageConfig"),
+    hh_head,
+    hh_beginNum,
+    hh_refList,
+    hh_fontfaces,
+    hh_fontface,
+    hh_font,
+    hh_substFont,
+    hh_typeInfo,
+    hh_borderFills,
+    hh_borderFill,
+    hh_slash,
+    hh_backSlash,
+    hh_leftBorder,
+    hh_rightBorder,
+    hh_topBorder,
+    hh_bottomBorder,
+    hh_diagonal,
+    hc_fillBrush,
+    hc_winBrush,
+    hc_gradation,
+    hc_color,
+    hc_imgBrush,
+    hc_img,
+    hh_charProperties,
+    hh_charPr,
+    hh_fontRef,
+    hh_ratio,
+    hh_spacing,
+    hh_relSz,
+    hh_offset,
+    hh_bold,
+    Italic,
+    hh_underline,
+    hh_strikeout,
+    hh_outline,
+    hh_shadow,
+    hh_emboss,
+    hh_engrave,
+    hh_supscript,
+    hh_subscript,
+    hh_tabProperties,
+    hh_tabPr,
+    hh_tabItem,
+    hh_numberings,
+    hh_numbering,
+    hh_paraHead,
+    hh_bullets,
+    hh_bullet,
+    hh_paraProperties,
+    hh_paraPr,
+    hh_align,
+    hh_heading,
+    hh_breakSetting,
+    hh_margin,
+    hc_intent,
+    hc_left,
+    hc_right,
+    hc_prev,
+    hc_next,
+    hh_lineSpacing,
+    hh_border,
+    hh_autoSpacing,
+    hh_styles,
+    hh_style,
+    hh_memoProperties,
+    hh_memoPr,
+    hh_trackChanges,
+    hh_trackChange,
+    hh_trackChangeAuthors,
+    hh_trackChangeAuthor,
+    hh_forbiddenWordList,
+    hh_forbiddenWord,
+    hh_compatibleDocument,
+    hh_layoutCompatibility,
+    each_layoutCompatibilityItem,
+    hh_docOption,
+    hh_linkinfo,
+    hh_trackchageConfig,
 
     // Contents/section0.xml
-    Section_XMLFile("hs:sec"),
-    Para("hp:p"),
-    Run("hp:run"),
+    hs_sec,
+    hp_p,
+    hp_run,
+    hp_subList,
 
     // secPr
-    SecPr("hp:secPr"),
-    Grid("hp:grid"),
-    StartNum("hp:startNum"),
-    Visibility("hp:visibility"),
-    LineNumberShape("hp:lineNumberShape"),
-    PagePr("hp:pagePr"),
-    PageMargin("hp:margin"),
-    FootNotePr("hp:footNotePr"),
-    AutoNumFormat("hp:autoNumFormat"),
-    NoteLine("hp:noteLine"),
-    NoteSpacing("hp:noteSpacing"),
-    FootNoteNumbering("hp:numbering"),
-    FootNotePlacement("hp:placement"),
-    EndNotePr("hp:endNotePr"),
-    EndNoteNumbering("hp:numbering"),
-    EndNotePlacement("hp:placement"),
-    PageBorderFill("hp:pageBorderFill"),
-    PageBorderFillOffset("hp:offset"),
-    MasterPage("hp:masterPage"),
-    Presentation("hp;presentation"),
+    hp_secPr,
+    hp_grid,
+    hp_startNum,
+    hp_visibility,
+    hp_lineNumberShape,
+    hp_pagePr,
+    hp_margin,
+    hp_footNotePr,
+    hp_autoNumFormat,
+    hp_noteLine,
+    hp_noteSpacing,
+    hp_numbering_for_footnote,
+    hp_placement_for_footnote,
+    hp_endNotePr,
+    hp_numbering_for_endnote,
+    hp_placement_for_endnote,
+    hp_pageBorderFill,
+    hp_offset_for_pageBorderFill,
+    hp_masterPage,
+    hp_presentation,
 
     // 컨트롤 문자들
-    Ctrl("hp:ctrl"),
-    ColPr("hp:colPr"),  // 단 설정
-    ColSz("hp:colSz"),
-    ColLine("hp:colLine"),
-    FieldBegin("hp:fieldBegin"), // 필드 시작
-    ParameterSet("hp:parameterset"),
-    Parameters("hp:parameters"),
-    BooleanParam("hp:booleanParam"),
-    IntegerParam("hp:integerParam"),
-    FloatParam("hp:floatParam"),
-    StringParam("hp:stringParam"),
-    ListParam("hp:ListParam"),
-    SubList("hp:subList"),
-    FieldEnd("hp:fieldEnd"),     // 필드 끝
-    Bookmark("hp:bookmark"),    // 책갈피
-    Header("hp:header"),    // 머리말
-    Footer("hp:footer"),    // 꼬리말
-    FootNote("hp:footNote"), // 각주
-    EndNote("hp:endNote"),  // 미주
-    AutoNum("hp:autoNum"),  // 자동 번호
-    NewNum("hp:newNum"),    // 새 번호
-    PageNumCtrl("hp:pageNumCtrl"),
-    PageHiding("hp:pageHiding"),    // 감추기
-    PageNum("hp:pageNum"),  // 쪽 번호 위치
-    Indexmark("hp:indexmark"), // 색인
-    FirstKey("hp:firstKey"),
-    SecondKey("hp:secondKey"),
-    HiddenComment("hp:hiddenComment"),  // 숨믄 설명
+    hp_ctrl,
+    hp_colPr,  // 단 설정
+    hp_colSz,
+    hp_colLine,
+    hp_fieldBegin, // 필드 시작
+    hp_fieldEnd,     // 필드 끝
+    hp_bookmark,    // 책갈피
+    hp_header,    // 머리말
+    hp_footer,    // 꼬리말
+    hp_footNote, // 각주
+    hp_endNote,  // 미주
+    hp_autoNum,  // 자동 번호
+    hp_newNum,    // 새 번호
+    hp_pageNumCtrl,
+    hp_pageHiding,    // 감추기
+    hp_pageNum,  // 쪽 번호 위치
+    hp_indexmark, // 색인
+    hp_firstKey,
+    hp_secondKey,
+    hp_hiddenComment,  // 숨믄 설명
 
-    T("hp:t"),
-    MarkpenBegin("hp:markpenBegin"),    // 형광팬 시작
-    MarkpenEnd("hp:markpenEnd"),    // 형광팬 끝
-    TitleMark("hp:titleMark"),  // 제목 차래 표시
-    Tab("hp:tab"),  // 탭
-    LineBreak("hp:lineBreak"),  // 강제 줄나눔
-    Hyphen("hp:hyphen"),    // 하이픈
-    NBSpace("hp:nbSpace"),
-    FWSpace("hp:fwSpace"),
-    InsertBegin("hp:insertBegin"),  // 삽입 시작
-    InsertEnd("hp:insertEnd"),  // 삽입 끝
-    DeleteBegin("hp:deleteBegin"),  // 삭제 시작
-    DeleteEnd("hp:deleteEnd"), // 삭제 끝
+    hp_t,
+    hp_markpenBegin,    // 형광팬 시작
+    hp_markpenEnd,    // 형광팬 끝
+    hp_titleMark,  // 제목 차래 표시
+    hp_tab,  // 탭
+    hp_lineBreak,  // 강제 줄나눔
+    hp_hyphen,    // 하이픈
+    hp_nbSpace,
+    hp_fwSpace,
+    hp_insertBegin,  // 삽입 시작
+    hp_insertEnd,  // 삽입 끝
+    hp_deleteBegin,  // 삭제 시작
+    hp_deleteEnd, // 삭제 끝
 
     // AbstractShapeObjectType
-    ShapeSz("hp:sz"),
-    ShapePos("hp:pos"),
-    OutMargin("hp:outMargin"),
-    Caption("hp:caption"),
-    ShapeComment("hp:shapeComment"),
+    hp_sz,
+    hp_pos_for_shapeObject,
+    hp_outMargin,
+    hp_caption,
+    hp_shapeComment,
 
     // 표 개체
-    Tbl("hp:tbl"),
-    InMargin("hp:inMargin"),
-    CellZoneList("hp:cellzoneList"),
-    CellZone("hp:cellzone"),
-    Tr("hp:tr"),
-    Tc("hp:tc"),
-    CellAddr("hp:cellAddr"),
-    CellSpan("hp:cellSpan"),
-    CellSz("hp:cellSz"),
-    CellMargin("hp:cellMargin"),
+    hp_tbl,
+    hp_inMargin,
+    hp_cellzoneList,
+    hp_cellzone,
+    hp_tr,
+    hp_tc,
+    hp_cellAddr,
+    hp_cellSpan,
+    hp_cellSz,
+    hp_cellMargin,
 
     // 수식 개체
-    Equation("hp:equation"),
-    Script("hp:script"),
+    hp_equation,
+    hp_script,
 
-    Chart("hp:chart"),
+    hp_chart,
 
     // AbstractShapeComponentType
-    Offset("hp:offset"),
-    OrgSz("hp:orgSz"),
-    CurSz("hp:curSz"),
-    Flip("hp:flip"),
-    RotationInfo("hp:rotationInfo"),
-    RenderingInfo("hp:renderingInfo"),
-    TransMatrix("hc:transMatrix"),
-    ScaMatrix("hc:scaMatrix"),
-    RotMatrix("hc:rotMatrix"),
+    hp_offset_for_shapeComponent,
+    hp_orgSz,
+    hp_curSz,
+    hp_flip,
+    hp_rotationInfo,
+    hp_renderingInfo,
+    hc_transMatrix,
+    hc_scaMatrix,
+    hc_rotMatrix,
 
     // 그림 개체
-    Pic("hp:pic"),
-    LineShape("hp:lineShape"),
-    ImgRect("hp:imgRect"),
-    Pt0("hc:pt0"),
-    Pt1("hc:pt1"),
-    Pt2("hc:pt2"),
-    Pt3("hc:pt3"),
-    ImgClip("hp:imgClip"),
-    ImgDim("hp:imgDim"),
-    Effects("hp:effects"),
-    EffectsShadow("hp:shadow"),
-    Skew("hp:skew"),
-    Scale("hp:scale"),
-    EffectsColor("hp:effectsColor"),
-    ColorRGB("hp:rgb"),
-    ColorCMYK("hp:cmyk"),
-    ColorSchema("hp:scheme"),
-    ColorSystem("hp:system"),
-    ColorEffect("hp:effect"),
-    EffectsGlow("hp:glow"),
-    EffectsSoftEdge("hp:softEdge"),
-    EffectsReflection("hp:reflection"),
-    Alpha("hp:alpha"),
-    Pos("hp:pos"),
+    hp_pic,
+    hp_lineShape,
+    hp_imgRect,
+    hc_pt0,
+    hc_pt1,
+    hc_pt2,
+    hc_pt3,
+    hp_imgClip,
+    hp_imgDim,
+    hp_effects,
+    hp_shadow_for_effects,
+    hp_skew,
+    hp_scale,
+    hp_effectsColor,
+    hp_rgb,
+    hp_cmyk,
+    hp_scheme,
+    hp_system,
+    hp_effect,
+    hp_glow,
+    hp_softEdge,
+    hp_reflection,
+    hp_alpha,
+    hp_pos,
 
     // ole 개체
-    OLE("hp:ole"),
-    Extent("hc:extent"),
+    hp_ole,
+    hc_extent,
 
     // 묶음 개체
-    Container("hp:container"),
+    hp_container,
 
     // AbstractDrawingObjectType
-    DrawText("hp:drawText"),
-    TextMargin("hp:textMargin"),
-    DrawingShadow("hp:shadow"),
+    hp_drawText,
+    hp_textMargin,
+    hp_shadow_for_drawingObject,
 
     // 선 개체
-    Line("hp:line"),
-    StartPt("hc:startPt"),
-    EndPt("hc:endPt"),
+    hp_line,
+    hc_startPt,
+    hc_endPt,
 
     // 사각형 개체
-    Rect("hp:rect"),
+    hp_rect,
 
     // 타원 개체
-    Ellipse("hp:ellipse"),
-    Center("hc:center"),
-    Ax1("hc:ax1"),
-    Ax2("hc:ax2"),
-    Start1("hc:start1"),
-    Start2("hc:start2"),
-    End1("hc:end1"),
-    End2("hc:end2"),
+    hp_ellipse,
+    hc_center,
+    hc_ax1,
+    hc_ax2,
+    hc_start1,
+    hc_start2,
+    hc_end1,
+    hc_end2,
 
     // 호 개체
-    Arc("hp:arc"),
+    hp_arc,
 
     // 다각형 개체
-    Polygon("hp:polygon"),
-    Pt("hc:pt"),
+    hp_polygon,
+    hc_pt,
 
     // 곡선 개체
-    Curve("hp:curve"),
-    Seg("hp:seg"),
+    hp_curve,
+    hp_seg,
 
     // 연결선 개체
-    ConnectLine("hp:connectLine"),
+    hp_connectLine,
 
     // 글맵시 개체
-    TextArt("hp:textart"),
-    TextArtPr("hp:textartPr"),
-    TextArtOutline("hp:outline"),
+    hp_textart,
+    hp_textartPr,
+    hp_outline,
 
     // AbstractFormObjectType
-    FormCharPr("hp:formCharPr"),
+    hp_formCharPr,
 
     // 버튼 개체
-    Btn("hp:btn"),
+    hp_btn,
 
     // 라디오버튼 개체
-    RadioBtn("hp:radioBtn"),
+    hp_radioBtn,
 
     // 채크버튼 개체
-    CheckBtn("hp:checkBtn"),
+    hp_checkBtn,
 
     // 콤보박스 개체
-    ComboBox("hp:comboBox"),
-    ListItem("hp:listItem"),
+    hp_comboBox,
+    hp_listItem,
 
     // 리스트박스 개체
-    ListBox("hp:listBox"),
+    hp_listBox,
 
     // 에디트박스 개체
-    Edit("hp:edit"),
-    EditText("hp:text"),
+    hp_edit,
+    hp_text,
 
     // 스크롤바 개체
-    ScrollBar("hp:scrollBar"),
+    hp_scrollBar,
 
     // 비디오 개체
-    Video("hp:video"),
+    hp_video,
 
     // 글자겹침 개체
-    Compose("hp:compose"),
-    ComposeCharPr("hp:charPr"),
+    hp_compose,
+    hp_charPr,
 
     // 덧말 개체
-    Dutmal("hp:dutmal"),
-    MainText("hp:mainText"),
-    SubText("hp:subText"),
+    hp_dutmal,
+    hp_mainText,
+    hp_subText,
 
-    LineSegArray("hp:linesegarray"),
-    LineSeg("hp:lineseg"),
+    hp_linesegarray,
+    hp_lineseg,
 
-    MasterPage_XMLFile("masterPage"),
+    masterPage,
 
     // 문사이력 파일
-    History_XMLFile("hhs:history"),
-    HistoryEntry("hhs:historyEntry"),
-    PackageDiff("hhs:packageDiff"),
-    HeadDiff("hhs:headDiff"),
-    BodyDiff("hhs:bodyDiff"),
-    InsertDiff("hhs:insert"),
-    UpdateDiff("hhs:update"),
-    DeleteDiff("hhs:delete"),
-
-    End_Of_Object(null);
-
-    private String elementName;
-
-    ObjectType(String elementName) {
-        this.elementName = elementName;
-    }
-
-    public String elementName() {
-        return elementName;
-    }
-
-    public boolean equalElementName(String elementName) {
-        return this.elementName.equals(elementName);
-    }
+    hhs_history,
+    hhs_historyEntry,
+    hhs_packageDiff,
+    hhs_headDiff,
+    hhs_bodyDiff,
+    hhs_insert,
+    hhs_update,
+    hhs_delete
 }
 
 

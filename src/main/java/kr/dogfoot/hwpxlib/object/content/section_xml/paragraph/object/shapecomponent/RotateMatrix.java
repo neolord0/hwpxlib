@@ -11,7 +11,7 @@ public class RotateMatrix extends Matrix<RotateMatrix> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.RotMatrix;
+    public ObjectType _objectType() {
+        return ObjectType.hc_rotMatrix;
     }
 }

@@ -20,8 +20,8 @@ public class Polygon extends DrawingObject<Polygon> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Polygon;
+    public ObjectType _objectType() {
+        return ObjectType.hp_polygon;
     }
 
     public int countOfPoint() {
@@ -37,7 +37,7 @@ public class Polygon extends DrawingObject<Polygon> {
     }
 
     public Point addNewPoint() {
-        Point point = new Point(ObjectType.Pt);
+        Point point = new Point(ObjectType.hc_pt);
         pointList.add(point);
         return point;
     }

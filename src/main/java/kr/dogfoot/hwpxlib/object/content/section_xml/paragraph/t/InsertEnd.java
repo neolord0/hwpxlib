@@ -11,7 +11,7 @@ public class InsertEnd extends TrackChangeTag<InsertEnd> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.InsertEnd;
+    public ObjectType _objectType() {
+        return ObjectType.hp_insertEnd;
     }
 }

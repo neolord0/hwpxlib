@@ -7,7 +7,7 @@ public class TopBorder extends Border<TopBorder> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.TopBorder;
+    public ObjectType _objectType() {
+        return ObjectType.hh_topBorder;
     }
 }

@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 public class NoAttributeNoChildReader extends ElementReader {
     @Override
     public ElementReaderSort sort() {
-        return ElementReaderSort.NoAttributeNoChild;
+        return ElementReaderSort.Empty;
     }
 
     @Override

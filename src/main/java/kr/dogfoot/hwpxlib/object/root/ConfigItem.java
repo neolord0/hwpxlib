@@ -15,8 +15,8 @@ public class ConfigItem extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ConfigItem;
+    public ObjectType _objectType() {
+        return ObjectType.config_item;
     }
 
     public String name() {

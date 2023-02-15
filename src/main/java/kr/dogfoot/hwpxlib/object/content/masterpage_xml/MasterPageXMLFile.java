@@ -35,8 +35,8 @@ public class MasterPageXMLFile extends XMLFile {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.MasterPage_XMLFile;
+    public ObjectType _objectType() {
+        return ObjectType.masterPage;
     }
 
     public String id() {

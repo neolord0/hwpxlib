@@ -20,7 +20,7 @@ public class NumberingsReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Numbering:
+            case ElementNames.hh_numbering:
                 numbering(numberings.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class NumberingsReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Numbering:
+            case ElementNames.hh_numbering:
                 Numbering numbering = new Numbering();
                 numbering(numbering, name, attrs);
                 return numbering;

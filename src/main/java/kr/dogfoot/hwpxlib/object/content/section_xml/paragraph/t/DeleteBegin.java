@@ -11,7 +11,7 @@ public class DeleteBegin extends TrackChangeTag<DeleteBegin> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.DeleteBegin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_deleteBegin;
     }
 }

@@ -14,7 +14,7 @@ public class OLE extends ShapeComponent<OLE> {
     /**
      * OLE 객체 종류
      */
-    private OLEObjectType _objectType;
+    private OLEObjectType objectType;
     /**
      * OLE 객체의 바이너리 데이터에 대한 아이디 참조값
      */
@@ -44,20 +44,20 @@ public class OLE extends ShapeComponent<OLE> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.OLE;
+    public ObjectType _objectType() {
+        return ObjectType.hp_ole;
     }
 
-    public OLEObjectType _objectType() {
-        return _objectType;
+    public OLEObjectType objectType() {
+        return objectType;
     }
 
-    public void _objectType(OLEObjectType objectType) {
-        this._objectType = objectType;
+    public void objectType(OLEObjectType objectType) {
+        this.objectType = objectType;
     }
 
-    public OLE _objectTypeAnd(OLEObjectType objectType) {
-        this._objectType = objectType;
+    public OLE objectTypeAnd(OLEObjectType objectType) {
+        this.objectType = objectType;
         return this;
     }
 

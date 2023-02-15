@@ -15,8 +15,8 @@ public class ColorSystem extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ColorSystem;
+    public ObjectType _objectType() {
+        return ObjectType.hp_system;
     }
 
     public Short h() {

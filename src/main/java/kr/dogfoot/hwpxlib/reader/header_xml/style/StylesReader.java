@@ -20,7 +20,7 @@ public class StylesReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Style:
+            case ElementNames.hh_style:
                 style(styles.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class StylesReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.Style:
+            case ElementNames.hh_style:
                 Style style = new Style();
                 style(style, name, attrs);
                 return style;

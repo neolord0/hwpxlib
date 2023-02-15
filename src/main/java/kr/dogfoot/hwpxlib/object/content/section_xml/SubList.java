@@ -54,8 +54,8 @@ public class SubList extends ParaListCore {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.SubList;
+    public ObjectType _objectType() {
+        return ObjectType.hp_subList;
     }
 
     public String id() {

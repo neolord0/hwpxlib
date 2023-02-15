@@ -8,7 +8,7 @@ public class EditText extends HasOnlyText<EditText> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EditText;
+    public ObjectType _objectType() {
+        return ObjectType.hp_text;
     }
 }

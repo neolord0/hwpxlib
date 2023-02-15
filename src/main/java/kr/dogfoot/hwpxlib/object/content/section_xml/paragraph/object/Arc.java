@@ -30,8 +30,8 @@ public class Arc extends DrawingObject<Arc> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Arc;
+    public ObjectType _objectType() {
+        return ObjectType.hp_arc;
     }
 
     public ArcType type() {
@@ -52,7 +52,7 @@ public class Arc extends DrawingObject<Arc> {
     }
 
     public void createCenter() {
-        center = new Point(ObjectType.Center);
+        center = new Point(ObjectType.hc_center);
     }
 
     public void removeCenter() {
@@ -64,7 +64,7 @@ public class Arc extends DrawingObject<Arc> {
     }
 
     public void createAx1() {
-        ax1 = new Point(ObjectType.Ax1);
+        ax1 = new Point(ObjectType.hc_ax1);
     }
 
     public void removeAx1() {
@@ -76,7 +76,7 @@ public class Arc extends DrawingObject<Arc> {
     }
 
     public void createAx2() {
-        ax2 = new Point(ObjectType.Ax2);
+        ax2 = new Point(ObjectType.hc_ax2);
     }
 
     public void removeAx2() {

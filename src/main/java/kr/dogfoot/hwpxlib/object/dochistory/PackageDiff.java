@@ -7,7 +7,7 @@ public class PackageDiff extends FilePartDiff<PackageDiff> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.PackageDiff;
+    public ObjectType _objectType() {
+        return ObjectType.hhs_packageDiff;
     }
 }

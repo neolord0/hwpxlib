@@ -22,8 +22,8 @@ public class RefList extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.RefList;
+    public ObjectType _objectType() {
+        return ObjectType.hh_refList;
     }
 
     public Fontfaces fontfaces() {
@@ -43,7 +43,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createBorderFills() {
-        borderFills = new ObjectList<BorderFill>(ObjectType.BorderFills, BorderFill.class);
+        borderFills = new ObjectList<BorderFill>(ObjectType.hh_borderFills, BorderFill.class);
     }
 
     public void removeBorderFills() {
@@ -55,7 +55,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createCharProperties() {
-        charProperties = new ObjectList<CharPr>(ObjectType.CharProperties, CharPr.class);
+        charProperties = new ObjectList<CharPr>(ObjectType.hh_charProperties, CharPr.class);
     }
 
 
@@ -68,7 +68,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createTabProperties() {
-        tabProperties = new ObjectList<TabPr>(ObjectType.TabProperties, TabPr.class);
+        tabProperties = new ObjectList<TabPr>(ObjectType.hh_tabProperties, TabPr.class);
     }
 
     public void removeTabProperties() {
@@ -80,7 +80,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createNumberings() {
-        numberings = new ObjectList<Numbering>(ObjectType.Numberings, Numbering.class);
+        numberings = new ObjectList<Numbering>(ObjectType.hh_numberings, Numbering.class);
     }
 
     public void removeNumberings() {
@@ -92,7 +92,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createBullets() {
-        bullets = new ObjectList<Bullet>(ObjectType.Bullets, Bullet.class);
+        bullets = new ObjectList<Bullet>(ObjectType.hh_bullets, Bullet.class);
     }
 
     public void removeBullets() {
@@ -104,7 +104,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createParaProperties() {
-        paraProperties = new ObjectList<ParaPr>(ObjectType.ParaProperties, ParaPr.class);
+        paraProperties = new ObjectList<ParaPr>(ObjectType.hh_paraProperties, ParaPr.class);
     }
 
     public void removeParaProperties() {
@@ -116,7 +116,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createStyles() {
-        styles = new ObjectList<Style>(ObjectType.Styles, Style.class);
+        styles = new ObjectList<Style>(ObjectType.hh_styles, Style.class);
     }
 
     public void removeStyles() {
@@ -128,7 +128,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createMemoProperties() {
-        memoProperties = new ObjectList<MemoPr>(ObjectType.MemoProperties, MemoPr.class);
+        memoProperties = new ObjectList<MemoPr>(ObjectType.hh_memoProperties, MemoPr.class);
     }
 
     public void removeMemoProperties() {
@@ -140,7 +140,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createTrackChanges() {
-        trackChanges = new ObjectList<TrackChange>(ObjectType.TrackChanges, TrackChange.class);
+        trackChanges = new ObjectList<TrackChange>(ObjectType.hh_trackChanges, TrackChange.class);
     }
 
     public void removeTrackChanges() {
@@ -152,7 +152,7 @@ public class RefList extends SwitchableObject {
     }
 
     public void createTrackChangeAuthors() {
-        trackChangeAuthors = new ObjectList<TrackChangeAuthor>(ObjectType.TrackChangeAuthors, TrackChangeAuthor.class);
+        trackChangeAuthors = new ObjectList<TrackChangeAuthor>(ObjectType.hh_trackChangeAuthors, TrackChangeAuthor.class);
     }
 
     public void removeTrackChangeAuthors() {

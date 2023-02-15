@@ -49,8 +49,8 @@ public class Para extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Para;
+    public ObjectType _objectType() {
+        return ObjectType.hp_p;
     }
 
     public String id() {
@@ -179,7 +179,7 @@ public class Para extends SwitchableObject {
     }
 
     public void createLineSegArray() {
-        lineSegArray = new ObjectList<LineSeg>(ObjectType.LineSegArray, LineSeg.class);
+        lineSegArray = new ObjectList<LineSeg>(ObjectType.hp_linesegarray, LineSeg.class);
     }
 
     public void removeLineSegArray() {

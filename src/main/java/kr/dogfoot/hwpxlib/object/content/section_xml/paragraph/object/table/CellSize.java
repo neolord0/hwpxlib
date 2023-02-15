@@ -11,7 +11,7 @@ public class CellSize extends WidthAndHeight<CellSize> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.CellSz;
+    public ObjectType _objectType() {
+        return ObjectType.hp_cellSz;
     }
 }

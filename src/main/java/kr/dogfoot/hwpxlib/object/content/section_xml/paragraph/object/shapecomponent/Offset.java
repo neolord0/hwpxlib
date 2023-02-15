@@ -8,7 +8,7 @@ public class Offset extends XAndY<Offset> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Offset;
+    public ObjectType _objectType() {
+        return ObjectType.hp_offset_for_shapeComponent;
     }
 }

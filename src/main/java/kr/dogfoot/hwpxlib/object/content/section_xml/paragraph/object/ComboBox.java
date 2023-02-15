@@ -36,8 +36,8 @@ public class ComboBox extends FormObject<ComboBox> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ComboBox;
+    public ObjectType _objectType() {
+        return ObjectType.hp_comboBox;
     }
 
     public Integer listBoxRows() {

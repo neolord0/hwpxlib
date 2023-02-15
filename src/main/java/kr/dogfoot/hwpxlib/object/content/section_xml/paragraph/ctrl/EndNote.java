@@ -11,7 +11,7 @@ public class EndNote extends NoteType<EndNote> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EndNote;
+    public ObjectType _objectType() {
+        return ObjectType.hp_endNote;
     }
 }

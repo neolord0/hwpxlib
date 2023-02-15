@@ -20,7 +20,7 @@ public class CharPropertiesReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.CharPr:
+            case ElementNames.hh_charPr:
                 charPr(charProperties.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class CharPropertiesReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.CharPr:
+            case ElementNames.hh_charPr:
                 CharPr charPr = new CharPr();
                 charPr(charPr, name, attrs);
                 return charPr;

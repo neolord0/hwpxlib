@@ -16,8 +16,8 @@ public class ColorCMYK extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ColorCMYK;
+    public ObjectType _objectType() {
+        return ObjectType.hp_cmyk;
     }
 
     public Short c() {

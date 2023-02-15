@@ -12,7 +12,7 @@ public class Supscript extends NoAttributeNoChild<Supscript> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Supscript;
+    public ObjectType _objectType() {
+        return ObjectType.hh_supscript;
     }
 }

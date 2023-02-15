@@ -33,8 +33,8 @@ public class Rectangle extends DrawingObject<Rectangle> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Rect;
+    public ObjectType _objectType() {
+        return ObjectType.hp_rect;
     }
 
     public Short ratio() {
@@ -55,7 +55,7 @@ public class Rectangle extends DrawingObject<Rectangle> {
     }
 
     public void createPt0() {
-        pt0 = new Point(ObjectType.Pt0);
+        pt0 = new Point(ObjectType.hc_pt0);
     }
 
     public void removePt0() {
@@ -67,7 +67,7 @@ public class Rectangle extends DrawingObject<Rectangle> {
     }
 
     public void createPt1() {
-        pt1 = new Point(ObjectType.Pt1);
+        pt1 = new Point(ObjectType.hc_pt1);
     }
 
     public void removePt1() {
@@ -79,7 +79,7 @@ public class Rectangle extends DrawingObject<Rectangle> {
     }
 
     public void createPt2() {
-        pt2 = new Point(ObjectType.Pt2);
+        pt2 = new Point(ObjectType.hc_pt2);
     }
 
     public void removePt2() {
@@ -91,7 +91,7 @@ public class Rectangle extends DrawingObject<Rectangle> {
     }
 
     public void createPt3() {
-        pt3 = new Point(ObjectType.Pt3);
+        pt3 = new Point(ObjectType.hc_pt3);
     }
 
     public void removePt3() {

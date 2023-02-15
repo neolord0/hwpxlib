@@ -28,8 +28,8 @@ public class Numbering extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Numbering;
+    public ObjectType _objectType() {
+        return ObjectType.hh_numbering;
     }
 
     public String id() {

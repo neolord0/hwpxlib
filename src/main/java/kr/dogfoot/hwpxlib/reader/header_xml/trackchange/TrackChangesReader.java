@@ -20,7 +20,7 @@ public class TrackChangesReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.TrackChange:
+            case ElementNames.hh_trackChange:
                 trackChange(trackChanges.addNew(), name, attrs);
                 break;
         }
@@ -29,7 +29,7 @@ public class TrackChangesReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.TrackChange:
+            case ElementNames.hh_trackChange:
                 TrackChange trackChange = new TrackChange();
                 trackChange(trackChange, name, attrs);
                 return trackChange;

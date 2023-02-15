@@ -45,11 +45,11 @@ public class FontReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.SubstFont:
+            case ElementNames.hh_substFont:
                 font.createSubstFont();
                 substFont(font.substFont(), name, attrs);
                 break;
-            case ElementNames.TypeInfo:
+            case ElementNames.hh_typeInfo:
                 font.createTypeInfo();
                 typeInfo(font.typeInfo(), name, attrs);
                 break;
@@ -59,11 +59,11 @@ public class FontReader extends ElementReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.SubstFont:
+            case ElementNames.hh_substFont:
                 SubstFont substFont = new SubstFont();
                 substFont(substFont, name, attrs);
                 return substFont;
-            case ElementNames.TypeInfo:
+            case ElementNames.hh_typeInfo:
                 TypeInfo typeInfo = new TypeInfo();
                 typeInfo(typeInfo, name, attrs);
                 return typeInfo;

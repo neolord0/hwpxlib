@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.common;
 
-import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
+import kr.dogfoot.hwpxlib.reader.common.baseobject.*;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.CaseReader;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.DefaultReader;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.SwitchReader;
@@ -40,6 +39,17 @@ import kr.dogfoot.hwpxlib.reader.manifest_xml.*;
 import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.*;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawTextReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingShadowReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.ImageDimReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.ImageRectReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects.*;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.*;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.CaptionReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapePositionReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeSizeReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.table.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.secpr.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.t.*;
@@ -52,18 +62,20 @@ public class ElementReaderFactory {
     public static ElementReader create(ElementReaderSort sort) {
         switch (sort.type()) {
             case Basic:
-                return createBasicEntryReader(sort);
+                return createEntryReaderForBasic(sort);
             case Header:
-                return createHeaderEntryReader(sort);
+                return createEntryReaderForHeader(sort);
             case Section_MasterPage:
-                return createSectionMasterPageEntryReader(sort);
+                return createEntryReaderForSectionMasterPage(sort);
+            case Controls:
+                return createEntryReaderForControls(sort);
         }
         return null;
     }
 
-    private static ElementReader createBasicEntryReader(ElementReaderSort sort) {
+    private static ElementReader createEntryReaderForBasic(ElementReaderSort sort) {
         switch (sort) {
-            case NoAttributeNoChild:
+            case Empty:
                 return new NoAttributeNoChildReader();
             case Switch:
                 return new SwitchReader();
@@ -75,6 +87,15 @@ public class ElementReaderFactory {
                 return new HasOnlyTextReader();
             case LeftRightTopBottom:
                 return new LeftRightTopBottomReader();
+            case StartAndEndFloat:
+                return new StartAndEndFloatReader();
+            case WidthAndHeight:
+                return new WidthAndHeightReader();
+            case XAndYFloat:
+                return new XAndYFloatReader();
+            case XAndY:
+                return new XAndYReader();
+
             case ParameterList:
                 return new ParameterListReader();
             case IntegerParam:
@@ -89,7 +110,6 @@ public class ElementReaderFactory {
                 return new ListParamReader();
             case Manifest:
                 return new ManifestReader();
-
             case FileEntry:
                 return new FileEntryReader();
             case EncryptionData:
@@ -100,14 +120,12 @@ public class ElementReaderFactory {
                 return new KeyDerivationReader();
             case StartKeyGeneration:
                 return new StartKeyGenerationReader();
-
             case Container:
                 return new ContainerReader();
             case RootFiles:
                 return new RootFilesReader();
             case RootFile:
                 return new RootFileReader();
-
             case Package:
                 return new PackageReader();
             case Metadata:
@@ -122,7 +140,6 @@ public class ElementReaderFactory {
                 return new SpineReader();
             case SpineItemRef:
                 return new SpineItemRefReader();
-
             case Settings:
                 return new SettingsReader();
             case CaretPosition:
@@ -136,7 +153,7 @@ public class ElementReaderFactory {
         return null;
     }
 
-    private static ElementReader createHeaderEntryReader(ElementReaderSort sort) {
+    private static ElementReader createEntryReaderForHeader(ElementReaderSort sort) {
         switch (sort) {
             case Head:
                 return new HeadReader();
@@ -260,7 +277,7 @@ public class ElementReaderFactory {
         return null;
     }
 
-    private static ElementReader createSectionMasterPageEntryReader(ElementReaderSort sort) {
+    private static ElementReader createEntryReaderForSectionMasterPage(ElementReaderSort sort) {
         switch (sort) {
             case Sec:
                 return new SecReader();
@@ -346,16 +363,93 @@ public class ElementReaderFactory {
                 return new TabReader();
             case TrackChangeTag:
                 return new TrackChangeTagReader();
+            case LineSegArray:
+                return new LineSegArrayReader();
+            case LineSeg:
+                return new LineSegReader();
+            case MasterPage:
+                return new MasterPageReader();
+        }
+        return null;
+    }
+
+
+    private static ElementReader createEntryReaderForControls(ElementReaderSort sort) {
+        switch (sort) {
+            case ShapeSize:
+                return new ShapeSizeReader();
+            case ShapePosition:
+                return new ShapePositionReader();
+            case Caption:
+                return new CaptionReader();
             case Tbl:
                 return new TableReader();
+            case CellZoneList:
+                return new CellzoneListReader();
+            case CellZone:
+                return new CellZoneReader();
+            case Tr:
+                return new TrReader();
+            case Tc:
+                return new TcReader();
+            case CellAddr:
+                return new CellAddrReader();
+            case CellSpan:
+                return new CellSpanReader();
+            case CellSize:
+                return new CellSizeReader();
+            case Equation:
+                return new EquationReader();
+            case Chart:
+                return new ChartReader();
+            case Offset:
+                return new OffsetReader();
+            case Flip:
+                return new FlipReader();
+            case RotationInfo:
+                return new RotationInfoReader();
+            case RenderingInfo:
+                return new RenderingInfoReader();
+            case Matrix:
+                return new MatrixReader();
             case Pic:
                 return new PictureReader();
+            case LineShape:
+                return new LineShapeReader();
+            case ImageRect:
+                return new ImageRectReader();
+            case ImageDim:
+                return new ImageDimReader();
+            case Effects:
+                return new EffectsReader();
+            case EffectsShadow:
+                return new EffectsShadowReader();
+            case EffectsColor:
+                return new EffectsColorReader();
+            case ColorRGB:
+                return new ColorRGBReader();
+            case ColorCMYK:
+                return new ColorCMYKReader();
+            case ColorSchema:
+                return new ColorSchemaReader();
+            case ColorSystem:
+                return new ColorSystemReader();
+            case ColorEffect:
+                return new ColorEffectReader();
+            case EffectsGlow:
+                return new EffectsGlowReader();
+            case EffectsSoftEdge:
+                return new EffectsSoftEdgeReader();
+            case EffectsReflection:
+                return new EffectsReflectionReader();
             case ContainerControl:
                 return new ContainerControlReader();
             case OLE:
                 return new OLEReader();
-            case Equation:
-                return new EquationReader();
+            case DrawText:
+                return new DrawTextReader();
+            case DrawingShadow:
+                return new DrawingShadowReader();
             case Line:
                 return new LineReader();
             case Rect:
@@ -392,14 +486,8 @@ public class ElementReaderFactory {
                 return new ScrollBarReader();
             case Video:
                 return new VideoReader();
-
-            case LineSegArray:
-                return new LineSegArrayReader();
-            case LineSeg:
-                return new LineSegReader();
-            case MasterPage:
-                return new MasterPageReader();
         }
         return null;
     }
+
 }

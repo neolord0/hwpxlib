@@ -21,8 +21,8 @@ public class LineSeg extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.LineSeg;
+    public ObjectType _objectType() {
+        return ObjectType.hp_lineseg;
     }
 
     public Integer textpos() {

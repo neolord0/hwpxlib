@@ -21,8 +21,8 @@ public class NoteSpacing extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.NoteSpacing;
+    public ObjectType _objectType() {
+        return ObjectType.hp_noteSpacing;
     }
 
     public Integer betweenNotes() {

@@ -24,8 +24,8 @@ public class Grid extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Grid;
+    public ObjectType _objectType() {
+        return ObjectType.hp_grid;
     }
 
     public Integer lineGrid() {

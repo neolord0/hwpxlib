@@ -41,8 +41,8 @@ public class Bullet extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Bullet;
+    public ObjectType _objectType() {
+        return ObjectType.hh_bullet;
     }
 
     public String id() {

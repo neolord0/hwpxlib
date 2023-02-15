@@ -58,8 +58,8 @@ public class ParaHead extends HWPXObject {
     private String text;
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ParaHead;
+    public ObjectType _objectType() {
+        return ObjectType.hh_paraHead;
     }
 
     public Byte level() {

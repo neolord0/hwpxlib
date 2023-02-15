@@ -1,0 +1,84 @@
+<hp:container id="1138906163" zOrder="4" numberingType="PICTURE" textWrap="IN_FRONT_OF_TEXT" textFlow="BOTH_SIDES" lock="0" dropcapstyle="None" href="" groupLevel="0" instid="65164340">
+    <hp:offset x="0" y="0"/>
+    <hp:orgSz width="17372" height="3250"/>
+    <hp:curSz width="0" height="0"/>
+    <hp:flip horizontal="0" vertical="0"/>
+    <hp:rotationInfo angle="0" centerX="8686" centerY="1625" rotateimage="1"/>
+    <hp:renderingInfo>
+        <hc:transMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+        <hc:scaMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+        <hc:rotMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+    </hp:renderingInfo>
+    <hp:pic id="2" zOrder="0" numberingType="NONE" textWrap="TOP_AND_BOTTOM" textFlow="BOTH_SIDES" lock="0" dropcapstyle="None" href="" groupLevel="1" instid="65164334" reverse="0">
+        <hp:offset x="0" y="0"/>
+        <hp:orgSz width="4118" height="2150"/>
+        <hp:curSz width="0" height="0"/>
+        <hp:flip horizontal="0" vertical="0"/>
+        <hp:rotationInfo angle="0" centerX="3112" centerY="1625" rotateimage="1"/>
+        <hp:renderingInfo>
+            <hc:transMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+            <hc:scaMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+            <hc:rotMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+            <hc:scaMatrix e1="1.511656" e2="0" e3="0" e4="0" e5="1.511628" e6="0"/>
+            <hc:rotMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+        </hp:renderingInfo>
+        <hp:imgRect>
+            <hc:pt0 x="0" y="0"/>
+            <hc:pt1 x="4118" y="0"/>
+            <hc:pt2 x="4118" y="2150"/>
+            <hc:pt3 x="0" y="2150"/>
+        </hp:imgRect>
+        <hp:imgClip left="0" right="27000" top="0" bottom="14100"/>
+        <hp:inMargin left="0" right="0" top="0" bottom="0"/>
+        <hp:imgDim dimwidth="27000" dimheight="14100"/>
+        <hc:img binaryItemIDRef="image1" bright="0" contrast="0" effect="REAL_PIC" alpha="0"/>
+        <hp:effects/>
+    </hp:pic>
+    <hp:pic id="2" zOrder="0" numberingType="NONE" textWrap="TOP_AND_BOTTOM" textFlow="BOTH_SIDES" lock="0" dropcapstyle="None" href="" groupLevel="1" instid="65164336" reverse="0">
+        <hp:offset x="8650" y="300"/>
+        <hp:orgSz width="20400" height="6900"/>
+        <hp:curSz width="0" height="0"/>
+        <hp:flip horizontal="0" vertical="0"/>
+        <hp:rotationInfo angle="0" centerX="4361" centerY="1475" rotateimage="1"/>
+        <hp:renderingInfo>
+            <hc:transMatrix e1="1" e2="0" e3="8650" e4="0" e5="1" e6="300"/>
+            <hc:scaMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+            <hc:rotMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+            <hc:scaMatrix e1="0.427549" e2="0" e3="0" e4="0" e5="0.427536" e6="0"/>
+            <hc:rotMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+        </hp:renderingInfo>
+        <hp:imgRect>
+            <hc:pt0 x="0" y="0"/>
+            <hc:pt1 x="20400" y="0"/>
+            <hc:pt2 x="20400" y="6900"/>
+            <hc:pt3 x="0" y="6900"/>
+        </hp:imgRect>
+        <hp:imgClip left="0" right="40800" top="0" bottom="13800"/>
+        <hp:inMargin left="0" right="0" top="0" bottom="0"/>
+        <hp:imgDim dimwidth="40800" dimheight="13800"/>
+        <hc:img binaryItemIDRef="image2" bright="0" contrast="0" effect="REAL_PIC" alpha="0"/>
+        <hp:effects/>
+    </hp:pic>
+    <hp:line id="2" zOrder="0" numberingType="NONE" textWrap="TOP_AND_BOTTOM" textFlow="BOTH_SIDES" lock="0" dropcapstyle="None" href="" groupLevel="1" instid="65164338" isReverseHV="0">
+        <hp:offset x="3050" y="1575"/>
+        <hp:orgSz width="10200" height="200"/>
+        <hp:curSz width="0" height="0"/>
+        <hp:flip horizontal="0" vertical="0"/>
+        <hp:rotationInfo angle="0" centerX="5100" centerY="100" rotateimage="1"/>
+        <hp:renderingInfo>
+            <hc:transMatrix e1="1" e2="0" e3="3050" e4="0" e5="1" e6="1575"/>
+            <hc:scaMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+            <hc:rotMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+            <hc:scaMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+            <hc:rotMatrix e1="1" e2="0" e3="0" e4="0" e5="1" e6="0"/>
+        </hp:renderingInfo>
+        <hp:lineShape color="#000000" width="33" style="SOLID" endCap="FLAT" headStyle="NORMAL" tailStyle="NORMAL" headfill="1" tailfill="1" headSz="MEDIUM_MEDIUM" tailSz="MEDIUM_MEDIUM" outlineStyle="NORMAL" alpha="0"/>
+        <hp:shadow type="NONE" color="#B2B2B2" offsetX="0" offsetY="0" alpha="0"/>
+        <hc:startPt x="0" y="0"/>
+        <hc:endPt x="10200" y="200"/>
+    </hp:line>
+    <hp:sz width="17372" widthRelTo="ABSOLUTE" height="3250" heightRelTo="ABSOLUTE" protect="0"/>
+    <hp:pos treatAsChar="0" affectLSpacing="0" flowWithText="0" allowOverlap="1" holdAnchorAndSO="0" vertRelTo="PAPER" horzRelTo="PAPER" vertAlign="TOP" horzAlign="LEFT" vertOffset="15300" horzOffset="11314"/>
+    <hp:outMargin left="0" right="0" top="0" bottom="0"/>
+    <hp:shapeComment>묶음 개체입니다.</hp:shapeComment>
+</hp:container>

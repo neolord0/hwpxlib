@@ -60,8 +60,8 @@ public class ShapePosition extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ShapePos;
+    public ObjectType _objectType() {
+        return ObjectType.hp_pos_for_shapeObject;
     }
 
     public Boolean treatAsChar() {

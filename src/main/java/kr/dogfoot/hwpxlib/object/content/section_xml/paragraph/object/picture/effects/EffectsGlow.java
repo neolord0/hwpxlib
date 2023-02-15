@@ -24,8 +24,8 @@ public class EffectsGlow extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.EffectsGlow;
+    public ObjectType _objectType() {
+        return ObjectType.hp_glow;
     }
 
     public Float alpha() {

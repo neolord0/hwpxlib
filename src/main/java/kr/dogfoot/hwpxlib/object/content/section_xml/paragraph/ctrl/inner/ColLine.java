@@ -14,8 +14,8 @@ public class ColLine extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ColLine;
+    public ObjectType _objectType() {
+        return ObjectType.hp_colLine;
     }
 
     public LineType2 type() {

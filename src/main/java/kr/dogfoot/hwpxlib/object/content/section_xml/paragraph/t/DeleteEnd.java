@@ -11,7 +11,7 @@ public class DeleteEnd extends TrackChangeTag<DeleteEnd> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.DeleteEnd;
+    public ObjectType _objectType() {
+        return ObjectType.hp_deleteEnd;
     }
 }

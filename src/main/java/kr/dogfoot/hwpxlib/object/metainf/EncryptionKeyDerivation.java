@@ -13,8 +13,8 @@ public class EncryptionKeyDerivation extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.KeyDerivation;
+    public ObjectType _objectType() {
+        return ObjectType.odf_key_derivation;
     }
 
     public String keyDerivationName() {

@@ -25,20 +25,20 @@ public class Line extends DrawingObject<Line> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.Line;
+    public ObjectType _objectType() {
+        return ObjectType.hp_line;
     }
 
     public Boolean isReverseHV() {
         return isReverseHV;
     }
 
-    public void reverseHV(Boolean reverseHV) {
-        this.isReverseHV = reverseHV;
+    public void isReverseHV(Boolean isReverseHV) {
+        this.isReverseHV = isReverseHV;
     }
 
-    public Line reverseHVAnd(Boolean reverseHV) {
-        this.isReverseHV = reverseHV;
+    public Line isReverseHVAnd(Boolean isReverseHV) {
+        this.isReverseHV = isReverseHV;
         return this;
     }
 
@@ -47,7 +47,7 @@ public class Line extends DrawingObject<Line> {
     }
 
     public void createStartPt() {
-        startPt = new Point(ObjectType.StartPt);
+        startPt = new Point(ObjectType.hc_startPt);
     }
 
     public void removeStartPt() {
@@ -59,7 +59,7 @@ public class Line extends DrawingObject<Line> {
     }
 
     public void createEndPt() {
-        endPt = new Point(ObjectType.EndPt);
+        endPt = new Point(ObjectType.hc_endPt);
     }
 
     public void removeEndPt() {

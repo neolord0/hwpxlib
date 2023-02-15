@@ -11,7 +11,7 @@ public class ScaleMatrix extends Matrix<ScaleMatrix> {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.ScaMatrix;
+    public ObjectType _objectType() {
+        return ObjectType.hc_scaMatrix;
     }
 }

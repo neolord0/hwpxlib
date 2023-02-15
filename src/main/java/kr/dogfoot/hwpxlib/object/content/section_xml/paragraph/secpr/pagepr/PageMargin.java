@@ -40,8 +40,8 @@ public class PageMargin extends HWPXObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.PageMargin;
+    public ObjectType _objectType() {
+        return ObjectType.hp_margin;
     }
 
     public Integer left() {

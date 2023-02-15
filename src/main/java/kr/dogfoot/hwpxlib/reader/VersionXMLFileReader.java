@@ -7,6 +7,7 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.XMLFileReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
@@ -31,7 +32,7 @@ public class VersionXMLFileReader extends XMLFileReader {
 
     @Override
     public void startElement(String uri, String localName, String name, Attributes attrs) {
-        if (ObjectType.Version_XMLFile.equalElementName(name)) {
+        if (ElementNames.hv_HCFVersion.equals(name)) {
             int count = attrs.getLength();
             for (int index = 0; index < count; index++) {
                 setAttribute(

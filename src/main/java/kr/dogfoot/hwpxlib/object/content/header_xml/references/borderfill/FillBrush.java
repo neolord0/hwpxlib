@@ -24,8 +24,8 @@ public class FillBrush extends SwitchableObject {
     }
 
     @Override
-    public ObjectType objectType() {
-        return ObjectType.FillBrush;
+    public ObjectType _objectType() {
+        return ObjectType.hc_fillBrush;
     }
 
     public WinBrush winBrush() {
