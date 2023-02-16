@@ -160,7 +160,6 @@ public enum ElementReaderSort {
     LineSeg(ElementReaderType.Section_MasterPage),
     MasterPage(ElementReaderType.Section_MasterPage),
 
-
     ShapeSize(ElementReaderType.Controls),
     ShapePosition(ElementReaderType.Controls),
     Caption(ElementReaderType.Controls),
@@ -206,8 +205,11 @@ public enum ElementReaderSort {
     Arc(ElementReaderType.Controls),
     Polygon(ElementReaderType.Controls),
     Curve(ElementReaderType.Controls),
+    CurveSegment(ElementReaderType.Controls),
     ConnectLine(ElementReaderType.Controls),
+    ConnectLinePoint(ElementReaderType.Controls),
     TextArt(ElementReaderType.Controls),
+    TextArtPr(ElementReaderType.Controls),
     Compose(ElementReaderType.Controls),
     Dutmal(ElementReaderType.Controls),
     Btn(ElementReaderType.Controls),

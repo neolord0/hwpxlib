@@ -10,10 +10,10 @@ import java.util.ArrayList;
  * 곡선
  */
 public class Curve extends DrawingObject<Curve> {
-    public final ArrayList<CurveSegment> segmentList;
+    public final ArrayList<CurveSegment> segList;
 
     public Curve() {
-        segmentList = new ArrayList<CurveSegment>();
+        segList = new ArrayList<CurveSegment>();
     }
 
     @Override
@@ -21,33 +21,33 @@ public class Curve extends DrawingObject<Curve> {
         return ObjectType.hp_curve;
     }
 
-    public int countOfSegment() {
-        return segmentList.size();
+    public int countOfSeg() {
+        return segList.size();
     }
 
-    public CurveSegment getSegment(int index) {
-        return segmentList.get(index);
+    public CurveSegment getSeg(int index) {
+        return segList.get(index);
     }
 
-    public void addSegment(CurveSegment segment) {
-        segmentList.add(segment);
+    public void addSeg(CurveSegment seg) {
+        segList.add(seg);
     }
 
-    public CurveSegment addNewSegment() {
-        CurveSegment segment = new CurveSegment();
-        segmentList.add(segment);
-        return segment;
+    public CurveSegment addNewSeg() {
+        CurveSegment seg = new CurveSegment();
+        segList.add(seg);
+        return seg;
     }
 
-    public void insertSegment(CurveSegment segment, int position) {
-        segmentList.add(position, segment);
+    public void insertSeg(CurveSegment seg, int position) {
+        segList.add(position, seg);
     }
 
-    public void removeSegment(int position) {
-        segmentList.remove(position);
+    public void removeSeg(int position) {
+        segList.remove(position);
     }
 
-    public Iterable<CurveSegment> segments() {
-        return segmentList;
+    public Iterable<CurveSegment> segs() {
+        return segList;
     }
 }

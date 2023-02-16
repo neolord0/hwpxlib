@@ -6,7 +6,8 @@ import kr.dogfoot.hwpxlib.object.common.ObjectType;
 /**
  * 시작점
  */
-public class StartPoint extends HWPXObject {
+public class ConnectLinePoint extends HWPXObject {
+    private final ObjectType objectType;;
     /**
      * x 좌표, 단위는 hwpunit
      */
@@ -24,12 +25,13 @@ public class StartPoint extends HWPXObject {
      */
     private Short subjectidx;
 
-    public StartPoint() {
+    public ConnectLinePoint(ObjectType objectType) {
+        this.objectType = objectType;
     }
 
     @Override
     public ObjectType _objectType() {
-        return ObjectType.hc_startPt;
+        return objectType;
     }
 
     public Integer x() {
@@ -40,7 +42,7 @@ public class StartPoint extends HWPXObject {
         this.x = x;
     }
 
-    public StartPoint xAnd(Integer x) {
+    public ConnectLinePoint xAnd(Integer x) {
         this.x = x;
         return this;
     }
@@ -53,7 +55,7 @@ public class StartPoint extends HWPXObject {
         this.y = y;
     }
 
-    public StartPoint yAnd(Integer y) {
+    public ConnectLinePoint yAnd(Integer y) {
         this.y = y;
         return this;
     }
@@ -66,7 +68,7 @@ public class StartPoint extends HWPXObject {
         this.subjectIDRef = subjectIDRef;
     }
 
-    public StartPoint subjectIDRefAnd(String subjectIDRef) {
+    public ConnectLinePoint subjectIDRefAnd(String subjectIDRef) {
         this.subjectIDRef = subjectIDRef;
         return this;
     }
@@ -79,7 +81,7 @@ public class StartPoint extends HWPXObject {
         this.subjectidx = subjectidx;
     }
 
-    public StartPoint subjectidxAnd(Short subjectidx) {
+    public ConnectLinePoint subjectidxAnd(Short subjectidx) {
         this.subjectidx = subjectidx;
         return this;
     }

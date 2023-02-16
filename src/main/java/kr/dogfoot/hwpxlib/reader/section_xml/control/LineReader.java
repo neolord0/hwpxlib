@@ -36,6 +36,7 @@ public class LineReader extends DrawingObjectReader {
         switch (name) {
             case AttributeNames.isReverseHV:
                 line.isReverseHV(ValueConvertor.toBoolean(value));
+                break;
             default:
                 super.setAttribute(name, value);
                 break;
@@ -80,7 +81,6 @@ public class LineReader extends DrawingObjectReader {
                 .xAndY(pt);
 
         xmlFileReader().startElement(name, attrs);
-
     }
 
     @Override

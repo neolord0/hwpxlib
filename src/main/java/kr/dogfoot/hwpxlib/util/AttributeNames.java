@@ -354,5 +354,21 @@ public class AttributeNames {
     public static final String drawAspect = "drawAspect";
     public static final String eqBaseLine = "eqBaseLine";
     public static final String isReverseHV = "isReverseHV";
-
+    public static final String ratio = "ratio";
+    public static final String intervalDirty = "intervalDirty";
+    public static final String hasArcPr = "hasArcPr";
+    public static final String arcType = "arcType";
+    public static final String x1 = "x1";
+    public static final String y1 = "y1";
+    public static final String x2 = "x2";
+    public static final String y2 = "y2";
+    public static final String subjectIDRef = "subjectIDRef";
+    public static final String subjectIdx = "subjectIdx";
+    public static final String text = "text";
+    public static final String fontName = "fontName";
+    public static final String fontStyle = "fontStyle";
+    public static final String fontType = "fontType";
+    public static final String textShape = "textShape";
+    public static final String lineSpacing = "lineSpacing";
+    public static final String charSpacing = "charSpacing";
 }

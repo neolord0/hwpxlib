@@ -2,8 +2,7 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ConnectLineType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.EndPoint;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.StartPoint;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.ConnectLinePoint;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingObject;
 
 /**
@@ -17,11 +16,11 @@ public class ConnectLine extends DrawingObject<ConnectLine> {
     /**
      * 시작점
      */
-    private StartPoint startPt;
+    private ConnectLinePoint startPt;
     /**
      * 끝점
      */
-    private EndPoint endPt;
+    private ConnectLinePoint endPt;
 
     public ConnectLine() {
     }
@@ -44,24 +43,24 @@ public class ConnectLine extends DrawingObject<ConnectLine> {
         return this;
     }
 
-    public StartPoint startPt() {
+    public ConnectLinePoint startPt() {
         return startPt;
     }
 
     public void createStartPt() {
-        startPt = new StartPoint();
+        startPt = new ConnectLinePoint(ObjectType.hp_startPt);
     }
 
     public void removeStartPt() {
         startPt = null;
     }
 
-    public EndPoint endPt() {
+    public ConnectLinePoint endPt() {
         return endPt;
     }
 
     public void createEndPt() {
-        endPt = new EndPoint();
+        endPt = new ConnectLinePoint(ObjectType.hp_endPt);
     }
 
     public void removeEndPt() {

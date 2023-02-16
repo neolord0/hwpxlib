@@ -290,6 +290,8 @@ public class ElementNames {
 
     // 연결선 개체
     public static final String hp_connectLine = "hp:connectLine";
+    public static final String hp_startPt = "hp:startPt";
+    public static final String hp_endPt = "hp:endPt";
 
     // 글맵시 개체
     public static final String hp_textart = "hp:textart";

@@ -297,6 +297,8 @@ public enum ObjectType {
 
     // 연결선 개체
     hp_connectLine,
+    hp_startPt,
+    hp_endPt,
 
     // 글맵시 개체
     hp_textart,

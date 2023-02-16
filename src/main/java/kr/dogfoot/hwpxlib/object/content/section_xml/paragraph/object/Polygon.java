@@ -13,10 +13,10 @@ public class Polygon extends DrawingObject<Polygon> {
     /**
      * 다각형 상에 좌표
      */
-    private final ArrayList<Point> pointList;
+    private final ArrayList<Point> ptList;
 
     public Polygon() {
-        pointList = new ArrayList<Point>();
+        ptList = new ArrayList<Point>();
     }
 
     @Override
@@ -24,33 +24,33 @@ public class Polygon extends DrawingObject<Polygon> {
         return ObjectType.hp_polygon;
     }
 
-    public int countOfPoint() {
-        return pointList.size();
+    public int countOfPt() {
+        return ptList.size();
     }
 
-    public Point getPoint(int index) {
-        return pointList.get(index);
+    public Point getPt(int index) {
+        return ptList.get(index);
     }
 
-    public void addPoint(Point point) {
-        pointList.add(point);
+    public void addPt(Point pt) {
+        ptList.add(pt);
     }
 
-    public Point addNewPoint() {
-        Point point = new Point(ObjectType.hc_pt);
-        pointList.add(point);
-        return point;
+    public Point addNewPt() {
+        Point pt = new Point(ObjectType.hc_pt);
+        ptList.add(pt);
+        return pt;
     }
 
-    public void insertPoint(Point point, int position) {
-        pointList.add(position, point);
+    public void insertPt(Point pt, int position) {
+        ptList.add(position, pt);
     }
 
-    public void removePoint(int position) {
-        pointList.remove(position);
+    public void removePt(int position) {
+        ptList.remove(position);
     }
 
-    public Iterable<Point> points() {
-        return pointList;
+    public Iterable<Point> pts() {
+        return ptList;
     }
 }
