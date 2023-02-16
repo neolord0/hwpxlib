@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.reader;
 
-import kr.dogfoot.hwpxlib.object.HWPXFile;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.fail;

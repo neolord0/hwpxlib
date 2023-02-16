@@ -5,7 +5,6 @@ import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Line;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.StartPoint;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
@@ -13,11 +12,8 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingShadowReader;
-import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import sun.tools.tree.AssignShiftLeftExpression;
 
 public class SimpleLine {
     @Test

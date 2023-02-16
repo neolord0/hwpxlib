@@ -2,7 +2,10 @@ package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DropCapStyle;
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumberingType;
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextFlowSide;
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextWrapMethod;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Container;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
 import org.testng.Assert;

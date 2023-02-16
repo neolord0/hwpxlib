@@ -1,12 +1,9 @@
 package kr.dogfoot.hwpxlib.reader;
 
-import com.sun.tools.corba.se.idl.constExpr.Or;
-import javafx.geometry.Pos;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ImageEffect;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Chart;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Picture;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageClip;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageDim;
