@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.common.baseobject;
 
-import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 public class Point extends XAndY<Point> {

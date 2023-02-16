@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.reader;
 
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TargetApplicationSort;
 import kr.dogfoot.hwpxlib.object.root.VersionXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;

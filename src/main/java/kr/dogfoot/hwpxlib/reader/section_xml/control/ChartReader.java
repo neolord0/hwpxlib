@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.EquationLineMode;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Chart;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;

@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader.common.baseobject;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.StartAndEndFloat;
-import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;

@@ -5,7 +5,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColorEffectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.ColorEffect;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
 
 public class ColorEffectReader extends ElementReader {

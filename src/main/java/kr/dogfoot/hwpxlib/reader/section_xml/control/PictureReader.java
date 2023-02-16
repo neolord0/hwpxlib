@@ -14,10 +14,10 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.InMa
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.borderfill.ImageReader;
-import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects.EffectsReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.ImageDimReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.ImageRectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects.EffectsReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import kr.dogfoot.hwpxlib.util.AttributeNames;

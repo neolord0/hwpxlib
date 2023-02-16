@@ -1,7 +1,10 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.HorzAlign;
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.HorzRelTo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.VertAlign;
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.VertRelTo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;

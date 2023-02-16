@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.reader.common;
 
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.SwitchReader;
 import kr.dogfoot.hwpxlib.util.CommonString;

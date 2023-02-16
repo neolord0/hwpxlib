@@ -5,8 +5,6 @@ import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 
-import javax.net.ssl.SSLContext;
-
 public class HasOnlyTextReader extends ElementReader {
     private HasOnlyText hasOnlyText;
 
