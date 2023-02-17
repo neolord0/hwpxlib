@@ -2,11 +2,9 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control.etc;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ArcType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.FontType2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextArtAlign;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextArtShape;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.curve.CurveSegment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.textart.TextArtPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;

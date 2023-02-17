@@ -41,19 +41,22 @@ public abstract class FilePartDiff<ChildType> extends SwitchableObject {
     }
 
     public InsertDiff addNewInsertDiff() {
-        InsertDiff insertDiff = new InsertDiff();
+        InsertDiff insertDiff = new InsertDiff()
+                .filePartDiffTypeAnd(_objectType());
         childDiffList.add(insertDiff);
         return insertDiff;
     }
 
     public UpdateDiff addNewUpdateDiff() {
-        UpdateDiff updateDiff = new UpdateDiff();
+        UpdateDiff updateDiff = new UpdateDiff()
+                .filePartDiffTypeAnd(_objectType());
         childDiffList.add(updateDiff);
         return updateDiff;
     }
 
     public DeleteDiff addNewDeleteDiff() {
-        DeleteDiff deleteDiff = new DeleteDiff();
+        DeleteDiff deleteDiff = new DeleteDiff()
+                .filePartDiffTypeAnd(_objectType());
         childDiffList.add(deleteDiff);
         return deleteDiff;
     }

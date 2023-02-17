@@ -35,19 +35,22 @@ public class InsertDiff extends DiffItem<InsertDiff> {
     }
 
     public InsertDiff addNewInsertDiff() {
-        InsertDiff insertDiff = new InsertDiff();
+        InsertDiff insertDiff = new InsertDiff()
+                .filePartDiffTypeAnd(this.filePartDiffType());
         childDiffList.add(insertDiff);
         return insertDiff;
     }
 
     public UpdateDiff addNewUpdateDiff() {
-        UpdateDiff updateDiff = new UpdateDiff();
+        UpdateDiff updateDiff = new UpdateDiff()
+                .filePartDiffTypeAnd(this.filePartDiffType());
         childDiffList.add(updateDiff);
         return updateDiff;
     }
 
     public DeleteDiff addNewDeleteDiff() {
-        DeleteDiff deleteDiff = new DeleteDiff();
+        DeleteDiff deleteDiff = new DeleteDiff()
+                .filePartDiffTypeAnd(this.filePartDiffType());
         childDiffList.add(deleteDiff);
         return deleteDiff;
     }
@@ -63,4 +66,5 @@ public class InsertDiff extends DiffItem<InsertDiff> {
     public Iterable<DiffItem> childDiffs() {
         return childDiffList;
     }
+
 }

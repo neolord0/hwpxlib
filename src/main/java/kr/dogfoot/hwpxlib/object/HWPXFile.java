@@ -7,6 +7,7 @@ import kr.dogfoot.hwpxlib.object.content.context_hpf.ContentHPFFile;
 import kr.dogfoot.hwpxlib.object.content.header_xml.HeaderXMLFile;
 import kr.dogfoot.hwpxlib.object.content.masterpage_xml.MasterPageXMLFile;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SectionXMLFile;
+import kr.dogfoot.hwpxlib.object.dochistory.HistoryXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.ContainerXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.ManifestXMLFile;
 import kr.dogfoot.hwpxlib.object.root.SettingsXMLFile;
@@ -25,6 +26,7 @@ public class HWPXFile extends HWPXObject {
     private final ObjectList<MasterPageXMLFile> masterPageXMLFileList;
     private final ObjectList<SectionXMLFile> sectionXMLFileList;
     private final SettingsXMLFile settingsXMLFile;
+    private final ObjectList<HistoryXMLFile> historyXMLFileList;
 
 
     public HWPXFile() {
@@ -37,6 +39,7 @@ public class HWPXFile extends HWPXObject {
         masterPageXMLFileList = new ObjectList<MasterPageXMLFile>(MasterPageXMLFile.class);
         sectionXMLFileList = new ObjectList<SectionXMLFile>(SectionXMLFile.class);
         settingsXMLFile = new SettingsXMLFile();
+        historyXMLFileList = new ObjectList<HistoryXMLFile>(HistoryXMLFile.class);
     }
 
     @Override
@@ -76,4 +79,7 @@ public class HWPXFile extends HWPXObject {
         return settingsXMLFile;
     }
 
+    public ObjectList<HistoryXMLFile> historyXMLFileList() {
+        return historyXMLFileList;
+    }
 }

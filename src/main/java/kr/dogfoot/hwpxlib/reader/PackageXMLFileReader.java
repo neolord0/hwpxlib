@@ -22,6 +22,4 @@ public class PackageXMLFileReader extends XMLFileReader {
 
         read(zipFile, filepath);
     }
-
-
 }

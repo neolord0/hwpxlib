@@ -30,10 +30,10 @@ public class Compose extends RunItem {
     /**
      * 글자모양 ID 참조값 리스트
      */
-    private final ArrayList<ComposeCharPr> charPrRefList;
+    private final ArrayList<ComposeCharPr> charPrList;
 
     public Compose() {
-        charPrRefList = new ArrayList<ComposeCharPr>();
+        charPrList = new ArrayList<ComposeCharPr>();
     }
 
     @Override
@@ -81,7 +81,7 @@ public class Compose extends RunItem {
     }
 
     public int charPrCnt() {
-        return charPrRefList.size();
+        return charPrList.size();
     }
 
     public String composeText() {
@@ -97,33 +97,33 @@ public class Compose extends RunItem {
         return this;
     }
 
-    public int countOfCharPrRef() {
-        return charPrRefList.size();
+    public int countOfCharPr() {
+        return charPrList.size();
     }
 
-    public ComposeCharPr getCharPrRef(int index) {
-        return charPrRefList.get(index);
+    public ComposeCharPr getCharPr(int index) {
+        return charPrList.get(index);
     }
 
-    public void addCharPrRef(ComposeCharPr charPrRef) {
-        charPrRefList.add(charPrRef);
+    public void addCharPr(ComposeCharPr charPr) {
+        charPrList.add(charPr);
     }
 
-    public ComposeCharPr addNewCharPrRef() {
-        ComposeCharPr charPrRef = new ComposeCharPr();
-        charPrRefList.add(charPrRef);
-        return charPrRef;
+    public ComposeCharPr addNewCharPr() {
+        ComposeCharPr charPr = new ComposeCharPr();
+        charPrList.add(charPr);
+        return charPr;
     }
 
-    public void insertCharPrRef(ComposeCharPr charPrRef, int position) {
-        charPrRefList.add(position, charPrRef);
+    public void insertCharPr(ComposeCharPr charPr, int position) {
+        charPrList.add(position, charPr);
     }
 
-    public void removeCharPrRef(int position) {
-        charPrRefList.remove(position);
+    public void removeCharPr(int position) {
+        charPrList.remove(position);
     }
 
-    public Iterable<ComposeCharPr> charPrRefs() {
-        return charPrRefList;
+    public Iterable<ComposeCharPr> charPrs() {
+        return charPrList;
     }
 }

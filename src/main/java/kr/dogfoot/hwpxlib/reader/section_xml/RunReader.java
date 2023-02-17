@@ -8,6 +8,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.SecPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.*;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.formobject.ButtonObjectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.CtrlReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.secpr.SecPrReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.t.TReader;
@@ -377,22 +378,22 @@ public class RunReader extends ElementReader {
     }
 
     private void btn(Button button, String name, Attributes attrs) {
-        ((ButtonReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Btn))
-                .button(button);
+        ((ButtonObjectReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ButtonObject))
+                .buttonObject(button);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void radioBtn(RadioButton radioButton, String name, Attributes attrs) {
-        ((RadioButtonReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.RadioBtn))
-                .radioButton(radioButton);
+        ((ButtonObjectReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ButtonObject))
+                .buttonObject(radioButton);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void checkBtn(CheckButton checkButton, String name, Attributes attrs) {
-        ((CheckButtonReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CheckBtn))
-                .checkButton(checkButton);
+        ((ButtonObjectReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ButtonObject))
+                .buttonObject(checkButton);
 
         xmlFileReader().startElement(name, attrs);
     }

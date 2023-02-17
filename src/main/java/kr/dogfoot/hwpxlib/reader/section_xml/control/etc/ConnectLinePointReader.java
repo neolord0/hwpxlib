@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.etc;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ConnectLineType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.ConnectLinePoint;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;

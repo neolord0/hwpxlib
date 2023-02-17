@@ -41,6 +41,9 @@ import kr.dogfoot.hwpxlib.reader.section_xml.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawTextReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingShadowReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.*;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.formobject.ButtonObjectReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.formobject.FormCharPrReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.ImageDimReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.ImageRectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
@@ -57,21 +60,28 @@ import kr.dogfoot.hwpxlib.reader.settings_xml.CaretPositionReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.ConfigItemReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.ConfigItemSetReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.SettingsReader;
+import kr.dogfoot.hwpxlib.reader.version_xml.VersionReader;
+import kr.dogfoot.hwpxlib.reader.versionlog_xml.*;
 
 public class ElementReaderFactory {
     public static ElementReader create(ElementReaderSort sort) {
         switch (sort.type()) {
             case Basic:
                 return createEntryReaderForBasic(sort);
+            case Package:
+                return createEntryReaderForPackage(sort);
             case Header:
                 return createEntryReaderForHeader(sort);
             case Section_MasterPage:
                 return createEntryReaderForSectionMasterPage(sort);
             case Controls:
                 return createEntryReaderForControls(sort);
+            case History:
+                return createEntryReaderForHistory(sort);
         }
         return null;
     }
+
 
     private static ElementReader createEntryReaderForBasic(ElementReaderSort sort) {
         switch (sort) {
@@ -87,15 +97,14 @@ public class ElementReaderFactory {
                 return new HasOnlyTextReader();
             case LeftRightTopBottom:
                 return new LeftRightTopBottomReader();
-            case StartAndEndFloat:
-                return new StartAndEndFloatReader();
             case WidthAndHeight:
                 return new WidthAndHeightReader();
-            case XAndYFloat:
-                return new XAndYFloatReader();
+            case StartAndEndFloat:
+                return new StartAndEndFloatReader();
             case XAndY:
                 return new XAndYReader();
-
+            case XAndYFloat:
+                return new XAndYFloatReader();
             case ParameterList:
                 return new ParameterListReader();
             case IntegerParam:
@@ -108,6 +117,14 @@ public class ElementReaderFactory {
                 return new FloatParamReader();
             case ListParam:
                 return new ListParamReader();
+        }
+        return null;
+    }
+
+    private static ElementReader createEntryReaderForPackage(ElementReaderSort sort) {
+        switch (sort) {
+            case Version:
+                return new VersionReader();
             case Manifest:
                 return new ManifestReader();
             case FileEntry:
@@ -148,7 +165,6 @@ public class ElementReaderFactory {
                 return new ConfigItemSetReader();
             case ConfigItem:
                 return new ConfigItemReader();
-
         }
         return null;
     }
@@ -462,32 +478,59 @@ public class ElementReaderFactory {
                 return new PolygonReader();
             case Curve:
                 return new CurveReader();
+            case CurveSegment:
+                return new CurveSegmentReader();
             case ConnectLine:
                 return new ConnectLineReader();
+            case ConnectLinePoint:
+                return new ConnectLinePointReader();
             case TextArt:
                 return new TextArtReader();
-            case Compose:
-                return new ComposeReader();
-            case Dutmal:
-                return new DutmalReader();
-            case Btn:
-                return new ButtonReader();
-            case RadioBtn:
-                return new RadioButtonReader();
-            case CheckBtn:
-                return new CheckButtonReader();
+            case TextArtPr:
+                return new TextArtPrReader();
+            case PointList:
+                return new PointListReader();
+            case FormCharPr:
+                return new FormCharPrReader();
+            case ButtonObject:
+                return new ButtonObjectReader();
             case ComboBox:
                 return new ComboBoxReader();
-            case Edit:
-                return new EditReader();
+            case ListItem:
+                return new ListItemReader();
             case ListBox:
                 return new ListBoxReader();
+            case Edit:
+                return new EditReader();
             case ScrollBar:
                 return new ScrollBarReader();
             case Video:
                 return new VideoReader();
+            case Compose:
+                return new ComposeReader();
+            case ComposeCharPr:
+                return new ComposeCharPrReader();
+            case Dutmal:
+                return new DutmalReader();
         }
         return null;
     }
 
+    private static ElementReader createEntryReaderForHistory(ElementReaderSort sort) {
+        switch (sort) {
+            case History:
+                return new HistoryReader();
+            case HistoryEntry:
+                return new HistoryEntryReader();
+            case FilePartDiff:
+                return new FilePartDiffReader();
+            case InsertDiff:
+                return new InsertDiffReader();
+            case UpdateDiff:
+                return new UpdateDiffReader();
+            case DeleteDiff:
+                return new DeleteDiffReader();
+        }
+        return null;
+    }
 }

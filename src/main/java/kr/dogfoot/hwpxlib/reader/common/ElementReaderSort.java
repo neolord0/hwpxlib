@@ -1,19 +1,18 @@
 package kr.dogfoot.hwpxlib.reader.common;
 
 public enum ElementReaderSort {
-    Empty(ElementReaderType.Basic),
+    Start_Of_Element(null),
 
+    Empty(ElementReaderType.Basic),
     Switch(ElementReaderType.Basic),
     Case(ElementReaderType.Basic),
     Default(ElementReaderType.Basic),
-
     HasOnlyText(ElementReaderType.Basic),
     LeftRightTopBottom(ElementReaderType.Basic),
     WidthAndHeight(ElementReaderType.Basic),
+    StartAndEndFloat(ElementReaderType.Basic),
     XAndY(ElementReaderType.Basic),
     XAndYFloat(ElementReaderType.Basic),
-    StartAndEndFloat(ElementReaderType.Basic),
-
     ParameterList(ElementReaderType.Basic),
     IntegerParam(ElementReaderType.Basic),
     StringParam(ElementReaderType.Basic),
@@ -22,37 +21,36 @@ public enum ElementReaderSort {
     ListParam(ElementReaderType.Basic),
 
     // Version.xml
-    Version(ElementReaderType.Basic),
-
+    Version(ElementReaderType.Package),
     // META-INF/manifest.xml
-    Manifest(ElementReaderType.Basic),
-    FileEntry(ElementReaderType.Basic),
-    EncryptionData(ElementReaderType.Basic),
-    Algorithm(ElementReaderType.Basic),
-    KeyDerivation(ElementReaderType.Basic),
-    StartKeyGeneration(ElementReaderType.Basic),
+    Manifest(ElementReaderType.Package),
+    FileEntry(ElementReaderType.Package),
+    EncryptionData(ElementReaderType.Package),
+    Algorithm(ElementReaderType.Package),
+    KeyDerivation(ElementReaderType.Package),
+    StartKeyGeneration(ElementReaderType.Package),
 
     // META-INF/container.xml
-    Container(ElementReaderType.Basic),
-    RootFiles(ElementReaderType.Basic),
-    RootFile(ElementReaderType.Basic),
+    Container(ElementReaderType.Package),
+    RootFiles(ElementReaderType.Package),
+    RootFile(ElementReaderType.Package),
 
     // Contents/content.hpf
-    Package(ElementReaderType.Basic),
-    Metadata(ElementReaderType.Basic),
-    Meta(ElementReaderType.Basic),
-    PackageManifest(ElementReaderType.Basic),
-    ManifestItem(ElementReaderType.Basic),
-    Spine(ElementReaderType.Basic),
-    SpineItemRef(ElementReaderType.Basic),
+    Package(ElementReaderType.Package),
+    Metadata(ElementReaderType.Package),
+    Meta(ElementReaderType.Package),
+    PackageManifest(ElementReaderType.Package),
+    ManifestItem(ElementReaderType.Package),
+    Spine(ElementReaderType.Package),
+    SpineItemRef(ElementReaderType.Package),
 
     // Settings.xml
-    Settings(ElementReaderType.Basic),
-    CaretPosition(ElementReaderType.Basic),
-    ConfigItemSet(ElementReaderType.Basic),
-    ConfigItem(ElementReaderType.Basic),
+    Settings(ElementReaderType.Package),
+    CaretPosition(ElementReaderType.Package),
+    ConfigItemSet(ElementReaderType.Package),
+    ConfigItem(ElementReaderType.Package),
 
-    // Contents/header_forTestSwitch.xml
+    // Contents/header.xml
     Head(ElementReaderType.Header),
     BeginNum(ElementReaderType.Header),
     RefList(ElementReaderType.Header),
@@ -210,18 +208,27 @@ public enum ElementReaderSort {
     ConnectLinePoint(ElementReaderType.Controls),
     TextArt(ElementReaderType.Controls),
     TextArtPr(ElementReaderType.Controls),
-    Compose(ElementReaderType.Controls),
-    Dutmal(ElementReaderType.Controls),
-    Btn(ElementReaderType.Controls),
-    RadioBtn(ElementReaderType.Controls),
-    CheckBtn(ElementReaderType.Controls),
+    PointList(ElementReaderType.Controls),
+    FormCharPr(ElementReaderType.Controls),
+    ButtonObject(ElementReaderType.Controls),
     ComboBox(ElementReaderType.Controls),
-    Edit(ElementReaderType.Controls),
+    ListItem(ElementReaderType.Controls),
     ListBox(ElementReaderType.Controls),
+    Edit(ElementReaderType.Controls),
     ScrollBar(ElementReaderType.Controls),
     Video(ElementReaderType.Controls),
+    Compose(ElementReaderType.Controls),
+    ComposeCharPr(ElementReaderType.Controls),
+    Dutmal(ElementReaderType.Controls),
 
-    End_Of_Entry(null);
+    History(ElementReaderType.History),
+    HistoryEntry(ElementReaderType.History),
+    FilePartDiff(ElementReaderType.History),
+    InsertDiff(ElementReaderType.History),
+    UpdateDiff(ElementReaderType.History),
+    DeleteDiff(ElementReaderType.History),
+
+    End_Of_Element(null);
 
     private ElementReaderType type;
 

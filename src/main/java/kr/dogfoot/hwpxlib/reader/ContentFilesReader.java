@@ -8,6 +8,7 @@ import kr.dogfoot.hwpxlib.reader.header_xml.HeadReader;
 import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SecReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.SettingsReader;
+import kr.dogfoot.hwpxlib.reader.versionlog_xml.HistoryReader;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -66,6 +67,13 @@ public class ContentFilesReader extends XMLFileReader {
 
                     super.startElement(uri, localName, name, attrs);
                     break;
+                case ElementNames.hhs_history:
+                    ((HistoryReader) setCurrentEntryReader(ElementReaderSort.History))
+                            .historyXMLFile(hwpxFile.historyXMLFileList().addNew());
+
+                    super.startElement(uri, localName, name, attrs);
+                    break;
+
             }
         } else {
             super.startElement(uri, localName, name, attrs);

@@ -22,7 +22,6 @@ public abstract class DrawingObjectReader extends ShapeComponentReader {
         return drawingObject();
     }
 
-
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {

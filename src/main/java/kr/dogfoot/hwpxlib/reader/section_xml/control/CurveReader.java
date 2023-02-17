@@ -6,8 +6,8 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Curve;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.curve.CurveSegment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.CurveSegmentReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.CurveSegmentReader;
 import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 

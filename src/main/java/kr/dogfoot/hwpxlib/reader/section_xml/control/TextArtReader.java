@@ -12,6 +12,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.textart.Te
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.PointListReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.TextArtPrReader;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
 import kr.dogfoot.hwpxlib.util.ElementNames;
@@ -126,7 +127,10 @@ public class TextArtReader extends DrawingObjectReader {
     }
 
     private void outline(ObjectList<Point> outline, String name, Attributes attrs) {
+        ((PointListReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PointList))
+                .pointList(outline);
 
+        xmlFileReader().startElement(name, attrs);
     }
 
     @Override
