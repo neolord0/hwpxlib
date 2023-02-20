@@ -1,6 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.versionlog_xml;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.dochistory.DeleteDiff;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -31,12 +32,11 @@ public class DeleteDiffReader extends ElementReader {
 
     @Override
     public void childElement(String name, Attributes attrs) {
-        deleteDiff.deletedObject(AllElementReader.read(deleteDiff.filePartDiffType(), name, attrs, xmlFileReader()));
-    }
+        // TODO : 차일드 객체로 올 수 있는 것들을 파악한 후에.. 다시..
+        xmlFileReader().setCurrentEntryReader(ElementReaderSort.UnknownElement);
+        xmlFileReader().startElement(name, attrs);
 
-    @Override
-    public HWPXObject childElementInSwitch(String name, Attributes attrs) {
-        return AllElementReader.read(deleteDiff.filePartDiffType(), name, attrs, xmlFileReader());
+        deleteDiff.deletedObject(null);
     }
 
     @Override

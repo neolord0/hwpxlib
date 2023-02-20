@@ -50,11 +50,11 @@ public class ShapePosition extends HWPXObject {
     /**
      * 세로 오프셋, 단위는 hwpunit
      */
-    private Integer vertOffset;
+    private Long vertOffset;
     /**
      * 가로 오프셋, 단위는 hwpunit
      */
-    private Integer horzOffset;
+    private Long horzOffset;
 
     public ShapePosition() {
     }
@@ -181,28 +181,28 @@ public class ShapePosition extends HWPXObject {
         return this;
     }
 
-    public Integer vertOffset() {
+    public Long vertOffset() {
         return vertOffset;
     }
 
-    public void vertOffset(Integer vertOffset) {
+    public void vertOffset(Long vertOffset) {
         this.vertOffset = vertOffset;
     }
 
-    public ShapePosition vertOffsetAnd(Integer vertOffset) {
+    public ShapePosition vertOffsetAnd(Long vertOffset) {
         this.vertOffset = vertOffset;
         return this;
     }
 
-    public Integer horzOffset() {
+    public Long horzOffset() {
         return horzOffset;
     }
 
-    public void horzOffset(Integer horzOffset) {
+    public void horzOffset(Long horzOffset) {
         this.horzOffset = horzOffset;
     }
 
-    public ShapePosition horzOffsetAnd(Integer horzOffset) {
+    public ShapePosition horzOffsetAnd(Long horzOffset) {
         this.horzOffset = horzOffset;
         return this;
     }

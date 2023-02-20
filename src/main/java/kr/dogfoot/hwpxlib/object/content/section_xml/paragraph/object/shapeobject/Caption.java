@@ -17,15 +17,15 @@ public class Caption extends SwitchableObject {
     /**
      * 캡션 폭, 방향이 왼쪽/오른쪽 일때 적용됨, 단위는 hwpunit
      */
-    private Integer width;
+    private Long width;
     /**
      * 객체와의 간격, 단위는 hwpunit
      */
-    private Integer gap;
+    private Long gap;
     /**
      * 최대 폭
      */
-    private Integer lastWidth;
+    private Long lastWidth;
     /**
      * 내부 문단 리스트
      */
@@ -65,41 +65,41 @@ public class Caption extends SwitchableObject {
         return this;
     }
 
-    public Integer width() {
+    public Long width() {
         return width;
     }
 
-    public void width(Integer width) {
+    public void width(Long width) {
         this.width = width;
     }
 
-    public Caption widthAnd(Integer width) {
+    public Caption widthAnd(Long width) {
         this.width = width;
         return this;
     }
 
-    public Integer gap() {
+    public Long gap() {
         return gap;
     }
 
-    public void gap(Integer gap) {
+    public void gap(Long gap) {
         this.gap = gap;
     }
 
-    public Caption gapAnd(Integer gap) {
+    public Caption gapAnd(Long gap) {
         this.gap = gap;
         return this;
     }
 
-    public Integer lastWidth() {
+    public Long lastWidth() {
         return lastWidth;
     }
 
-    public void lastWidth(Integer lastWidth) {
+    public void lastWidth(Long lastWidth) {
         this.lastWidth = lastWidth;
     }
 
-    public Caption lastWidthAnd(Integer lastWidth) {
+    public Caption lastWidthAnd(Long lastWidth) {
         this.lastWidth = lastWidth;
         return this;
     }

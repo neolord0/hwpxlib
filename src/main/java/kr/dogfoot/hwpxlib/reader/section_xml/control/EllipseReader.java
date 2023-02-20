@@ -73,6 +73,10 @@ public class EllipseReader extends DrawingObjectReader {
                 ellipse.createEnd1();
                 point(ellipse.end1(), name, attrs);
                 break;
+            case ElementNames.hc_start2:
+                ellipse.createStart2();
+                point(ellipse.start2(), name, attrs);
+                break;
             case ElementNames.hc_end2:
                 ellipse.createEnd2();
                 point(ellipse.end2(), name, attrs);
@@ -102,14 +106,14 @@ public class EllipseReader extends DrawingObjectReader {
                 Point start1 = new Point(ObjectType.hc_start1);
                 point(start1, name, attrs);
                 return start1;
-            case ElementNames.hc_start2:
-                Point start2 = new Point(ObjectType.hc_start2);
-                point(start2, name, attrs);
-                return start2;
             case ElementNames.hc_end1:
                 Point end1 = new Point(ObjectType.hc_end1);
                 point(end1, name, attrs);
                 return end1;
+            case ElementNames.hc_start2:
+                Point start2 = new Point(ObjectType.hc_start2);
+                point(start2, name, attrs);
+                return start2;
             case ElementNames.hc_end2:
                 Point end2 = new Point(ObjectType.hc_end2);
                 point(end2, name, attrs);

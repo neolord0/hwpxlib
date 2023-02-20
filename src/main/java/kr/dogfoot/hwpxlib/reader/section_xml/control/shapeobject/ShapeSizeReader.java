@@ -25,13 +25,13 @@ public class ShapeSizeReader extends ElementReader {
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.width:
-                sz.width(ValueConvertor.toInteger(value));
+                sz.width(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.widthRelTo:
                 sz.widthRelTo(WidthRelTo.fromString(value));
                 break;
             case AttributeNames.height:
-                sz.height(ValueConvertor.toInteger(value));
+                sz.height(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.heightRelTo:
                 sz.heightRelTo(HeightRelTo.fromString(value));

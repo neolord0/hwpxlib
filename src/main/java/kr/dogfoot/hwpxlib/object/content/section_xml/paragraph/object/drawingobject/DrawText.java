@@ -8,7 +8,7 @@ public class DrawText extends SwitchableObject {
     /**
      * 텍스트 문자열의 최대 폭, 단위는 hwpunit
      */
-    private Integer lastWidth;
+    private Long lastWidth;
     /**
      * 필드명
      */
@@ -34,15 +34,15 @@ public class DrawText extends SwitchableObject {
         return ObjectType.hp_drawText;
     }
 
-    public Integer lastWidth() {
+    public Long lastWidth() {
         return lastWidth;
     }
 
-    public void lastWidth(Integer lastWidth) {
+    public void lastWidth(Long lastWidth) {
         this.lastWidth = lastWidth;
     }
 
-    public DrawText lastWidthAnd(Integer lastWidth) {
+    public DrawText lastWidthAnd(Long lastWidth) {
         this.lastWidth = lastWidth;
         return this;
     }

@@ -23,16 +23,16 @@ public class ConnectLinePointReader extends ElementReader {
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.x:
-                connectLinePoint.x(ValueConvertor.toInteger(value));
+                connectLinePoint.x(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.y:
-                connectLinePoint.y(ValueConvertor.toInteger(value));
+                connectLinePoint.y(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.subjectIDRef:
                 connectLinePoint.subjectIDRef(value);
                 break;
             case AttributeNames.subjectIdx:
-                connectLinePoint.subjectidx(ValueConvertor.toShort(value));
+                connectLinePoint.subjectIdx(ValueConvertor.toShort(value));
                 break;
         }
     }

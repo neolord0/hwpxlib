@@ -23,10 +23,10 @@ public class WidthAndHeightReader extends ElementReader {
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.width:
-                widthAndHeight.width(ValueConvertor.toInteger(value));
+                widthAndHeight.width(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.height:
-                widthAndHeight.height(ValueConvertor.toInteger(value));
+                widthAndHeight.height(ValueConvertor.toLong(value));
                 break;
         }
     }

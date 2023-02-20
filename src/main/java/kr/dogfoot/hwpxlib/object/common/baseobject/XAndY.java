@@ -3,31 +3,31 @@ package kr.dogfoot.hwpxlib.object.common.baseobject;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 
 public abstract class XAndY<ChildType> extends HWPXObject {
-    private Integer x;
-    private Integer y;
+    private Long x;
+    private Long y;
 
-    public Integer x() {
+    public Long x() {
         return x;
     }
 
-    public void x(Integer x) {
+    public void x(Long x) {
         this.x = x;
     }
 
-    public ChildType xAnd(Integer x) {
+    public ChildType xAnd(Long x) {
         this.x = x;
         return (ChildType) this;
     }
 
-    public Integer y() {
+    public Long y() {
         return y;
     }
 
-    public void y(Integer y) {
+    public void y(Long y) {
         this.y = y;
     }
 
-    public ChildType yAnd(Integer y) {
+    public ChildType yAnd(Long y) {
         this.y = y;
         return (ChildType) this;
     }

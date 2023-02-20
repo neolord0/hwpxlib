@@ -105,6 +105,8 @@ public class ElementReaderFactory {
                 return new XAndYReader();
             case XAndYFloat:
                 return new XAndYFloatReader();
+            case UnknownElement:
+                return new UnknownElementReader();
             case ParameterList:
                 return new ParameterListReader();
             case IntegerParam:
@@ -412,14 +414,10 @@ public class ElementReaderFactory {
                 return new CellAddrReader();
             case CellSpan:
                 return new CellSpanReader();
-            case CellSize:
-                return new CellSizeReader();
             case Equation:
                 return new EquationReader();
             case Chart:
                 return new ChartReader();
-            case Offset:
-                return new OffsetReader();
             case Flip:
                 return new FlipReader();
             case RotationInfo:

@@ -35,6 +35,9 @@ public class PolygonReader extends DrawingObjectReader {
             case ElementNames.hc_pt:
                 point(polygon.addNewPt(), name, attrs);
                 break;
+            default:
+                super.childElement(name, attrs);
+                break;
         }
     }
 

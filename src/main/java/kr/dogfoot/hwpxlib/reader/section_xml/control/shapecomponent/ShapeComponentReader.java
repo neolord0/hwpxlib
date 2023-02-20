@@ -6,6 +6,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecompo
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.WidthAndHeightReader;
+import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
@@ -105,8 +106,8 @@ public abstract class ShapeComponentReader extends ShapeObjectReader {
     }
 
     private void offset(Offset offset, String name, Attributes attrs) {
-        ((OffsetReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Offset))
-                .offset(offset);
+        ((XAndYReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.XAndY))
+                .xAndY(offset);
 
         xmlFileReader().startElement(name, attrs);
     }

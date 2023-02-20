@@ -34,7 +34,7 @@ public class ArcReader extends DrawingObjectReader {
     @Override
     protected void setAttribute(String name, String value) {
         switch (name) {
-            case AttributeNames.arcType:
+            case AttributeNames.type:
                 arc.type(ArcType.fromString(value));
                 break;
             default:

@@ -30,10 +30,10 @@ public class DrawingShadowReader extends ElementReader {
                 shadow.color(value);
                 break;
             case AttributeNames.offsetX:
-                shadow.offsetX(ValueConvertor.toInteger(value));
+                shadow.offsetX(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.offsetY:
-                shadow.offsetY(ValueConvertor.toInteger(value));
+                shadow.offsetY(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.alpha:
                 shadow.alpha(ValueConvertor.toFloat(value));

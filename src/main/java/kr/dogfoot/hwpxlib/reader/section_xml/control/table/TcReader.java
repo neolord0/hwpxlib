@@ -7,6 +7,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
+import kr.dogfoot.hwpxlib.reader.common.baseobject.WidthAndHeightReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import kr.dogfoot.hwpxlib.util.AttributeNames;
@@ -120,8 +121,8 @@ public class TcReader extends ElementReader {
     }
 
     private void cellSz(CellSize cellSz, String name, Attributes attrs) {
-        ((CellSizeReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CellSize))
-                .cellSz(cellSz);
+        ((WidthAndHeightReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.WidthAndHeight))
+                .widthAndHeight(cellSz);
 
         xmlFileReader().startElement(name, attrs);
     }

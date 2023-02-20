@@ -54,10 +54,10 @@ public class ShapePositionReader extends ElementReader {
                 pos.horzAlign(HorzAlign.fromString(value));
                 break;
             case AttributeNames.vertOffset:
-                pos.vertOffset(ValueConvertor.toInteger(value));
+                pos.vertOffset(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.horzOffset:
-                pos.horzOffset(ValueConvertor.toInteger(value));
+                pos.horzOffset(ValueConvertor.toLong(value));
                 break;
         }
     }

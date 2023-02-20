@@ -25,6 +25,14 @@ public class ValueConvertor {
         return new Integer(value);
     }
 
+    public static Long toLong(String value) {
+        if (value == null) {
+            return null;
+        }
+        return new Long(value);
+    }
+
+
     public static Short toShort(String value) {
         if (value == null) {
             return null;

@@ -30,7 +30,7 @@ public class DrawTextReader extends ElementReader {
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.lastWidth:
-                drawText.lastWidth(ValueConvertor.toInteger(value));
+                drawText.lastWidth(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.name:
                 drawText.name(value);

@@ -19,11 +19,11 @@ public class DrawingShadow extends HWPXObject {
     /**
      * 그림자 간격 x, 단위는 hwpunit
      */
-    private Integer offsetX;
+    private Long offsetX;
     /**
      * 그림자 간격 y, 단위는 hwpunit
      */
-    private Integer offsetY;
+    private Long offsetY;
     /**
      * 투명도
      */
@@ -63,28 +63,28 @@ public class DrawingShadow extends HWPXObject {
         return this;
     }
 
-    public Integer offsetX() {
+    public Long offsetX() {
         return offsetX;
     }
 
-    public void offsetX(Integer offsetX) {
+    public void offsetX(Long offsetX) {
         this.offsetX = offsetX;
     }
 
-    public DrawingShadow offsetXAnd(Integer offsetX) {
+    public DrawingShadow offsetXAnd(Long offsetX) {
         this.offsetX = offsetX;
         return this;
     }
 
-    public Integer offsetY() {
+    public Long offsetY() {
         return offsetY;
     }
 
-    public void offsetY(Integer offsetY) {
+    public void offsetY(Long offsetY) {
         this.offsetY = offsetY;
     }
 
-    public DrawingShadow offsetYAnd(Integer offsetY) {
+    public DrawingShadow offsetYAnd(Long offsetY) {
         this.offsetY = offsetY;
         return this;
     }

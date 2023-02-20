@@ -23,16 +23,16 @@ public class LeftRightTopBottomReader extends ElementReader {
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.left:
-                leftRightTopBottom.left(ValueConvertor.toInteger(value));
+                leftRightTopBottom.left(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.right:
-                leftRightTopBottom.right(ValueConvertor.toInteger(value));
+                leftRightTopBottom.right(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.top:
-                leftRightTopBottom.top(ValueConvertor.toInteger(value));
+                leftRightTopBottom.top(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.bottom:
-                leftRightTopBottom.bottom(ValueConvertor.toInteger(value));
+                leftRightTopBottom.bottom(ValueConvertor.toLong(value));
                 break;
         }
     }

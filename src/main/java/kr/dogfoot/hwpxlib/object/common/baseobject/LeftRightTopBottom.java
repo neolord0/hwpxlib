@@ -3,59 +3,59 @@ package kr.dogfoot.hwpxlib.object.common.baseobject;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 
 public abstract class LeftRightTopBottom<ChildType> extends HWPXObject {
-    private Integer left;
-    private Integer right;
-    private Integer top;
-    private Integer bottom;
+    private Long left;
+    private Long right;
+    private Long top;
+    private Long bottom;
 
-    public Integer left() {
+    public Long left() {
         return left;
     }
 
-    public void left(Integer left) {
+    public void left(Long left) {
         this.left = left;
     }
 
-    public ChildType leftAnd(Integer left) {
+    public ChildType leftAnd(Long left) {
         this.left = left;
         return (ChildType) this;
     }
 
-    public Integer right() {
+    public Long right() {
         return right;
     }
 
-    public void right(Integer right) {
+    public void right(Long right) {
         this.right = right;
     }
 
-    public ChildType rightAnd(Integer right) {
+    public ChildType rightAnd(Long right) {
         this.right = right;
         return (ChildType) this;
     }
 
-    public Integer top() {
+    public Long top() {
         return top;
     }
 
-    public void top(Integer top) {
+    public void top(Long top) {
         this.top = top;
     }
 
-    public ChildType topAnd(Integer top) {
+    public ChildType topAnd(Long top) {
         this.top = top;
         return (ChildType) this;
     }
 
-    public Integer bottom() {
+    public Long bottom() {
         return bottom;
     }
 
-    public void bottom(Integer bottom) {
+    public void bottom(Long bottom) {
         this.bottom = bottom;
     }
 
-    public ChildType bottomAnd(Integer bottom) {
+    public ChildType bottomAnd(Long bottom) {
         this.bottom = bottom;
         return (ChildType) this;
     }

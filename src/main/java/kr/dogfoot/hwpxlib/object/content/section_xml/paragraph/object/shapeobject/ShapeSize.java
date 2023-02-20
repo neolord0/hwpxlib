@@ -12,7 +12,7 @@ public class ShapeSize extends HWPXObject {
     /**
      * 너비
      */
-    private Integer width;
+    private Long width;
     /**
      * 너비 기준
      */
@@ -20,7 +20,7 @@ public class ShapeSize extends HWPXObject {
     /**
      * 높이
      */
-    private Integer height;
+    private Long height;
     /**
      * 높이 기준
      */
@@ -38,15 +38,15 @@ public class ShapeSize extends HWPXObject {
         return ObjectType.hp_sz;
     }
 
-    public Integer width() {
+    public Long width() {
         return width;
     }
 
-    public void width(Integer width) {
+    public void width(Long width) {
         this.width = width;
     }
 
-    public ShapeSize widthAnd(Integer width) {
+    public ShapeSize widthAnd(Long width) {
         this.width = width;
         return this;
     }
@@ -64,17 +64,17 @@ public class ShapeSize extends HWPXObject {
         return this;
     }
 
-    public Integer height() {
+    public Long height() {
         return height;
     }
 
-    public ShapeSize heightAnd(Integer height) {
+    public void height(Long height) {
         this.height = height;
-        return this;
     }
 
-    public void height(Integer height) {
+    public ShapeSize heightAnd(Long height) {
         this.height = height;
+        return this;
     }
 
     public HeightRelTo heightRelTo() {

@@ -23,10 +23,10 @@ public class XAndYReader extends ElementReader {
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.x:
-                xAndY.x(ValueConvertor.toInteger(value));
+                xAndY.x(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.y:
-                xAndY.y(ValueConvertor.toInteger(value));
+                xAndY.y(ValueConvertor.toLong(value));
                 break;
         }
     }

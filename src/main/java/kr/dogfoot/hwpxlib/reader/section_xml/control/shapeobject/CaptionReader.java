@@ -35,13 +35,13 @@ public class CaptionReader extends ElementReader {
                 caption.fullSz(ValueConvertor.toBoolean(value));
                 break;
             case AttributeNames.width:
-                caption.width(ValueConvertor.toInteger(value));
+                caption.width(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.gap:
-                caption.gap(ValueConvertor.toInteger(value));
+                caption.gap(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.lastWidth:
-                caption.lastWidth(ValueConvertor.toInteger(value));
+                caption.lastWidth(ValueConvertor.toLong(value));
                 break;
         }
     }

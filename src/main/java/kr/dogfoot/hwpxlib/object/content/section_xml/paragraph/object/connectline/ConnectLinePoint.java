@@ -11,11 +11,11 @@ public class ConnectLinePoint extends HWPXObject {
     /**
      * x 좌표, 단위는 hwpunit
      */
-    private Integer x;
+    private Long x;
     /**
      * y 좌표, 단위는 hwpunit
      */
-    private Integer y;
+    private Long y;
     /**
      * 참조 개체의 instid
      */
@@ -23,7 +23,7 @@ public class ConnectLinePoint extends HWPXObject {
     /**
      * 연결선이 붙은 위치 (0 :  위쪽,  1:오른쪽, 2: 아래쪽, 3 왼쪽)
      */
-    private Short subjectidx;
+    private Short subjectIdx;
 
     public ConnectLinePoint(ObjectType objectType) {
         this.objectType = objectType;
@@ -34,28 +34,28 @@ public class ConnectLinePoint extends HWPXObject {
         return objectType;
     }
 
-    public Integer x() {
+    public Long x() {
         return x;
     }
 
-    public void x(Integer x) {
+    public void x(Long x) {
         this.x = x;
     }
 
-    public ConnectLinePoint xAnd(Integer x) {
+    public ConnectLinePoint xAnd(Long x) {
         this.x = x;
         return this;
     }
 
-    public Integer y() {
+    public Long y() {
         return y;
     }
 
-    public void y(Integer y) {
+    public void y(Long y) {
         this.y = y;
     }
 
-    public ConnectLinePoint yAnd(Integer y) {
+    public ConnectLinePoint yAnd(Long y) {
         this.y = y;
         return this;
     }
@@ -73,16 +73,16 @@ public class ConnectLinePoint extends HWPXObject {
         return this;
     }
 
-    public Short subjectidx() {
-        return subjectidx;
+    public Short subjectIdx() {
+        return subjectIdx;
     }
 
-    public void subjectidx(Short subjectidx) {
-        this.subjectidx = subjectidx;
+    public void subjectIdx(Short subjectIdx) {
+        this.subjectIdx = subjectIdx;
     }
 
-    public ConnectLinePoint subjectidxAnd(Short subjectidx) {
-        this.subjectidx = subjectidx;
+    public ConnectLinePoint subjectIdxAnd(Short subjectIdx) {
+        this.subjectIdx = subjectIdx;
         return this;
     }
 }

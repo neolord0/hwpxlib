@@ -11,11 +11,11 @@ public class RotationInfo extends HWPXObject {
     /**
      * 회전 중심의 x좌표
      */
-    private Integer centerX;
+    private Long centerX;
     /**
      * 회전 중심의 y좌표
      */
-    private Integer centerY;
+    private Long centerY;
     /**
      * 이미지 회전 여부
      */
@@ -42,28 +42,28 @@ public class RotationInfo extends HWPXObject {
         return this;
     }
 
-    public Integer centerX() {
+    public Long centerX() {
         return centerX;
     }
 
-    public void centerX(Integer centerX) {
+    public void centerX(Long centerX) {
         this.centerX = centerX;
     }
 
-    public RotationInfo centerXAnd(Integer centerX) {
+    public RotationInfo centerXAnd(Long centerX) {
         this.centerX = centerX;
         return this;
     }
 
-    public Integer centerY() {
+    public Long centerY() {
         return centerY;
     }
 
-    public void centerY(Integer centerY) {
+    public void centerY(Long centerY) {
         this.centerY = centerY;
     }
 
-    public RotationInfo centerYAnd(Integer centerY) {
+    public RotationInfo centerYAnd(Long centerY) {
         this.centerY = centerY;
         return this;
     }
