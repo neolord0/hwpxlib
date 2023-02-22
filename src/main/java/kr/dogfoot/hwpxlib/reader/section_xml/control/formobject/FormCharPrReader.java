@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class FormCharPrReader extends ElementReader {
     private FormCharPr formCharPr;

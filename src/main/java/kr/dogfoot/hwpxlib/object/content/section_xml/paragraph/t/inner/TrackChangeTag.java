@@ -9,52 +9,55 @@ public abstract class TrackChangeTag<ChildType> extends TItem {
     /**
      * 아이디
      */
-    private String id;
+    private String Id;
     /**
      * 변경 추적 아이디 참조 값
      */
-    private Integer TcId;
+    private String TcId;
     /**
      * 문단 끝 포함 여부
      */
-    private Boolean paraEnd;
+    private Boolean paraend;
 
-    public Boolean paraEnd() {
-        return paraEnd;
+    public String Id() {
+        return Id;
     }
 
-    public void paraEnd(Boolean paraEnd) {
-        this.paraEnd = paraEnd;
+    public void Id(String Id) {
+        this.Id = Id;
     }
 
-    public ChildType paraEndAnd(Boolean paraEnd) {
-        this.paraEnd = paraEnd;
+    public ChildType IdAnd(String Id) {
+        this.Id = Id;
         return (ChildType) this;
     }
 
-    public Integer TcId() {
+    public String TcId() {
         return TcId;
     }
 
-    public void TcId(Integer TcId) {
+    public void TcId(String TcId) {
         this.TcId = TcId;
     }
 
-    public ChildType TcIdAnd(Integer TcId) {
+    public ChildType TcIdAnd(String TcId) {
         this.TcId = TcId;
         return (ChildType) this;
     }
 
-    public String id() {
-        return id;
+
+    public Boolean paraend() {
+        return paraend;
     }
 
-    public void id(String id) {
-        this.id = id;
+    public void paraend(Boolean paraend) {
+        this.paraend = paraend;
     }
 
-    public ChildType idAnd(String id) {
-        this.id = id;
+    public ChildType paraendAnd(Boolean paraend) {
+        this.paraend = paraend;
         return (ChildType) this;
     }
+
+
 }

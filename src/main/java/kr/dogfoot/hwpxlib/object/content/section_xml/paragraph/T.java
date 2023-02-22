@@ -21,7 +21,7 @@ public class T extends RunItem {
     /**
      * text Item 리스트(문자열, 변경추적 기록)
      */
-    public ArrayList<TItem> itemList;
+    private ArrayList<TItem> itemList;
 
     public T() {
     }

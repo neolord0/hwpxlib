@@ -9,8 +9,8 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.ListItemReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.formobject.FormObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
-import kr.dogfoot.hwpxlib.util.ElementNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ListBoxReader extends FormObjectReader {

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwpxlib.util;
+package kr.dogfoot.hwpxlib.object.names;
 
 public class AttributeNames {
     public static final String hp_required_namespace = "hp:required-namespace";
@@ -257,8 +257,9 @@ public class AttributeNames {
     public static final String sideChar = "sideChar";
     public static final String beginColor = "beginColor";
     public static final String ignore = "ignore";
+    public static final String Id = "Id";
     public static final String TcId = "TcId";
-    public static final String paraEnd = "paraEnd";
+    public static final String paraend = "paraend";
     public static final String textpos = "textpos";
     public static final String vertpos = "vertpos";
     public static final String vertsize = "vertsize";
@@ -429,4 +430,8 @@ public class AttributeNames {
     public static final String revisionLock = "revisionLock";
     public static final String autoSave = "autoSave";
     public static final String oldValue = "oldValue";
+    public static final String xmlns_ha = "xmlns:ha";
+    public static final String xmlns_config = "xmlns:config";
+    public static final String xmlns_hv = "xmlns:hv";
+    public static final String xmlVersion = "xmlVersion";
 }

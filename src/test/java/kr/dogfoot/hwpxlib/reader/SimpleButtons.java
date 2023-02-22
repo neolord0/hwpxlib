@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Arc;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Button;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.CheckButton;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.RadioButton;

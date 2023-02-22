@@ -20,8 +20,8 @@ import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects.EffectsReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
-import kr.dogfoot.hwpxlib.util.ElementNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.ElementNames;
 import org.xml.sax.Attributes;
 
 public class PictureReader extends ShapeComponentReader {

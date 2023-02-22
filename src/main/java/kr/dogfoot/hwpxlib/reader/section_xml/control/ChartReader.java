@@ -6,7 +6,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class ChartReader extends ShapeObjectReader {
     private Chart chart;

@@ -9,7 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.ImgBrush;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Line;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Polygon;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.*;
@@ -135,7 +134,7 @@ public class SimplePolygon {
                     Assert.assertEquals(pt.y().intValue(), 0);
                     break;
                 default:
-                    Assert.assertTrue(false);
+                    Assert.fail();
                     break;
             }
 

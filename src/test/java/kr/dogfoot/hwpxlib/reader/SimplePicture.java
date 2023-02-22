@@ -15,6 +15,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.InMargin;
+import kr.dogfoot.hwpxlib.object.content.BinaryDataFile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -248,6 +249,20 @@ public class SimplePicture {
                 "그림입니다.\n" +
                 "원본 그림의 이름: google.jpg\n" +
                 "원본 그림의 크기: 가로 544pixel, 세로 184pixel");
+
+        int index = 0;
+        for (BinaryDataFile binaryDataFile : file.binaryDataFileList().items()) {
+            switch (index) {
+                case 0:
+                    Assert.assertEquals(binaryDataFile.fileName(), "image1.jpg");
+                    Assert.assertNotNull(binaryDataFile.data());
+                    Assert.assertEquals(binaryDataFile.data().length, 23560);
+                    break;
+                default:
+                    Assert.fail();
+                    break;
+            }
+        }
     }
 }
 

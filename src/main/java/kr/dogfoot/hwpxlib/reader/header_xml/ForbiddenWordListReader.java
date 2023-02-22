@@ -7,7 +7,7 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.ForbiddenWord;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
-import kr.dogfoot.hwpxlib.util.ElementNames;
+import kr.dogfoot.hwpxlib.object.names.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ForbiddenWordListReader extends ElementReader {

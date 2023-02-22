@@ -8,7 +8,7 @@ import kr.dogfoot.hwpxlib.object.metainf.ContainerXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.util.ElementNames;
+import kr.dogfoot.hwpxlib.object.names.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ContainerReader extends ElementReader {

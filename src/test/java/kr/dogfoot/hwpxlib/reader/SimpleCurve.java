@@ -6,12 +6,14 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBr
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Curve;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Ellipse;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.curve.CurveSegment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -157,7 +159,11 @@ public class SimpleCurve {
                     Assert.assertEquals(seg.x2().intValue(), 450);
                     Assert.assertEquals(seg.y2().intValue(), 6140);
                     break;
-                }
+                default:
+                    Assert.fail();
+                    break;
+            }
+
             index++;
         }
 

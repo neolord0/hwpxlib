@@ -4,7 +4,7 @@ import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.SpineItemRef;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class SpineItemRefReader extends ElementReader {
     private SpineItemRef itemRef;

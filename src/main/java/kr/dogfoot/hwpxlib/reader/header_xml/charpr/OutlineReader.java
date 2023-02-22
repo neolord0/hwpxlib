@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType1;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr.Outline;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class OutlineReader extends ElementReader {
     private Outline outline;

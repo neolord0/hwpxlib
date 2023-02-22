@@ -4,7 +4,8 @@ import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
-import kr.dogfoot.hwpxlib.util.CommonString;
+import kr.dogfoot.hwpxlib.reader.util.ZipFileReader;
+import kr.dogfoot.hwpxlib.CommonString;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -13,6 +14,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class HWPXReader {
+
     public static HWPXFile fromFilepath(String filepath) throws Exception {
         return fromFile(new File(filepath));
     }
@@ -35,10 +37,10 @@ public class HWPXReader {
         return reader.hwpxFile;
     }
 
-
-    private static final String Entry_MineType = "mimetype";
-    private static final String MineType_HWPX = "application/hwp+zip";
     private static final String MineType_XML = "application/xml";
+    private static final String BinDataPath = "BinData/";
+    private static final String ScriptsPath = "Scripts/";
+    private static final String Package_Media_Type = "application/hwpml-package+xml";
 
     private ZipFile zipFile;
     private HWPXFile hwpxFile;
@@ -55,7 +57,7 @@ public class HWPXReader {
     }
 
     public void checkMineType() throws IOException {
-        ZipEntry zipEntry = zipFile.getEntry(Entry_MineType);
+        ZipEntry zipEntry = zipFile.getEntry(CommonString.ZipEntry_MineType);
         if (zipEntry != null) {
             InputStream is = zipFile.getInputStream(zipEntry);
 
@@ -64,7 +66,7 @@ public class HWPXReader {
                     .lines()
                     .collect(Collectors.joining("\n"));
 
-            if (!MineType_HWPX.equals(text)) {
+            if (!CommonString.MineType_HWPX.equals(text)) {
                 throw new IOException(CommonString.Error_Not_HWPX_File);
             }
         } else {
@@ -101,7 +103,7 @@ public class HWPXReader {
         if (hwpxFile.containerXMLFile() != null &&
                 hwpxFile.containerXMLFile().rootFiles() != null) {
             for (RootFile rootFile : hwpxFile.containerXMLFile().rootFiles().items()) {
-                if (CommonString.Package_Media_Type.equals(rootFile.mediaType())) {
+                if (Package_Media_Type.equals(rootFile.mediaType())) {
                     return rootFile.fullPath();
                 }
             }
@@ -116,6 +118,14 @@ public class HWPXReader {
         for (ManifestItem item : hwpxFile.contentHPFFile().manifest().items()) {
             if (MineType_XML.equals(item.mediaType())) {
                 contentFilesReader.read(hwpxFile, item.href(), zipFile);
+            } else if (item.href().startsWith(BinDataPath)) {
+                hwpxFile.binaryDataFileList().addNew()
+                        .fileNameAnd(item.href().substring(8))
+                        .data(ZipFileReader.readBinary(item.href(), zipFile));
+            } else if (item.href().startsWith(ScriptsPath)) {
+                hwpxFile.scriptFileList().addNew()
+                        .fileNameAnd(item.href().substring(8))
+                        .script(ZipFileReader.readString(item.href(), zipFile));
             }
         }
     }

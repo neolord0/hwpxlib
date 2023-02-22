@@ -8,7 +8,7 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.ImgBru
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.util.ElementNames;
+import kr.dogfoot.hwpxlib.object.names.ElementNames;
 import org.xml.sax.Attributes;
 
 public class FillBrushReader extends ElementReader {

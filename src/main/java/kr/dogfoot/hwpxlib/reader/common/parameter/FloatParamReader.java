@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.object.common.parameter.FloatParam;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class FloatParamReader extends ElementReader {
     private FloatParam floatParam;

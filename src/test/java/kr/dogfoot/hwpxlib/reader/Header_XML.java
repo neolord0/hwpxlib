@@ -22,7 +22,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class TestHeader_XML {
+public class Header_XML {
     @Test
     void read() throws IOException, ParserConfigurationException, SAXException {
         ElementReaderManager manager = new ElementReaderManager();

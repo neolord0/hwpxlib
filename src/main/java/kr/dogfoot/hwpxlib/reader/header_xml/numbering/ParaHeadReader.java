@@ -8,7 +8,7 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHea
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class ParaHeadReader extends ElementReader {
     private ParaHead paraHead;

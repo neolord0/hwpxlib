@@ -14,8 +14,8 @@ import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.PointListReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.TextArtPrReader;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
-import kr.dogfoot.hwpxlib.util.ElementNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.ElementNames;
 import org.xml.sax.Attributes;
 
 public class TextArtReader extends DrawingObjectReader {

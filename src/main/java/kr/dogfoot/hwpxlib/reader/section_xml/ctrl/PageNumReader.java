@@ -6,7 +6,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageNumPosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.PageNum;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class PageNumReader extends ElementReader {
     private PageNum pageNum;

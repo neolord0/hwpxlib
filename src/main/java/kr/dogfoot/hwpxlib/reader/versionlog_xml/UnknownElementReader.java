@@ -1,10 +1,8 @@
 package kr.dogfoot.hwpxlib.reader.versionlog_xml;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.util.ElementNames;
 import org.xml.sax.Attributes;
 
 public class UnknownElementReader extends ElementReader {

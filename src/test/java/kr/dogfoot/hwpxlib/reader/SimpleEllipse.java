@@ -9,7 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBr
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Gradation;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Ellipse;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Rectangle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
@@ -117,10 +116,16 @@ public class SimpleEllipse {
 
         int index = 0;
         for (Color color : gradation.colors()) {
-            if (index == 0) {
-                Assert.assertEquals(color.value(), "#FFFFFF");
-            } else {
-                Assert.assertEquals(color.value(), "#4B87CB");
+            switch (index) {
+                case 0:
+                    Assert.assertEquals(color.value(), "#FFFFFF");
+                    break;
+                case 1:
+                    Assert.assertEquals(color.value(), "#4B87CB");
+                    break;
+                default:
+                    Assert.fail();
+                    break;
             }
             index++;
         }

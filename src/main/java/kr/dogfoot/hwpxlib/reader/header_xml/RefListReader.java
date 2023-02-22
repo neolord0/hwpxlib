@@ -19,7 +19,7 @@ import kr.dogfoot.hwpxlib.reader.header_xml.style.StylesReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.tabpr.TabPropertiesReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.trackchange.TrackChangesReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.trackchangeauthor.TrackChangeAuthorsReader;
-import kr.dogfoot.hwpxlib.util.ElementNames;
+import kr.dogfoot.hwpxlib.object.names.ElementNames;
 import org.xml.sax.Attributes;
 
 public class RefListReader extends ElementReader {

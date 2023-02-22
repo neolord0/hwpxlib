@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.inner.TrackChan
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class TrackChangeTagReader extends ElementReader {
     private TrackChangeTag trackChangeTag;
@@ -22,14 +22,14 @@ public class TrackChangeTagReader extends ElementReader {
     @Override
     protected void setAttribute(String name, String value) {
         switch (name) {
-            case AttributeNames.id:
-                trackChangeTag.id(value);
+            case AttributeNames.Id:
+                trackChangeTag.Id(value);
                 break;
             case AttributeNames.TcId:
-                trackChangeTag.TcId(ValueConvertor.toInteger(value));
+                trackChangeTag.TcId(value);
                 break;
-            case AttributeNames.paraEnd:
-                trackChangeTag.paraEnd(ValueConvertor.toBoolean(value));
+            case AttributeNames.paraend:
+                trackChangeTag.paraend(ValueConvertor.toBoolean(value));
                 break;
         }
     }

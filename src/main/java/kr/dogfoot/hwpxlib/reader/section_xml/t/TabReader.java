@@ -7,7 +7,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.Tab;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class TabReader extends ElementReader {
     private Tab tab;
@@ -28,7 +28,7 @@ public class TabReader extends ElementReader {
                 tab.width(ValueConvertor.toInteger(value));
                 break;
             case AttributeNames.leader:
-                tab.leader(LineType2.fromString(value));
+                tab.leader(LineType2.fromIndex(ValueConvertor.toInteger(value)));
                 break;
             case AttributeNames.type:
                 tab.type(TabItemType.fromIndex(ValueConvertor.toInteger(value)));

@@ -11,6 +11,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
+import kr.dogfoot.hwpxlib.object.content.BinaryDataFile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -139,5 +140,20 @@ public class SimpleOLE {
         Assert.assertEquals(shapeComment.text(),
                 "OLE 개체입니다.\n" +
                 "개체 형식은 Bitmap Image입니다.");
+
+        int index = 0;
+        Assert.assertEquals(file.binaryDataFileList().count(), 1);
+        for (BinaryDataFile binaryDataFile : file.binaryDataFileList().items()) {
+            switch (index) {
+                case 0:
+                    Assert.assertEquals(binaryDataFile.fileName(), "ole1.ole");
+                    Assert.assertNotNull(binaryDataFile.data());
+                    Assert.assertEquals(binaryDataFile.data().length, 869380);
+                    break;
+                default:
+                    Assert.fail();
+                    break;
+            }
+        }
     }
 }

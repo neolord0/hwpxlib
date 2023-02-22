@@ -2,6 +2,7 @@ package kr.dogfoot.hwpxlib.object.common;
 
 public enum ObjectType {
     Unknown,
+    NormalText,
     HWPXFile,
     hp_switch,
     hp_case,

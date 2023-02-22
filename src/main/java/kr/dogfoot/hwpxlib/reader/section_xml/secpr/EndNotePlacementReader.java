@@ -6,7 +6,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.EndN
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.util.AttributeNames;
+import kr.dogfoot.hwpxlib.object.names.AttributeNames;
 
 public class EndNotePlacementReader extends ElementReader {
     private EndNotePlacement endNotePlacement;

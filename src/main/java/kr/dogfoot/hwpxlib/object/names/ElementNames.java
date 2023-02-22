@@ -1,4 +1,4 @@
-package kr.dogfoot.hwpxlib.util;
+package kr.dogfoot.hwpxlib.object.names;
 
 public class ElementNames {
     public static final String hp_switch = "hp:switch";

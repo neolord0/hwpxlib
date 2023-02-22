@@ -11,7 +11,7 @@ public class NormalText extends TItem {
 
     @Override
     public ObjectType _objectType() {
-        return null;
+        return ObjectType.NormalText;
     }
 
     public String text() {
