@@ -11,6 +11,8 @@ public class XMLStringBuilder {
     private static final String Space = " ";
     private static final String Equal = "=";
     private static final String DoubleQuote = "\"";
+    private static final String TrueValue = "1";
+    private static final String FalseValue = "0";
 
     private final StringBuilder sb;
     private final Stack<ElementInfo> elementStack;
@@ -77,6 +79,35 @@ public class XMLStringBuilder {
         return attribute(name, value.toString());
     }
 
+    public XMLStringBuilder attribute(String name, Boolean value) {
+        if (value == null) {
+            return this;
+        }
+
+        if (value.booleanValue()) {
+            return attribute(name, TrueValue);
+        } else {
+            return attribute(name, FalseValue);
+        }
+    }
+
+    public XMLStringBuilder text(String text) {
+        if (text == null || text.length() == 0) {
+            return this;
+        }
+        if (!elementStack.empty()) {
+            if (!elementStack.peek().hasChild()) {
+                sb.append(ElementEnd1);
+            }
+            elementStack.peek().hadChild();
+        }
+
+        sb
+                .append(text);
+
+        return this;
+    }
+
 
     public String toString() {
         while (!elementStack.empty()) {
@@ -92,6 +123,7 @@ public class XMLStringBuilder {
 
         elementStack.clear();
     }
+
 
     private class ElementInfo {
         private final String name;

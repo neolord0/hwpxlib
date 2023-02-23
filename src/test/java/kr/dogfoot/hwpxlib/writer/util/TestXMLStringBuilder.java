@@ -99,4 +99,33 @@ public class TestXMLStringBuilder {
         Assert.assertEquals(xsb.toString(),
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?><ha:HWPApplicationSetting xmlns:ha=\"http://www.hancom.co.kr/hwpml/2011/app\" xmlns:config=\"urn:oasis:names:tc:opendocument:xmlns:config:1.0\"><ha:CaretPosition listIDRef=\"0\" paraIDRef=\"0\" pos=\"16\"/></ha:HWPApplicationSetting>");
     }
+
+    @Test
+    public void test7() {
+        XMLStringBuilder xsb = new XMLStringBuilder();
+        xsb
+                .openElement("e1")
+                .openElement("e2")
+                .openElement("e3")
+                .closeElement()
+                .openElement("e4")
+                .text("abc")
+                .openElement("tag1")
+                .closeElement()
+                .text("def")
+                .openElement("tag2")
+                .closeElement()
+                .text("ghi")
+                .closeElement()
+                .closeElement()
+                .openElement("e5")
+                .openElement("e6")
+                .closeElement()
+                .openElement("e7")
+                .closeElement()
+                .closeElement()
+                .closeElement();
+        Assert.assertEquals(xsb.toString(),
+                "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?><e1><e2><e3/><e4>abc<tag1/>def<tag2/>ghi</e4></e2><e5><e6/><e7/></e5></e1>");
+    }
 }

@@ -2,6 +2,7 @@ package kr.dogfoot.hwpxlib.writer;
 
 import kr.dogfoot.hwpxlib.CommonString;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.writer.content_hpf.ContentHPFPWriter;
 import kr.dogfoot.hwpxlib.writer.settings_xml.SettingsWriter;
 import kr.dogfoot.hwpxlib.writer.util.XMLStringBuilder;
 import kr.dogfoot.hwpxlib.writer.version_xml.VersionWriter;
@@ -49,8 +50,8 @@ public class HWPXWriter {
         mineType();
         settings_xml();
         version_xml();
+        content_hpf();
     }
-
 
     private void mineType() throws IOException {
         putIntoZip(CommonString.ZipEntry_MineType,
@@ -76,17 +77,23 @@ public class HWPXWriter {
         putIntoZip(CommonString.ZiPEntry_Settings, xsb.toString(), StandardCharsets.UTF_8);
     }
 
-    private void version_xml() {
+    private void version_xml() throws IOException {
         if (hwpxFile.versionXMLFile() == null) {
             return;
         }
 
         xsb.clear();
         VersionWriter.write(hwpxFile.versionXMLFile(), xsb);
+        putIntoZip(CommonString.ZipEntry_Version, xsb.toString(), StandardCharsets.UTF_8);
     }
 
 
+    private void content_hpf() throws IOException {
+        xsb.clear();
 
+        ContentHPFPWriter.write(hwpxFile.contentHPFFile(), xsb);
+        putIntoZip(CommonString.ZiPEntry_ContentHPFP, xsb.toString(), StandardCharsets.UTF_8);
+    }
 
 
     private void close() throws IOException {

@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.object.names;
 
+import java.util.SimpleTimeZone;
+
 public class AttributeNames {
     public static final String hp_required_namespace = "hp:required-namespace";
     public static final String tagetApplication = "tagetApplication";
@@ -434,4 +436,17 @@ public class AttributeNames {
     public static final String xmlns_config = "xmlns:config";
     public static final String xmlns_hv = "xmlns:hv";
     public static final String xmlVersion = "xmlVersion";
+    public static final String xmlns_hp = "xmlns:hp";
+    public static final String xmlns_hp10 = "xmlns:hp10";
+    public static final String xmlns_hs = "xmlns:hs";
+    public static final String xmlns_hc = "xmlns:hc";
+    public static final String xmlns_hh = "xmlns:hh";
+    public static final String xmlns_hhs = "xmlns:hhs";
+    public static final String xmlns_hm = "xmlns:hm";
+    public static final String xmlns_hpf = "xmlns:hpf";
+    public static final String xmlns_dc = "xmlns:dc";
+    public static final String xmlns_opf = "xmlns:opf";
+    public static final String xmlns_ooxmlchart = "xmlns:ooxmlchart";
+    public static final String xmlns_hwpunitchar = "xmlns:hwpunitchar";
+    public static final String xmlns_epub = "xmlns:epub";
 }
