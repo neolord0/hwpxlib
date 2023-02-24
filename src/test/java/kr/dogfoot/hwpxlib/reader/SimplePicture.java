@@ -1,6 +1,7 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ImageEffect;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
@@ -15,7 +16,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.InMargin;
-import kr.dogfoot.hwpxlib.object.content.BinaryDataFile;
+import kr.dogfoot.hwpxlib.object.common.AttachedFile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -251,17 +252,27 @@ public class SimplePicture {
                 "원본 그림의 크기: 가로 544pixel, 세로 184pixel");
 
         int index = 0;
-        for (BinaryDataFile binaryDataFile : file.binaryDataFileList().items()) {
+        for (ManifestItem item : file.contentHPFFile().manifest().items()) {
             switch (index) {
                 case 0:
-                    Assert.assertEquals(binaryDataFile.fileName(), "image1.jpg");
-                    Assert.assertNotNull(binaryDataFile.data());
-                    Assert.assertEquals(binaryDataFile.data().length, 23560);
+                    Assert.assertNull(item.attachedFile());
+                    break;
+                case 1:
+                    Assert.assertNotNull(item.attachedFile());
+                    Assert.assertNotNull(item.attachedFile().data());
+                    Assert.assertEquals(item.attachedFile().data().length, 23560);
+                    break;
+                case 2:
+                    Assert.assertNull(item.attachedFile());
+                    break;
+                case 3:
+                    Assert.assertNull(item.attachedFile());
                     break;
                 default:
                     Assert.fail();
                     break;
             }
+            index++;
         }
     }
 }

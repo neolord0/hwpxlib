@@ -1,17 +1,21 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.AttachedFile;
+import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ComboBox;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ConnectLine;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.combobox.ListItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormCharPr;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import kr.dogfoot.hwpxlib.object.content.ScriptFile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.nio.charset.StandardCharsets;
 
 public class SimpleComboBox {
     private HWPXFile file;
@@ -83,18 +87,25 @@ public class SimpleComboBox {
         Assert.assertNull(shapeComment);
 
         int index = 0;
-        Assert.assertEquals(file.scriptFileList().count(), 2);
-        for (ScriptFile scriptFile : file.scriptFileList().items()) {
+        for (ManifestItem item : file.contentHPFFile().manifest().items()) {
             switch (index) {
                 case 0:
-                    Assert.assertEquals(scriptFile.fileName(), "headerScripts.js");
-                    Assert.assertEquals(scriptFile.script(), "var Documents = XHwpDocuments;\r\n" +
+                    Assert.assertNull(item.attachedFile());
+                    break;
+                case 1:
+                    Assert.assertNull(item.attachedFile());
+                    break;
+                case 2:
+                    Assert.assertNotNull(item.attachedFile());
+                    Assert.assertEquals(item.href(), "Scripts/headerScripts.js");
+                    Assert.assertEquals(new String(item.attachedFile().data(), StandardCharsets.UTF_16LE), "var Documents = XHwpDocuments;\r\n" +
                             "var Document = Documents.Active_XHwpDocument;\r\n" +
                             "var ComboBox1 = Document.XHwpFormComboBoxs.ItemFromName(\"ComboBox1\");\r\n");
                     break;
-                case 1:
-                    Assert.assertEquals(scriptFile.fileName(), "sourceScripts.js");
-                    Assert.assertEquals(scriptFile.script(), "\r\n" +
+                case 3:
+                    Assert.assertNotNull(item.attachedFile());
+                    Assert.assertEquals(item.href(), "Scripts/sourceScripts.js");
+                    Assert.assertEquals(new String(item.attachedFile().data(), StandardCharsets.UTF_16LE), "\r\n" +
                             "function OnDocument_Open()\r\n" +
                             "{\r\n" +
                             "\tComboBox1.InsertString(\"봄\", 0);\r\n" +
@@ -106,6 +117,9 @@ public class SimpleComboBox {
                             "{\r\n" +
                             "\t//todo : \r\n" +
                             "}\r\n");
+                    break;
+                case 4:
+                    Assert.assertNull(item.attachedFile());
                     break;
                 default:
                     Assert.fail();

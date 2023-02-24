@@ -1,6 +1,7 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.OLE;
@@ -11,7 +12,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import kr.dogfoot.hwpxlib.object.content.BinaryDataFile;
+import kr.dogfoot.hwpxlib.object.common.AttachedFile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -142,18 +143,27 @@ public class SimpleOLE {
                 "개체 형식은 Bitmap Image입니다.");
 
         int index = 0;
-        Assert.assertEquals(file.binaryDataFileList().count(), 1);
-        for (BinaryDataFile binaryDataFile : file.binaryDataFileList().items()) {
+        for (ManifestItem item : file.contentHPFFile().manifest().items()) {
             switch (index) {
                 case 0:
-                    Assert.assertEquals(binaryDataFile.fileName(), "ole1.ole");
-                    Assert.assertNotNull(binaryDataFile.data());
-                    Assert.assertEquals(binaryDataFile.data().length, 869380);
+                    Assert.assertNull(item.attachedFile());
+                    break;
+                case 1:
+                    Assert.assertNotNull(item.attachedFile());
+                    Assert.assertNotNull(item.attachedFile().data());
+                    Assert.assertEquals(item.attachedFile().data().length, 869380);
+                    break;
+                case 2:
+                    Assert.assertNull(item.attachedFile());
+                    break;
+                case 3:
+                    Assert.assertNull(item.attachedFile());
                     break;
                 default:
                     Assert.fail();
                     break;
             }
+            index++;
         }
     }
 }
