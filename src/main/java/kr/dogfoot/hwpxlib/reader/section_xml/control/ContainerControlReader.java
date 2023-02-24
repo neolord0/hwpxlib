@@ -6,7 +6,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ContainerControlReader extends ShapeComponentReader {

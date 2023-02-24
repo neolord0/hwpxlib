@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Case;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import org.xml.sax.Attributes;
 
 public class CaseReader extends ElementReader {

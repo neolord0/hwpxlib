@@ -1,11 +1,13 @@
 package kr.dogfoot.hwpxlib.reader;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ErrorMessage;
+import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.util.ZipFileReader;
-import kr.dogfoot.hwpxlib.CommonString;
+import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -26,21 +28,12 @@ public class HWPXReader {
 
         reader.createHWPXFileObject();
 
-        reader.readVersionXMLFile();
-        reader.readManifestXMLFile();
-        reader.readContainerXMLFile();
-        reader.readPackageXMLFile();
-        reader.readContentFiles();
+        reader.read();
 
         reader.closeZipFile();
 
         return reader.hwpxFile;
     }
-
-    private static final String MineType_XML = "application/xml";
-    private static final String BinDataPath = "BinData/";
-    private static final String ScriptsPath = "Scripts/";
-    private static final String Package_Media_Type = "application/hwpml-package+xml";
 
     private ZipFile zipFile;
     private HWPXFile hwpxFile;
@@ -57,7 +50,7 @@ public class HWPXReader {
     }
 
     public void checkMineType() throws IOException {
-        ZipEntry zipEntry = zipFile.getEntry(CommonString.ZipEntry_MineType);
+        ZipEntry zipEntry = zipFile.getEntry(ZipEntryName.MineType);
         if (zipEntry != null) {
             InputStream is = zipFile.getInputStream(zipEntry);
 
@@ -66,11 +59,11 @@ public class HWPXReader {
                     .lines()
                     .collect(Collectors.joining("\n"));
 
-            if (!CommonString.MineType_HWPX.equals(text)) {
-                throw new IOException(CommonString.Error_Not_HWPX_File);
+            if (!MineTypes.HWPX.equals(text)) {
+                throw new IOException(ErrorMessage.Not_HWPX_File);
             }
         } else {
-            throw new IOException(CommonString.Error_Not_HWPX_File);
+            throw new IOException(ErrorMessage.Not_HWPX_File);
         }
     }
 
@@ -78,57 +71,65 @@ public class HWPXReader {
         hwpxFile = new HWPXFile();
     }
 
-    private void readVersionXMLFile() throws Exception {
+
+    private void read() throws Exception {
+        versionXML();
+        Meta_Inf_containerXML();
+        Meta_Inf_manifestXML();
+        contentHPF();
+        packagedFiles();
+        etcContainedFile();
+    }
+
+
+    private void versionXML() throws Exception {
         new VersionXMLFileReader(entryReaderManager)
                 .read(hwpxFile.versionXMLFile(), zipFile);
     }
 
-    private void readManifestXMLFile() throws Exception {
-        new ManifestXMLFileReader(entryReaderManager)
-                .read(hwpxFile.manifestXMLFile(), zipFile);
-    }
-
-    private void readContainerXMLFile() throws Exception {
+    private void Meta_Inf_containerXML() throws Exception {
         new ContainerXMLFileReader(entryReaderManager)
                 .read(hwpxFile.containerXMLFile(), zipFile);
     }
 
-    private void readPackageXMLFile() throws Exception {
-        String packageXMLFilePath = packageXMLFilePath();
-        new PackageXMLFileReader(entryReaderManager)
-                .read(hwpxFile.contentHPFFile(), zipFile, packageXMLFilePath);
+    private void Meta_Inf_manifestXML() throws Exception {
+        new ManifestXMLFileReader(entryReaderManager)
+                .read(hwpxFile.manifestXMLFile(), zipFile);
     }
 
-    private String packageXMLFilePath() {
-        if (hwpxFile.containerXMLFile() != null &&
-                hwpxFile.containerXMLFile().rootFiles() != null) {
-            for (RootFile rootFile : hwpxFile.containerXMLFile().rootFiles().items()) {
-                if (Package_Media_Type.equals(rootFile.mediaType())) {
-                    return rootFile.fullPath();
-                }
-            }
+    private void contentHPF() throws Exception {
+        String packageXMLFilePath = hwpxFile.containerXMLFile().packageXMLFilePath();
+        if (packageXMLFilePath != null) {
+            new ContentHPFFileReader(entryReaderManager)
+                    .read(hwpxFile.contentHPFFile(), zipFile, packageXMLFilePath);
         }
-        return null;
     }
 
-
-    private void readContentFiles() throws Exception {
+    private void packagedFiles() throws Exception {
         ContentFilesReader contentFilesReader = new ContentFilesReader(entryReaderManager);
 
         for (ManifestItem item : hwpxFile.contentHPFFile().manifest().items()) {
-            if (MineType_XML.equals(item.mediaType())) {
+            if (MineTypes.XML.equals(item.mediaType())) {
                 contentFilesReader.read(hwpxFile, item.href(), zipFile);
-            } else if (item.href().startsWith(BinDataPath)) {
-                hwpxFile.binaryDataFileList().addNew()
-                        .fileNameAnd(item.href().substring(8))
-                        .data(ZipFileReader.readBinary(item.href(), zipFile));
-            } else if (item.href().startsWith(ScriptsPath)) {
-                hwpxFile.scriptFileList().addNew()
-                        .fileNameAnd(item.href().substring(8))
-                        .script(ZipFileReader.readString(item.href(), zipFile));
+            } else if (item.hasAttachedFile()) {
+                item.createAttachedFile();
+                item.attachedFile().data(ZipFileReader.readBinary(item.href(), zipFile));
             }
         }
     }
+
+    private void etcContainedFile() throws IOException {
+        if (hwpxFile.containerXMLFile() != null &&
+                hwpxFile.containerXMLFile().rootFiles() != null) {
+            for (RootFile rootFile : hwpxFile.containerXMLFile().rootFiles().items()) {
+                if (!MineTypes.HWPML_Package.equals(rootFile.mediaType())) {
+                    rootFile.createAttachedFile();
+                    rootFile.attachedFile().data(ZipFileReader.readBinary(rootFile.fullPath(), zipFile));
+                }
+            }
+        }
+    }
+
 
     private void closeZipFile() throws IOException {
         zipFile.close();

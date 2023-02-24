@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.context_hpf;
 
+import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
+import kr.dogfoot.hwpxlib.object.common.AttachedFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
@@ -15,6 +17,10 @@ public class ManifestItem extends HWPXObject {
     private Integer fileSize;
     private Boolean isEmbedded;
     private String subPath;
+    /**
+     * mediaType가 application/ole, image/*, application/x-javascript 중 하나일 경우 첨부된 파일을 저장한다.
+      */
+    private AttachedFile attachedFile;
 
     public ManifestItem() {
     }
@@ -61,6 +67,19 @@ public class ManifestItem extends HWPXObject {
     public ManifestItem mediaTypeAnd(String mediaType) {
         this.mediaType = mediaType;
         return this;
+    }
+
+    public boolean hasAttachedFile() {
+        if (mediaType == null) {
+            return false;
+        }
+
+        if (mediaType.equals(MineTypes.OLE)
+                || mediaType.startsWith(MineTypes.Image_PreFix)
+                || mediaType.startsWith(MineTypes.Script_PreFix)) {
+            return true;
+        }
+        return false;
     }
 
     public String fallback() {
@@ -165,5 +184,17 @@ public class ManifestItem extends HWPXObject {
     public ManifestItem subPathAnd(String subPath) {
         this.subPath = subPath;
         return this;
+    }
+
+    public AttachedFile attachedFile() {
+        return attachedFile;
+    }
+
+    public void createAttachedFile() {
+        attachedFile = new AttachedFile();
+    }
+
+    public void removeAttachedFile() {
+        attachedFile = null;
     }
 }

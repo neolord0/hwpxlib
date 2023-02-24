@@ -6,7 +6,7 @@ import kr.dogfoot.hwpxlib.object.metainf.FileEntry;
 import kr.dogfoot.hwpxlib.object.metainf.ManifestXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ManifestReader extends ElementReader {

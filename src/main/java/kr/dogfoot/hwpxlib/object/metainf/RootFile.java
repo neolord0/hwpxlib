@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.object.metainf;
 
+import kr.dogfoot.hwpxlib.object.common.AttachedFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
@@ -12,6 +13,10 @@ public class RootFile extends HWPXObject {
      * 파일의 mime 타입
      */
     private String mediaType;
+    /**
+     * mediaType이 "application/hwpml-package+xml"이 아닐때 첨부된 파일
+     */
+    private AttachedFile attachedFile;
 
     public RootFile() {
     }
@@ -45,5 +50,17 @@ public class RootFile extends HWPXObject {
     public RootFile mediaTypeAnd(String mediaType) {
         this.mediaType = mediaType;
         return this;
+    }
+
+    public AttachedFile attachedFile() {
+        return attachedFile;
+    }
+
+    public void createAttachedFile() {
+        attachedFile = new AttachedFile();
+    }
+
+    public void removeAttachedFile() {
+        attachedFile = null;
     }
 }

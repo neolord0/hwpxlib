@@ -9,7 +9,7 @@ import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SecReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.SettingsReader;
 import kr.dogfoot.hwpxlib.reader.versionlog_xml.HistoryReader;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 

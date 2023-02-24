@@ -1,11 +1,13 @@
 package kr.dogfoot.hwpxlib.writer;
 
-import kr.dogfoot.hwpxlib.CommonString;
+import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
+import kr.dogfoot.hwpxlib.commonstirngs.FileIDs;
+import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.writer.content_hpf.ContentHPFPWriter;
-import kr.dogfoot.hwpxlib.writer.settings_xml.SettingsWriter;
+import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
+import kr.dogfoot.hwpxlib.object.metainf.RootFile;
+import kr.dogfoot.hwpxlib.writer.header_xml.HeaderWriter;
 import kr.dogfoot.hwpxlib.writer.util.XMLStringBuilder;
-import kr.dogfoot.hwpxlib.writer.version_xml.VersionWriter;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -14,12 +16,12 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class HWPXWriter {
-    public static void toFilePath(HWPXFile hwpxFile, String filepath) throws IOException {
+    public static void toFilePath(HWPXFile hwpxFile, String filepath) throws Exception {
         FileOutputStream fos = new FileOutputStream(filepath);
         toStream(hwpxFile, fos);
     }
 
-    public static void toStream(HWPXFile hwpxFile, OutputStream os) throws IOException {
+    public static void toStream(HWPXFile hwpxFile, OutputStream os) throws Exception {
         HWPXWriter writer = new HWPXWriter(hwpxFile);
         writer.createZIPFile(os);
         writer.write();
@@ -27,7 +29,7 @@ public class HWPXWriter {
         os.close();
     }
 
-    public static byte[] toBytes(HWPXFile hwpxFile) throws IOException {
+    public static byte[] toBytes(HWPXFile hwpxFile) throws Exception {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         toStream(hwpxFile, baos);
         return baos.toByteArray();
@@ -46,55 +48,106 @@ public class HWPXWriter {
         zos = new ZipOutputStream(outputStream);
     }
 
-    private void write() throws IOException {
+    private void write() throws Exception {
         mineType();
-        settings_xml();
         version_xml();
+        META_INF_manifest_xml();
+        META_INF_container_xml();
         content_hpf();
+        contentFiles();
+        etcContainedFile();
     }
 
     private void mineType() throws IOException {
-        putIntoZip(CommonString.ZipEntry_MineType,
-                CommonString.MineType_HWPX,
+        putIntoZip(ZipEntryName.MineType,
+                MineTypes.HWPX,
                 StandardCharsets.UTF_8);
     }
 
+    private void version_xml() throws Exception {
+        xsb.clear();
+        VersionWriter.write(hwpxFile.versionXMLFile(), xsb);
+        putIntoZip(ZipEntryName.Version, xsb.toString(), StandardCharsets.UTF_8);
+    }
+
     private void putIntoZip(String entryName, String data, Charset charset) throws IOException {
+        if (data == null) {
+            return;
+        }
+
         zos.putNextEntry(new ZipEntry(entryName));
         byte[] bytes = data.getBytes(charset);
         zos.write(bytes, 0, bytes.length);
         zos.closeEntry();
     }
 
-    private void settings_xml() throws IOException {
-        if (hwpxFile.settingsXMLFile() == null) {
+    private void putIntoZip(String entryName, byte[] binary) throws IOException {
+        if (binary == null) {
             return;
         }
 
-        xsb.clear();
-        SettingsWriter.write(hwpxFile.settingsXMLFile(), xsb);
-
-        putIntoZip(CommonString.ZiPEntry_Settings, xsb.toString(), StandardCharsets.UTF_8);
+        zos.putNextEntry(new ZipEntry(entryName));
+        zos.write(binary, 0, binary.length);
+        zos.closeEntry();
     }
 
-    private void version_xml() throws IOException {
-        if (hwpxFile.versionXMLFile() == null) {
-            return;
-        }
-
+    public void META_INF_manifest_xml() throws IOException {
         xsb.clear();
-        VersionWriter.write(hwpxFile.versionXMLFile(), xsb);
-        putIntoZip(CommonString.ZipEntry_Version, xsb.toString(), StandardCharsets.UTF_8);
+        ManifestWriter.write(hwpxFile.manifestXMLFile(), xsb);
+        putIntoZip(ZipEntryName.Manifest,
+                xsb.toString(),
+                StandardCharsets.UTF_8);
     }
 
-
-    private void content_hpf() throws IOException {
+    public void META_INF_container_xml() throws Exception {
         xsb.clear();
+        ContainerWriter.write(hwpxFile.containerXMLFile(), xsb);
+        putIntoZip(ZipEntryName.Container,
+                xsb.toString(),
+                StandardCharsets.UTF_8);
+    }
 
+    private void content_hpf() throws Exception {
+        String packageXMLFilePath = hwpxFile.containerXMLFile().packageXMLFilePath();
+
+        xsb.clear();
         ContentHPFPWriter.write(hwpxFile.contentHPFFile(), xsb);
-        putIntoZip(CommonString.ZiPEntry_ContentHPFP, xsb.toString(), StandardCharsets.UTF_8);
+        putIntoZip(packageXMLFilePath,
+                xsb.toString(),
+                StandardCharsets.UTF_8);
     }
 
+    private void contentFiles() throws IOException {
+        for (ManifestItem item : hwpxFile.contentHPFFile().manifest().items()) {
+            if (item.id().equals(FileIDs.Settings)) {
+                xsb.clear();
+                SettingsWriter.write(hwpxFile.settingsXMLFile(), xsb);
+                putIntoZip(item.href(),
+                        xsb.toString(),
+                        StandardCharsets.UTF_8);
+            } else if (item.id().equals(FileIDs.Header)) {
+                xsb.clear();
+                HeaderWriter.write(hwpxFile.headerXMLFile(), xsb);
+                putIntoZip(item.href(),
+                        xsb.toString(),
+                        StandardCharsets.UTF_8);
+            } else if (item.id().startsWith(FileIDs.Section_Prefix)) {
+                // section file...
+
+            } else if (item.hasAttachedFile() && item.attachedFile() != null) {
+                putIntoZip(item.href(), item.attachedFile().data());
+            }
+        }
+    }
+
+    private void etcContainedFile() throws Exception {
+        for (RootFile rootFile : hwpxFile.containerXMLFile().rootFiles().items()) {
+            if (!MineTypes.HWPML_Package.equals(rootFile.mediaType())
+                    && rootFile.attachedFile() != null) {
+                putIntoZip(rootFile.fullPath(), rootFile.attachedFile().data());
+            }
+        }
+    }
 
     private void close() throws IOException {
         zos.close();

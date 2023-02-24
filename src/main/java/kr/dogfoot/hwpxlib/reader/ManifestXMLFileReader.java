@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.metainf.ManifestXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
@@ -12,8 +13,6 @@ import java.io.IOException;
 import java.util.zip.ZipFile;
 
 public class ManifestXMLFileReader extends XMLFileReader {
-    private static final String Filepath = "META-INF/manifest.xml";
-
     public ManifestXMLFileReader(ElementReaderManager entryReaderManager) {
         super(entryReaderManager);
     }
@@ -22,6 +21,6 @@ public class ManifestXMLFileReader extends XMLFileReader {
         ((ManifestReader) setCurrentEntryReader(ElementReaderSort.Manifest))
                 .manifestXMLFile(manifestXMLFile);
 
-        read(zipFile, Filepath);
+        read(zipFile, ZipEntryName.Manifest);
     }
 }

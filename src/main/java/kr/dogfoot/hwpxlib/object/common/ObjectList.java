@@ -60,4 +60,8 @@ public class ObjectList<ItemType> extends SwitchableObject {
     public Iterable<ItemType> items() {
         return list;
     }
+
+    public boolean empty() {
+        return list.size() == 0;
+    }
 }

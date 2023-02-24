@@ -1,37 +1,47 @@
-package kr.dogfoot.hwpxlib.writer.content_hpf;
+package kr.dogfoot.hwpxlib.writer;
 
-import kr.dogfoot.hwpxlib.CommonString;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.*;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
+import kr.dogfoot.hwpxlib.writer.util.NamespaceSort;
 import kr.dogfoot.hwpxlib.writer.util.XMLStringBuilder;
 
 public class ContentHPFPWriter {
     public static void write(ContentHPFFile contentHPF, XMLStringBuilder xsb) {
         xsb
                 .openElement(ElementNames.opf_package)
-                .attribute(AttributeNames.xmlns_ha, CommonString.xmlns_ha)
-                .attribute(AttributeNames.xmlns_hp, CommonString.xmlns_hp)
-                .attribute(AttributeNames.xmlns_hp10, CommonString.xmlns_hp10)
-                .attribute(AttributeNames.xmlns_hs, CommonString.xmlns_hs)
-                .attribute(AttributeNames.xmlns_hc, CommonString.xmlns_hc)
-                .attribute(AttributeNames.xmlns_hh, CommonString.xmlns_hh)
-                .attribute(AttributeNames.xmlns_hhs, CommonString.xmlns_hhs)
-                .attribute(AttributeNames.xmlns_hm, CommonString.xmlns_hm)
-                .attribute(AttributeNames.xmlns_hpf, CommonString.xmlns_hpf)
-                .attribute(AttributeNames.xmlns_dc, CommonString.xmlns_dc)
-                .attribute(AttributeNames.xmlns_opf, CommonString.xmlns_opf)
-                .attribute(AttributeNames.xmlns_ooxmlchart, CommonString.xmlns_ooxmlchart)
-                .attribute(AttributeNames.xmlns_hwpunitchar, CommonString.xmlns_hwpunitchar)
-                .attribute(AttributeNames.xmlns_epub, CommonString.xmlns_epub)
-                .attribute(AttributeNames.xmlns_config, CommonString.xmlns_config)
+                .namespace(NamespaceSort.ha)
+                .namespace(NamespaceSort.hp)
+                .namespace(NamespaceSort.hp10)
+                .namespace(NamespaceSort.hs)
+                .namespace(NamespaceSort.hc)
+                .namespace(NamespaceSort.hh)
+                .namespace(NamespaceSort.hhs)
+                .namespace(NamespaceSort.hm)
+                .namespace(NamespaceSort.hpf)
+                .namespace(NamespaceSort.dc)
+                .namespace(NamespaceSort.opf)
+                .namespace(NamespaceSort.ooxmlchart)
+                .namespace(NamespaceSort.hwpunitchar)
+                .namespace(NamespaceSort.epub)
+                .namespace(NamespaceSort.config)
                 .attribute(AttributeNames.version, contentHPF.version())
                 .attribute(AttributeNames.unique_identifier, contentHPF.uniqueIdentifier())
                 .attribute(AttributeNames.id, contentHPF.id());
-        metadata(contentHPF.metaData(), xsb);
-        manifest(contentHPF.manifest(), xsb);
-        spine(contentHPF.spine(), xsb);
+
+        if (contentHPF.metaData() != null) {
+            metadata(contentHPF.metaData(), xsb);
+        }
+
+        if (contentHPF.manifest() != null) {
+            manifest(contentHPF.manifest(), xsb);
+        }
+
+        if (contentHPF.spine() != null) {
+            spine(contentHPF.spine(), xsb);
+        }
+
         xsb.closeElement();
     }
 

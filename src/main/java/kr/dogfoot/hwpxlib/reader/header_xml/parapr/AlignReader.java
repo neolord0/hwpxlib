@@ -6,7 +6,7 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.VerticalAlign1;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.Align;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class AlignReader extends ElementReader {
     private Align align;

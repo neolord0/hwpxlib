@@ -11,8 +11,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.zip.ZipFile;
 
-public class PackageXMLFileReader extends XMLFileReader {
-    public PackageXMLFileReader(ElementReaderManager entryReaderManager) {
+public class ContentHPFFileReader extends XMLFileReader {
+    public ContentHPFFileReader(ElementReaderManager entryReaderManager) {
         super(entryReaderManager);
     }
 

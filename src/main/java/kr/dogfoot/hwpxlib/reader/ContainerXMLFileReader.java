@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.metainf.ContainerXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
@@ -12,7 +13,6 @@ import java.io.IOException;
 import java.util.zip.ZipFile;
 
 public class ContainerXMLFileReader extends XMLFileReader {
-    private static final String Filepath = "META-INF/container.xml";
 
     public ContainerXMLFileReader(ElementReaderManager entryReaderManager) {
         super(entryReaderManager);
@@ -22,6 +22,6 @@ public class ContainerXMLFileReader extends XMLFileReader {
         ((ContainerReader) setCurrentEntryReader(ElementReaderSort.Container))
                 .containerXMLFile(containerXMLFile);
 
-        read(zipFile, Filepath);
+        read(zipFile, ZipEntryName.Container);
     }
 }

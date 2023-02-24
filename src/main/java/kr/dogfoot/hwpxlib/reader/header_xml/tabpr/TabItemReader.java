@@ -7,7 +7,7 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.tabpr.TabItem;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class TabItemReader extends ElementReader {
     private TabItem tabItem;

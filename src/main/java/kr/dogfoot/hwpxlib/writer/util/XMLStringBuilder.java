@@ -13,6 +13,7 @@ public class XMLStringBuilder {
     private static final String DoubleQuote = "\"";
     private static final String TrueValue = "1";
     private static final String FalseValue = "0";
+    private static final String NameSpacePrefix = "xmlns:";
 
     private final StringBuilder sb;
     private final Stack<ElementInfo> elementStack;
@@ -57,6 +58,22 @@ public class XMLStringBuilder {
         return this;
     }
 
+    public XMLStringBuilder namespace(NamespaceSort namespaceSort) {
+        if (elementStack.empty() || elementStack.peek().hasChild() || namespaceSort  == null) {
+            return this;
+        }
+
+        sb
+                .append(Space)
+                .append(NameSpacePrefix)
+                .append(namespaceSort.name())
+                .append(Equal)
+                .append(DoubleQuote)
+                .append(namespaceSort.value())
+                .append(DoubleQuote);
+        return this;
+    }
+
     public XMLStringBuilder attribute(String name, String value) {
         if (elementStack.empty() || elementStack.peek().hasChild() || value == null) {
             return this;
@@ -73,6 +90,20 @@ public class XMLStringBuilder {
     }
 
     public XMLStringBuilder attribute(String name, Integer value) {
+        if (value == null) {
+            return this;
+        }
+        return attribute(name, value.toString());
+    }
+
+    public XMLStringBuilder attribute(String name, Short value) {
+        if (value == null) {
+            return this;
+        }
+        return attribute(name, value.toString());
+    }
+
+    public XMLStringBuilder attribute(String name, Long value) {
         if (value == null) {
             return this;
         }
@@ -123,7 +154,6 @@ public class XMLStringBuilder {
 
         elementStack.clear();
     }
-
 
     private class ElementInfo {
         private final String name;

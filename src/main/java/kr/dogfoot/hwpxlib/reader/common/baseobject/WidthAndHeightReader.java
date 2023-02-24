@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class WidthAndHeightReader extends ElementReader {
     private WidthAndHeight widthAndHeight;

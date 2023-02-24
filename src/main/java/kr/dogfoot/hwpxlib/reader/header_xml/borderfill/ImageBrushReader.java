@@ -7,8 +7,8 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.ImgBrush;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ImageBrushReader extends ElementReader {

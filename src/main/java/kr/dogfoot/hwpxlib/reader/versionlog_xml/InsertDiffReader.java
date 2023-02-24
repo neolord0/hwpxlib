@@ -7,8 +7,8 @@ import kr.dogfoot.hwpxlib.object.dochistory.InsertDiff;
 import kr.dogfoot.hwpxlib.object.dochistory.UpdateDiff;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class InsertDiffReader extends ElementReader {

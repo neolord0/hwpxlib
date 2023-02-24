@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.object.metainf;
 
+import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.XMLFile;
@@ -27,4 +28,14 @@ public class ContainerXMLFile extends XMLFile {
         rootFiles = null;
     }
 
+    public String packageXMLFilePath() {
+        if ( rootFiles != null) {
+            for (RootFile rootFile : rootFiles.items()) {
+                if (MineTypes.HWPML_Package.equals(rootFile.mediaType())) {
+                    return rootFile.fullPath();
+                }
+            }
+        }
+        return null;
+    }
 }

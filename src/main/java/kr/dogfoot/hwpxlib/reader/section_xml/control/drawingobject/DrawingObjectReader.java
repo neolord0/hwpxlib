@@ -11,7 +11,7 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.header_xml.borderfill.FillBrushReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public abstract class DrawingObjectReader extends ShapeComponentReader {

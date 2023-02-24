@@ -8,7 +8,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobj
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.CurveSegmentReader;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class CurveReader extends DrawingObjectReader {

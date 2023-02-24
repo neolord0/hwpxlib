@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.root.VersionXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
@@ -12,8 +13,6 @@ import java.io.IOException;
 import java.util.zip.ZipFile;
 
 public class VersionXMLFileReader extends XMLFileReader {
-    public static final String Filepath = "version.xml";
-
     private VersionXMLFile versionXMLFile;
 
     public VersionXMLFileReader(ElementReaderManager entryReaderManager) {
@@ -25,6 +24,6 @@ public class VersionXMLFileReader extends XMLFileReader {
         ((VersionReader) setCurrentEntryReader(ElementReaderSort.Version))
                 .versionXMLFile(versionXMLFile);
 
-        read(zipFile, Filepath);
+        read(zipFile, ZipEntryName.Version);
     }
 }

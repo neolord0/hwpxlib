@@ -83,6 +83,15 @@ public class ContentHPFFile extends XMLFile {
         manifest = null;
     }
 
+    public ManifestItem getManifestItemById(String id) {
+        for (ManifestItem item : manifest.items()) {
+            if (item.id().equals(id)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public ObjectList<SpineItemRef> spine() {
         return spine;
     }
@@ -94,5 +103,4 @@ public class ContentHPFFile extends XMLFile {
     public void removeSpine() {
         spine = null;
     }
-
 }

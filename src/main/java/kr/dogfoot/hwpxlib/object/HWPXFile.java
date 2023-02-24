@@ -8,8 +8,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.HeaderXMLFile;
 import kr.dogfoot.hwpxlib.object.content.masterpage_xml.MasterPageXMLFile;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SectionXMLFile;
 import kr.dogfoot.hwpxlib.object.dochistory.HistoryXMLFile;
-import kr.dogfoot.hwpxlib.object.content.BinaryDataFile;
-import kr.dogfoot.hwpxlib.object.content.ScriptFile;
 import kr.dogfoot.hwpxlib.object.metainf.ContainerXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.ManifestXMLFile;
 import kr.dogfoot.hwpxlib.object.root.SettingsXMLFile;
@@ -29,8 +27,6 @@ public class HWPXFile extends HWPXObject {
     private final ObjectList<SectionXMLFile> sectionXMLFileList;
     private final SettingsXMLFile settingsXMLFile;
     private final ObjectList<HistoryXMLFile> historyXMLFileList;
-    private final ObjectList<BinaryDataFile> binaryDataFileList;
-    private final ObjectList<ScriptFile> scriptFileList;
 
     public HWPXFile() {
         versionXMLFile = new VersionXMLFile();
@@ -43,8 +39,6 @@ public class HWPXFile extends HWPXObject {
         sectionXMLFileList = new ObjectList<SectionXMLFile>(SectionXMLFile.class);
         settingsXMLFile = new SettingsXMLFile();
         historyXMLFileList = new ObjectList<HistoryXMLFile>(HistoryXMLFile.class);
-        binaryDataFileList = new ObjectList<BinaryDataFile>(BinaryDataFile.class);
-        scriptFileList = new ObjectList<ScriptFile>(ScriptFile.class);
     }
 
     @Override
@@ -86,13 +80,5 @@ public class HWPXFile extends HWPXObject {
 
     public ObjectList<HistoryXMLFile> historyXMLFileList() {
         return historyXMLFileList;
-    }
-
-    public ObjectList<BinaryDataFile> binaryDataFileList() {
-        return binaryDataFileList;
-    }
-
-    public ObjectList<ScriptFile> scriptFileList() {
-        return scriptFileList;
     }
 }

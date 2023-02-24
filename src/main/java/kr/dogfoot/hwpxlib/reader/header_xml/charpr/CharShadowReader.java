@@ -6,7 +6,7 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr.CharShadow
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class CharShadowReader extends ElementReader {
     private CharShadow charShadow;

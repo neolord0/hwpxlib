@@ -15,7 +15,7 @@ public class FileEntry extends SwitchableObject {
     /**
      * 원본 파일의 크기
      */
-    private Integer size;
+    private Long size;
     /**
      * 암호화 정보
      */
@@ -55,15 +55,15 @@ public class FileEntry extends SwitchableObject {
         this.mediaType = mediaType;
     }
 
-    public Integer size() {
+    public Long size() {
         return size;
     }
 
-    public void size(Integer size) {
+    public void size(Long size) {
         this.size = size;
     }
 
-    public FileEntry sizeAnd(Integer size) {
+    public FileEntry sizeAnd(Long size) {
         this.size = size;
         return this;
     }

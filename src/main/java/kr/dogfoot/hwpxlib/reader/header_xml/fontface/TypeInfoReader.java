@@ -6,7 +6,7 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.TypeInfo
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.object.names.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class TypeInfoReader extends ElementReader {
     private TypeInfo typeInfo;

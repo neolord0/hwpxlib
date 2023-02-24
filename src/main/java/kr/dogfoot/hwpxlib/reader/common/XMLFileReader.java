@@ -1,9 +1,9 @@
 package kr.dogfoot.hwpxlib.reader.common;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ErrorMessage;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.SwitchReader;
-import kr.dogfoot.hwpxlib.CommonString;
-import kr.dogfoot.hwpxlib.object.names.ElementNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -37,7 +37,7 @@ public abstract class XMLFileReader extends DefaultHandler {
         if (zipEntry != null) {
             read(zipFile.getInputStream(zipEntry));
         } else {
-            throw new IOException(CommonString.Error_Not_HWPX_File);
+            throw new IOException(ErrorMessage.Not_HWPX_File);
         }
     }
 
