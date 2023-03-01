@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.trackchangeauthor;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.TrackChangeAuthor;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class TrackChangeAuthorsReader extends ElementReader {
@@ -39,7 +39,7 @@ public class TrackChangeAuthorsReader extends ElementReader {
     }
 
     private void trackChangeAuthor(TrackChangeAuthor trackChangeAuthor, String name, Attributes attrs) {
-        ((TrackChangeAuthorReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TrackChangeAuthor))
+        ((TrackChangeAuthorReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TrackChangeAuthor))
                 .trackChangeAuthor(trackChangeAuthor);
 
         xmlFileReader().startElement(name, attrs);

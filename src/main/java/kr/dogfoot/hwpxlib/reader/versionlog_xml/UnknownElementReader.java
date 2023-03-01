@@ -17,7 +17,7 @@ public class UnknownElementReader extends ElementReader {
     }
 
     private void unknownChild(String name, Attributes attrs) {
-        xmlFileReader().setCurrentEntryReader(ElementReaderSort.UnknownElement);
+        xmlFileReader().setCurrentElementReader(ElementReaderSort.UnknownElement);
         xmlFileReader().startElement(name, attrs);
     }
 

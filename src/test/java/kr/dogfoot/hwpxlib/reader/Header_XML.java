@@ -550,8 +550,8 @@ public class Header_XML {
     }
 
     private void docOption(DocOption docOption) {
-        Assert.assertNotNull(docOption.linkInfo());
-        LinkInfo linkInfo = docOption.linkInfo();
+        Assert.assertNotNull(docOption.linkinfo());
+        LinkInfo linkInfo = docOption.linkinfo();
         Assert.assertEquals(linkInfo.path(), "");
         Assert.assertEquals(linkInfo.pageInherit().booleanValue(), false);
         Assert.assertEquals(linkInfo.footnoteInherit().booleanValue(), false);

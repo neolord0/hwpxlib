@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.common.baseobject.ValueAndUnit;
 
 /**
  * 문단 여백
@@ -37,7 +36,7 @@ public class ParaMargin extends SwitchableObject {
         return ObjectType.hh_margin;
     }
 
-    public ValueAndUnit intent() {
+    public Intent intent() {
         return intent;
     }
 
@@ -49,7 +48,7 @@ public class ParaMargin extends SwitchableObject {
         intent = null;
     }
 
-    public ValueAndUnit left() {
+    public LeftMargin left() {
         return left;
     }
 
@@ -61,7 +60,7 @@ public class ParaMargin extends SwitchableObject {
         left = null;
     }
 
-    public ValueAndUnit right() {
+    public RightMargin right() {
         return right;
     }
 
@@ -73,7 +72,7 @@ public class ParaMargin extends SwitchableObject {
         right = null;
     }
 
-    public ValueAndUnit prev() {
+    public PrevParaMargin prev() {
         return prev;
     }
 
@@ -85,7 +84,7 @@ public class ParaMargin extends SwitchableObject {
         prev = null;
     }
 
-    public ValueAndUnit next() {
+    public NextParaMargin next() {
         return next;
     }
 

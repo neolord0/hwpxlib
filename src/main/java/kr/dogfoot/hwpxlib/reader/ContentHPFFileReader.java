@@ -17,7 +17,7 @@ public class ContentHPFFileReader extends XMLFileReader {
     }
 
     public void read(ContentHPFFile contentHPFFile, ZipFile zipFile, String filepath) throws ParserConfigurationException, IOException, SAXException {
-        ((PackageReader) setCurrentEntryReader(ElementReaderSort.Package))
+        ((PackageReader) setCurrentElementReader(ElementReaderSort.Package))
                 .contentHPFFile(contentHPFFile);
 
         read(zipFile, filepath);

@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.BorderFill;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class BorderFillsReader extends ElementReader {
@@ -38,7 +38,7 @@ public class BorderFillsReader extends ElementReader {
     }
 
     private void borderFill(BorderFill borderFill, String name, Attributes attrs) {
-        ((BorderFillReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.BorderFill))
+        ((BorderFillReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.BorderFill))
                 .borderFill(borderFill);
 
         xmlFileReader().startElement(name, attrs);

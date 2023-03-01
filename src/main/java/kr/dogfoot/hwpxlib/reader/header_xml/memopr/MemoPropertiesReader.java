@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.memopr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.MemoPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class MemoPropertiesReader extends ElementReader {
@@ -38,7 +38,7 @@ public class MemoPropertiesReader extends ElementReader {
     }
 
     private void memoPr(MemoPr memoPr, String name, Attributes attrs) {
-        ((MemoPrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.MemoPr))
+        ((MemoPrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.MemoPr))
                 .memoPr(memoPr);
 
         xmlFileReader().startElement(name, attrs);

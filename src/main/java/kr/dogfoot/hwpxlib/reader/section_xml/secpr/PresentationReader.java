@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
@@ -9,8 +11,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.header_xml.borderfill.FillBrushReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class PresentationReader extends ElementReader {
@@ -71,7 +71,7 @@ public class PresentationReader extends ElementReader {
     }
 
     private void fillBrush(FillBrush fillBrush, String name, Attributes attrs) {
-        ((FillBrushReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FillBrush))
+        ((FillBrushReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FillBrush))
                 .fillBrush(fillBrush);
 
         xmlFileReader().startElement(name, attrs);

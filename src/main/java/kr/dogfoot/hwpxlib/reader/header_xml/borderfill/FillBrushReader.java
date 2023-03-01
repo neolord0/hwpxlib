@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
@@ -8,7 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.ImgBru
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class FillBrushReader extends ElementReader {
@@ -57,21 +57,21 @@ public class FillBrushReader extends ElementReader {
     }
 
     private void winBrush(WinBrush winBrush, String name, Attributes attrs) {
-        ((WinBrushReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.WinBrush))
+        ((WinBrushReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.WinBrush))
                 .winBrush(winBrush);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void gradation(Gradation gradation, String name, Attributes attrs) {
-        ((GradationReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Gradation))
+        ((GradationReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Gradation))
                 .gradation(gradation);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void imageBrush(ImgBrush imgBrush, String name, Attributes attrs) {
-        ((ImageBrushReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ImageBrush))
+        ((ImageBrushReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ImageBrush))
                 .imgBrush(imgBrush);
 
         xmlFileReader().startElement(name, attrs);

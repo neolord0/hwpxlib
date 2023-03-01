@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.versionlog_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.dochistory.DeleteDiff;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.dochistory.InsertDiff;
 import kr.dogfoot.hwpxlib.object.dochistory.UpdateDiff;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class InsertDiffReader extends ElementReader {
@@ -70,21 +70,21 @@ public class InsertDiffReader extends ElementReader {
     }
 
     private void insert(InsertDiff insertDiff, String name, Attributes attrs) {
-        ((InsertDiffReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.InsertDiff))
+        ((InsertDiffReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.InsertDiff))
                 .insertDiff(insertDiff);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void update(UpdateDiff updateDiff, String name, Attributes attrs) {
-        ((UpdateDiffReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.UpdateDiff))
+        ((UpdateDiffReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.UpdateDiff))
                 .updateDiff(updateDiff);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void delete(DeleteDiff deleteDiff, String name, Attributes attrs) {
-        ((DeleteDiffReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.DeleteDiff))
+        ((DeleteDiffReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.DeleteDiff))
                 .deleteDiff(deleteDiff);
 
         xmlFileReader().startElement(name, attrs);

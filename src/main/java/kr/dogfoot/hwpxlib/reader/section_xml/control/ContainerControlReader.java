@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ContainerControlReader extends ShapeComponentReader {
@@ -119,7 +119,7 @@ public class ContainerControlReader extends ShapeComponentReader {
     }
 
     private void pic(Picture picture, String name, Attributes attrs) {
-        ((PictureReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Pic))
+        ((PictureReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Pic))
                 .picture(picture);
 
         xmlFileReader().startElement(name, attrs);
@@ -127,70 +127,70 @@ public class ContainerControlReader extends ShapeComponentReader {
 
 
     private void container(Container container, String name, Attributes attrs) {
-        ((ContainerControlReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ContainerControl))
+        ((ContainerControlReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ContainerControl))
                 .container(container);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void ole(OLE ole, String name, Attributes attrs) {
-        ((OLEReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.OLE))
+        ((OLEReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.OLE))
                 .ole(ole);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void line(Line line, String name, Attributes attrs) {
-        ((LineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Line))
+        ((LineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Line))
                 .line(line);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void rect(Rectangle rectangle, String name, Attributes attrs) {
-        ((RectangleReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Rect))
+        ((RectangleReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Rect))
                 .rectangle(rectangle);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void ellipse(Ellipse ellipse, String name, Attributes attrs) {
-        ((EllipseReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Ellipse))
+        ((EllipseReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Ellipse))
                 .ellipse(ellipse);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void arc(Arc arc, String name, Attributes attrs) {
-        ((ArcReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Arc))
+        ((ArcReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Arc))
                 .arc(arc);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void polygon(Polygon polygon, String name, Attributes attrs) {
-        ((PolygonReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Polygon))
+        ((PolygonReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Polygon))
                 .polygon(polygon);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void curve(Curve curve, String name, Attributes attrs) {
-        ((CurveReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Curve))
+        ((CurveReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Curve))
                 .curve(curve);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void connectLine(ConnectLine connectLine, String name, Attributes attrs) {
-        ((ConnectLineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ConnectLine))
+        ((ConnectLineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ConnectLine))
                 .connectLine(connectLine);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void textArt(TextArt textArt, String name, Attributes attrs) {
-        ((TextArtReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TextArt))
+        ((TextArtReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TextArt))
                 .textArt(textArt);
 
         xmlFileReader().startElement(name, attrs);

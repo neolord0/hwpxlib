@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.style;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.StyleType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Style;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class StyleReader extends ElementReader {
     private Style style;

@@ -1,10 +1,10 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.charpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr.ValuesByLanguage;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class StringValuesByLanguageReader extends ElementReader {
     private ValuesByLanguage<String, ?> valuesByLanguage;

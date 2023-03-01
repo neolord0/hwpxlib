@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ApplyPageType;
@@ -11,8 +13,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class PageBorderFillReader extends ElementReader {
@@ -74,7 +74,7 @@ public class PageBorderFillReader extends ElementReader {
     }
 
     private void offset(PageBorderFillOffset offset, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LeftRightTopBottom))
+        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
                 .leftRightTopBottom(offset);
 
         xmlFileReader().startElement(name, attrs);

@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.fontface;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.FontType;
@@ -9,8 +11,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.TypeInfo
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class FontReader extends ElementReader {
@@ -72,14 +72,14 @@ public class FontReader extends ElementReader {
     }
 
     private void substFont(SubstFont substFont, String name, Attributes attrs) {
-        ((SubstFontReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.SubstFont))
+        ((SubstFontReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.SubstFont))
                 .substFont(substFont);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void typeInfo(TypeInfo typeInfo, String name, Attributes attrs) {
-        ((TypeInfoReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TypeInfo))
+        ((TypeInfoReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TypeInfo))
                 .typeInfo(typeInfo);
 
         xmlFileReader().startElement(name, attrs);

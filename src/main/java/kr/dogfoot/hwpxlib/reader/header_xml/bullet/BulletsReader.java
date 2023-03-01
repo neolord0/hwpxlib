@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.bullet;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Bullet;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class BulletsReader extends ElementReader {
@@ -38,7 +38,7 @@ public class BulletsReader extends ElementReader {
     }
 
     private void bullet(Bullet bullet, String name, Attributes attrs) {
-        ((BulletReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Bullet))
+        ((BulletReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Bullet))
                 .bullet(bullet);
 
         xmlFileReader().startElement(name, attrs);

@@ -1,6 +1,6 @@
-package kr.dogfoot.hwpxlib.writer.util;
+package kr.dogfoot.hwpxlib.commonstirngs;
 
-public enum NamespaceSort {
+public enum Namespaces {
     hv("http://www.hancom.co.kr/hwpml/2011/version"),
     odf("urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"),
     ocf("urn:oasis:names:tc:opendocument:xmlns:container"),
@@ -27,7 +27,7 @@ public enum NamespaceSort {
 
     private String value;
 
-    NamespaceSort(String value) {
+    Namespaces(String value) {
         this.value = value;
     }
 

@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit1;
@@ -12,8 +14,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pagepr.Page
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class SecPrReader extends ElementReader {
@@ -153,70 +153,70 @@ public class SecPrReader extends ElementReader {
     }
 
     private void grid(Grid grid, String name, Attributes attrs) {
-        ((GridReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Grid))
+        ((GridReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Grid))
                 .grid(grid);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void startNum(StartNum startNum, String name, Attributes attrs) {
-        ((StartNumReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.StartNum))
+        ((StartNumReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.StartNum))
                 .startNum(startNum);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void visibility(Visibility visibility, String name, Attributes attrs) {
-        ((VisibilityReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Visibility))
+        ((VisibilityReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Visibility))
                 .visibility(visibility);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void lineNumberShape(LineNumberShape lineNumberShape, String name, Attributes attrs) {
-        ((LineNumberShapeReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LineNumberShape))
+        ((LineNumberShapeReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LineNumberShape))
                 .lineNumberShape(lineNumberShape);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void pagePr(PagePr pagePr, String name, Attributes attrs) {
-        ((PagePrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PagePr))
+        ((PagePrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.PagePr))
                 .pagePr(pagePr);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void footNotePr(FootNotePr footNotePr, String name, Attributes attrs) {
-        ((FootNotePrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FootNotePr))
+        ((FootNotePrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FootNotePr))
                 .footNotePr(footNotePr);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void endNotePr(EndNotePr endNotePr, String name, Attributes attrs) {
-        ((EndNotePrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.EndNotePr))
+        ((EndNotePrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.EndNotePr))
                 .endNotePr(endNotePr);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void pageBorderFill(PageBorderFill pageBorderFill, String name, Attributes attrs) {
-        ((PageBorderFillReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PageBorderFill))
+        ((PageBorderFillReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.PageBorderFill))
                 .pageBorderFill(pageBorderFill);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void masterPage(MasterPage masterPage, String name, Attributes attrs) {
-        ((MasterPageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.MasterPage))
+        ((MasterPageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.MasterPage))
                 .masterPage(masterPage);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void presentation(Presentation presentation, String name, Attributes attrs) {
-        ((PresentationReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Presentation))
+        ((PresentationReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Presentation))
                 .presentation(presentation);
 
         xmlFileReader().startElement(name, attrs);

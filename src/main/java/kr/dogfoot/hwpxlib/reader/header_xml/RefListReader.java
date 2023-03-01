@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -19,7 +20,6 @@ import kr.dogfoot.hwpxlib.reader.header_xml.style.StylesReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.tabpr.TabPropertiesReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.trackchange.TrackChangesReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.trackchangeauthor.TrackChangeAuthorsReader;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class RefListReader extends ElementReader {
@@ -133,77 +133,77 @@ public class RefListReader extends ElementReader {
     }
 
     private void fontFaces(Fontfaces fontfaces, String name, Attributes attrs) {
-        ((FontfacesReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Fontfaces))
+        ((FontfacesReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Fontfaces))
                 .fontfaces(fontfaces);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void borderFills(ObjectList<BorderFill> borderFills, String name, Attributes attrs) {
-        ((BorderFillsReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.BorderFills))
+        ((BorderFillsReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.BorderFills))
                 .borderFills(borderFills);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void charProperties(ObjectList<CharPr> charProperties, String name, Attributes attrs) {
-        ((CharPropertiesReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CharProperties))
+        ((CharPropertiesReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CharProperties))
                 .charProperties(charProperties);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void tabProperties(ObjectList<TabPr> tabProperties, String name, Attributes attrs) {
-        ((TabPropertiesReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TabProperties))
+        ((TabPropertiesReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TabProperties))
                 .tabProperties(tabProperties);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void numberings(ObjectList<Numbering> numberings, String name, Attributes attrs) {
-        ((NumberingsReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Numberings))
+        ((NumberingsReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Numberings))
                 .numberings(numberings);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void bullets(ObjectList<Bullet> bullets, String name, Attributes attrs) {
-        ((BulletsReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Bullets))
+        ((BulletsReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Bullets))
                 .bullets(bullets);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void paraProperties(ObjectList<ParaPr> paraProperties, String name, Attributes attrs) {
-       ((ParaPropertiesReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ParaProperties))
+       ((ParaPropertiesReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParaProperties))
                 .paraProperties(paraProperties);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void styles(ObjectList<Style> styles, String name, Attributes attrs) {
-        ((StylesReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Styles))
+        ((StylesReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Styles))
                 .styles(styles);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void memoProperties(ObjectList<MemoPr> memoProperties, String name, Attributes attrs) {
-        ((MemoPropertiesReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.MemoProperties))
+        ((MemoPropertiesReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.MemoProperties))
                 .memoProperties(memoProperties);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void trackChanges(ObjectList<TrackChange> trackChanges, String name, Attributes attrs) {
-        ((TrackChangesReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TrackChanges))
+        ((TrackChangesReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TrackChanges))
                 .trackChanges(trackChanges);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void trackChangeAuthors(ObjectList<TrackChangeAuthor> trackChangeAuthors, String name, Attributes attrs) {
-        ((TrackChangeAuthorsReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TrackChangeAuthors))
+        ((TrackChangeAuthorsReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TrackChangeAuthors))
                 .trackChangeAuthors(trackChangeAuthors);
 
         xmlFileReader().startElement(name, attrs);

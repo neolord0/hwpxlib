@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.formobject;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormCharPr;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormObject;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public abstract class FormObjectReader extends ShapeObjectReader {
@@ -90,7 +90,7 @@ public abstract class FormObjectReader extends ShapeObjectReader {
     }
 
     private void formCharPr(FormCharPr formCharPr, String name, Attributes attrs) {
-        ((FormCharPrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FormCharPr))
+        ((FormCharPrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FormCharPr))
                 .formCharPr(formCharPr);
 
         xmlFileReader().startElement(name, attrs);

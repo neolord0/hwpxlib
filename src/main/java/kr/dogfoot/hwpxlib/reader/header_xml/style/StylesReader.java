@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.style;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Style;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class StylesReader extends ElementReader {
@@ -38,7 +38,7 @@ public class StylesReader extends ElementReader {
     }
 
     private void style(Style style, String name, Attributes attrs) {
-        ((StyleReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Style))
+        ((StyleReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Style))
                 .style(style);
 
         xmlFileReader().startElement(name, attrs);

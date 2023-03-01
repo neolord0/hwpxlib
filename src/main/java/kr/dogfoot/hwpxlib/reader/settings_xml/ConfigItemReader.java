@@ -1,10 +1,10 @@
 package kr.dogfoot.hwpxlib.reader.settings_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.root.ConfigItem;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class ConfigItemReader extends ElementReader {
     private ConfigItem configItem;

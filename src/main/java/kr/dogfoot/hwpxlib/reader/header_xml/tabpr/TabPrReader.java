@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.tabpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.TabPr;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.tabpr.TabItem;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class TabPrReader extends ElementReader {
@@ -55,7 +55,7 @@ public class TabPrReader extends ElementReader {
     }
 
     private void tabItem(TabItem tabItem, String name, Attributes attrs) {
-        ((TabItemReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TabItem))
+        ((TabItemReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TabItem))
                 .tabItem(tabItem);
 
         xmlFileReader().startElement(name, attrs);

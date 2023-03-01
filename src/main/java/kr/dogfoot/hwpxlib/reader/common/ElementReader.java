@@ -9,6 +9,7 @@ public abstract class ElementReader {
     private ElementReader previousReader;
     private boolean started;
     private boolean switchableObjectReader;
+    private int childIndex;
 
     protected ElementReader() {
     }
@@ -17,6 +18,7 @@ public abstract class ElementReader {
     public abstract SwitchableObject switchableObject();
 
     public void startElement(Attributes attrs) {
+        childIndex = 0;
         int count = attrs.getLength();
         for (int index = 0; index < count; index++) {
             setAttribute(attrs.getLocalName(index), attrs.getValue(index));
@@ -79,4 +81,13 @@ public abstract class ElementReader {
         this.switchableObjectReader = switchableObjectReader;
         return this;
     }
+
+    public void increaseChildIndex() {
+        childIndex++;
+    }
+
+    public int childIndex() {
+        return childIndex;
+    }
+
 }

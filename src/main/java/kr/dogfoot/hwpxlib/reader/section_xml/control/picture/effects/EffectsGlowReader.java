@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.EffectsColor;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ef
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class EffectsGlowReader extends ElementReader {
@@ -57,7 +57,7 @@ public class EffectsGlowReader extends ElementReader {
     }
 
     private void effectsColor(EffectsColor effectsColor, String name, Attributes attrs) {
-        ((EffectsColorReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.EffectsColor))
+        ((EffectsColorReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.EffectsColor))
                 .effectsColor(effectsColor);
 
         xmlFileReader().startElement(name, attrs);

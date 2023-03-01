@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.ParaPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ParaPropertiesReader extends ElementReader {
@@ -38,7 +38,7 @@ public class ParaPropertiesReader extends ElementReader {
     }
 
     private void paraPr(ParaPr paraPr, String name, Attributes attrs) {
-        ((ParaPrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ParaPr))
+        ((ParaPrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParaPr))
                 .paraPr(paraPr);
 
         xmlFileReader().startElement(name, attrs);

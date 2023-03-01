@@ -9,8 +9,15 @@ public class Switch extends HWPXObject {
     private final ArrayList<Case> caseObjectList;
     private Default defaultObject;
 
+    /**
+     * XML 형제 노드 사이에서 위치
+     * -1 : 이면 마지막에 위치한다.
+     */
+    private int position;
+
     public Switch() {
         caseObjectList = new ArrayList<Case>();
+        position = -1;
     }
 
     @Override
@@ -59,6 +66,14 @@ public class Switch extends HWPXObject {
 
     public void removeDefaultObject() {
         defaultObject = null;
+    }
+
+    public int position() {
+        return position;
+    }
+
+    public void position(int position) {
+        this.position = position;
     }
 }
 

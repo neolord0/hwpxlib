@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.GradationType;
@@ -8,8 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Gradat
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class GradationReader extends ElementReader {
@@ -68,7 +68,7 @@ public class GradationReader extends ElementReader {
     }
 
     private void color(Color color, String name, Attributes attrs) {
-        ((ColorReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Color))
+        ((ColorReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Color))
                 .color(color);
 
         xmlFileReader().startElement(name, attrs);

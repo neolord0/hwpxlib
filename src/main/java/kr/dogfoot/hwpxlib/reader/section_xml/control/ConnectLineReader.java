@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobj
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.ConnectLinePointReader;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ConnectLineReader extends DrawingObjectReader {
@@ -77,7 +77,7 @@ public class ConnectLineReader extends DrawingObjectReader {
     }
 
     private void connectLinePoint(ConnectLinePoint connectLinePoint, String name, Attributes attrs) {
-        ((ConnectLinePointReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ConnectLinePoint))
+        ((ConnectLinePointReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ConnectLinePoint))
                 .connectLinePoint(connectLinePoint);
 
         xmlFileReader().startElement(name, attrs);

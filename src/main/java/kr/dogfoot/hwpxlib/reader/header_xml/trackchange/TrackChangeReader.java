@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.trackchange;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TrackChangeType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.TrackChange;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class TrackChangeReader extends ElementReader {
     private TrackChange trackChange;

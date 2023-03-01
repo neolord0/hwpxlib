@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.numbering;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Numbering;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class NumberingsReader extends ElementReader {
@@ -38,7 +38,7 @@ public class NumberingsReader extends ElementReader {
     }
 
     private void numbering(Numbering numbering, String name, Attributes attrs) {
-        ((NumberingReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Numbering))
+        ((NumberingReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Numbering))
                 .numbering(numbering);
 
         xmlFileReader().startElement(name, attrs);

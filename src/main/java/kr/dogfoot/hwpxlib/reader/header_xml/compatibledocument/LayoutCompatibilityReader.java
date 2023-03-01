@@ -29,7 +29,7 @@ public class LayoutCompatibilityReader extends ElementReader {
     }
 
     private void layoutCompatibilityItem(LayoutCompatibilityItem item, String name, Attributes attrs) {
-        ((LayoutCompatibilityItemReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LayoutCompatibilityItem))
+        ((LayoutCompatibilityItemReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LayoutCompatibilityItem))
                 .layoutCompatibilityItem(item.nameAnd(name));
 
         xmlFileReader().startElement(name, attrs);

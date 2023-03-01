@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
@@ -9,7 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobj
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class PolygonReader extends DrawingObjectReader {
@@ -54,7 +54,7 @@ public class PolygonReader extends DrawingObjectReader {
     }
 
     private void point(Point pt, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.XAndY))
+        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
                 .xAndY(pt);
 
         xmlFileReader().startElement(name, attrs);

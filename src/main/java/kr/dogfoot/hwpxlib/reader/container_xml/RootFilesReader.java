@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.container_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class RootFilesReader extends ElementReader {
@@ -38,7 +38,7 @@ public class RootFilesReader extends ElementReader {
     }
 
     private void rootFile(RootFile rootFile, String name, Attributes attrs) {
-        ((RootFileReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.RootFile))
+        ((RootFileReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.RootFile))
                 .rootFile(rootFile);
 
         xmlFileReader().startElement(name, attrs);

@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.table;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.WidthAndHeightReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class TcReader extends ElementReader {
@@ -107,35 +107,35 @@ public class TcReader extends ElementReader {
     }
 
     private void cellAddr(CellAddr cellAddr, String name, Attributes attrs) {
-        ((CellAddrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CellAddr))
+        ((CellAddrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CellAddr))
                 .cellAddr(cellAddr);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void cellSpan(CellSpan cellSpan, String name, Attributes attrs) {
-        ((CellSpanReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CellSpan))
+        ((CellSpanReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CellSpan))
                 .cellSpan(cellSpan);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void cellSz(CellSize cellSz, String name, Attributes attrs) {
-        ((WidthAndHeightReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.WidthAndHeight))
+        ((WidthAndHeightReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.WidthAndHeight))
                 .widthAndHeight(cellSz);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void cellMargin(CellMargin cellMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LeftRightTopBottom))
+        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
                 .leftRightTopBottom(cellMargin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void subList(SubList subList, String name, Attributes attrs) {
-        ((SubListReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.SubList))
+        ((SubListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.SubList))
                 .subList(subList);
 
         xmlFileReader().startElement(name, attrs);

@@ -1,13 +1,13 @@
 package kr.dogfoot.hwpxlib.reader.versionlog_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.dochistory.HistoryEntry;
 import kr.dogfoot.hwpxlib.object.dochistory.HistoryXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class HistoryReader extends ElementReader {
@@ -52,7 +52,7 @@ public class HistoryReader extends ElementReader {
     }
 
     private void historyEntry(HistoryEntry historyEntry, String name, Attributes attrs) {
-        ((HistoryEntryReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HistoryEntry))
+        ((HistoryEntryReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HistoryEntry))
                 .historyEntry(historyEntry);
 
         xmlFileReader().startElement(name, attrs);

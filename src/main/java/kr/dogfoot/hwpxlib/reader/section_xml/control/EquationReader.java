@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.EquationLineMode;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class EquationReader extends ShapeObjectReader {
@@ -84,7 +84,7 @@ public class EquationReader extends ShapeObjectReader {
     }
 
     private void script(Script script, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HasOnlyText))
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
                 .hasOnlyText(script);
 
         xmlFileReader().startElement(name, attrs);

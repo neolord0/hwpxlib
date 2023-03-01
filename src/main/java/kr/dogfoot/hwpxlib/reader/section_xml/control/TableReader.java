@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -18,8 +20,6 @@ import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectRead
 import kr.dogfoot.hwpxlib.reader.section_xml.control.table.CellzoneListReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.table.TrReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class TableReader extends ShapeObjectReader {
@@ -117,28 +117,28 @@ public class TableReader extends ShapeObjectReader {
     }
 
     private void inMargin(InMargin inMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LeftRightTopBottom))
+        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
                 .leftRightTopBottom(inMargin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void cellzoneList(ObjectList<CellZone> cellzoneList, String name, Attributes attrs) {
-        ((CellzoneListReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CellZoneList))
+        ((CellzoneListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CellZoneList))
                 .cellzoneList(cellzoneList);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void tr(Tr tr, String name, Attributes attrs) {
-        ((TrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Tr))
+        ((TrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Tr))
                 .tr(tr);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void parameterSet(ParameterSet parameterSet, String name, Attributes attrs) {
-        ((ParameterListReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ParameterList))
+        ((ParameterListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParameterList))
                 .parameterList(parameterSet);
 
         xmlFileReader().startElement(name, attrs);

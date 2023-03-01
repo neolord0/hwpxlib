@@ -11,6 +11,5 @@ public class ZipWriter {
     public void test1() throws Exception {
         HWPXFile hwpxFile = HWPXReader.fromFilepath("testFile/SimpleArc.hwpx");
         hwpxFile.settingsXMLFile().caretPosition().pos(500);
-        HWPXWriter.toFilePath(hwpxFile, "test.zip");
     }
 }

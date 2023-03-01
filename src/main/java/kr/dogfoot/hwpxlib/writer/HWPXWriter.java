@@ -1,15 +1,20 @@
 package kr.dogfoot.hwpxlib.writer;
 
-import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
 import kr.dogfoot.hwpxlib.commonstirngs.FileIDs;
+import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
 import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
-import kr.dogfoot.hwpxlib.writer.header_xml.HeaderWriter;
+import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
+import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
 import kr.dogfoot.hwpxlib.writer.util.XMLStringBuilder;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.zip.ZipEntry;
@@ -36,12 +41,12 @@ public class HWPXWriter {
     }
 
     private final HWPXFile hwpxFile;
-    private final XMLStringBuilder xsb;
+    private ElementWriterManager elementWriterManager;
     private ZipOutputStream zos;
 
     public HWPXWriter(HWPXFile hwpxFile) {
         this.hwpxFile = hwpxFile;
-        xsb = new XMLStringBuilder();
+        elementWriterManager = new ElementWriterManager();
     }
 
     public void createZIPFile(OutputStream outputStream) {
@@ -65,9 +70,15 @@ public class HWPXWriter {
     }
 
     private void version_xml() throws Exception {
-        xsb.clear();
-        VersionWriter.write(hwpxFile.versionXMLFile(), xsb);
-        putIntoZip(ZipEntryName.Version, xsb.toString(), StandardCharsets.UTF_8);
+        writeChild(ElementWriterSort.Version, hwpxFile.versionXMLFile());
+        putIntoZip(ZipEntryName.Version, xsb().toString(), StandardCharsets.UTF_8);
+    }
+
+    private void writeChild(ElementWriterSort sort, HWPXObject child) {
+        elementWriterManager.get(sort).write(child);
+    }
+    private XMLStringBuilder xsb() {
+        return elementWriterManager.xsb();
     }
 
     private void putIntoZip(String entryName, String data, Charset charset) throws IOException {
@@ -92,45 +103,30 @@ public class HWPXWriter {
     }
 
     public void META_INF_manifest_xml() throws IOException {
-        xsb.clear();
-        ManifestWriter.write(hwpxFile.manifestXMLFile(), xsb);
-        putIntoZip(ZipEntryName.Manifest,
-                xsb.toString(),
-                StandardCharsets.UTF_8);
+        writeChild(ElementWriterSort.Manifest, hwpxFile.manifestXMLFile());
+        putIntoZip(ZipEntryName.Manifest, xsb().toString(), StandardCharsets.UTF_8);
     }
 
     public void META_INF_container_xml() throws Exception {
-        xsb.clear();
-        ContainerWriter.write(hwpxFile.containerXMLFile(), xsb);
-        putIntoZip(ZipEntryName.Container,
-                xsb.toString(),
-                StandardCharsets.UTF_8);
+        writeChild(ElementWriterSort.Container, hwpxFile.containerXMLFile());
+        putIntoZip(ZipEntryName.Container, xsb().toString(), StandardCharsets.UTF_8);
     }
 
     private void content_hpf() throws Exception {
         String packageXMLFilePath = hwpxFile.containerXMLFile().packageXMLFilePath();
 
-        xsb.clear();
-        ContentHPFPWriter.write(hwpxFile.contentHPFFile(), xsb);
-        putIntoZip(packageXMLFilePath,
-                xsb.toString(),
-                StandardCharsets.UTF_8);
+        writeChild(ElementWriterSort.Content, hwpxFile.contentHPFFile());
+        putIntoZip(packageXMLFilePath, xsb().toString(), StandardCharsets.UTF_8);
     }
 
     private void contentFiles() throws IOException {
         for (ManifestItem item : hwpxFile.contentHPFFile().manifest().items()) {
             if (item.id().equals(FileIDs.Settings)) {
-                xsb.clear();
-                SettingsWriter.write(hwpxFile.settingsXMLFile(), xsb);
-                putIntoZip(item.href(),
-                        xsb.toString(),
-                        StandardCharsets.UTF_8);
+                writeChild(ElementWriterSort.Settings, hwpxFile.settingsXMLFile());
+                putIntoZip(item.href(), xsb().toString(), StandardCharsets.UTF_8);
             } else if (item.id().equals(FileIDs.Header)) {
-                xsb.clear();
-                HeaderWriter.write(hwpxFile.headerXMLFile(), xsb);
-                putIntoZip(item.href(),
-                        xsb.toString(),
-                        StandardCharsets.UTF_8);
+                writeChild(ElementWriterSort.Header, hwpxFile.headerXMLFile());
+                putIntoZip(item.href(), xsb().toString(), StandardCharsets.UTF_8);
             } else if (item.id().startsWith(FileIDs.Section_Prefix)) {
                 // section file...
 

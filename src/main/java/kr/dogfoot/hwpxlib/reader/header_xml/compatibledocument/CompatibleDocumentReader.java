@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.compatibledocument;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -9,8 +11,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.LayoutCompatibilityItem;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TargetProgramSort;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class CompatibleDocumentReader extends ElementReader {
@@ -53,7 +53,7 @@ public class CompatibleDocumentReader extends ElementReader {
     }
 
     private void layoutCompatibility(ObjectList<LayoutCompatibilityItem> layoutCompatibility, String name, Attributes attrs) {
-        ((LayoutCompatibilityReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LayoutCompatibility))
+        ((LayoutCompatibilityReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LayoutCompatibility))
                 .layoutCompatibility(layoutCompatibility);
 
         xmlFileReader().startElement(name, attrs);

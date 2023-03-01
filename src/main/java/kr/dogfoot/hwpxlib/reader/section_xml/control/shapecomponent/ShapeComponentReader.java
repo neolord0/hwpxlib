@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
@@ -9,8 +11,6 @@ import kr.dogfoot.hwpxlib.reader.common.baseobject.WidthAndHeightReader;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public abstract class ShapeComponentReader extends ShapeObjectReader {
@@ -106,21 +106,21 @@ public abstract class ShapeComponentReader extends ShapeObjectReader {
     }
 
     private void offset(Offset offset, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.XAndY))
+        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
                 .xAndY(offset);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void widthAndHeight(WidthAndHeight widthAndHeight, String name, Attributes attrs) {
-        ((WidthAndHeightReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.WidthAndHeight))
+        ((WidthAndHeightReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.WidthAndHeight))
                 .widthAndHeight(widthAndHeight);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void flip(Flip flip, String name, Attributes attrs) {
-        ((FlipReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Flip))
+        ((FlipReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Flip))
                 .flip(flip);
 
         xmlFileReader().startElement(name, attrs);
@@ -128,14 +128,14 @@ public abstract class ShapeComponentReader extends ShapeObjectReader {
 
 
     private void rotationInfo(RotationInfo rotationInfo, String name, Attributes attrs) {
-        ((RotationInfoReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.RotationInfo))
+        ((RotationInfoReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.RotationInfo))
                 .rotationInfo(rotationInfo);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void renderingInfo(RenderingInfo renderingInfo, String name, Attributes attrs) {
-        ((RenderingInfoReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.RenderingInfo))
+        ((RenderingInfoReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.RenderingInfo))
                 .renderingInfo(renderingInfo);
 
         xmlFileReader().startElement(name, attrs);

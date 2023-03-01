@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.common.parameter;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.parameter.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ListParamReader extends ElementReader {
@@ -79,35 +79,35 @@ public class ListParamReader extends ElementReader {
     }
 
     private void integerParam(IntegerParam integerParam, String name, Attributes attrs) {
-        ((IntegerParamReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.IntegerParam))
+        ((IntegerParamReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.IntegerParam))
                 .integerParam(integerParam);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void stringParam(StringParam stringParam, String name, Attributes attrs) {
-        ((StringParamReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.StringParam))
+        ((StringParamReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.StringParam))
                 .stringParam(stringParam);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void booleanParam(BooleanParam booleanParam, String name, Attributes attrs) {
-        ((BooleanParamReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.BooleanParam))
+        ((BooleanParamReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.BooleanParam))
                 .booleanParam(booleanParam);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void floatParam(FloatParam floatParam, String name, Attributes attrs) {
-        ((FloatParamReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FloatParam))
+        ((FloatParamReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FloatParam))
                 .floatParam(floatParam);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void listParam(ListParam listParam, String name, Attributes attrs) {
-        ((ListParamReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ListParam))
+        ((ListParamReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ListParam))
                 .listParam(listParam);
 
         xmlFileReader().startElement(name, attrs);

@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.header_xml.compatibledocument.CompatibleDocumentReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.docoption.DocOptionReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class HeadReader extends ElementReader {
@@ -100,42 +100,42 @@ public class HeadReader extends ElementReader {
     }
 
     private void beginNum(BeginNum beginNum, String name, Attributes attrs) {
-        ((BeginNumReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.BeginNum))
+        ((BeginNumReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.BeginNum))
                 .beginNum(beginNum);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void refList(RefList refList, String name, Attributes attrs) {
-        ((RefListReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.RefList))
+        ((RefListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.RefList))
                 .refList(refList);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void forbiddenWordList(ObjectList<ForbiddenWord> forbiddenWordObjectList, String name, Attributes attrs) {
-        ((ForbiddenWordListReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ForbiddenWordList))
+        ((ForbiddenWordListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ForbiddenWordList))
                 .forbiddenWordList(forbiddenWordObjectList);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void compatibleDocument(CompatibleDocument compatibleDocument, String name, Attributes attrs) {
-        ((CompatibleDocumentReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CompatibleDocument))
+        ((CompatibleDocumentReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CompatibleDocument))
                 .compatibleDocument(compatibleDocument);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void docOption(DocOption docOption, String name, Attributes attrs) {
-        ((DocOptionReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.DocOption))
+        ((DocOptionReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.DocOption))
                 .docOption(docOption);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void trackChangeConfig(TrackChangeConfig trackChangeConfig, String name, Attributes attrs) {
-        ((TrackChangeConfigReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TrackChangeConfig))
+        ((TrackChangeConfigReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TrackChangeConfig))
                 .trackChangeConfig(trackChangeConfig);
 
         xmlFileReader().startElement(name, attrs);

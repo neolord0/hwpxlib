@@ -1,10 +1,10 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Color;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class ColorReader extends ElementReader {
     private Color color;

@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.VideoType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Video;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class VideoReader extends ShapeComponentReader {
     private Video video;

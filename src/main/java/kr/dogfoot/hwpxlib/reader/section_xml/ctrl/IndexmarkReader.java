@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
@@ -9,7 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.Second
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class IndexmarkReader extends ElementReader {
@@ -54,7 +54,7 @@ public class IndexmarkReader extends ElementReader {
     }
 
     private void firstKeySecondKey(HasOnlyText firstKeySecondKey, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HasOnlyText))
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
                 .hasOnlyText(firstKeySecondKey);
 
         xmlFileReader().startElement(name, attrs);

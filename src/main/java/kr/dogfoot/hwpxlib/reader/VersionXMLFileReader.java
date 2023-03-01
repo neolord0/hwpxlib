@@ -21,7 +21,7 @@ public class VersionXMLFileReader extends XMLFileReader {
     }
 
     public void read(VersionXMLFile versionXMLFile, ZipFile zipFile) throws ParserConfigurationException, IOException, SAXException {
-        ((VersionReader) setCurrentEntryReader(ElementReaderSort.Version))
+        ((VersionReader) setCurrentElementReader(ElementReaderSort.Version))
                 .versionXMLFile(versionXMLFile);
 
         read(zipFile, ZipEntryName.Version);

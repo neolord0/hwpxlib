@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
@@ -7,7 +8,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.ForbiddenWord;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ForbiddenWordListReader extends ElementReader {
@@ -39,7 +39,7 @@ public class ForbiddenWordListReader extends ElementReader {
     }
 
     private void forbiddenWord(ForbiddenWord forbiddenWord, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HasOnlyText))
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
                 .hasOnlyText(forbiddenWord);
 
         xmlFileReader().startElement(name, attrs);

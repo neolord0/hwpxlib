@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineWidth;
@@ -7,7 +8,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.Note
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class NoteLineReader extends ElementReader {
     private NoteLine noteLine;

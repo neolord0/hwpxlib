@@ -70,23 +70,23 @@ public class ElementReaderFactory {
     public static ElementReader create(ElementReaderSort sort) {
         switch (sort.type()) {
             case Basic:
-                return createEntryReaderForBasic(sort);
+                return createElementReaderForBasic(sort);
             case Package:
-                return createEntryReaderForPackage(sort);
+                return createElementReaderForPackage(sort);
             case Header:
-                return createEntryReaderForHeader(sort);
+                return createElementReaderForHeader(sort);
             case Section_MasterPage:
-                return createEntryReaderForSectionMasterPage(sort);
+                return createElememntReaderForSectionMasterPage(sort);
             case Controls:
-                return createEntryReaderForControls(sort);
+                return createElementReaderForControls(sort);
             case History:
-                return createEntryReaderForHistory(sort);
+                return createElementReaderForHistory(sort);
         }
         return null;
     }
 
 
-    private static ElementReader createEntryReaderForBasic(ElementReaderSort sort) {
+    private static ElementReader createElementReaderForBasic(ElementReaderSort sort) {
         switch (sort) {
             case Empty:
                 return new NoAttributeNoChildReader();
@@ -126,7 +126,7 @@ public class ElementReaderFactory {
         return null;
     }
 
-    private static ElementReader createEntryReaderForPackage(ElementReaderSort sort) {
+    private static ElementReader createElementReaderForPackage(ElementReaderSort sort) {
         switch (sort) {
             case Version:
                 return new VersionReader();
@@ -174,7 +174,7 @@ public class ElementReaderFactory {
         return null;
     }
 
-    private static ElementReader createEntryReaderForHeader(ElementReaderSort sort) {
+    private static ElementReader createElementReaderForHeader(ElementReaderSort sort) {
         switch (sort) {
             case Head:
                 return new HeadReader();
@@ -298,7 +298,7 @@ public class ElementReaderFactory {
         return null;
     }
 
-    private static ElementReader createEntryReaderForSectionMasterPage(ElementReaderSort sort) {
+    private static ElementReader createElememntReaderForSectionMasterPage(ElementReaderSort sort) {
         switch (sort) {
             case Sec:
                 return new SecReader();
@@ -395,7 +395,7 @@ public class ElementReaderFactory {
     }
 
 
-    private static ElementReader createEntryReaderForControls(ElementReaderSort sort) {
+    private static ElementReader createElementReaderForControls(ElementReaderSort sort) {
         switch (sort) {
             case ShapeSize:
                 return new ShapeSizeReader();
@@ -517,7 +517,7 @@ public class ElementReaderFactory {
         return null;
     }
 
-    private static ElementReader createEntryReaderForHistory(ElementReaderSort sort) {
+    private static ElementReader createElementReaderForHistory(ElementReaderSort sort) {
         switch (sort) {
             case History:
                 return new HistoryReader();

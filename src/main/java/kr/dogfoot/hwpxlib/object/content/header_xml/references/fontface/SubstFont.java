@@ -26,7 +26,6 @@ public class SubstFont extends HWPXObject {
     private String binaryItemIDRef;
 
     public SubstFont() {
-        type = FontType.TTF;
     }
 
     @Override

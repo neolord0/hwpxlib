@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -14,8 +16,6 @@ import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.PointListReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.TextArtPrReader;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class TextArtReader extends DrawingObjectReader {
@@ -113,21 +113,21 @@ public class TextArtReader extends DrawingObjectReader {
     }
 
     private void point(Point pt, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.XAndY))
+        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
                 .xAndY(pt);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void textArtPr(TextArtPr textArtPr, String name, Attributes attrs) {
-        ((TextArtPrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TextArtPr))
+        ((TextArtPrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TextArtPr))
                 .textArtPr(textArtPr);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void outline(ObjectList<Point> outline, String name, Attributes attrs) {
-        ((PointListReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PointList))
+        ((PointListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.PointList))
                 .pointList(outline);
 
         xmlFileReader().startElement(name, attrs);

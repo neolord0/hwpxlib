@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
@@ -20,8 +22,6 @@ import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects.EffectsReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class PictureReader extends ShapeComponentReader {
@@ -128,49 +128,49 @@ public class PictureReader extends ShapeComponentReader {
 
 
     private void lineShape(LineShape lineShape, String name, Attributes attrs) {
-        ((LineShapeReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LineShape))
+        ((LineShapeReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LineShape))
                 .lineShape(lineShape);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void imgRect(ImageRect imgRect, String name, Attributes attrs) {
-        ((ImageRectReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ImageRect))
+        ((ImageRectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ImageRect))
                 .imgRect(imgRect);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void imgClip(ImageClip imgClip, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LeftRightTopBottom))
+        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
                 .leftRightTopBottom(imgClip);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void inMargin(InMargin inMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LeftRightTopBottom))
+        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
                 .leftRightTopBottom(inMargin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void imgDim(ImageDim imgDim, String name, Attributes attrs) {
-        ((ImageDimReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ImageDim))
+        ((ImageDimReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ImageDim))
                 .imgDim(imgDim);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void img(Image img, String name, Attributes attrs) {
-        ((ImageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Image))
+        ((ImageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Image))
                 .img(img);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void effects(Effects effects, String name, Attributes attrs) {
-        ((EffectsReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Effects))
+        ((EffectsReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Effects))
                 .effects(effects);
 
         xmlFileReader().startElement(name, attrs);

@@ -1,13 +1,13 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.t;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.T;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class TReader extends ElementReader {
@@ -44,7 +44,7 @@ public class TReader extends ElementReader {
                 break;
             case ElementNames.hp_markpenEnd:
                 t.addNewMarkpenEnd();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hp_titleMark:
                 titleMark(t.addNewTitleMark(), name, attrs);
@@ -54,19 +54,19 @@ public class TReader extends ElementReader {
                 break;
             case ElementNames.hp_lineBreak:
                 t.addNewLineBreak();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hp_hyphen:
                 t.addNewHyphen();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hp_nbSpace:
                 t.addNewNBSpace();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hp_fwSpace:
                 t.addNewFWSpace();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hp_insertBegin:
                 insertBegin(t.addNewInsertBegin(), name, attrs);
@@ -92,7 +92,7 @@ public class TReader extends ElementReader {
                 return markpenBegin;
             case ElementNames.hp_markpenEnd:
                 MarkpenEnd markpenEnd = new MarkpenEnd();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return markpenEnd;
             case ElementNames.hp_titleMark:
                 TitleMark titleMark = new TitleMark();
@@ -104,19 +104,19 @@ public class TReader extends ElementReader {
                 return tab;
             case ElementNames.hp_lineBreak:
                 LineBreak lineBreak = new LineBreak();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return lineBreak;
             case ElementNames.hp_hyphen:
                 Hyphen hyphen = new Hyphen();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return hyphen;
             case ElementNames.hp_nbSpace:
                 NBSpace nbSpace = new NBSpace();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return nbSpace;
             case ElementNames.hp_fwSpace:
                 FWSpace fwSpace = new FWSpace();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return fwSpace;
             case ElementNames.hp_insertBegin:
                 InsertBegin insertBegin = new InsertBegin();
@@ -139,49 +139,49 @@ public class TReader extends ElementReader {
     }
 
     private void markpenBegin(MarkpenBegin markpenBegin, String name, Attributes attrs) {
-        ((MarkpenBeginReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.MarkpenBegin))
+        ((MarkpenBeginReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.MarkpenBegin))
                 .markpenBegin(markpenBegin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void titleMark(TitleMark titleMark, String name, Attributes attrs) {
-        ((TitleMarkReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TitleMark))
+        ((TitleMarkReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TitleMark))
                 .titleMark(titleMark);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void tab(Tab tab, String name, Attributes attrs) {
-        ((TabReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Tab))
+        ((TabReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Tab))
                 .tab(tab);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void insertBegin(InsertBegin insertBegin, String name, Attributes attrs) {
-        ((TrackChangeTagReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TrackChangeTag))
+        ((TrackChangeTagReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TrackChangeTag))
                 .trackChangeTag(insertBegin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void insertEnd(InsertEnd insertEnd, String name, Attributes attrs) {
-        ((TrackChangeTagReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TrackChangeTag))
+        ((TrackChangeTagReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TrackChangeTag))
                 .trackChangeTag(insertEnd);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void deleteBegin(DeleteBegin deleteBegin, String name, Attributes attrs) {
-        ((TrackChangeTagReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TrackChangeTag))
+        ((TrackChangeTagReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TrackChangeTag))
                 .trackChangeTag(deleteBegin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void deleteEnd(DeleteEnd deleteEnd, String name, Attributes attrs) {
-        ((TrackChangeTagReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TrackChangeTag))
+        ((TrackChangeTagReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TrackChangeTag))
                 .trackChangeTag(deleteEnd);
 
         xmlFileReader().startElement(name, attrs);

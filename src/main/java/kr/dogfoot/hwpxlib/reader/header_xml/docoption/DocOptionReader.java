@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.docoption;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.DocOption;
 import kr.dogfoot.hwpxlib.object.content.header_xml.LinkInfo;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class DocOptionReader extends ElementReader {
@@ -21,8 +21,8 @@ public class DocOptionReader extends ElementReader {
     public void childElement(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hh_linkinfo:
-                docOption.createLinkInfo();
-                linkInfo(docOption.linkInfo(), name, attrs);
+                docOption.createLinkinfo();
+                linkInfo(docOption.linkinfo(), name, attrs);
                 break;
         }
     }
@@ -39,7 +39,7 @@ public class DocOptionReader extends ElementReader {
     }
 
     private void linkInfo(LinkInfo linkInfo, String name, Attributes attrs) {
-        ((LinkInfoReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LinkInfo))
+        ((LinkInfoReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LinkInfo))
                 .linkInfo(linkInfo);
 
         xmlFileReader().startElement(name, attrs);

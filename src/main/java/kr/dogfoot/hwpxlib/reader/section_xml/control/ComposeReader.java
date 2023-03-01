@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ComposeCircleType;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.ComposeCharPrReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ComposeReader extends ElementReader {
@@ -66,7 +66,7 @@ public class ComposeReader extends ElementReader {
     }
 
     private void charPr(ComposeCharPr charPr, String name, Attributes attrs) {
-        ((ComposeCharPrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ComposeCharPr))
+        ((ComposeCharPrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ComposeCharPr))
                 .charPr(charPr);
 
         xmlFileReader().startElement(name, attrs);

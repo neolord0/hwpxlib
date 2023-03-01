@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.Matrix;
@@ -9,7 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecompo
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.TransMatrix;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class RenderingInfoReader extends ElementReader {
@@ -58,7 +58,7 @@ public class RenderingInfoReader extends ElementReader {
     }
 
     private void matrix(Matrix matrix, String name, Attributes attrs) {
-        ((MatrixReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Matrix))
+        ((MatrixReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Matrix))
                 .matrix(matrix);
 
         xmlFileReader().startElement(name, attrs);

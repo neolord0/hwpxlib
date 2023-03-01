@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.*;
@@ -12,8 +14,6 @@ import kr.dogfoot.hwpxlib.reader.section_xml.control.formobject.ButtonObjectRead
 import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.CtrlReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.secpr.SecPrReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.t.TReader;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class RunReader extends ElementReader {
@@ -244,35 +244,35 @@ public class RunReader extends ElementReader {
 
 
     private void secPr(SecPr secPr, String name, Attributes attrs) {
-        ((SecPrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.SecPr))
+        ((SecPrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.SecPr))
                 .secPr(secPr);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void ctrl(Ctrl ctrl, String name, Attributes attrs) {
-        ((CtrlReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Ctrl))
+        ((CtrlReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Ctrl))
                 .ctrl(ctrl);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void t(T t, String name, Attributes attrs) {
-        ((TReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.T))
+        ((TReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.T))
                 .t(t);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void tbl(Table table, String name, Attributes attrs) {
-        ((TableReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Tbl))
+        ((TableReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Tbl))
                 .table(table);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void pic(Picture picture, String name, Attributes attrs) {
-        ((PictureReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Pic))
+        ((PictureReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Pic))
                 .picture(picture);
 
         xmlFileReader().startElement(name, attrs);
@@ -280,154 +280,154 @@ public class RunReader extends ElementReader {
 
 
     private void container(Container container, String name, Attributes attrs) {
-        ((ContainerControlReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ContainerControl))
+        ((ContainerControlReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ContainerControl))
                 .container(container);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void ole(OLE ole, String name, Attributes attrs) {
-        ((OLEReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.OLE))
+        ((OLEReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.OLE))
                 .ole(ole);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void equation(Equation equation, String name, Attributes attrs) {
-        ((EquationReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Equation))
+        ((EquationReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Equation))
                 .equation(equation);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void chart(Chart chart, String name, Attributes attrs) {
-        ((ChartReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Chart))
+        ((ChartReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Chart))
                 .chart(chart);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void line(Line line, String name, Attributes attrs) {
-        ((LineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Line))
+        ((LineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Line))
                 .line(line);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void rect(Rectangle rectangle, String name, Attributes attrs) {
-        ((RectangleReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Rect))
+        ((RectangleReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Rect))
                 .rectangle(rectangle);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void ellipse(Ellipse ellipse, String name, Attributes attrs) {
-        ((EllipseReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Ellipse))
+        ((EllipseReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Ellipse))
                 .ellipse(ellipse);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void arc(Arc arc, String name, Attributes attrs) {
-        ((ArcReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Arc))
+        ((ArcReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Arc))
                 .arc(arc);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void polygon(Polygon polygon, String name, Attributes attrs) {
-        ((PolygonReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Polygon))
+        ((PolygonReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Polygon))
                 .polygon(polygon);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void curve(Curve curve, String name, Attributes attrs) {
-        ((CurveReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Curve))
+        ((CurveReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Curve))
                 .curve(curve);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void connectLine(ConnectLine connectLine, String name, Attributes attrs) {
-        ((ConnectLineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ConnectLine))
+        ((ConnectLineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ConnectLine))
                 .connectLine(connectLine);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void textArt(TextArt textArt, String name, Attributes attrs) {
-        ((TextArtReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.TextArt))
+        ((TextArtReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.TextArt))
                 .textArt(textArt);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void compose(Compose compose, String name, Attributes attrs) {
-        ((ComposeReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Compose))
+        ((ComposeReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Compose))
                 .compose(compose);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void dutmal(Dutmal dutmal, String name, Attributes attrs) {
-        ((DutmalReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Dutmal))
+        ((DutmalReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Dutmal))
                 .dutmal(dutmal);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void btn(Button button, String name, Attributes attrs) {
-        ((ButtonObjectReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ButtonObject))
+        ((ButtonObjectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonObject))
                 .buttonObject(button);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void radioBtn(RadioButton radioButton, String name, Attributes attrs) {
-        ((ButtonObjectReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ButtonObject))
+        ((ButtonObjectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonObject))
                 .buttonObject(radioButton);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void checkBtn(CheckButton checkButton, String name, Attributes attrs) {
-        ((ButtonObjectReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ButtonObject))
+        ((ButtonObjectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonObject))
                 .buttonObject(checkButton);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void comboBox(ComboBox comboBox, String name, Attributes attrs) {
-        ((ComboBoxReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ComboBox))
+        ((ComboBoxReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ComboBox))
                 .comboBox(comboBox);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void edit(Edit edit, String name, Attributes attrs) {
-        ((EditReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Edit))
+        ((EditReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Edit))
                 .edit(edit);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void listBox(ListBox listBox, String name, Attributes attrs) {
-        ((ListBoxReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ListBox))
+        ((ListBoxReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ListBox))
                 .listBox(listBox);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void scrollBar(ScrollBar scrollBar, String name, Attributes attrs) {
-        ((ScrollBarReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ScrollBar))
+        ((ScrollBarReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ScrollBar))
                 .scrollBar(scrollBar);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void video(Video video, String name, Attributes attrs) {
-        ((VideoReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Video))
+        ((VideoReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Video))
                 .video(video);
 
         xmlFileReader().startElement(name, attrs);

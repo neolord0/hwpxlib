@@ -1,13 +1,13 @@
 package kr.dogfoot.hwpxlib.reader.versionlog_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.dochistory.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class HistoryEntryReader extends ElementReader {
@@ -85,7 +85,7 @@ public class HistoryEntryReader extends ElementReader {
     }
 
     private void filePartDiff(FilePartDiff filePartDiff, String name, Attributes attrs) {
-        ((FilePartDiffReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FilePartDiff))
+        ((FilePartDiffReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FilePartDiff))
                 .filePartDiff(filePartDiff);
 
         xmlFileReader().startElement(name, attrs);

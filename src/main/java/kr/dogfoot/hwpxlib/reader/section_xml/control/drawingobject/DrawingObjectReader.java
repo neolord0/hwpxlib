@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawText;
@@ -11,7 +12,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.header_xml.borderfill.FillBrushReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public abstract class DrawingObjectReader extends ShapeComponentReader {
@@ -72,28 +72,28 @@ public abstract class DrawingObjectReader extends ShapeComponentReader {
     }
 
     private void lineShape(LineShape lineShape, String name, Attributes attrs) {
-        ((LineShapeReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LineShape))
+        ((LineShapeReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LineShape))
                 .lineShape(lineShape);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void fillBrush(FillBrush fillBrush, String name, Attributes attrs) {
-        ((FillBrushReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FillBrush))
+        ((FillBrushReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FillBrush))
                 .fillBrush(fillBrush);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void drawText(DrawText drawText, String name, Attributes attrs) {
-        ((DrawTextReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.DrawText))
+        ((DrawTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.DrawText))
                 .drawText(drawText);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void shadow(DrawingShadow shadow, String name, Attributes attrs) {
-        ((DrawingShadowReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.DrawingShadow))
+        ((DrawingShadowReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.DrawingShadow))
                 .shadow(shadow);
 
         xmlFileReader().startElement(name, attrs);

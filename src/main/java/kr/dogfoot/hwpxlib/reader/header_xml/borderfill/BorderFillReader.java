@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.CenterLineSort;
@@ -8,8 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class BorderFillReader extends ElementReader {
@@ -119,56 +119,56 @@ public class BorderFillReader extends ElementReader {
     }
 
     private void slash(Slash slash, String name, Attributes attrs) {
-        ((SlashReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Slash))
+        ((SlashReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Slash))
                 .slash(slash);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void backSlash(BackSlash backSlash, String name, Attributes attrs) {
-        ((SlashReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Slash))
+        ((SlashReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Slash))
                 .slash(backSlash);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void leftBorder(LeftBorder leftBorder, String name, Attributes attrs) {
-        ((BorderReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Border))
+        ((BorderReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Border))
                 .border(leftBorder);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void rightBorder(RightBorder rightBorder, String name, Attributes attrs) {
-        ((BorderReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Border))
+        ((BorderReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Border))
                 .border(rightBorder);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void topBorder(TopBorder topBorder, String name, Attributes attrs) {
-        ((BorderReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Border))
+        ((BorderReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Border))
                 .border(topBorder);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void bottomBorder(BottomBorder bottomBorder, String name, Attributes attrs) {
-        ((BorderReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Border))
+        ((BorderReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Border))
                 .border(bottomBorder);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void diagonal(DiagonalBorder diagonal, String name, Attributes attrs) {
-        ((BorderReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Border))
+        ((BorderReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Border))
                 .border(diagonal);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void fillBrush(FillBrush fillBrush, String name, Attributes attrs) {
-        ((FillBrushReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FillBrush))
+        ((FillBrushReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FillBrush))
                 .fillBrush(fillBrush);
 
         xmlFileReader().startElement(name, attrs);

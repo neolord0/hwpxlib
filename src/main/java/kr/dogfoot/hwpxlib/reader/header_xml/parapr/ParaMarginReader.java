@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.ValueAndUnit;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ParaMarginReader extends ElementReader {
@@ -70,7 +70,7 @@ public class ParaMarginReader extends ElementReader {
     }
 
     private void valueAndUnit(ValueAndUnit valueAndUnit, String name, Attributes attrs) {
-        ((ValueAndUnitReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ValueAndUnit))
+        ((ValueAndUnitReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ValueAndUnit))
                 .valueAndUnit(valueAndUnit);
 
         xmlFileReader().startElement(name, attrs);

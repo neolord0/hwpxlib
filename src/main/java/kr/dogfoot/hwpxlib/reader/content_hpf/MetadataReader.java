@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.content_hpf;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.Language;
@@ -9,7 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.context_hpf.Title;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class MetadataReader extends ElementReader {
@@ -57,21 +57,21 @@ public class MetadataReader extends ElementReader {
     }
 
     private void title(Title title, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HasOnlyText))
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
                 .hasOnlyText(title);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void language(Language language, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HasOnlyText))
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
                 .hasOnlyText(language);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void meta(Meta meta, String name, Attributes attrs) {
-        ((MetaReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Meta))
+        ((MetaReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Meta))
                 .meta(meta);
 
         xmlFileReader().startElement(name, attrs);

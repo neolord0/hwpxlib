@@ -81,7 +81,7 @@ public enum ObjectType {
     hh_relSz,
     hh_offset,
     hh_bold,
-    Italic,
+    hh_italic,
     hh_underline,
     hh_strikeout,
     hh_outline,

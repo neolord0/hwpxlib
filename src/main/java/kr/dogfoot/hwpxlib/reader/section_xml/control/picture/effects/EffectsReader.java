@@ -1,11 +1,11 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class EffectsReader extends ElementReader {
@@ -66,14 +66,14 @@ public class EffectsReader extends ElementReader {
     }
 
     private void shadow(EffectsShadow shadow, String name, Attributes attrs) {
-        ((EffectsShadowReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.EffectsShadow))
+        ((EffectsShadowReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.EffectsShadow))
                 .shadow(shadow);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void glow(EffectsGlow glow, String name, Attributes attrs) {
-        ((EffectsGlowReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.EffectsGlow))
+        ((EffectsGlowReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.EffectsGlow))
                 .glow(glow);
 
         xmlFileReader().startElement(name, attrs);
@@ -81,14 +81,14 @@ public class EffectsReader extends ElementReader {
     }
 
     private void softEdge(EffectsSoftEdge softEdge, String name, Attributes attrs) {
-        ((EffectsSoftEdgeReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.EffectsSoftEdge))
+        ((EffectsSoftEdgeReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.EffectsSoftEdge))
                 .softEdge(softEdge);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void reflection(EffectsReflection reflection, String name, Attributes attrs) {
-        ((EffectsReflectionReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.EffectsReflection))
+        ((EffectsReflectionReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.EffectsReflection))
                 .reflection(reflection);
 
         xmlFileReader().startElement(name, attrs);

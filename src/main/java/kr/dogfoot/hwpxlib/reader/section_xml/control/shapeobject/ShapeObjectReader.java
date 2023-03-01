@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DropCapStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumberingType;
@@ -11,8 +13,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public abstract class ShapeObjectReader extends ElementReader {
@@ -99,35 +99,35 @@ public abstract class ShapeObjectReader extends ElementReader {
     }
 
     private void sz(ShapeSize sz, String name, Attributes attrs) {
-        ((ShapeSizeReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ShapeSize))
+        ((ShapeSizeReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShapeSize))
                 .sz(sz);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void pos(ShapePosition pos, String name, Attributes attrs) {
-        ((ShapePositionReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ShapePosition))
+        ((ShapePositionReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShapePosition))
                 .pos(pos);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void outMargin(OutMargin outMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LeftRightTopBottom))
+        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
                 .leftRightTopBottom(outMargin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void caption(Caption caption, String name, Attributes attrs) {
-        ((CaptionReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Caption))
+        ((CaptionReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Caption))
                 .caption(caption);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void shapeComment(ShapeComment shapeComment, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HasOnlyText))
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
                 .hasOnlyText(shapeComment);
 
         xmlFileReader().startElement(name, attrs);

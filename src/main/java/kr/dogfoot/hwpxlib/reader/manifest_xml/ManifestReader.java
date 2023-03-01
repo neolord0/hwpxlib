@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.manifest_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.metainf.FileEntry;
 import kr.dogfoot.hwpxlib.object.metainf.ManifestXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ManifestReader extends ElementReader {
@@ -38,7 +38,7 @@ public class ManifestReader extends ElementReader {
     }
 
     private void fileEntry(FileEntry fileEntry, String name, Attributes attrs) {
-        ((FileEntryReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FileEntry))
+        ((FileEntryReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FileEntry))
                 .fileEntry(fileEntry);
 
         xmlFileReader().startElement(name, attrs);

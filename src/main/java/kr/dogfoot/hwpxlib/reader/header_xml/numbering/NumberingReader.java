@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.numbering;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Numbering;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHea
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class NumberingReader extends ElementReader {
@@ -52,7 +52,7 @@ public class NumberingReader extends ElementReader {
     }
 
     private void paraHead(ParaHead paraHead, String name, Attributes attrs) {
-        ((ParaHeadReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ParaHead))
+        ((ParaHeadReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParaHead))
                 .paraHead(paraHead);
 
         xmlFileReader().startElement(name, attrs);

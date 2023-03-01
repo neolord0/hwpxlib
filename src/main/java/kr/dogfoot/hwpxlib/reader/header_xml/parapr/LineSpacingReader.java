@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineSpacingType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit2;
@@ -7,7 +8,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.LineSpacin
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class LineSpacingReader extends ElementReader {
     private LineSpacing lineSpacing;

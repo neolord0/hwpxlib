@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.charpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.CharPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class CharPropertiesReader extends ElementReader {
@@ -38,7 +38,7 @@ public class CharPropertiesReader extends ElementReader {
     }
 
     private void charPr(CharPr charPr, String name, Attributes attrs) {
-        ((CharPrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CharPr))
+        ((CharPrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CharPr))
                 .charPr(charPr);
 
         xmlFileReader().startElement(name, attrs);

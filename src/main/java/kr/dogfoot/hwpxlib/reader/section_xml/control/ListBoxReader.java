@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ListBox;
@@ -9,8 +11,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.etc.ListItemReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.formobject.FormObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ListBoxReader extends FormObjectReader {
@@ -73,7 +73,7 @@ public class ListBoxReader extends FormObjectReader {
     }
 
     private void listItem(ListItem listItem, String name, Attributes attrs) {
-        ((ListItemReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ListItem))
+        ((ListItemReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ListItem))
                 .listItem(listItem);
 
         xmlFileReader().startElement(name, attrs);

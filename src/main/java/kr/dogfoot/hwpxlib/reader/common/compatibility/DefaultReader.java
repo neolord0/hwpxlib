@@ -18,7 +18,7 @@ public class DefaultReader extends ElementReader {
 
     @Override
     public void childElement(String name, Attributes attrs) {
-        HWPXObject child = xmlFileReader().setCurrentEntryReaderInSwitch(switchableObjectReaderSort)
+        HWPXObject child = xmlFileReader().setCurrentElementReaderInSwitch(switchableObjectReaderSort)
                 .childElementInSwitch(name, attrs);
         defaultObject.addChild(child);
     }

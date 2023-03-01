@@ -1,11 +1,11 @@
 package kr.dogfoot.hwpxlib.reader.common.compatibility;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Case;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import org.xml.sax.Attributes;
 
 public class CaseReader extends ElementReader {
@@ -28,7 +28,7 @@ public class CaseReader extends ElementReader {
 
     @Override
     public void childElement(String name, Attributes attrs) {
-        HWPXObject child = xmlFileReader().setCurrentEntryReaderInSwitch(switchableObjectReaderSort)
+        HWPXObject child = xmlFileReader().setCurrentElementReaderInSwitch(switchableObjectReaderSort)
                 .childElementInSwitch(name, attrs);
         caseObject.addChild(child);
     }

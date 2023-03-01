@@ -14,16 +14,16 @@ public class DocOption extends SwitchableObject {
         return ObjectType.hh_docOption;
     }
 
-    public LinkInfo linkInfo() {
+    public LinkInfo linkinfo() {
         return linkinfo;
     }
 
-    public DocOption createLinkInfo() {
+    public DocOption createLinkinfo() {
         linkinfo = new LinkInfo();
         return this;
     }
 
-    public DocOption removeLinkInfo() {
+    public DocOption removeLinkinfo() {
         linkinfo = null;
         return this;
     }

@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.charpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType3;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.UnderlineType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr.Underline;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class UnderlineReader extends ElementReader {
     private Underline underline;

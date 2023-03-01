@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ScrollBarType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ScrollBar;
@@ -7,7 +8,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.formobject.FormObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class ScrollBarReader extends FormObjectReader {
     private ScrollBar scrollBar;

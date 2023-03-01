@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.content_hpf;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.object.content.context_hpf.MetaData;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.SpineItemRef;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class PackageReader extends ElementReader {
@@ -75,21 +75,21 @@ public class PackageReader extends ElementReader {
     }
 
     private void metadata(MetaData metaData, String name, Attributes attrs) {
-        ((MetadataReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Metadata))
+        ((MetadataReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Metadata))
                 .metaData(metaData);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void manifest(ObjectList<ManifestItem> manifest, String name, Attributes attrs) {
-        ((PackageManifestReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PackageManifest))
+        ((PackageManifestReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.PackageManifest))
                 .manifest(manifest);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void spine(ObjectList<SpineItemRef> spine, String name, Attributes attrs) {
-        ((SpineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Spine))
+        ((SpineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Spine))
                 .spine(spine);
 
         xmlFileReader().startElement(name, attrs);

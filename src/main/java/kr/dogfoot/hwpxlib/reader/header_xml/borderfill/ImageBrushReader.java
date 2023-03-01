@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ImageBrushMode;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.ImgBrush;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ImageBrushReader extends ElementReader {
@@ -50,7 +50,7 @@ public class ImageBrushReader extends ElementReader {
     }
 
     private void image(Image img, String name, Attributes attrs) {
-        ((ImageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Image))
+        ((ImageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Image))
                 .img(img);
 
         xmlFileReader().startElement(name, attrs);

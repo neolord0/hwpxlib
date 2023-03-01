@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.bullet;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Bullet;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.header_xml.borderfill.ImageReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.numbering.ParaHeadReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class BulletReader extends ElementReader {
@@ -69,14 +69,14 @@ public class BulletReader extends ElementReader {
     }
 
     private void img(Image img, String name, Attributes attrs) {
-        ((ImageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Image))
+        ((ImageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Image))
                 .img(img);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void paraHead(ParaHead paraHead, String name, Attributes attrs) {
-        ((ParaHeadReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ParaHead))
+        ((ParaHeadReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParaHead))
                 .paraHead(paraHead);
 
         xmlFileReader().startElement(name, attrs);

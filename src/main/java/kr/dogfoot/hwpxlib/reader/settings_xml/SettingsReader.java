@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.settings_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -9,7 +10,6 @@ import kr.dogfoot.hwpxlib.object.root.ConfigItem;
 import kr.dogfoot.hwpxlib.object.root.SettingsXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class SettingsReader extends ElementReader {
@@ -50,14 +50,14 @@ public class SettingsReader extends ElementReader {
     }
 
     private void caretPosition(CaretPosition caretPosition, String name, Attributes attrs) {
-        ((CaretPositionReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CaretPosition))
+        ((CaretPositionReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CaretPosition))
                 .caretPosition(caretPosition);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void configItemSet(ObjectList<ConfigItem> configItemSet, String name, Attributes attrs) {
-        ((ConfigItemSetReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ConfigItemSet))
+        ((ConfigItemSetReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ConfigItemSet))
                 .configItemSet(configItemSet);
 
         xmlFileReader().startElement(name, attrs);

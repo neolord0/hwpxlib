@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
@@ -8,8 +10,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class FootNoteEndNoteReader extends ElementReader {
@@ -61,7 +61,7 @@ public class FootNoteEndNoteReader extends ElementReader {
     }
 
     private void subList(SubList subList, String name, Attributes attrs) {
-        ((SubListReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.SubList))
+        ((SubListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.SubList))
                 .subList(subList);
 
         xmlFileReader().startElement(name, attrs);

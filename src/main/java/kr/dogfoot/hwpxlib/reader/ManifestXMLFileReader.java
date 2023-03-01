@@ -18,7 +18,7 @@ public class ManifestXMLFileReader extends XMLFileReader {
     }
 
     public void read(ManifestXMLFile manifestXMLFile, ZipFile zipFile) throws ParserConfigurationException, IOException, SAXException {
-        ((ManifestReader) setCurrentEntryReader(ElementReaderSort.Manifest))
+        ((ManifestReader) setCurrentElementReader(ElementReaderSort.Manifest))
                 .manifestXMLFile(manifestXMLFile);
 
         read(zipFile, ZipEntryName.Manifest);

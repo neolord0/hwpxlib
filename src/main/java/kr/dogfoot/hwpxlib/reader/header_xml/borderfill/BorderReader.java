@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.borderfill;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineWidth;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Border;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class BorderReader extends ElementReader {
     private Border border;

@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.GutterMethod;
@@ -9,8 +11,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pagepr.Page
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class PagePrReader extends ElementReader {
@@ -65,7 +65,7 @@ public class PagePrReader extends ElementReader {
     }
 
     private void margin(PageMargin margin, String name, Attributes attrs) {
-        ((PageMarginReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PageMargin))
+        ((PageMarginReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.PageMargin))
                 .margin(margin);
 
         xmlFileReader().startElement(name, attrs);

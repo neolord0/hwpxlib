@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineBreakForLatin;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineBreakForNonLatin;
@@ -8,7 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.BreakSetti
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class BreakSettingReader extends ElementReader {
     private BreakSetting breakSetting;

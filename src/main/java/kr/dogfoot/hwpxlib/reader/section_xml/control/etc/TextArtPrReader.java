@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.etc;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.FontType2;
@@ -11,8 +13,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingShadowReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class TextArtPrReader extends ElementReader {
@@ -77,7 +77,7 @@ public class TextArtPrReader extends ElementReader {
     }
 
     private void shadow(DrawingShadow shadow, String name, Attributes attrs) {
-        ((DrawingShadowReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.DrawingShadow))
+        ((DrawingShadowReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.DrawingShadow))
                 .shadow(shadow);
 
         xmlFileReader().startElement(name, attrs);

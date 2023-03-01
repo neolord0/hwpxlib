@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Ctrl;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class CtrlReader extends ElementReader {
@@ -140,105 +140,105 @@ public class CtrlReader extends ElementReader {
     }
 
     private void colPr(ColPr colPr, String name, Attributes attrs) {
-        ((ColPrReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ColPr))
+        ((ColPrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColPr))
                 .colPr(colPr);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void fieldBegin(FieldBegin fieldBegin, String name, Attributes attrs) {
-        ((FieldBeginReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FieldBegin))
+        ((FieldBeginReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FieldBegin))
                 .fieldBegin(fieldBegin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void fieldEnd(FieldEnd fieldEnd, String name, Attributes attrs) {
-        ((FieldEndReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FieldEnd))
+        ((FieldEndReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FieldEnd))
                 .fieldEnd(fieldEnd);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void bookmark(Bookmark bookmark, String name, Attributes attrs) {
-        ((BookmarkReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Bookmark))
+        ((BookmarkReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Bookmark))
                 .bookmark(bookmark);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void header(Header header, String name, Attributes attrs) {
-        ((HeaderFooterReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HeaderFooter))
+        ((HeaderFooterReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HeaderFooter))
                 .headerFooter(header);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void footer(Footer footer, String name, Attributes attrs) {
-        ((HeaderFooterReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HeaderFooter))
+        ((HeaderFooterReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HeaderFooter))
                 .headerFooter(footer);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void footNote(FootNote footNote, String name, Attributes attrs) {
-        ((FootNoteEndNoteReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FootNoteEndNote))
+        ((FootNoteEndNoteReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FootNoteEndNote))
                 .footNoteEndNote(footNote);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void endNote(EndNote endNote, String name, Attributes attrs) {
-        ((FootNoteEndNoteReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FootNoteEndNote))
+        ((FootNoteEndNoteReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FootNoteEndNote))
                 .footNoteEndNote(endNote);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void autoNum(AutoNum autoNum, String name, Attributes attrs) {
-        ((AutoNumNewNumReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.AutoNumNewNum))
+        ((AutoNumNewNumReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.AutoNumNewNum))
                 .autoNumNewNum(autoNum);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void newNum(NewNum newNum, String name, Attributes attrs) {
-        ((AutoNumNewNumReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.AutoNumNewNum))
+        ((AutoNumNewNumReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.AutoNumNewNum))
                 .autoNumNewNum(newNum);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void pageNumCtrl(PageNumCtrl pageNumCtrl, String name, Attributes attrs) {
-        ((PageNumCtrlReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PageNumCtrl))
+        ((PageNumCtrlReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.PageNumCtrl))
                 .pageNumCtrl(pageNumCtrl);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void pageHiding(PageHiding pageHiding, String name, Attributes attrs) {
-        ((PageHidingReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PageHiding))
+        ((PageHidingReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.PageHiding))
                 .pageHiding(pageHiding);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void pageNum(PageNum pageNum, String name, Attributes attrs) {
-        ((PageNumReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.PageNum))
+        ((PageNumReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.PageNum))
                 .pageNum(pageNum);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void indexmark(Indexmark indexmark, String name, Attributes attrs) {
-        ((IndexmarkReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Indexmark))
+        ((IndexmarkReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Indexmark))
                 .indexmark(indexmark);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void hiddenComment(HiddenComment hiddenComment, String name, Attributes attrs) {
-        ((HiddenCommentReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.HiddenComment))
+        ((HiddenCommentReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HiddenComment))
                 .hiddenComment(hiddenComment);
 
         xmlFileReader().startElement(name, attrs);

@@ -431,4 +431,6 @@ public class AttributeNames {
     public static final String autoSave = "autoSave";
     public static final String oldValue = "oldValue";
     public static final String xmlVersion = "xmlVersion";
+    public static final String itemCnt = "itemCnt";
+    public static final String fontCnt = "fontCnt";
 }

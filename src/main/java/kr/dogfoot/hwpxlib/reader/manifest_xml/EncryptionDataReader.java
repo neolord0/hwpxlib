@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.manifest_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.metainf.EncryptionAlgorithm;
@@ -8,8 +10,6 @@ import kr.dogfoot.hwpxlib.object.metainf.EncryptionKeyDerivation;
 import kr.dogfoot.hwpxlib.object.metainf.EncryptionStartKeyGeneration;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class EncryptionDataReader extends ElementReader {
@@ -70,21 +70,21 @@ public class EncryptionDataReader extends ElementReader {
     }
 
     private void algorithm(EncryptionAlgorithm algorithm, String name, Attributes attrs) {
-        ((AlgorithmReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Algorithm))
+        ((AlgorithmReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Algorithm))
                 .algorithm(algorithm);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void keyDerivation(EncryptionKeyDerivation keyDerivation, String name, Attributes attrs) {
-        ((KeyDerivationReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.KeyDerivation))
+        ((KeyDerivationReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.KeyDerivation))
                 .keyDerivation(keyDerivation);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void startKeyGeneration(EncryptionStartKeyGeneration startKeyGeneration, String name, Attributes attrs) {
-        ((StartKeyGenerationReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.StartKeyGeneration))
+        ((StartKeyGenerationReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.StartKeyGeneration))
                 .startKeyGeneration(startKeyGeneration);
 
         xmlFileReader().startElement(name, attrs);

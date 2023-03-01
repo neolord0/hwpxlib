@@ -1,11 +1,11 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class FootNotePrReader extends ElementReader {
@@ -74,35 +74,35 @@ public class FootNotePrReader extends ElementReader {
     }
 
     private void autoNumFormat(AutoNumFormat autoNumFormat, String name, Attributes attrs) {
-        ((AutoNumFormatReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.AutoNumFormat))
+        ((AutoNumFormatReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.AutoNumFormat))
                 .autoNumFormat(autoNumFormat);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void noteLine(NoteLine noteLine, String name, Attributes attrs) {
-        ((NoteLineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.NoteLine))
+        ((NoteLineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.NoteLine))
                 .noteLine(noteLine);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void noteSpacing(NoteSpacing noteSpacing, String name, Attributes attrs) {
-        ((NoteSpacingReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.NoteSpacing))
+        ((NoteSpacingReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.NoteSpacing))
                 .noteSpacing(noteSpacing);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void numbering(FootNoteNumbering numbering, String name, Attributes attrs) {
-        ((FootNoteNumberingReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FootNoteNumbering))
+        ((FootNoteNumberingReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FootNoteNumbering))
                 .footNoteNumbering(numbering);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void placement(FootNotePlacement placement, String name, Attributes attrs) {
-        ((FootNotePlacementReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.FootNotePlacement))
+        ((FootNotePlacementReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.FootNotePlacement))
                 .footNotePlacement(placement);
 
         xmlFileReader().startElement(name, attrs);

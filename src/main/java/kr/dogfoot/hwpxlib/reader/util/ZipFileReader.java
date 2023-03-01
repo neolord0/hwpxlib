@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.reader.util;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ErrorMessage;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,9 +12,8 @@ public class ZipFileReader {
         ZipEntry zipEntry = zipFile.getEntry(zipEntryName);
         if (zipEntry != null) {
             return readAllBytes(zipFile.getInputStream(zipEntry));
-        } else {
-            throw new IOException(ErrorMessage.Not_HWPX_File);
         }
+        return null;
     }
 
     public static String readString(String href, ZipFile zipFile) throws IOException {

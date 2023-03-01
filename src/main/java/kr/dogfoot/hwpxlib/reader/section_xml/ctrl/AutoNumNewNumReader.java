@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType;
@@ -9,8 +11,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.secpr.AutoNumFormatReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class AutoNumNewNumReader extends ElementReader {
@@ -60,7 +60,7 @@ public class AutoNumNewNumReader extends ElementReader {
     }
 
     private void autoNumFormat(AutoNumFormat autoNumFormat, String name, Attributes attrs) {
-        ((AutoNumFormatReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.AutoNumFormat))
+        ((AutoNumFormatReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.AutoNumFormat))
                 .autoNumFormat(autoNumFormat);
 
         xmlFileReader().startElement(name, attrs);

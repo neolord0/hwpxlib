@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.manifest_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.metainf.EncryptionData;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.metainf.FileEntry;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class FileEntryReader extends ElementReader {
@@ -56,7 +56,7 @@ public class FileEntryReader extends ElementReader {
     }
 
     private void encryptionData(EncryptionData encryptionData, String name, Attributes attrs) {
-        ((EncryptionDataReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.EncryptionData))
+        ((EncryptionDataReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.EncryptionData))
                 .encryptionData(encryptionData);
 
         xmlFileReader().startElement(name, attrs);

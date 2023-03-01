@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.XAndYFloat;
@@ -13,8 +15,6 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYFloatReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class EffectsShadowReader extends ElementReader {
@@ -95,14 +95,14 @@ public class EffectsShadowReader extends ElementReader {
 
 
     private void xAndYFloat(XAndYFloat xAndYFloat, String name, Attributes attrs) {
-        ((XAndYFloatReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.XAndYFloat))
+        ((XAndYFloatReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndYFloat))
                 .xAndYFloat(xAndYFloat);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void effectsColor(EffectsColor effectsColor, String name, Attributes attrs) {
-        ((EffectsColorReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.EffectsColor))
+        ((EffectsColorReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.EffectsColor))
                 .effectsColor(effectsColor);
 
         xmlFileReader().startElement(name, attrs);

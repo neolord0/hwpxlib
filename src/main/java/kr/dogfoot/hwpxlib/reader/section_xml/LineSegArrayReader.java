@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.section_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.LineSeg;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class LineSegArrayReader extends ElementReader {
@@ -41,7 +41,7 @@ public class LineSegArrayReader extends ElementReader {
     }
 
     private void lineSeg(LineSeg lineSeg, String name, Attributes attrs) {
-        ((LineSegReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LineSeg))
+        ((LineSegReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LineSeg))
                 .lineSeg(lineSeg);
 
         xmlFileReader().startElement(name, attrs);

@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.table;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellZone;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class CellzoneListReader extends ElementReader {
@@ -42,7 +42,7 @@ public class CellzoneListReader extends ElementReader {
     }
 
     private void cellzone(CellZone cellZone, String name, Attributes attrs) {
-        ((CellZoneReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CellZone))
+        ((CellZoneReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CellZone))
                 .cellZone(cellZone);
 
         xmlFileReader().startElement(name, attrs);

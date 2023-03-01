@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Run;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ParaReader extends ElementReader {
@@ -83,14 +83,14 @@ public class ParaReader extends ElementReader {
     }
 
     private void run(Run run, String name, Attributes attrs) {
-        ((RunReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Run))
+        ((RunReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Run))
                 .run(run);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void lineSegArray(ObjectList<LineSeg> lineSegArray, String name, Attributes attrs) {
-        ((LineSegArrayReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LineSegArray))
+        ((LineSegArrayReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LineSegArray))
                 .lineSegArray(lineSegArray);
 
         xmlFileReader().startElement(name, attrs);

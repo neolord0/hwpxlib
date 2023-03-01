@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.memopr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineWidth;
@@ -8,7 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.MemoPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 
 public class MemoPrReader extends ElementReader {
     private MemoPr memoPr;

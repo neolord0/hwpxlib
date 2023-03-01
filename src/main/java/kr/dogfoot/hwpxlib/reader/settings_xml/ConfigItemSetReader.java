@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.settings_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.root.ConfigItem;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ConfigItemSetReader extends ElementReader {
@@ -38,7 +38,7 @@ public class ConfigItemSetReader extends ElementReader {
     }
 
     private void configItem(ConfigItem configItem, String name, Attributes attrs) {
-        ((ConfigItemReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ConfigItem))
+        ((ConfigItemReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ConfigItem))
                 .configItem(configItem);
 
         xmlFileReader().startElement(name, attrs);

@@ -1,9 +1,9 @@
 package kr.dogfoot.hwpxlib.reader.common;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ErrorMessage;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.SwitchReader;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -17,13 +17,12 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public abstract class XMLFileReader extends DefaultHandler {
-    protected ElementReaderManager entryReaderManager;
-    protected ElementReader currentEntryReader;
-    private boolean isSwitchableObjectReader;
+    protected ElementReaderManager elementReaderManager;
+    protected ElementReader currentElementReader;
 
     protected XMLFileReader(ElementReaderManager entryReaderManager) {
-        this.entryReaderManager = entryReaderManager;
-        currentEntryReader = null;
+        this.elementReaderManager = entryReaderManager;
+        currentElementReader = null;
     }
 
     protected void read(InputStream io) throws ParserConfigurationException, SAXException, IOException {
@@ -41,24 +40,24 @@ public abstract class XMLFileReader extends DefaultHandler {
         }
     }
 
-    public ElementReader setCurrentEntryReader(ElementReaderSort sort) {
-        ElementReader nextEntryReader = entryReaderManager.get(sort)
+    public ElementReader setCurrentElementReader(ElementReaderSort sort) {
+        ElementReader nextElementReader = elementReaderManager.get(sort)
                 .xmlFileReaderAnd(this)
-                .previousReaderAnd(currentEntryReader)
+                .previousReaderAnd(currentElementReader)
                 .startedAnd(false)
                 .switchableObjectReaderAnd(false);
-        currentEntryReader = nextEntryReader;
-        return currentEntryReader;
+        currentElementReader = nextElementReader;
+        return currentElementReader;
     }
 
-    public ElementReader setCurrentEntryReaderInSwitch(ElementReaderSort sort) {
-        ElementReader nextEntryReader = entryReaderManager.get(sort)
+    public ElementReader setCurrentElementReaderInSwitch(ElementReaderSort sort) {
+        ElementReader nextElementReader = elementReaderManager.get(sort)
                 .xmlFileReaderAnd(this)
-                .previousReaderAnd(currentEntryReader)
+                .previousReaderAnd(currentElementReader)
                 .startedAnd(true)
                 .switchableObjectReaderAnd(true);
-        currentEntryReader = nextEntryReader;
-        return currentEntryReader;
+        currentElementReader = nextElementReader;
+        return currentElementReader;
     }
 
     public void startElement(String name, Attributes attrs) {
@@ -67,48 +66,50 @@ public abstract class XMLFileReader extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String name, Attributes attrs) {
-        if (!currentEntryReader.started()) {
-            currentEntryReader.started(true);
-            currentEntryReader.startElement(attrs);
+        if (!currentElementReader.started()) {
+            currentElementReader.started(true);
+            currentElementReader.startElement(attrs);
         } else {
             if (ElementNames.hp_switch.equals(name)) {
-                if (currentEntryReader.switchableObject() != null) {
-                    SwitchableObject switchableObject = currentEntryReader.switchableObject();
+                if (currentElementReader.switchableObject() != null) {
+                    SwitchableObject switchableObject = currentElementReader.switchableObject();
 
                     switchableObject.createSwitchObject();
-                    ((SwitchReader) setCurrentEntryReader(ElementReaderSort.Switch))
+                    switchableObject.switchObject().position(currentElementReader.childIndex());
+                    ((SwitchReader) setCurrentElementReader(ElementReaderSort.Switch))
                             .switchableObject(switchableObject);
 
                     startElement(name, attrs);
                 }
             } else {
-                currentEntryReader.childElement(name, attrs);
+                currentElementReader.increaseChildIndex();
+                currentElementReader.childElement(name, attrs);
             }
         }
     }
 
     @Override
     public void endElement(String uri, String localName, String name) {
-        currentEntryReader.started(false);
-        currentEntryReader.endElement();
-        entryReaderManager.release(currentEntryReader);
+        currentElementReader.started(false);
+        currentElementReader.endElement();
+        elementReaderManager.release(currentElementReader);
 
-        if (currentEntryReader.previousReader() == null) {
-            currentEntryReader = null;
+        if (currentElementReader.previousReader() == null) {
+            currentElementReader = null;
         } else {
-            currentEntryReader = currentEntryReader.previousReader().switchableObjectReader() ? currentEntryReader.previousReader().previousReader() : currentEntryReader.previousReader();
+            currentElementReader = currentElementReader.previousReader().switchableObjectReader() ? currentElementReader.previousReader().previousReader() : currentElementReader.previousReader();
         }
     }
 
     @Override
     public void characters(char[] ch, int start, int length) {
-        if (currentEntryReader != null) {
-            currentEntryReader.text(new String(ch, start, length));
+        if (currentElementReader != null) {
+            currentElementReader.text(new String(ch, start, length));
         }
     }
 
-    public void setCurrentEntryReaderForEmpty(String name, Attributes attrs) {
-        setCurrentEntryReader(ElementReaderSort.Empty);
+    public void setCurrentElementReaderForEmpty(String name, Attributes attrs) {
+        setCurrentElementReader(ElementReaderSort.Empty);
         startElement(name, attrs);
     }
 }

@@ -181,10 +181,6 @@
 		</hh:numberings>
 		<hh:paraProperties itemCnt="16">
 			<hh:paraPr id="0" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
-				<hh:align horizontal="LEFT" vertical="BASELINE"/>
-				<hh:heading type="NONE" idRef="0" level="0"/>
-				<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="BREAK_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/>
-				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
 				<hp:switch>
 					<hp:case hp:required-namespace="http://www.hancom.co.kr/hwpml/2016/HwpUnitChar">
 						<hh:margin>
@@ -207,13 +203,14 @@
 						<hh:lineSpacing type="PERCENT" value="130" unit="HWPUNIT"/>
 					</hp:default>
 				</hp:switch>
+				<hh:align horizontal="LEFT" vertical="BASELINE"/>
+				<hh:heading type="NONE" idRef="0" level="0"/>
+				<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="BREAK_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/>
+				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
 				<hh:border borderFillIDRef="2" offsetLeft="0" offsetRight="0" offsetTop="0" offsetBottom="0" connect="0" ignoreMargin="0"/>
 			</hh:paraPr>
 			<hh:paraPr id="1" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
 				<hh:align horizontal="JUSTIFY" vertical="BASELINE"/>
-				<hh:heading type="NONE" idRef="0" level="0"/>
-				<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="KEEP_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/>
-				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
 				<hp:switch>
 					<hp:case hp:required-namespace="http://www.hancom.co.kr/hwpml/2016/HwpUnitChar">
 						<hh:margin>
@@ -236,13 +233,14 @@
 						<hh:lineSpacing type="PERCENT" value="130" unit="HWPUNIT"/>
 					</hp:default>
 				</hp:switch>
+				<hh:heading type="NONE" idRef="0" level="0"/>
+				<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="KEEP_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/>
+				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
 				<hh:border borderFillIDRef="2" offsetLeft="0" offsetRight="0" offsetTop="0" offsetBottom="0" connect="0" ignoreMargin="0"/>
 			</hh:paraPr>
 			<hh:paraPr id="2" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
 				<hh:align horizontal="JUSTIFY" vertical="BASELINE"/>
 				<hh:heading type="NONE" idRef="0" level="0"/>
-				<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="BREAK_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/>
-				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
 				<hp:switch>
 					<hp:case hp:required-namespace="http://www.hancom.co.kr/hwpml/2016/HwpUnitChar">
 						<hh:margin>
@@ -265,13 +263,14 @@
 						<hh:lineSpacing type="PERCENT" value="150" unit="HWPUNIT"/>
 					</hp:default>
 				</hp:switch>
+				<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="BREAK_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/>
+				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
 				<hh:border borderFillIDRef="2" offsetLeft="0" offsetRight="0" offsetTop="0" offsetBottom="0" connect="0" ignoreMargin="0"/>
 			</hh:paraPr>
 			<hh:paraPr id="3" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
 				<hh:align horizontal="JUSTIFY" vertical="BASELINE"/>
 				<hh:heading type="NONE" idRef="0" level="0"/>
 				<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="KEEP_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/>
-				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
 				<hp:switch>
 					<hp:case hp:required-namespace="http://www.hancom.co.kr/hwpml/2016/HwpUnitChar">
 						<hh:margin>
@@ -294,6 +293,7 @@
 						<hh:lineSpacing type="PERCENT" value="160" unit="HWPUNIT"/>
 					</hp:default>
 				</hp:switch>
+				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
 				<hh:border borderFillIDRef="2" offsetLeft="0" offsetRight="0" offsetTop="0" offsetBottom="0" connect="0" ignoreMargin="0"/>
 			</hh:paraPr>
 			<hh:paraPr id="4" tabPrIDRef="1" condense="20" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
@@ -330,6 +330,7 @@
 				<hh:heading type="OUTLINE" idRef="0" level="5"/>
 				<hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="KEEP_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/>
 				<hh:autoSpacing eAsianEng="0" eAsianNum="0"/>
+				<hh:border borderFillIDRef="2" offsetLeft="0" offsetRight="0" offsetTop="0" offsetBottom="0" connect="0" ignoreMargin="0"/>
 				<hp:switch>
 					<hp:case hp:required-namespace="http://www.hancom.co.kr/hwpml/2016/HwpUnitChar">
 						<hh:margin>
@@ -352,7 +353,6 @@
 						<hh:lineSpacing type="PERCENT" value="160" unit="HWPUNIT"/>
 					</hp:default>
 				</hp:switch>
-				<hh:border borderFillIDRef="2" offsetLeft="0" offsetRight="0" offsetTop="0" offsetBottom="0" connect="0" ignoreMargin="0"/>
 			</hh:paraPr>
 			<hh:paraPr id="6" tabPrIDRef="1" condense="20" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0">
 				<hh:align horizontal="JUSTIFY" vertical="BASELINE"/>

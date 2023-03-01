@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.ParaPr;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ParaPrReader extends ElementReader {
@@ -116,49 +116,49 @@ public class ParaPrReader extends ElementReader {
     }
 
     private void align(Align align, String name, Attributes attrs) {
-        ((AlignReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Align))
+        ((AlignReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Align))
                 .align(align);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void heading(Heading heading, String name, Attributes attrs) {
-        ((HeadingReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Heading))
+        ((HeadingReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Heading))
                 .heading(heading);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void breakSetting(BreakSetting breakSetting, String name, Attributes attrs) {
-        ((BreakSettingReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.BreakSetting))
+        ((BreakSettingReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.BreakSetting))
                 .breakSetting(breakSetting);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void margin(ParaMargin margin, String name, Attributes attrs) {
-        ((ParaMarginReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ParaMargin))
+        ((ParaMarginReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParaMargin))
                 .margin(margin);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void lineSpacing(LineSpacing lineSpacing, String name, Attributes attrs) {
-        ((LineSpacingReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.LineSpacing))
+        ((LineSpacingReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LineSpacing))
                 .lineSpacing(lineSpacing);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void border(ParaBorder border, String name, Attributes attrs) {
-        ((ParaBorderReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ParaBorder))
+        ((ParaBorderReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParaBorder))
                 .border(border);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void autoSpacing(AutoSpacing autoSpacing, String name, Attributes attrs) {
-        ((AutoSpacingReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.AutoSpacing))
+        ((AutoSpacingReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.AutoSpacing))
                 .autoSpacing(autoSpacing);
 
         xmlFileReader().startElement(name, attrs);

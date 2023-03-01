@@ -1,12 +1,12 @@
 package kr.dogfoot.hwpxlib.reader.section_xml;
 
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SectionXMLFile;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 
@@ -43,7 +43,7 @@ public class SecReader extends ElementReader {
     }
 
     private void para(Para para, String name, Attributes attrs) {
-        ((ParaReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Para))
+        ((ParaReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Para))
                 .para(para);
 
         xmlFileReader().startElement(name, attrs);

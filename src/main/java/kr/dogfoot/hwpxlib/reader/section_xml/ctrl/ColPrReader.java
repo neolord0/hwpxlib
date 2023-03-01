@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColumnDirection;
@@ -10,8 +12,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.ColSz;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class ColPrReader extends ElementReader {
@@ -79,14 +79,14 @@ public class ColPrReader extends ElementReader {
     }
 
     private void colSz(ColSz colSz, String name, Attributes attrs) {
-        ((ColSzReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ColSz))
+        ((ColSzReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColSz))
                 .colSz(colSz);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void colLine(ColLine colLine, String name, Attributes attrs) {
-        ((ColLineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ColLine))
+        ((ColLineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColLine))
                 .colLine(colLine);
 
         xmlFileReader().startElement(name, attrs);

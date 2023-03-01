@@ -19,7 +19,7 @@ public class ContainerXMLFileReader extends XMLFileReader {
     }
 
     public void read(ContainerXMLFile containerXMLFile, ZipFile zipFile) throws ParserConfigurationException, IOException, SAXException {
-        ((ContainerReader) setCurrentEntryReader(ElementReaderSort.Container))
+        ((ContainerReader) setCurrentElementReader(ElementReaderSort.Container))
                 .containerXMLFile(containerXMLFile);
 
         read(zipFile, ZipEntryName.Container);

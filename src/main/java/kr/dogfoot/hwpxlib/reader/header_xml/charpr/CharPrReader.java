@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.charpr;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SymMarkSort;
@@ -8,8 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class CharPrReader extends ElementReader {
@@ -75,11 +75,11 @@ public class CharPrReader extends ElementReader {
                 break;
             case ElementNames.hh_bold:
                 charPr.createBold();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hh_italic:
                 charPr.createItalic();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hh_underline:
                 charPr.createUnderline();
@@ -99,19 +99,19 @@ public class CharPrReader extends ElementReader {
                 break;
             case ElementNames.hh_emboss:
                 charPr.createEmboss();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hh_engrave:
                 charPr.createEngrave();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hh_supscript:
                 charPr.createSupscript();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
             case ElementNames.hh_subscript:
                 charPr.createSubscript();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
         }
     }
@@ -141,11 +141,11 @@ public class CharPrReader extends ElementReader {
                 return offset;
             case ElementNames.hh_bold:
                 Bold bold = new Bold();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return bold;
             case ElementNames.hh_italic:
                 Italic italic = new Italic();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return italic;
             case ElementNames.hh_underline:
                 Underline underline = new Underline();
@@ -165,19 +165,19 @@ public class CharPrReader extends ElementReader {
                 return shadow;
             case ElementNames.hh_emboss:
                 Emboss emboss = new Emboss();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return emboss;
             case ElementNames.hh_engrave:
                 Engrave engrave = new Engrave();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return engrave;
             case ElementNames.hh_supscript:
                 Supscript supscript = new Supscript();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return supscript;
             case ElementNames.hh_subscript:
                 Subscript subscript = new Subscript();
-                xmlFileReader().setCurrentEntryReaderForEmpty(name, attrs);
+                xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return subscript;
         }
         return null;
@@ -185,14 +185,14 @@ public class CharPrReader extends ElementReader {
 
 
     private void fontRef(FontRef fontRef, String name, Attributes attrs) {
-        ((StringValuesByLanguageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.StringValuesByLanguageReader))
+        ((StringValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.StringValuesByLanguageReader))
                 .stringValuesByLanguage(fontRef);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void ratio(Ratio ratio, String name, Attributes attrs) {
-        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ShortValuesByLanguageReader))
+        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShortValuesByLanguageReader))
                 .shortValuesByLanguage(ratio);
 
         xmlFileReader().startElement(name, attrs);
@@ -200,49 +200,49 @@ public class CharPrReader extends ElementReader {
 
 
     private void relSz(RelSz relSz, String name, Attributes attrs) {
-        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ShortValuesByLanguageReader))
+        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShortValuesByLanguageReader))
                 .shortValuesByLanguage(relSz);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void spacing(Spacing spacing, String name, Attributes attrs) {
-        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ShortValuesByLanguageReader))
+        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShortValuesByLanguageReader))
                 .shortValuesByLanguage(spacing);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void offset(CharOffset offset, String name, Attributes attrs) {
-        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ShortValuesByLanguageReader))
+        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShortValuesByLanguageReader))
                 .shortValuesByLanguage(offset);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void underline(Underline underline, String name, Attributes attrs) {
-        ((UnderlineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Underline))
+        ((UnderlineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Underline))
                 .underLine(underline);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void strikeout(Strikeout strikeout, String name, Attributes attrs) {
-        ((StrikeoutReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Strikeout))
+        ((StrikeoutReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Strikeout))
                 .strikeout(strikeout);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void outline(Outline outline, String name, Attributes attrs) {
-        ((OutlineReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.Outline))
+        ((OutlineReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Outline))
                 .outline(outline);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void shadow(CharShadow shadow, String name, Attributes attrs) {
-        ((CharShadowReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.CharShadow))
+        ((CharShadowReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CharShadow))
                 .charShadow(shadow);
 
         xmlFileReader().startElement(name, attrs);

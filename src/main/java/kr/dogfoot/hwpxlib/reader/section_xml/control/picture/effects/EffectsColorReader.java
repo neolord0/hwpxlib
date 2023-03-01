@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects;
 
+import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColorType;
@@ -7,8 +9,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ef
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import org.xml.sax.Attributes;
 
 public class EffectsColorReader extends ElementReader {
@@ -96,35 +96,35 @@ public class EffectsColorReader extends ElementReader {
     }
 
     private void rgb(ColorRGB rgb, String name, Attributes attrs) {
-        ((ColorRGBReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ColorRGB))
+        ((ColorRGBReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColorRGB))
                 .rgb(rgb);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void cmyk(ColorCMYK cmyk, String name, Attributes attrs) {
-        ((ColorCMYKReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ColorCMYK))
+        ((ColorCMYKReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColorCMYK))
                 .cmyk(cmyk);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void schema(ColorSchema schema, String name, Attributes attrs) {
-        ((ColorSchemaReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ColorSchema))
+        ((ColorSchemaReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColorSchema))
                 .schema(schema);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void system(ColorSystem system, String name, Attributes attrs) {
-        ((ColorSystemReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ColorSystem))
+        ((ColorSystemReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColorSystem))
                 .system(system);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void effect(ColorEffect effect, String name, Attributes attrs) {
-        ((ColorEffectReader) xmlFileReader().setCurrentEntryReader(ElementReaderSort.ColorEffect))
+        ((ColorEffectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColorEffect))
                 .effect(effect);
 
         xmlFileReader().startElement(name, attrs);
