@@ -1,10 +1,21 @@
 package kr.dogfoot.hwpxlib.object.common.baseobject;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
-public abstract class XAndYFloat<ChildType> extends HWPXObject {
+public class XAndYFloat extends HWPXObject {
+    private ObjectType _objectType;
     private Float x;
     private Float y;
+
+    public XAndYFloat(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
 
     public Float x() {
         return x;
@@ -14,9 +25,9 @@ public abstract class XAndYFloat<ChildType> extends HWPXObject {
         this.x = x;
     }
 
-    public ChildType xAnd(Float x) {
+    public XAndYFloat xAnd(Float x) {
         this.x = x;
-        return (ChildType) this;
+        return this;
     }
 
     public Float y() {
@@ -27,8 +38,8 @@ public abstract class XAndYFloat<ChildType> extends HWPXObject {
         this.y = y;
     }
 
-    public ChildType yAnd(Float y) {
+    public XAndYFloat yAnd(Float y) {
         this.y = y;
-        return (ChildType) this;
+        return this;
     }
 }

@@ -45,31 +45,32 @@ public class CharPr extends SwitchableObject {
     /**
      * 언어별 글꼴(Font) 아이디 참조
      */
-    private FontRef fontRef;
+    private ValuesByLanguage<String> fontRef;
     /**
      * 언어별 장평, 단위 %
      */
-    private Ratio ratio;
+    private ValuesByLanguage<Short> ratio;
+
     /**
      * 언어별 자간, 단위 %
      */
-    private Spacing spacing;
+    private ValuesByLanguage<Short> spacing;
     /**
      * 언어별 상대크기, 단위 %
      */
-    private RelSz relSz;
+    private ValuesByLanguage<Short> relSz;
     /**
      * 언어별 오프셋, 단위 %
      */
-    private CharOffset offset;
+    private ValuesByLanguage<Short> offset;
     /**
      * 글자 기울임
      */
-    private Italic italic;
+    private NoAttributeNoChild italic;
     /**
      * 글자 굵게
      */
-    private Bold bold;
+    private NoAttributeNoChild bold;
     /**
      * 글자 밑줄
      */
@@ -89,19 +90,19 @@ public class CharPr extends SwitchableObject {
     /**
      * 양각 문자
      */
-    private Emboss emboss;
+    private NoAttributeNoChild emboss;
     /**
      * 음각 문자
      */
-    private Engrave engrave;
+    private NoAttributeNoChild engrave;
     /**
      * 위첨자
      */
-    private Supscript supscript;
+    private NoAttributeNoChild supscript;
     /**
      * 아래첨자
      */
-    private Subscript subscript;
+    private NoAttributeNoChild subscript;
 
 
     public CharPr() {
@@ -216,60 +217,60 @@ public class CharPr extends SwitchableObject {
         return this;
     }
 
-    public FontRef fontRef() {
+    public ValuesByLanguage<String> fontRef() {
         return fontRef;
     }
 
     public void createFontRef() {
-        fontRef = new FontRef();
+        fontRef = new ValuesByLanguage<String>(ObjectType.hh_fontRef);
     }
 
     public void removeFontRef() {
         fontRef = null;
     }
 
-    public Ratio ratio() {
+    public ValuesByLanguage<Short> ratio() {
         return ratio;
     }
 
     public void createRatio() {
-        ratio = new Ratio();
+        ratio = new ValuesByLanguage<Short>(ObjectType.hh_ratio);
     }
 
     public void removeRatio() {
         ratio = null;
     }
 
-    public Spacing spacing() {
+    public ValuesByLanguage<Short> spacing() {
         return spacing;
     }
 
     public void createSpacing() {
-        spacing = new Spacing();
+        spacing = new ValuesByLanguage<Short>(ObjectType.hh_spacing);
     }
 
     public void removeSpacing() {
         spacing = null;
     }
 
-    public RelSz relSz() {
+    public ValuesByLanguage<Short> relSz() {
         return relSz;
     }
 
     public void createRelSz() {
-        relSz = new RelSz();
+        relSz = new ValuesByLanguage<Short>(ObjectType.hh_relSz);
     }
 
     public void removeRelSz() {
         relSz = null;
     }
 
-    public CharOffset offset() {
+    public ValuesByLanguage<Short> offset() {
         return offset;
     }
 
     public void createOffset() {
-        offset = new CharOffset();
+        offset = new ValuesByLanguage<Short>(ObjectType.hh_offset);
     }
 
     public void removeOffset() {
@@ -281,7 +282,7 @@ public class CharPr extends SwitchableObject {
     }
 
     public void createItalic() {
-        italic = new Italic();
+        italic = new NoAttributeNoChild(ObjectType.hh_italic);
     }
 
     public void removeItalic() {
@@ -293,7 +294,7 @@ public class CharPr extends SwitchableObject {
     }
 
     public void createBold() {
-        bold = new Bold();
+        bold = new NoAttributeNoChild(ObjectType.hh_bold);
     }
 
     public void removeBold() {
@@ -353,7 +354,7 @@ public class CharPr extends SwitchableObject {
     }
 
     public void createEmboss() {
-        emboss = new Emboss();
+        emboss = new NoAttributeNoChild(ObjectType.hh_emboss);
     }
 
     public void removeEmboss() {
@@ -365,7 +366,7 @@ public class CharPr extends SwitchableObject {
     }
 
     public void createEngrave() {
-        engrave = new Engrave();
+        engrave = new NoAttributeNoChild(ObjectType.hh_engrave);
     }
 
     public void removeEngrave() {
@@ -377,7 +378,7 @@ public class CharPr extends SwitchableObject {
     }
 
     public void createSupscript() {
-        supscript = new Supscript();
+        supscript = new NoAttributeNoChild(ObjectType.hh_supscript);
     }
 
     public void removeSupscript() {
@@ -389,7 +390,7 @@ public class CharPr extends SwitchableObject {
     }
 
     public void createSubscript() {
-        subscript = new Subscript();
+        subscript = new NoAttributeNoChild(ObjectType.hh_subscript);
     }
 
     public void removeSubscript() {

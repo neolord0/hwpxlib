@@ -13,6 +13,10 @@ public class HasOnlyTextReader extends ElementReader {
         return ElementReaderSort.HasOnlyText;
     }
 
+    public void hasOnlyText(HasOnlyText hasOnlyText) {
+        this.hasOnlyText = hasOnlyText;
+    }
+
     @Override
     public void text(String text) {
         hasOnlyText.addText(text);
@@ -21,9 +25,5 @@ public class HasOnlyTextReader extends ElementReader {
     @Override
     public SwitchableObject switchableObject() {
         return null;
-    }
-
-    public void hasOnlyText(HasOnlyText hasOnlyText) {
-        this.hasOnlyText = hasOnlyText;
     }
 }

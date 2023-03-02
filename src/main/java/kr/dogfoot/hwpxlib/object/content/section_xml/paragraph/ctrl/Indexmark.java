@@ -3,8 +3,6 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.FirstKey;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.SecondKey;
 
 /**
  * 인덱스
@@ -13,11 +11,11 @@ public class Indexmark extends CtrlItem {
     /**
      * 키
      */
-    private FirstKey firstKey;
+    private HasOnlyText firstKey;
     /**
      * 두번째 키
      */
-    private SecondKey secondKey;
+    private HasOnlyText secondKey;
 
     public Indexmark() {
     }
@@ -32,7 +30,7 @@ public class Indexmark extends CtrlItem {
     }
 
     public void createFirstKey() {
-        firstKey = new FirstKey();
+        firstKey = new HasOnlyText(ObjectType.hp_firstKey);
     }
 
     public void removeFirstKey() {
@@ -44,11 +42,10 @@ public class Indexmark extends CtrlItem {
     }
 
     public void createSecondKey() {
-        secondKey = new SecondKey();
+        secondKey = new HasOnlyText(ObjectType.hp_secondKey);
     }
 
     public void removeSecondKey() {
         secondKey = null;
     }
-
 }

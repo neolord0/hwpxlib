@@ -2,6 +2,7 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.e
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndYFloat;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.AlignStyleType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ShadowStyle;
 
@@ -40,11 +41,11 @@ public class EffectsShadow extends SwitchableObject {
     /**
      * 기울기
      */
-    private Skew skew;
+    private XAndYFloat skew;
     /**
      * 확대/축소 비율
      */
-    private Scale scale;
+    private XAndYFloat scale;
     /**
      * 그림자 색
      */
@@ -149,24 +150,24 @@ public class EffectsShadow extends SwitchableObject {
         return this;
     }
 
-    public Skew skew() {
+    public XAndYFloat skew() {
         return skew;
     }
 
     public void createSkew() {
-        skew = new Skew();
+        skew = new XAndYFloat(ObjectType.hp_skew);
     }
 
     public void removeSkew() {
         skew = null;
     }
 
-    public Scale scale() {
+    public XAndYFloat scale() {
         return scale;
     }
 
     public void createScale() {
-        scale = new Scale();
+        scale = new XAndYFloat(ObjectType.hp_scale);
     }
 
     public void removeScale() {

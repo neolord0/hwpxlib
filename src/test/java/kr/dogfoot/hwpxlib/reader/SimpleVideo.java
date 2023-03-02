@@ -1,11 +1,15 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Video;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
@@ -33,17 +37,17 @@ public class SimpleVideo {
         Assert.assertEquals(video.imageIDRef(), "image2");
         Assert.assertEquals(video.tag(), "");
 
-        Offset offset = video.offset();
+        XAndY offset = video.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 0);
         Assert.assertEquals(offset.y().intValue(), 0);
 
-        OriginalSize orgSZ = video.orgSz();
+        WidthAndHeight orgSZ = video.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 22500);
         Assert.assertEquals(orgSZ.height().intValue(), 15000);
 
-        CurrentSize curSz = video.curSz();
+        WidthAndHeight curSz = video.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 0);
         Assert.assertEquals(curSz.height().intValue(), 0);
@@ -103,14 +107,14 @@ public class SimpleVideo {
         Assert.assertEquals(pos.vertOffset().intValue(), 0);
         Assert.assertEquals(pos.horzOffset().intValue(), 0);
 
-        OutMargin outMargin = video.outMargin();
+        LeftRightTopBottom outMargin = video.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 0);
         Assert.assertEquals(outMargin.right().intValue(), 0);
         Assert.assertEquals(outMargin.top().intValue(), 0);
         Assert.assertEquals(outMargin.bottom().intValue(), 0);
 
-        ShapeComment shapeComment = video.shapeComment();
+        HasOnlyText shapeComment = video.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "동영상입니다.");
     }

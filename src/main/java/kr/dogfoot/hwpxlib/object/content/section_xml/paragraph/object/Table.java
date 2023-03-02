@@ -2,10 +2,10 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TablePageBreak;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellZone;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.InMargin;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.ParameterSet;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tr;
 
@@ -46,7 +46,7 @@ public class Table extends ShapeObject<Table> {
     /**
      * 안쪽 여백
      */
-    private InMargin inMargin;
+    private LeftRightTopBottom inMargin;
     /**
      * 셀 테두리/배경 - "하나의 셀처럼 적용"
      */
@@ -160,12 +160,12 @@ public class Table extends ShapeObject<Table> {
         return this;
     }
 
-    public InMargin inMargin() {
+    public LeftRightTopBottom inMargin() {
         return inMargin;
     }
 
     public void createInMargin() {
-        inMargin = new InMargin();
+        inMargin = new LeftRightTopBottom(ObjectType.hp_inMargin);
     }
 
     public void removeInMargin() {

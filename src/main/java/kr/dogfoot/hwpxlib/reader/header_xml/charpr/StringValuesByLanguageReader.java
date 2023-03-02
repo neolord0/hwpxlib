@@ -7,7 +7,7 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 
 public class StringValuesByLanguageReader extends ElementReader {
-    private ValuesByLanguage<String, ?> valuesByLanguage;
+    private ValuesByLanguage<String> valuesByLanguage;
 
     @Override
     public ElementReaderSort sort() {
@@ -46,7 +46,7 @@ public class StringValuesByLanguageReader extends ElementReader {
         return null;
     }
 
-    public void stringValuesByLanguage(ValuesByLanguage<String, ?> valuesByLanguage) {
+    public void stringValuesByLanguage(ValuesByLanguage<String> valuesByLanguage) {
         this.valuesByLanguage = valuesByLanguage;
     }
 }

@@ -1,15 +1,15 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
+import kr.dogfoot.hwpxlib.object.common.baseobject.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Line;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
@@ -33,17 +33,17 @@ public class SimpleLine {
         Assert.assertEquals(line.instid(), "1067288474");
         Assert.assertEquals(line.isReverseHV().booleanValue(), false);
 
-        Offset offset = line.offset();
+        XAndY offset = line.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 0);
         Assert.assertEquals(offset.y().intValue(), 0);
 
-        OriginalSize orgSZ = line.orgSz();
+        WidthAndHeight orgSZ = line.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 22478);
         Assert.assertEquals(orgSZ.height().intValue(), 8447);
 
-        CurrentSize curSz = line.curSz();
+        WidthAndHeight curSz = line.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 16208);
         Assert.assertEquals(curSz.height().intValue(), 20754);
@@ -136,14 +136,14 @@ public class SimpleLine {
         Assert.assertEquals(pos.vertOffset().intValue(), 11446);
         Assert.assertEquals(pos.horzOffset().intValue(), 15631);
 
-        OutMargin outMargin = line.outMargin();
+        LeftRightTopBottom outMargin = line.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 0);
         Assert.assertEquals(outMargin.right().intValue(), 0);
         Assert.assertEquals(outMargin.top().intValue(), 0);
         Assert.assertEquals(outMargin.bottom().intValue(), 0);
 
-        ShapeComment shapeComment = line.shapeComment();
+        HasOnlyText shapeComment = line.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "선입니다.");
 

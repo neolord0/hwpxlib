@@ -1,11 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.masterpage_xml;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.masterpage_xml.enumtype.MasterPageType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 
-public class MasterPageXMLFile extends XMLFile {
+public class MasterPageXMLFile extends SwitchableObject {
     /**
      * 바탕쪽 설정 정보 식별자
      */

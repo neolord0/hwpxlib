@@ -8,12 +8,12 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 
-public class SlashReader extends ElementReader {
+public class SlashCoreReader extends ElementReader {
     private SlashCore slashCore;
 
     @Override
     public ElementReaderSort sort() {
-        return ElementReaderSort.Slash;
+        return ElementReaderSort.SlashCore;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SlashReader extends ElementReader {
         return null;
     }
 
-    public void slash(SlashCore slashCore) {
+    public void slashCore(SlashCore slashCore) {
         this.slashCore = slashCore;
     }
 }

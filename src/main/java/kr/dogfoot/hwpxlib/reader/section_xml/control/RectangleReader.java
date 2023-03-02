@@ -9,7 +9,6 @@ import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Rectangle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
@@ -90,13 +89,6 @@ public class RectangleReader extends DrawingObjectReader {
         }
 
         return super.childElementInSwitch(name, attrs);
-    }
-
-    private void point(Point pt, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
-                .xAndY(pt);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     @Override

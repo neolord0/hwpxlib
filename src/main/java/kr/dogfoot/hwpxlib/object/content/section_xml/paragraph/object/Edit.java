@@ -1,10 +1,10 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HorizontalAlign1;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DisplayScrollBar;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TabKeyBehavior;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.edit.EditText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormObject;
 
 /**
@@ -46,7 +46,7 @@ public class Edit extends FormObject<Edit> {
     /**
      * 문자열
      */
-    private EditText text;
+    private HasOnlyText text;
 
     public Edit() {
     }
@@ -160,12 +160,12 @@ public class Edit extends FormObject<Edit> {
         return this;
     }
 
-    public EditText text() {
+    public HasOnlyText text() {
         return text;
     }
 
     public void createText() {
-        text = new EditText();
+        text = new HasOnlyText(ObjectType.hp_text);
     }
 
     public void removeText() {

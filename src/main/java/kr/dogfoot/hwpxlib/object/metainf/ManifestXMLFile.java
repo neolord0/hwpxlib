@@ -1,11 +1,11 @@
 package kr.dogfoot.hwpxlib.object.metainf;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 import java.util.ArrayList;
 
-public class ManifestXMLFile extends XMLFile {
+public class ManifestXMLFile extends SwitchableObject {
     private final ArrayList<FileEntry> fileEntryList;
 
     public ManifestXMLFile() {

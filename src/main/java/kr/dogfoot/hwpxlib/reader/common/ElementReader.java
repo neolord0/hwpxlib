@@ -2,6 +2,8 @@ package kr.dogfoot.hwpxlib.reader.common;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.*;
+import kr.dogfoot.hwpxlib.reader.common.baseobject.*;
 import org.xml.sax.Attributes;
 
 public abstract class ElementReader {
@@ -15,6 +17,7 @@ public abstract class ElementReader {
     }
 
     public abstract ElementReaderSort sort();
+
     public abstract SwitchableObject switchableObject();
 
     public void startElement(Attributes attrs) {
@@ -90,4 +93,45 @@ public abstract class ElementReader {
         return childIndex;
     }
 
+    protected void hasOnlyText(HasOnlyText hasOnlyText, String name, Attributes attrs) {
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
+                .hasOnlyText(hasOnlyText);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    protected void leftRightTopBottom(LeftRightTopBottom leftRightTopBottom, String name, Attributes attrs) {
+        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
+                .leftRightTopBottom(leftRightTopBottom);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    protected void xAndY(XAndY xAndY, String name, Attributes attrs) {
+        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
+                .xAndY(xAndY);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    protected void point(Point pt, String name, Attributes attrs) {
+        ((PointReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Point))
+                .point(pt);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    protected void xAndYFloat(XAndYFloat xAndYFloat, String name, Attributes attrs) {
+        ((XAndYFloatReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndYFloat))
+                .xAndYFloat(xAndYFloat);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    protected void widthAndHeight(WidthAndHeight widthAndHeight, String name, Attributes attrs) {
+        ((WidthAndHeightReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.WidthAndHeight))
+                .widthAndHeight(widthAndHeight);
+
+        xmlFileReader().startElement(name, attrs);
+    }
 }

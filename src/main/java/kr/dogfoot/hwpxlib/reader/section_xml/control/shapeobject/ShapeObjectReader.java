@@ -3,15 +3,19 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DropCapStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumberingType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextFlowSide;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextWrapMethod;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.Caption;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
 
@@ -58,7 +62,7 @@ public abstract class ShapeObjectReader extends ElementReader {
                 break;
             case ElementNames.hp_outMargin:
                 shapeObject().createOutMargin();
-                outMargin(shapeObject().outMargin(), name, attrs);
+                leftRightTopBottom(shapeObject().outMargin(), name, attrs);
                 break;
             case ElementNames.hp_caption:
                 shapeObject().createCaption();
@@ -66,7 +70,7 @@ public abstract class ShapeObjectReader extends ElementReader {
                 break;
             case ElementNames.hp_shapeComment:
                 shapeObject().createShapeComment();
-                shapeComment(shapeObject().shapeComment(), name, attrs);
+                hasOnlyText(shapeObject().shapeComment(), name, attrs);
                 break;
         }
     }
@@ -83,16 +87,16 @@ public abstract class ShapeObjectReader extends ElementReader {
                 pos(pos, name, attrs);
                 return pos;
             case ElementNames.hp_outMargin:
-                OutMargin outMargin = new OutMargin();
-                outMargin(outMargin, name, attrs);
+                LeftRightTopBottom outMargin = new LeftRightTopBottom(ObjectType.hp_outMargin);
+                leftRightTopBottom(outMargin, name, attrs);
                 return outMargin;
             case ElementNames.hp_caption:
                 Caption caption = new Caption();
                 caption(caption, name, attrs);
                 return caption;
             case ElementNames.hp_shapeComment:
-                ShapeComment shapeComment = new ShapeComment();
-                shapeComment(shapeComment, name, attrs);
+                HasOnlyText shapeComment = new HasOnlyText(ObjectType.hp_shapeComment);
+                hasOnlyText(shapeComment, name, attrs);
                 return shapeComment;
         }
         return null;
@@ -112,23 +116,9 @@ public abstract class ShapeObjectReader extends ElementReader {
         xmlFileReader().startElement(name, attrs);
     }
 
-    private void outMargin(OutMargin outMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
-                .leftRightTopBottom(outMargin);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
     private void caption(Caption caption, String name, Attributes attrs) {
         ((CaptionReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Caption))
                 .caption(caption);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void shapeComment(ShapeComment shapeComment, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
-                .hasOnlyText(shapeComment);
 
         xmlFileReader().startElement(name, attrs);
     }

@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.writer.util;
 
-import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.reader.HWPXReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

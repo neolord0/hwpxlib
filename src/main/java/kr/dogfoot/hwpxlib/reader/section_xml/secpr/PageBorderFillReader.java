@@ -3,15 +3,15 @@ package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ApplyPageType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageBorderPositionCriterion;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageFillArea;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pageborder.PageBorderFill;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pageborder.PageBorderFillOffset;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
 
@@ -57,7 +57,7 @@ public class PageBorderFillReader extends ElementReader {
         switch (name) {
             case ElementNames.hp_offset:
                 pageBorderFill.createOffset();
-                offset(pageBorderFill.offset(), name, attrs);
+                leftRightTopBottom(pageBorderFill.offset(), name, attrs);
                 break;
         }
     }
@@ -66,18 +66,11 @@ public class PageBorderFillReader extends ElementReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hp_offset:
-                PageBorderFillOffset offset = new PageBorderFillOffset();
-                offset(offset, name, attrs);
+                LeftRightTopBottom offset = new LeftRightTopBottom(ObjectType.hp_offset_for_pageBorderFill);
+                leftRightTopBottom(offset, name, attrs);
                 return offset;
         }
         return null;
-    }
-
-    private void offset(PageBorderFillOffset offset, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
-                .leftRightTopBottom(offset);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     @Override

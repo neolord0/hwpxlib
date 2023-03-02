@@ -103,7 +103,7 @@ public class CharPrWriter extends ElementWriter {
         releaseMe();
     }
 
-    private void stringValuesByLanguage(String elementName, ValuesByLanguage<String, ?> valuesByLanguage) {
+    private void stringValuesByLanguage(String elementName, ValuesByLanguage<String> valuesByLanguage) {
         xsb()
                 .openElement(elementName)
                 .attribute(AttributeNames.hangul, valuesByLanguage.hangul())
@@ -116,7 +116,7 @@ public class CharPrWriter extends ElementWriter {
                 .closeElement();
     }
 
-    private void shortValuesByLanguage(String elementName, ValuesByLanguage<Short, ?> valuesByLanguage) {
+    private void shortValuesByLanguage(String elementName, ValuesByLanguage<Short> valuesByLanguage) {
         xsb()
                 .openElement(elementName)
                 .attribute(AttributeNames.hangul, valuesByLanguage.hangul())
@@ -178,19 +178,19 @@ public class CharPrWriter extends ElementWriter {
     protected void childInSwitch(HWPXObject child) {
         switch (child._objectType()) {
             case hh_fontRef:
-                stringValuesByLanguage(ElementNames.hh_ratio, (ValuesByLanguage<String, ?>) child);
+                stringValuesByLanguage(ElementNames.hh_ratio, (ValuesByLanguage<String>) child);
                 break;
             case hh_ratio:
-                shortValuesByLanguage(ElementNames.hh_ratio, (ValuesByLanguage<Short, ?>) child);
+                shortValuesByLanguage(ElementNames.hh_ratio, (ValuesByLanguage<Short>) child);
                 break;
             case hh_spacing:
-                shortValuesByLanguage(ElementNames.hh_spacing, (ValuesByLanguage<Short, ?>) child);
+                shortValuesByLanguage(ElementNames.hh_spacing, (ValuesByLanguage<Short>) child);
                 break;
             case hh_relSz:
-                shortValuesByLanguage(ElementNames.hh_relSz, (ValuesByLanguage<Short, ?>) child);
+                shortValuesByLanguage(ElementNames.hh_relSz, (ValuesByLanguage<Short>) child);
                 break;
             case hh_offset:
-                shortValuesByLanguage(ElementNames.hh_offset, (ValuesByLanguage<Short, ?>) child);
+                shortValuesByLanguage(ElementNames.hh_offset, (ValuesByLanguage<Short>) child);
                 break;
             case hh_bold:
                 noAttributeChildElement(ElementNames.hh_bold);

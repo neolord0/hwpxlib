@@ -3,13 +3,13 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawText;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.TextMargin;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
@@ -46,7 +46,7 @@ public class DrawTextReader extends ElementReader {
         switch (name) {
             case ElementNames.hp_textMargin:
                 drawText.createTextMargin();
-                textMargin(drawText.textMargin(), name, attrs);
+                leftRightTopBottom(drawText.textMargin(), name, attrs);
                 break;
             case ElementNames.hp_subList:
                 drawText.createSubList();
@@ -59,8 +59,8 @@ public class DrawTextReader extends ElementReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hp_textMargin:
-                TextMargin textMargin = new TextMargin();
-                textMargin(textMargin, name, attrs);
+                LeftRightTopBottom textMargin = new LeftRightTopBottom(ObjectType.hp_textMargin);
+                leftRightTopBottom(textMargin, name, attrs);
                 return textMargin;
             case ElementNames.hp_subList:
                 SubList subList = new SubList();
@@ -68,13 +68,6 @@ public class DrawTextReader extends ElementReader {
                 return subList;
         }
         return null;
-    }
-
-    private void textMargin(TextMargin textMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
-                .leftRightTopBottom(textMargin);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     private void subList(SubList subList, String name, Attributes attrs) {

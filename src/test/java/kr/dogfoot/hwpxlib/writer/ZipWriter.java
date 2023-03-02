@@ -4,8 +4,6 @@ import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.reader.HWPXReader;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
 public class ZipWriter {
     @Test
     public void test1() throws Exception {

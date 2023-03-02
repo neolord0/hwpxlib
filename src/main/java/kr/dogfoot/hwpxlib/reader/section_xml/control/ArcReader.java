@@ -10,7 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ArcType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Arc;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.drawingobject.DrawingObjectReader;
 import org.xml.sax.Attributes;
 
@@ -82,13 +81,6 @@ public class ArcReader extends DrawingObjectReader {
         }
 
         return super.childElementInSwitch(name, attrs);
-    }
-
-    private void point(Point pt, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
-                .xAndY(pt);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     @Override

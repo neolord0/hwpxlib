@@ -1,11 +1,22 @@
 package kr.dogfoot.hwpxlib.object.common.baseobject;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit2;
 
-public abstract class ValueAndUnit<ChildType> extends HWPXObject {
+public class ValueAndUnit extends HWPXObject {
+    private final ObjectType _objectType;
     private Integer value;
     private ValueUnit2 unit;
+
+    public ValueAndUnit(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
 
     public Integer value() {
         return value;
@@ -15,9 +26,9 @@ public abstract class ValueAndUnit<ChildType> extends HWPXObject {
         this.value = value;
     }
 
-    public ChildType valueAnd(Integer value) {
+    public ValueAndUnit valueAnd(Integer value) {
         this.value = value;
-        return (ChildType) this;
+        return this;
     }
 
     public ValueUnit2 unit() {
@@ -28,8 +39,8 @@ public abstract class ValueAndUnit<ChildType> extends HWPXObject {
         this.unit = unit;
     }
 
-    public ChildType unitAnd(ValueUnit2 unit) {
+    public ValueAndUnit unitAnd(ValueUnit2 unit) {
         this.unit = unit;
-        return (ChildType) this;
+        return this;
     }
 }

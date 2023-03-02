@@ -1,14 +1,13 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageClip;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageDim;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageRect;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.Effects;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.InMargin;
 
 /**
  * 그림
@@ -29,11 +28,11 @@ public class Picture extends ShapeComponent<Picture> {
     /**
      * 이미지 자르기 정보
      */
-    private ImageClip imgClip;
+    private LeftRightTopBottom imgClip;
     /**
      * 안쪽 여백
      */
-    private InMargin inMargin;
+    private LeftRightTopBottom inMargin;
     /**
      * 이미지 크기
      */
@@ -92,24 +91,24 @@ public class Picture extends ShapeComponent<Picture> {
         imgRect = null;
     }
 
-    public ImageClip imgClip() {
+    public LeftRightTopBottom imgClip() {
         return imgClip;
     }
 
     public void createImgClip() {
-        imgClip = new ImageClip();
+        imgClip = new LeftRightTopBottom(ObjectType.hp_imgClip);
     }
 
     public void removeImgClip() {
         imgClip = null;
     }
 
-    public InMargin inMargin() {
+    public LeftRightTopBottom inMargin() {
         return inMargin;
     }
 
     public void createInMargin() {
-        inMargin = new InMargin();
+        inMargin = new LeftRightTopBottom(ObjectType.hp_inMargin);
     }
 
     public void removeInMargin() {

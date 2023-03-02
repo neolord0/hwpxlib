@@ -108,6 +108,8 @@ public class ElementReaderFactory {
                 return new XAndYReader();
             case XAndYFloat:
                 return new XAndYFloatReader();
+            case Point:
+                return new PointReader();
             case UnknownElement:
                 return new UnknownElementReader();
             case ParameterList:
@@ -196,8 +198,8 @@ public class ElementReaderFactory {
                 return new BorderFillsReader();
             case BorderFill:
                 return new BorderFillReader();
-            case Slash:
-                return new SlashReader();
+            case SlashCore:
+                return new SlashCoreReader();
             case Border:
                 return new BorderReader();
             case FillBrush:
@@ -282,6 +284,8 @@ public class ElementReaderFactory {
                 return new TrackChangeAuthorReader();
             case ForbiddenWordList:
                 return new ForbiddenWordListReader();
+            case ForbiddenWord:
+                return new ForbiddenWordReader();
             case CompatibleDocument:
                 return new CompatibleDocumentReader();
             case LayoutCompatibility:

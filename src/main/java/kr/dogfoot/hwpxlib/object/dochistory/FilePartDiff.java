@@ -1,18 +1,26 @@
 package kr.dogfoot.hwpxlib.object.dochistory;
 
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 import java.util.ArrayList;
 
-public abstract class FilePartDiff<ChildType> extends SwitchableObject {
+public class FilePartDiff<ChildType> extends SwitchableObject {
+    private ObjectType _objectType;
     private String href;
     /**
      * 하위 이력 리스트
      */
     private final ArrayList<DiffItem> childDiffList;
 
-    public FilePartDiff() {
+    public FilePartDiff(ObjectType _objectType) {
+        this._objectType = _objectType;
         childDiffList = new ArrayList<DiffItem>();
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
     }
 
     public String href() {

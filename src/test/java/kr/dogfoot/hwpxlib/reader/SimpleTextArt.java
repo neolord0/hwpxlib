@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
+import kr.dogfoot.hwpxlib.object.common.baseobject.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
@@ -9,8 +9,12 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.TextArt;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.Caption;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.textart.TextArtPr;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -34,17 +38,17 @@ public class SimpleTextArt {
         Assert.assertEquals(textArt.instid(), "69668146");
         Assert.assertEquals(textArt.text(), "hwpx 라이브러리 테스트 입니다.␍␊neolord");
 
-        Offset offset = textArt.offset();
+        XAndY offset = textArt.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 0);
         Assert.assertEquals(offset.y().intValue(), 0);
 
-        OriginalSize orgSZ = textArt.orgSz();
+        WidthAndHeight orgSZ = textArt.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 14173);
         Assert.assertEquals(orgSZ.height().intValue(), 14173);
 
-        CurrentSize curSz = textArt.curSz();
+        WidthAndHeight curSz = textArt.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 40500);
         Assert.assertEquals(curSz.height().intValue(), 16000);
@@ -172,7 +176,7 @@ public class SimpleTextArt {
         Assert.assertEquals(pos.vertOffset().intValue(), 0);
         Assert.assertEquals(pos.horzOffset().intValue(), 0);
 
-        OutMargin outMargin = textArt.outMargin();
+        LeftRightTopBottom outMargin = textArt.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 56);
         Assert.assertEquals(outMargin.right().intValue(), 56);
@@ -182,7 +186,7 @@ public class SimpleTextArt {
         Caption caption = textArt.caption();
         Assert.assertNull(caption);
 
-        ShapeComment shapeComment = textArt.shapeComment();
+        HasOnlyText shapeComment = textArt.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "글맵시입니다.");
     }

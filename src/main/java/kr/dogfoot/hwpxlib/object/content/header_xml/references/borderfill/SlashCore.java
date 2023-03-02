@@ -1,12 +1,14 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SlashType;
 
 /**
  * 대각선 정보
  */
-public abstract class SlashCore<ChildType> extends HWPXObject {
+public class SlashCore extends HWPXObject {
+    private final ObjectType _objectType;
     /**
      * 모먕
      */
@@ -20,6 +22,16 @@ public abstract class SlashCore<ChildType> extends HWPXObject {
      */
     private Boolean isCounter;
 
+    public SlashCore(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
+
+
     public SlashType type() {
         return type;
     }
@@ -28,9 +40,9 @@ public abstract class SlashCore<ChildType> extends HWPXObject {
         this.type = type;
     }
 
-    public ChildType typeAnd(SlashType type) {
+    public SlashCore typeAnd(SlashType type) {
         this.type = type;
-        return (ChildType) this;
+        return this;
     }
 
     public Boolean Crooked() {
@@ -41,9 +53,9 @@ public abstract class SlashCore<ChildType> extends HWPXObject {
         this.Crooked = Crooked;
     }
 
-    public ChildType CrookedAnd(Boolean Crooked) {
+    public SlashCore CrookedAnd(Boolean Crooked) {
         this.Crooked = Crooked;
-        return (ChildType) this;
+        return this;
     }
 
     public Boolean isCounter() {
@@ -54,8 +66,8 @@ public abstract class SlashCore<ChildType> extends HWPXObject {
         this.isCounter = isCounter;
     }
 
-    public ChildType isCounterAnd(Boolean isCounter) {
+    public SlashCore isCounterAnd(Boolean isCounter) {
         this.isCounter = isCounter;
-        return (ChildType) this;
+        return this;
     }
 }

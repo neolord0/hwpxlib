@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
+import kr.dogfoot.hwpxlib.object.common.baseobject.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.GradationType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Color;
@@ -12,8 +12,12 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Ellipse;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.Caption;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -38,17 +42,17 @@ public class SimpleEllipse {
         Assert.assertEquals(ellipse.hasArcPr().booleanValue(), false);
         Assert.assertEquals(ellipse.arcType(), ArcType.NORMAL);
 
-        Offset offset = ellipse.offset();
+        XAndY offset = ellipse.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 0);
         Assert.assertEquals(offset.y().intValue(), 0);
 
-        OriginalSize orgSZ = ellipse.orgSz();
+        WidthAndHeight orgSZ = ellipse.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 27950);
         Assert.assertEquals(orgSZ.height().intValue(), 15150);
 
-        CurrentSize curSz = ellipse.curSz();
+        WidthAndHeight curSz = ellipse.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 0);
         Assert.assertEquals(curSz.height().intValue(), 0);
@@ -199,7 +203,7 @@ public class SimpleEllipse {
         Assert.assertEquals(pos.vertOffset().intValue(), 12425);
         Assert.assertEquals(pos.horzOffset().intValue(), 17214);
 
-        OutMargin outMargin = ellipse.outMargin();
+        LeftRightTopBottom outMargin = ellipse.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 283);
         Assert.assertEquals(outMargin.right().intValue(), 566);
@@ -209,7 +213,7 @@ public class SimpleEllipse {
         Caption caption = ellipse.caption();
         Assert.assertNull(caption);
 
-        ShapeComment shapeComment = ellipse.shapeComment();
+        HasOnlyText shapeComment = ellipse.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "타원입니다.");
     }

@@ -31,15 +31,15 @@ public class HistoryEntry extends SwitchableObject {
     /**
      * 패키지의 변경 이력 정보
      */
-    private PackageDiff packageDiff;
+    private FilePartDiff packageDiff;
     /**
      * 헤더의 변경 이력 정보
      */
-    private HeadDiff headDiff;
+    private FilePartDiff headDiff;
     /**
      * 본문의 변경 이력 정보
      */
-    private BodyDiff bodyDiff;
+    private FilePartDiff bodyDiff;
 
     public HistoryEntry() {
     }
@@ -127,36 +127,36 @@ public class HistoryEntry extends SwitchableObject {
         return this;
     }
 
-    public PackageDiff packageDiff() {
+    public FilePartDiff packageDiff() {
         return packageDiff;
     }
 
     public void createPackageDiff() {
-        packageDiff = new PackageDiff();
+        packageDiff = new FilePartDiff(ObjectType.hhs_packageDiff);
     }
 
     public void removePackageDiff() {
         packageDiff = null;
     }
 
-    public HeadDiff headDiff() {
+    public FilePartDiff headDiff() {
         return headDiff;
     }
 
     public void createHeadDiff() {
-        headDiff = new HeadDiff();
+        headDiff = new FilePartDiff(ObjectType.hhs_headDiff);
     }
 
     public void removeHeadDiff() {
         headDiff = null;
     }
 
-    public BodyDiff bodyDiff() {
+    public FilePartDiff bodyDiff() {
         return bodyDiff;
     }
 
     public void createBodyDiff() {
-        bodyDiff = new BodyDiff();
+        bodyDiff = new FilePartDiff(ObjectType.hhs_bodyDiff);
     }
 
     public void removeBodyDiff() {

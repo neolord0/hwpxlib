@@ -9,8 +9,8 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineWidth;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SlashType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.BorderFill;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.BackSlash;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.LeftBorder;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Border;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.SlashCore;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -41,7 +41,7 @@ public class TestSwitch {
 				{
 					HWPXObject object = caseObject.getChild(0);
 					Assert.assertEquals(object._objectType(), ObjectType.hh_backSlash);
-					BackSlash backSlash = (BackSlash) object;
+					SlashCore backSlash = (SlashCore) object;
 					Assert.assertEquals(backSlash.type(), SlashType.NONE);
 					Assert.assertEquals(backSlash.Crooked().booleanValue(), false);
 					Assert.assertEquals(backSlash.isCounter().booleanValue(), true);
@@ -50,7 +50,7 @@ public class TestSwitch {
 				{
 					HWPXObject object = caseObject.getChild(1);
 					Assert.assertEquals(object._objectType(), ObjectType.hh_leftBorder);
-					LeftBorder leftBorder = (LeftBorder) object;
+					Border leftBorder = (Border) object;
 					Assert.assertEquals(leftBorder.type(), LineType2.NONE);
 					Assert.assertEquals(leftBorder.width(), LineWidth.MM_0_1);
 					Assert.assertEquals(leftBorder.color(), "#000001");
@@ -66,7 +66,7 @@ public class TestSwitch {
 				{
 					HWPXObject object = caseObject.getChild(0);
 					Assert.assertEquals(object._objectType(), ObjectType.hh_backSlash);
-					BackSlash backSlash = (BackSlash) object;
+					SlashCore backSlash = (SlashCore) object;
 					Assert.assertEquals(backSlash.type(), SlashType.NONE);
 					Assert.assertEquals(backSlash.Crooked().booleanValue(), true);
 					Assert.assertEquals(backSlash.isCounter().booleanValue(), false);
@@ -75,7 +75,7 @@ public class TestSwitch {
 				{
 					HWPXObject object = caseObject.getChild(1);
 					Assert.assertEquals(object._objectType(), ObjectType.hh_leftBorder);
-					LeftBorder leftBorder = (LeftBorder) object;
+					Border leftBorder = (Border) object;
 					Assert.assertEquals(leftBorder.type(), LineType2.NONE);
 					Assert.assertEquals(leftBorder.width(), LineWidth.MM_0_2);
 					Assert.assertEquals(leftBorder.color(), "#000002");
@@ -89,7 +89,7 @@ public class TestSwitch {
 				{
 					HWPXObject object = defaultObject.getChild(0);
 					Assert.assertEquals(object._objectType(), ObjectType.hh_backSlash);
-					BackSlash backSlash = (BackSlash) object;
+					SlashCore backSlash = (SlashCore) object;
 					Assert.assertEquals(backSlash.type(), SlashType.NONE);
 					Assert.assertEquals(backSlash.Crooked().booleanValue(), true);
 					Assert.assertEquals(backSlash.isCounter().booleanValue(), true);
@@ -98,7 +98,7 @@ public class TestSwitch {
 				{
 					HWPXObject object = defaultObject.getChild(1);
 					Assert.assertEquals(object._objectType(), ObjectType.hh_leftBorder);
-					LeftBorder leftBorder = (LeftBorder) object;
+					Border leftBorder = (Border) object;
 					Assert.assertEquals(leftBorder.type(), LineType2.NONE);
 					Assert.assertEquals(leftBorder.width(), LineWidth.MM_0_3);
 					Assert.assertEquals(leftBorder.color(), "#000003");

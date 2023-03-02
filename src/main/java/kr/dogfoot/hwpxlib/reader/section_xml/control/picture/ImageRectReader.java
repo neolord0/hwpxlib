@@ -8,7 +8,6 @@ import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageRect;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import org.xml.sax.Attributes;
 
 public class ImageRectReader extends ElementReader {
@@ -66,13 +65,6 @@ public class ImageRectReader extends ElementReader {
                 return pt3;
         }
         return null;
-    }
-
-    private void point(Point pt, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
-                .xAndY(pt);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     @Override

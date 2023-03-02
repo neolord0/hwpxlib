@@ -3,8 +3,10 @@ package kr.dogfoot.hwpxlib.reader.versionlog_xml;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.dochistory.*;
+import kr.dogfoot.hwpxlib.object.dochistory.FilePartDiff;
+import kr.dogfoot.hwpxlib.object.dochistory.HistoryEntry;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
@@ -68,15 +70,15 @@ public class HistoryEntryReader extends ElementReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hhs_packageDiff:
-                PackageDiff packageDiff = new PackageDiff();
+                FilePartDiff packageDiff = new FilePartDiff(ObjectType.hhs_packageDiff);
                 filePartDiff(packageDiff, name, attrs);
                 return packageDiff;
             case ElementNames.hhs_headDiff:
-                HeadDiff headDiff = new HeadDiff();
+                FilePartDiff headDiff = new FilePartDiff(ObjectType.hhs_headDiff);
                 filePartDiff(headDiff, name, attrs);
                 return headDiff;
             case ElementNames.hhs_bodyDiff:
-                BodyDiff bodyDiff = new BodyDiff();
+                FilePartDiff bodyDiff = new FilePartDiff(ObjectType.hhs_bodyDiff);
                 filePartDiff(bodyDiff, name, attrs);
                 return bodyDiff;
         }

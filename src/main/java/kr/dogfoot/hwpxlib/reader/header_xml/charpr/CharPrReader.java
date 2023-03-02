@@ -3,7 +3,9 @@ package kr.dogfoot.hwpxlib.reader.header_xml.charpr;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.NoAttributeNoChild;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SymMarkSort;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.CharPr;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr.*;
@@ -55,23 +57,23 @@ public class CharPrReader extends ElementReader {
         switch (name) {
             case ElementNames.hh_fontRef:
                 charPr.createFontRef();
-                fontRef(charPr.fontRef(), name, attrs);
+                stringValuesByLanguage(charPr.fontRef(), name, attrs);
                 break;
             case ElementNames.hh_ratio:
                 charPr.createRatio();
-                ratio(charPr.ratio(), name, attrs);
+                shortValuesByLanguage(charPr.ratio(), name, attrs);
                 break;
             case ElementNames.hh_spacing:
                 charPr.createSpacing();
-                spacing(charPr.spacing(), name, attrs);
+                shortValuesByLanguage(charPr.spacing(), name, attrs);
                 break;
             case ElementNames.hh_relSz:
                 charPr.createRelSz();
-                relSz(charPr.relSz(), name, attrs);
+                shortValuesByLanguage(charPr.relSz(), name, attrs);
                 break;
             case ElementNames.hh_offset:
                 charPr.createOffset();
-                offset(charPr.offset(), name, attrs);
+                shortValuesByLanguage(charPr.offset(), name, attrs);
                 break;
             case ElementNames.hh_bold:
                 charPr.createBold();
@@ -120,31 +122,31 @@ public class CharPrReader extends ElementReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hh_fontRef:
-                FontRef fontRef = new FontRef();
-                fontRef(fontRef, name, attrs);
+                ValuesByLanguage<String> fontRef = new ValuesByLanguage<String>(ObjectType.hh_fontRef);
+                stringValuesByLanguage(fontRef, name, attrs);
                 return fontRef;
             case ElementNames.hh_ratio:
-                Ratio ratio = new Ratio();
-                ratio(ratio, name, attrs);
+                ValuesByLanguage<Short> ratio = new ValuesByLanguage<Short>(ObjectType.hh_ratio);
+                shortValuesByLanguage(ratio, name, attrs);
                 return ratio;
             case ElementNames.hh_spacing:
-                Spacing spacing = new Spacing();
-                spacing(spacing, name, attrs);
+                ValuesByLanguage<Short> spacing = new ValuesByLanguage<Short>(ObjectType.hh_spacing);
+                shortValuesByLanguage(spacing, name, attrs);
                 return spacing;
             case ElementNames.hh_relSz:
-                RelSz relSz = new RelSz();
-                relSz(relSz, name, attrs);
+                ValuesByLanguage<Short> relSz = new ValuesByLanguage<Short>(ObjectType.hh_relSz);
+                shortValuesByLanguage(relSz, name, attrs);
                 return relSz;
             case ElementNames.hh_offset:
-                CharOffset offset = new CharOffset();
-                offset(offset, name, attrs);
+                ValuesByLanguage<Short> offset = new ValuesByLanguage<Short>(ObjectType.hh_offset);
+                shortValuesByLanguage(offset, name, attrs);
                 return offset;
             case ElementNames.hh_bold:
-                Bold bold = new Bold();
+                NoAttributeNoChild bold = new NoAttributeNoChild(ObjectType.hh_bold);
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return bold;
             case ElementNames.hh_italic:
-                Italic italic = new Italic();
+                NoAttributeNoChild italic = new NoAttributeNoChild(ObjectType.hh_italic);
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return italic;
             case ElementNames.hh_underline:
@@ -164,19 +166,19 @@ public class CharPrReader extends ElementReader {
                 shadow(shadow, name, attrs);
                 return shadow;
             case ElementNames.hh_emboss:
-                Emboss emboss = new Emboss();
+                NoAttributeNoChild emboss = new NoAttributeNoChild(ObjectType.hh_emboss);
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return emboss;
             case ElementNames.hh_engrave:
-                Engrave engrave = new Engrave();
+                NoAttributeNoChild engrave = new NoAttributeNoChild(ObjectType.hh_engrave);
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return engrave;
             case ElementNames.hh_supscript:
-                Supscript supscript = new Supscript();
+                NoAttributeNoChild supscript = new NoAttributeNoChild(ObjectType.hh_supscript);
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return supscript;
             case ElementNames.hh_subscript:
-                Subscript subscript = new Subscript();
+                NoAttributeNoChild subscript = new NoAttributeNoChild(ObjectType.hh_subscript);
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return subscript;
         }
@@ -184,38 +186,16 @@ public class CharPrReader extends ElementReader {
     }
 
 
-    private void fontRef(FontRef fontRef, String name, Attributes attrs) {
+    private void stringValuesByLanguage(ValuesByLanguage<String> stringValuesByLanguage, String name, Attributes attrs) {
         ((StringValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.StringValuesByLanguageReader))
-                .stringValuesByLanguage(fontRef);
+                .stringValuesByLanguage(stringValuesByLanguage);
 
         xmlFileReader().startElement(name, attrs);
     }
 
-    private void ratio(Ratio ratio, String name, Attributes attrs) {
+    private void shortValuesByLanguage(ValuesByLanguage<Short> shortValuesByLanguage, String name, Attributes attrs) {
         ((ShortValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShortValuesByLanguageReader))
-                .shortValuesByLanguage(ratio);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-
-    private void relSz(RelSz relSz, String name, Attributes attrs) {
-        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShortValuesByLanguageReader))
-                .shortValuesByLanguage(relSz);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void spacing(Spacing spacing, String name, Attributes attrs) {
-        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShortValuesByLanguageReader))
-                .shortValuesByLanguage(spacing);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void offset(CharOffset offset, String name, Attributes attrs) {
-        ((ShortValuesByLanguageReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ShortValuesByLanguageReader))
-                .shortValuesByLanguage(offset);
+                .shortValuesByLanguage(shortValuesByLanguage);
 
         xmlFileReader().startElement(name, attrs);
     }

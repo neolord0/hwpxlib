@@ -3,15 +3,15 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.OLEDrawAspect;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.OLEObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.OLE;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ole.Extent;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.LineShapeReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent.ShapeComponentReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
@@ -63,7 +63,7 @@ public class OLEReader extends ShapeComponentReader {
         switch (name) {
             case ElementNames.hc_extent:
                 ole.createExtent();
-                extent(ole.extent(), name, attrs);
+                xAndY(ole.extent(), name, attrs);
                 break;
             case ElementNames.hp_lineShape:
                 ole.createLineShape();
@@ -79,8 +79,8 @@ public class OLEReader extends ShapeComponentReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hc_extent:
-                Extent extent = new Extent();
-                extent(extent, name, attrs);
+                XAndY extent = new XAndY(ObjectType.hc_extent);
+                xAndY(extent, name, attrs);
                 return extent;
             case ElementNames.hp_lineShape:
                 LineShape lineShape = new LineShape();
@@ -89,13 +89,6 @@ public class OLEReader extends ShapeComponentReader {
         }
 
         return super.childElementInSwitch(name, attrs);
-    }
-
-    private void extent(Extent extent, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
-                .xAndY(extent);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     private void lineShape(LineShape lineShape, String name, Attributes attrs) {

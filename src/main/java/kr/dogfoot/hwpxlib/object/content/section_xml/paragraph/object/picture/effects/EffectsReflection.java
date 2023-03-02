@@ -2,6 +2,8 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.e
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.StartAndEndFloat;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndYFloat;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.AlignStyleType;
 
 /**
@@ -35,19 +37,19 @@ public class EffectsReflection extends SwitchableObject {
     /**
      * 기울기
      */
-    private Skew skew;
+    private XAndYFloat skew;
     /**
      * 확대/축소 비율
      */
-    private Scale scale;
+    private XAndYFloat scale;
     /**
      * 투명도
      */
-    private Alpha alpha;
+    private StartAndEndFloat alpha;
     /**
      * 위치
      */
-    private Position pos;
+    private StartAndEndFloat pos;
 
     public EffectsReflection() {
     }
@@ -135,48 +137,48 @@ public class EffectsReflection extends SwitchableObject {
         return this;
     }
 
-    public Skew skew() {
+    public XAndYFloat skew() {
         return skew;
     }
 
     public void createSkew() {
-        skew = new Skew();
+        skew = new XAndYFloat(ObjectType.hp_skew);
     }
 
     public void removeSkew() {
         skew = null;
     }
 
-    public Scale scale() {
+    public XAndYFloat scale() {
         return scale;
     }
 
     public void createScale() {
-        scale = new Scale();
+        scale = new XAndYFloat(ObjectType.hp_scale);
     }
 
     public void removeScale() {
         scale = null;
     }
 
-    public Alpha alpha() {
+    public StartAndEndFloat alpha() {
         return alpha;
     }
 
     public void createAlpha() {
-        alpha = new Alpha();
+        alpha = new StartAndEndFloat(ObjectType.hp_alpha);
     }
 
     public void removeAlpha() {
         alpha = null;
     }
 
-    public Position pos() {
+    public StartAndEndFloat pos() {
         return pos;
     }
 
     public void createPos() {
-        pos = new Position();
+        pos = new StartAndEndFloat(ObjectType.hp_pos);
     }
 
     public void removePos() {

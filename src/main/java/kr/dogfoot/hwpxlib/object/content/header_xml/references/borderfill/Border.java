@@ -1,13 +1,16 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineWidth;
 
 /**
  * 테두리 정보
  */
-public abstract class Border<ChildType> extends HWPXObject {
+public class Border extends HWPXObject {
+    private final ObjectType _objectType;
+
     /**
      * 선 종류
      */
@@ -21,6 +24,15 @@ public abstract class Border<ChildType> extends HWPXObject {
      */
     private String color;
 
+    public Border(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
+
     public LineType2 type() {
         return type;
     }
@@ -29,9 +41,9 @@ public abstract class Border<ChildType> extends HWPXObject {
         this.type = type;
     }
 
-    public ChildType typeAnd(LineType2 type) {
+    public Border typeAnd(LineType2 type) {
         this.type = type;
-        return (ChildType) this;
+        return this;
     }
 
     public LineWidth width() {
@@ -42,9 +54,9 @@ public abstract class Border<ChildType> extends HWPXObject {
         this.width = width;
     }
 
-    public ChildType widthAnd(LineWidth width) {
+    public Border widthAnd(LineWidth width) {
         this.width = width;
-        return (ChildType) this;
+        return this;
     }
 
     public String color() {
@@ -55,8 +67,8 @@ public abstract class Border<ChildType> extends HWPXObject {
         this.color = color;
     }
 
-    public ChildType colorAnd(String color) {
+    public Border colorAnd(String color) {
         this.color = color;
-        return (ChildType) this;
+        return this;
     }
 }

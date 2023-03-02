@@ -1,8 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.EquationLineMode;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.equation.Script;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 
 /**
@@ -36,7 +36,7 @@ public class Equation extends ShapeObject<Equation> {
     /**
      * 수식 내용
      */
-    private Script script;
+    private HasOnlyText script;
 
     public Equation() {
     }
@@ -124,12 +124,12 @@ public class Equation extends ShapeObject<Equation> {
         return this;
     }
 
-    public Script script() {
+    public HasOnlyText script() {
         return script;
     }
 
     public void createScript() {
-        script = new Script();
+        script = new HasOnlyText(ObjectType.hp_script);
     }
 
     public void removeScript() {

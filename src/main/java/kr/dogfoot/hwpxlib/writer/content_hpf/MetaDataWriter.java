@@ -3,10 +3,9 @@ package kr.dogfoot.hwpxlib.writer.content_hpf;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.content.context_hpf.Language;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.Meta;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.MetaData;
-import kr.dogfoot.hwpxlib.object.content.context_hpf.Title;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
@@ -59,10 +58,10 @@ public class MetaDataWriter extends ElementWriter {
     protected void childInSwitch(HWPXObject child) {
         switch (child._objectType()) {
             case opf_title:
-                hasOnlyTextElement(ElementNames.opf_title, (Title) child);
+                hasOnlyTextElement(ElementNames.opf_title, (HasOnlyText) child);
                 break;
             case opf_language:
-                hasOnlyTextElement(ElementNames.opf_language, (Language) child);
+                hasOnlyTextElement(ElementNames.opf_language, (HasOnlyText) child);
                 break;
             case opf_meta:
                 meta((Meta) child);

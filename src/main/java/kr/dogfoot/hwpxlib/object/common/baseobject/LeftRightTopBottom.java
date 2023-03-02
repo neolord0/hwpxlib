@@ -1,12 +1,23 @@
 package kr.dogfoot.hwpxlib.object.common.baseobject;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
-public abstract class LeftRightTopBottom<ChildType> extends HWPXObject {
+public class LeftRightTopBottom extends HWPXObject {
+    private final ObjectType _objectType;
     private Long left;
     private Long right;
     private Long top;
     private Long bottom;
+
+    public LeftRightTopBottom(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
 
     public Long left() {
         return left;
@@ -16,9 +27,9 @@ public abstract class LeftRightTopBottom<ChildType> extends HWPXObject {
         this.left = left;
     }
 
-    public ChildType leftAnd(Long left) {
+    public LeftRightTopBottom leftAnd(Long left) {
         this.left = left;
-        return (ChildType) this;
+        return this;
     }
 
     public Long right() {
@@ -29,9 +40,9 @@ public abstract class LeftRightTopBottom<ChildType> extends HWPXObject {
         this.right = right;
     }
 
-    public ChildType rightAnd(Long right) {
+    public LeftRightTopBottom rightAnd(Long right) {
         this.right = right;
-        return (ChildType) this;
+        return this;
     }
 
     public Long top() {
@@ -42,9 +53,9 @@ public abstract class LeftRightTopBottom<ChildType> extends HWPXObject {
         this.top = top;
     }
 
-    public ChildType topAnd(Long top) {
+    public LeftRightTopBottom topAnd(Long top) {
         this.top = top;
-        return (ChildType) this;
+        return this;
     }
 
     public Long bottom() {
@@ -55,8 +66,8 @@ public abstract class LeftRightTopBottom<ChildType> extends HWPXObject {
         this.bottom = bottom;
     }
 
-    public ChildType bottomAnd(Long bottom) {
+    public LeftRightTopBottom bottomAnd(Long bottom) {
         this.bottom = bottom;
-        return (ChildType) this;
+        return this;
     }
 }

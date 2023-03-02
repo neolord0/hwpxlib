@@ -2,6 +2,8 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 
 /**
@@ -47,11 +49,11 @@ public class Tc extends SwitchableObject {
     /**
      * 크기
      */
-    private CellSize cellSz;
+    private WidthAndHeight cellSz;
     /**
      * 여백
      */
-    private CellMargin cellMargin;
+    private LeftRightTopBottom cellMargin;
     /**
      * 내부 문단 리스트
      */
@@ -180,24 +182,24 @@ public class Tc extends SwitchableObject {
         cellSpan = null;
     }
 
-    public CellSize cellSz() {
+    public WidthAndHeight cellSz() {
         return cellSz;
     }
 
     public void createCellSz() {
-        cellSz = new CellSize();
+        cellSz = new WidthAndHeight(ObjectType.hp_cellSz);
     }
 
     public void removeCellSz() {
         cellSz = null;
     }
 
-    public CellMargin cellMargin() {
+    public LeftRightTopBottom cellMargin() {
         return cellMargin;
     }
 
     public void createCellMargin() {
-        cellMargin = new CellMargin();
+        cellMargin = new LeftRightTopBottom(ObjectType.hp_cellMargin);
     }
 
     public void removeCellMargin() {

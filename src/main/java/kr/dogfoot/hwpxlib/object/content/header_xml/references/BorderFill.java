@@ -3,7 +3,9 @@ package kr.dogfoot.hwpxlib.object.content.header_xml.references;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.CenterLineSort;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.*;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Border;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.SlashCore;
 
 /**
  * BorderFill
@@ -32,31 +34,31 @@ public class BorderFill extends SwitchableObject {
     /**
      * 대각선 정보
      */
-    private Slash slash;
+    private SlashCore slash;
     /**
      * 역방향 대각선 정보
      */
-    private BackSlash backSlash;
+    private SlashCore backSlash;
     /**
      * 왼쪽 테두리
      */
-    private LeftBorder leftBorder;
+    private Border leftBorder;
     /**
      * 오른쪽 테두리
      */
-    private RightBorder rightBorder;
+    private Border rightBorder;
     /**
      * 위쪽 테두리
      */
-    private TopBorder topBorder;
+    private Border topBorder;
     /**
      * 아래쪽 테두리
      */
-    private BottomBorder bottomBorder;
+    private Border bottomBorder;
     /**
      * 대각선
      */
-    private DiagonalBorder diagonal;
+    private Border diagonal;
     /**
      * 채우기 정보
      */
@@ -135,84 +137,84 @@ public class BorderFill extends SwitchableObject {
         return this;
     }
 
-    public Slash slash() {
+    public SlashCore slash() {
         return slash;
     }
 
     public void createSlash() {
-        slash = new Slash();
+        slash = new SlashCore(ObjectType.hh_slash);
     }
 
     public void removeSlash() {
         slash = null;
     }
 
-    public BackSlash backSlash() {
+    public SlashCore backSlash() {
         return backSlash;
     }
 
     public void createBackSlash() {
-        backSlash = new BackSlash();
+        backSlash = new SlashCore(ObjectType.hh_backSlash);
     }
 
     public void removeBackSlash() {
         backSlash = null;
     }
 
-    public LeftBorder leftBorder() {
+    public Border leftBorder() {
         return leftBorder;
     }
 
     public void createLeftBorder() {
-        leftBorder = new LeftBorder();
+        leftBorder = new Border(ObjectType.hh_leftBorder);
     }
 
     public void removeLeftBorder() {
         leftBorder = null;
     }
 
-    public RightBorder rightBorder() {
+    public Border rightBorder() {
         return rightBorder;
     }
 
     public void createRightBorder() {
-        rightBorder = new RightBorder();
+        rightBorder = new Border(ObjectType.hh_rightBorder);
     }
 
     public void removeRightBorder() {
         rightBorder = null;
     }
 
-    public TopBorder topBorder() {
+    public Border topBorder() {
         return topBorder;
     }
 
     public void createTopBorder() {
-        topBorder = new TopBorder();
+        topBorder = new Border(ObjectType.hh_topBorder);
     }
 
     public void removeTopBorder() {
         topBorder = null;
     }
 
-    public BottomBorder bottomBorder() {
+    public Border bottomBorder() {
         return bottomBorder;
     }
 
     public void createBottomBorder() {
-        bottomBorder = new BottomBorder();
+        bottomBorder = new Border(ObjectType.hh_bottomBorder);
     }
 
     public void removeBottomBorder() {
         bottomBorder = null;
     }
 
-    public DiagonalBorder diagonal() {
+    public Border diagonal() {
         return diagonal;
     }
 
     public void createDiagonal() {
-        diagonal = new DiagonalBorder();
+        diagonal = new Border(ObjectType.hh_diagonal);
     }
 
     public void removeDiagonal() {

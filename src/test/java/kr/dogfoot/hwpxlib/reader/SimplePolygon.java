@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
+import kr.dogfoot.hwpxlib.object.common.baseobject.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ImageBrushMode;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ImageEffect;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
@@ -10,8 +10,12 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.ImgBru
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Polygon;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.Caption;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -32,17 +36,17 @@ public class SimplePolygon {
         Assert.assertEquals(polygon.groupLevel().shortValue(), 0);
         Assert.assertEquals(polygon.instid(), "69526532");
 
-        Offset offset = polygon.offset();
+        XAndY offset = polygon.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 2218);
         Assert.assertEquals(offset.y().intValue(), 4191);
 
-        OriginalSize orgSZ = polygon.orgSz();
+        WidthAndHeight orgSZ = polygon.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 17925);
         Assert.assertEquals(orgSZ.height().intValue(), 13425);
 
-        CurrentSize curSz = polygon.curSz();
+        WidthAndHeight curSz = polygon.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 0);
         Assert.assertEquals(curSz.height().intValue(), 13424);
@@ -163,7 +167,7 @@ public class SimplePolygon {
         Assert.assertEquals(pos.vertOffset().intValue(), 18025);
         Assert.assertEquals(pos.horzOffset().intValue(), 12814);
 
-        OutMargin outMargin = polygon.outMargin();
+        LeftRightTopBottom outMargin = polygon.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 0);
         Assert.assertEquals(outMargin.right().intValue(), 0);
@@ -173,7 +177,7 @@ public class SimplePolygon {
         Caption caption = polygon.caption();
         Assert.assertNull(caption);
 
-        ShapeComment shapeComment = polygon.shapeComment();
+        HasOnlyText shapeComment = polygon.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "다각형입니다.");
     }

@@ -1,13 +1,13 @@
 package kr.dogfoot.hwpxlib.object.root;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TargetApplicationSort;
 
 /**
  * /version.xml 파일
  */
-public class VersionXMLFile extends XMLFile {
+public class VersionXMLFile extends SwitchableObject {
     private TargetApplicationSort targetApplication;
     /**
      * 버전

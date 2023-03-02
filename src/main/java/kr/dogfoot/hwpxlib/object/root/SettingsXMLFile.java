@@ -2,12 +2,12 @@ package kr.dogfoot.hwpxlib.object.root;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 /**
  * /settings.xml 파일
  */
-public class SettingsXMLFile extends XMLFile {
+public class SettingsXMLFile extends SwitchableObject {
     /**
      * 캐럿 위치
      */

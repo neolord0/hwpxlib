@@ -3,18 +3,17 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Picture;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageClip;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageDim;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.ImageRect;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.Effects;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.InMargin;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.borderfill.ImageReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.ImageDimReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.picture.ImageRectReader;
@@ -66,11 +65,11 @@ public class PictureReader extends ShapeComponentReader {
                 break;
             case ElementNames.hp_imgClip:
                 picture.createImgClip();
-                imgClip(picture.imgClip(), name, attrs);
+                leftRightTopBottom(picture.imgClip(), name, attrs);
                 break;
             case ElementNames.hp_inMargin:
                 picture.createInMargin();
-                inMargin(picture.inMargin(), name, attrs);
+                leftRightTopBottom(picture.inMargin(), name, attrs);
                 break;
             case ElementNames.hp_imgDim:
                 picture.createImgDim();
@@ -102,12 +101,12 @@ public class PictureReader extends ShapeComponentReader {
                 imgRect(imageRect, name, attrs);
                 return imageRect;
             case ElementNames.hp_imgClip:
-                ImageClip imageClip = new ImageClip();
-                imgClip(imageClip, name, attrs);
+                LeftRightTopBottom imageClip = new LeftRightTopBottom(ObjectType.hp_imgClip);
+                leftRightTopBottom(imageClip, name, attrs);
                 return imageClip;
             case ElementNames.hp_inMargin:
-                InMargin inMargin = new InMargin();
-                inMargin(inMargin, name, attrs);
+                LeftRightTopBottom inMargin = new LeftRightTopBottom(ObjectType.hp_inMargin);
+                leftRightTopBottom(inMargin, name, attrs);
                 return inMargin;
             case ElementNames.hp_imgDim:
                 ImageDim imageDim = new ImageDim();
@@ -137,20 +136,6 @@ public class PictureReader extends ShapeComponentReader {
     private void imgRect(ImageRect imgRect, String name, Attributes attrs) {
         ((ImageRectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ImageRect))
                 .imgRect(imgRect);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void imgClip(ImageClip imgClip, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
-                .leftRightTopBottom(imgClip);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void inMargin(InMargin inMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
-                .leftRightTopBottom(inMargin);
 
         xmlFileReader().startElement(name, attrs);
     }

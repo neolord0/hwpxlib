@@ -4,7 +4,6 @@ import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.AutoNumNewNumType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.AutoNumFormat;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
@@ -32,7 +31,7 @@ public class AutoNumNewNumReader extends ElementReader {
                 autoNumNewNum.num(ValueConvertor.toInteger(value));
                 break;
             case AttributeNames.numType:
-                autoNumNewNum.numType(NumType.fromString(value));
+                autoNumNewNum.numType(kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType.fromString(value));
                 break;
         }
     }

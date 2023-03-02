@@ -1,11 +1,10 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Equation;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.equation.Script;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
@@ -53,18 +52,18 @@ public class SimpleEquation {
         Assert.assertEquals(pos.vertOffset().intValue(), 0);
         Assert.assertEquals(pos.horzOffset().intValue(), 0);
 
-        OutMargin outMargin = equation.outMargin();
+        LeftRightTopBottom outMargin = equation.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 56);
         Assert.assertEquals(outMargin.right().intValue(), 56);
         Assert.assertEquals(outMargin.top().intValue(), 0);
         Assert.assertEquals(outMargin.bottom().intValue(), 0);
 
-        ShapeComment shapeComment = equation.shapeComment();
+        HasOnlyText shapeComment = equation.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "수식입니다.");
 
-        Script script = equation.script();
+        HasOnlyText script = equation.script();
         Assert.assertNotNull(script);
         Assert.assertEquals(script.text(), "{\"123\"} over {123 sqrt {3466}} sum _{34} ^{12}");
     }

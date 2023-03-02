@@ -4,7 +4,6 @@ import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
-import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.header_xml.ForbiddenWord;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
@@ -34,18 +33,25 @@ public class ForbiddenWordListWriter extends ElementWriter {
                 .attribute(AttributeNames.itemCnt, forbiddenWordList.count());
 
         for (ForbiddenWord forbiddenWord : forbiddenWordList.items()) {
-            hasOnlyTextElement(ElementNames.hh_forbiddenWord, forbiddenWord);
+            forbiddenWord(forbiddenWord);
         }
 
         xsb().closeElement();
         releaseMe();
     }
 
+    private void forbiddenWord(ForbiddenWord forbiddenWord) {
+        xsb()
+                .openElement(ElementNames.hh_forbiddenWord)
+                .text(forbiddenWord.text())
+                .closeElement();
+    }
+
     @Override
     protected void childInSwitch(HWPXObject child) {
         switch (child._objectType()) {
             case hh_forbiddenWord:
-                hasOnlyTextElement(ElementNames.hh_forbiddenWord, (HasOnlyText) child);
+                forbiddenWord((ForbiddenWord) child);
                 break;
         }
     }

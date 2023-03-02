@@ -6,15 +6,14 @@ import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TablePageBreak;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Table;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellZone;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.InMargin;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.ParameterSet;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
 import kr.dogfoot.hwpxlib.reader.common.parameter.ParameterListReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.table.CellzoneListReader;
@@ -74,7 +73,7 @@ public class TableReader extends ShapeObjectReader {
         switch (name) {
             case ElementNames.hp_inMargin:
                 table.createInMargin();
-                inMargin(table.inMargin(), name, attrs);
+                leftRightTopBottom(table.inMargin(), name, attrs);
                 break;
             case ElementNames.hp_cellzoneList:
                 table.createCellzoneList();
@@ -97,8 +96,8 @@ public class TableReader extends ShapeObjectReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hp_inMargin:
-                InMargin inMargin = new InMargin();
-                inMargin(inMargin, name, attrs);
+                LeftRightTopBottom inMargin = new LeftRightTopBottom(ObjectType.hp_inMargin);
+                leftRightTopBottom(inMargin, name, attrs);
                 return inMargin;
             case ElementNames.hp_cellzoneList:
                 ObjectList<CellZone> cellzoneList = new ObjectList<CellZone>(ObjectType.hp_cellzoneList, CellZone.class);
@@ -114,13 +113,6 @@ public class TableReader extends ShapeObjectReader {
                 return parameterSet;
         }
         return super.childElementInSwitch(name, attrs);
-    }
-
-    private void inMargin(InMargin inMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
-                .leftRightTopBottom(inMargin);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     private void cellzoneList(ObjectList<CellZone> cellzoneList, String name, Attributes attrs) {

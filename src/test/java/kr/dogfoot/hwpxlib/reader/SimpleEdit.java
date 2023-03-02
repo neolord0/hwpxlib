@@ -1,13 +1,12 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HorizontalAlign1;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Edit;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.edit.EditText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormCharPr;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
@@ -48,7 +47,7 @@ public class SimpleEdit {
         Assert.assertEquals(formCharPr.autoSz().booleanValue(), false);
         Assert.assertEquals(formCharPr.wordWrap().booleanValue(), false);
 
-        EditText text = edit.text();
+        HasOnlyText text = edit.text();
         Assert.assertNotNull(text);
         Assert.assertEquals(text.text(), "1234");
 
@@ -74,14 +73,14 @@ public class SimpleEdit {
         Assert.assertEquals(pos.vertOffset().longValue(), 0);
         Assert.assertEquals(pos.horzOffset().longValue(), 0);
 
-        OutMargin outMargin = edit.outMargin();
+        LeftRightTopBottom outMargin = edit.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().longValue(), 0);
         Assert.assertEquals(outMargin.right().longValue(), 0);
         Assert.assertEquals(outMargin.top().longValue(), 0);
         Assert.assertEquals(outMargin.bottom().longValue(), 0);
 
-        ShapeComment shapeComment = edit.shapeComment();
+        HasOnlyText shapeComment = edit.shapeComment();
         Assert.assertNull(shapeComment);
     }
 }

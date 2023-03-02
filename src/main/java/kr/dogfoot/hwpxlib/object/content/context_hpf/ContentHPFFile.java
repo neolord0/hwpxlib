@@ -2,9 +2,9 @@ package kr.dogfoot.hwpxlib.object.content.context_hpf;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
-public class ContentHPFFile extends XMLFile {
+public class ContentHPFFile extends SwitchableObject {
     private String version;
     private String uniqueIdentifier;
     private String id;

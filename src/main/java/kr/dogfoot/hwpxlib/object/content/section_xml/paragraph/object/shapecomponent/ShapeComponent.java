@@ -1,5 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent;
 
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 
 /**
@@ -21,15 +24,15 @@ public abstract class ShapeComponent<ChildType> extends ShapeObject<ChildType> {
     /**
      * 그룹 개체 안에 개별 개체의 위치
      */
-    private Offset offset;
+    private XAndY offset;
     /**
      * 생성시 크기
      */
-    private OriginalSize orgSz;
+    private WidthAndHeight orgSz;
     /**
      * 현재 크기
      */
-    private CurrentSize curSz;
+    private WidthAndHeight curSz;
     /**
      * 뒤집힌 상태
      */
@@ -51,9 +54,9 @@ public abstract class ShapeComponent<ChildType> extends ShapeObject<ChildType> {
         this.href = href;
     }
 
-    public ShapeComponent hrefAnd(String href) {
+    public ChildType hrefAnd(String href) {
         this.href = href;
-        return this;
+        return (ChildType) this;
     }
 
     public Short groupLevel() {
@@ -64,9 +67,9 @@ public abstract class ShapeComponent<ChildType> extends ShapeObject<ChildType> {
         this.groupLevel = groupLevel;
     }
 
-    public ShapeComponent groupLevelAnd(Short groupLevel) {
+    public ChildType groupLevelAnd(Short groupLevel) {
         this.groupLevel = groupLevel;
-        return this;
+        return (ChildType) this;
     }
 
     public String instid() {
@@ -77,41 +80,41 @@ public abstract class ShapeComponent<ChildType> extends ShapeObject<ChildType> {
         this.instid = instid;
     }
 
-    public ShapeComponent instidAnd(String instid) {
+    public ChildType instidAnd(String instid) {
         this.instid = instid;
-        return this;
+        return (ChildType) this;
     }
 
-    public Offset offset() {
+    public XAndY offset() {
         return offset;
     }
 
     public void createOffset() {
-        offset = new Offset();
+        offset = new XAndY(ObjectType.hp_offset_for_shapeComponent);
     }
 
     public void removeOffset() {
         offset = null;
     }
 
-    public OriginalSize orgSz() {
+    public WidthAndHeight orgSz() {
         return orgSz;
     }
 
     public void createOrgSz() {
-        orgSz = new OriginalSize();
+        orgSz = new WidthAndHeight(ObjectType.hp_orgSz);
     }
 
     public void removeOrgSz() {
         orgSz = null;
     }
 
-    public CurrentSize curSz() {
+    public WidthAndHeight curSz() {
         return curSz;
     }
 
     public void createCurSz() {
-        curSz = new CurrentSize();
+        curSz = new WidthAndHeight(ObjectType.hp_curSz);
     }
 
     public void removeCurSz() {

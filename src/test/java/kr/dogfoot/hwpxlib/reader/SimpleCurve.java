@@ -1,6 +1,10 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
@@ -9,9 +13,9 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Curve;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.curve.CurveSegment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
@@ -35,17 +39,17 @@ public class SimpleCurve {
         Assert.assertEquals(curve.groupLevel().intValue(), 0);
         Assert.assertEquals(curve.instid(), "69551806");
 
-        Offset offset = curve.offset();
+        XAndY offset = curve.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 0);
         Assert.assertEquals(offset.y().intValue(), 0);
 
-        OriginalSize orgSZ = curve.orgSz();
+        WidthAndHeight orgSZ = curve.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 16636);
         Assert.assertEquals(orgSZ.height().intValue(), 21360);
 
-        CurrentSize curSz = curve.curSz();
+        WidthAndHeight curSz = curve.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 0);
         Assert.assertEquals(curSz.height().intValue(), 0);
@@ -189,14 +193,14 @@ public class SimpleCurve {
         Assert.assertEquals(pos.vertOffset().intValue(), 12660);
         Assert.assertEquals(pos.horzOffset().intValue(), 18564);
 
-        OutMargin outMargin = curve.outMargin();
+        LeftRightTopBottom outMargin = curve.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 0);
         Assert.assertEquals(outMargin.right().intValue(), 0);
         Assert.assertEquals(outMargin.top().intValue(), 0);
         Assert.assertEquals(outMargin.bottom().intValue(), 0);
 
-        ShapeComment shapeComment = curve.shapeComment();
+        HasOnlyText shapeComment = curve.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "곡선입니다.");
     }

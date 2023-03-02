@@ -2,12 +2,12 @@ package kr.dogfoot.hwpxlib.object.content.header_xml;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 /**
  * /content/header_forTestSwitch.xml
  */
-public class HeaderXMLFile extends XMLFile {
+public class HeaderXMLFile extends SwitchableObject {
     /**
      * 버전
      */
@@ -16,7 +16,6 @@ public class HeaderXMLFile extends XMLFile {
      * 섹션 개수
      */
     private Short secCnt;
-
     private BeginNum beginNum;
     private RefList refList;
     private ObjectList<ForbiddenWord> forbiddenWordList;

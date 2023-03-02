@@ -2,13 +2,14 @@ package kr.dogfoot.hwpxlib.object.content.context_hpf;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 
 import java.util.ArrayList;
 
 
 public class MetaData extends SwitchableObject {
-    private Title title;
-    private Language language;
+    private HasOnlyText title;
+    private HasOnlyText language;
     private final ArrayList<Meta> metaList;
 
     public MetaData() {
@@ -20,24 +21,24 @@ public class MetaData extends SwitchableObject {
         return ObjectType.opf_metadata;
     }
 
-    public Title title() {
+    public HasOnlyText title() {
         return title;
     }
 
     public void createTitle() {
-        title = new Title();
+        title = new HasOnlyText(ObjectType.opf_title);
     }
 
     public void removeTitle() {
         title = null;
     }
 
-    public Language language() {
+    public HasOnlyText language() {
         return language;
     }
 
     public void createLanguage() {
-        language = new Language();
+        language = new HasOnlyText(ObjectType.opf_language);
     }
 
     public void removeLanguage() {

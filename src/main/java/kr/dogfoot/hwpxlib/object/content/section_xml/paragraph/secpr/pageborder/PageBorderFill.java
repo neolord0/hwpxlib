@@ -2,6 +2,7 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pageborder
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ApplyPageType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageBorderPositionCriterion;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.PageFillArea;
@@ -37,7 +38,7 @@ public class PageBorderFill extends SwitchableObject {
     /**
      * 테두리/배경 오프셋
      */
-    private PageBorderFillOffset offset;
+    private LeftRightTopBottom offset;
 
     public PageBorderFill() {
     }
@@ -125,12 +126,12 @@ public class PageBorderFill extends SwitchableObject {
         return this;
     }
 
-    public PageBorderFillOffset offset() {
+    public LeftRightTopBottom offset() {
         return offset;
     }
 
     public void createOffset() {
-        offset = new PageBorderFillOffset();
+        offset = new LeftRightTopBottom(ObjectType.hp_offset_for_pageBorderFill);
     }
 
     public void removeOffset() {

@@ -1,5 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject;
 
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DropCapStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumberingType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextFlowSide;
@@ -49,7 +52,7 @@ public abstract class ShapeObject<ChildType> extends RunItem {
     /**
      * 바깥 여백
      */
-    private OutMargin outMargin;
+    private LeftRightTopBottom outMargin;
     /**
      * 캡션
      */
@@ -57,7 +60,7 @@ public abstract class ShapeObject<ChildType> extends RunItem {
     /**
      * 설명문
      */
-    private ShapeComment shapeComment;
+    private HasOnlyText shapeComment;
 
     public String id() {
         return id;
@@ -174,12 +177,12 @@ public abstract class ShapeObject<ChildType> extends RunItem {
         pos = null;
     }
 
-    public OutMargin outMargin() {
+    public LeftRightTopBottom outMargin() {
         return outMargin;
     }
 
     public void createOutMargin() {
-        outMargin = new OutMargin();
+        outMargin = new LeftRightTopBottom(ObjectType.hp_outMargin);
     }
 
     public void removeOutMargin() {
@@ -198,12 +201,12 @@ public abstract class ShapeObject<ChildType> extends RunItem {
         caption = null;
     }
 
-    public ShapeComment shapeComment() {
+    public HasOnlyText shapeComment() {
         return shapeComment;
     }
 
     public void createShapeComment() {
-        shapeComment = new ShapeComment();
+        shapeComment = new HasOnlyText(ObjectType.hp_shapeComment);
     }
 
     public void removeShapeComment() {

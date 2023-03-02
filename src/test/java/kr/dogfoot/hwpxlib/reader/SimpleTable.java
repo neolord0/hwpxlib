@@ -1,13 +1,17 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Table;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellAddr;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellSpan;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tc;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tr;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -53,14 +57,14 @@ public class SimpleTable {
         Assert.assertEquals(pos.vertOffset().intValue(), 0);
         Assert.assertEquals(pos.horzOffset().intValue(), 0);
 
-        OutMargin outMargin = table.outMargin();
+        LeftRightTopBottom outMargin = table.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 283);
         Assert.assertEquals(outMargin.right().intValue(), 283);
         Assert.assertEquals(outMargin.top().intValue(), 283);
         Assert.assertEquals(outMargin.bottom().intValue(), 283);
 
-        InMargin inMargin = table.inMargin();
+        LeftRightTopBottom inMargin = table.inMargin();
         Assert.assertNotNull(inMargin);
         Assert.assertEquals(inMargin.left().intValue(), 510);
         Assert.assertEquals(inMargin.right().intValue(), 510);
@@ -105,12 +109,12 @@ public class SimpleTable {
                 Assert.assertEquals(cellSpan.colSpan().shortValue(), 2);
                 Assert.assertEquals(cellSpan.rowSpan().shortValue(), 2);
 
-                CellSize cellSz = tc.cellSz();
+                WidthAndHeight cellSz = tc.cellSz();
                 Assert.assertNotNull(cellSz);
                 Assert.assertEquals(cellSz.width().intValue(), 12688);
                 Assert.assertEquals(cellSz.height().intValue(), 5772);
 
-                CellMargin cellMargin = tc.cellMargin();
+                LeftRightTopBottom cellMargin = tc.cellMargin();
                 Assert.assertNotNull(cellMargin);
                 Assert.assertEquals(cellMargin.left().intValue(), 510);
                 Assert.assertEquals(cellMargin.right().intValue(), 510);
@@ -151,12 +155,12 @@ public class SimpleTable {
                 Assert.assertEquals(cellSpan.colSpan().shortValue(), 1);
                 Assert.assertEquals(cellSpan.rowSpan().shortValue(), 1);
 
-                CellSize cellSz = tc.cellSz();
+                WidthAndHeight cellSz = tc.cellSz();
                 Assert.assertNotNull(cellSz);
                 Assert.assertEquals(cellSz.width().intValue(), 6341);
                 Assert.assertEquals(cellSz.height().intValue(), 2886);
 
-                CellMargin cellMargin = tc.cellMargin();
+                LeftRightTopBottom cellMargin = tc.cellMargin();
                 Assert.assertNotNull(cellMargin);
                 Assert.assertEquals(cellMargin.left().intValue(), 510);
                 Assert.assertEquals(cellMargin.right().intValue(), 510);
@@ -202,12 +206,12 @@ public class SimpleTable {
                 Assert.assertEquals(cellSpan.colSpan().shortValue(), 1);
                 Assert.assertEquals(cellSpan.rowSpan().shortValue(), 1);
 
-                CellSize cellSz = tc.cellSz();
+                WidthAndHeight cellSz = tc.cellSz();
                 Assert.assertNotNull(cellSz);
                 Assert.assertEquals(cellSz.width().intValue(), 6341);
                 Assert.assertEquals(cellSz.height().intValue(), 2886);
 
-                CellMargin cellMargin = tc.cellMargin();
+                LeftRightTopBottom cellMargin = tc.cellMargin();
                 Assert.assertNotNull(cellMargin);
                 Assert.assertEquals(cellMargin.left().intValue(), 510);
                 Assert.assertEquals(cellMargin.right().intValue(), 510);
@@ -253,12 +257,12 @@ public class SimpleTable {
                 Assert.assertEquals(cellSpan.colSpan().shortValue(), 1);
                 Assert.assertEquals(cellSpan.rowSpan().shortValue(), 1);
 
-                CellSize cellSz = tc.cellSz();
+                WidthAndHeight cellSz = tc.cellSz();
                 Assert.assertNotNull(cellSz);
                 Assert.assertEquals(cellSz.width().intValue(), 6344);
                 Assert.assertEquals(cellSz.height().intValue(), 2885);
 
-                CellMargin cellMargin = tc.cellMargin();
+                LeftRightTopBottom cellMargin = tc.cellMargin();
                 Assert.assertNotNull(cellMargin);
                 Assert.assertEquals(cellMargin.left().intValue(), 510);
                 Assert.assertEquals(cellMargin.right().intValue(), 510);
@@ -299,12 +303,12 @@ public class SimpleTable {
                 Assert.assertEquals(cellSpan.colSpan().shortValue(), 2);
                 Assert.assertEquals(cellSpan.rowSpan().shortValue(), 1);
 
-                CellSize cellSz = tc.cellSz();
+                WidthAndHeight cellSz = tc.cellSz();
                 Assert.assertNotNull(cellSz);
                 Assert.assertEquals(cellSz.width().intValue(), 12685);
                 Assert.assertEquals(cellSz.height().intValue(), 2885);
 
-                CellMargin cellMargin = tc.cellMargin();
+                LeftRightTopBottom cellMargin = tc.cellMargin();
                 Assert.assertNotNull(cellMargin);
                 Assert.assertEquals(cellMargin.left().intValue(), 510);
                 Assert.assertEquals(cellMargin.right().intValue(), 510);

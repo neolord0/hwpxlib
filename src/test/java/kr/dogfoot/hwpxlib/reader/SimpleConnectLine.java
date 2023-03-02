@@ -1,6 +1,10 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
@@ -8,9 +12,9 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ConnectLin
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.ConnectLinePoint;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
@@ -35,16 +39,16 @@ public class SimpleConnectLine {
         Assert.assertEquals(connectLine.instid(), "69628689");
         Assert.assertEquals(connectLine.type(), ConnectLineType.STROKE_NOARROW);
 
-        Offset offset = connectLine.offset();
+        XAndY offset = connectLine.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().longValue(), 4294966971L);
         Assert.assertEquals(offset.y().longValue(), 4294965647L);
-        OriginalSize orgSZ = connectLine.orgSz();
+        WidthAndHeight orgSZ = connectLine.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 9000);
         Assert.assertEquals(orgSZ.height().intValue(), 5900);
 
-        CurrentSize curSz = connectLine.curSz();
+        WidthAndHeight curSz = connectLine.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 10562);
         Assert.assertEquals(curSz.height().intValue(), 4988);
@@ -146,14 +150,14 @@ public class SimpleConnectLine {
         Assert.assertEquals(pos.vertOffset().longValue(), 16074);
         Assert.assertEquals(pos.horzOffset().longValue(), 19389);
 
-        OutMargin outMargin = connectLine.outMargin();
+        LeftRightTopBottom outMargin = connectLine.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().longValue(), 0);
         Assert.assertEquals(outMargin.right().longValue(), 0);
         Assert.assertEquals(outMargin.top().longValue(), 0);
         Assert.assertEquals(outMargin.bottom().longValue(), 0);
 
-        ShapeComment shapeComment = connectLine.shapeComment();
+        HasOnlyText shapeComment = connectLine.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "개체 연결선입니다.");
     }

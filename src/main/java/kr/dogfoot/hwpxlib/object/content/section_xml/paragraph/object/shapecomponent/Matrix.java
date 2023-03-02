@@ -1,14 +1,25 @@
-package kr.dogfoot.hwpxlib.object.common.baseobject;
+package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
-public abstract class Matrix<ChildType> extends HWPXObject {
+public class Matrix extends HWPXObject {
+    private ObjectType _objectType;
     private Float e1;
     private Float e2;
     private Float e3;
     private Float e4;
     private Float e5;
     private Float e6;
+
+    public Matrix(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
 
     public Float e1() {
         return e1;
@@ -18,9 +29,9 @@ public abstract class Matrix<ChildType> extends HWPXObject {
         this.e1 = e1;
     }
 
-    public ChildType e1And(Float e1) {
+    public Matrix e1And(Float e1) {
         this.e1 = e1;
-        return (ChildType) this;
+        return this;
     }
 
     public Float e2() {
@@ -31,9 +42,9 @@ public abstract class Matrix<ChildType> extends HWPXObject {
         this.e2 = e2;
     }
 
-    public ChildType e2And(Float e2) {
+    public Matrix e2And(Float e2) {
         this.e2 = e2;
-        return (ChildType) this;
+        return this;
     }
 
     public Float e3() {
@@ -44,9 +55,9 @@ public abstract class Matrix<ChildType> extends HWPXObject {
         this.e3 = e3;
     }
 
-    public ChildType e3And(Float e3) {
+    public Matrix e3And(Float e3) {
         this.e3 = e3;
-        return (ChildType) this;
+        return this;
     }
 
     public Float e4() {
@@ -57,9 +68,9 @@ public abstract class Matrix<ChildType> extends HWPXObject {
         this.e4 = e4;
     }
 
-    public ChildType e4And(Float e4) {
+    public Matrix e4And(Float e4) {
         this.e4 = e4;
-        return (ChildType) this;
+        return this;
     }
 
     public Float e5() {
@@ -70,9 +81,9 @@ public abstract class Matrix<ChildType> extends HWPXObject {
         this.e5 = e5;
     }
 
-    public ChildType e5And(Float e5) {
+    public Matrix e5And(Float e5) {
         this.e5 = e5;
-        return (ChildType) this;
+        return this;
     }
 
     public Float e6() {
@@ -83,8 +94,8 @@ public abstract class Matrix<ChildType> extends HWPXObject {
         this.e6 = e6;
     }
 
-    public ChildType e6And(Float e6) {
+    public Matrix e6And(Float e6) {
         this.e6 = e6;
-        return (ChildType) this;
+        return this;
     }
 }

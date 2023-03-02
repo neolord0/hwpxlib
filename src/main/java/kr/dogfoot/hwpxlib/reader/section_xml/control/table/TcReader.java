@@ -3,13 +3,16 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control.table;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellAddr;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellSpan;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tc;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.LeftRightTopBottomReader;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.WidthAndHeightReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
@@ -66,11 +69,11 @@ public class TcReader extends ElementReader {
                 break;
             case ElementNames.hp_cellSz:
                 tc.createCellSz();
-                cellSz(tc.cellSz(), name, attrs);
+                widthAndHeight(tc.cellSz(), name, attrs);
                 break;
             case ElementNames.hp_cellMargin:
                 tc.createCellMargin();
-                cellMargin(tc.cellMargin(), name, attrs);
+                leftRightTopBottom(tc.cellMargin(), name, attrs);
                 break;
             case ElementNames.hp_subList:
                 tc.createSubList();
@@ -91,12 +94,12 @@ public class TcReader extends ElementReader {
                 cellSpan(cellSpan, name, attrs);
                 return cellSpan;
             case ElementNames.hp_cellSz:
-                CellSize cellSize = new CellSize();
-                cellSz(cellSize, name, attrs);
+                WidthAndHeight cellSize = new WidthAndHeight(ObjectType.hp_cellSz);
+                widthAndHeight(cellSize, name, attrs);
                 return cellSize;
             case ElementNames.hp_cellMargin:
-                CellMargin cellMargin = new CellMargin();
-                cellMargin(cellMargin, name, attrs);
+                LeftRightTopBottom cellMargin = new LeftRightTopBottom(ObjectType.hp_cellMargin);
+                leftRightTopBottom(cellMargin, name, attrs);
                 return cellMargin;
             case ElementNames.hp_subList:
                 SubList subList = new SubList();
@@ -116,20 +119,6 @@ public class TcReader extends ElementReader {
     private void cellSpan(CellSpan cellSpan, String name, Attributes attrs) {
         ((CellSpanReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CellSpan))
                 .cellSpan(cellSpan);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void cellSz(CellSize cellSz, String name, Attributes attrs) {
-        ((WidthAndHeightReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.WidthAndHeight))
-                .widthAndHeight(cellSz);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void cellMargin(CellMargin cellMargin, String name, Attributes attrs) {
-        ((LeftRightTopBottomReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.LeftRightTopBottom))
-                .leftRightTopBottom(cellMargin);
 
         xmlFileReader().startElement(name, attrs);
     }

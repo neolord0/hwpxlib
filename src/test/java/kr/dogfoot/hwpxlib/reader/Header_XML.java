@@ -8,7 +8,9 @@ import kr.dogfoot.hwpxlib.object.common.compatibility.Default;
 import kr.dogfoot.hwpxlib.object.content.header_xml.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.*;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.*;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Border;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.SlashCore;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.Font;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.TypeInfo;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHead;
@@ -130,27 +132,27 @@ public class Header_XML {
             Assert.assertEquals(borderFill.centerLine(), CenterLineSort.NONE);
             Assert.assertEquals(borderFill.breakCellSeparateLine().booleanValue(), false);
 
-            Slash slash = borderFill.slash();
+            SlashCore slash = borderFill.slash();
             Assert.assertEquals(slash.type(), SlashType.NONE);
             Assert.assertEquals(slash.Crooked().booleanValue(), false);
             Assert.assertEquals(slash.isCounter().booleanValue(), false);
 
-            BackSlash backSlash = borderFill.backSlash();
+            SlashCore backSlash = borderFill.backSlash();
             Assert.assertEquals(backSlash.type(), SlashType.NONE);
             Assert.assertEquals(backSlash.Crooked().booleanValue(), false);
             Assert.assertEquals(backSlash.isCounter().booleanValue(), false);
 
-            LeftBorder left  = borderFill.leftBorder();
+            Border left = borderFill.leftBorder();
             Assert.assertEquals(left.type(), LineType2.NONE);
             Assert.assertEquals(left.width(), LineWidth.MM_0_1);
             Assert.assertEquals(left.color(), "#000000");
 
-            RightBorder right  = borderFill.rightBorder();
+            Border right = borderFill.rightBorder();
             Assert.assertEquals(right.type(), LineType2.NONE);
             Assert.assertEquals(right.width(), LineWidth.MM_0_1);
             Assert.assertEquals(right.color(), "#000000");
 
-            DiagonalBorder diagonal = borderFill.diagonal();
+            Border diagonal = borderFill.diagonal();
             Assert.assertEquals(diagonal.type(), LineType2.SOLID);
             Assert.assertEquals(diagonal.width(), LineWidth.MM_0_1);
             Assert.assertEquals(diagonal.color(), "#000000");

@@ -3,12 +3,15 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control.shapecomponent;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.WidthAndHeightReader;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
@@ -44,7 +47,7 @@ public abstract class ShapeComponentReader extends ShapeObjectReader {
         switch (name) {
             case ElementNames.hp_offset:
                 shapeComponent().createOffset();
-                offset(shapeComponent().offset(), name, attrs);
+                xAndY(shapeComponent().offset(), name, attrs);
                 break;
             case ElementNames.hp_orgSz:
                 shapeComponent().createOrgSz();
@@ -77,15 +80,15 @@ public abstract class ShapeComponentReader extends ShapeObjectReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hp_offset:
-                Offset offset = new Offset();
-                offset(offset, name, attrs);
+                XAndY offset = new XAndY(ObjectType.hp_offset_for_shapeComponent);
+                xAndY(offset, name, attrs);
                 return offset;
             case ElementNames.hp_orgSz:
-                OriginalSize orgSz = new OriginalSize();
+                WidthAndHeight orgSz = new WidthAndHeight(ObjectType.hp_orgSz);
                 widthAndHeight(orgSz, name, attrs);
                 return orgSz;
             case ElementNames.hp_curSz:
-                CurrentSize curSz = new CurrentSize();
+                WidthAndHeight curSz = new WidthAndHeight(ObjectType.hp_curSz);
                 widthAndHeight(curSz, name, attrs);
                 return curSz;
             case ElementNames.hp_flip:
@@ -103,20 +106,6 @@ public abstract class ShapeComponentReader extends ShapeObjectReader {
         }
 
         return super.childElementInSwitch(name, attrs);
-    }
-
-    private void offset(Offset offset, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
-                .xAndY(offset);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void widthAndHeight(WidthAndHeight widthAndHeight, String name, Attributes attrs) {
-        ((WidthAndHeightReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.WidthAndHeight))
-                .widthAndHeight(widthAndHeight);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     private void flip(Flip flip, String name, Attributes attrs) {

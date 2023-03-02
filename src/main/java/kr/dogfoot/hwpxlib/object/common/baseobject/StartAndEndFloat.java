@@ -1,10 +1,21 @@
 package kr.dogfoot.hwpxlib.object.common.baseobject;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
-public abstract class StartAndEndFloat<ChildType> extends HWPXObject {
+public class StartAndEndFloat extends HWPXObject {
+    private final ObjectType _objectType;
     private Float start;
     private Float end;
+
+    public StartAndEndFloat(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
 
     public Float start() {
         return start;
@@ -14,9 +25,9 @@ public abstract class StartAndEndFloat<ChildType> extends HWPXObject {
         this.start = start;
     }
 
-    public ChildType startAnd(Float start) {
+    public StartAndEndFloat startAnd(Float start) {
         this.start = start;
-        return (ChildType) this;
+        return this;
     }
 
     public Float end() {
@@ -27,8 +38,8 @@ public abstract class StartAndEndFloat<ChildType> extends HWPXObject {
         this.end = end;
     }
 
-    public ChildType endAnd(Float end) {
+    public StartAndEndFloat endAnd(Float end) {
         this.end = end;
-        return (ChildType) this;
+        return this;
     }
 }

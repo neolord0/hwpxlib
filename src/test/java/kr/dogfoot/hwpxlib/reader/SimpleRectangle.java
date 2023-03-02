@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
+import kr.dogfoot.hwpxlib.object.common.baseobject.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.FillBrush;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.WinBrush;
@@ -10,8 +10,12 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Rectangle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingShadow;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.Caption;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -34,17 +38,17 @@ public class SimpleRectangle {
         Assert.assertEquals(rectangle.instid(), "69454569");
         Assert.assertEquals(rectangle.ratio().shortValue(), 0);
 
-        Offset offset = rectangle.offset();
+        XAndY offset = rectangle.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 0);
         Assert.assertEquals(offset.y().intValue(), 0);
 
-        OriginalSize orgSZ = rectangle.orgSz();
+        WidthAndHeight orgSZ = rectangle.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 20925);
         Assert.assertEquals(orgSZ.height().intValue(), 14175);
 
-        CurrentSize curSz = rectangle.curSz();
+        WidthAndHeight curSz = rectangle.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 0);
         Assert.assertEquals(curSz.height().intValue(), 0);
@@ -162,7 +166,7 @@ public class SimpleRectangle {
         Assert.assertEquals(pos.vertOffset().intValue(), 13075);
         Assert.assertEquals(pos.horzOffset().intValue(), 16664);
 
-        OutMargin outMargin = rectangle.outMargin();
+        LeftRightTopBottom outMargin = rectangle.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 0);
         Assert.assertEquals(outMargin.right().intValue(), 0);
@@ -178,7 +182,7 @@ public class SimpleRectangle {
         Assert.assertEquals(caption.lastWidth().intValue(), 20925);
         Assert.assertNotNull(caption.subList());
 
-        ShapeComment shapeComment = rectangle.shapeComment();
+        HasOnlyText shapeComment = rectangle.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(), "사각형입니다.");
     }

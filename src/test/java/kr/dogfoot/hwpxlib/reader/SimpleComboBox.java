@@ -1,15 +1,13 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.object.common.AttachedFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ComboBox;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ConnectLine;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.combobox.ListItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormCharPr;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
@@ -76,14 +74,14 @@ public class SimpleComboBox {
         Assert.assertEquals(pos.vertOffset().longValue(), 0);
         Assert.assertEquals(pos.horzOffset().longValue(), 0);
 
-        OutMargin outMargin = comboBox.outMargin();
+        LeftRightTopBottom outMargin = comboBox.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().longValue(), 0);
         Assert.assertEquals(outMargin.right().longValue(), 0);
         Assert.assertEquals(outMargin.top().longValue(), 0);
         Assert.assertEquals(outMargin.bottom().longValue(), 0);
 
-        ShapeComment shapeComment = comboBox.shapeComment();
+        HasOnlyText shapeComment = comboBox.shapeComment();
         Assert.assertNull(shapeComment);
 
         int index = 0;

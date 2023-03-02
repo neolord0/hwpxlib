@@ -1,13 +1,13 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Button;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.CheckButton;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.RadioButton;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormCharPr;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import org.testng.Assert;
@@ -78,14 +78,14 @@ public class SimpleButtons {
         Assert.assertEquals(pos.vertOffset().longValue(), 0);
         Assert.assertEquals(pos.horzOffset().longValue(), 0);
 
-        OutMargin outMargin = btn.outMargin();
+        LeftRightTopBottom outMargin = btn.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().longValue(), 0);
         Assert.assertEquals(outMargin.right().longValue(), 0);
         Assert.assertEquals(outMargin.top().longValue(), 0);
         Assert.assertEquals(outMargin.bottom().longValue(), 0);
 
-        ShapeComment shapeComment = btn.shapeComment();
+        HasOnlyText shapeComment = btn.shapeComment();
         Assert.assertNull(shapeComment);
     }
 
@@ -139,14 +139,14 @@ public class SimpleButtons {
         Assert.assertEquals(pos.vertOffset().longValue(), 0);
         Assert.assertEquals(pos.horzOffset().longValue(), 0);
 
-        OutMargin outMargin = checkBtn.outMargin();
+        LeftRightTopBottom outMargin = checkBtn.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().longValue(), 0);
         Assert.assertEquals(outMargin.right().longValue(), 0);
         Assert.assertEquals(outMargin.top().longValue(), 0);
         Assert.assertEquals(outMargin.bottom().longValue(), 0);
 
-        ShapeComment shapeComment = checkBtn.shapeComment();
+        HasOnlyText shapeComment = checkBtn.shapeComment();
         Assert.assertNull(shapeComment);
     }
 
@@ -200,14 +200,14 @@ public class SimpleButtons {
         Assert.assertEquals(pos.vertOffset().longValue(), 0);
         Assert.assertEquals(pos.horzOffset().longValue(), 0);
 
-        OutMargin outMargin = radioBtn.outMargin();
+        LeftRightTopBottom outMargin = radioBtn.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().longValue(), 0);
         Assert.assertEquals(outMargin.right().longValue(), 0);
         Assert.assertEquals(outMargin.top().longValue(), 0);
         Assert.assertEquals(outMargin.bottom().longValue(), 0);
 
-        ShapeComment shapeComment = radioBtn.shapeComment();
+        HasOnlyText shapeComment = radioBtn.shapeComment();
         Assert.assertNull(shapeComment);
     }
 }

@@ -1,10 +1,21 @@
 package kr.dogfoot.hwpxlib.object.common.baseobject;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
-public abstract class WidthAndHeight<ChildType> extends HWPXObject {
+public class WidthAndHeight extends HWPXObject {
+    private final ObjectType _objectType;
     private Long width;
     private Long height;
+
+    public WidthAndHeight(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
 
     public Long width() {
         return width;
@@ -14,9 +25,9 @@ public abstract class WidthAndHeight<ChildType> extends HWPXObject {
         this.width = width;
     }
 
-    public ChildType widthAnd(Long width) {
+    public WidthAndHeight widthAnd(Long width) {
         this.width = width;
-        return (ChildType) this;
+        return this;
     }
 
     public Long height() {
@@ -27,8 +38,8 @@ public abstract class WidthAndHeight<ChildType> extends HWPXObject {
         this.height = height;
     }
 
-    public ChildType heightAnd(Long height) {
+    public WidthAndHeight heightAnd(Long height) {
         this.height = height;
-        return (ChildType) this;
+        return this;
     }
 }

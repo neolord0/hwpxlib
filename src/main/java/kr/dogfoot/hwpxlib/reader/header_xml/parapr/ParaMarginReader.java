@@ -2,9 +2,10 @@ package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.ValueAndUnit;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.*;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.ParaMargin;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import org.xml.sax.Attributes;
@@ -46,23 +47,23 @@ public class ParaMarginReader extends ElementReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hc_intent:
-                Intent intent = new Intent();
+                ValueAndUnit intent = new ValueAndUnit(ObjectType.hc_intent);
                 valueAndUnit(intent, name, attrs);
                 return intent;
             case ElementNames.hc_left:
-                LeftMargin leftMargin = new LeftMargin();
+                ValueAndUnit leftMargin = new ValueAndUnit(ObjectType.hc_left);
                 valueAndUnit(leftMargin, name, attrs);
                 return leftMargin;
             case ElementNames.hc_right:
-                RightMargin rightMargin = new RightMargin();
+                ValueAndUnit rightMargin = new ValueAndUnit(ObjectType.hc_right);
                 valueAndUnit(rightMargin, name, attrs);
                 return rightMargin;
             case ElementNames.hc_prev:
-                PrevParaMargin prevParaMargin = new PrevParaMargin();
+                ValueAndUnit prevParaMargin = new ValueAndUnit(ObjectType.hc_prev);
                 valueAndUnit(prevParaMargin, name, attrs);
                 return prevParaMargin;
             case ElementNames.hc_next:
-                NextParaMargin nextParaMargin = new NextParaMargin();
+                ValueAndUnit nextParaMargin = new ValueAndUnit(ObjectType.hc_next);
                 valueAndUnit(nextParaMargin, name, attrs);
                 return nextParaMargin;
         }

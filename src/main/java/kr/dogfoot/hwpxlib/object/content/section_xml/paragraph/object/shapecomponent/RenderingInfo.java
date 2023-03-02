@@ -7,9 +7,9 @@ import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
  * 변환 정보
  */
 public class RenderingInfo extends SwitchableObject {
-    private TransMatrix transMatrix;
-    private ScaleMatrix scaMatrix;
-    private RotateMatrix rotMatrix;
+    private Matrix transMatrix;
+    private Matrix scaMatrix;
+    private Matrix rotMatrix;
 
     public RenderingInfo() {
     }
@@ -19,36 +19,36 @@ public class RenderingInfo extends SwitchableObject {
         return ObjectType.hp_renderingInfo;
     }
 
-    public TransMatrix transMatrix() {
+    public Matrix transMatrix() {
         return transMatrix;
     }
 
     public void createTransMatrix() {
-        transMatrix = new TransMatrix();
+        transMatrix = new Matrix(ObjectType.hc_transMatrix);
     }
 
     public void removeTransMatrix() {
         transMatrix = null;
     }
 
-    public ScaleMatrix scaMatrix() {
+    public Matrix scaMatrix() {
         return scaMatrix;
     }
 
     public void createScaMatrix() {
-        scaMatrix = new ScaleMatrix();
+        scaMatrix = new Matrix(ObjectType.hc_scaMatrix);
     }
 
     public void removeScaMatrix() {
         scaMatrix = null;
     }
 
-    public RotateMatrix rotMatrix() {
+    public Matrix rotMatrix() {
         return rotMatrix;
     }
 
     public void createRotMatrix() {
-        rotMatrix = new RotateMatrix();
+        rotMatrix = new Matrix(ObjectType.hc_rotMatrix);
     }
 
     public void removeRotMatrix() {

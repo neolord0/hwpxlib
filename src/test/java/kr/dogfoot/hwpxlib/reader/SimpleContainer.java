@@ -2,12 +2,16 @@ package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DropCapStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumberingType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextFlowSide;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextWrapMethod;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Container;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -28,17 +32,17 @@ public class SimpleContainer {
         Assert.assertEquals(container.groupLevel().shortValue(), 0);
         Assert.assertEquals(container.instid(), "65164340");
 
-        Offset offset = container.offset();
+        XAndY offset = container.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 0);
         Assert.assertEquals(offset.y().intValue(), 0);
 
-        OriginalSize orgSZ = container.orgSz();
+        WidthAndHeight orgSZ = container.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 17372);
         Assert.assertEquals(orgSZ.height().intValue(), 3250);
 
-        CurrentSize curSz = container.curSz();
+        WidthAndHeight curSz = container.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 0);
         Assert.assertEquals(curSz.height().intValue(), 0);

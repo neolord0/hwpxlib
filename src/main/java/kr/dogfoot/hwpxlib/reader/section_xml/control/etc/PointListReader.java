@@ -8,7 +8,6 @@ import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYReader;
 import org.xml.sax.Attributes;
 
 public class PointListReader extends ElementReader {
@@ -45,13 +44,6 @@ public class PointListReader extends ElementReader {
         return super.childElementInSwitch(name, attrs);
     }
 
-
-    private void point(Point pt, String name, Attributes attrs) {
-        ((XAndYReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndY))
-                .xAndY(pt);
-
-        xmlFileReader().startElement(name, attrs);
-    }
 
     @Override
     public SwitchableObject switchableObject() {

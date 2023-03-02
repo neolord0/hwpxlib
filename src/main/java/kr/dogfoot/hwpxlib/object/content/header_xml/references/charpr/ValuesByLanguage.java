@@ -1,13 +1,16 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.references.charpr;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 /**
  * 언어별 값
  *
  * @param <ValueType> 값의 타입
  */
-public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject {
+public class ValuesByLanguage<ValueType> extends HWPXObject {
+    private final ObjectType _objectType;
+
     /**
      * 한글을 위한 값
      */
@@ -37,6 +40,16 @@ public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject 
      */
     private ValueType user;
 
+    public ValuesByLanguage(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
+
+
     public ValueType hangul() {
         return hangul;
     }
@@ -45,9 +58,9 @@ public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject 
         this.hangul = hangul;
     }
 
-    public ChildType hangulAnd(ValueType hangul) {
+    public ValuesByLanguage hangulAnd(ValueType hangul) {
         this.hangul = hangul;
-        return (ChildType) this;
+        return this;
     }
 
     public ValueType latin() {
@@ -58,9 +71,9 @@ public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject 
         this.latin = latin;
     }
 
-    public ChildType latinAnd(ValueType latin) {
+    public ValuesByLanguage latinAnd(ValueType latin) {
         this.latin = latin;
-        return (ChildType) this;
+        return this;
     }
 
     public ValueType hanja() {
@@ -71,9 +84,9 @@ public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject 
         this.hanja = hanja;
     }
 
-    public ChildType hanjaAnd(ValueType hanja) {
+    public ValuesByLanguage hanjaAnd(ValueType hanja) {
         this.hanja = hanja;
-        return (ChildType) this;
+        return this;
     }
 
     public ValueType japanese() {
@@ -84,9 +97,9 @@ public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject 
         this.japanese = japanese;
     }
 
-    public ChildType japaneseAnd(ValueType japanese) {
+    public ValuesByLanguage japaneseAnd(ValueType japanese) {
         this.japanese = japanese;
-        return (ChildType) this;
+        return this;
     }
 
     public ValueType other() {
@@ -97,9 +110,9 @@ public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject 
         this.other = other;
     }
 
-    public ChildType otherAnd(ValueType other) {
+    public ValuesByLanguage otherAnd(ValueType other) {
         this.other = other;
-        return (ChildType) this;
+        return this;
     }
 
     public ValueType symbol() {
@@ -110,9 +123,9 @@ public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject 
         this.symbol = symbol;
     }
 
-    public ChildType symbolAnd(ValueType symbol) {
+    public ValuesByLanguage symbolAnd(ValueType symbol) {
         this.symbol = symbol;
-        return (ChildType) this;
+        return this;
     }
 
     public ValueType user() {
@@ -123,8 +136,8 @@ public abstract class ValuesByLanguage<ValueType, ChildType> extends HWPXObject 
         this.user = user;
     }
 
-    public ChildType userAnd(ValueType user) {
+    public ValuesByLanguage userAnd(ValueType user) {
         this.user = user;
-        return (ChildType) this;
+        return this;
     }
 }

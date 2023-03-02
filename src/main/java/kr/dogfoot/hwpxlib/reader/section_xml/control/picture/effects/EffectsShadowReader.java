@@ -3,17 +3,15 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control.picture.effects;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.XAndYFloat;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.AlignStyleType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ShadowStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.EffectsColor;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.EffectsShadow;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.Scale;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.Skew;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.XAndYFloatReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
 
@@ -78,11 +76,11 @@ public class EffectsShadowReader extends ElementReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hp_skew:
-                Skew skew = new Skew();
+                XAndYFloat skew = new XAndYFloat(ObjectType.hp_skew);
                 xAndYFloat(skew, name, attrs);
                 return skew;
             case ElementNames.hp_scale:
-                Scale scale = new Scale();
+                XAndYFloat scale = new XAndYFloat(ObjectType.hp_scale);
                 xAndYFloat(scale, name, attrs);
                 return scale;
             case ElementNames.hp_effectsColor:
@@ -91,14 +89,6 @@ public class EffectsShadowReader extends ElementReader {
                 return effectsColor;
         }
         return null;
-    }
-
-
-    private void xAndYFloat(XAndYFloat xAndYFloat, String name, Attributes attrs) {
-        ((XAndYFloatReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.XAndYFloat))
-                .xAndYFloat(xAndYFloat);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     private void effectsColor(EffectsColor effectsColor, String name, Attributes attrs) {

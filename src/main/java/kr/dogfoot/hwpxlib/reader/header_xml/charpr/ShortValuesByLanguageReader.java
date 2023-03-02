@@ -8,7 +8,7 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 
 public class ShortValuesByLanguageReader extends ElementReader {
-    private ValuesByLanguage<Short, ?> valuesByLanguage;
+    private ValuesByLanguage<Short> valuesByLanguage;
 
     @Override
     public ElementReaderSort sort() {
@@ -47,7 +47,7 @@ public class ShortValuesByLanguageReader extends ElementReader {
         }
     }
 
-    public void shortValuesByLanguage(ValuesByLanguage<Short, ?> valuesByLanguage) {
+    public void shortValuesByLanguage(ValuesByLanguage<Short> valuesByLanguage) {
         this.valuesByLanguage = valuesByLanguage;
     }
 }

@@ -1,18 +1,20 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
+import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.OLE;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ole.Extent;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.*;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.OutMargin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeComment;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import kr.dogfoot.hwpxlib.object.common.AttachedFile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -39,17 +41,17 @@ public class SimpleOLE {
         Assert.assertEquals(ole.drawAspect(), OLEDrawAspect.CONTENT);
         Assert.assertEquals(ole.eqBaseLine().intValue(), 0);
 
-        Offset offset = ole.offset();
+        XAndY offset = ole.offset();
         Assert.assertNotNull(offset);
         Assert.assertEquals(offset.x().intValue(), 0);
         Assert.assertEquals(offset.y().intValue(), 0);
 
-        OriginalSize orgSZ = ole.orgSz();
+        WidthAndHeight orgSZ = ole.orgSz();
         Assert.assertNotNull(orgSZ);
         Assert.assertEquals(orgSZ.width().intValue(), 14176);
         Assert.assertEquals(orgSZ.height().intValue(), 14176);
 
-        CurrentSize curSz = ole.curSz();
+        WidthAndHeight curSz = ole.curSz();
         Assert.assertNotNull(curSz);
         Assert.assertEquals(curSz.width().intValue(), 0);
         Assert.assertEquals(curSz.height().intValue(), 0);
@@ -87,7 +89,7 @@ public class SimpleOLE {
         Assert.assertEquals(renderingInfo.rotMatrix().e5().floatValue(), 1);
         Assert.assertEquals(renderingInfo.rotMatrix().e6().floatValue(), 0);
 
-        Extent extent = ole.extent();
+        XAndY extent = ole.extent();
         Assert.assertNotNull(extent);
         Assert.assertEquals(extent.x().intValue(), 14176);
         Assert.assertEquals(extent.y().intValue(), 14176);
@@ -129,14 +131,14 @@ public class SimpleOLE {
         Assert.assertEquals(pos.vertOffset().intValue(), 8475);
         Assert.assertEquals(pos.horzOffset().intValue(), 9100);
 
-        OutMargin outMargin = ole.outMargin();
+        LeftRightTopBottom outMargin = ole.outMargin();
         Assert.assertNotNull(outMargin);
         Assert.assertEquals(outMargin.left().intValue(), 0);
         Assert.assertEquals(outMargin.right().intValue(), 0);
         Assert.assertEquals(outMargin.top().intValue(), 0);
         Assert.assertEquals(outMargin.bottom().intValue(), 0);
 
-        ShapeComment shapeComment = ole.shapeComment();
+        HasOnlyText shapeComment = ole.shapeComment();
         Assert.assertNotNull(shapeComment);
         Assert.assertEquals(shapeComment.text(),
                 "OLE 개체입니다.\n" +

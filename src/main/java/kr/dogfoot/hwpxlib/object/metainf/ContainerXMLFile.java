@@ -3,9 +3,9 @@ package kr.dogfoot.hwpxlib.object.metainf;
 import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
-public class ContainerXMLFile extends XMLFile {
+public class ContainerXMLFile extends SwitchableObject {
     private ObjectList<RootFile> rootFiles;
 
     public ContainerXMLFile() {

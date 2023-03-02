@@ -1,11 +1,11 @@
 package kr.dogfoot.hwpxlib.object.dochistory;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.XMLFile;
+import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
 import java.util.ArrayList;
 
-public class HistoryXMLFile extends XMLFile {
+public class HistoryXMLFile extends SwitchableObject {
     private String version;
     private final ArrayList<HistoryEntry> entryList;
 

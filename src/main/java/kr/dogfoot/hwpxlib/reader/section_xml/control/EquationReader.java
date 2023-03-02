@@ -3,13 +3,13 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.EquationLineMode;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Equation;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.equation.Script;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
@@ -63,7 +63,7 @@ public class EquationReader extends ShapeObjectReader {
         switch (name) {
             case ElementNames.hp_script:
                 equation.createScript();
-                script(equation.script(), name, attrs);
+                hasOnlyText(equation.script(), name, attrs);
                 break;
             default:
                 super.childElement(name, attrs);
@@ -75,19 +75,12 @@ public class EquationReader extends ShapeObjectReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.hp_script:
-                Script script = new Script();
-                script(script, name, attrs);
+                HasOnlyText script = new HasOnlyText(ObjectType.hp_script);
+                hasOnlyText(script, name, attrs);
                 return script;
         }
 
         return super.childElementInSwitch(name, attrs);
-    }
-
-    private void script(Script script, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
-                .hasOnlyText(script);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     @Override

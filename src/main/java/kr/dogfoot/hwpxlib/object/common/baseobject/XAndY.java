@@ -1,10 +1,21 @@
 package kr.dogfoot.hwpxlib.object.common.baseobject;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
-public abstract class XAndY<ChildType> extends HWPXObject {
+public class XAndY extends HWPXObject {
+    private final ObjectType _objectType;
     private Long x;
     private Long y;
+
+    public XAndY(ObjectType _objectType) {
+        this._objectType = _objectType;
+    }
+
+    @Override
+    public ObjectType _objectType() {
+        return _objectType;
+    }
 
     public Long x() {
         return x;
@@ -14,9 +25,9 @@ public abstract class XAndY<ChildType> extends HWPXObject {
         this.x = x;
     }
 
-    public ChildType xAnd(Long x) {
+    public XAndY xAnd(Long x) {
         this.x = x;
-        return (ChildType) this;
+        return this;
     }
 
     public Long y() {
@@ -27,8 +38,8 @@ public abstract class XAndY<ChildType> extends HWPXObject {
         this.y = y;
     }
 
-    public ChildType yAnd(Long y) {
+    public XAndY yAnd(Long y) {
         this.y = y;
-        return (ChildType) this;
+        return this;
     }
 }

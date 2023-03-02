@@ -3,15 +3,15 @@ package kr.dogfoot.hwpxlib.reader.section_xml.control;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HorizontalAlign1;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DisplayScrollBar;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TabKeyBehavior;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Edit;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.edit.EditText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.control.formobject.FormObjectReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
@@ -72,7 +72,7 @@ public class EditReader extends FormObjectReader {
         switch (name) {
             case ElementNames.hp_text:
                 edit.createText();
-                text(edit.text(), name, attrs);
+                hasOnlyText(edit.text(), name, attrs);
                 break;
             default:
                 super.childElement(name, attrs);
@@ -83,20 +83,13 @@ public class EditReader extends FormObjectReader {
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.hp_seg:
-                EditText text = new EditText();
-                text(text, name, attrs);
+            case ElementNames.hp_text:
+                HasOnlyText text = new HasOnlyText(ObjectType.hp_text);
+                hasOnlyText(text, name, attrs);
                 return text;
         }
 
         return super.childElementInSwitch(name, attrs);
-    }
-
-    private void text(EditText text, String name, Attributes attrs) {
-        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
-                .hasOnlyText(text);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     @Override

@@ -1,9 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.XAndY;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.OLEDrawAspect;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.OLEObjectType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ole.Extent;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.LineShape;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.ShapeComponent;
 
@@ -34,7 +34,7 @@ public class OLE extends ShapeComponent<OLE> {
     /**
      * 오브젝트의 extent 크기
      */
-    private Extent extent;
+    private XAndY extent;
     /**
      * 테두리 모양
      */
@@ -113,12 +113,12 @@ public class OLE extends ShapeComponent<OLE> {
         return this;
     }
 
-    public Extent extent() {
+    public XAndY extent() {
         return extent;
     }
 
     public void createExtent() {
-        extent = new Extent();
+        extent = new XAndY(ObjectType.hc_extent);
     }
 
     public void removeExtent() {

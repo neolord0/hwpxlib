@@ -1,10 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HorizontalAlign2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DutmalPosType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.dutmal.MainText;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.dutmal.SubText;
 
 /**
  * 덧말
@@ -33,11 +32,11 @@ public class Dutmal extends RunItem {
     /**
      * 본 내용
      */
-    private MainText mainText;
+    private HasOnlyText mainText;
     /**
      * 덧말
      */
-    private SubText subText;
+    private HasOnlyText subText;
 
     public Dutmal() {
     }
@@ -112,24 +111,24 @@ public class Dutmal extends RunItem {
         return this;
     }
 
-    public MainText mainText() {
+    public HasOnlyText mainText() {
         return mainText;
     }
 
     public void createMainText() {
-        mainText = new MainText();
+        mainText = new HasOnlyText(ObjectType.hp_mainText);
     }
 
     public void removeMainText() {
         mainText = null;
     }
 
-    public SubText subText() {
+    public HasOnlyText subText() {
         return subText;
     }
 
     public void createSubText() {
-        subText = new SubText();
+        subText = new HasOnlyText(ObjectType.hp_subText);
     }
 
     public void removeSubText() {

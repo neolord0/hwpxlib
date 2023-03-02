@@ -2,6 +2,7 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingob
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 
 public class DrawText extends SwitchableObject {
@@ -20,7 +21,7 @@ public class DrawText extends SwitchableObject {
     /**
      * 여백
      */
-    private TextMargin textMargin;
+    private LeftRightTopBottom textMargin;
     /**
      * 내부 문단 리스트
      */
@@ -73,12 +74,12 @@ public class DrawText extends SwitchableObject {
         return this;
     }
 
-    public TextMargin textMargin() {
+    public LeftRightTopBottom textMargin() {
         return textMargin;
     }
 
     public void createTextMargin() {
-        textMargin = new TextMargin();
+        textMargin = new LeftRightTopBottom(ObjectType.hp_textMargin);
     }
 
     public void removeTextMargin() {
