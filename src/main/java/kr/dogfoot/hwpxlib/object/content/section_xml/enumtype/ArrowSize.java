@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 화살표 크기
  */
-public enum ArrowSize {
+public enum ArrowSize implements EnumGetStr {
     SMALL_SMALL("SMALL_SMALL"),
     SMALL_MEDIUM("SMALL_MEDIUM"),
     SMALL_LARGE("SMALL_LARGE"),
@@ -20,6 +22,7 @@ public enum ArrowSize {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

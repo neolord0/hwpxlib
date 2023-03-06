@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum ImageEffect {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum ImageEffect implements EnumGetStr {
     /**
      * 원래 그림에서
      */
@@ -21,6 +23,7 @@ public enum ImageEffect {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

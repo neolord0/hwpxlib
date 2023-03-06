@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum OLEDrawAspect {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum OLEDrawAspect implements EnumGetStr {
     CONTENT("CONTENT"),
     THUMB_NAIL("THUMB_NAIL"),
     ICON("ICON"),
@@ -12,6 +14,7 @@ public enum OLEDrawAspect {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

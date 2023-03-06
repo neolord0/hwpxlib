@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum UnderlineType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum UnderlineType implements EnumGetStr {
     NONE("NONE"),
     TOP("TOP"),
     BOTTOM("BOTTOM");
@@ -11,6 +13,7 @@ public enum UnderlineType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

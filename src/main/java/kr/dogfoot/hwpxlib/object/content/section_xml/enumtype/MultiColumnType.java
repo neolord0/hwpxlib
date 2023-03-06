@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum MultiColumnType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum MultiColumnType implements EnumGetStr {
     /**
      * 일반 다단
      */
@@ -20,6 +22,7 @@ public enum MultiColumnType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

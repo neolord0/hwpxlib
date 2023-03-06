@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.writer.util;
 
 import kr.dogfoot.hwpxlib.commonstirngs.Namespaces;
+import kr.dogfoot.hwpxlib.object.common.EnumGetIndex;
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 
 import java.text.DecimalFormat;
@@ -186,6 +188,20 @@ public class XMLStringBuilder {
         } else {
             return attribute(name, FalseValue);
         }
+    }
+
+    public XMLStringBuilder attribute(String name, EnumGetStr enumValue) {
+        if (enumValue == null) {
+            return this;
+        }
+        return attribute(name, enumValue.str());
+    }
+
+    public XMLStringBuilder attributeIndex(String name, EnumGetIndex enumValue) {
+        if (enumValue == null) {
+            return this;
+        }
+        return attribute(name, Integer.toString(enumValue.index()));
     }
 
     public XMLStringBuilder text(String text) {

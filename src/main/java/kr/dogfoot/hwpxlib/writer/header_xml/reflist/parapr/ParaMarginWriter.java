@@ -22,7 +22,7 @@ public class ParaMarginWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ParaMargin paraMargin = (ParaMargin) object;
-        storeSwitchObject(paraMargin.switchObject());
+        switchObject(paraMargin.switchObject());
 
         xsb()
                 .openElement(ElementNames.hh_margin)
@@ -55,11 +55,9 @@ public class ParaMarginWriter extends ElementWriter {
     private void valueAndUnit(String elementName, ValueAndUnit valueAndUnit) {
         xsb()
                 .openElement(elementName)
-                .attribute(AttributeNames.value, valueAndUnit.value());
-        if (valueAndUnit.unit() != null) {
-            xsb().attribute(AttributeNames.unit, valueAndUnit.unit().str());
-        }
-        xsb().closeElement();
+                .attribute(AttributeNames.value, valueAndUnit.value())
+                .attribute(AttributeNames.unit, valueAndUnit.unit())
+                .closeElement();
     }
 
     @Override

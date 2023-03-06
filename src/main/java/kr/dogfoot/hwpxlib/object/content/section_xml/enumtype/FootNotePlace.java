@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 각주 위치
  */
-public enum FootNotePlace {
+public enum FootNotePlace implements EnumGetStr {
     /**
      * 각 단 아래
      */
@@ -23,6 +25,7 @@ public enum FootNotePlace {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

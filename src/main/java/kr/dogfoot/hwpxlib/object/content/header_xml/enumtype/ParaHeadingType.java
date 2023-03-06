@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum ParaHeadingType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum ParaHeadingType implements EnumGetStr  {
     /**
      * 없음
      */
@@ -24,6 +26,7 @@ public enum ParaHeadingType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

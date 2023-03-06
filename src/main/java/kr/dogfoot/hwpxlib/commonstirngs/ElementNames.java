@@ -154,7 +154,7 @@ public class ElementNames {
     public static final String hp_integerParam = "hp:integerParam";
     public static final String hp_floatParam = "hp:floatParam";
     public static final String hp_stringParam = "hp:stringParam";
-    public static final String hp_ListParam = "hp:ListParam";
+    public static final String hp_listParam = "hp:listParam";
     public static final String hp_subList = "hp:subList";
     public static final String hp_fieldEnd = "hp:fieldEnd";
     public static final String hp_bookmark = "hp:bookmark";

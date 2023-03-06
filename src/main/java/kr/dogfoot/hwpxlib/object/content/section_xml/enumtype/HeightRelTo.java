@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum HeightRelTo {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum HeightRelTo implements EnumGetStr {
     /**
      * 종이
      */
@@ -20,6 +22,7 @@ public enum HeightRelTo {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

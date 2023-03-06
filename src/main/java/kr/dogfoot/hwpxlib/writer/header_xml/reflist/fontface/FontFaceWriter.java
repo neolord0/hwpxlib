@@ -22,15 +22,13 @@ public class FontFaceWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Fontface fontface = (Fontface) object;
-        storeSwitchObject(fontface.switchObject());
+        switchObject(fontface.switchObject());
 
         xsb()
                 .openElement(ElementNames.hh_fontface)
-                .elementWriter(this);
-        if (fontface.lang() != null) {
-            xsb().attribute(AttributeNames.lang, fontface.lang().str());
-        }
-        xsb().attribute(AttributeNames.fontCnt, fontface.countOfFont());
+                .elementWriter(this)
+                .attribute(AttributeNames.lang, fontface.lang())
+                .attribute(AttributeNames.fontCnt, fontface.countOfFont());
 
         for (Font font : fontface.fonts()) {
             writeChild(ElementWriterSort.Font, font);

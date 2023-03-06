@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 폰트 타입
  */
-public enum FontType2 {
+public enum FontType2 implements EnumGetStr {
     /**
      * 트루타입 글꼴
      */
@@ -19,6 +21,7 @@ public enum FontType2 {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

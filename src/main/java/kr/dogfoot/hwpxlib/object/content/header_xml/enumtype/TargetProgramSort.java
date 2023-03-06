@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum TargetProgramSort {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum TargetProgramSort implements EnumGetStr {
     HWP201X("HWP201X"),
     HWP200X("HWP200X"),
     MS_WORD("MS_WORD");
@@ -11,6 +13,7 @@ public enum TargetProgramSort {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

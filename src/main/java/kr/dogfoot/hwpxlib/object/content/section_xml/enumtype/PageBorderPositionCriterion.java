@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 쪽 테두리 위치 기준
  */
-public enum PageBorderPositionCriterion {
+public enum PageBorderPositionCriterion implements EnumGetStr {
     /**
      * 본문 기준
      */
@@ -19,6 +21,7 @@ public enum PageBorderPositionCriterion {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

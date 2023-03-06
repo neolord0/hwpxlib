@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 스크롤 바 종류
  */
-public enum ScrollBarType {
+public enum ScrollBarType implements EnumGetStr {
     /**
      * 가로 스크롤바
      */
@@ -19,6 +21,7 @@ public enum ScrollBarType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

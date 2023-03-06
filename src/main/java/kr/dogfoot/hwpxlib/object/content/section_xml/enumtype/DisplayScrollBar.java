@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 스크롤바 표시 방법
  */
-public enum DisplayScrollBar {
+public enum DisplayScrollBar implements EnumGetStr {
     NONE("NONE"),
     VERTICAL("VERTICAL"),
     HORIZONTAL("HORIZONTAL"),
@@ -15,6 +17,7 @@ public enum DisplayScrollBar {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 연결선 종류
  */
-public enum ConnectLineType {
+public enum ConnectLineType implements EnumGetStr {
     STRAIGHT_NOARROW("STRAIGHT_NOARROW"),
     STRAIGHT_ONEWAY("STRAIGHT_ONEWAY"),
     STRAIGHT_BOTH("STRAIGHT_BOTH"),
@@ -20,6 +22,7 @@ public enum ConnectLineType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

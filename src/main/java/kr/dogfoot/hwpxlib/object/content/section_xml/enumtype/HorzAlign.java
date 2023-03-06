@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 가로 배열 방식
  */
-public enum HorzAlign {
+public enum HorzAlign implements EnumGetStr {
     /**
      * 왼쪽
      */
@@ -31,6 +33,7 @@ public enum HorzAlign {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

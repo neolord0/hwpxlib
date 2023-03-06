@@ -7,7 +7,8 @@ import org.testng.annotations.Test;
 public class ZipWriter {
     @Test
     public void test1() throws Exception {
-        HWPXFile hwpxFile = HWPXReader.fromFilepath("testFile/SimpleArc.hwpx");
+        HWPXFile hwpxFile = HWPXReader.fromFilepath("testFile/HeaderFooter.hwpx");
         hwpxFile.settingsXMLFile().caretPosition().pos(500);
+        HWPXWriter.toFilePath(hwpxFile, "test.zip");
     }
 }

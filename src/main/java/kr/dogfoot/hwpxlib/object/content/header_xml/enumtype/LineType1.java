@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum LineType1 {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LineType1 implements EnumGetStr {
     /**
      * 선 없음
      */
@@ -32,6 +34,7 @@ public enum LineType1 {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

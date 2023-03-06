@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum DrawingShadowType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum DrawingShadowType implements EnumGetStr {
     NONE("NONE"),
     SCALE_NARROW("SCALE_NARROW"),
     SCALE_ENLARGE("SCALE_ENLARGE"),
@@ -19,6 +21,7 @@ public enum DrawingShadowType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum HorizontalAlign2 {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum HorizontalAlign2 implements EnumGetStr {
     /**
      * 양쪽 정렬
      */
@@ -32,6 +34,7 @@ public enum HorizontalAlign2 {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -23,7 +23,7 @@ public class NumberingWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Numbering numbering = (Numbering) object;
-        storeSwitchObject(numbering.switchObject());
+        switchObject(numbering.switchObject());
 
         xsb()
                 .openElement(ElementNames.hh_numbering)
@@ -43,22 +43,14 @@ public class NumberingWriter extends ElementWriter {
         xsb
                 .openElement(ElementNames.hh_paraHead)
                 .attribute(AttributeNames.start, paraHead.start())
-                .attribute(AttributeNames.level, paraHead.level());
-        if (paraHead.align() != null) {
-            xsb.attribute(AttributeNames.align, paraHead.align().str());
-        }
-        xsb
+                .attribute(AttributeNames.level, paraHead.level())
+                .attribute(AttributeNames.align, paraHead.align())
                 .attribute(AttributeNames.useInstWidth, paraHead.useInstWidth())
                 .attribute(AttributeNames.autoIndent, paraHead.autoIndent())
-                .attribute(AttributeNames.widthAdjust, paraHead.widthAdjust());
-        if (paraHead.textOffsetType() != null) {
-            xsb.attribute(AttributeNames.textOffsetType, paraHead.textOffsetType().str());
-        }
-        xsb.attribute(AttributeNames.textOffset, paraHead.textOffset());
-        if (paraHead.numFormat() != null) {
-            xsb.attribute(AttributeNames.numFormat, paraHead.numFormat().str());
-        }
-        xsb
+                .attribute(AttributeNames.widthAdjust, paraHead.widthAdjust())
+                .attribute(AttributeNames.textOffsetType, paraHead.textOffsetType())
+                .attribute(AttributeNames.textOffset, paraHead.textOffset())
+                .attribute(AttributeNames.numFormat, paraHead.numFormat())
                 .attribute(AttributeNames.charPrIDRef, paraHead.charPrIDRef())
                 .attribute(AttributeNames.checkable, paraHead.checkable())
                 .text(paraHead.text())

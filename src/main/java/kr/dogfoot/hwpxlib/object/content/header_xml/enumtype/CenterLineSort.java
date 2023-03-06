@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum CenterLineSort {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum CenterLineSort implements EnumGetStr {
     NONE("NONE"),
     VERTICAL("VERTICAL"),
     HORIZONTAL("HORIZONTAL"),
@@ -12,6 +14,7 @@ public enum CenterLineSort {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

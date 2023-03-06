@@ -23,18 +23,16 @@ public class BorderFillWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         BorderFill borderFill = (BorderFill) object;
-        storeSwitchObject(borderFill.switchObject());
+        switchObject(borderFill.switchObject());
 
         xsb()
                 .openElement(ElementNames.hh_borderFill)
                 .elementWriter(this)
                 .attribute(AttributeNames.id, borderFill.id())
                 .attribute(AttributeNames.threeD, borderFill.threeD())
-                .attribute(AttributeNames.shadow, borderFill.shadow());
-        if (borderFill.centerLine() != null) {
-            xsb().attribute(AttributeNames.centerLine, borderFill.centerLine().str());
-        }
-        xsb().attribute(AttributeNames.breakCellSeparateLine, borderFill.breakCellSeparateLine());
+                .attribute(AttributeNames.shadow, borderFill.shadow())
+                .attribute(AttributeNames.centerLine, borderFill.centerLine())
+                .attribute(AttributeNames.breakCellSeparateLine, borderFill.breakCellSeparateLine());
 
         if (borderFill.slash() != null) {
             slashCore(ElementNames.hh_slash, borderFill.slash());
@@ -74,11 +72,8 @@ public class BorderFillWriter extends ElementWriter {
 
     private void slashCore(String elementName, SlashCore slashCore) {
           xsb()
-                  .openElement(elementName);
-          if (slashCore.type() != null) {
-              xsb().attribute(AttributeNames.type, slashCore.type().str());
-          }
-          xsb()
+                  .openElement(elementName)
+                  .attribute(AttributeNames.type, slashCore.type())
                   .attribute(AttributeNames.Crooked, slashCore.Crooked())
                   .attribute(AttributeNames.isCounter, slashCore.isCounter())
                   .closeElement();
@@ -86,14 +81,9 @@ public class BorderFillWriter extends ElementWriter {
 
     private void border(String elementName, Border border) {
         xsb()
-                .openElement(elementName);
-        if (border.type() != null) {
-            xsb().attribute(AttributeNames.type, border.type().str());
-        }
-        if (border.width() != null) {
-            xsb().attribute(AttributeNames.width, border.width().str());
-        }
-        xsb()
+                .openElement(elementName)
+                .attribute(AttributeNames.type, border.type())
+                .attribute(AttributeNames.width, border.width())
                 .attribute(AttributeNames.color, border.color())
                 .closeElement();
     }

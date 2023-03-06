@@ -1,6 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum LineNumberRestartType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LineNumberRestartType implements EnumGetStr {
+    Unknown("0"),
     /**
      * 쪽 마다 새번호
      */
@@ -20,6 +23,7 @@ public enum LineNumberRestartType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

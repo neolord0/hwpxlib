@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum CaptionSide {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum CaptionSide implements EnumGetStr {
     LEFT("LEFT"),
     RIGHT("RIGHT"),
     TOP("TOP"),
@@ -12,6 +14,7 @@ public enum CaptionSide {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

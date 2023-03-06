@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 숫자 포맷
  */
-public enum NumberType2 {
+public enum NumberType2 implements EnumGetStr {
     /**
      * 숫자
      */
@@ -87,6 +89,7 @@ public enum NumberType2 {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

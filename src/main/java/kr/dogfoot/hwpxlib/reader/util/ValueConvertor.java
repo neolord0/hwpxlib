@@ -3,6 +3,7 @@ package kr.dogfoot.hwpxlib.reader.util;
 public class ValueConvertor {
     private static final String True = "1";
     private static final String TrueText = "true";
+    private static final String FalseText = "false";
 
     public static Boolean toBoolean(String value) {
         if (value == null) {
@@ -52,5 +53,12 @@ public class ValueConvertor {
             return null;
         }
         return new Byte(value);
+    }
+
+    public static String toParameterValue(Boolean value) {
+        if (value.booleanValue() == true) {
+            return TrueText;
+        }
+        return FalseText;
     }
 }

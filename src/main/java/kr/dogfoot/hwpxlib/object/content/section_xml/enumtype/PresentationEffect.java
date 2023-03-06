@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 프레젠테이션 효과
  */
-public enum PresentationEffect {
+public enum PresentationEffect implements EnumGetStr {
     /**
      * 없음
      */
@@ -91,6 +93,7 @@ public enum PresentationEffect {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

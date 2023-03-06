@@ -22,7 +22,7 @@ public class ContentManifestWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<ManifestItem> manifest = (ObjectList<ManifestItem>) object;
-        storeSwitchObject(manifest.switchObject());
+        switchObject(manifest.switchObject());
 
         xsb()
                 .openElement(ElementNames.opf_manifest)

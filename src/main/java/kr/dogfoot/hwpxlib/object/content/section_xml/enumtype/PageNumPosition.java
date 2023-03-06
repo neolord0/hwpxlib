@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum PageNumPosition {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum PageNumPosition implements EnumGetStr {
     NONE("NONE"),
     TOP_LEFT("TOP_LEFT"),
     TOP_CENTER("TOP_CENTER"),
@@ -19,6 +21,7 @@ public enum PageNumPosition {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

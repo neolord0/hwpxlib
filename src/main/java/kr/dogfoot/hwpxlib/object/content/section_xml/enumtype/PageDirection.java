@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 페이지 방향
  */
-public enum PageDirection {
+public enum PageDirection implements EnumGetStr {
     /**
      * 세로
      */
@@ -19,6 +21,7 @@ public enum PageDirection {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

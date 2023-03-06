@@ -45,7 +45,7 @@ public class ParameterListReader extends ElementReader {
             case ElementNames.hp_floatParam:
                 floatParam(parameterList.addNewFloatParam(), name, attrs);
                 break;
-            case ElementNames.hp_ListParam:
+            case ElementNames.hp_listParam:
                 listParam(parameterList.addNewListParam(), name, attrs);
                 break;
         }
@@ -70,7 +70,7 @@ public class ParameterListReader extends ElementReader {
                 FloatParam floatParam = new FloatParam();
                 floatParam(floatParam, name, attrs);
                 return floatParam;
-            case ElementNames.hp_ListParam:
+            case ElementNames.hp_listParam:
                 ListParam listParam = new ListParam();
                 listParam(listParam, name, attrs);
                 return listParam;

@@ -22,7 +22,7 @@ public class BorderFillsWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<BorderFill> borderFills = (ObjectList<BorderFill>) object;
-        storeSwitchObject(borderFills.switchObject());
+        switchObject(borderFills.switchObject());
         if (borderFills.count() == 0) {
             return;
         }

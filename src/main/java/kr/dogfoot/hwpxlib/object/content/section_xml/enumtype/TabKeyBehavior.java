@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 탭키를 눌렸을 때의 동작
  */
-public enum TabKeyBehavior {
+public enum TabKeyBehavior implements EnumGetStr {
     /**
      * 다음 객체로 이동
      */
@@ -19,6 +21,7 @@ public enum TabKeyBehavior {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

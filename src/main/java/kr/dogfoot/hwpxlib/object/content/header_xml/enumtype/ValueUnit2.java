@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum ValueUnit2 {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum ValueUnit2 implements EnumGetStr {
     CHAR("CHAR"),
     HWPUNIT("HWPUNIT");
 
@@ -10,6 +12,7 @@ public enum ValueUnit2 {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

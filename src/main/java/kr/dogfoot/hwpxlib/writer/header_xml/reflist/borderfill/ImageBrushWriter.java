@@ -23,14 +23,12 @@ public class ImageBrushWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ImgBrush imgBrush = (ImgBrush) object;
-        storeSwitchObject(imgBrush.switchObject());
+        switchObject(imgBrush.switchObject());
 
         xsb()
                 .openElement(ElementNames.hc_imgBrush)
-                .elementWriter(this);
-        if (imgBrush.mode() != null) {
-            xsb().attribute(AttributeNames.mode, imgBrush.mode().str());
-        }
+                .elementWriter(this)
+                .attribute(AttributeNames.mode, imgBrush.mode());
 
         if (imgBrush.img() != null) {
             img(imgBrush.img(), xsb());
@@ -45,11 +43,8 @@ public class ImageBrushWriter extends ElementWriter {
                 .openElement(ElementNames.hc_img)
                 .attribute(AttributeNames.binaryItemIDRef, img.binaryItemIDRef())
                 .attribute(AttributeNames.bright, img.bright())
-                .attribute(AttributeNames.contrast, img.contrast());
-        if (img.effect() != null) {
-            xsb.attribute(AttributeNames.effect, img.effect().str());
-        }
-        xsb
+                .attribute(AttributeNames.contrast, img.contrast())
+                .attribute(AttributeNames.effect, img.effect())
                 .attribute(AttributeNames.alpha, img.alpha())
                 .closeElement();
     }

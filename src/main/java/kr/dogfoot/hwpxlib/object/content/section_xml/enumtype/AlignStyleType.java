@@ -1,7 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
 
-public enum AlignStyleType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum AlignStyleType implements EnumGetStr {
     TOP_LEFT("TOP_LEFT"),
     TOP("TOP"),
     TOP_RIGHT("TOP_RIGHT"),
@@ -18,6 +20,8 @@ public enum AlignStyleType {
         this.str = str;
     }
 
+
+    @Override
     public String str() {
         return str;
     }

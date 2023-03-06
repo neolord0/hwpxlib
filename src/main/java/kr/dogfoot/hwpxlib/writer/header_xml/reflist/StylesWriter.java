@@ -22,7 +22,7 @@ public class StylesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<Style> styles = (ObjectList<Style>) object;
-        storeSwitchObject(styles.switchObject());
+        switchObject(styles.switchObject());
         if (styles.count() == 0) {
             return;
         }
@@ -43,11 +43,8 @@ public class StylesWriter extends ElementWriter {
     private void style(Style style) {
         xsb()
                 .openElement(ElementNames.hh_style)
-                .attribute(AttributeNames.id, style.id());
-        if (style.type() != null) {
-            xsb().attribute(AttributeNames.type, style.type().str());
-        }
-        xsb()
+                .attribute(AttributeNames.id, style.id())
+                .attribute(AttributeNames.type, style.type())
                 .attribute(AttributeNames.name, style.name())
                 .attribute(AttributeNames.engName, style.engName())
                 .attribute(AttributeNames.paraPrIDRef, style.paraPrIDRef())

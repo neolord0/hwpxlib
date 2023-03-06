@@ -22,7 +22,7 @@ public class FillBrushWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         FillBrush fillBrush = (FillBrush) object;
-        storeSwitchObject(fillBrush.switchObject());
+        switchObject(fillBrush.switchObject());
 
         xsb()
                 .openElement(ElementNames.hc_fillBrush)
@@ -48,11 +48,8 @@ public class FillBrushWriter extends ElementWriter {
         xsb()
                 .openElement(ElementNames.hc_winBrush)
                 .attribute(AttributeNames.faceColor, winBrush.faceColor())
-                .attribute(AttributeNames.hatchColor, winBrush.hatchColor());
-        if (winBrush.hatchStyle() != null) {
-            xsb().attribute(AttributeNames.hatchStyle, winBrush.hatchStyle().str());
-        }
-        xsb()
+                .attribute(AttributeNames.hatchColor, winBrush.hatchColor())
+                .attribute(AttributeNames.hatchStyle, winBrush.hatchStyle())
                 .attribute(AttributeNames.alpha, winBrush.alpha())
                 .closeElement();
     }

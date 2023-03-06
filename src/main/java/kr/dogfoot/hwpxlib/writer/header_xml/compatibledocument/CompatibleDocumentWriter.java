@@ -21,14 +21,12 @@ public class CompatibleDocumentWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         CompatibleDocument compatibleDocument = (CompatibleDocument) object;
-        storeSwitchObject(compatibleDocument.switchObject());
+        switchObject(compatibleDocument.switchObject());
 
         xsb()
                 .openElement(ElementNames.hh_compatibleDocument)
-                .elementWriter(this);
-        if (compatibleDocument.targetProgram() != null) {
-            xsb().attribute(AttributeNames.targetProgram, compatibleDocument.targetProgram().str());
-        }
+                .elementWriter(this)
+                .attribute(AttributeNames.targetProgram, compatibleDocument.targetProgram());
 
         if (compatibleDocument.layoutCompatibility() != null) {
             writeChild(ElementWriterSort.LayoutCompatibility, compatibleDocument.layoutCompatibility());

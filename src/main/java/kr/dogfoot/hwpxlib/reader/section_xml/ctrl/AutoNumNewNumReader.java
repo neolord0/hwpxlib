@@ -4,7 +4,7 @@ import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.AutoNumNewNumType;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.AutoNumNewNumCore;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.AutoNumFormat;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
@@ -13,14 +13,14 @@ import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
 
 public class AutoNumNewNumReader extends ElementReader {
-    private AutoNumNewNumType autoNumNewNum;
+    private AutoNumNewNumCore autoNumNewNum;
 
     @Override
     public ElementReaderSort sort() {
         return ElementReaderSort.AutoNumNewNum;
     }
 
-    public void autoNumNewNum(AutoNumNewNumType autoNumNewNum) {
+    public void autoNumNewNum(AutoNumNewNumCore autoNumNewNum) {
         this.autoNumNewNum = autoNumNewNum;
     }
 

@@ -22,7 +22,7 @@ public class TrackChangesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<TrackChange> trackChanges = (ObjectList<TrackChange>) object;
-        storeSwitchObject(trackChanges.switchObject());
+        switchObject(trackChanges.switchObject());
         if (trackChanges.count() == 0) {
             return;
         }
@@ -43,11 +43,8 @@ public class TrackChangesWriter extends ElementWriter {
     private void trackChange(TrackChange trackChange) {
         xsb()
                 .openElement(ElementNames.hh_trackChange)
-                .attribute(AttributeNames.id, trackChange.id());
-        if (trackChange.type() != null) {
-            xsb().attribute(AttributeNames.type, trackChange.type().str());
-        }
-        xsb()
+                .attribute(AttributeNames.id, trackChange.id())
+                .attribute(AttributeNames.type, trackChange.type())
                 .attribute(AttributeNames.date, trackChange.date())
                 .attribute(AttributeNames.authorID, trackChange.authorID())
                 .attribute(AttributeNames.hide, trackChange.hide())

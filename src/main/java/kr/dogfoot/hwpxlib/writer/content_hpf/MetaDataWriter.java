@@ -23,7 +23,7 @@ public class MetaDataWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         MetaData metaData = (MetaData) object;
-        storeSwitchObject(metaData.switchObject());
+        switchObject(metaData.switchObject());
 
         xsb()
                 .openElement(ElementNames.opf_metadata)

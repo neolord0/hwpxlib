@@ -22,7 +22,7 @@ public class ParaPrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ParaPr paraPr = (ParaPr) object;
-        storeSwitchObject(paraPr.switchObject());
+        switchObject(paraPr.switchObject());
 
         xsb()
                 .openElement(ElementNames.hh_paraPr)
@@ -68,44 +68,33 @@ public class ParaPrWriter extends ElementWriter {
     }
 
     private void align(Align align) {
-        xsb().openElement(ElementNames.hh_align);
-        if (align.horizontal() != null) {
-            xsb().attribute(AttributeNames.horizontal, align.horizontal().str());
-        }
-        if (align.vertical() != null) {
-            xsb().attribute(AttributeNames.vertical, align.vertical().str());
-        }
-        xsb().closeElement();
+        xsb()
+                .openElement(ElementNames.hh_align)
+                .attribute(AttributeNames.horizontal, align.horizontal())
+                .attribute(AttributeNames.vertical, align.vertical())
+                .closeElement();
     }
 
     private void heading(Heading heading) {
-        xsb().openElement(ElementNames.hh_heading);
-        if (heading.type() != null) {
-            xsb().attribute(AttributeNames.type, heading.type().str());
-        }
         xsb()
+                .openElement(ElementNames.hh_heading)
+                .attribute(AttributeNames.type, heading.type())
                 .attribute(AttributeNames.idRef, heading.idRef())
                 .attribute(AttributeNames.level, heading.level())
                 .closeElement();
     }
 
     private void breakSetting(BreakSetting breakSetting) {
-        xsb().openElement(ElementNames.hh_breakSetting);
-        if (breakSetting.breakLatinWord() != null) {
-            xsb().attribute(AttributeNames.breakLatinWord, breakSetting.breakLatinWord().str());
-        }
-        if (breakSetting.breakNonLatinWord() != null) {
-            xsb().attribute(AttributeNames.breakNonLatinWord, breakSetting.breakNonLatinWord().str());
-        }
         xsb()
+                .openElement(ElementNames.hh_breakSetting)
+                .attribute(AttributeNames.breakLatinWord, breakSetting.breakLatinWord())
+                .attribute(AttributeNames.breakNonLatinWord, breakSetting.breakNonLatinWord())
                 .attribute(AttributeNames.widowOrphan, breakSetting.widowOrphan())
                 .attribute(AttributeNames.keepWithNext, breakSetting.keepWithNext())
                 .attribute(AttributeNames.keepLines, breakSetting.keepLines())
-                .attribute(AttributeNames.pageBreakBefore, breakSetting.pageBreakBefore());
-        if (breakSetting.lineWrap() != null) {
-            xsb().attribute(AttributeNames.lineWrap, breakSetting.lineWrap().str());
-        }
-        xsb().closeElement();
+                .attribute(AttributeNames.pageBreakBefore, breakSetting.pageBreakBefore())
+                .attribute(AttributeNames.lineWrap, breakSetting.lineWrap())
+                .closeElement();
     }
 
     private void autoSpacing(AutoSpacing autoSpacing) {
@@ -117,15 +106,12 @@ public class ParaPrWriter extends ElementWriter {
     }
 
     private void lineSpacing(LineSpacing lineSpacing) {
-        xsb().openElement(ElementNames.hh_lineSpacing);
-        if (lineSpacing.type() != null) {
-            xsb().attribute(AttributeNames.type, lineSpacing.type().str());
-        }
-        xsb().attribute(AttributeNames.value, lineSpacing.value());
-        if (lineSpacing.unit() != null) {
-            xsb().attribute(AttributeNames.unit, lineSpacing.unit().str());
-        }
-        xsb().closeElement();
+        xsb()
+                .openElement(ElementNames.hh_lineSpacing)
+                .attribute(AttributeNames.type, lineSpacing.type())
+                .attribute(AttributeNames.value, lineSpacing.value())
+                .attribute(AttributeNames.unit, lineSpacing.unit())
+                .closeElement();
     }
 
     private void border(ParaBorder border) {

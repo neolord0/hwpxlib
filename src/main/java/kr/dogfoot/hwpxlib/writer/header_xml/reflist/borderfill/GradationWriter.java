@@ -22,15 +22,12 @@ public class GradationWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Gradation gradation = (Gradation) object;
-        storeSwitchObject(gradation.switchObject());
+        switchObject(gradation.switchObject());
 
         xsb()
                 .openElement(ElementNames.hc_gradation)
-                .elementWriter(this);
-        if (gradation.type() != null) {
-            xsb().attribute(AttributeNames.type, gradation.type().str());
-        }
-        xsb()
+                .elementWriter(this)
+                .attribute(AttributeNames.type, gradation.type())
                 .attribute(AttributeNames.angle, gradation.angle())
                 .attribute(AttributeNames.centerX, gradation.centerX())
                 .attribute(AttributeNames.centerY, gradation.centerY())

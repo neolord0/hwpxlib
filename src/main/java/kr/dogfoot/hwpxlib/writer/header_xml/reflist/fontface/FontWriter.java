@@ -23,17 +23,14 @@ public class FontWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Font font = (Font) object;
-        storeSwitchObject(font.switchObject());
+        switchObject(font.switchObject());
 
         xsb()
                 .openElement(ElementNames.hh_font)
                 .elementWriter(this)
                 .attribute(AttributeNames.id, font.id())
-                .attribute(AttributeNames.face, font.face());
-        if (font.type() != null) {
-            xsb().attribute(AttributeNames.type, font.type().str());
-        }
-        xsb()
+                .attribute(AttributeNames.face, font.face())
+                .attribute(AttributeNames.type, font.type())
                 .attribute(AttributeNames.isEmbedded, font.isEmbedded())
                 .attribute(AttributeNames.binaryItemIDRef, font.binaryItemIDRef());
 
@@ -52,11 +49,8 @@ public class FontWriter extends ElementWriter {
     private void substFont(SubstFont substFont) {
         xsb()
                 .openElement(ElementNames.hh_substFont)
-                .attribute(AttributeNames.face, substFont.face());
-        if (substFont.type() != null) {
-            xsb().attribute(AttributeNames.type, substFont.type().str());
-        }
-        xsb()
+                .attribute(AttributeNames.face, substFont.face())
+                .attribute(AttributeNames.type, substFont.type())
                 .attribute(AttributeNames.isEmbedded, substFont.isEmbedded())
                 .attribute(AttributeNames.binaryItemIDRef, substFont.binaryItemIDRef())
                 .closeElement();
@@ -64,11 +58,8 @@ public class FontWriter extends ElementWriter {
 
     private void typeInfo(TypeInfo typeInfo) {
         xsb()
-                .openElement(ElementNames.hh_typeInfo);
-        if (typeInfo.familyType() != null) {
-            xsb().attribute(AttributeNames.familyType, typeInfo.familyType().str());
-        }
-        xsb()
+                .openElement(ElementNames.hh_typeInfo)
+                .attribute(AttributeNames.familyType, typeInfo.familyType())
                 .attribute(AttributeNames.serifStyle, typeInfo.serifStyle())
                 .attribute(AttributeNames.weight, typeInfo.weight())
                 .attribute(AttributeNames.proportion, typeInfo.proportion())

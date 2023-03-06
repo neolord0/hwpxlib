@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum FontFamilyType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum FontFamilyType implements EnumGetStr {
     FCAT_UNKNOWN("FCAT_UNKNOWN"),
     FCAT_MYUNGJO("FCAT_MYUNGJO"),
     FCAT_GOTHIC("FCAT_GOTHIC"),
@@ -16,6 +18,7 @@ public enum FontFamilyType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

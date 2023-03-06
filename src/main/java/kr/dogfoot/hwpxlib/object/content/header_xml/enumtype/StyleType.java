@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 스타일 종류
  */
-public enum StyleType {
+public enum StyleType implements EnumGetStr {
     /**
      * 문단 스타일
      */
@@ -19,6 +21,7 @@ public enum StyleType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

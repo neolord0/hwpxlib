@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum SymMarkSort {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum SymMarkSort implements EnumGetStr {
     NONE("NONE"),
     DOT_ABOVE("DOT_ABOVE"),
     RING_ABOVE("RING_ABOVE"),
@@ -21,6 +23,7 @@ public enum SymMarkSort {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -22,7 +22,7 @@ public class ForbiddenWordListWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<ForbiddenWord> forbiddenWordList = (ObjectList<ForbiddenWord>) object;
-        storeSwitchObject(forbiddenWordList.switchObject());
+        switchObject(forbiddenWordList.switchObject());
         if (forbiddenWordList.count() == 0) {
             return;
         }

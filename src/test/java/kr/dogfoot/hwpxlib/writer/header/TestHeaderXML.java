@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.writer.header;
 
+import kr.dogfoot.hwpxlib.writer.TestUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

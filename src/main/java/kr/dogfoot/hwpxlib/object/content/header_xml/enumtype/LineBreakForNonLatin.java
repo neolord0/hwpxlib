@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum LineBreakForNonLatin {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LineBreakForNonLatin implements EnumGetStr {
     /**
      * 어절
      */
@@ -16,6 +18,7 @@ public enum LineBreakForNonLatin {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 본문 위치
  */
-public enum TextFlowSide {
+public enum TextFlowSide implements EnumGetStr {
     /**
      * 양쪽
      */
@@ -27,6 +29,7 @@ public enum TextFlowSide {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

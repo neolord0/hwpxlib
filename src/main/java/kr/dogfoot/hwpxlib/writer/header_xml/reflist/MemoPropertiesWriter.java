@@ -22,7 +22,7 @@ public class MemoPropertiesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<MemoPr> memoProperties = (ObjectList<MemoPr>) object;
-        storeSwitchObject(memoProperties.switchObject());
+        switchObject(memoProperties.switchObject());
         if (memoProperties.count() == 0) {
             return;
         }
@@ -44,21 +44,14 @@ public class MemoPropertiesWriter extends ElementWriter {
         xsb()
                 .openElement(ElementNames.hh_memoPr)
                 .attribute(AttributeNames.id, memoPr.id())
-                .attribute(AttributeNames.width, memoPr.width());
-        if (memoPr.lineType() != null) {
-            xsb().attribute(AttributeNames.lineType, memoPr.lineType().str());
-        }
-        if (memoPr.lineWidth() != null) {
-            xsb().attribute(AttributeNames.lineWidth, memoPr.lineWidth().index());
-        }
-        xsb()
+                .attribute(AttributeNames.width, memoPr.width())
+                .attribute(AttributeNames.lineType, memoPr.lineType())
+                .attributeIndex(AttributeNames.lineWidth, memoPr.lineWidth())
                 .attribute(AttributeNames.lineColor, memoPr.lineColor())
                 .attribute(AttributeNames.fillColor, memoPr.fillColor())
-                .attribute(AttributeNames.activeColor, memoPr.activeColor());
-        if (memoPr.memoType() != null) {
-            xsb().attribute(AttributeNames.memoType, memoPr.memoType().str());
-        }
-        xsb().closeElement();
+                .attribute(AttributeNames.activeColor, memoPr.activeColor())
+                .attribute(AttributeNames.memoType, memoPr.memoType())
+                .closeElement();
     }
 
     @Override

@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 변경추적 종류
  */
-public enum TrackChangeType {
+public enum TrackChangeType implements EnumGetStr {
     /**
      * 알 수 없음
      */
@@ -31,6 +33,7 @@ public enum TrackChangeType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

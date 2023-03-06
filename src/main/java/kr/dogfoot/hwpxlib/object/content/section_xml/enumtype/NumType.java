@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum NumType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum NumType implements EnumGetStr {
     PAGE("PAGE"),
     FOOTNOTE("FOOTNOTE"),
     ENDNOTE("ENDNOTE"),
@@ -15,6 +17,7 @@ public enum NumType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

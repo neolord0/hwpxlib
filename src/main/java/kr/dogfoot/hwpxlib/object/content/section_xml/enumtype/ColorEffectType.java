@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 색상 효과
  */
-public enum ColorEffectType {
+public enum ColorEffectType implements EnumGetStr {
     ALPHA("ALPHA"),
     ALPHA_MOD("ALPHA_MOD"),
     ALPHA_OFF("ALPHA_OFF"),
@@ -39,6 +41,7 @@ public enum ColorEffectType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

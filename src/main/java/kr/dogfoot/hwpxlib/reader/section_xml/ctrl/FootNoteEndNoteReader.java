@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.NoteType;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.FootNoteEndNoteCore;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
@@ -13,14 +13,14 @@ import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
 
 public class FootNoteEndNoteReader extends ElementReader {
-    private NoteType footNoteEndNote;
+    private FootNoteEndNoteCore footNoteEndNote;
 
     @Override
     public ElementReaderSort sort() {
         return ElementReaderSort.FootNoteEndNote;
     }
 
-    public void footNoteEndNote(NoteType footNoteEndNote) {
+    public void footNoteEndNote(FootNoteEndNoteCore footNoteEndNote) {
         this.footNoteEndNote = footNoteEndNote;
     }
 

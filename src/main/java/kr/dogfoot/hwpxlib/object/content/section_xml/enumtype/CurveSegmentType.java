@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 곡선 세그먼트 종류
  */
-public enum CurveSegmentType {
+public enum CurveSegmentType implements EnumGetStr {
     /**
      * 직선
      */
@@ -19,6 +21,7 @@ public enum CurveSegmentType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

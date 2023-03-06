@@ -1,6 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum LineType2 {
+import kr.dogfoot.hwpxlib.object.common.EnumGetIndex;
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LineType2 implements EnumGetStr, EnumGetIndex {
     /**
      * 선 없음
      */
@@ -58,8 +61,14 @@ public enum LineType2 {
         this.index = index;
     }
 
+    @Override
     public String str() {
         return str;
+    }
+
+    @Override
+    public int index() {
+        return index;
     }
 
     public static LineType2 fromString(String str) {

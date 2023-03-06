@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum SlashType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum SlashType implements EnumGetStr {
     /**
      * 없음
      */
@@ -28,6 +30,7 @@ public enum SlashType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

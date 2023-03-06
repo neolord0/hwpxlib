@@ -6,21 +6,21 @@ import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ApplyPageType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.HeaderFooterType;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.HeaderFooterCore;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
 import org.xml.sax.Attributes;
 
 public class HeaderFooterReader extends ElementReader {
-    private HeaderFooterType headerFooter;
+    private HeaderFooterCore headerFooter;
 
     @Override
     public ElementReaderSort sort() {
         return ElementReaderSort.HeaderFooter;
     }
 
-    public void headerFooter(HeaderFooterType headerFooter) {
+    public void headerFooter(HeaderFooterCore headerFooter) {
         this.headerFooter = headerFooter;
     }
 

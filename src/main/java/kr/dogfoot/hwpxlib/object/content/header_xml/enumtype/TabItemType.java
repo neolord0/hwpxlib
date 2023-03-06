@@ -1,6 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum TabItemType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetIndex;
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum TabItemType implements EnumGetStr, EnumGetIndex {
     LEFT("LEFT", 1),
     RIGHT("RIGHT", 2),
     CENTER("CENTER", 3),
@@ -14,8 +17,15 @@ public enum TabItemType {
         this.index = index;
     }
 
+
+    @Override
     public String str() {
         return str;
+    }
+
+    @Override
+    public int index() {
+        return index;
     }
 
     public static TabItemType fromString(String str) {
@@ -38,4 +48,5 @@ public enum TabItemType {
         }
         return null;
     }
+
 }

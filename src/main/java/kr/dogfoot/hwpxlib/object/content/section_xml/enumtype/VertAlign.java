@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 세로 배열 방식
  */
-public enum VertAlign {
+public enum VertAlign implements EnumGetStr {
     /**
      * 위
      */
@@ -31,6 +33,7 @@ public enum VertAlign {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

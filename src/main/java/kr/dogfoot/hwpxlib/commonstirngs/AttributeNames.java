@@ -433,4 +433,6 @@ public class AttributeNames {
     public static final String xmlVersion = "xmlVersion";
     public static final String itemCnt = "itemCnt";
     public static final String fontCnt = "fontCnt";
+    public static final String masterPageCnt = "masterPageCnt";
+    public static final String cnt = "cnt";
 }

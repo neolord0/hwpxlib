@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum TextWrapMethod {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum TextWrapMethod implements EnumGetStr {
     /**
      * 어울림
      */
@@ -26,6 +28,7 @@ public enum TextWrapMethod {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

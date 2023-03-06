@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 글자 겹칩 테두리 종류
  */
-public enum ComposeCircleType {
+public enum ComposeCircleType implements EnumGetStr {
     CHAR("CHAR"),
     SHAPE_CIRCLE("SHAPE_CIRCLE"),
     SHAPE_REVERSAL_CIRCLE("SHAPE_REVERSAL_CIRCLE"),
@@ -25,6 +27,7 @@ public enum ComposeCircleType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

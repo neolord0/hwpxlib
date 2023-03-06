@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum PageStartON {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum PageStartON implements EnumGetStr {
     /**
      * 이어서
      */
@@ -20,6 +22,7 @@ public enum PageStartON {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

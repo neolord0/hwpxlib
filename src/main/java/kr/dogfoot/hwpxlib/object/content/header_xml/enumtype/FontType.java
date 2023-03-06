@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum FontType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum FontType implements EnumGetStr {
     /**
      * 대표 글꼴
      */
@@ -20,6 +22,7 @@ public enum FontType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

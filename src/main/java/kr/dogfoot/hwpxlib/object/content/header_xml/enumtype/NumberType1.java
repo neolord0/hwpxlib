@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum NumberType1 {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum NumberType1 implements EnumGetStr {
     /**
      * 숫자
      */
@@ -68,6 +70,7 @@ public enum NumberType1 {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

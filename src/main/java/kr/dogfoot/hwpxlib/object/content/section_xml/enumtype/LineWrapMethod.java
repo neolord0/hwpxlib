@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 줄나눔 방식
  */
-public enum LineWrapMethod {
+public enum LineWrapMethod implements EnumGetStr {
     /**
      * 나눠짐
      */
@@ -23,6 +25,7 @@ public enum LineWrapMethod {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

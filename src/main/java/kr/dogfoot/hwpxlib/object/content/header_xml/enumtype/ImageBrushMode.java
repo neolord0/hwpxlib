@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum ImageBrushMode {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum ImageBrushMode implements EnumGetStr {
     /**
      * 바둑판식으로-모두
      */
@@ -72,6 +74,7 @@ public enum ImageBrushMode {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

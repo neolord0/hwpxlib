@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum ShadowStyle {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum ShadowStyle implements EnumGetStr {
     OUTSIDE("OUTSIDE"),
     INSIDE("INSIDE");
 
@@ -10,6 +12,7 @@ public enum ShadowStyle {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum LanguageType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LanguageType implements EnumGetStr {
     HANGUL("HANGUL"),
     LATIN("LATIN"),
     HANJA("HANJA"),
@@ -15,6 +17,7 @@ public enum LanguageType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

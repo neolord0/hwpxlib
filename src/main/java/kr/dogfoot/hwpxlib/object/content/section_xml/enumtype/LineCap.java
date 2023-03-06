@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 라인 끝 처리
  */
-public enum LineCap {
+public enum LineCap implements EnumGetStr {
     /**
      * 둥글게
      */
@@ -19,6 +21,7 @@ public enum LineCap {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

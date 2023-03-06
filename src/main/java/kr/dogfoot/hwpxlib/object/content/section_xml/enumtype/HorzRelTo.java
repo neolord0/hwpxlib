@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum HorzRelTo {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum HorzRelTo implements EnumGetStr {
     PAPER("PAPER"),
     PAGE("PAGE"),
     PARA("PARA"),
@@ -12,6 +14,7 @@ public enum HorzRelTo {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

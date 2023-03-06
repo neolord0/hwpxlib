@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum LineSpacingType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LineSpacingType implements EnumGetStr {
     /**
      * 글자에 따라
      */
@@ -24,6 +26,7 @@ public enum LineSpacingType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

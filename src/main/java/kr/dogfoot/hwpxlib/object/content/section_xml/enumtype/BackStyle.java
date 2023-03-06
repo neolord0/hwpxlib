@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 배경스타일
  */
-public enum BackStyle {
+public enum BackStyle implements EnumGetStr {
     /**
      * 투명
      */
@@ -19,6 +21,7 @@ public enum BackStyle {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

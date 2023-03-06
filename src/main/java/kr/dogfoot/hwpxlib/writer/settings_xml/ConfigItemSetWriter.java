@@ -22,7 +22,7 @@ public class ConfigItemSetWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<ConfigItem> configItemSet = (ObjectList<ConfigItem>) object;
-        storeSwitchObject(configItemSet.switchObject());
+        switchObject(configItemSet.switchObject());
 
         xsb()
                 .openElement(ElementNames.config_item_set)

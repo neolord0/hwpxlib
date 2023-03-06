@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum ColumnDirection {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum ColumnDirection implements EnumGetStr {
     /**
      * 왼쪽부터
      */
@@ -20,6 +22,7 @@ public enum ColumnDirection {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -25,7 +25,7 @@ public class HeaderWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         HeaderXMLFile headerXMLFile = (HeaderXMLFile) object;
-        storeSwitchObject(headerXMLFile.switchObject());
+        switchObject(headerXMLFile.switchObject());
 
         xsb()
                 .clear()

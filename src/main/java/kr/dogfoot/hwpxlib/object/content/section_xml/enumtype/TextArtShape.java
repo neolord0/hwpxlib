@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum TextArtShape {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum TextArtShape implements EnumGetStr {
     PARALLELOGRAM("PARALLELOGRAM"),
     INVERTED_PARALLELOGRAM("INVERTED_PARALLELOGRAM"),
     INVERTED_UPWARD_CASCADE("INVERTED_UPWARD_CASCADE"),
@@ -63,6 +65,7 @@ public enum TextArtShape {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

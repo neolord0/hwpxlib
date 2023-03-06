@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 너비 기준
  */
-public enum WidthRelTo {
+public enum WidthRelTo implements EnumGetStr {
     /**
      * 종이
      */
@@ -31,6 +33,7 @@ public enum WidthRelTo {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

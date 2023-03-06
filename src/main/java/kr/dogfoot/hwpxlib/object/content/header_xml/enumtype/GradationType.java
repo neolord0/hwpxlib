@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum GradationType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum GradationType implements EnumGetStr {
     /**
      * 줄무늬형
      */
@@ -24,6 +26,7 @@ public enum GradationType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

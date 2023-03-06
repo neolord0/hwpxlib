@@ -22,7 +22,7 @@ public class CharPrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         CharPr charPr = (CharPr) object;
-        storeSwitchObject(charPr.switchObject());
+        switchObject(charPr.switchObject());
 
         xsb()
                 .openElement(ElementNames.hh_charPr)
@@ -32,11 +32,8 @@ public class CharPrWriter extends ElementWriter {
                 .attribute(AttributeNames.textColor, charPr.textColor())
                 .attribute(AttributeNames.shadeColor, charPr.shadeColor())
                 .attribute(AttributeNames.useFontSpace, charPr.useFontSpace())
-                .attribute(AttributeNames.useKerning, charPr.useKerning());
-        if(charPr.symMark() != null) {
-            xsb().attribute(AttributeNames.symMark, charPr.symMark().str());
-        }
-        xsb()
+                .attribute(AttributeNames.useKerning, charPr.useKerning())
+                .attribute(AttributeNames.symMark, charPr.symMark())
                 .attribute(AttributeNames.borderFillIDRef, charPr.borderFillIDRef());
 
         if (charPr.fontRef() != null) {
@@ -131,48 +128,37 @@ public class CharPrWriter extends ElementWriter {
 
     private void underline(Underline underline) {
         xsb()
-                .openElement(ElementNames.hh_underline);
-        if (underline.type() != null) {
-            xsb().attribute(AttributeNames.type, underline.type().str());
-        }
-        if (underline.shape() != null) {
-            xsb().attribute(AttributeNames.shape, underline.shape().str());
-        }
-        xsb()
+                .openElement(ElementNames.hh_underline)
+                .attribute(AttributeNames.type, underline.type())
+                .attribute(AttributeNames.shape, underline.shape())
                 .attribute(AttributeNames.color, underline.color())
                 .closeElement();
     }
 
     private void strikeout(Strikeout strikeout) {
-        xsb().openElement(ElementNames.hh_strikeout);
-        if (strikeout.shape() != null) {
-            xsb().attribute(AttributeNames.shape, strikeout.shape().str());
-        }
         xsb()
+                .openElement(ElementNames.hh_strikeout)
+                .attribute(AttributeNames.shape, strikeout.shape())
                 .attribute(AttributeNames.color, strikeout.color())
                 .closeElement();
     }
 
     private void outline(Outline outline) {
-        xsb().openElement(ElementNames.hh_outline);
-        if (outline.type() != null) {
-            xsb().attribute(AttributeNames.type, outline.type().str());
-        }
-        xsb().closeElement();
+        xsb()
+                .openElement(ElementNames.hh_outline)
+                .attribute(AttributeNames.type, outline.type())
+                .closeElement();
     }
 
     private void shadow(CharShadow shadow) {
-        xsb().openElement(ElementNames.hh_shadow);
-        if (shadow.type() != null) {
-            xsb().attribute(AttributeNames.type, shadow.type().str());
-        }
         xsb()
+                .openElement(ElementNames.hh_shadow)
+                .attribute(AttributeNames.type, shadow.type())
                 .attribute(AttributeNames.color, shadow.color())
                 .attribute(AttributeNames.offsetX, shadow.offsetX())
                 .attribute(AttributeNames.offsetY, shadow.offsetY())
                 .closeElement();
     }
-
 
     @Override
     protected void childInSwitch(HWPXObject child) {

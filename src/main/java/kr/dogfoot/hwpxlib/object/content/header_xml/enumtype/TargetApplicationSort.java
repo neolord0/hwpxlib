@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum TargetApplicationSort {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum TargetApplicationSort implements EnumGetStr {
     WordProcessor("WORDPROCESSOR"),
     Presentation("PRESENTATION"),
     SpreadSheet("SPREADSHEET");
@@ -11,6 +13,7 @@ public enum TargetApplicationSort {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

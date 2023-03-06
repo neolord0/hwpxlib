@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum CharShadowType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum CharShadowType implements EnumGetStr {
     NONE("NONE"),
     DROP("DROP"),
     CONTINUOUS("CONTINUOUS");
@@ -11,6 +13,7 @@ public enum CharShadowType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

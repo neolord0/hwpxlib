@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum NumberingType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum NumberingType implements EnumGetStr {
     /**
      * 없음
      */
@@ -24,6 +26,7 @@ public enum NumberingType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

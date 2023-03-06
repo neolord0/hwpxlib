@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 쪽 경계에서 나눔
  */
-public enum TablePageBreak {
+public enum TablePageBreak implements EnumGetStr {
     /**
      * 나눔
      */
@@ -23,6 +25,7 @@ public enum TablePageBreak {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

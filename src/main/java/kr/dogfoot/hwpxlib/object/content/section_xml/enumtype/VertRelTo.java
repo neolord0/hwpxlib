@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum VertRelTo {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum VertRelTo implements EnumGetStr {
     PAPER("PAPER"),
     PAGE("PAGE"),
     PARA("PARA");
@@ -11,6 +13,7 @@ public enum VertRelTo {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -2,20 +2,20 @@ package kr.dogfoot.hwpxlib.reader.section_xml.t;
 
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.inner.TrackChangeTag;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.inner.TrackChangeCore;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 
 public class TrackChangeTagReader extends ElementReader {
-    private TrackChangeTag trackChangeTag;
+    private TrackChangeCore trackChangeTag;
 
     @Override
     public ElementReaderSort sort() {
         return ElementReaderSort.TrackChangeTag;
     }
 
-    public void trackChangeTag(TrackChangeTag trackChangeTag) {
+    public void trackChangeTag(TrackChangeCore trackChangeTag) {
         this.trackChangeTag = trackChangeTag;
     }
 

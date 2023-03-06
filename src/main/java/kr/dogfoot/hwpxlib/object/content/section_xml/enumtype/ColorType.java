@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum ColorType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum ColorType implements EnumGetStr {
     RGB("RGB"),
     CMYK("CMYK"),
     SCHEMA("SCHEMA"),
@@ -12,6 +14,7 @@ public enum ColorType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

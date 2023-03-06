@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * OLE 객체 타입
  */
-public enum OLEObjectType {
+public enum OLEObjectType implements EnumGetStr {
     UNKNOWN("UNKNOWN"),
     EMBEDDED("EMBEDDED"),
     LINK("LINK"),
@@ -16,6 +18,7 @@ public enum OLEObjectType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

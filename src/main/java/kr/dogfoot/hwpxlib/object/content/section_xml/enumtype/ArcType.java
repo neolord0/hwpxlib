@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 호의 종류
  */
-public enum ArcType {
+public enum ArcType implements EnumGetStr {
     NORMAL("NORMAL"),
     PIE("PIE"),
     CHORD("CHORD");
@@ -14,6 +16,7 @@ public enum ArcType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

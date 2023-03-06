@@ -1,6 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum LineWidth {
+import kr.dogfoot.hwpxlib.object.common.EnumGetIndex;
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LineWidth implements EnumGetStr, EnumGetIndex {
     MM_0_1("0.1 mm", (byte) 0),
     MM_0_12("0.12 mm", (byte) 1),
     MM_0_15("0.15 mm", (byte) 2),
@@ -26,10 +29,12 @@ public enum LineWidth {
         this.index = index;
     }
 
+    @Override
     public String str() {
         return str;
     }
 
+    @Override
     public int index() {
         return index;
     }

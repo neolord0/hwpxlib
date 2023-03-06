@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 텍스트 진행방향
  */
-public enum TextDirection {
+public enum TextDirection implements EnumGetStr {
     /**
      * 가로쓰기
      */
@@ -23,6 +25,7 @@ public enum TextDirection {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

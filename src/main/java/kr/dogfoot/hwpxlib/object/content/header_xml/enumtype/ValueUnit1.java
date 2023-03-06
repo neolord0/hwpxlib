@@ -1,6 +1,9 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum ValueUnit1 {
+import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum ValueUnit1 implements EnumGetStr {
     PERCENT("PERCENT"),
     HWPUNIT("HWPUNIT");
 
@@ -10,6 +13,7 @@ public enum ValueUnit1 {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

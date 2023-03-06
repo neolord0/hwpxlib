@@ -22,7 +22,7 @@ public class SpineWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<SpineItemRef> spine = (ObjectList<SpineItemRef>) object;
-        storeSwitchObject(spine.switchObject());
+        switchObject(spine.switchObject());
 
         xsb()
                 .openElement(ElementNames.opf_spine)

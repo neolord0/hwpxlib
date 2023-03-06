@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 버튼 체크 상태 값
  */
-public enum ButtonCheckValue {
+public enum ButtonCheckValue implements EnumGetStr {
     /**
      * 체크 안함
      */
@@ -23,6 +25,7 @@ public enum ButtonCheckValue {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

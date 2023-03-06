@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 테두리선 형태
  */
-public enum OutlineStyle {
+public enum OutlineStyle implements EnumGetStr {
     NORMAL("NORMAL"),
     OUTER("OUTER"),
     INNER("INNER");
@@ -14,6 +16,7 @@ public enum OutlineStyle {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

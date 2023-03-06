@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 제책 방벙(Gutter 여백 종류)
  */
-public enum GutterMethod {
+public enum GutterMethod implements EnumGetStr {
     /**
      * 왼쪽만
      */
@@ -23,6 +25,7 @@ public enum GutterMethod {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

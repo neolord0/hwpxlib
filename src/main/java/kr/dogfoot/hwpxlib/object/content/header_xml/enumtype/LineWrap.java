@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum LineWrap {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LineWrap implements EnumGetStr {
     /**
      * 일반적인 줄바꿈
      */
@@ -20,6 +22,7 @@ public enum LineWrap {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

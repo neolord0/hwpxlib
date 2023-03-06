@@ -13,7 +13,7 @@ public class ListParam extends Param<ListParam> {
 
     @Override
     public ObjectType _objectType() {
-        return ObjectType.hp_ListParam;
+        return ObjectType.hp_listParam;
     }
 
     public int cnt() {

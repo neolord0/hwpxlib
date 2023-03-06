@@ -13,7 +13,7 @@ public enum ObjectType {
     hp_integerParam,
     hp_floatParam,
     hp_stringParam,
-    hp_ListParam,
+    hp_listParam,
 
     // Version.xml
     hv_HCFVersion,

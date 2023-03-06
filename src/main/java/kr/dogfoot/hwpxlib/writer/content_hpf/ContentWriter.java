@@ -22,7 +22,7 @@ public class ContentWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ContentHPFFile contentHPF = (ContentHPFFile) object;
-        storeSwitchObject(contentHPF.switchObject());
+        switchObject(contentHPF.switchObject());
 
         xsb()
                 .clear()

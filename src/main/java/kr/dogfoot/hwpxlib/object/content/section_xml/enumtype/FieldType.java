@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum FieldType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum FieldType implements EnumGetStr {
     /**
      * 누름틀
      */
@@ -76,6 +78,7 @@ public enum FieldType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

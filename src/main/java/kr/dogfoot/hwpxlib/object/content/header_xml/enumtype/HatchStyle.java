@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum HatchStyle {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum HatchStyle implements EnumGetStr {
     /**
      * ----
      */
@@ -32,6 +34,7 @@ public enum HatchStyle {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

@@ -6,6 +6,7 @@ import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
+import kr.dogfoot.hwpxlib.object.content.section_xml.SectionXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
@@ -128,8 +129,9 @@ public class HWPXWriter {
                 writeChild(ElementWriterSort.Header, hwpxFile.headerXMLFile());
                 putIntoZip(item.href(), xsb().toString(), StandardCharsets.UTF_8);
             } else if (item.id().startsWith(FileIDs.Section_Prefix)) {
-                // section file...
-
+                int sectionIndex = Integer.parseInt(item.id().substring(FileIDs.Section_Prefix.length()));
+                writeChild(ElementWriterSort.Section, hwpxFile.sectionXMLFileList().get(sectionIndex));
+                putIntoZip(item.href(), xsb().toString(), StandardCharsets.UTF_8);
             } else if (item.hasAttachedFile() && item.attachedFile() != null) {
                 putIntoZip(item.href(), item.attachedFile().data());
             }

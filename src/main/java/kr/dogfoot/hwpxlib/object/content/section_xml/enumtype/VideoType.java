@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum VideoType {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum VideoType implements EnumGetStr {
     /**
      * 컴퓨터의 동영상
      */
@@ -16,6 +18,7 @@ public enum VideoType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

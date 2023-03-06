@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 보기 옵션
  */
-public enum VisibilityOption {
+public enum VisibilityOption implements EnumGetStr {
     /**
      * 첫 페이지에서만 감추기
      */
@@ -23,6 +25,7 @@ public enum VisibilityOption {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

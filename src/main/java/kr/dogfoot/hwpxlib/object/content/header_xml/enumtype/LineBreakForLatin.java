@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-public enum LineBreakForLatin {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum LineBreakForLatin implements EnumGetStr {
     /**
      * 단어
      */
@@ -20,6 +22,7 @@ public enum LineBreakForLatin {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

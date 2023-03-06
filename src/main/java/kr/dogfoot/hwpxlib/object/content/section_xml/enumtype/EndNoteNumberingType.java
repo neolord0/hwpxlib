@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 미주 번호매김 방식
  */
-public enum EndNoteNumberingType {
+public enum EndNoteNumberingType implements EnumGetStr {
     /**
      * 이어서
      */
@@ -19,6 +21,7 @@ public enum EndNoteNumberingType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

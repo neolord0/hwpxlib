@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum DropCapStyle {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum DropCapStyle implements EnumGetStr {
     /**
      * 장식 하지 않음
      */
@@ -24,6 +26,7 @@ public enum DropCapStyle {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

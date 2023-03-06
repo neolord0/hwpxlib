@@ -22,7 +22,7 @@ public class ManifestWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ManifestXMLFile manifestXMLFile = (ManifestXMLFile) object;
-        storeSwitchObject(manifestXMLFile.switchObject());
+        switchObject(manifestXMLFile.switchObject());
 
         xsb()
                 .clear()

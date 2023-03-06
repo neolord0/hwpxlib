@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.masterpage_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 바탕쪽이 적용되는 페이지
  */
-public enum MasterPageType {
+public enum MasterPageType implements EnumGetStr {
     BOTH("BOTH"),
     EVEN("EVEN"),
     ODD("ODD"),
@@ -16,6 +18,7 @@ public enum MasterPageType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

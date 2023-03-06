@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 메모 변경 추적을 위한 속성
  */
-public enum MemoType {
+public enum MemoType implements EnumGetStr {
     NORMAL("NORMAL"),
     USER_INSERT("USER_INSERT"),
     USER_DELETE("USER_DELETE"),
@@ -15,6 +17,7 @@ public enum MemoType {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

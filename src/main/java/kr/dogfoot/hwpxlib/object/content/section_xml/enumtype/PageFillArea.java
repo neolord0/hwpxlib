@@ -1,9 +1,11 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
 /**
  * 쪽 채움 영역
  */
-public enum PageFillArea {
+public enum PageFillArea implements EnumGetStr {
     /**
      * 종이
      */
@@ -23,6 +25,7 @@ public enum PageFillArea {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }

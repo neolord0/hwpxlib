@@ -1,6 +1,8 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.enumtype;
 
-public enum EquationLineMode {
+import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+
+public enum EquationLineMode implements EnumGetStr {
     LINE("LINE"),
     CHAR("CHAR");
 
@@ -10,6 +12,7 @@ public enum EquationLineMode {
         this.str = str;
     }
 
+    @Override
     public String str() {
         return str;
     }
