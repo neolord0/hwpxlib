@@ -31,6 +31,9 @@ public class ParameterListCoreWriter extends ElementWriter {
             case hp_listParam:
                 xsb().openElement(ElementNames.hp_listParam);
                 break;
+            case hp_parameterset:
+                xsb().openElement(ElementNames.hp_parameterset);
+                break;
         }
 
         xsb()

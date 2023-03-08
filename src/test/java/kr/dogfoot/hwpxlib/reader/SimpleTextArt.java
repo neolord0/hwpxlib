@@ -63,7 +63,7 @@ public class SimpleTextArt {
         Assert.assertEquals(rotationInfo.angle().shortValue(), 0);
         Assert.assertEquals(rotationInfo.centerX().intValue(), 20250);
         Assert.assertEquals(rotationInfo.centerY().intValue(), 8000);
-        Assert.assertEquals(rotationInfo.rotateImage().booleanValue(), true);
+        Assert.assertEquals(rotationInfo.rotateimage().booleanValue(), true);
 
         RenderingInfo renderingInfo = textArt.renderingInfo();
         Assert.assertNotNull(renderingInfo);

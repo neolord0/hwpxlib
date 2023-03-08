@@ -62,7 +62,7 @@ public class SimpleVideo {
         Assert.assertEquals(rotationInfo.angle().shortValue(), 0);
         Assert.assertEquals(rotationInfo.centerX().intValue(), 11250);
         Assert.assertEquals(rotationInfo.centerY().intValue(), 7500);
-        Assert.assertEquals(rotationInfo.rotateImage().booleanValue(), true);
+        Assert.assertEquals(rotationInfo.rotateimage().booleanValue(), true);
 
         RenderingInfo renderingInfo = video.renderingInfo();
         Assert.assertNotNull(renderingInfo);

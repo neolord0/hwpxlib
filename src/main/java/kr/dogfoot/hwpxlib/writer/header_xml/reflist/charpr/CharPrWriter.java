@@ -57,11 +57,11 @@ public class CharPrWriter extends ElementWriter {
         }
 
         if (charPr.bold() != null) {
-            noAttributeChildElement(ElementNames.hh_bold);
+            noAttributeChild(ElementNames.hh_bold);
         }
 
         if (charPr.italic() != null) {
-            noAttributeChildElement(ElementNames.hh_italic);
+            noAttributeChild(ElementNames.hh_italic);
         }
 
         if (charPr.underline() != null) {
@@ -81,19 +81,19 @@ public class CharPrWriter extends ElementWriter {
         }
 
         if (charPr.emboss() != null) {
-            noAttributeChildElement(ElementNames.hh_emboss);
+            noAttributeChild(ElementNames.hh_emboss);
         }
 
         if (charPr.engrave() != null) {
-            noAttributeChildElement(ElementNames.hh_engrave);
+            noAttributeChild(ElementNames.hh_engrave);
         }
 
         if (charPr.supscript() != null) {
-            noAttributeChildElement(ElementNames.hh_supscript);
+            noAttributeChild(ElementNames.hh_supscript);
         }
 
         if (charPr.subscript() != null) {
-            noAttributeChildElement(ElementNames.hh_subscript);
+            noAttributeChild(ElementNames.hh_subscript);
         }
 
         xsb().closeElement();
@@ -179,10 +179,10 @@ public class CharPrWriter extends ElementWriter {
                 shortValuesByLanguage(ElementNames.hh_offset, (ValuesByLanguage<Short>) child);
                 break;
             case hh_bold:
-                noAttributeChildElement(ElementNames.hh_bold);
+                noAttributeChild(ElementNames.hh_bold);
                 break;
             case hh_italic:
-                noAttributeChildElement(ElementNames.hh_italic);
+                noAttributeChild(ElementNames.hh_italic);
                 break;
             case hh_underline:
                 underline((Underline) child);
@@ -197,16 +197,16 @@ public class CharPrWriter extends ElementWriter {
                 shadow((CharShadow) child);
                 break;
             case hh_emboss:
-                noAttributeChildElement(ElementNames.hh_emboss);
+                noAttributeChild(ElementNames.hh_emboss);
                 break;
             case hh_engrave:
-                noAttributeChildElement(ElementNames.hh_engrave);
+                noAttributeChild(ElementNames.hh_engrave);
                 break;
             case hh_supscript:
-                noAttributeChildElement(ElementNames.hh_supscript);
+                noAttributeChild(ElementNames.hh_supscript);
                 break;
             case hh_subscript:
-                noAttributeChildElement(ElementNames.hh_subscript);
+                noAttributeChild(ElementNames.hh_subscript);
                 break;
         }
     }

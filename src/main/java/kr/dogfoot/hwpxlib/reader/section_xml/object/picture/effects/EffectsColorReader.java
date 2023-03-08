@@ -54,8 +54,8 @@ public class EffectsColorReader extends ElementReader {
                 cmyk(effectsColor.cmyk(), name, attrs);
                 break;
             case ElementNames.hp_scheme:
-                effectsColor.createSchema();
-                schema(effectsColor.schema(), name, attrs);
+                effectsColor.createScheme();
+                scheme(effectsColor.scheme(), name, attrs);
                 break;
             case ElementNames.hp_system:
                 effectsColor.createSystem();
@@ -80,9 +80,9 @@ public class EffectsColorReader extends ElementReader {
                 cmyk(cmyk, name, attrs);
                 return cmyk;
             case ElementNames.hp_scheme:
-                ColorSchema schema = new ColorSchema();
-                schema(schema, name, attrs);
-                return schema;
+                ColorScheme scheme = new ColorScheme();
+                scheme(scheme, name, attrs);
+                return scheme;
             case ElementNames.hp_system:
                 ColorSystem system = new ColorSystem();
                 system(system, name, attrs);
@@ -109,9 +109,9 @@ public class EffectsColorReader extends ElementReader {
         xmlFileReader().startElement(name, attrs);
     }
 
-    private void schema(ColorSchema schema, String name, Attributes attrs) {
-        ((ColorSchemaReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColorSchema))
-                .schema(schema);
+    private void scheme(ColorScheme scheme, String name, Attributes attrs) {
+        ((ColorSchemeReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ColorScheme))
+                .scheme(scheme);
 
         xmlFileReader().startElement(name, attrs);
     }

@@ -3,8 +3,6 @@ package kr.dogfoot.hwpxlib.writer.section_xml.ctrl;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.baseobject.WidthAndHeight;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.MemoPr;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Ctrl;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.*;

@@ -29,7 +29,6 @@ public class BasicParagraph {
         Assert.assertEquals(result.actual(), result.expected());
     }
 
-
     @Test
     public void PageFunctions() throws Exception {
         TestUtil.Result result = TestUtil.sectionXML("testFile/PageFunctions.hwpx");

@@ -32,7 +32,7 @@ public class RotationInfoReader extends ElementReader {
                 rotationInfo.centerY(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.rotateimage:
-                rotationInfo.rotateImage(ValueConvertor.toBoolean(value));
+                rotationInfo.rotateimage(ValueConvertor.toBoolean(value));
                 break;
         }
     }

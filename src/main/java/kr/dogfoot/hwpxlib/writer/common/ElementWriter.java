@@ -3,8 +3,7 @@ package kr.dogfoot.hwpxlib.writer.common;
 import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
-import kr.dogfoot.hwpxlib.object.common.baseobject.LeftRightTopBottom;
+import kr.dogfoot.hwpxlib.object.common.baseobject.*;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Case;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.writer.util.XMLStringBuilder;
@@ -77,14 +76,14 @@ public abstract class ElementWriter {
     protected void childInSwitch(HWPXObject child) {
     }
 
-    protected void hasOnlyTextElement(String elementName, HasOnlyText hasOnlyText) {
+    protected void hasOnlyText(String elementName, HasOnlyText hasOnlyText) {
         xsb()
                 .openElement(elementName)
                 .text(hasOnlyText.text())
                 .closeElement();
     }
 
-    protected void noAttributeChildElement(String elementName) {
+    protected void noAttributeChild(String elementName) {
         xsb()
                 .openElement(elementName)
                 .closeElement();
@@ -97,6 +96,38 @@ public abstract class ElementWriter {
                 .attribute(AttributeNames.right, leftRightTopBottom.right())
                 .attribute(AttributeNames.top, leftRightTopBottom.top())
                 .attribute(AttributeNames.bottom,leftRightTopBottom.bottom())
+                .closeElement();
+    }
+
+    protected void widthAndHeight(String elementName, WidthAndHeight widthAndHeight) {
+        xsb()
+                .openElement(elementName)
+                .attribute(AttributeNames.width, widthAndHeight.width())
+                .attribute(AttributeNames.height, widthAndHeight.height())
+                .closeElement();
+    }
+
+    protected void xAndY(String elementName, XAndY xAndY) {
+        xsb()
+                .openElement(elementName)
+                .attribute(AttributeNames.x, xAndY.x())
+                .attribute(AttributeNames.y, xAndY.y())
+                .closeElement();
+    }
+
+    protected void xAndYFloat(String elementName, XAndYFloat xAndYFloat) {
+        xsb()
+                .openElement(elementName)
+                .attribute(AttributeNames.x, xAndYFloat.x())
+                .attribute(AttributeNames.y, xAndYFloat.y())
+                .closeElement();
+    }
+
+    protected void point(String elementName, Point point) {
+        xsb()
+                .openElement(elementName)
+                .attribute(AttributeNames.x, point.x())
+                .attribute(AttributeNames.y, point.y())
                 .closeElement();
     }
 

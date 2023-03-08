@@ -30,11 +30,11 @@ public class MetaDataWriter extends ElementWriter {
                 .elementWriter(this);
 
         if (metaData.title() != null) {
-            hasOnlyTextElement(ElementNames.opf_title, metaData.title());
+            hasOnlyText(ElementNames.opf_title, metaData.title());
         }
 
         if (metaData.language() != null) {
-            hasOnlyTextElement(ElementNames.opf_language, metaData.language());
+            hasOnlyText(ElementNames.opf_language, metaData.language());
         }
 
         for (Meta meta : metaData.metas()) {
@@ -58,10 +58,10 @@ public class MetaDataWriter extends ElementWriter {
     protected void childInSwitch(HWPXObject child) {
         switch (child._objectType()) {
             case opf_title:
-                hasOnlyTextElement(ElementNames.opf_title, (HasOnlyText) child);
+                hasOnlyText(ElementNames.opf_title, (HasOnlyText) child);
                 break;
             case opf_language:
-                hasOnlyTextElement(ElementNames.opf_language, (HasOnlyText) child);
+                hasOnlyText(ElementNames.opf_language, (HasOnlyText) child);
                 break;
             case opf_meta:
                 meta((Meta) child);

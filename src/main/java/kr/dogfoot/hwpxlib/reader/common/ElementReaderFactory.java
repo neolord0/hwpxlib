@@ -38,11 +38,12 @@ import kr.dogfoot.hwpxlib.reader.header_xml.trackchangeauthor.TrackChangeAuthors
 import kr.dogfoot.hwpxlib.reader.manifest_xml.*;
 import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.*;
+import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.drawingobject.DrawTextReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.drawingobject.DrawingShadowReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.etc.*;
-import kr.dogfoot.hwpxlib.reader.section_xml.object.formobject.ButtonObjectReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.object.formobject.ButtonCoreReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.formobject.FormCharPrReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.picture.ImageDimReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.picture.ImageRectReader;
@@ -56,7 +57,6 @@ import kr.dogfoot.hwpxlib.reader.section_xml.object.shapeobject.CaptionReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.shapeobject.ShapePositionReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.shapeobject.ShapeSizeReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.table.*;
-import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.secpr.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.t.*;
 import kr.dogfoot.hwpxlib.reader.settings_xml.CaretPositionReader;
@@ -451,8 +451,8 @@ public class ElementReaderFactory {
                 return new ColorRGBReader();
             case ColorCMYK:
                 return new ColorCMYKReader();
-            case ColorSchema:
-                return new ColorSchemaReader();
+            case ColorScheme:
+                return new ColorSchemeReader();
             case ColorSystem:
                 return new ColorSystemReader();
             case ColorEffect:
@@ -497,8 +497,8 @@ public class ElementReaderFactory {
                 return new PointListReader();
             case FormCharPr:
                 return new FormCharPrReader();
-            case ButtonObject:
-                return new ButtonObjectReader();
+            case ButtonCore:
+                return new ButtonCoreReader();
             case ComboBox:
                 return new ComboBoxReader();
             case ListItem:

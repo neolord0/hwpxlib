@@ -32,7 +32,7 @@ public class EffectsColor extends SwitchableObject {
     /**
      * 스키마 색상
      */
-    private ColorSchema schema;
+    private ColorScheme scheme;
     /**
      * 시스템 색상
      */
@@ -126,16 +126,16 @@ public class EffectsColor extends SwitchableObject {
         cmyk = null;
     }
 
-    public ColorSchema schema() {
-        return schema;
+    public ColorScheme scheme() {
+        return scheme;
     }
 
-    public void createSchema() {
-        schema = new ColorSchema();
+    public void createScheme() {
+        scheme = new ColorScheme();
     }
 
-    public void removeSchema() {
-        schema = null;
+    public void removeScheme() {
+        scheme = null;
     }
 
     public ColorSystem system() {

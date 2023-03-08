@@ -63,7 +63,7 @@ public class SimpleConnectLine {
         Assert.assertEquals(rotationInfo.angle().shortValue(), 0);
         Assert.assertEquals(rotationInfo.centerX().intValue(), 5281);
         Assert.assertEquals(rotationInfo.centerY().intValue(), 2494);
-        Assert.assertEquals(rotationInfo.rotateImage().booleanValue(), true);
+        Assert.assertEquals(rotationInfo.rotateimage().booleanValue(), true);
 
         RenderingInfo renderingInfo = connectLine.renderingInfo();
         Assert.assertNotNull(renderingInfo);

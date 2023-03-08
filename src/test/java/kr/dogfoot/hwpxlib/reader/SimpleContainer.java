@@ -57,7 +57,7 @@ public class SimpleContainer {
         Assert.assertEquals(rotationInfo.angle().shortValue(), 0);
         Assert.assertEquals(rotationInfo.centerX().intValue(), 8686);
         Assert.assertEquals(rotationInfo.centerY().intValue(), 1625);
-        Assert.assertEquals(rotationInfo.rotateImage().booleanValue(), true);
+        Assert.assertEquals(rotationInfo.rotateimage().booleanValue(), true);
 
         RenderingInfo renderingInfo = container.renderingInfo();
         Assert.assertNotNull(renderingInfo);

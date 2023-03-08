@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.content.header_xml.enumtype;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
 
 public enum ValueUnit1 implements EnumGetStr {

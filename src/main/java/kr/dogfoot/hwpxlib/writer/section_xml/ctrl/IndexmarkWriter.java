@@ -28,11 +28,11 @@ public class IndexmarkWriter extends ElementWriter {
                 .elementWriter(this);
 
         if (indexmark.firstKey() != null) {
-            hasOnlyTextElement(ElementNames.hp_firstKey, indexmark.firstKey());
+            hasOnlyText(ElementNames.hp_firstKey, indexmark.firstKey());
         }
 
         if (indexmark.secondKey() != null) {
-            hasOnlyTextElement(ElementNames.hp_secondKey, indexmark.secondKey());
+            hasOnlyText(ElementNames.hp_secondKey, indexmark.secondKey());
         }
 
         xsb().closeElement();
@@ -43,10 +43,10 @@ public class IndexmarkWriter extends ElementWriter {
     protected void childInSwitch(HWPXObject child) {
         switch (child._objectType()) {
             case hp_firstKey:
-                hasOnlyTextElement(ElementNames.hp_firstKey, (HasOnlyText) child);
+                hasOnlyText(ElementNames.hp_firstKey, (HasOnlyText) child);
                 break;
             case hp_secondKey:
-                hasOnlyTextElement(ElementNames.hp_secondKey, (HasOnlyText) child);
+                hasOnlyText(ElementNames.hp_secondKey, (HasOnlyText) child);
                 break;
         }
     }

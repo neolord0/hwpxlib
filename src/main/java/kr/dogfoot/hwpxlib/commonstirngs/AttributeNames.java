@@ -435,4 +435,5 @@ public class AttributeNames {
     public static final String fontCnt = "fontCnt";
     public static final String masterPageCnt = "masterPageCnt";
     public static final String cnt = "cnt";
+    public static final String charPrCnt = "charPrCnt";
 }

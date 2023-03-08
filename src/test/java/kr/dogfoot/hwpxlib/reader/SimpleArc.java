@@ -63,7 +63,7 @@ public class SimpleArc {
         Assert.assertEquals(rotationInfo.angle().shortValue(), 0);
         Assert.assertEquals(rotationInfo.centerX().intValue(), 6225);
         Assert.assertEquals(rotationInfo.centerY().intValue(), 5612);
-        Assert.assertEquals(rotationInfo.rotateImage().booleanValue(), true);
+        Assert.assertEquals(rotationInfo.rotateimage().booleanValue(), true);
 
         RenderingInfo renderingInfo = arc.renderingInfo();
         Assert.assertNotNull(renderingInfo);

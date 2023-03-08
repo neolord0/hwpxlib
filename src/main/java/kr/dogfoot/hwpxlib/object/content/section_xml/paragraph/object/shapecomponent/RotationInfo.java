@@ -19,7 +19,7 @@ public class RotationInfo extends HWPXObject {
     /**
      * 이미지 회전 여부
      */
-    private Boolean rotateImage;
+    private Boolean rotateimage;
 
     public RotationInfo() {
     }
@@ -68,16 +68,16 @@ public class RotationInfo extends HWPXObject {
         return this;
     }
 
-    public Boolean rotateImage() {
-        return rotateImage;
+    public Boolean rotateimage() {
+        return rotateimage;
     }
 
-    public void rotateImage(Boolean rotateImage) {
-        this.rotateImage = rotateImage;
+    public void rotateimage(Boolean rotateimage) {
+        this.rotateimage = rotateimage;
     }
 
-    public RotationInfo rotateImageAnd(Boolean rotateImage) {
-        this.rotateImage = rotateImage;
+    public RotationInfo rotateimageAnd(Boolean rotateimage) {
+        this.rotateimage = rotateimage;
         return this;
     }
 }

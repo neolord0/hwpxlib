@@ -61,7 +61,7 @@ public class SimplePolygon {
         Assert.assertEquals(rotationInfo.angle().shortValue(), 40);
         Assert.assertEquals(rotationInfo.centerX().intValue(), 11180);
         Assert.assertEquals(rotationInfo.centerY().intValue(), 10903);
-        Assert.assertEquals(rotationInfo.rotateImage().booleanValue(), true);
+        Assert.assertEquals(rotationInfo.rotateimage().booleanValue(), true);
 
         RenderingInfo renderingInfo = polygon.renderingInfo();
         Assert.assertNotNull(renderingInfo);

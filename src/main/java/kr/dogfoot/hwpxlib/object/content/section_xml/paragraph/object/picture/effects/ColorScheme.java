@@ -6,12 +6,12 @@ import kr.dogfoot.hwpxlib.object.common.ObjectType;
 /**
  * 스키마 색상
  */
-public class ColorSchema extends HWPXObject {
+public class ColorScheme extends HWPXObject {
     private Short r;
     private Short g;
     private Short b;
 
-    public ColorSchema() {
+    public ColorScheme() {
     }
 
     @Override
@@ -27,7 +27,7 @@ public class ColorSchema extends HWPXObject {
         this.r = r;
     }
 
-    public ColorSchema rAnd(Short r) {
+    public ColorScheme rAnd(Short r) {
         this.r = r;
         return this;
     }
@@ -40,7 +40,7 @@ public class ColorSchema extends HWPXObject {
         this.g = g;
     }
 
-    public ColorSchema gAnd(Short g) {
+    public ColorScheme gAnd(Short g) {
         this.g = g;
         return this;
     }
@@ -53,7 +53,7 @@ public class ColorSchema extends HWPXObject {
         this.b = b;
     }
 
-    public ColorSchema bAnd(Short b) {
+    public ColorScheme bAnd(Short b) {
         this.b = b;
         return this;
     }

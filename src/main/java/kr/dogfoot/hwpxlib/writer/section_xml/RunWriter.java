@@ -54,6 +54,12 @@ public class RunWriter extends ElementWriter {
             case hp_tbl:
                 writeChild(ElementWriterSort.Table, runItem);
                 break;
+            case hp_equation:
+                writeChild(ElementWriterSort.Equation, runItem);
+                break;
+            case hp_chart:
+                writeChild(ElementWriterSort.Chart, runItem);
+                break;
             case hp_pic:
                 writeChild(ElementWriterSort.Picture, runItem);
                 break;
@@ -62,9 +68,6 @@ public class RunWriter extends ElementWriter {
                 break;
             case hp_ole:
                 writeChild(ElementWriterSort.OLE, runItem);
-                break;
-            case hp_equation:
-                writeChild(ElementWriterSort.Equation, runItem);
                 break;
             case hp_line:
                 writeChild(ElementWriterSort.Line, runItem);
@@ -97,13 +100,13 @@ public class RunWriter extends ElementWriter {
                 writeChild(ElementWriterSort.Dutmal, runItem);
                 break;
             case hp_btn:
-                writeChild(ElementWriterSort.Button, runItem);
+                writeChild(ElementWriterSort.ButtonCore, runItem);
                 break;
             case hp_radioBtn:
-                writeChild(ElementWriterSort.RadioButton, runItem);
+                writeChild(ElementWriterSort.ButtonCore, runItem);
                 break;
             case hp_checkBtn:
-                writeChild(ElementWriterSort.CheckButton, runItem);
+                writeChild(ElementWriterSort.ButtonCore, runItem);
                 break;
             case hp_comboBox:
                 writeChild(ElementWriterSort.ComboBox, runItem);

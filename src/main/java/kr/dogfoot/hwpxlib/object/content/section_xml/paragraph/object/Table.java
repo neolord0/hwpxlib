@@ -210,7 +210,7 @@ public class Table extends ShapeObject<Table> {
         trList.remove(position);
     }
 
-    public Iterable<Tr> Trs() {
+    public Iterable<Tr> trs() {
         return trList;
     }
 

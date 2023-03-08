@@ -3,7 +3,7 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobjec
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.BackStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ButtonCheckValue;
 
-public abstract class ButtonObject<ChildType> extends FormObject<ChildType> {
+public abstract class ButtonCore<ChildType> extends FormObject<ChildType> {
     /**
      * 캡션
      */
@@ -33,7 +33,7 @@ public abstract class ButtonObject<ChildType> extends FormObject<ChildType> {
         this.captionText = captionText;
     }
 
-    public ButtonObject captionTextAnd(String captionText) {
+    public ButtonCore captionTextAnd(String captionText) {
         this.captionText = captionText;
         return this;
     }
@@ -46,7 +46,7 @@ public abstract class ButtonObject<ChildType> extends FormObject<ChildType> {
         this.value = value;
     }
 
-    public ButtonObject valueAnd(ButtonCheckValue value) {
+    public ButtonCore valueAnd(ButtonCheckValue value) {
         this.value = value;
         return this;
     }
@@ -59,7 +59,7 @@ public abstract class ButtonObject<ChildType> extends FormObject<ChildType> {
         this.radioGroupName = radioGroupName;
     }
 
-    public ButtonObject radioGroupNameAnd(String radioGroupName) {
+    public ButtonCore radioGroupNameAnd(String radioGroupName) {
         this.radioGroupName = radioGroupName;
         return this;
     }
@@ -72,7 +72,7 @@ public abstract class ButtonObject<ChildType> extends FormObject<ChildType> {
         this.triState = triState;
     }
 
-    public ButtonObject triStateAnd(Boolean triState) {
+    public ButtonCore triStateAnd(Boolean triState) {
         this.triState = triState;
         return this;
     }
@@ -85,7 +85,7 @@ public abstract class ButtonObject<ChildType> extends FormObject<ChildType> {
         this.backStyle = backStyle;
     }
 
-    public ButtonObject backStyleAnd(BackStyle backStyle) {
+    public ButtonCore backStyleAnd(BackStyle backStyle) {
         this.backStyle = backStyle;
         return this;
     }

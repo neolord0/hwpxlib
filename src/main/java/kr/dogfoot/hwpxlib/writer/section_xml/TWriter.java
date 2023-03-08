@@ -5,7 +5,10 @@ import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.T;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.TItem;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.*;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.MarkpenBegin;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.NormalText;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.Tab;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.TitleMark;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.inner.TrackChangeCore;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
@@ -54,7 +57,7 @@ public class TWriter extends ElementWriter {
                 markpenBegin((MarkpenBegin) item);
                 break;
             case hp_markpenEnd:
-                noAttributeChildElement(ElementNames.hp_markpenEnd);
+                noAttributeChild(ElementNames.hp_markpenEnd);
                 break;
             case hp_titleMark:
                 titleMark((TitleMark) item);
@@ -63,16 +66,16 @@ public class TWriter extends ElementWriter {
                 tab((Tab) item);
                 break;
             case hp_lineBreak:
-                noAttributeChildElement(ElementNames.hp_lineBreak);
+                noAttributeChild(ElementNames.hp_lineBreak);
                 break;
             case hp_hyphen:
-                noAttributeChildElement(ElementNames.hp_hyphen);
+                noAttributeChild(ElementNames.hp_hyphen);
                 break;
             case hp_nbSpace:
-                noAttributeChildElement(ElementNames.hp_nbSpace);
+                noAttributeChild(ElementNames.hp_nbSpace);
                 break;
             case hp_fwSpace:
-                noAttributeChildElement(ElementNames.hp_fwSpace);
+                noAttributeChild(ElementNames.hp_fwSpace);
                 break;
             case hp_insertBegin:
                 trackChange(ElementNames.hp_insertBegin, (TrackChangeCore) item);

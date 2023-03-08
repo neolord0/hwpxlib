@@ -4,45 +4,45 @@ import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.BackStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ButtonCheckValue;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.ButtonObject;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.ButtonCore;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 
-public class ButtonObjectReader extends FormObjectReader {
-    private ButtonObject buttonObject;
+public class ButtonCoreReader extends FormObjectReader {
+    private ButtonCore buttonCore;
 
     @Override
     public ElementReaderSort sort() {
-        return ElementReaderSort.ButtonObject;
+        return ElementReaderSort.ButtonCore;
     }
 
     @Override
     public FormObject formObject() {
-        return buttonObject;
+        return buttonCore;
     }
 
-    public void buttonObject(ButtonObject buttonObject) {
-        this.buttonObject = buttonObject;
+    public void buttonCore(ButtonCore buttonCore) {
+        this.buttonCore = buttonCore;
     }
 
     @Override
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.caption:
-                buttonObject.captionText(value);
+                buttonCore.captionText(value);
                 break;
             case AttributeNames.value:
-                buttonObject.value(ButtonCheckValue.fromString(value));
+                buttonCore.value(ButtonCheckValue.fromString(value));
                 break;
             case AttributeNames.radioGroupName:
-                buttonObject.radioGroupName(value);
+                buttonCore.radioGroupName(value);
                 break;
             case AttributeNames.triState:
-                buttonObject.triState(ValueConvertor.toBoolean(value));
+                buttonCore.triState(ValueConvertor.toBoolean(value));
                 break;
             case AttributeNames.backStyle:
-                buttonObject.backStyle(BackStyle.fromString(value));
+                buttonCore.backStyle(BackStyle.fromString(value));
                 break;
             default:
                 super.setAttribute(name, value);
@@ -52,6 +52,6 @@ public class ButtonObjectReader extends FormObjectReader {
 
     @Override
     public SwitchableObject switchableObject() {
-        return buttonObject;
+        return buttonCore;
     }
 }

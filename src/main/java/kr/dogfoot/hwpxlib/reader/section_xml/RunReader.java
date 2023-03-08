@@ -9,9 +9,9 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.SecPr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.section_xml.object.*;
-import kr.dogfoot.hwpxlib.reader.section_xml.object.formobject.ButtonObjectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.CtrlReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.object.*;
+import kr.dogfoot.hwpxlib.reader.section_xml.object.formobject.ButtonCoreReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.secpr.SecPrReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.t.TReader;
 import org.xml.sax.Attributes;
@@ -378,22 +378,22 @@ public class RunReader extends ElementReader {
     }
 
     private void btn(Button button, String name, Attributes attrs) {
-        ((ButtonObjectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonObject))
-                .buttonObject(button);
+        ((ButtonCoreReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonCore))
+                .buttonCore(button);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void radioBtn(RadioButton radioButton, String name, Attributes attrs) {
-        ((ButtonObjectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonObject))
-                .buttonObject(radioButton);
+        ((ButtonCoreReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonCore))
+                .buttonCore(radioButton);
 
         xmlFileReader().startElement(name, attrs);
     }
 
     private void checkBtn(CheckButton checkButton, String name, Attributes attrs) {
-        ((ButtonObjectReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonObject))
-                .buttonObject(checkButton);
+        ((ButtonCoreReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ButtonCore))
+                .buttonCore(checkButton);
 
         xmlFileReader().startElement(name, attrs);
     }
