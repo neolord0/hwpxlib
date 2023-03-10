@@ -40,6 +40,8 @@ public class ConnectLineWriter extends DrawingObjectWriter {
             connectLinePoint(ElementNames.hp_endPt, connectLine.endPt());
         }
 
+        writeChildrenForShapeObject(connectLine);
+
         xsb().closeElement();
         releaseMe();
     }

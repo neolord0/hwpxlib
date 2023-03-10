@@ -18,17 +18,15 @@ public abstract class ShapeComponentWriter extends ShapeObjectWriter {
     }
 
     protected void writeAttributeForShapeComponent(ShapeComponent shapeComponent) {
-        writeChildrenForShapeObject(shapeComponent);
+        writeAttributeForShapeObject(shapeComponent);
 
         xsb()
                 .attribute(AttributeNames.href, shapeComponent.href())
                 .attribute(AttributeNames.groupLevel, shapeComponent.groupLevel())
-                .attribute(AttributeNames.instId, shapeComponent.instid());
+                .attribute(AttributeNames.instid, shapeComponent.instid());
     }
 
     protected void writeChildrenForShapeComponent(ShapeComponent shapeComponent) {
-        writeChildrenForShapeObject(shapeComponent);
-
         if (shapeComponent.offset() != null) {
             xAndY(ElementNames.hp_offset, shapeComponent.offset());
         }

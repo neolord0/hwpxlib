@@ -21,17 +21,14 @@ public class RenderingInfoReader extends ElementReader {
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
-            case ElementNames.hc_transMatrix:
-                renderingInfo.createTransMatrix();
-                matrix(renderingInfo.transMatrix(), name, attrs);
+            case ElementNames.hc_transMatrix: ;
+                matrix(renderingInfo.addNewTransMatrix(), name, attrs);
                 break;
             case ElementNames.hc_scaMatrix:
-                renderingInfo.createScaMatrix();
-                matrix(renderingInfo.scaMatrix(), name, attrs);
+                matrix(renderingInfo.addNewScaMatrix(), name, attrs);
                 break;
             case ElementNames.hc_rotMatrix:
-                renderingInfo.createRotMatrix();
-                matrix(renderingInfo.rotMatrix(), name, attrs);
+                matrix(renderingInfo.addNewRotMatrix(), name, attrs);
                 break;
         }
     }

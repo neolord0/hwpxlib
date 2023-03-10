@@ -26,9 +26,7 @@ public class EditWriter extends FormObjectWriter {
 
         xsb()
                 .openElement(ElementNames.hp_edit)
-                .elementWriter(this);
-        writeAttributeForFormObject(edit);
-        xsb()
+                .elementWriter(this)
                 .attribute(AttributeNames.multiLine, edit.multiLine())
                 .attribute(AttributeNames.passwordChar, edit.passwordChar())
                 .attribute(AttributeNames.maxLength, edit.maxLength())
@@ -37,12 +35,15 @@ public class EditWriter extends FormObjectWriter {
                 .attribute(AttributeNames.numOnly, edit.numOnly())
                 .attribute(AttributeNames.readOnly, edit.readOnly())
                 .attribute(AttributeNames.alignText, edit.alignText());
+        writeAttributeForFormObject(edit);
 
         writeChildrenForFormObject(edit);
 
         if (edit.text() != null) {
             hasOnlyText(ElementNames.hp_text, edit.text());
         }
+
+        writeChildrenForShapeObject(edit);
 
         xsb().closeElement();
         releaseMe();

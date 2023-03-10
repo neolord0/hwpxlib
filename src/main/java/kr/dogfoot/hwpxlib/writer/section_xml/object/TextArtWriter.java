@@ -56,6 +56,8 @@ public class TextArtWriter extends DrawingObjectWriter {
             writeChild(ElementWriterSort.Outline, textArt.outline());
         }
 
+        writeChildrenForShapeObject(textArt);
+
         xsb().closeElement();
         releaseMe();
     }

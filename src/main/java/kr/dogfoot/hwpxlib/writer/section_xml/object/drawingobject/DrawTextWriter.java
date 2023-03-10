@@ -31,12 +31,12 @@ public class DrawTextWriter extends ElementWriter {
                 .attribute(AttributeNames.name, drawText.name())
                 .attribute(AttributeNames.editable, drawText.editable());
 
-        if (drawText.textMargin() != null) {
-            leftRightTopBottom(ElementNames.hp_textMargin, drawText.textMargin());
-        }
-
         if (drawText.subList() != null) {
             writeChild(ElementWriterSort.SubList, drawText.subList());
+        }
+
+        if (drawText.textMargin() != null) {
+            leftRightTopBottom(ElementNames.hp_textMargin, drawText.textMargin());
         }
 
         xsb().closeElement();

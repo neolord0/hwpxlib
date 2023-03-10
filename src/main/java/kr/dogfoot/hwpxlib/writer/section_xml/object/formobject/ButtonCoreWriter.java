@@ -34,15 +34,17 @@ public class ButtonCoreWriter extends FormObjectWriter {
                 break;
         }
         xsb().elementWriter(this);
-        writeAttributeForFormObject(buttonCore);
         xsb()
                 .attribute(AttributeNames.caption, buttonCore.captionText())
                 .attribute(AttributeNames.value, buttonCore.value())
                 .attribute(AttributeNames.radioGroupName, buttonCore.radioGroupName())
                 .attribute(AttributeNames.triState, buttonCore.triState())
                 .attribute(AttributeNames.backStyle, buttonCore.backStyle());
+        writeAttributeForFormObject(buttonCore);
 
         writeChildrenForFormObject(buttonCore);
+
+        writeChildrenForShapeObject(buttonCore);
 
         xsb().closeElement();
         releaseMe();

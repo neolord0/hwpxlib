@@ -48,6 +48,8 @@ public class RectangleWriter extends DrawingObjectWriter {
             point(ElementNames.hc_pt3, rectangle.pt3());
         }
 
+        writeChildrenForShapeObject(rectangle);
+
         xsb().closeElement();
         releaseMe();
     }

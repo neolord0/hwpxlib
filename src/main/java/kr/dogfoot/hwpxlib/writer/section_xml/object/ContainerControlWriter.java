@@ -34,6 +34,8 @@ public class ContainerControlWriter extends ShapeComponentWriter {
             child(child);
         }
 
+        writeChildrenForShapeObject(container);
+
         xsb().closeElement();
         releaseMe();
     }

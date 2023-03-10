@@ -45,7 +45,8 @@ public class ManifestItemReader extends ElementReader {
             case AttributeNames.file_size:
                 item.fileSize(ValueConvertor.toInteger(value));
                 break;
-            case AttributeNames.isEmbedded:
+            case AttributeNames.isEmbeded:
+                System.out.println(name + " " + value);
                 item.embedded(ValueConvertor.toBoolean(value));
                 break;
             case AttributeNames.sub_path:

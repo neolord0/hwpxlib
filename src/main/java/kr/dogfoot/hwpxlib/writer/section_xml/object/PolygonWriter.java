@@ -34,6 +34,8 @@ public class PolygonWriter extends DrawingObjectWriter {
             point(ElementNames.hc_pt, pt);
         }
 
+        writeChildrenForShapeObject(polygon);
+
         xsb().closeElement();
         releaseMe();
     }

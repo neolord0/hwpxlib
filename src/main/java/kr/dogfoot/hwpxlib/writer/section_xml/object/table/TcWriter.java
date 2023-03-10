@@ -38,6 +38,10 @@ public class TcWriter extends ElementWriter {
                 .attribute(AttributeNames.dirty, tc.dirty())
                 .attribute(AttributeNames.borderFillIDRef, tc.borderFillIDRef());
 
+        if (tc.subList() != null) {
+            writeChild(ElementWriterSort.SubList, tc.subList());
+        }
+
         if (tc.cellAddr() != null) {
             cellAddr(tc.cellAddr());
         }
@@ -52,10 +56,6 @@ public class TcWriter extends ElementWriter {
 
         if (tc.cellMargin() != null) {
             leftRightTopBottom(ElementNames.hp_cellMargin, tc.cellMargin());
-        }
-
-        if (tc.subList() != null) {
-            writeChild(ElementWriterSort.SubList, tc.subList());
         }
 
         xsb().closeElement();

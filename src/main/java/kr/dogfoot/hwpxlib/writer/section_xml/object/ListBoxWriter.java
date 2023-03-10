@@ -26,18 +26,20 @@ public class ListBoxWriter extends FormObjectWriter {
 
         xsb()
                 .openElement(ElementNames.hp_listBox)
-                .elementWriter(this);
-        writeAttributeForFormObject(listBox);
-        xsb()
+                .elementWriter(this)
                 .attribute(AttributeNames.selectedValue, listBox.selectedValue())
                 .attribute(AttributeNames.itemHeight, listBox.itemHeight())
                 .attribute(AttributeNames.topIdx, listBox.topIdx());
+        writeAttributeForFormObject(listBox);
 
         writeChildrenForFormObject(listBox);
 
         for (ListItem listItem : listBox.listItems()) {
             ComboBoxWriter.listItem(listItem, xsb());
         }
+
+
+        writeChildrenForShapeObject(listBox);
 
         xsb().closeElement();
         releaseMe();

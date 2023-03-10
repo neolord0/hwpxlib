@@ -43,6 +43,7 @@ public class ArcWriter extends DrawingObjectWriter {
         if (arc.ax2() != null) {
             point(ElementNames.hc_ax2, arc.ax2());
         }
+        writeChildrenForShapeObject(arc);
 
         xsb().closeElement();
         releaseMe();

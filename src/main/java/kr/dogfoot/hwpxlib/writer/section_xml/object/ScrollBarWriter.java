@@ -25,9 +25,7 @@ public class ScrollBarWriter extends FormObjectWriter {
 
         xsb()
                 .openElement(ElementNames.hp_scrollBar)
-                .elementWriter(this);
-        writeAttributeForFormObject(scrollBar);
-        xsb()
+                .elementWriter(this)
                 .attribute(AttributeNames.delay, scrollBar.delay())
                 .attribute(AttributeNames.largeChange, scrollBar.largeChange())
                 .attribute(AttributeNames.smallChange, scrollBar.smallChange())
@@ -36,8 +34,11 @@ public class ScrollBarWriter extends FormObjectWriter {
                 .attribute(AttributeNames.page, scrollBar.page())
                 .attribute(AttributeNames.value, scrollBar.value())
                 .attribute(AttributeNames.type, scrollBar.type());
+        writeAttributeForFormObject(scrollBar);
 
         writeChildrenForFormObject(scrollBar);
+
+        writeChildrenForShapeObject(scrollBar);
 
         xsb().closeElement();
         releaseMe();

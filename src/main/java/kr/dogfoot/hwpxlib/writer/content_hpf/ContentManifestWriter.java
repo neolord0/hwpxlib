@@ -48,7 +48,7 @@ public class ContentManifestWriter extends ElementWriter {
                 .attribute(AttributeNames.required_modules, item.requiredModules())
                 .attribute(AttributeNames.encryption, item.encryption())
                 .attribute(AttributeNames.file_size, item.fileSize())
-                .attribute(AttributeNames.isEmbedded, item.isEmbedded())
+                .attribute(AttributeNames.isEmbeded, item.isEmbedded())
                 .attribute(AttributeNames.sub_path, item.subPath())
                 .closeElement();
     }

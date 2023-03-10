@@ -33,6 +33,8 @@ public class EllipseWriter extends DrawingObjectWriter {
                 .attribute(AttributeNames.hasArcPr, ellipse.hasArcPr())
                 .attribute(AttributeNames.arcType, ellipse.arcType());
 
+        writeChildrenForDrawingObject(ellipse);
+
         if (ellipse.center() != null) {
             point(ElementNames.hc_center, ellipse.center());
         }
@@ -49,17 +51,19 @@ public class EllipseWriter extends DrawingObjectWriter {
             point(ElementNames.hc_start1, ellipse.start1());
         }
 
-        if (ellipse.start2() != null) {
-            point(ElementNames.hc_start2, ellipse.start2());
-        }
-
         if (ellipse.end1() != null) {
             point(ElementNames.hc_end1, ellipse.end1());
+        }
+
+        if (ellipse.start2() != null) {
+            point(ElementNames.hc_start2, ellipse.start2());
         }
 
         if (ellipse.end2() != null) {
             point(ElementNames.hc_end2, ellipse.end2());
         }
+
+        writeChildrenForShapeObject(ellipse);
 
         xsb().closeElement();
         releaseMe();

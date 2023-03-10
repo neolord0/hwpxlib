@@ -43,6 +43,9 @@ public class EffectsWriter extends ElementWriter {
         if (effects.reflection() != null) {
             writeChild(ElementWriterSort.EffectsReflection, effects.reflection());
         }
+
+        xsb().closeElement();
+        releaseMe();
     }
 
     private void softEdge(EffectsSoftEdge softEdge) {

@@ -40,6 +40,8 @@ public class LineWriter extends DrawingObjectWriter {
             point(ElementNames.hc_endPt, line.endPt());
         }
 
+        writeChildrenForShapeObject(line);
+
         xsb().closeElement();
         releaseMe();
     }

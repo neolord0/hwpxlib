@@ -26,7 +26,7 @@ public class SimpleTable {
         Assert.assertEquals(table.textWrap(), TextWrapMethod.TOP_AND_BOTTOM);
         Assert.assertEquals(table.textFlow(), TextFlowSide.BOTH_SIDES);
         Assert.assertEquals(table.lock().booleanValue(), false);
-        Assert.assertEquals(table.dropcapstyle(), DropCapStyle.NONE);
+        Assert.assertEquals(table.dropcapstyle(), DropCapStyle.None);
         Assert.assertEquals(table.pageBreak(), TablePageBreak.CELL);
         Assert.assertEquals(table.repeatHeader().booleanValue(), true);
         Assert.assertEquals(table.rowCnt().shortValue(), 3);

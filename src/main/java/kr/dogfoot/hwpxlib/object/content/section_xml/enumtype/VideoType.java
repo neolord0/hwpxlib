@@ -6,11 +6,11 @@ public enum VideoType implements EnumGetStr {
     /**
      * 컴퓨터의 동영상
      */
-    LOCAL("LOCAL"),
+    LOCAL("Local"),
     /**
      * 인터넷 동영상
      */
-    WEB("WEB");
+    WEB("Web");
 
     private String str;
 
@@ -25,9 +25,8 @@ public enum VideoType implements EnumGetStr {
 
     public static VideoType fromString(String str) {
         if (str != null) {
-            String STR = str.toUpperCase();
-            for (VideoType item : values()) {
-                if (item.str.equals(STR)) {
+             for (VideoType item : values()) {
+                if (item.str.equals(str)) {
                     return item;
                 }
             }

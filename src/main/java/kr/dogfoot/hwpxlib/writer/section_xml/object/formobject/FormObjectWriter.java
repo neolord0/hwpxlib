@@ -15,7 +15,7 @@ public abstract class FormObjectWriter extends ShapeObjectWriter {
 
 
     protected void writeAttributeForFormObject(FormObject formObject) {
-        writeChildrenForShapeObject(formObject);
+        writeAttributeForShapeObject(formObject);
 
         xsb()
                 .attribute(AttributeNames.name, formObject.name())
@@ -23,18 +23,16 @@ public abstract class FormObjectWriter extends ShapeObjectWriter {
                 .attribute(AttributeNames.backColor, formObject.backColor())
                 .attribute(AttributeNames.groupName, formObject.groupName())
                 .attribute(AttributeNames.tabStop, formObject.tabStop())
+                .attribute(AttributeNames.editable, formObject.editable())
                 .attribute(AttributeNames.tabOrder, formObject.tabOrder())
                 .attribute(AttributeNames.enabled, formObject.enabled())
                 .attribute(AttributeNames.borderTypeIDRef, formObject.borderTypeIDRef())
                 .attribute(AttributeNames.drawFrame, formObject.drawFrame())
                 .attribute(AttributeNames.printable, formObject.printable())
-                .attribute(AttributeNames.editable, formObject.editable())
                 .attribute(AttributeNames.command, formObject.command());
     }
 
     protected void writeChildrenForFormObject(FormObject formObject) {
-        writeChildrenForShapeObject(formObject);
-
         if (formObject.formCharPr() != null) {
             formCharPr(formObject.formCharPr());
         }

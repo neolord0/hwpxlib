@@ -18,7 +18,7 @@ public abstract class DrawingObjectWriter extends ShapeComponentWriter {
     }
 
     protected void writeAttributeForDrawingObject(DrawingObject drawingObject) {
-        writeChildrenForShapeComponent(drawingObject);
+        writeAttributeForShapeComponent(drawingObject);
     }
 
 
@@ -33,12 +33,12 @@ public abstract class DrawingObjectWriter extends ShapeComponentWriter {
             writeChild(ElementWriterSort.FillBrush, drawingObject.fillBrush());
         }
 
-        if (drawingObject.drawText() != null) {
-            writeChild(ElementWriterSort.DrawText, drawingObject.drawText());
-        }
-
         if (drawingObject.shadow() != null) {
             shadow(drawingObject.shadow(), xsb());
+        }
+
+        if (drawingObject.drawText() != null) {
+            writeChild(ElementWriterSort.DrawText, drawingObject.drawText());
         }
     }
 

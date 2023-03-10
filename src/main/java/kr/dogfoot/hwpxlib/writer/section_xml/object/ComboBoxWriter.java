@@ -27,19 +27,20 @@ public class ComboBoxWriter extends FormObjectWriter {
 
         xsb()
                 .openElement(ElementNames.hp_comboBox)
-                .elementWriter(this);
-        writeAttributeForFormObject(comboBox);
-        xsb()
+                .elementWriter(this)
                 .attribute(AttributeNames.listBoxRows, comboBox.listBoxRows())
                 .attribute(AttributeNames.listBoxWidth, comboBox.listBoxWidth())
                 .attribute(AttributeNames.editEnable, comboBox.editEnable())
                 .attribute(AttributeNames.selectedValue, comboBox.selectedValue());
+        writeAttributeForFormObject(comboBox);
 
         writeChildrenForFormObject(comboBox);
 
         for (ListItem listItem : comboBox.listItems()) {
             listItem(listItem, xsb());
         }
+
+        writeChildrenForShapeObject(comboBox);
 
         xsb().closeElement();
         releaseMe();

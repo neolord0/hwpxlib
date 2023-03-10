@@ -33,7 +33,7 @@ public class SimpleConnectLine {
         Assert.assertEquals(connectLine.textWrap(), TextWrapMethod.IN_FRONT_OF_TEXT);
         Assert.assertEquals(connectLine.textFlow(), TextFlowSide.BOTH_SIDES);
         Assert.assertEquals(connectLine.lock().booleanValue(), false);
-        Assert.assertEquals(connectLine.dropcapstyle(), DropCapStyle.NONE);
+        Assert.assertEquals(connectLine.dropcapstyle(), DropCapStyle.None);
         Assert.assertEquals(connectLine.href(), "");
         Assert.assertEquals(connectLine.groupLevel().intValue(), 0);
         Assert.assertEquals(connectLine.instid(), "69628689");
@@ -67,24 +67,24 @@ public class SimpleConnectLine {
 
         RenderingInfo renderingInfo = connectLine.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.transMatrix().e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.transMatrix().e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.transMatrix().e3().floatValue(), -325);
-        Assert.assertEquals(renderingInfo.transMatrix().e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.transMatrix().e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.transMatrix().e6().floatValue(), -1649);
-        Assert.assertEquals(renderingInfo.scaMatrix().e1().floatValue(), 1.173556f);
-        Assert.assertEquals(renderingInfo.scaMatrix().e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.scaMatrix().e3().floatValue(), 325);
-        Assert.assertEquals(renderingInfo.scaMatrix().e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.scaMatrix().e5().floatValue(), 0.845424f);
-        Assert.assertEquals(renderingInfo.scaMatrix().e6().floatValue(), 1649);
-        Assert.assertEquals(renderingInfo.rotMatrix().e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.rotMatrix().e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.rotMatrix().e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.rotMatrix().e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.rotMatrix().e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.rotMatrix().e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), -325);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), -1649);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1.173556f);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 325);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 0.845424f);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 1649);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
 
 
         LineShape lineShape = connectLine.lineShape();

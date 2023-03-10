@@ -6,19 +6,19 @@ public enum DropCapStyle implements EnumGetStr {
     /**
      * 장식 하지 않음
      */
-    NONE("NONE"),
+    None("None"),
     /**
      * 두 줄이 들어갈 수 있는 크기로 첫 글자를 크게 함
      */
-    DOUBLELINE("DOUBLELINE"),
+    DoubleLine("DoubleLine"),
     /**
      * 세 줄이 들어가는 크기로 첫 글자를 크게 함
      */
-    TRIPLELINE("TRIPLELINE"),
+    TripleLine("TripleLine"),
     /**
      * 여백
      */
-    MARGIN("MARGIN");
+    Margin("Margin");
 
     private String str;
 
@@ -33,9 +33,8 @@ public enum DropCapStyle implements EnumGetStr {
 
     public static DropCapStyle fromString(String str) {
         if (str != null) {
-            String STR = str.toUpperCase();
             for (DropCapStyle item : values()) {
-                if (item.str.equals(STR)) {
+                if (item.str.equals(str)) {
                     return item;
                 }
             }

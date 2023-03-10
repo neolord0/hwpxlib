@@ -28,16 +28,18 @@ public class RenderingInfoWriter extends ElementWriter {
                 .openElement(ElementNames.hp_renderingInfo)
                 .elementWriter(this);
 
-        if (renderingInfo.transMatrix() != null) {
-            matrix(ElementNames.hc_transMatrix, renderingInfo.transMatrix());
-        }
-
-        if (renderingInfo.scaMatrix() != null) {
-            matrix(ElementNames.hc_scaMatrix, renderingInfo.scaMatrix());
-        }
-
-        if (renderingInfo.rotMatrix() != null) {
-            matrix(ElementNames.hc_rotMatrix, renderingInfo.rotMatrix());
+        for (Matrix matrix : renderingInfo.matrices()) {
+            switch (matrix._objectType()) {
+                case hc_transMatrix:
+                    matrix(ElementNames.hc_transMatrix, matrix);
+                    break;
+                case hc_scaMatrix:
+                    matrix(ElementNames.hc_scaMatrix, matrix);
+                    break;
+                case hc_rotMatrix:
+                    matrix(ElementNames.hc_rotMatrix, matrix);
+                    break;
+            }
         }
 
         xsb().closeElement();

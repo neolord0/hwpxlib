@@ -46,6 +46,8 @@ public class OLEWriter extends ShapeComponentWriter {
             PictureWriter.lineShape(ole.lineShape(), xsb());
         }
 
+        writeChildrenForShapeObject(ole);
+
         xsb().closeElement();
         releaseMe();
     }

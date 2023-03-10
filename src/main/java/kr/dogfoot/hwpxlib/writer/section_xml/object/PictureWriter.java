@@ -65,6 +65,8 @@ public class PictureWriter extends ShapeComponentWriter {
             writeChild(ElementWriterSort.Effects, picture.effects());
         }
 
+        writeChildrenForShapeObject(picture);
+
         xsb().closeElement();
         releaseMe();
     }

@@ -20,7 +20,7 @@ public class XMLStringBuilder {
     private static final String TrueValue = "1";
     private static final String FalseValue = "0";
     private static final String NameSpacePrefix = "xmlns:";
-    private static DecimalFormat floatFormat = new DecimalFormat("#.##");
+    private static DecimalFormat floatFormat = new DecimalFormat("#.######");
 
     private final StringBuilder sb;
     private final Stack<ElementInfo> elementStack;
@@ -216,7 +216,7 @@ public class XMLStringBuilder {
         }
 
         sb
-                .append(text);
+                .append(text.replaceAll("\n", "\r\n"));
 
         return this;
     }

@@ -35,6 +35,8 @@ public class VideoWriter extends ShapeComponentWriter {
 
         writeChildrenForShapeComponent(video);
 
+        writeChildrenForShapeObject(video);
+
         xsb().closeElement();
         releaseMe();
     }

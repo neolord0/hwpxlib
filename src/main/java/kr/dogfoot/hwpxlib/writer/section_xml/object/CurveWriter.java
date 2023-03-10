@@ -35,6 +35,8 @@ public class CurveWriter extends DrawingObjectWriter {
             seg(seg);
         }
 
+        writeChildrenForShapeObject(curve);
+
         xsb().closeElement();
         releaseMe();
     }

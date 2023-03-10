@@ -22,7 +22,7 @@ public class SimpleEquation {
         Assert.assertEquals(equation.textWrap(), TextWrapMethod.TOP_AND_BOTTOM);
         Assert.assertEquals(equation.textFlow(), TextFlowSide.BOTH_SIDES);
         Assert.assertEquals(equation.lock().booleanValue(), false);
-        Assert.assertEquals(equation.dropcapstyle(), DropCapStyle.NONE);
+        Assert.assertEquals(equation.dropcapstyle(), DropCapStyle.None);
         Assert.assertEquals(equation.version(), "Equation Version 60");
         Assert.assertEquals(equation.baseLine().intValue(), 61);
         Assert.assertEquals(equation.textColor(), "#000000");

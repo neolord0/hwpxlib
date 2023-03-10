@@ -30,7 +30,7 @@ public class SimplePicture {
         Assert.assertEquals(picture.textWrap(), TextWrapMethod.SQUARE);
         Assert.assertEquals(picture.textFlow(), TextFlowSide.BOTH_SIDES);
         Assert.assertEquals(picture.lock().booleanValue(), false);
-        Assert.assertEquals(picture.dropcapstyle(), DropCapStyle.NONE);
+        Assert.assertEquals(picture.dropcapstyle(), DropCapStyle.None);
         Assert.assertEquals(picture.href(), "");
         Assert.assertEquals(picture.groupLevel().shortValue(), 0);
         Assert.assertEquals(picture.instid(), "64246437");
@@ -65,26 +65,26 @@ public class SimplePicture {
 
         RenderingInfo renderingInfo = picture.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.transMatrix().e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.transMatrix().e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.transMatrix().e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.transMatrix().e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.transMatrix().e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.transMatrix().e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0);
 
-        Assert.assertEquals(renderingInfo.scaMatrix().e1().floatValue(), 1.468637f);
-        Assert.assertEquals(renderingInfo.scaMatrix().e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.scaMatrix().e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.scaMatrix().e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.scaMatrix().e5().floatValue(), 1.468619f);
-        Assert.assertEquals(renderingInfo.scaMatrix().e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1.468637f);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1.468619f);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0);
 
-        Assert.assertEquals(renderingInfo.rotMatrix().e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.rotMatrix().e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.rotMatrix().e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.rotMatrix().e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.rotMatrix().e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.rotMatrix().e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
 
         ImageRect imgRect = picture.imgRect();
         Assert.assertNotNull(imgRect);

@@ -38,7 +38,7 @@ public class AttributeNames {
     public static final String required_modules = "required-modules";
     public static final String encryption = "encryption";
     public static final String file_size = "file-size";
-    public static final String isEmbedded = "isEmbedded";
+    public static final String isEmbeded = "isEmbeded";
     public static final String sub_path = "sub-path";
     public static final String idref = "idref";
     public static final String linear = "linear";
@@ -51,6 +51,7 @@ public class AttributeNames {
     public static final String equation = "equation";
     public static final String lang = "lang";
     public static final String face = "face";
+    public static final String isEmbedded = "isEmbedded";
     public static final String binaryItemIDRef = "binaryItemIDRef";
     public static final String familyType = "familyType";
     public static final String serifStyle = "serifStyle";
