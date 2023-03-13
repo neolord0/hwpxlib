@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.writer.section_xml;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
-import kr.dogfoot.hwpxlib.commonstirngs.Namespaces;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.Namespaces;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SectionXMLFile;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;

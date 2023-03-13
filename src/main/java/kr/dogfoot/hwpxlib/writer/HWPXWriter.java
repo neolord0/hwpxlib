@@ -1,8 +1,8 @@
 package kr.dogfoot.hwpxlib.writer;
 
-import kr.dogfoot.hwpxlib.commonstirngs.FileIDs;
-import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
-import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
+import kr.dogfoot.hwpxlib.commonstrings.FileIDs;
+import kr.dogfoot.hwpxlib.commonstrings.MineTypes;
+import kr.dogfoot.hwpxlib.commonstrings.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;

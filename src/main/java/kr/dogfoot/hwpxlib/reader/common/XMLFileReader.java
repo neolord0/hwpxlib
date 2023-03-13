@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.common;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ErrorMessage;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.ErrorMessage;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.SwitchReader;
 import org.xml.sax.Attributes;

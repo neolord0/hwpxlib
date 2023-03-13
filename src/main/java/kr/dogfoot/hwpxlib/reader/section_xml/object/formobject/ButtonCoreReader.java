@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.object.formobject;
 
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.BackStyle;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ButtonCheckValue;

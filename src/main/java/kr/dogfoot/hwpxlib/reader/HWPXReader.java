@@ -1,8 +1,8 @@
 package kr.dogfoot.hwpxlib.reader;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ErrorMessage;
-import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
-import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
+import kr.dogfoot.hwpxlib.commonstrings.ErrorMessage;
+import kr.dogfoot.hwpxlib.commonstrings.MineTypes;
+import kr.dogfoot.hwpxlib.commonstrings.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;

@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.writer.header_xml.reflist;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.RefList;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;

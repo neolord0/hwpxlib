@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.section_xml.secpr;
 
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.pagepr.PageMargin;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;

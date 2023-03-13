@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.memopr;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;

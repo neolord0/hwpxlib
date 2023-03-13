@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.writer.contaier_xml;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
-import kr.dogfoot.hwpxlib.commonstirngs.Namespaces;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.Namespaces;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.metainf.ContainerXMLFile;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;

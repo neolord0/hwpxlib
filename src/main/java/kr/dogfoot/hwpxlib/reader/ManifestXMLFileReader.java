@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.reader;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ZipEntryName;
+import kr.dogfoot.hwpxlib.commonstrings.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.metainf.ManifestXMLFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;

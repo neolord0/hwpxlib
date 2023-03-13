@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.parapr;
 
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.ParaBorder;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;

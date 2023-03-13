@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.object.metainf;
 
-import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
+import kr.dogfoot.hwpxlib.commonstrings.MineTypes;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;

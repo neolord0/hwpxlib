@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.masterpage_xml;
 
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.masterpage_xml.MasterPageXMLFile;

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwpxlib.commonstirngs;
+package kr.dogfoot.hwpxlib.commonstrings;
 
 public class ErrorMessage {
     public static final String No_Object_In_File = "no object in file. ";

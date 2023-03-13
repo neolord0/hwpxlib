@@ -1,4 +1,4 @@
-package kr.dogfoot.hwpxlib.commonstirngs;
+package kr.dogfoot.hwpxlib.commonstrings;
 
 public class AttributeNames {
     public static final String hp_required_namespace = "hp:required-namespace";

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwpxlib.commonstirngs;
+package kr.dogfoot.hwpxlib.commonstrings;
 
 public enum Namespaces {
     hv("http://www.hancom.co.kr/hwpml/2011/version"),

@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.writer.header_xml.compatibledocument;
 
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.content.header_xml.LayoutCompatibilityItem;

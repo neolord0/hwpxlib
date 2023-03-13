@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.object.content.context_hpf;
 
-import kr.dogfoot.hwpxlib.commonstirngs.MineTypes;
+import kr.dogfoot.hwpxlib.commonstrings.MineTypes;
 import kr.dogfoot.hwpxlib.object.common.AttachedFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;

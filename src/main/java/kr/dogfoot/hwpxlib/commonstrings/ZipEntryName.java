@@ -1,4 +1,4 @@
-package kr.dogfoot.hwpxlib.commonstirngs;
+package kr.dogfoot.hwpxlib.commonstrings;
 
 public class ZipEntryName {
     public static final String MineType = "mimetype";

@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.writer.section_xml.object.formobject;
 
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.ButtonCore;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;

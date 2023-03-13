@@ -1,6 +1,6 @@
 package kr.dogfoot.hwpxlib.reader.header_xml.trackchangeauthor;
 
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.TrackChangeAuthor;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;

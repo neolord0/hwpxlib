@@ -1,4 +1,4 @@
-package kr.dogfoot.hwpxlib.commonstirngs;
+package kr.dogfoot.hwpxlib.commonstrings;
 
 public class XMLNamespaces {
     public static final String ha = "http://www.hancom.co.kr/hwpml/2011/app";

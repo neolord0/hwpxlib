@@ -1,8 +1,8 @@
 package kr.dogfoot.hwpxlib.writer.masterpage_xml;
 
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
-import kr.dogfoot.hwpxlib.commonstirngs.Namespaces;
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.Namespaces;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.masterpage_xml.MasterPageXMLFile;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;

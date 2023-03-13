@@ -1,7 +1,7 @@
 package kr.dogfoot.hwpxlib.writer.section_xml.ctrl;
 
-import kr.dogfoot.hwpxlib.commonstirngs.AttributeNames;
-import kr.dogfoot.hwpxlib.commonstirngs.ElementNames;
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
+import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.parameter.*;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
