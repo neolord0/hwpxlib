@@ -27,6 +27,15 @@ public class ConfigItemReader extends ElementReader {
     }
 
     @Override
+    public void text(String text) {
+        if (configItem.value() == null) {
+            configItem.value(text);
+        } else {
+            configItem.value(configItem.value() + text);
+        }
+    }
+
+    @Override
     public SwitchableObject switchableObject() {
         return null;
     }

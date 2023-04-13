@@ -50,7 +50,6 @@ public class CharPr extends SwitchableObject {
      * 언어별 장평, 단위 %
      */
     private ValuesByLanguage<Short> ratio;
-
     /**
      * 언어별 자간, 단위 %
      */

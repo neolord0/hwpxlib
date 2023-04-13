@@ -2,7 +2,6 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomp
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
 
 import java.util.ArrayList;
 

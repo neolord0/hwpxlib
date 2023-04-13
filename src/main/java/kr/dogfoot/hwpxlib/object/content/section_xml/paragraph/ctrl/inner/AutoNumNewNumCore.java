@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner;
 
+import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.notepr.AutoNumFormat;
 
@@ -14,7 +15,7 @@ public abstract class AutoNumNewNumCore<ChildType> extends CtrlItem {
     /**
      * 번호 종류
      */
-    private kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType numType;
+    private NumType numType;
     /**
      * 번호 서식
      */
@@ -33,15 +34,15 @@ public abstract class AutoNumNewNumCore<ChildType> extends CtrlItem {
         return (ChildType) this;
     }
 
-    public kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType numType() {
+    public NumType numType() {
         return numType;
     }
 
-    public void numType(kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType numType) {
+    public void numType(NumType numType) {
         this.numType = numType;
     }
 
-    public ChildType numTypeAnd(kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumType numType) {
+    public ChildType numTypeAnd(NumType numType) {
         this.numType = numType;
         return (ChildType) this;
     }

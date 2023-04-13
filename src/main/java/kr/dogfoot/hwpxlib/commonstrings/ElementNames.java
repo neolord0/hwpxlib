@@ -36,7 +36,9 @@ public class ElementNames {
     public static final String ha_HWPApplicationSetting = "ha:HWPApplicationSetting";
     public static final String ha_CaretPosition = "ha:CaretPosition";
     public static final String config_item_set = "config-item-set";
+    public static final String config_item_set2 = "config:config-item-set";
     public static final String config_item = "config-item";
+    public static final String config_item2 = "config:config-item";
 
 
     // Contents/header_forTestSwitch.xml

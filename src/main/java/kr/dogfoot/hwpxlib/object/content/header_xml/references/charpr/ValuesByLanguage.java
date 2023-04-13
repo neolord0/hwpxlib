@@ -140,4 +140,14 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.user = user;
         return this;
     }
+
+    public void set(ValueType hangul, ValueType latin, ValueType hanja, ValueType japanese, ValueType other, ValueType symbol, ValueType user) {
+        this.hangul = hangul;
+        this.latin = latin;
+        this.hanja = hanja;
+        this.japanese = japanese;
+        this.other = other;
+        this.symbol = symbol;
+        this.user = user;
+    }
 }

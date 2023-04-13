@@ -10,6 +10,7 @@ import kr.dogfoot.hwpxlib.object.common.ObjectType;
 public class ConfigItem extends HWPXObject {
     private String name;
     private String type;
+    private String value;
 
     public ConfigItem() {
     }
@@ -42,6 +43,19 @@ public class ConfigItem extends HWPXObject {
 
     public ConfigItem typeAnd(String type) {
         this.type = type;
+        return this;
+    }
+
+    public String value() {
+        return value;
+    }
+
+    public void value(String value) {
+        this.value = value;
+    }
+
+    public ConfigItem valueAnd(String value) {
+        this.value = value;
         return this;
     }
 }

@@ -5,6 +5,7 @@ import kr.dogfoot.hwpxlib.reader.HWPXReader;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.header_xml.HeaderWriter;
 import kr.dogfoot.hwpxlib.writer.section_xml.SectionWriter;
+import kr.dogfoot.hwpxlib.writer.settings_xml.SettingsWriter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -25,6 +26,13 @@ public class TestUtil {
         String madeXML = makeSectionXML(hwpxFilepath);
         return new Result(madeXML, originXML);
     }
+
+    public static Result settingsXML(String hwpxFilepath) throws Exception {
+        String originXML = zipFileString(hwpxFilepath, "settings.xml", StandardCharsets.UTF_8);
+        String madeXML = makeSettingsXML(hwpxFilepath);
+        return new Result(madeXML, originXML);
+    }
+
 
     private static String zipFileString(String filePath, String zipEntryName, Charset charset) throws IOException {
         ZipFile zipFile = new ZipFile(filePath);
@@ -59,6 +67,16 @@ public class TestUtil {
         String madeXML = manager.xsb().toString();
         return madeXML;
     }
+
+
+    private static String makeSettingsXML(String hwpxFilepath) throws Exception {
+        HWPXFile hwpxFile = HWPXReader.fromFilepath(hwpxFilepath);
+        ElementWriterManager manager = new ElementWriterManager();
+        new SettingsWriter(manager).write(hwpxFile.settingsXMLFile());
+        String madeXML = manager.xsb().toString();
+        return madeXML;
+    }
+
 
     public static class Result {
         private String actual;

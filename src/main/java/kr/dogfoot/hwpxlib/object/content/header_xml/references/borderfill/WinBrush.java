@@ -37,11 +37,11 @@ public class WinBrush extends HWPXObject {
         return faceColor;
     }
 
-    public void faceColorAnd(String faceColor) {
+    public void faceColor(String faceColor) {
         this.faceColor = faceColor;
     }
 
-    public WinBrush faceColor(String faceColor) {
+    public WinBrush faceColorAnd(String faceColor) {
         this.faceColor = faceColor;
         return this;
     }

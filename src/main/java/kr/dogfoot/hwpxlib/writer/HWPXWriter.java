@@ -21,7 +21,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class HWPXWriter {
-    public static void toFilePath(HWPXFile hwpxFile, String filepath) throws Exception {
+    public static void toFilepath(HWPXFile hwpxFile, String filepath) throws Exception {
         FileOutputStream fos = new FileOutputStream(filepath);
         toStream(hwpxFile, fos);
     }

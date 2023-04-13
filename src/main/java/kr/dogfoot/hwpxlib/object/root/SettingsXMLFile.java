@@ -1,6 +1,5 @@
 package kr.dogfoot.hwpxlib.object.root;
 
-import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
@@ -15,7 +14,7 @@ public class SettingsXMLFile extends SwitchableObject {
     /**
      * <config-item-set/>
      */
-    private ObjectList<ConfigItem> configItemSet;
+    private ConfigItemSet configItemSet;
 
     public SettingsXMLFile() {
     }
@@ -37,12 +36,12 @@ public class SettingsXMLFile extends SwitchableObject {
         caretPosition = null;
     }
 
-    public ObjectList<ConfigItem> configItemSet() {
+    public ConfigItemSet configItemSet() {
         return configItemSet;
     }
 
     public void createConfigItemSet() {
-        configItemSet = new ObjectList<ConfigItem>(ObjectType.config_item_set, ConfigItem.class);
+        configItemSet = new ConfigItemSet();
     }
 
     public void removeConfigItemSet() {

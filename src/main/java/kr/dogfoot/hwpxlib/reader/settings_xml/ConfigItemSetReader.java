@@ -1,27 +1,39 @@
 package kr.dogfoot.hwpxlib.reader.settings_xml;
 
+import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.root.ConfigItem;
+import kr.dogfoot.hwpxlib.object.root.ConfigItemSet;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import org.xml.sax.Attributes;
 
 public class ConfigItemSetReader extends ElementReader {
-    private ObjectList<ConfigItem> configItemSet;
+    private ConfigItemSet configItemSet;
 
     @Override
     public ElementReaderSort sort() {
         return ElementReaderSort.ConfigItemSet;
     }
 
+
+    @Override
+    protected void setAttribute(String name, String value) {
+        switch (name) {
+            case AttributeNames.name:
+                configItemSet.name(value);
+                break;
+        }
+    }
+
     @Override
     public void childElement(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.config_item:
-                configItem(configItemSet.addNew(), name, attrs);
+            case ElementNames.config_item2:
+                configItem(configItemSet.addNewConfigItem(), name, attrs);
                 break;
         }
     }
@@ -30,6 +42,7 @@ public class ConfigItemSetReader extends ElementReader {
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
         switch (name) {
             case ElementNames.config_item:
+            case ElementNames.config_item2:
                 ConfigItem configItem = new ConfigItem();
                 configItem(configItem, name, attrs);
                 return configItem;
@@ -49,7 +62,7 @@ public class ConfigItemSetReader extends ElementReader {
         return configItemSet;
     }
 
-    public void configItemSet(ObjectList<ConfigItem> configItemSet) {
+    public void configItemSet(ConfigItemSet configItemSet) {
         this.configItemSet = configItemSet;
     }
 }

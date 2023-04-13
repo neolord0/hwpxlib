@@ -3,8 +3,8 @@ package kr.dogfoot.hwpxlib.writer.settings_xml;
 import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
-import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.root.ConfigItem;
+import kr.dogfoot.hwpxlib.object.root.ConfigItemSet;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
@@ -21,14 +21,16 @@ public class ConfigItemSetWriter extends ElementWriter {
 
     @Override
     public void write(HWPXObject object) {
-        ObjectList<ConfigItem> configItemSet = (ObjectList<ConfigItem>) object;
+        ConfigItemSet configItemSet = (ConfigItemSet) object;
+
         switchObject(configItemSet.switchObject());
 
         xsb()
-                .openElement(ElementNames.config_item_set)
-                .elementWriter(this);
+                .openElement(ElementNames.config_item_set2)
+                .elementWriter(this)
+                .attribute(AttributeNames.name, configItemSet.name());
 
-        for (ConfigItem configItem :  configItemSet.items()) {
+        for (ConfigItem configItem :  configItemSet.configItems()) {
             configItem(configItem);
         }
 
@@ -38,9 +40,10 @@ public class ConfigItemSetWriter extends ElementWriter {
 
     private void configItem(ConfigItem configItem) {
         xsb()
-                .openElement(ElementNames.config_item)
+                .openElement(ElementNames.config_item2)
                 .attribute(AttributeNames.name, configItem.name())
                 .attribute(AttributeNames.type, configItem.type())
+                .text(configItem.value())
                 .closeElement();
     }
 
