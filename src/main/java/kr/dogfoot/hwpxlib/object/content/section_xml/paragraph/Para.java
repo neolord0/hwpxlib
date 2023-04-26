@@ -152,6 +152,16 @@ public class Para extends SwitchableObject {
         return runList.get(index);
     }
 
+    public int getRunIndex(Run run) {
+        int count = runList.size();
+        for (int index = 0; index < count; index++) {
+            if (runList.get(index) == run) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addRun(Run run) {
         runList.add(run);
     }

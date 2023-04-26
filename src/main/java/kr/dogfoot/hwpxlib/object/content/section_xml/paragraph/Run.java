@@ -80,6 +80,16 @@ public class Run extends SwitchableObject {
         return itemList.get(index);
     }
 
+    public int getRunItemIndex(RunItem runItem) {
+        int count = itemList.size();
+        for (int index = 0; index < count; index++) {
+            if (itemList.get(index) == runItem) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addRunItem(RunItem runItem) {
         itemList.add(runItem);
     }

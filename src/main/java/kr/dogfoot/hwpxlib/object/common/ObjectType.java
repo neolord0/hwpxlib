@@ -357,7 +357,10 @@ public enum ObjectType {
     hhs_bodyDiff,
     hhs_insert,
     hhs_update,
-    hhs_delete
+    hhs_delete,
+
+    // 차트
+    c_chartSpace
 }
 
 

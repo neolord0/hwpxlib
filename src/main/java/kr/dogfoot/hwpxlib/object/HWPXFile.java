@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.object;
 
+import kr.dogfoot.hwpxlib.object.chart.ChartXMLFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
@@ -27,6 +28,7 @@ public class HWPXFile extends HWPXObject {
     private final ObjectList<SectionXMLFile> sectionXMLFileList;
     private final SettingsXMLFile settingsXMLFile;
     private final ObjectList<HistoryXMLFile> historyXMLFileList;
+    private final ObjectList<ChartXMLFile> chartXMLFileList;
 
     public HWPXFile() {
         versionXMLFile = new VersionXMLFile();
@@ -39,6 +41,7 @@ public class HWPXFile extends HWPXObject {
         sectionXMLFileList = new ObjectList<SectionXMLFile>(SectionXMLFile.class);
         settingsXMLFile = new SettingsXMLFile();
         historyXMLFileList = new ObjectList<HistoryXMLFile>(HistoryXMLFile.class);
+        chartXMLFileList = new ObjectList<ChartXMLFile>(ChartXMLFile.class);
     }
 
     @Override
@@ -80,5 +83,9 @@ public class HWPXFile extends HWPXObject {
 
     public ObjectList<HistoryXMLFile> historyXMLFileList() {
         return historyXMLFileList;
+    }
+
+    public ObjectList<ChartXMLFile> chartXMLFileList() {
+        return chartXMLFileList;
     }
 }

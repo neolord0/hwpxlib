@@ -116,7 +116,6 @@ public class SimpleObjects {
     @Test
     public void SimpleVideo() throws Exception {
         TestUtil.Result result = TestUtil.sectionXML("testFile/SimpleVideo.hwpx");
-        System.out.println(result.actual());
         Assert.assertEquals(result.actual(), result.expected());
     }
 }

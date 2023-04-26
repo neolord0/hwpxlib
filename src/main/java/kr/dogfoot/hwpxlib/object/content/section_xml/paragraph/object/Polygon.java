@@ -32,6 +32,16 @@ public class Polygon extends DrawingObject<Polygon> {
         return ptList.get(index);
     }
 
+    public int getPtIndex(Point pt) {
+        int count = ptList.size();
+        for (int index = 0; index < count; index++) {
+            if (ptList.get(index) == pt) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addPt(Point pt) {
         ptList.add(pt);
     }

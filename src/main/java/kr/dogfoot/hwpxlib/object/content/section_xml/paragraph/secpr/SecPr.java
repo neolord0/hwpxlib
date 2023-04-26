@@ -323,6 +323,16 @@ public class SecPr extends SwitchableObject {
         return pageBorderFillList.get(index);
     }
 
+    public int getPageBorderFillIndex(PageBorderFill pageBorderFill) {
+        int count = pageBorderFillList.size();
+        for (int index = 0; index < count; index++) {
+            if (pageBorderFillList.get(index) == pageBorderFill) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addPageBorderFill(PageBorderFill pageBorderFill) {
         pageBorderFillList.add(pageBorderFill);
     }
@@ -352,6 +362,16 @@ public class SecPr extends SwitchableObject {
     public MasterPage getMasterPage(int index) {
         return masterPageList.get(index);
     }
+
+    public int getMasterPageIndex(MasterPage masterPage) {
+        int count = masterPageList.size();
+        for (int index = 0; index < count; index++) {
+            if (masterPageList.get(index) == masterPage) {
+                return index;
+            }
+        }
+        return -1;
+   }
 
     public void addMasterPage(MasterPage masterPage) {
         masterPageList.add(masterPage);

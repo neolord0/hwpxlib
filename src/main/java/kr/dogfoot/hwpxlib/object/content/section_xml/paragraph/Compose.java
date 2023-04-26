@@ -105,6 +105,16 @@ public class Compose extends RunItem {
         return charPrList.get(index);
     }
 
+    public int getCharPrIndex(ComposeCharPr charPr) {
+        int count = charPrList.size();
+        for (int index = 0; index < count; index++) {
+            if (charPrList.get(index) == charPr) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addCharPr(ComposeCharPr charPr) {
         charPrList.add(charPr);
     }

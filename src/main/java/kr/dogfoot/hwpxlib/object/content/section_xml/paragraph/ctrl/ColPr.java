@@ -141,6 +141,16 @@ public class ColPr extends CtrlItem {
         return colSzList.get(index);
     }
 
+    public int getColSzIndex(ColSz colSz) {
+        int count = colSzList.size();
+        for (int index = 0; index < count; index++) {
+            if (colSzList.get(index) == colSz) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addColSz(ColSz colSz) {
         colSzList.add(colSz);
     }

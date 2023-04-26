@@ -166,6 +166,11 @@ public class RunReader extends ElementReader {
                 Equation equation = new Equation();
                 equation(equation, name, attrs);
                 return equation;
+            case ElementNames.hp_chart:
+                Chart chart = new Chart();
+                chart(chart, name, attrs);
+                return chart;
+
             case ElementNames.hp_line:
                 Line line = new Line();
                 line(line, name, attrs);

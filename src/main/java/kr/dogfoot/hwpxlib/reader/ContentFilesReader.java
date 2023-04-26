@@ -2,6 +2,7 @@ package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Chart;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.XMLFileReader;
@@ -16,14 +17,18 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.zip.ZipFile;
 
 public class ContentFilesReader extends XMLFileReader {
+    private final ArrayList<Chart> chartList;
     private HWPXFile hwpxFile;
     private String topEntryName;
 
     public ContentFilesReader(ElementReaderManager entryReaderManager) {
         super(entryReaderManager);
+
+        chartList = new ArrayList<>();
     }
 
     public void read(HWPXFile hwpxFile, InputStream io) throws ParserConfigurationException, IOException, SAXException {
@@ -83,6 +88,14 @@ public class ContentFilesReader extends XMLFileReader {
     @Override
     public void endElement(String uri, String localName, String name) {
         super.endElement(uri, localName, name);
+    }
+
+    public void addChart(Chart chart) {
+        chartList.add(chart);
+    }
+
+    public Chart[] charts() {
+        return chartList.toArray(new Chart[0]);
     }
 
 }

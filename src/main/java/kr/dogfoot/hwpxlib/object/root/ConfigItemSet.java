@@ -39,6 +39,16 @@ public class ConfigItemSet extends SwitchableObject {
         return configItemList.get(index);
     }
 
+    public int getConfigItemIndex(ConfigItem configItem) {
+        int count = configItemList.size();
+        for (int index = 0; index < count; index++) {
+            if (configItemList.get(index) == configItem) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addConfigItem(ConfigItem configItem) {
         configItemList.add(configItem);
     }

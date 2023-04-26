@@ -25,6 +25,16 @@ public class ManifestXMLFile extends SwitchableObject {
         return fileEntryList.get(index);
     }
 
+    public int getFileEntryIndex(FileEntry fileEntry) {
+        int count = fileEntryList.size();
+        for (int index = 0; index < count; index++) {
+            if (fileEntryList.get(index) == fileEntry) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addFileEntry(FileEntry fileEntry) {
         fileEntryList.add(fileEntry);
     }

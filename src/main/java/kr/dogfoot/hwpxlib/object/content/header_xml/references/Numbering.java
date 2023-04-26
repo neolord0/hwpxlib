@@ -66,6 +66,16 @@ public class Numbering extends SwitchableObject {
         return paraHeadList.get(index);
     }
 
+    public int getParaHeadIndex(ParaHead paraHead) {
+        int count = paraHeadList.size();
+        for (int index = 0; index < count; index++) {
+            if (paraHeadList.get(index) == paraHead) {
+                return index;
+            }
+        }
+        return -1;
+   }
+
     public void addParaHead(ParaHead paraHead) {
         paraHeadList.add(paraHead);
     }

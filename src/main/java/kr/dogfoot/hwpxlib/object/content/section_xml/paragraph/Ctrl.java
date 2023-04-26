@@ -25,6 +25,16 @@ public class Ctrl extends RunItem {
         return itemList.get(index);
     }
 
+    public int getCtrlItemIndex(CtrlItem ctrlItem) {
+        int count = itemList.size();
+        for (int index = 0; index < count; index++) {
+            if (itemList.get(index) == ctrlItem) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addCtrlItem(CtrlItem ctrlItem) {
         itemList.add(ctrlItem);
     }

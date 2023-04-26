@@ -1,5 +1,7 @@
 package kr.dogfoot.hwpxlib.object.common;
 
+import kr.dogfoot.hwpxlib.object.common.parameter.Param;
+
 import java.util.ArrayList;
 
 public class ObjectList<ItemType> extends SwitchableObject {
@@ -28,6 +30,16 @@ public class ObjectList<ItemType> extends SwitchableObject {
 
     public ItemType get(int index) {
         return list.get(index);
+    }
+
+    public int getIndex(ItemType item) {
+        int count = list.size();
+        for (int index = 0; index < count; index++) {
+            if (list.get(index) == item) {
+                return index;
+            }
+        }
+        return -1;
     }
 
     public void add(ItemType item) {

@@ -28,6 +28,16 @@ public class ListParam extends Param<ListParam> {
         return parameterList.get(index);
     }
 
+    public int getParamIndex(Param parameter) {
+        int count = parameterList.size();
+        for (int index = 0; index < count; index++) {
+            if (parameterList.get(index) == parameter) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addParam(Param parameter) {
         parameterList.add(parameter);
     }

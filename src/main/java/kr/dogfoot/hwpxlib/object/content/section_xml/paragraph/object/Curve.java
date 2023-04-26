@@ -29,6 +29,16 @@ public class Curve extends DrawingObject<Curve> {
         return segList.get(index);
     }
 
+    public int getSegIndex(CurveSegment seg) {
+        int count = segList.size();
+        for (int index = 0; index < count; index++) {
+            if (segList.get(index) == seg) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addSeg(CurveSegment seg) {
         segList.add(seg);
     }

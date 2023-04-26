@@ -25,6 +25,16 @@ public class Tr extends SwitchableObject {
         return tcList.get(index);
     }
 
+    public int getTcIndex(Tc tc) {
+        int count = tcList.size();
+        for (int index = 0; index < count; index++) {
+            if (tcList.get(index) == tc) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addTc(Tc tc) {
         tcList.add(tc);
     }

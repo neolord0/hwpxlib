@@ -53,6 +53,16 @@ public class MetaData extends SwitchableObject {
         return metaList.get(index);
     }
 
+    public int getMetaIndex(Meta meta) {
+        int count = metaList.size();
+        for (int index = 0; index < count; index++) {
+            if (metaList.get(index) == meta) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addMeta(Meta meta) {
         metaList.add(meta);
     }

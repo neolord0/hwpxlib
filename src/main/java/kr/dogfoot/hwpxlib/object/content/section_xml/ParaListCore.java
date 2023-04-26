@@ -20,6 +20,16 @@ public abstract class ParaListCore extends SwitchableObject {
         return paraList.get(index);
     }
 
+    public int getParaIndex(Para para) {
+        int count = paraList.size();
+        for (int index = 0; index < count; index++) {
+            if (paraList.get(index) == para) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addPara(Para para) {
         paraList.add(para);
     }

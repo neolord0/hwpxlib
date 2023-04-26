@@ -83,6 +83,16 @@ public class TabPr extends SwitchableObject {
         return tabItemList.get(index);
     }
 
+    public int getTabItemIndex(TabItem tabItem) {
+        int count = tabItemList.size();
+        for (int index = 0; index < count; index++) {
+            if (tabItemList.get(index) == tabItem) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addTabItem(TabItem tabItem) {
         tabItemList.add(tabItem);
     }

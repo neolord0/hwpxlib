@@ -83,6 +83,16 @@ public class ListBox extends FormObject<ListBox> {
         return listItemList.get(index);
     }
 
+    public int getListItemIndex(ListItem listItem) {
+        int count = listItemList.size();
+        for (int index = 0; index < count; index++) {
+            if (listItemList.get(index) == listItem) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addListItem(ListItem listItem) {
         listItemList.add(listItem);
     }

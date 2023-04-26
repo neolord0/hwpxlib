@@ -41,6 +41,16 @@ public class Fontface extends SwitchableObject {
         return fontList.get(index);
     }
 
+    public int getFontIndex(Font font) {
+        int count = fontList.size();
+        for (int index = 0; index < count; index++) {
+            if (fontList.get(index) == font) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addFont(Font font) {
         fontList.add(font);
     }

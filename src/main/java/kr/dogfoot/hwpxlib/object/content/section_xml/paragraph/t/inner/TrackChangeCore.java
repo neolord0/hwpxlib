@@ -58,6 +58,4 @@ public abstract class TrackChangeCore<ChildType> extends TItem {
         this.paraend = paraend;
         return (ChildType) this;
     }
-
-
 }

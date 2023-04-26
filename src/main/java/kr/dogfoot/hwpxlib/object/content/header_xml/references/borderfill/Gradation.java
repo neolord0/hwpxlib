@@ -155,6 +155,16 @@ public class Gradation extends SwitchableObject {
         return colorList.get(index);
     }
 
+    public int getColorIndex(Color color) {
+        int count = colorList.size();
+        for (int index = 0; index < count; index++) {
+            if (colorList.get(index) == color) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addColor(Color color) {
         colorList.add(color);
     }

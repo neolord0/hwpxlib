@@ -4,6 +4,7 @@ import kr.dogfoot.hwpxlib.commonstrings.FileIDs;
 import kr.dogfoot.hwpxlib.commonstrings.MineTypes;
 import kr.dogfoot.hwpxlib.commonstrings.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.chart.ChartXMLFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
@@ -60,6 +61,7 @@ public class HWPXWriter {
         META_INF_container_xml();
         content_hpf();
         contentFiles();
+        chartFiles();
         etcContainedFile();
     }
 
@@ -138,6 +140,12 @@ public class HWPXWriter {
             } else if (item.hasAttachedFile() && item.attachedFile() != null) {
                 putIntoZip(item.href(), item.attachedFile().data());
             }
+        }
+    }
+
+    private void chartFiles() throws IOException {
+        for (ChartXMLFile chartXMLFile : hwpxFile.chartXMLFileList().items()) {
+            putIntoZip(chartXMLFile.path(), chartXMLFile.data());
         }
     }
 

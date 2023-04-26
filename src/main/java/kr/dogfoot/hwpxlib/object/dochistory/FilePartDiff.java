@@ -44,6 +44,16 @@ public class FilePartDiff<ChildType> extends SwitchableObject {
         return childDiffList.get(index);
     }
 
+    public int getChildDiffIndex(DiffItem childDiff) {
+        int count = childDiffList.size();
+        for (int index = 0; index < count; index++) {
+            if (childDiffList.get(index) == childDiff) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addChildDiff(DiffItem childDiff) {
         childDiffList.add(childDiff);
     }

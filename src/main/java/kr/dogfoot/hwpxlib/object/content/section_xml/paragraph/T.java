@@ -84,6 +84,16 @@ public class T extends RunItem {
         return itemList.get(index);
     }
 
+    public int getItemIndex(TItem textItem) {
+        int count = itemList.size();
+        for (int index = 0; index < count; index++) {
+            if (itemList.get(index) == textItem) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addItem(TItem textItem) {
         itemList.add(textItem);
     }

@@ -33,8 +33,7 @@ public class TestUtil {
         return new Result(madeXML, originXML);
     }
 
-
-    private static String zipFileString(String filePath, String zipEntryName, Charset charset) throws IOException {
+    public static String zipFileString(String filePath, String zipEntryName, Charset charset) throws IOException {
         ZipFile zipFile = new ZipFile(filePath);
 
         InputStream is = zipFile.getInputStream(zipFile.getEntry(zipEntryName));

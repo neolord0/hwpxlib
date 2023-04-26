@@ -192,6 +192,16 @@ public class Table extends ShapeObject<Table> {
         return trList.get(index);
     }
 
+    public int getTrIndex(Tr tr) {
+        int count = trList.size();
+        for (int index = 0; index < count; index++) {
+            if (trList.get(index) == tr) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addTr(Tr tr) {
         trList.add(tr);
     }

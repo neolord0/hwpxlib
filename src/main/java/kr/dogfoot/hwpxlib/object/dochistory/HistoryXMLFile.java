@@ -39,6 +39,16 @@ public class HistoryXMLFile extends SwitchableObject {
         return entryList.get(index);
     }
 
+    public int getEntryIndex(HistoryEntry entry) {
+        int count = entryList.size();
+        for (int index = 0; index < count; index++) {
+            if (entryList.get(index) == entry) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addEntry(HistoryEntry entry) {
         entryList.add(entry);
     }

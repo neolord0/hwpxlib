@@ -31,6 +31,16 @@ public class RenderingInfo extends SwitchableObject {
         return matrixList.get(index);
     }
 
+    public int getMatrixIndex(Matrix matrix) {
+        int count = matrixList.size();
+        for (int index = 0; index < count; index++) {
+            if (matrixList.get(index) == matrix) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addMatrix(Matrix matrix) {
         matrixList.add(matrix);
     }

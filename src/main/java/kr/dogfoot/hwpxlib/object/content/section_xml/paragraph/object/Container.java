@@ -28,6 +28,16 @@ public class Container extends ShapeComponent<Container> {
         return childList.get(index);
     }
 
+    public int getChildIndex(ShapeComponent child) {
+        int count = childList.size();
+        for (int index = 0; index < count; index++) {
+            if (childList.get(index) == child) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
     public void addChild(ShapeComponent child) {
         childList.add(child);
     }

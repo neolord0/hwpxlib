@@ -4,7 +4,9 @@ import kr.dogfoot.hwpxlib.commonstrings.ErrorMessage;
 import kr.dogfoot.hwpxlib.commonstrings.MineTypes;
 import kr.dogfoot.hwpxlib.commonstrings.ZipEntryName;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
+import kr.dogfoot.hwpxlib.object.chart.ChartXMLFile;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Chart;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.util.ZipFileReader;
@@ -16,7 +18,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class HWPXReader {
-
     public static HWPXFile fromFilepath(String filepath) throws Exception {
         return fromFile(new File(filepath));
     }
@@ -74,8 +75,8 @@ public class HWPXReader {
 
     private void read() throws Exception {
         versionXML();
-        Meta_Inf_containerXML();
-        Meta_Inf_manifestXML();
+        containerXML();
+        manifestXML();
         contentHPF();
         packagedFiles();
         etcContainedFile();
@@ -87,12 +88,12 @@ public class HWPXReader {
                 .read(hwpxFile.versionXMLFile(), zipFile);
     }
 
-    private void Meta_Inf_containerXML() throws Exception {
+    private void containerXML() throws Exception {
         new ContainerXMLFileReader(entryReaderManager)
                 .read(hwpxFile.containerXMLFile(), zipFile);
     }
 
-    private void Meta_Inf_manifestXML() throws Exception {
+    private void manifestXML() throws Exception {
         new ManifestXMLFileReader(entryReaderManager)
                 .read(hwpxFile.manifestXMLFile(), zipFile);
     }
@@ -115,6 +116,12 @@ public class HWPXReader {
                 item.createAttachedFile();
                 item.attachedFile().data(ZipFileReader.readBinary(item.href(), zipFile));
             }
+        }
+
+        for (Chart chart : contentFilesReader.charts()) {
+            hwpxFile.chartXMLFileList().addNew()
+                    .pathAnd(chart.chartIDRef())
+                    .data(ZipFileReader.readBinary(chart.chartIDRef(), zipFile));
         }
     }
 
