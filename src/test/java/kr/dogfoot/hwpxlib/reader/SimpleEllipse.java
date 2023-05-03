@@ -18,13 +18,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecompo
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.Caption;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleEllipse {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleEllipse.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleEllipse.hwpx");
         Ellipse ellipse = (Ellipse) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
         Assert.assertNotNull(ellipse);
@@ -71,24 +71,24 @@ public class SimpleEllipse {
 
         RenderingInfo renderingInfo = ellipse.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0, 0);
 
         LineShape lineShape = ellipse.lineShape();
         Assert.assertNotNull(lineShape);
@@ -103,7 +103,7 @@ public class SimpleEllipse {
         Assert.assertEquals(lineShape.headSz(), ArrowSize.MEDIUM_MEDIUM);
         Assert.assertEquals(lineShape.tailSz(), ArrowSize.MEDIUM_MEDIUM);
         Assert.assertEquals(lineShape.outlineStyle(), OutlineStyle.NORMAL);
-        Assert.assertEquals(lineShape.alpha().floatValue(), 0);
+        Assert.assertEquals(lineShape.alpha().floatValue(), 0, 0);
 
         FillBrush fillBrush = ellipse.fillBrush();
         Assert.assertNotNull(fillBrush);
@@ -116,7 +116,7 @@ public class SimpleEllipse {
         Assert.assertEquals(gradation.step().shortValue(), 255);
         Assert.assertEquals(gradation.colorNum(), 2);
         Assert.assertEquals(gradation.stepCenter().shortValue(), 50);
-        Assert.assertEquals(gradation.alpha().floatValue(), 0);
+        Assert.assertEquals(gradation.alpha().floatValue(), 0, 0);
 
         int index = 0;
         for (Color color : gradation.colors()) {
@@ -141,7 +141,7 @@ public class SimpleEllipse {
         Assert.assertEquals(shadow.color(), "#B2B2B2");
         Assert.assertEquals(shadow.offsetX().intValue(), 0);
         Assert.assertEquals(shadow.offsetY().intValue(), 0);
-        Assert.assertEquals(shadow.alpha().floatValue(), 0);
+        Assert.assertEquals(shadow.alpha().floatValue(), 0, 0);
 
         DrawText drawText = ellipse.drawText();
         Assert.assertNull(drawText);

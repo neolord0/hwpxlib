@@ -7,13 +7,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Equation;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleEquation {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleEquation.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleEquation.hwpx");
         Equation equation  = (Equation) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(equation);
         Assert.assertEquals(equation.id(), "1137177714");

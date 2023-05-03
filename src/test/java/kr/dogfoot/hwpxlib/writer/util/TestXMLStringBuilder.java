@@ -1,7 +1,8 @@
 package kr.dogfoot.hwpxlib.writer.util;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class TestXMLStringBuilder {
     @Test

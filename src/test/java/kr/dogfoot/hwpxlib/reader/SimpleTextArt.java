@@ -16,13 +16,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.textart.TextArtPr;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleTextArt {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleTextArt.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleTextArt.hwpx");
         TextArt textArt = (TextArt) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
         Assert.assertNotNull(textArt);
@@ -67,24 +67,24 @@ public class SimpleTextArt {
 
         RenderingInfo renderingInfo = textArt.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 2.857546f);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1.128907f);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 2.857546f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1.128907f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0, 0);
 
         LineShape lineShape = textArt.lineShape();
         Assert.assertNotNull(lineShape);
@@ -99,7 +99,7 @@ public class SimpleTextArt {
         Assert.assertEquals(lineShape.headSz(), ArrowSize.SMALL_SMALL);
         Assert.assertEquals(lineShape.tailSz(), ArrowSize.SMALL_SMALL);
         Assert.assertEquals(lineShape.outlineStyle(), OutlineStyle.INNER);
-        Assert.assertEquals(lineShape.alpha().floatValue(), 0f);
+        Assert.assertEquals(lineShape.alpha().floatValue(), 0f, 0);
 
         FillBrush fillBrush = textArt.fillBrush();
         Assert.assertNotNull(fillBrush);
@@ -107,7 +107,7 @@ public class SimpleTextArt {
         Assert.assertNotNull(winBrush);
         Assert.assertEquals(winBrush.faceColor(), "#0000FF");
         Assert.assertEquals(winBrush.hatchColor(), "#000000");
-        Assert.assertEquals(winBrush.alpha().floatValue(), 0);
+        Assert.assertEquals(winBrush.alpha().floatValue(), 0, 0);
 
         DrawingShadow shadow = textArt.shadow();
         Assert.assertNotNull(shadow);
@@ -115,7 +115,7 @@ public class SimpleTextArt {
         Assert.assertEquals(shadow.color(), "#B2B2B2");
         Assert.assertEquals(shadow.offsetX().intValue(), 0);
         Assert.assertEquals(shadow.offsetY().intValue(), 0);
-        Assert.assertEquals(shadow.alpha().floatValue(), 0);
+        Assert.assertEquals(shadow.alpha().floatValue(), 0, 0);
 
         Point pt0 = textArt.pt0();
         Assert.assertNotNull(pt0);
@@ -152,7 +152,7 @@ public class SimpleTextArt {
         Assert.assertEquals(shadow2.color(), "#63AA0D78");
         Assert.assertEquals(shadow2.offsetX().longValue(), 1668812096L);
         Assert.assertEquals(shadow2.offsetY().longValue(), 191099024L);
-        Assert.assertEquals(shadow2.alpha().floatValue(), 0);
+        Assert.assertEquals(shadow2.alpha().floatValue(), 0, 0);
 
         ShapeSize sz = textArt.sz();
         Assert.assertNotNull(sz);

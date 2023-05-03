@@ -15,14 +15,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecompo
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleOLE {
-
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleOLE.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleOLE.hwpx");
         OLE ole = (OLE) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(ole);
         Assert.assertEquals(ole.id(), "1138838690");
@@ -70,24 +69,24 @@ public class SimpleOLE {
 
         RenderingInfo renderingInfo = ole.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0, 0);
 
         XAndY extent = ole.extent();
         Assert.assertNotNull(extent);
@@ -107,7 +106,7 @@ public class SimpleOLE {
         Assert.assertEquals(lineShape.headSz(), ArrowSize.SMALL_SMALL);
         Assert.assertEquals(lineShape.tailSz(), ArrowSize.SMALL_SMALL);
         Assert.assertEquals(lineShape.outlineStyle(), OutlineStyle.OUTER);
-        Assert.assertEquals(lineShape.alpha().floatValue(), 0);
+        Assert.assertEquals(lineShape.alpha().floatValue(), 0, 0);
 
         ShapeSize sz = ole.sz();
         Assert.assertNotNull(sz);

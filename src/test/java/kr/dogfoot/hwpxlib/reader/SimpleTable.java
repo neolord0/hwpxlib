@@ -12,13 +12,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Cell
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.CellSpan;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tc;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tr;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleTable {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleTable.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleTable.hwpx");
         Table table = (Table) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertEquals(table.id(), "1137126797");
         Assert.assertEquals(table.zOrder().intValue(), 0);

@@ -12,13 +12,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Container;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.Flip;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RenderingInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleContainer {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleContainer.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleContainer.hwpx");
         Container container = (Container) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(container);
         Assert.assertEquals(container.id(), "1138906163");
@@ -61,24 +61,24 @@ public class SimpleContainer {
 
         RenderingInfo renderingInfo = container.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0, 0);
 
         Assert.assertEquals(container.countOfChild(), 3);
         Assert.assertEquals(container.getChild(0)._objectType(), ObjectType.hp_pic);

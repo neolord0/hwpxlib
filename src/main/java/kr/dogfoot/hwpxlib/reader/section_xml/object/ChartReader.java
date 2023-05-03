@@ -4,7 +4,6 @@ import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.Chart;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
-import kr.dogfoot.hwpxlib.reader.ContainerXMLFileReader;
 import kr.dogfoot.hwpxlib.reader.ContentFilesReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.shapeobject.ShapeObjectReader;

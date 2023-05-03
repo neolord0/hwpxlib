@@ -5,13 +5,14 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ComposeCircleType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ComposeType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Compose;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.compose.ComposeCharPr;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
+
 
 public class SimpleCompose {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleCompose.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleCompose.hwpx");
         Compose compose1 = (Compose) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         compose1(compose1);
 

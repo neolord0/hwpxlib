@@ -15,13 +15,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecompo
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.Caption;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleArc {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleArc.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleArc.hwpx");
         Arc arc = (Arc) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(2);
 
         Assert.assertNotNull(arc);
@@ -67,24 +67,24 @@ public class SimpleArc {
 
         RenderingInfo renderingInfo = arc.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0, 0);
 
         LineShape lineShape = arc.lineShape();
         Assert.assertNotNull(lineShape);
@@ -99,7 +99,7 @@ public class SimpleArc {
         Assert.assertEquals(lineShape.headSz(), ArrowSize.MEDIUM_MEDIUM);
         Assert.assertEquals(lineShape.tailSz(), ArrowSize.MEDIUM_MEDIUM);
         Assert.assertEquals(lineShape.outlineStyle(), OutlineStyle.NORMAL);
-        Assert.assertEquals(lineShape.alpha().floatValue(), 0f);
+        Assert.assertEquals(lineShape.alpha().floatValue(), 0f, 0);
 
 
         FillBrush fillBrush = arc.fillBrush();
@@ -108,7 +108,7 @@ public class SimpleArc {
         Assert.assertNotNull(winBrush);
         Assert.assertEquals(winBrush.faceColor(), "#F1CB7E");
         Assert.assertEquals(winBrush.hatchColor(), "#000000");
-        Assert.assertEquals(winBrush.alpha().floatValue(), 0);
+        Assert.assertEquals(winBrush.alpha().floatValue(), 0, 0);
 
         DrawingShadow shadow = arc.shadow();
         Assert.assertNotNull(shadow);
@@ -116,7 +116,7 @@ public class SimpleArc {
         Assert.assertEquals(shadow.color(), "#C1D6ED");
         Assert.assertEquals(shadow.offsetX().intValue(), 0);
         Assert.assertEquals(shadow.offsetY().intValue(), 0);
-        Assert.assertEquals(shadow.alpha().floatValue(), 0);
+        Assert.assertEquals(shadow.alpha().floatValue(), 0, 0);
 
 
         Point center = arc.center();

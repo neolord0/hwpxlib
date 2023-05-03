@@ -16,13 +16,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecompo
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.Caption;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimplePolygon {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimplePolygon.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimplePolygon.hwpx");
         Polygon polygon = (Polygon) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(polygon);
         Assert.assertEquals(polygon.id(), "1143268355");
@@ -65,24 +65,24 @@ public class SimplePolygon {
 
         RenderingInfo renderingInfo = polygon.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 2218);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 4191);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1.000037f);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), -0.000023f);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), -0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), -0.000023f);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 0.999973f);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), -0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 0.766044f);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), -0.642788f);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 6411.34082f);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0.642788f);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 0.766044f);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), -4190.996094f);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 2218, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 4191, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1.000037f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), -0.000023f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), -0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), -0.000023f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 0.999973f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), -0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 0.766044f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), -0.642788f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 6411.34082f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0.642788f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 0.766044f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), -4190.996094f, 0);
 
         FillBrush fillBrush = polygon.fillBrush();
         Assert.assertNotNull(fillBrush);
@@ -90,7 +90,7 @@ public class SimplePolygon {
         Assert.assertNotNull(winBrush);
         Assert.assertEquals(winBrush.faceColor(), "#A0BEE0");
         Assert.assertEquals(winBrush.hatchColor(), "#000000");
-        Assert.assertEquals(winBrush.alpha().floatValue(), 0);
+        Assert.assertEquals(winBrush.alpha().floatValue(), 0, 0);
         ImgBrush imgBrush = fillBrush.imgBrush();
         Assert.assertNotNull(imgBrush);
         Assert.assertEquals(imgBrush.mode(), ImageBrushMode.TOTAL);
@@ -100,7 +100,7 @@ public class SimplePolygon {
         Assert.assertEquals(img.bright().intValue(), 0);
         Assert.assertEquals(img.contrast().intValue(), 0);
         Assert.assertEquals(img.effect(), ImageEffect.REAL_PIC);
-        Assert.assertEquals(img.alpha().floatValue(), 0);
+        Assert.assertEquals(img.alpha().floatValue(), 0, 0);
 
         int index = 0;
         for (Point pt : polygon.pts()) {

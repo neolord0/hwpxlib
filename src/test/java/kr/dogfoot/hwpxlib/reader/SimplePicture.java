@@ -15,13 +15,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecompo
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimplePicture {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimplePicture.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimplePicture.hwpx");
         Picture picture = (Picture) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(picture);
         Assert.assertEquals(picture.id(), "1137988260");
@@ -65,26 +65,26 @@ public class SimplePicture {
 
         RenderingInfo renderingInfo = picture.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0, 0);
 
-        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1.468637f);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1.468619f);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1.468637f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1.468619f, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0, 0);
 
-        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0, 0);
 
         ImageRect imgRect = picture.imgRect();
         Assert.assertNotNull(imgRect);
@@ -121,7 +121,7 @@ public class SimplePicture {
         Assert.assertEquals(img.bright().intValue(), 0);
         Assert.assertEquals(img.contrast().intValue(), 0);
         Assert.assertEquals(img.effect(), ImageEffect.REAL_PIC);
-        Assert.assertEquals(img.alpha().floatValue(), 0);
+        Assert.assertEquals(img.alpha().floatValue(), 0, 0);
 
         Effects effects = picture.effects();
         Assert.assertNotNull(effects);
@@ -129,22 +129,22 @@ public class SimplePicture {
         EffectsShadow shadow = effects.shadow();
         Assert.assertNotNull(shadow);
         Assert.assertEquals(shadow.style(), ShadowStyle.OUTSIDE);
-        Assert.assertEquals(shadow.alpha().floatValue(), 0.5f);
-        Assert.assertEquals(shadow.radius().floatValue(), 600);
+        Assert.assertEquals(shadow.alpha().floatValue(), 0.5f, 0);
+        Assert.assertEquals(shadow.radius().floatValue(), 600, 0);
         Assert.assertEquals(shadow.direction().shortValue(), 180);
-        Assert.assertEquals(shadow.distance().floatValue(), 600);
+        Assert.assertEquals(shadow.distance().floatValue(), 600, 0);
         Assert.assertEquals(shadow.alignStyle(), AlignStyleType.CENTER);
         Assert.assertEquals(shadow.rotationStyle().booleanValue(), false);
         {
             XAndYFloat skew = shadow.skew();
             Assert.assertNotNull(skew);
-            Assert.assertEquals(skew.x().floatValue(), 0);
-            Assert.assertEquals(skew.y().floatValue(), 0);
+            Assert.assertEquals(skew.x().floatValue(), 0, 0);
+            Assert.assertEquals(skew.y().floatValue(), 0, 0);
 
             XAndYFloat scale = shadow.scale();
             Assert.assertNotNull(scale);
-            Assert.assertEquals(scale.x().floatValue(), 1);
-            Assert.assertEquals(scale.y().floatValue(), 1);
+            Assert.assertEquals(scale.x().floatValue(), 1, 0);
+            Assert.assertEquals(scale.y().floatValue(), 1, 0);
 
             EffectsColor effectsColor = shadow.effectsColor();
             Assert.assertNotNull(effectsColor);
@@ -160,8 +160,8 @@ public class SimplePicture {
 
         EffectsGlow glow = effects.glow();
         Assert.assertNotNull(glow);
-        Assert.assertEquals(glow.alpha().floatValue(), 0.5f);
-        Assert.assertEquals(glow.radius().floatValue(), 500);
+        Assert.assertEquals(glow.alpha().floatValue(), 0.5f, 0);
+        Assert.assertEquals(glow.radius().floatValue(), 500, 0);
 
         {
             EffectsColor effectsColor = glow.effectsColor();
@@ -181,36 +181,36 @@ public class SimplePicture {
 
         EffectsSoftEdge softEdge = effects.softEdge();
         Assert.assertNotNull(softEdge);
-        Assert.assertEquals(softEdge.radius().floatValue(), 300);
+        Assert.assertEquals(softEdge.radius().floatValue(), 300, 0);
 
         EffectsReflection reflection = effects.reflection();
         Assert.assertNotNull(reflection);
         Assert.assertEquals(reflection.alignStyle(), AlignStyleType.BOTTOM_LEFT);
-        Assert.assertEquals(reflection.radius().floatValue(), 50);
+        Assert.assertEquals(reflection.radius().floatValue(), 50, 0);
         Assert.assertEquals(reflection.direction().intValue(), 90);
-        Assert.assertEquals(reflection.distance().floatValue(), 0);
+        Assert.assertEquals(reflection.distance().floatValue(), 0, 0);
         Assert.assertEquals(reflection.rotationStyle().booleanValue(), false);
         Assert.assertEquals(reflection.fadeDirection().intValue(), 90);
         {
             XAndYFloat skew = reflection.skew();
             Assert.assertNotNull(skew);
-            Assert.assertEquals(skew.x().floatValue(), 0);
-            Assert.assertEquals(skew.y().floatValue(), 0);
+            Assert.assertEquals(skew.x().floatValue(), 0, 0);
+            Assert.assertEquals(skew.y().floatValue(), 0, 0);
 
             XAndYFloat scale = reflection.scale();
             Assert.assertNotNull(scale);
-            Assert.assertEquals(scale.x().floatValue(), 1);
-            Assert.assertEquals(scale.y().floatValue(), -1);
+            Assert.assertEquals(scale.x().floatValue(), 1, 0);
+            Assert.assertEquals(scale.y().floatValue(), -1, 0);
 
             StartAndEndFloat alpha = reflection.alpha();
             Assert.assertNotNull(alpha);
-            Assert.assertEquals(alpha.start().floatValue(), 0.5f);
-            Assert.assertEquals(alpha.end().floatValue(), 0.997f);
+            Assert.assertEquals(alpha.start().floatValue(), 0.5f, 0);
+            Assert.assertEquals(alpha.end().floatValue(), 0.997f, 0);
 
             StartAndEndFloat pos = reflection.pos();
             Assert.assertNotNull(pos);
-            Assert.assertEquals(pos.start().floatValue(), 0);
-            Assert.assertEquals(pos.end().floatValue(), 0.5);
+            Assert.assertEquals(pos.start().floatValue(), 0, 0);
+            Assert.assertEquals(pos.end().floatValue(), 0.5, 0);
         }
 
         ShapeSize sz = picture.sz();

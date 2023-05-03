@@ -16,8 +16,8 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.TypeInfo
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHead;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -26,11 +26,11 @@ import java.io.IOException;
 
 public class Header_XML {
     @Test
-    void read() throws IOException, ParserConfigurationException, SAXException {
+    public void read() throws IOException, ParserConfigurationException, SAXException {
         ElementReaderManager manager = new ElementReaderManager();
         HWPXFile hwpxFile = new HWPXFile();
         ContentFilesReader contentFilesReader = new ContentFilesReader(manager);
-        contentFilesReader.read(hwpxFile, new FileInputStream("testFile/header.xml"));
+        contentFilesReader.read(hwpxFile, new FileInputStream("testFile/reader_writer/header.xml"));
         HeaderXMLFile header = hwpxFile.headerXMLFile();
         Assert.assertEquals(header.secCnt().shortValue() ,1);
         beginNum(header.beginNum());

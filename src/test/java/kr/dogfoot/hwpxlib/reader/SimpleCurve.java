@@ -18,13 +18,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecompo
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapecomponent.RotationInfo;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleCurve {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleCurve.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleCurve.hwpx");
         Curve curve = (Curve) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
         Assert.assertNotNull(curve);
@@ -68,24 +68,24 @@ public class SimpleCurve {
 
         RenderingInfo renderingInfo = curve.renderingInfo();
         Assert.assertNotNull(renderingInfo);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1);
-        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(0).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(1).e6().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e1().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e2().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e3().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e4().floatValue(), 0, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e5().floatValue(), 1, 0);
+        Assert.assertEquals(renderingInfo.getMatrix(2).e6().floatValue(), 0, 0);
 
         LineShape lineShape = curve.lineShape();
         Assert.assertNotNull(lineShape);
@@ -100,7 +100,7 @@ public class SimpleCurve {
         Assert.assertEquals(lineShape.headSz(), ArrowSize.MEDIUM_MEDIUM);
         Assert.assertEquals(lineShape.tailSz(), ArrowSize.MEDIUM_MEDIUM);
         Assert.assertEquals(lineShape.outlineStyle(), OutlineStyle.NORMAL);
-        Assert.assertEquals(lineShape.alpha().floatValue(), 0f);
+        Assert.assertEquals(lineShape.alpha().floatValue(), 0f, 0);
 
         FillBrush fillBrush = curve.fillBrush();
         Assert.assertNotNull(fillBrush);
@@ -108,7 +108,7 @@ public class SimpleCurve {
         Assert.assertNotNull(winBrush);
         Assert.assertEquals(winBrush.faceColor(), "#FFFFFF");
         Assert.assertEquals(winBrush.hatchColor(), "#000000");
-        Assert.assertEquals(winBrush.alpha().floatValue(), 0);
+        Assert.assertEquals(winBrush.alpha().floatValue(), 0, 0);
 
         DrawingShadow shadow = curve.shadow();
         Assert.assertNotNull(shadow);
@@ -116,7 +116,7 @@ public class SimpleCurve {
         Assert.assertEquals(shadow.color(), "#A0BEE0");
         Assert.assertEquals(shadow.offsetX().intValue(), 283);
         Assert.assertEquals(shadow.offsetY().intValue(), 283);
-        Assert.assertEquals(shadow.alpha().floatValue(), 10);
+        Assert.assertEquals(shadow.alpha().floatValue(), 10, 0);
 
         int index = 0;
         for (CurveSegment seg : curve.segs()) {

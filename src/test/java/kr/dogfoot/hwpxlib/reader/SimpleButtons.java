@@ -10,13 +10,13 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.RadioButto
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.formobject.FormCharPr;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleButtons {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleButtons.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleButtons.hwpx");
         Button btn = (Button) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         btn(btn);
 

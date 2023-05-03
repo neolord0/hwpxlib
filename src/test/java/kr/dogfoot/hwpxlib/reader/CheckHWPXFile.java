@@ -1,26 +1,25 @@
 package kr.dogfoot.hwpxlib.reader;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import org.testng.annotations.Test;
-
-import static org.testng.AssertJUnit.fail;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CheckHWPXFile {
     @Test
-    void openZip(){
+    public void openZip(){
         try {
-            HWPXFile file  = HWPXReader.fromFilepath("testFile/sample1.hwpx");
+            HWPXFile file  = HWPXReader.fromFilepath("testFile/reader_writer//sample1.hwpx");
         } catch (Exception e) {
             e.printStackTrace();
-            fail();
+            Assert.fail();
         }
     }
 
     @Test
-    void openNoZip() {
+    public void openNoZip() {
         try {
-            HWPXReader.fromFilepath("testFile/section0.xml");
-            fail();
+            HWPXReader.fromFilepath("testFile/reader_writer/section0.xml");
+            Assert.fail();
         } catch (Exception e) {
         }
     }

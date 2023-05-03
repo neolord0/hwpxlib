@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.common;
 
-import kr.dogfoot.hwpxlib.object.common.parameter.Param;
-
 import java.util.ArrayList;
 
 public class ObjectList<ItemType> extends SwitchableObject {

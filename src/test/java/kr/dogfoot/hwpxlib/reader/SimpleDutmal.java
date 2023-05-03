@@ -5,13 +5,13 @@ import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.HorizontalAlign2;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.DutmalPosType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Dutmal;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SimpleDutmal {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/SimpleDutmal.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleDutmal.hwpx");
         Dutmal dutmal = (Dutmal) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
         Assert.assertNotNull(dutmal);

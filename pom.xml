@@ -6,20 +6,20 @@
     <groupId>kr.dogfoot</groupId>
     <artifactId>hwpxlib</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <version>1.0.0</version>
 
     <name>HWPX Library</name>
     <description>The hwpx library is a library that can read and write hwpx files used in the word processor developed by Hancom.</description>
     <url>https://github.com/neolord0/hwpxlib</url>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.4.0</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

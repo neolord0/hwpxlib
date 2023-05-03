@@ -12,8 +12,8 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.references.BorderFill;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Border;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.SlashCore;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -22,11 +22,11 @@ import java.io.IOException;
 
 public class TestSwitch {
     @Test
-    void test1() throws IOException, ParserConfigurationException, SAXException {
+	public void test1() throws IOException, ParserConfigurationException, SAXException {
         ElementReaderManager manager = new ElementReaderManager();
         HWPXFile hwpxFile = new HWPXFile();
         ContentFilesReader contentFilesReader = new ContentFilesReader(manager);
-        contentFilesReader.read(hwpxFile, new FileInputStream("testFile/header_forTestSwitch.xml"));
+        contentFilesReader.read(hwpxFile, new FileInputStream("testFile/reader_writer/header_forTestSwitch.xml"));
         Assert.assertEquals(hwpxFile.headerXMLFile().refList().borderFills().count(), 2);
 
         {
