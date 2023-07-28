@@ -21,7 +21,7 @@ public class EndNotePrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         EndNotePr endNotePr = (EndNotePr) object;
-        switchObject(endNotePr.switchObject());
+        switchList(endNotePr.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_endNotePr)

@@ -21,7 +21,7 @@ public class ImageRectWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ImageRect imageRect = (ImageRect) object;
-        switchObject(imageRect.switchObject());
+        switchList(imageRect.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_imgRect)

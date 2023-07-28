@@ -28,7 +28,7 @@ public class FromRun extends FinderBase {
             checkWithChildren(runItem);
         }
 
-        checkSwitchObject(run.switchObject());
+        checkSwitchList(run.switchList());
         popPath();
     }
 }

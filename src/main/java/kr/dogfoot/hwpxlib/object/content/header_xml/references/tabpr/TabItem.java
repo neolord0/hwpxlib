@@ -4,6 +4,8 @@ import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TabItemType;
+import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit1;
+import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit2;
 
 public class TabItem extends HWPXObject {
     /**
@@ -18,6 +20,10 @@ public class TabItem extends HWPXObject {
      * 탭 채움 종류
      */
     private LineType2 leader;
+    /**
+     * 단위
+     */
+    private ValueUnit2 unit;
 
     public TabItem() {
     }
@@ -63,6 +69,19 @@ public class TabItem extends HWPXObject {
 
     public TabItem leaderAnd(LineType2 leader) {
         this.leader = leader;
+        return this;
+    }
+
+    public ValueUnit2 unit() {
+        return unit;
+    }
+
+    public void unit(ValueUnit2 unit) {
+        this.unit = unit;
+    }
+
+    public TabItem unitAnd(ValueUnit2 unit) {
+        this.unit = unit;
         return this;
     }
 }

@@ -27,7 +27,7 @@ public class FromInsertDiff extends FinderBase {
             checkWithChildren(childDiff);
         }
 
-        checkSwitchObject(insertDiff.switchObject());
+        checkSwitchList(insertDiff.switchList());
         popPath();
     }
 }

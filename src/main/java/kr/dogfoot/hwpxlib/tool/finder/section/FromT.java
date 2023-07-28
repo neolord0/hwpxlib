@@ -28,7 +28,7 @@ public class FromT extends FinderBase {
             }
         }
 
-        checkSwitchObject(t.switchObject());
+        checkSwitchList(t.switchList());
         popPath();
     }
 }

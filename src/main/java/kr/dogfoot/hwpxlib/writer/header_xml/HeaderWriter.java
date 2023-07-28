@@ -25,7 +25,7 @@ public class HeaderWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         HeaderXMLFile headerXMLFile = (HeaderXMLFile) object;
-        switchObject(headerXMLFile.switchObject());
+        switchList(headerXMLFile.switchList());
 
         xsb()
                 .clear()
@@ -46,7 +46,7 @@ public class HeaderWriter extends ElementWriter {
                 .namespace(Namespaces.hwpunitchar)
                 .namespace(Namespaces.epub)
                 .namespace(Namespaces.config)
-                .attribute(AttributeNames.version, DefaultValues.XMLVersion)
+                .attribute(AttributeNames.version, headerXMLFile.version())
                 .attribute(AttributeNames.secCnt, headerXMLFile.secCnt());
 
         if (headerXMLFile.beginNum() != null) {
@@ -67,6 +67,10 @@ public class HeaderWriter extends ElementWriter {
 
         if (headerXMLFile.docOption() != null) {
             writeChild(ElementWriterSort.DocOption, headerXMLFile.docOption());
+        }
+
+        if (headerXMLFile.metaTag() != null) {
+            hasOnlyText(ElementNames.hh_metaTag, headerXMLFile.metaTag());
         }
 
         if (headerXMLFile.trackChangeConfig() != null) {

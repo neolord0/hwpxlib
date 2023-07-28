@@ -22,7 +22,7 @@ public class SecPrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         SecPr secPr = (SecPr) object;
-        switchObject(secPr.switchObject());
+        switchList(secPr.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_secPr)

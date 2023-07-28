@@ -22,7 +22,7 @@ public class ParaPrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ParaPr paraPr = (ParaPr) object;
-        switchObject(paraPr.switchObject());
+        switchList(paraPr.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_paraPr)

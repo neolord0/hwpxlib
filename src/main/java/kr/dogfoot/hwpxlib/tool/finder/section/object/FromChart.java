@@ -24,7 +24,7 @@ public class FromChart extends FromShapeObject {
 
         checkFromShapeObject(chart);
 
-        checkSwitchObject(chart.switchObject());
+        checkSwitchList(chart.switchList());
         popPath();
     }
 }

@@ -27,7 +27,7 @@ public class FromRenderingInfo extends FinderBase {
             check(matrix);
         }
 
-        checkSwitchObject(renderingInfo.switchObject());
+        checkSwitchList(renderingInfo.switchList());
         popPath();
     }
 }

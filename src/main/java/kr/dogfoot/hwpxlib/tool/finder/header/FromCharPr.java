@@ -38,7 +38,7 @@ public class FromCharPr extends FinderBase {
         check(charPr.supscript());
         check(charPr.subscript());
 
-        checkSwitchObject(charPr.switchObject());
+        checkSwitchList(charPr.switchList());
         popPath();
     }
 }

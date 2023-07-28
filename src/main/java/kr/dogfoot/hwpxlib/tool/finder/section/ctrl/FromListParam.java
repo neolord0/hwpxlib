@@ -37,7 +37,7 @@ public class FromListParam extends FinderBase {
             }
         }
 
-        checkSwitchObject(listParam.switchObject());
+        checkSwitchList(listParam.switchList());
         popPath();
     }
 

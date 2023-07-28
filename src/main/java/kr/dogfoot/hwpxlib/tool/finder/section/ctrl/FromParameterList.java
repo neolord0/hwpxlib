@@ -42,7 +42,7 @@ public class FromParameterList extends FinderBase {
             }
         }
 
-        checkSwitchObject(parameterListCore.switchObject());
+        checkSwitchList(parameterListCore.switchList());
         popPath();
     }
 }

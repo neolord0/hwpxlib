@@ -27,7 +27,7 @@ public class FromConfigItemSet extends FinderBase {
             check(configItem);
         }
 
-        checkSwitchObject(configItemSet.switchObject());
+        checkSwitchList(configItemSet.switchList());
         popPath();
     }
 }

@@ -22,7 +22,7 @@ public class DutmalWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Dutmal dutmal = (Dutmal) object;
-        switchObject(dutmal.switchObject());
+        switchList(dutmal.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_dutmal)

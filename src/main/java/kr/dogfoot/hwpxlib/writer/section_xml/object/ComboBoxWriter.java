@@ -23,7 +23,7 @@ public class ComboBoxWriter extends FormObjectWriter {
     @Override
     public void write(HWPXObject object) {
         ComboBox comboBox = (ComboBox) object;
-        switchObject(comboBox.switchObject());
+        switchList(comboBox.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_comboBox)

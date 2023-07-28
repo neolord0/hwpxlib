@@ -20,7 +20,7 @@ public class ButtonCoreWriter extends FormObjectWriter {
     @Override
     public void write(HWPXObject object) {
         ButtonCore buttonCore = (ButtonCore) object;
-        switchObject(buttonCore.switchObject());
+        switchList(buttonCore.switchList());
 
         switch (buttonCore._objectType()) {
             case hp_btn:

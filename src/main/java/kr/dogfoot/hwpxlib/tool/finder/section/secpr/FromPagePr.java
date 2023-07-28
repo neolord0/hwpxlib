@@ -24,7 +24,7 @@ public class FromPagePr extends FinderBase {
 
         check(pagePr.margin());
 
-        checkSwitchObject(pagePr.switchObject());
+        checkSwitchList(pagePr.switchList());
         popPath();
     }
 }

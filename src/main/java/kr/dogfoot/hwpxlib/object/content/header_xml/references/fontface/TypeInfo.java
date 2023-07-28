@@ -43,7 +43,7 @@ public class TypeInfo extends HWPXObject {
     /**
      * 중간선
      */
-    private Boolean midline;
+    private Integer midline;
     /**
      * X-높이
      */
@@ -161,15 +161,15 @@ public class TypeInfo extends HWPXObject {
         return this;
     }
 
-    public Boolean midline() {
+    public Integer midline() {
         return midline;
     }
 
-    public void midline(Boolean midline) {
+    public void midline(Integer midline) {
         this.midline = midline;
     }
 
-    public TypeInfo midlineAnd(Boolean midline) {
+    public TypeInfo midlineAnd(Integer midline) {
         this.midline = midline;
         return this;
     }

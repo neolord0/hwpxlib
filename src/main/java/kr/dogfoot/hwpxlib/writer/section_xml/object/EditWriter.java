@@ -22,7 +22,7 @@ public class EditWriter extends FormObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Edit edit = (Edit) object;
-        switchObject(edit.switchObject());
+        switchList(edit.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_edit)

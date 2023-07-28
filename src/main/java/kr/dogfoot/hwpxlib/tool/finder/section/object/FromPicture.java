@@ -32,7 +32,7 @@ public class FromPicture extends FromShapeComponent {
         check(picture.img());
         checkWithChildren(picture.effects());
 
-        checkSwitchObject(picture.switchObject());
+        checkSwitchList(picture.switchList());
         popPath();
     }
 }

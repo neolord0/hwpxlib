@@ -73,7 +73,7 @@ public class FromCtrl extends FinderBase {
             }
         }
 
-        checkSwitchObject(ctrl.switchObject());
+        checkSwitchList(ctrl.switchList());
         popPath();
     }
 }

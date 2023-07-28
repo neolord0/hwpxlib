@@ -27,7 +27,7 @@ public class FromManifestXMLFile extends FinderBase {
             checkWithChildren(fileEntry);
         }
 
-        checkSwitchObject(manifestXMLFile.switchObject());
+        checkSwitchList(manifestXMLFile.switchList());
         popPath();
     }
 }

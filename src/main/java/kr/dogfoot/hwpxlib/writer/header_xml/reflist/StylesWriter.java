@@ -22,7 +22,7 @@ public class StylesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<Style> styles = (ObjectList<Style>) object;
-        switchObject(styles.switchObject());
+        switchList(styles.switchList());
         if (styles.count() == 0) {
             return;
         }

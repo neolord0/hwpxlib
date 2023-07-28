@@ -25,7 +25,7 @@ public class TcWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Tc tc = (Tc) object;
-        switchObject(tc.switchObject());
+        switchList(tc.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_tc)

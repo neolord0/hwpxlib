@@ -25,7 +25,7 @@ public class BulletWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Bullet bullet = (Bullet) object;
-        switchObject(bullet.switchObject());
+        switchList(bullet.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_bullet)

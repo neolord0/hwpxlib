@@ -25,7 +25,7 @@ public class FromDrawText extends FinderBase {
         check(drawText.textMargin());
         checkWithChildren(drawText.subList());
 
-        checkSwitchObject(drawText.switchObject());
+        checkSwitchList(drawText.switchList());
         popPath();
     }
 }

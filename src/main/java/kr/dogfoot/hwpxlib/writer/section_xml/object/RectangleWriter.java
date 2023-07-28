@@ -22,7 +22,7 @@ public class RectangleWriter extends DrawingObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Rectangle rectangle = (Rectangle) object;
-        switchObject(rectangle.switchObject());
+        switchList(rectangle.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_rect)

@@ -22,7 +22,7 @@ public class PageBorderFillWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         PageBorderFill pageBorderFill = (PageBorderFill) object;
-        switchObject(pageBorderFill.switchObject());
+        switchList(pageBorderFill.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_pageBorderFill)

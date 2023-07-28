@@ -44,7 +44,7 @@ public class TypeInfoReader extends ElementReader {
                 typeInfo.letterform(ValueConvertor.toBoolean(value));
                 break;
             case AttributeNames.midline:
-                typeInfo.midline(ValueConvertor.toBoolean(value));
+                typeInfo.midline(ValueConvertor.toInteger(value));
                 break;
             case AttributeNames.xHeight:
                 typeInfo.xHeightAnd(ValueConvertor.toInteger(value));

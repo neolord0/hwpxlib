@@ -28,7 +28,7 @@ public class FromArc extends FromDrawingObject {
         check(arc.ax1());
         check(arc.ax2());
 
-        checkSwitchObject(arc.switchObject());
+        checkSwitchList(arc.switchList());
         popPath();
     }
 }

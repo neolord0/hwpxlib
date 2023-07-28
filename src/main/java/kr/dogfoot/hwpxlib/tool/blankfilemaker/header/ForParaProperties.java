@@ -3,6 +3,7 @@ package kr.dogfoot.hwpxlib.tool.blankfilemaker.header;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Case;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Default;
+import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.ParaPr;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.LineSpacing;
@@ -49,17 +50,16 @@ public class ForParaProperties {
                 false,
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
-
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 0, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 130, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 0, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 130, ValueUnit2.HWPUNIT));
 
@@ -195,16 +195,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(-1310, 0, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 130, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(-2620, 0, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 130, ValueUnit2.HWPUNIT));
 
@@ -240,16 +240,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 0, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 150, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 0, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 150, ValueUnit2.HWPUNIT));
 
@@ -285,16 +285,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 0, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 0, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -330,16 +330,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 7000, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 14000, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -375,16 +375,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 6000, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 12000, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -420,16 +420,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 5000, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 10000, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -465,16 +465,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 4000, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 8000, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -510,16 +510,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 3000, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 6000, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -555,16 +555,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 2000, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 4000, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -600,16 +600,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 1000, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 2000, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -645,16 +645,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, false, false);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 1500, 0, 0, 0));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 3000, 0, 0, 0));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -690,16 +690,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, true, true);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 0, 0, 1200, 300));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 0, 0, 2400, 600));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -735,16 +735,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, true, true);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 0, 0, 0, 700));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 0, 0, 0, 1400));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -780,16 +780,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, true, true);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 1100, 0, 0, 700));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 2200, 0, 0, 1400));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
@@ -825,16 +825,16 @@ public class ForParaProperties {
                 LineWrap.BREAK);
         autoSpacing(pp, true, true);
 
-        pp.createSwitchObject();
-        pp.switchObject().position(4);
+        Switch switchObject = pp.addNewSwitch();
+        switchObject.position(4);
 
-        Case case1 = pp.switchObject().addNewCaseObject();
+        Case case1 = switchObject.addNewCaseObject();
         case1.requiredNamespace("http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
         case1.addChild(pageMargin(0, 2200, 0, 0, 700));
         case1.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 
-        pp.switchObject().createDefaultObject();
-        Default defaultObject = pp.switchObject().defaultObject();
+        switchObject.createDefaultObject();
+        Default defaultObject = switchObject.defaultObject();
         defaultObject.addChild(pageMargin(0, 4400, 0, 0, 1400));
         defaultObject.addChild(lineSpacing(LineSpacingType.PERCENT, 160, ValueUnit2.HWPUNIT));
 

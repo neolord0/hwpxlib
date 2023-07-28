@@ -22,7 +22,7 @@ public class TabPrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         TabPr tabPr = (TabPr) object;
-        switchObject(tabPr.switchObject());
+        switchList(tabPr.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_tabPr)
@@ -43,8 +43,9 @@ public class TabPrWriter extends ElementWriter {
         xsb()
                 .openElement(ElementNames.hh_tabItem)
                 .attribute(AttributeNames.pos, tabItem.pos())
-                .attributeIndex(AttributeNames.type, tabItem.type())
-                .attributeIndex(AttributeNames.leader, tabItem.leader())
+                .attribute(AttributeNames.type, tabItem.type())
+                .attribute(AttributeNames.leader, tabItem.leader())
+                .attribute(AttributeNames.unit, tabItem.unit())
                 .closeElement();
     }
 

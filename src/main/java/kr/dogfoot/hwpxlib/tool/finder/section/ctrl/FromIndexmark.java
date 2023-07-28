@@ -25,7 +25,7 @@ public class FromIndexmark extends FinderBase {
         check(indexmark.firstKey());
         check(indexmark.secondKey());
 
-        checkSwitchObject(indexmark.switchObject());
+        checkSwitchList(indexmark.switchList());
         popPath();
     }
 }

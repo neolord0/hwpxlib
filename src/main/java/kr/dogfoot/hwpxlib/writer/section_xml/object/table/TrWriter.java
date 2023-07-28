@@ -21,7 +21,7 @@ public class TrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Tr tr = (Tr) object;
-        switchObject(tr.switchObject());
+        switchList(tr.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_tr)

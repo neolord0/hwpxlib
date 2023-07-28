@@ -22,7 +22,7 @@ public class TextArtWriter extends DrawingObjectWriter {
     @Override
     public void write(HWPXObject object) {
         TextArt textArt = (TextArt) object;
-        switchObject(textArt.switchObject());
+        switchList(textArt.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_textart)

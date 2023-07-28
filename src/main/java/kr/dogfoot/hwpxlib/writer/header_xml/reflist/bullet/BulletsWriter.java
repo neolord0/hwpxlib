@@ -22,7 +22,7 @@ public class BulletsWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<Bullet> bullets = (ObjectList<Bullet>) object;
-        switchObject(bullets.switchObject());
+        switchList(bullets.switchList());
         if (bullets.count() == 0) {
             return;
         }

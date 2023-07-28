@@ -3,6 +3,7 @@ package kr.dogfoot.hwpxlib.writer.util;
 import kr.dogfoot.hwpxlib.commonstrings.Namespaces;
 import kr.dogfoot.hwpxlib.object.common.EnumGetIndex;
 import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
+import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 
 import java.text.DecimalFormat;
@@ -85,10 +86,8 @@ public class XMLStringBuilder {
             return;
         }
 
-        if (elementWriter.hasStoredSwitchObject()
-                && (atClose || elementWriter.storedSwitchObjectPosition() == currentElementInfo().childIndex())) {
-            elementWriter.makeSwitchObject();
-            elementWriter.removeSwitchObject();
+        if (elementWriter.hasStoredSwitchList()) {
+            while(elementWriter.makeSwitchObject(currentElementInfo().childIndex()));
         }
     }
 
@@ -109,6 +108,7 @@ public class XMLStringBuilder {
             sb
                     .append(ElementEnd2);
         }
+
         return this;
     }
 

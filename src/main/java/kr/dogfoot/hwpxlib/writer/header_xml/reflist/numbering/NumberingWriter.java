@@ -23,7 +23,7 @@ public class NumberingWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Numbering numbering = (Numbering) object;
-        switchObject(numbering.switchObject());
+        switchList(numbering.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_numbering)

@@ -22,7 +22,7 @@ public class PagePrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         PagePr pagePr = (PagePr) object;
-        switchObject(pagePr.switchObject());
+        switchList(pagePr.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_pagePr)

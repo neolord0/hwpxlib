@@ -27,7 +27,7 @@ public class FromLine extends FromDrawingObject {
         check(line.startPt());
         check(line.endPt());
 
-        checkSwitchObject(line.switchObject());
+        checkSwitchList(line.switchList());
         popPath();
     }
 }

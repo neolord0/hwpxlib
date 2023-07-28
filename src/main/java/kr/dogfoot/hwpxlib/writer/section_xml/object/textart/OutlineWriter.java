@@ -22,7 +22,7 @@ public class OutlineWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<Point> outline = (ObjectList<Point>) object;
-        switchObject(outline.switchObject());
+        switchList(outline.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_outline)

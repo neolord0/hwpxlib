@@ -22,7 +22,7 @@ public class ComposeWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Compose compose = (Compose) object;
-        switchObject(compose.switchObject());
+        switchList(compose.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_compose)

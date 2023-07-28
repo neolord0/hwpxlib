@@ -23,7 +23,7 @@ public class OLEWriter extends ShapeComponentWriter {
     @Override
     public void write(HWPXObject object) {
         OLE ole = (OLE) object;
-        switchObject(ole.switchObject());
+        switchList(ole.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_ole)

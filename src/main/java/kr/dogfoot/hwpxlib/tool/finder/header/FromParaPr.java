@@ -30,7 +30,7 @@ public class FromParaPr extends FinderBase {
         check(paraPr.border());
         check(paraPr.autoSpacing());
 
-        checkSwitchObject(paraPr.switchObject());
+        checkSwitchList(paraPr.switchList());
         popPath();
     }
 }

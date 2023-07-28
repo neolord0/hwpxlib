@@ -22,7 +22,7 @@ public class ParaPropertiesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<ParaPr> paraProperties = (ObjectList<ParaPr>) object;
-        switchObject(paraProperties.switchObject());
+        switchList(paraProperties.switchList());
         if (paraProperties.count() == 0) {
             return;
         }

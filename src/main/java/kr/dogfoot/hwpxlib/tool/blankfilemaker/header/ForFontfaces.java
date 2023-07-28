@@ -39,7 +39,7 @@ public class ForFontfaces {
                 .strokeVariationAnd(1)
                 .armStyleAnd(true)
                 .letterformAnd(true)
-                .midlineAnd(true)
+                .midlineAnd(1)
                 .xHeight(1);
     }
 
@@ -59,7 +59,7 @@ public class ForFontfaces {
                 .strokeVariationAnd(1)
                 .armStyleAnd(true)
                 .letterformAnd(true)
-                .midlineAnd(true)
+                .midlineAnd(1)
                 .xHeight(1);
     }
 }

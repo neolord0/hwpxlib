@@ -29,7 +29,7 @@ public class FromCurve extends FromDrawingObject {
             check(seg);
         }
 
-        checkSwitchObject(curve.switchObject());
+        checkSwitchList(curve.switchList());
         popPath();
     }
 }

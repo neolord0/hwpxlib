@@ -25,7 +25,7 @@ public class FromDutmal extends FinderBase {
         check(dutmal.mainText());
         check(dutmal.subText());
 
-        checkSwitchObject(dutmal.switchObject());
+        checkSwitchList(dutmal.switchList());
         popPath();
     }
 }

@@ -27,7 +27,7 @@ public class FromOLE extends FromShapeComponent {
         check(ole.extent());
         check(ole.lineShape());
 
-        checkSwitchObject(ole.switchObject());
+        checkSwitchList(ole.switchList());
         popPath();
     }
 }

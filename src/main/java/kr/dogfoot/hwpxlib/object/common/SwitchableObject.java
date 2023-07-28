@@ -2,18 +2,25 @@ package kr.dogfoot.hwpxlib.object.common;
 
 import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 
+import java.util.ArrayList;
+
 public abstract class SwitchableObject extends HWPXObject {
-    private Switch switchObject;
+    private ArrayList<Switch> switchList;
 
-    public Switch switchObject() {
-        return switchObject;
+    public ArrayList<Switch> switchList() {
+        return switchList;
     }
 
-    public void createSwitchObject() {
-        switchObject = new Switch();
+    public void removeSwitchList() {
+        switchList = null;
     }
 
-    public void removeSwitchObject() {
-        switchObject = null;
+    public Switch addNewSwitch() {
+        if (switchList == null) {
+            switchList = new ArrayList<Switch>();
+        }
+        Switch newSwitch = new Switch();
+        switchList.add(newSwitch);
+        return newSwitch;
     }
 }

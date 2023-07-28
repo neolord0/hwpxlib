@@ -22,7 +22,7 @@ public class TabPropertiesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<TabPr> tabProperties = (ObjectList<TabPr>) object;
-        switchObject(tabProperties.switchObject());
+        switchList(tabProperties.switchList());
         if (tabProperties.count() == 0) {
             return;
         }

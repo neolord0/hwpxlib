@@ -27,7 +27,7 @@ public class FromFootNoteEndNote extends FinderBase {
 
         checkWithChildren(footNoteEndNoteCore.subList());
 
-        checkSwitchObject(footNoteEndNoteCore.switchObject());
+        checkSwitchList(footNoteEndNoteCore.switchList());
         popPath();
     }
 }

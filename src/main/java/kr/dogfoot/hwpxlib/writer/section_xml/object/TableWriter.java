@@ -23,7 +23,7 @@ public class TableWriter extends ShapeObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Table table = (Table) object;
-        switchObject(table.switchObject());
+        switchList(table.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_tbl)

@@ -23,7 +23,7 @@ public class ImageBrushWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ImgBrush imgBrush = (ImgBrush) object;
-        switchObject(imgBrush.switchObject());
+        switchList(imgBrush.switchList());
 
         xsb()
                 .openElement(ElementNames.hc_imgBrush)

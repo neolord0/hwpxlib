@@ -28,7 +28,7 @@ public class FromPara extends FinderBase {
         }
         checkWithChildren(para.lineSegArray());
 
-        checkSwitchObject(para.switchObject());
+        checkSwitchList(para.switchList());
         popPath();
     }
 }

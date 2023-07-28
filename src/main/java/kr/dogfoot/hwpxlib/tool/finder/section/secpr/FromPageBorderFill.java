@@ -24,7 +24,7 @@ public class FromPageBorderFill extends FinderBase {
 
         check(pageBorderFill.offset());
 
-        checkSwitchObject(pageBorderFill.switchObject());
+        checkSwitchList(pageBorderFill.switchList());
         popPath();
     }
 }

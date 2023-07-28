@@ -28,7 +28,7 @@ public class FromEndNotePr extends FinderBase {
         check(endNotePr.numbering());
         check(endNotePr.placement());
 
-        checkSwitchObject(endNotePr.switchObject());
+        checkSwitchList(endNotePr.switchList());
         popPath();
     }
 }

@@ -22,7 +22,7 @@ public class SectionWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         SectionXMLFile sectionXMLFile = (SectionXMLFile) object;
-        switchObject(sectionXMLFile.switchObject());
+        switchList(sectionXMLFile.switchList());
 
         xsb()
                 .clear()

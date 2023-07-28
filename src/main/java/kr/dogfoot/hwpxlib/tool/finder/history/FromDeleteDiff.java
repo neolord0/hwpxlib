@@ -29,7 +29,7 @@ public class FromDeleteDiff extends FinderBase {
             check(deleteDiff.deletedObject());
         }
 
-        checkSwitchObject(deleteDiff.switchObject());
+        checkSwitchList(deleteDiff.switchList());
         popPath();
     }
 }

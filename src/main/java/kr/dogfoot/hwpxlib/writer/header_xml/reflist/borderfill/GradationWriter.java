@@ -22,7 +22,7 @@ public class GradationWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Gradation gradation = (Gradation) object;
-        switchObject(gradation.switchObject());
+        switchList(gradation.switchList());
 
         xsb()
                 .openElement(ElementNames.hc_gradation)

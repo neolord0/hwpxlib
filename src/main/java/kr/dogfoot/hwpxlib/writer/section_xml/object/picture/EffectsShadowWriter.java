@@ -22,7 +22,7 @@ public class EffectsShadowWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         EffectsShadow shadow = (EffectsShadow) object;
-        switchObject(shadow.switchObject());
+        switchList(shadow.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_shadow)

@@ -21,7 +21,7 @@ public class VideoWriter extends ShapeComponentWriter {
     @Override
     public void write(HWPXObject object) {
         Video video = (Video) object;
-        switchObject(video.switchObject());
+        switchList(video.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_video)

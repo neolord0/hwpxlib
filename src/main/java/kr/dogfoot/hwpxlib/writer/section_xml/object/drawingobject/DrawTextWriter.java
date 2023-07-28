@@ -22,7 +22,7 @@ public class DrawTextWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         DrawText drawText = (DrawText) object;
-        switchObject(drawText.switchObject());
+        switchList(drawText.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_drawText)

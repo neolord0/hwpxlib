@@ -24,7 +24,7 @@ public class EncryptionDataWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         EncryptionData encryptionData = (EncryptionData) object;
-        switchObject(encryptionData.switchObject());
+        switchList(encryptionData.switchList());
 
         xsb()
                 .openElement(ElementNames.odf_encryption_data)

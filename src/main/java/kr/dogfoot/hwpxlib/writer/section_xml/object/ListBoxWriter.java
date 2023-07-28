@@ -22,7 +22,7 @@ public class ListBoxWriter extends FormObjectWriter {
     @Override
     public void write(HWPXObject object) {
         ListBox listBox = (ListBox) object;
-        switchObject(listBox.switchObject());
+        switchList(listBox.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_listBox)

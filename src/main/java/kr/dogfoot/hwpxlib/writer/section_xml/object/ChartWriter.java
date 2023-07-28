@@ -21,7 +21,7 @@ public class ChartWriter extends ShapeObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Chart chart = (Chart) object;
-        switchObject(chart.switchObject());
+        switchList(chart.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_chart)

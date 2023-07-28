@@ -27,7 +27,7 @@ public class FromFontface extends FinderBase {
             checkWithChildren(font);
         }
 
-        checkSwitchObject(fontface.switchObject());
+        checkSwitchList(fontface.switchList());
         popPath();
     }
 }

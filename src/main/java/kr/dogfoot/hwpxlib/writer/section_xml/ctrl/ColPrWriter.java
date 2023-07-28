@@ -23,7 +23,7 @@ public class ColPrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ColPr colPr = (ColPr) object;
-        switchObject(colPr.switchObject());
+        switchList(colPr.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_colPr)

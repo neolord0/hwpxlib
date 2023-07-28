@@ -21,7 +21,7 @@ public class EffectsGlowWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         EffectsGlow glow = (EffectsGlow) object;
-        switchObject(glow.switchObject());
+        switchList(glow.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_glow)

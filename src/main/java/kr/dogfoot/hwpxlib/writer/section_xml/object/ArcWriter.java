@@ -22,7 +22,7 @@ public class ArcWriter extends DrawingObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Arc arc = (Arc) object;
-        switchObject(arc.switchObject());
+        switchList(arc.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_arc)

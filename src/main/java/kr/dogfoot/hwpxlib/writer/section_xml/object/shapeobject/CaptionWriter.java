@@ -21,7 +21,7 @@ public class CaptionWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Caption caption = (Caption) object;
-        switchObject(caption.switchObject());
+        switchList(caption.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_caption)

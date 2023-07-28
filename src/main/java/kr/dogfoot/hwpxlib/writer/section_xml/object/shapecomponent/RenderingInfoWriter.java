@@ -22,7 +22,7 @@ public class RenderingInfoWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         RenderingInfo renderingInfo = (RenderingInfo) object;
-        switchObject(renderingInfo.switchObject());
+        switchList(renderingInfo.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_renderingInfo)

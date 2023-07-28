@@ -27,7 +27,7 @@ public class FromConnectLine extends FromDrawingObject {
         check(connectLine.startPt());
         check(connectLine.endPt());
 
-        checkSwitchObject(connectLine.switchObject());
+        checkSwitchList(connectLine.switchList());
         popPath();
     }
 }

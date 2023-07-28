@@ -28,7 +28,7 @@ public class FromParaMargin extends FinderBase {
         check(paraMargin.prev());
         check(paraMargin.next());
 
-        checkSwitchObject(paraMargin.switchObject());
+        checkSwitchList(paraMargin.switchList());
         popPath();
     }
 }

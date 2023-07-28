@@ -21,7 +21,7 @@ public class LayoutCompatibilityWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<LayoutCompatibilityItem> layoutCompatibility = (ObjectList<LayoutCompatibilityItem>) object;
-        switchObject(layoutCompatibility.switchObject());
+        switchList(layoutCompatibility.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_layoutCompatibility)

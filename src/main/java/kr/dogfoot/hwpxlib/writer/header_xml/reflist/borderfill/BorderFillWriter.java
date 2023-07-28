@@ -23,7 +23,7 @@ public class BorderFillWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         BorderFill borderFill = (BorderFill) object;
-        switchObject(borderFill.switchObject());
+        switchList(borderFill.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_borderFill)

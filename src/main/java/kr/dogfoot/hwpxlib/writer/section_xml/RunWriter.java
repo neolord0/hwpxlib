@@ -23,7 +23,7 @@ public class RunWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Run run = (Run) object;
-        switchObject(run.switchObject());
+        switchList(run.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_run)

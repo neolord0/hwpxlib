@@ -27,7 +27,7 @@ public class FromEffectsReflection extends FinderBase {
         check(reflection.alpha());
         check(reflection.pos());
 
-        checkSwitchObject(reflection.switchObject());
+        checkSwitchList(reflection.switchList());
         popPath();
     }
 }

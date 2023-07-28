@@ -20,7 +20,7 @@ public class RefListWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         RefList refList = (RefList) object;
-        switchObject(refList.switchObject());
+        switchList(refList.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_refList)

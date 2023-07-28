@@ -22,7 +22,7 @@ public class TrackChangeAuthorsWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<TrackChangeAuthor> trackChangeAuthors = (ObjectList<TrackChangeAuthor>) object;
-        switchObject(trackChangeAuthors.switchObject());
+        switchList(trackChangeAuthors.switchList());
         if (trackChangeAuthors.count() == 0) {
             return;
         }

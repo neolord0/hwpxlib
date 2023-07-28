@@ -27,7 +27,7 @@ public class FromCompose extends FinderBase {
             check(charPr);
         }
 
-        checkSwitchObject(compose.switchObject());
+        checkSwitchList(compose.switchList());
         popPath();
     }
 }

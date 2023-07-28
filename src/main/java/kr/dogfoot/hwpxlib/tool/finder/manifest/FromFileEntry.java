@@ -24,7 +24,7 @@ public class FromFileEntry extends FinderBase {
 
         checkWithChildren(fileEntry.encryptionData());
 
-        checkSwitchObject(fileEntry.switchObject());
+        checkSwitchList(fileEntry.switchList());
         popPath();
     }
 }

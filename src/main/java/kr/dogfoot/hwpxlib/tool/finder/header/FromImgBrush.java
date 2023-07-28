@@ -24,7 +24,7 @@ public class FromImgBrush extends FinderBase {
 
         check(imgBrush.img());
 
-        checkSwitchObject(imgBrush.switchObject());
+        checkSwitchList(imgBrush.switchList());
         popPath();
     }
 }

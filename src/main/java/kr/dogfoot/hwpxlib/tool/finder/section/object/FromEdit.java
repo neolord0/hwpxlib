@@ -26,7 +26,7 @@ public class FromEdit extends FromFormObject {
 
         check(edit.text());
 
-        checkSwitchObject(edit.switchObject());
+        checkSwitchList(edit.switchList());
         popPath();
     }
 }

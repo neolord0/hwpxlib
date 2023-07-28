@@ -127,6 +127,7 @@ public enum ObjectType {
     each_layoutCompatibilityItem,
     hh_docOption,
     hh_linkinfo,
+    hh_metaTag,
     hh_trackchageConfig,
 
     // Contents/section0.xml

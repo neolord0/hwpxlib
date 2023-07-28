@@ -31,7 +31,7 @@ public class FromBorderFill extends FinderBase {
         check(borderFill.diagonal());
         checkWithChildren(borderFill.fillBrush());
 
-        checkSwitchObject(borderFill.switchObject());
+        checkSwitchList(borderFill.switchList());
         popPath();
     }
 }

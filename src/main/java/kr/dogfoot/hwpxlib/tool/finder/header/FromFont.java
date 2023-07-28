@@ -25,7 +25,7 @@ public class FromFont extends FinderBase {
         check(font.substFont());
         check(font.typeInfo());
 
-        checkSwitchObject(font.switchObject());
+        checkSwitchList(font.switchList());
         popPath();
     }
 }

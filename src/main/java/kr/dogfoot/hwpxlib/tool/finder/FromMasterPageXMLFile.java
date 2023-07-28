@@ -23,7 +23,7 @@ public class FromMasterPageXMLFile extends FinderBase {
 
         checkWithChildren(masterPageXMLFile.subList());
 
-        checkSwitchObject(masterPageXMLFile.switchObject());
+        checkSwitchList(masterPageXMLFile.switchList());
         popPath();
     }
 }

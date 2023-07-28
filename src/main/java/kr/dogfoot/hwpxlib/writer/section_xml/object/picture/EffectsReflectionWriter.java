@@ -23,7 +23,7 @@ public class EffectsReflectionWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         EffectsReflection reflection = (EffectsReflection) object;
-        switchObject(reflection.switchObject());
+        switchList(reflection.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_reflection)

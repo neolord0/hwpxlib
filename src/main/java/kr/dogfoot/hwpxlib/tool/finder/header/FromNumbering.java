@@ -27,7 +27,7 @@ public class FromNumbering extends FinderBase {
             check(paraHead);
         }
 
-        checkSwitchObject(numbering.switchObject());
+        checkSwitchList(numbering.switchList());
         popPath();
     }
 }

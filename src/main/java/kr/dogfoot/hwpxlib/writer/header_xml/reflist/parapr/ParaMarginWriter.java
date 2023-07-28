@@ -22,7 +22,7 @@ public class ParaMarginWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ParaMargin paraMargin = (ParaMargin) object;
-        switchObject(paraMargin.switchObject());
+        switchList(paraMargin.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_margin)

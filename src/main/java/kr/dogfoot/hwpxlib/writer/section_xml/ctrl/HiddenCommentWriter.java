@@ -20,7 +20,7 @@ public class HiddenCommentWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         HiddenComment hiddenComment = (HiddenComment) object;
-        switchObject(hiddenComment.switchObject());
+        switchList(hiddenComment.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_fieldBegin)

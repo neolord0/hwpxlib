@@ -22,7 +22,7 @@ public class CurveWriter extends DrawingObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Curve curve = (Curve) object;
-        switchObject(curve.switchObject());
+        switchList(curve.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_curve)

@@ -28,7 +28,7 @@ public class FromHeaderXMLFile extends FinderBase {
         checkWithChildren(headerXMLFile.docOption());
         check(headerXMLFile.trackChangeConfig());
 
-        checkSwitchObject(headerXMLFile.switchObject());
+        checkSwitchList(headerXMLFile.switchList());
         popPath();
     }
 }

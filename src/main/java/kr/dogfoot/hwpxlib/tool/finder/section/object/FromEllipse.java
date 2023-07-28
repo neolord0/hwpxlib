@@ -32,7 +32,7 @@ public class FromEllipse extends FromDrawingObject {
         check(ellipse.end1());
         check(ellipse.end2());
 
-        checkSwitchObject(ellipse.switchObject());
+        checkSwitchList(ellipse.switchList());
         popPath();
     }
 }

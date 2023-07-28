@@ -22,7 +22,7 @@ public class NumberingsWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<Numbering> numberings = (ObjectList<Numbering>) object;
-        switchObject(numberings.switchObject());
+        switchList(numberings.switchList());
         if (numberings.count() == 0) {
             return;
         }

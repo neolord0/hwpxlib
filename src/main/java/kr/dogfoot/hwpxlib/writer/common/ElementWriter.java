@@ -8,9 +8,11 @@ import kr.dogfoot.hwpxlib.object.common.compatibility.Case;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.writer.util.XMLStringBuilder;
 
+import java.util.ArrayList;
+
 public abstract class ElementWriter {
     private ElementWriterManager elementWriterManager;
-    private Switch stroedSwitchObject;
+    private ArrayList<Switch> storedSwitchList;
 
     protected ElementWriter(ElementWriterManager elementWriterManager) {
         this.elementWriterManager = elementWriterManager;
@@ -28,23 +30,24 @@ public abstract class ElementWriter {
         elementWriterManager.get(sort).write(child);
     }
 
-    protected void switchObject(Switch switchObject) {
-        this.stroedSwitchObject = switchObject;
+    protected void switchList(ArrayList<Switch> switchList) {
+        this.storedSwitchList = switchList;
     }
 
-    public boolean hasStoredSwitchObject() {
-        return stroedSwitchObject != null;
+    public boolean hasStoredSwitchList() {
+        return storedSwitchList != null;
     }
 
-    public int storedSwitchObjectPosition() {
-        return stroedSwitchObject.position();
-    }
+    public boolean makeSwitchObject(int childIndex) {
+        Switch switchObject = findSwitchObject(childIndex + 1);
+        if (switchObject == null) {
+            return false;
+        }
 
-    public void makeSwitchObject() {
         xsb()
                 .openElementNotCheckingSwitch(ElementNames.hp_switch);
 
-        for (Case caseObject : stroedSwitchObject.caseObjects()) {
+        for (Case caseObject : switchObject.caseObjects()) {
             xsb()
                     .openElementNotCheckingSwitch(ElementNames.hp_case)
                     .attribute(AttributeNames.hp_required_namespace, caseObject.requiredNamespace());
@@ -56,10 +59,10 @@ public abstract class ElementWriter {
             xsb().closeElement();
         }
 
-        if (stroedSwitchObject.defaultObject() != null) {
+        if (switchObject.defaultObject() != null) {
             xsb().openElementNotCheckingSwitch(ElementNames.hp_default);
 
-            for (HWPXObject child : stroedSwitchObject.defaultObject().children()) {
+            for (HWPXObject child : switchObject.defaultObject().children()) {
                 childInSwitch(child);
             }
 
@@ -67,10 +70,20 @@ public abstract class ElementWriter {
         }
 
         xsb().closeElement();
+        return true;
     }
 
-    public void removeSwitchObject() {
-        stroedSwitchObject = null;
+    private Switch findSwitchObject(int childIndex) {
+        for (Switch switchObject : storedSwitchList) {
+            if (switchObject.position() == childIndex) {
+                return switchObject;
+            }
+        }
+        return null;
+    }
+
+    public void removeSwitchList() {
+        storedSwitchList = null;
     }
 
     protected void childInSwitch(HWPXObject child) {
@@ -134,6 +147,5 @@ public abstract class ElementWriter {
     protected void releaseMe() {
         elementWriterManager.release(this);
     }
-
 }
 

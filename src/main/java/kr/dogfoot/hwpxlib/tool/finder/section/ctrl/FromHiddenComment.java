@@ -24,7 +24,7 @@ public class FromHiddenComment extends FinderBase {
 
         checkWithChildren(hiddenComment.subList());
 
-        checkSwitchObject(hiddenComment.switchObject());
+        checkSwitchList(hiddenComment.switchList());
         popPath();
     }
 }

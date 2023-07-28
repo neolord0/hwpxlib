@@ -27,7 +27,7 @@ public class FromSubList extends FinderBase {
             checkWithChildren(para);
         }
 
-        checkSwitchObject(subList.switchObject());
+        checkSwitchList(subList.switchList());
         popPath();
     }
 }

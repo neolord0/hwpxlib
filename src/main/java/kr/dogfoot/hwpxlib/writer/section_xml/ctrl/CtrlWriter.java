@@ -23,7 +23,7 @@ public class CtrlWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Ctrl ctrl = (Ctrl) object;
-        switchObject(ctrl.switchObject());
+        switchList(ctrl.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_ctrl)

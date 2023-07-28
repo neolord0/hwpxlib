@@ -22,7 +22,7 @@ public class MasterPageWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         MasterPageXMLFile masterPageXMLFile = (MasterPageXMLFile) object;
-        switchObject(masterPageXMLFile.switchObject());
+        switchList(masterPageXMLFile.switchList());
 
         xsb()
                 .clear()

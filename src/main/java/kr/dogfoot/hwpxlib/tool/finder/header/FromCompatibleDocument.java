@@ -24,7 +24,7 @@ public class FromCompatibleDocument extends FinderBase {
 
         checkWithChildren(compatibleDocument.layoutCompatibility());
 
-        checkSwitchObject(compatibleDocument.switchObject());
+        checkSwitchList(compatibleDocument.switchList());
         popPath();
     }
 }

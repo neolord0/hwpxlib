@@ -22,7 +22,7 @@ public class EllipseWriter extends DrawingObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Ellipse ellipse = (Ellipse) object;
-        switchObject(ellipse.switchObject());
+        switchList(ellipse.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_ellipse)

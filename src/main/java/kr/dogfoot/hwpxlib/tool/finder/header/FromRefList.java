@@ -34,7 +34,7 @@ public class FromRefList extends FinderBase {
         checkWithChildren(refList.trackChanges());
         checkWithChildren(refList.trackChangeAuthors());
 
-        checkSwitchObject(refList.switchObject());
+        checkSwitchList(refList.switchList());
         popPath();
     }
 }

@@ -29,7 +29,7 @@ public class FromComboBox extends FromFormObject {
             check(listItem);
         }
 
-        checkSwitchObject(comboBox.switchObject());
+        checkSwitchList(comboBox.switchList());
         popPath();
     }
 }

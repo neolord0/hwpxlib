@@ -24,6 +24,7 @@ public class FromPresentation extends FinderBase {
 
         checkWithChildren(presentation.fillBrush());
 
+        checkSwitchList(presentation.switchList());
         popPath();
     }
 }

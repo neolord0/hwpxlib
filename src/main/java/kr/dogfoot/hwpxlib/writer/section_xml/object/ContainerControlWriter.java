@@ -21,7 +21,7 @@ public class ContainerControlWriter extends ShapeComponentWriter {
     @Override
     public void write(HWPXObject object) {
         Container container = (Container) object;
-        switchObject(container.switchObject());
+        switchList(container.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_container)

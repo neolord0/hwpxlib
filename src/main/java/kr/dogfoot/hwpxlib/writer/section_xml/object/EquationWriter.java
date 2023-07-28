@@ -22,7 +22,7 @@ public class EquationWriter extends ShapeObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Equation equation = (Equation) object;
-        switchObject(equation.switchObject());
+        switchList(equation.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_equation)

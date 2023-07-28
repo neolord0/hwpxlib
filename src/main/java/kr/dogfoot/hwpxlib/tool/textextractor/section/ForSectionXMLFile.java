@@ -20,7 +20,9 @@ public class ForSectionXMLFile extends ExtractorBase {
     @Override
     public void extract(HWPXObject from) throws Exception {
         SectionXMLFile sectionXMLFile = (SectionXMLFile) from;
-        paraHeadMaker().startSection();
+        if (parameter.insertParaHead()) {
+            paraHeadMaker().startSection();
+        }
 
         int count = sectionXMLFile.countOfPara();
         for (int index = 0; index < count; index++) {
@@ -31,6 +33,8 @@ public class ForSectionXMLFile extends ExtractorBase {
             }
         }
 
-        paraHeadMaker().endSection();
+        if (parameter.insertParaHead()) {
+            paraHeadMaker().endSection();
+        }
     }
 }

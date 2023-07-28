@@ -27,7 +27,7 @@ public class FromTr extends FinderBase {
             checkWithChildren(tc);
         }
 
-        checkSwitchObject(tr.switchObject());
+        checkSwitchList(tr.switchList());
         popPath();
     }
 }

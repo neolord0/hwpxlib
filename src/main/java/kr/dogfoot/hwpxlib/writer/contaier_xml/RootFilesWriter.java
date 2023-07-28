@@ -22,7 +22,7 @@ public class RootFilesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<RootFile> rootFiles = (ObjectList<RootFile>) object;
-        switchObject(rootFiles.switchObject());
+        switchList(rootFiles.switchList());
 
         xsb()
                 .openElement(ElementNames.ocf_rootfiles)

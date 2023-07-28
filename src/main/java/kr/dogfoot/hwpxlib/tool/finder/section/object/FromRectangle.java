@@ -29,7 +29,7 @@ public class FromRectangle extends FromDrawingObject {
         check(rectangle.pt2());
         check(rectangle.pt3());
 
-        checkSwitchObject(rectangle.switchObject());
+        checkSwitchList(rectangle.switchList());
         popPath();
     }
 }

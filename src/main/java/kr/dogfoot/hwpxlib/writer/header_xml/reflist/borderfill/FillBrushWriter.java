@@ -22,7 +22,7 @@ public class FillBrushWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         FillBrush fillBrush = (FillBrush) object;
-        switchObject(fillBrush.switchObject());
+        switchList(fillBrush.switchList());
 
         xsb()
                 .openElement(ElementNames.hc_fillBrush)

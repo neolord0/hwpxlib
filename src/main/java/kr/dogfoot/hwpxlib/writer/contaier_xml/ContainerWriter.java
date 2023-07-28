@@ -21,9 +21,7 @@ public class ContainerWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ContainerXMLFile containerXMLFile = (ContainerXMLFile) object;
-        switchObject(containerXMLFile.switchObject());
-
-
+        switchList(containerXMLFile.switchList());
 
         xsb()
                 .clear()

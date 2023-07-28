@@ -27,7 +27,7 @@ public class FromHeaderFooter extends FinderBase {
 
         checkWithChildren(headerFooterCore.subList());
 
-        checkSwitchObject(headerFooterCore.switchObject());
+        checkSwitchList(headerFooterCore.switchList());
         popPath();
     }
 }

@@ -28,7 +28,7 @@ public class FromEffectsColor extends FinderBase {
         check(effectsColor.system());
         check(effectsColor.effect());
 
-        checkSwitchObject(effectsColor.switchObject());
+        checkSwitchList(effectsColor.switchList());
         popPath();
     }
 }

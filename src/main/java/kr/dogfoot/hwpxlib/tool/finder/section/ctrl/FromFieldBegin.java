@@ -25,7 +25,7 @@ public class FromFieldBegin extends FinderBase {
         checkWithChildren(fieldBegin.parameters());
         checkWithChildren(fieldBegin.subList());
 
-        checkSwitchObject(fieldBegin.switchObject());
+        checkSwitchList(fieldBegin.switchList());
         popPath();
     }
 }

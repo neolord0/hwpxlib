@@ -22,7 +22,7 @@ public class MemoPropertiesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<MemoPr> memoProperties = (ObjectList<MemoPr>) object;
-        switchObject(memoProperties.switchObject());
+        switchList(memoProperties.switchList());
         if (memoProperties.count() == 0) {
             return;
         }

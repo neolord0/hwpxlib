@@ -26,7 +26,7 @@ public class FromHistoryEntry extends FinderBase {
         checkWithChildren(historyEntry.headDiff());
         checkWithChildren(historyEntry.bodyDiff());
 
-        checkSwitchObject(historyEntry.switchObject());
+        checkSwitchList(historyEntry.switchList());
         popPath();
     }
 }

@@ -27,7 +27,7 @@ public class FromBullet extends FinderBase {
             check(paraHead);
         }
 
-        checkSwitchObject(bullet.switchObject());
+        checkSwitchList(bullet.switchList());
         popPath();
     }
 }

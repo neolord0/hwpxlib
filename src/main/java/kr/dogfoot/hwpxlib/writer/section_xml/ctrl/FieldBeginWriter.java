@@ -21,7 +21,7 @@ public class FieldBeginWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         FieldBegin fieldBegin = (FieldBegin) object;
-        switchObject(fieldBegin.switchObject());
+        switchList(fieldBegin.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_fieldBegin)

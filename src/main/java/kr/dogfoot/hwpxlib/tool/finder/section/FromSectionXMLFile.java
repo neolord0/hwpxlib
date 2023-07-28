@@ -26,7 +26,7 @@ public class FromSectionXMLFile extends FinderBase {
             checkWithChildren(para);
         }
 
-        checkSwitchObject(sectionXMLFile.switchObject());
+        checkSwitchList(sectionXMLFile.switchList());
         popPath();
     }
 }

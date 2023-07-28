@@ -21,7 +21,7 @@ public class PresentationWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Presentation presentation = (Presentation) object;
-        switchObject(presentation.switchObject());
+        switchList(presentation.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_presentation)

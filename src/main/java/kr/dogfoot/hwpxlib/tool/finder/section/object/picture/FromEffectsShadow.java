@@ -26,7 +26,7 @@ public class FromEffectsShadow extends FinderBase {
         check(shadow.scale());
         checkWithChildren(shadow.effectsColor());
 
-        checkSwitchObject(shadow.switchObject());
+        checkSwitchList(shadow.switchList());
         popPath();
     }
 }

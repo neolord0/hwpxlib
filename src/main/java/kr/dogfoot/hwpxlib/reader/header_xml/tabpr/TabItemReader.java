@@ -4,6 +4,7 @@ import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TabItemType;
+import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.tabpr.TabItem;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
@@ -28,6 +29,9 @@ public class TabItemReader extends ElementReader {
                 break;
             case AttributeNames.leader:
                 tabItem.leader(LineType2.fromString(value));
+                break;
+            case AttributeNames.unit:
+                tabItem.unit(ValueUnit2.fromString(value));
                 break;
         }
     }

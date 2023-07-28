@@ -22,7 +22,7 @@ public class LineSegArrayWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<LineSeg> lineSegArray = (ObjectList<LineSeg>) object;
-        switchObject(lineSegArray.switchObject());
+        switchList(lineSegArray.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_linesegarray)

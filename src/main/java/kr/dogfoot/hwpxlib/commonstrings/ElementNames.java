@@ -118,6 +118,7 @@ public class ElementNames {
     public static final String hh_layoutCompatibility = "hh:layoutCompatibility";
     public static final String hh_docOption = "hh:docOption";
     public static final String hh_linkinfo = "hh:linkinfo";
+    public static final String hh_metaTag = "hh:metaTag";
     public static final String hh_trackchageConfig = "hh:trackchageConfig";
 
     // Contents/section0.xml

@@ -3,6 +3,7 @@ package kr.dogfoot.hwpxlib.reader.common;
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.commonstrings.ErrorMessage;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.reader.common.compatibility.SwitchReader;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -70,19 +71,20 @@ public abstract class XMLFileReader extends DefaultHandler {
             currentElementReader.started(true);
             currentElementReader.startElement(attrs);
         } else {
+            currentElementReader.increaseChildIndex();
+
             if (ElementNames.hp_switch.equals(name)) {
                 if (currentElementReader.switchableObject() != null) {
                     SwitchableObject switchableObject = currentElementReader.switchableObject();
 
-                    switchableObject.createSwitchObject();
-                    switchableObject.switchObject().position(currentElementReader.childIndex());
+                    Switch switchObject = switchableObject.addNewSwitch();
+                    switchObject.position(currentElementReader.childIndex());
                     ((SwitchReader) setCurrentElementReader(ElementReaderSort.Switch))
-                            .switchableObject(switchableObject);
+                            .switchObject(switchObject);
 
                     startElement(name, attrs);
                 }
             } else {
-                currentElementReader.increaseChildIndex();
                 currentElementReader.childElement(name, attrs);
             }
         }

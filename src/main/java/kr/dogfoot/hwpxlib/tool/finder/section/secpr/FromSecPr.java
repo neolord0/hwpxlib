@@ -39,7 +39,7 @@ public class FromSecPr extends FinderBase {
         }
         checkWithChildren(secPr.presentation());
 
-        checkSwitchObject(secPr.switchObject());
+        checkSwitchList(secPr.switchList());
         popPath();
     }
 }

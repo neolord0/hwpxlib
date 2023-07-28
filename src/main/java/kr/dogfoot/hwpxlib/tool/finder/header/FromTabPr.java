@@ -27,7 +27,7 @@ public class FromTabPr extends FinderBase {
             check(tabItem);
         }
 
-        checkSwitchObject(tabPr.switchObject());
+        checkSwitchList(tabPr.switchList());
         popPath();
     }
 }

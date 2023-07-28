@@ -27,7 +27,7 @@ public class FromAutoNumNewNum extends FinderBase {
 
         check(autoNumNewNumCore.autoNumFormat());
 
-        checkSwitchObject(autoNumNewNumCore.switchObject());
+        checkSwitchList(autoNumNewNumCore.switchList());
         popPath();
     }
 }

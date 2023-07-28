@@ -22,7 +22,7 @@ public class ParameterListCoreWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ParameterListCore parameterList = (ParameterListCore) object;
-        switchObject(parameterList.switchObject());
+        switchList(parameterList.switchList());
 
         switch(parameterList._objectType()) {
             case hp_parameters:

@@ -22,7 +22,7 @@ public class LineWriter extends DrawingObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Line line = (Line) object;
-        switchObject(line.switchObject());
+        switchList(line.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_line)

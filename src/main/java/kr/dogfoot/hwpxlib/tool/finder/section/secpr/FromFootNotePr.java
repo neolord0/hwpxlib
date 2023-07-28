@@ -28,7 +28,7 @@ public class FromFootNotePr extends FinderBase {
         check(footNotePr.numbering());
         check(footNotePr.placement());
 
-        checkSwitchObject(footNotePr.switchObject());
+        checkSwitchList(footNotePr.switchList());
         popPath();
     }
 }

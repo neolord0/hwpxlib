@@ -27,7 +27,7 @@ public class FromUpdateDiff extends FinderBase {
             checkWithChildren(childDiff);
         }
 
-        checkSwitchObject(updateDiff.switchObject());
+        checkSwitchList(updateDiff.switchList());
         popPath();
     }
 }

@@ -27,7 +27,7 @@ public class FromGradation extends FinderBase {
             check(color);
         }
 
-        checkSwitchObject(gradation.switchObject());
+        checkSwitchList(gradation.switchList());
         popPath();
     }
 }

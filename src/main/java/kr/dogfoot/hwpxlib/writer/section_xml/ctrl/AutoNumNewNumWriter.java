@@ -23,7 +23,7 @@ public class AutoNumNewNumWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         AutoNumNewNumCore autoNumNewNum = (AutoNumNewNumCore) object;
-        switchObject(autoNumNewNum.switchObject());
+        switchList(autoNumNewNum.switchList());
 
         switch (autoNumNewNum._objectType()) {
             case hp_autoNum:

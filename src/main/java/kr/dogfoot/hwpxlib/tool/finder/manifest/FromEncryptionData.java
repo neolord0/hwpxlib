@@ -27,7 +27,7 @@ public class FromEncryptionData extends FinderBase {
         check(encryptionData.keyDerivation());
         check(encryptionData.startKeyGeneration());
 
-        checkSwitchObject(encryptionData.switchObject());
+        checkSwitchList(encryptionData.switchList());
         popPath();
     }
 }

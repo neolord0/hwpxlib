@@ -29,7 +29,7 @@ public class FromContainer extends FromShapeComponent {
             checkWithChildren(child);
         }
 
-        checkSwitchObject(container.switchObject());
+        checkSwitchList(container.switchList());
         popPath();
     }
 }

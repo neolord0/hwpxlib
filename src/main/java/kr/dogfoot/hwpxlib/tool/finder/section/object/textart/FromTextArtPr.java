@@ -24,7 +24,7 @@ public class FromTextArtPr extends FinderBase {
 
         check(textArtPr.shadow());
 
-        checkSwitchObject(textArtPr.switchObject());
+        checkSwitchList(textArtPr.switchList());
         popPath();
     }
 }

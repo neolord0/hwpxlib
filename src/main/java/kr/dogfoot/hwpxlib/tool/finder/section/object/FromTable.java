@@ -32,7 +32,7 @@ public class FromTable extends FromShapeObject {
         }
         checkWithChildren(table.parameterSet());
 
-        checkSwitchObject(table.switchObject());
+        checkSwitchList(table.switchList());
         popPath();
     }
 }

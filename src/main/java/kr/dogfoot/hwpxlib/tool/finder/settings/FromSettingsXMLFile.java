@@ -26,7 +26,7 @@ public class FromSettingsXMLFile extends FinderBase {
 
         checkWithChildren(settingsXMLFile.configItemSet());
 
-        checkSwitchObject(settingsXMLFile.switchObject());
+        checkSwitchList(settingsXMLFile.switchList());
         popPath();
     }
 }

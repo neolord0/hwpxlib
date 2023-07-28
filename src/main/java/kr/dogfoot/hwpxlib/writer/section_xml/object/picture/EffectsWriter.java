@@ -22,7 +22,7 @@ public class EffectsWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Effects effects = (Effects) object;
-        switchObject(effects.switchObject());
+        switchList(effects.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_effects)

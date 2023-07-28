@@ -6,9 +6,11 @@ import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.header_xml.*;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.compatibledocument.CompatibleDocumentReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.docoption.DocOptionReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
@@ -61,6 +63,10 @@ public class HeadReader extends ElementReader {
                 headerXMLFile.createDocOption();
                 docOption(headerXMLFile.docOption(), name, attrs);
                 break;
+            case ElementNames.hh_metaTag:
+                headerXMLFile.createMetaTag();
+                metaTag(headerXMLFile.metaTag(), name, attrs);
+                break;
             case ElementNames.hh_trackchageConfig:
                 headerXMLFile.createTrackChangeConfig();
                 trackChangeConfig(headerXMLFile.trackChangeConfig(), name, attrs);
@@ -91,6 +97,10 @@ public class HeadReader extends ElementReader {
                 DocOption docOption = new DocOption();
                 docOption(docOption, name, attrs);
                 return docOption;
+            case ElementNames.hh_metaTag:
+                HasOnlyText metaTag = new HasOnlyText(ObjectType.hh_metaTag);
+                metaTag(metaTag, name, attrs);
+                return metaTag;
             case ElementNames.hh_trackchageConfig:
                 TrackChangeConfig trackChangeConfig = new TrackChangeConfig();
                 trackChangeConfig(trackChangeConfig, name, attrs);
@@ -123,6 +133,13 @@ public class HeadReader extends ElementReader {
     private void compatibleDocument(CompatibleDocument compatibleDocument, String name, Attributes attrs) {
         ((CompatibleDocumentReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.CompatibleDocument))
                 .compatibleDocument(compatibleDocument);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    private void metaTag(HasOnlyText metaTag, String name, Attributes attrs) {
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
+                .hasOnlyText(metaTag);
 
         xmlFileReader().startElement(name, attrs);
     }

@@ -31,7 +31,7 @@ public class FromTextArt extends FromDrawingObject {
         checkWithChildren(textArt.textartPr());
         checkWithChildren(textArt.outline());
 
-        checkSwitchObject(textArt.switchObject());
+        checkSwitchList(textArt.switchList());
         popPath();
     }
 }

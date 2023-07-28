@@ -27,7 +27,7 @@ public class TWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         T t = (T) object;
-        switchObject(t.switchObject());
+        switchList(t.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_t)

@@ -27,7 +27,7 @@ public class FromEffects extends FinderBase {
         check(effects.softEdge());
         checkWithChildren(effects.reflection());
 
-        checkSwitchObject(effects.switchObject());
+        checkSwitchList(effects.switchList());
         popPath();
     }
 }

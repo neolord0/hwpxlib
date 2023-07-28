@@ -27,7 +27,7 @@ public class PictureWriter extends ShapeComponentWriter {
     @Override
     public void write(HWPXObject object) {
         Picture picture = (Picture) object;
-        switchObject(picture.switchObject());
+        switchList(picture.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_pic)

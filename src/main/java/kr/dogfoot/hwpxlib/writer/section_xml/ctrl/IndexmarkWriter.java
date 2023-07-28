@@ -21,7 +21,7 @@ public class IndexmarkWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Indexmark indexmark = (Indexmark) object;
-        switchObject(indexmark.switchObject());
+        switchList(indexmark.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_indexmark)

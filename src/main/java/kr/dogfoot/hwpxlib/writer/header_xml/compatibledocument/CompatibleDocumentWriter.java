@@ -21,7 +21,7 @@ public class CompatibleDocumentWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         CompatibleDocument compatibleDocument = (CompatibleDocument) object;
-        switchObject(compatibleDocument.switchObject());
+        switchList(compatibleDocument.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_compatibleDocument)

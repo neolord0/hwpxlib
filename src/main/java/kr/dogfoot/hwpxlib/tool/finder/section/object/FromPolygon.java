@@ -29,7 +29,7 @@ public class FromPolygon extends FromDrawingObject {
             check(point);
         }
 
-        checkSwitchObject(polygon.switchObject());
+        checkSwitchList(polygon.switchList());
         popPath();
     }
 }

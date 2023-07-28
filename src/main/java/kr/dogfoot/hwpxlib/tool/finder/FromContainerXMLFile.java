@@ -26,7 +26,7 @@ public class FromContainerXMLFile extends FinderBase {
             check(rootFile);
         }
 
-        checkSwitchObject(containerXMLFile.switchObject());
+        checkSwitchList(containerXMLFile.switchList());
         popPath();
     }
 }

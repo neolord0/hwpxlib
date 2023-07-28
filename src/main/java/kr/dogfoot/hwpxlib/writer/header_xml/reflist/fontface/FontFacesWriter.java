@@ -23,7 +23,7 @@ public class FontFacesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         Fontfaces fontfaces = (Fontfaces) object;
-        switchObject(fontfaces.switchObject());
+        switchList(fontfaces.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_fontfaces)

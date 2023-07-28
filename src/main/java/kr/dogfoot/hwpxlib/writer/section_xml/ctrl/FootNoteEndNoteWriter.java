@@ -21,7 +21,7 @@ public class FootNoteEndNoteWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         FootNoteEndNoteCore footNoteEndNote = (FootNoteEndNoteCore) object;
-        switchObject(footNoteEndNote.switchObject());
+        switchList(footNoteEndNote.switchList());
 
         switch (footNoteEndNote._objectType()) {
             case hp_footNote:

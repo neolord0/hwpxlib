@@ -24,7 +24,7 @@ public class FromScrollBar extends FromFormObject {
 
         checkFromFormObject(scrollBar);
 
-        checkSwitchObject(scrollBar.switchObject());
+        checkSwitchList(scrollBar.switchList());
         popPath();
     }
 }

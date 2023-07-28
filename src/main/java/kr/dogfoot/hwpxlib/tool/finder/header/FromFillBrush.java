@@ -26,7 +26,7 @@ public class FromFillBrush extends FinderBase {
         checkWithChildren(fillBrush.gradation());
         checkWithChildren(fillBrush.imgBrush());
 
-        checkSwitchObject(fillBrush.switchObject());
+        checkSwitchList(fillBrush.switchList());
         popPath();
     }
 }

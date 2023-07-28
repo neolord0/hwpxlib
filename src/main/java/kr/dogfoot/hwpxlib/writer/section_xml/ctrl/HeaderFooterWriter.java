@@ -21,7 +21,7 @@ public class HeaderFooterWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         HeaderFooterCore headerFooter = (HeaderFooterCore) object;
-        switchObject(headerFooter.switchObject());
+        switchList(headerFooter.switchList());
 
         switch (headerFooter._objectType()) {
             case hp_header:

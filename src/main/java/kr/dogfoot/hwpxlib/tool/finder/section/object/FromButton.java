@@ -27,7 +27,7 @@ public class FromButton extends FromFormObject {
 
         checkFromFormObject(button);
 
-        checkSwitchObject(button.switchObject());
+        checkSwitchList(button.switchList());
         popPath();
     }
 }

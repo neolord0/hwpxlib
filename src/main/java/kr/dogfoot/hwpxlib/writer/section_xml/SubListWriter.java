@@ -22,7 +22,7 @@ public class SubListWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         SubList subList = (SubList) object;
-        switchObject(subList.switchObject());
+        switchList(subList.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_subList)

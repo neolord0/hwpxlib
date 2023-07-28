@@ -23,7 +23,7 @@ public class TextArtPrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         TextArtPr textArtPr = (TextArtPr) object;
-        switchObject(textArtPr.switchObject());
+        switchList(textArtPr.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_textartPr)

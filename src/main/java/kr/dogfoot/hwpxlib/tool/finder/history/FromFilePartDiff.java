@@ -31,7 +31,7 @@ public class FromFilePartDiff extends FinderBase {
             checkWithChildren(filePartDiff.getChildDiff(index));
         }
 
-        checkSwitchObject(filePartDiff.switchObject());
+        checkSwitchList(filePartDiff.switchList());
         popPath();
     }
 }

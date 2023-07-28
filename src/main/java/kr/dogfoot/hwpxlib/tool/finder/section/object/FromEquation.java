@@ -26,7 +26,7 @@ public class FromEquation extends FromShapeObject {
 
         check(equation.script());
 
-        checkWithChildren(equation.switchObject());
+        checkSwitchList(equation.switchList());
         popPath();
     }
 }

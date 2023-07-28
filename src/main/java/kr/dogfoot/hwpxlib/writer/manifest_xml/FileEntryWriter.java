@@ -21,7 +21,7 @@ public class FileEntryWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         FileEntry fileEntry = (FileEntry) object;
-        switchObject(fileEntry.switchObject());
+        switchList(fileEntry.switchList());
 
         xsb()
                 .openElement(ElementNames.odf_file_entry)

@@ -2,12 +2,13 @@ package kr.dogfoot.hwpxlib.reader.common.compatibility;
 
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import org.xml.sax.Attributes;
 
 public class SwitchReader extends ElementReader {
-    private SwitchableObject switchableObject;
+    private Switch switchObject;
 
     @Override
     public ElementReaderSort sort() {
@@ -25,7 +26,7 @@ public class SwitchReader extends ElementReader {
 
     private void caseObject(String name, Attributes attrs) {
         ((CaseReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Case))
-                .caseObjectAnd(switchableObject.switchObject().addNewCaseObject())
+                .caseObjectAnd(switchObject.addNewCaseObject())
                 .switchableObjectReaderSort(previousReader().sort());
 
         xmlFileReader().startElement(name, attrs);
@@ -33,9 +34,9 @@ public class SwitchReader extends ElementReader {
 
 
     private void defaultObject(String name, Attributes attrs) {
-        switchableObject.switchObject().createDefaultObject();
+        switchObject.createDefaultObject();
         ((DefaultReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Default))
-                .defaultObjectAnd(switchableObject.switchObject().defaultObject())
+                .defaultObjectAnd(switchObject.defaultObject())
                 .switchableObjectReaderSort(previousReader().sort());
 
         xmlFileReader().startElement(name, attrs);
@@ -47,7 +48,7 @@ public class SwitchReader extends ElementReader {
     }
 
 
-    public void switchableObject(SwitchableObject switchableObject) {
-        this.switchableObject = switchableObject;
+    public void switchObject(Switch switchObject) {
+        this.switchObject = switchObject;
     }
 }

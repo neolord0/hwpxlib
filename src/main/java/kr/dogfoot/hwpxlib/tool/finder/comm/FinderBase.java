@@ -8,6 +8,8 @@ import kr.dogfoot.hwpxlib.object.common.compatibility.Default;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.tool.finder.Parameter;
 
+import java.util.ArrayList;
+
 public abstract class FinderBase {
     private final FinderManager finderManager;
     private final Parameter parameter;
@@ -52,19 +54,23 @@ public abstract class FinderBase {
         finderManager.release(finder);
     }
 
-    protected void checkSwitchObject(Switch switchObject) throws Exception {
-        if (switchObject == null) {
+    protected void checkSwitchList(ArrayList<Switch> switchList) throws Exception {
+        if (switchList == null) {
             return;
         }
 
-        pushPath(switchObject);
+        for (Switch switchObject : switchList) {
+            if (switchObject != null) {
+                pushPath(switchObject);
 
-        for (Case caseObject : switchObject.caseObjects()) {
-            caseObject(caseObject);
+                for (Case caseObject : switchObject.caseObjects()) {
+                    caseObject(caseObject);
+                }
+                defaultObject(switchObject.defaultObject());
+
+                popPath();
+            }
         }
-        defaultObject(switchObject.defaultObject());
-
-        popPath();
     }
 
     private void caseObject(Case caseObject) throws Exception {

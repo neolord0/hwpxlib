@@ -22,7 +22,7 @@ public class CharPropertiesWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<CharPr> charProperties = (ObjectList<CharPr>) object;
-        switchObject(charProperties.switchObject());
+        switchList(charProperties.switchList());
 
         if (charProperties.count() == 0) {
             return;

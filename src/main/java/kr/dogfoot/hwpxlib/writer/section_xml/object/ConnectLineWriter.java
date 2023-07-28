@@ -22,7 +22,7 @@ public class ConnectLineWriter extends DrawingObjectWriter {
     @Override
     public void write(HWPXObject object) {
         ConnectLine connectLine = (ConnectLine) object;
-        switchObject(connectLine.switchObject());
+        switchList(connectLine.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_connectLine)

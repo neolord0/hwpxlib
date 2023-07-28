@@ -24,7 +24,7 @@ public class FromEffectsGlow extends FinderBase {
 
         checkWithChildren(effectsGlow.effectsColor());
 
-        checkSwitchObject(effectsGlow.switchObject());
+        checkSwitchList(effectsGlow.switchList());
         popPath();
     }
 }

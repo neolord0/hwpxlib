@@ -21,7 +21,7 @@ public class PolygonWriter extends DrawingObjectWriter {
     @Override
     public void write(HWPXObject object) {
         Polygon polygon = (Polygon) object;
-        switchObject(polygon.switchObject());
+        switchList(polygon.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_polygon)

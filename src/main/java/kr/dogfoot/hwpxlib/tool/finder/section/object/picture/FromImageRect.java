@@ -27,7 +27,7 @@ public class FromImageRect extends FinderBase {
         check(imageRect.pt2());
         check(imageRect.pt3());
 
-        checkSwitchObject(imageRect.switchObject());
+        checkSwitchList(imageRect.switchList());
         popPath();
     }
 }

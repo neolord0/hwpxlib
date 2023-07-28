@@ -22,7 +22,7 @@ public class CharPrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         CharPr charPr = (CharPr) object;
-        switchObject(charPr.switchObject());
+        switchList(charPr.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_charPr)

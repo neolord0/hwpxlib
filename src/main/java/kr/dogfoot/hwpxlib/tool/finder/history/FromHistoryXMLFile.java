@@ -28,7 +28,7 @@ public class FromHistoryXMLFile extends FinderBase {
             checkWithChildren(historyEntry);
         }
 
-        checkSwitchObject(historyXMLFile.switchObject());
+        checkSwitchList(historyXMLFile.switchList());
         popPath();
     }
 }

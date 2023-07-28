@@ -22,7 +22,7 @@ public class CellZoneListWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         ObjectList<CellZone> cellZoneList = (ObjectList<CellZone>) object;
-        switchObject(cellZoneList.switchObject());
+        switchList(cellZoneList.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_cellzoneList)

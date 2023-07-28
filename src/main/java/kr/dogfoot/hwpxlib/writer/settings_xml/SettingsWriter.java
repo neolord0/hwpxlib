@@ -23,7 +23,7 @@ public class SettingsWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         SettingsXMLFile settingsXMLFile = (SettingsXMLFile) object;
-        switchObject(settingsXMLFile.switchObject());
+        switchList(settingsXMLFile.switchList());
 
         xsb()
                 .clear()

@@ -24,7 +24,7 @@ public class FromDocOption extends FinderBase {
 
         check(docOption.linkinfo());
 
-        checkSwitchObject(docOption.switchObject());
+        checkSwitchList(docOption.switchList());
         popPath();
     }
 }

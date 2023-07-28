@@ -28,7 +28,7 @@ public class FromTc extends FinderBase {
         check(tc.cellMargin());
         checkWithChildren(tc.subList());
 
-        checkSwitchObject(tc.switchObject());
+        checkSwitchList(tc.switchList());
         popPath();
     }
 }

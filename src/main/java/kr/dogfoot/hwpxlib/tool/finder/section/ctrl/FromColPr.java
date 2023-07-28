@@ -28,7 +28,7 @@ public class FromColPr extends FinderBase {
         }
         check(colPr.colLine());
 
-        checkSwitchObject(colPr.switchObject());
+        checkSwitchList(colPr.switchList());
         popPath();
     }
 }

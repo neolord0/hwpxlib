@@ -21,7 +21,7 @@ public class ScrollBarWriter extends FormObjectWriter {
     @Override
     public void write(HWPXObject object) {
         ScrollBar scrollBar = (ScrollBar) object;
-        switchObject(scrollBar.switchObject());
+        switchList(scrollBar.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_scrollBar)

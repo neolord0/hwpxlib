@@ -32,7 +32,7 @@ public class FromObjectList extends FinderBase {
             }
         }
 
-        checkSwitchObject(objectList.switchObject());
+        checkSwitchList(objectList.switchList());
         popPath();
     }
 }

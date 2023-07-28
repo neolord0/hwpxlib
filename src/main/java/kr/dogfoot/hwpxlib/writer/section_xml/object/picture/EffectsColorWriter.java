@@ -21,7 +21,7 @@ public class EffectsColorWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         EffectsColor effectsColor = (EffectsColor) object;
-        switchObject(effectsColor.switchObject());
+        switchList(effectsColor.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_effectsColor)

@@ -22,7 +22,7 @@ public class DocOptionWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         DocOption docOption = (DocOption) object;
-        switchObject(docOption.switchObject());
+        switchList(docOption.switchList());
 
         xsb()
                 .openElement(ElementNames.hh_docOption)

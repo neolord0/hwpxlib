@@ -31,7 +31,7 @@ public class FromContentHPFFile extends FinderBase {
             check(spine);
         }
 
-        checkSwitchObject(contentHPFFile.switchObject());
+        checkSwitchList(contentHPFFile.switchList());
         popPath();
     }
 }

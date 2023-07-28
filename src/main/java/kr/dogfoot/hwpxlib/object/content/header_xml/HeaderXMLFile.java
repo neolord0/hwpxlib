@@ -3,6 +3,7 @@ package kr.dogfoot.hwpxlib.object.content.header_xml;
 import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 
 /**
  * /content/header_forTestSwitch.xml
@@ -21,6 +22,7 @@ public class HeaderXMLFile extends SwitchableObject {
     private ObjectList<ForbiddenWord> forbiddenWordList;
     private CompatibleDocument compatibleDocument;
     private DocOption docOption;
+    private HasOnlyText metaTag;
     private TrackChangeConfig trackChangeConfig;
 
     public HeaderXMLFile() {
@@ -118,6 +120,18 @@ public class HeaderXMLFile extends SwitchableObject {
         docOption = null;
     }
 
+    public HasOnlyText metaTag() {
+        return metaTag;
+    }
+
+    public void createMetaTag() {
+        metaTag = new HasOnlyText(ObjectType.hh_metaTag);
+    }
+
+    public void removeMetaTag() {
+        metaTag = null;
+    }
+
     public TrackChangeConfig trackChangeConfig() {
         return trackChangeConfig;
     }
@@ -127,7 +141,6 @@ public class HeaderXMLFile extends SwitchableObject {
     }
 
     public void removeTrackChangeConfig() {
-        trackChangeConfig = new TrackChangeConfig();
+        trackChangeConfig = null;
     }
-
 }

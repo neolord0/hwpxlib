@@ -22,7 +22,7 @@ public class FootNotePrWriter extends ElementWriter {
     @Override
     public void write(HWPXObject object) {
         FootNotePr footNotePr = (FootNotePr) object;
-        switchObject(footNotePr.switchObject());
+        switchList(footNotePr.switchList());
 
         xsb()
                 .openElement(ElementNames.hp_footNotePr)

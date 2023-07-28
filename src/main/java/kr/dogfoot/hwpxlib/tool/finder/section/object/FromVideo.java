@@ -24,7 +24,7 @@ public class FromVideo extends FromShapeComponent {
 
         checkFromShapeComponent(video);
 
-        checkSwitchObject(video.switchObject());
+        checkSwitchList(video.switchList());
         popPath();
     }
 }
