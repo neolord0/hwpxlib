@@ -5,6 +5,7 @@ import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Case;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Default;
+import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineWidth;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.SlashType;
@@ -31,9 +32,10 @@ public class TestSwitch {
 
         {
             BorderFill borderFill = hwpxFile.headerXMLFile().refList().borderFills().get(0);
-            Assert.assertEquals(borderFill.switchObject().countOfCaseObject(), 2);
+			Switch switchObject = borderFill.switchList().get(0);
+            Assert.assertEquals(switchObject.countOfCaseObject(), 2);
             {
-                Case caseObject = borderFill.switchObject().getCaseObject(0);
+                Case caseObject = switchObject.getCaseObject(0);
 				Assert.assertEquals(caseObject.requiredNamespace(), "http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
 
 				Assert.assertEquals(caseObject.countOfChild(), 2);
@@ -58,7 +60,7 @@ public class TestSwitch {
 			}
 
 			{
-				Case caseObject = borderFill.switchObject().getCaseObject(1);
+				Case caseObject = switchObject.getCaseObject(1);
 				Assert.assertEquals(caseObject.requiredNamespace(), "http://www.hancom.co.kr/hwpml/2022/HwpUnitChar");
 
 				Assert.assertEquals(caseObject.countOfChild(), 2);
@@ -83,7 +85,7 @@ public class TestSwitch {
 			}
 
 			{
-				Default defaultObject = borderFill.switchObject().defaultObject();
+				Default defaultObject = switchObject.defaultObject();
 				Assert.assertEquals(defaultObject.countOfChild(), 2);
 
 				{

@@ -5,6 +5,7 @@ import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Case;
 import kr.dogfoot.hwpxlib.object.common.compatibility.Default;
+import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.object.content.header_xml.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.*;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.*;
@@ -116,7 +117,7 @@ public class Header_XML {
         Assert.assertEquals(typeInfo.strokeVariation().intValue(), 1);
         Assert.assertEquals(typeInfo.armStyle().booleanValue(), true);
         Assert.assertEquals(typeInfo.letterform().booleanValue(), true);
-        Assert.assertEquals(typeInfo.midline().booleanValue(), true);
+        Assert.assertEquals(typeInfo.midline().intValue(), 1);
         Assert.assertEquals(typeInfo.xHeight().intValue(), 1);
         Assert.assertNull(font.substFont());
     }
@@ -345,9 +346,10 @@ public class Header_XML {
         Assert.assertEquals(border.connect().booleanValue(), false);
         Assert.assertEquals(border.ignoreMargin().booleanValue(), false);
 
-        Assert.assertEquals(1, paraPr.switchObject().countOfCaseObject());
+        Switch switchObject = paraPr.switchList().get(0);
+        Assert.assertEquals(1, switchObject.countOfCaseObject());
         {
-            Case caseObject = paraPr.switchObject().getCaseObject(0);
+            Case caseObject = switchObject.getCaseObject(0);
             Assert.assertEquals(caseObject.requiredNamespace(), "http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
             Assert.assertEquals(caseObject.countOfChild(), 2);
             Assert.assertEquals(caseObject.getChild(0)._objectType(), ObjectType.hh_margin);
@@ -375,7 +377,7 @@ public class Header_XML {
         }
 
         {
-            Default defaultObject = paraPr.switchObject().defaultObject();
+            Default defaultObject = switchObject.defaultObject();
             Assert.assertEquals(defaultObject.countOfChild(), 2);
             Assert.assertEquals(defaultObject.getChild(0)._objectType(), ObjectType.hh_margin);
             ParaMargin margin = (ParaMargin) defaultObject.getChild(0);
@@ -442,9 +444,10 @@ public class Header_XML {
         Assert.assertEquals(border.connect().booleanValue(), false);
         Assert.assertEquals(border.ignoreMargin().booleanValue(), false);
 
-        Assert.assertEquals(1, paraPr.switchObject().countOfCaseObject());
+        Switch switchObject = paraPr.switchList().get(0);
+        Assert.assertEquals(1, switchObject.countOfCaseObject());
         {
-            Case caseObject = paraPr.switchObject().getCaseObject(0);
+            Case caseObject = switchObject.getCaseObject(0);
             Assert.assertEquals(caseObject.requiredNamespace(), "http://www.hancom.co.kr/hwpml/2016/HwpUnitChar");
             Assert.assertEquals(caseObject.countOfChild(), 2);
             Assert.assertEquals(caseObject.getChild(0)._objectType(), ObjectType.hh_margin);
@@ -472,7 +475,7 @@ public class Header_XML {
         }
 
         {
-            Default defaultObject = paraPr.switchObject().defaultObject();
+            Default defaultObject = switchObject.defaultObject();
             Assert.assertEquals(defaultObject.countOfChild(), 2);
             Assert.assertEquals(defaultObject.getChild(0)._objectType(), ObjectType.hh_margin);
             ParaMargin margin = (ParaMargin) defaultObject.getChild(0);
