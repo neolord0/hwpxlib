@@ -4,7 +4,6 @@ import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.LineType2;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.TabItemType;
-import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit1;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.ValueUnit2;
 
 public class TabItem extends HWPXObject {

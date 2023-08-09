@@ -14,6 +14,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobjec
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapePosition;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.shapeobject.ShapeSize;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.ParameterSet;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
@@ -72,6 +73,10 @@ public abstract class ShapeObjectReader extends ElementReader {
                 shapeObject().createShapeComment();
                 hasOnlyText(shapeObject().shapeComment(), name, attrs);
                 break;
+            case ElementNames.hp_parameterset:
+                shapeObject().createParameterset();
+                parameterList(shapeObject().parameterset(), name, attrs);
+                break;
         }
     }
 
@@ -98,6 +103,10 @@ public abstract class ShapeObjectReader extends ElementReader {
                 HasOnlyText shapeComment = new HasOnlyText(ObjectType.hp_shapeComment);
                 hasOnlyText(shapeComment, name, attrs);
                 return shapeComment;
+            case ElementNames.hp_parameterset:
+                ParameterSet parameterSet = new ParameterSet();
+                parameterList(parameterSet, name, attrs);
+                return parameterSet;
         }
         return null;
     }

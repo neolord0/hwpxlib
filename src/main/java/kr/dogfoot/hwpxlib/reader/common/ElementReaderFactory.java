@@ -116,6 +116,8 @@ public class ElementReaderFactory {
                 return new ParameterListReader();
             case IntegerParam:
                 return new IntegerParamReader();
+            case UnsignedIntegerParam:
+                return new UnsignedIntegerParamReader();
             case StringParam:
                 return new StringParamReader();
             case BooleanParam:

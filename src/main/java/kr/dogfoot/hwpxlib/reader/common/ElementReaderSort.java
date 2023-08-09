@@ -17,6 +17,7 @@ public enum ElementReaderSort {
     UnknownElement(ElementReaderType.Basic),
     ParameterList(ElementReaderType.Basic),
     IntegerParam(ElementReaderType.Basic),
+    UnsignedIntegerParam(ElementReaderType.Basic),
     StringParam(ElementReaderType.Basic),
     BooleanParam(ElementReaderType.Basic),
     FloatParam(ElementReaderType.Basic),

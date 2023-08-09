@@ -47,6 +47,10 @@ public abstract class ShapeObjectWriter extends ElementWriter {
         if (shapeObject.shapeComment() != null) {
             hasOnlyText(ElementNames.hp_shapeComment, shapeObject.shapeComment());
         }
+
+        if (shapeObject.parameterset() != null) {
+            writeChild(ElementWriterSort.ParameterListCore, shapeObject.parameterset());
+        }
     }
 
     private void sz(ShapeSize sz) {

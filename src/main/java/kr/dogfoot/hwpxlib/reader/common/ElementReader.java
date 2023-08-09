@@ -3,7 +3,9 @@ package kr.dogfoot.hwpxlib.reader.common;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.common.baseobject.*;
+import kr.dogfoot.hwpxlib.object.common.parameter.ParameterListCore;
 import kr.dogfoot.hwpxlib.reader.common.baseobject.*;
+import kr.dogfoot.hwpxlib.reader.common.parameter.ParameterListReader;
 import org.xml.sax.Attributes;
 
 public abstract class ElementReader {
@@ -131,6 +133,13 @@ public abstract class ElementReader {
     protected void widthAndHeight(WidthAndHeight widthAndHeight, String name, Attributes attrs) {
         ((WidthAndHeightReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.WidthAndHeight))
                 .widthAndHeight(widthAndHeight);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    protected void parameterList(ParameterListCore parameterList, String name, Attributes attrs) {
+        ((ParameterListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParameterList))
+                .parameterList(parameterList);
 
         xmlFileReader().startElement(name, attrs);
     }

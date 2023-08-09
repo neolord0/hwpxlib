@@ -3,7 +3,6 @@ package kr.dogfoot.hwpxlib.writer.util;
 import kr.dogfoot.hwpxlib.commonstrings.Namespaces;
 import kr.dogfoot.hwpxlib.object.common.EnumGetIndex;
 import kr.dogfoot.hwpxlib.object.common.EnumGetStr;
-import kr.dogfoot.hwpxlib.object.common.compatibility.Switch;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 
 import java.text.DecimalFormat;

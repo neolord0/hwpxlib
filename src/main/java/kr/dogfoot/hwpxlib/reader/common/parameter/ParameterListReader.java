@@ -36,6 +36,9 @@ public class ParameterListReader extends ElementReader {
             case ElementNames.hp_integerParam:
                 integerParam(parameterList.addNewIntegerParam(), name, attrs);
                 break;
+            case ElementNames.hp_unsignedintegerParam:
+                unsignedintegerParam(parameterList.addNewUnsignedIntegerParam(), name, attrs);
+                break;
             case ElementNames.hp_stringParam:
                 stringParam(parameterList.addNewStringParam(), name, attrs);
                 break;
@@ -58,6 +61,10 @@ public class ParameterListReader extends ElementReader {
                 IntegerParam integerParam = new IntegerParam();
                 integerParam(integerParam, name, attrs);
                 return integerParam;
+            case ElementNames.hp_unsignedintegerParam:
+                UnsignedIntegerParam unsignedIntegerParam = new UnsignedIntegerParam();
+                unsignedintegerParam(unsignedIntegerParam, name, attrs);
+                return unsignedIntegerParam;
             case ElementNames.hp_stringParam:
                 StringParam stringParam = new StringParam();
                 stringParam(stringParam, name, attrs);
@@ -81,6 +88,13 @@ public class ParameterListReader extends ElementReader {
     private void integerParam(IntegerParam integerParam, String name, Attributes attrs) {
         ((IntegerParamReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.IntegerParam))
                 .integerParam(integerParam);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    private void unsignedintegerParam(UnsignedIntegerParam unsignedIntegerParam, String name, Attributes attrs) {
+        ((UnsignedIntegerParamReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.UnsignedIntegerParam))
+                .unsignedIntegerParam(unsignedIntegerParam);
 
         xmlFileReader().startElement(name, attrs);
     }

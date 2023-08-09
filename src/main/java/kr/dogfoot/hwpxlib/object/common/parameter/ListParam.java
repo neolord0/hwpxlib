@@ -53,6 +53,13 @@ public class ListParam extends Param<ListParam> {
         parameterList.add(parameter);
         return parameter;
     }
+
+    public UnsignedIntegerParam addNewUnsignedIntegerParam() {
+        UnsignedIntegerParam parameter = new UnsignedIntegerParam();
+        parameterList.add(parameter);
+        return parameter;
+    }
+
     public FloatParam addNewFloatParam() {
         FloatParam parameter = new FloatParam();
         parameterList.add(parameter);

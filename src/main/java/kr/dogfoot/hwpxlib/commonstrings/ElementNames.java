@@ -155,6 +155,7 @@ public class ElementNames {
     public static final String hp_parameters = "hp:parameters";
     public static final String hp_booleanParam = "hp:booleanParam";
     public static final String hp_integerParam = "hp:integerParam";
+    public static final String hp_unsignedintegerParam = "hp:unsignedintegerParam";
     public static final String hp_floatParam = "hp:floatParam";
     public static final String hp_stringParam = "hp:stringParam";
     public static final String hp_listParam = "hp:listParam";

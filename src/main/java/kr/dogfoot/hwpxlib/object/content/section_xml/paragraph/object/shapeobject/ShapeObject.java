@@ -8,6 +8,7 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.NumberingType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextFlowSide;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.TextWrapMethod;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.RunItem;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.ParameterSet;
 
 /**
  * Shape Object
@@ -61,6 +62,10 @@ public abstract class ShapeObject<ChildType> extends RunItem {
      * 설명문
      */
     private HasOnlyText shapeComment;
+    /**
+     * parameterset
+     */
+    private ParameterSet parameterset;
 
     public String id() {
         return id;
@@ -211,5 +216,17 @@ public abstract class ShapeObject<ChildType> extends RunItem {
 
     public void removeShapeComment() {
         shapeComment = null;
+    }
+
+    public ParameterSet parameterset() {
+        return parameterset;
+    }
+
+    public void createParameterset() {
+        parameterset = new ParameterSet();
+    }
+
+    public void removeParameterset() {
+        parameterset = null;
     }
 }

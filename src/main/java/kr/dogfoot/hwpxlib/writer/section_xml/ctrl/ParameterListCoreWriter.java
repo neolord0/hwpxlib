@@ -55,11 +55,14 @@ public class ParameterListCoreWriter extends ElementWriter {
             case hp_integerParam:
                 integerParam((IntegerParam) param);
                 break;
+            case hp_unsignedintegerParam:
+                unsignedIntegerParam((UnsignedIntegerParam) param);
+                break;
             case hp_stringParam:
                 stringParam((StringParam) param);
                 break;
             case hp_listParam:
-                writeChild(ElementWriterSort.ParameterListCore, param);
+                listParam((ListParam)param);
                 break;
             case hp_booleanParam:
                 booleanParam((BooleanParam) param);
@@ -67,11 +70,21 @@ public class ParameterListCoreWriter extends ElementWriter {
         }
     }
 
+
     private void integerParam(IntegerParam integerParam) {
         xsb()
                 .openElement(ElementNames.hp_integerParam)
                 .attribute(AttributeNames.name, integerParam.name())
                 .text(integerParam.value().toString())
+                .closeElement();
+    }
+
+
+    private void unsignedIntegerParam(UnsignedIntegerParam unsignedIntegerParam) {
+        xsb()
+                .openElement(ElementNames.hp_unsignedintegerParam)
+                .attribute(AttributeNames.name, unsignedIntegerParam.name())
+                .text(unsignedIntegerParam.value().toString())
                 .closeElement();
     }
 
@@ -89,6 +102,20 @@ public class ParameterListCoreWriter extends ElementWriter {
                 .attribute(AttributeNames.name, booleanParam.name())
                 .text(ValueConvertor.toParameterValue(booleanParam.value()))
                 .closeElement();
+    }
+
+    private void listParam(ListParam listParam) {
+        xsb()
+                .openElement(ElementNames.hp_listParam)
+                .attribute(AttributeNames.cnt, listParam.cnt())
+                .attribute(AttributeNames.name, listParam.name());
+
+        int count = listParam.countOfParam();
+        for (int index = 0; index < count; index++) {
+            param(listParam.getParam(index));
+        }
+
+        xsb().closeElement();
     }
 
     @Override

@@ -11,6 +11,7 @@ public enum ObjectType {
     hp_parameters,
     hp_booleanParam,
     hp_integerParam,
+    hp_unsignedintegerParam,
     hp_floatParam,
     hp_stringParam,
     hp_listParam,

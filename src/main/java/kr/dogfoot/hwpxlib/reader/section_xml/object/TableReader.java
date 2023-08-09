@@ -14,7 +14,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Cell
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.ParameterSet;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.table.Tr;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.parameter.ParameterListReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.shapeobject.ShapeObjectReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.table.CellzoneListReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.table.TrReader;
@@ -84,7 +83,7 @@ public class TableReader extends ShapeObjectReader {
                 break;
             case ElementNames.hp_parameterset:
                 table.createParameterSet();
-                parameterSet(table.parameterSet(), name, attrs);
+                parameterList(table.parameterSet(), name, attrs);
                 break;
             default:
                 super.childElement(name, attrs);
@@ -109,7 +108,7 @@ public class TableReader extends ShapeObjectReader {
                 return tr;
             case ElementNames.hp_parameterset:
                 ParameterSet parameterSet = new ParameterSet();
-                parameterSet(parameterSet, name, attrs);
+                parameterList(parameterSet, name, attrs);
                 return parameterSet;
         }
         return super.childElementInSwitch(name, attrs);
@@ -125,13 +124,6 @@ public class TableReader extends ShapeObjectReader {
     private void tr(Tr tr, String name, Attributes attrs) {
         ((TrReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.Tr))
                 .tr(tr);
-
-        xmlFileReader().startElement(name, attrs);
-    }
-
-    private void parameterSet(ParameterSet parameterSet, String name, Attributes attrs) {
-        ((ParameterListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParameterList))
-                .parameterList(parameterSet);
 
         xmlFileReader().startElement(name, attrs);
     }

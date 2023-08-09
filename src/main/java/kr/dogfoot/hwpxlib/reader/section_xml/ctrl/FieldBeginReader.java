@@ -10,7 +10,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.FieldBegin;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.Parameters;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
-import kr.dogfoot.hwpxlib.reader.common.parameter.ParameterListReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
@@ -59,7 +58,7 @@ public class FieldBeginReader extends ElementReader {
         switch (name) {
             case ElementNames.hp_parameters:
                 fieldBegin.createParameters();
-                parameters(fieldBegin.parameters(), name, attrs);
+                parameterList(fieldBegin.parameters(), name, attrs);
                 break;
             case ElementNames.hp_subList:
                 fieldBegin.createSubList();
@@ -73,7 +72,7 @@ public class FieldBeginReader extends ElementReader {
         switch (name) {
             case ElementNames.hp_parameters:
                 Parameters parameters = new Parameters();
-                parameters(parameters, name, attrs);
+                parameterList(parameters, name, attrs);
                 return parameters;
             case ElementNames.hp_subList:
                 SubList subList = new SubList();
@@ -81,13 +80,6 @@ public class FieldBeginReader extends ElementReader {
                 return subList;
         }
         return null;
-    }
-
-    private void parameters(Parameters parameters, String name, Attributes attrs) {
-        ((ParameterListReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ParameterList))
-                .parameterList(parameters);
-
-        xmlFileReader().startElement(name, attrs);
     }
 
     private void subList(SubList subList, String name, Attributes attrs) {
