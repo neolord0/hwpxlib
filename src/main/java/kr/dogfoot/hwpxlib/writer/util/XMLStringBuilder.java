@@ -214,8 +214,11 @@ public class XMLStringBuilder {
             currentElementInfo().hadChild();
         }
 
+        text = text.replaceAll(">", "&gt;");
+        text = text.replaceAll("<", "&lt;");
+        text = text.replaceAll("\n", "\r\n");
         sb
-                .append(text.replaceAll("\n", "\r\n"));
+                .append(text);
 
         return this;
     }

@@ -58,7 +58,6 @@ public class RefList extends SwitchableObject {
         charProperties = new ObjectList<CharPr>(ObjectType.hh_charProperties, CharPr.class);
     }
 
-
     public void removeCharProperties() {
         charProperties = null;
     }

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwpxlib.reader.section_xml.object.etc;
+package kr.dogfoot.hwpxlib.reader.section_xml.object.connectline;
 
 import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;

@@ -35,6 +35,7 @@ import kr.dogfoot.hwpxlib.writer.masterpage_xml.MasterPageWriter;
 import kr.dogfoot.hwpxlib.writer.section_xml.*;
 import kr.dogfoot.hwpxlib.writer.section_xml.ctrl.*;
 import kr.dogfoot.hwpxlib.writer.section_xml.object.*;
+import kr.dogfoot.hwpxlib.writer.section_xml.object.connectline.ControlPointsWriter;
 import kr.dogfoot.hwpxlib.writer.section_xml.object.drawingobject.DrawTextWriter;
 import kr.dogfoot.hwpxlib.writer.section_xml.object.formobject.ButtonCoreWriter;
 import kr.dogfoot.hwpxlib.writer.section_xml.object.picture.*;
@@ -224,6 +225,8 @@ public class ElementWriterFactory {
                 return new CurveWriter(elementWriterManager);
             case ConnectLine:
                 return new ConnectLineWriter(elementWriterManager);
+            case ControlPoints:
+                return new ControlPointsWriter(elementWriterManager);
             case TextArt:
                 return new TextArtWriter(elementWriterManager);
             case TextArtPr:

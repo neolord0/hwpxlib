@@ -3,8 +3,10 @@ package kr.dogfoot.hwpxlib.writer.section_xml.object;
 import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ConnectLine;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.ConnectLinePoint;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.Point;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
 import kr.dogfoot.hwpxlib.writer.section_xml.object.drawingobject.DrawingObjectWriter;
@@ -40,6 +42,10 @@ public class ConnectLineWriter extends DrawingObjectWriter {
             connectLinePoint(ElementNames.hp_endPt, connectLine.endPt());
         }
 
+        if (connectLine.controlPoints() != null && !connectLine.controlPoints().empty()) {
+            writeChild(ElementWriterSort.ControlPoints, connectLine.controlPoints());
+        }
+
         writeChildrenForShapeObject(connectLine);
 
         xsb().closeElement();
@@ -56,6 +62,10 @@ public class ConnectLineWriter extends DrawingObjectWriter {
                 .closeElement();
     }
 
+    private void controlPoints(ObjectList<Point> controlPoints) {
+
+    }
+
     @Override
     protected void childInSwitch(HWPXObject child) {
         switch (child._objectType()) {
@@ -65,9 +75,12 @@ public class ConnectLineWriter extends DrawingObjectWriter {
             case hp_endPt:
                 connectLinePoint(ElementNames.hp_endPt, (ConnectLinePoint) child);
                 break;
+            case hp_controlPoints:
+                writeChild(ElementWriterSort.ControlPoints, child);
             default:
                 super.childInSwitch(child);
                 break;
         }
     }
+
 }

@@ -3,15 +3,18 @@ package kr.dogfoot.hwpxlib.reader.section_xml.object;
 import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectList;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ConnectLineType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.ConnectLine;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.ConnectLinePoint;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.connectline.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.drawingobject.DrawingObject;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.reader.section_xml.object.connectline.ConnectLinePointReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.object.connectline.ControlPointsReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.drawingobject.DrawingObjectReader;
-import kr.dogfoot.hwpxlib.reader.section_xml.object.etc.ConnectLinePointReader;
 import org.xml.sax.Attributes;
 
 public class ConnectLineReader extends DrawingObjectReader {
@@ -54,6 +57,10 @@ public class ConnectLineReader extends DrawingObjectReader {
                 connectLine.createEndPt();
                 connectLinePoint(connectLine.endPt(), name, attrs);
                 break;
+            case ElementNames.hp_controlPoints:
+                connectLine.createControlPoints();
+                controlPoints(connectLine.controlPoints(), name, attrs);
+                break;
             default:
                 super.childElement(name, attrs);
                 break;
@@ -71,6 +78,10 @@ public class ConnectLineReader extends DrawingObjectReader {
                 ConnectLinePoint endPt = new ConnectLinePoint(ObjectType.hp_endPt);
                 connectLinePoint(endPt, name, attrs);
                 return endPt;
+            case ElementNames.hp_controlPoints:
+                ObjectList<Point> controlPoints = new ObjectList<Point>(ObjectType.hp_controlPoints, Point.class);
+                controlPoints(controlPoints, name, attrs);
+                return controlPoints;
         }
 
         return super.childElementInSwitch(name, attrs);
@@ -79,6 +90,14 @@ public class ConnectLineReader extends DrawingObjectReader {
     private void connectLinePoint(ConnectLinePoint connectLinePoint, String name, Attributes attrs) {
         ((ConnectLinePointReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ConnectLinePoint))
                 .connectLinePoint(connectLinePoint);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+
+    private void controlPoints(ObjectList<Point> controlPoints, String name, Attributes attrs) {
+        ((ControlPointsReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.ControlPoints))
+                .controlPoints(controlPoints);
 
         xmlFileReader().startElement(name, attrs);
     }

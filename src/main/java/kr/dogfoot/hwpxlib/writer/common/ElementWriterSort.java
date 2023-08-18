@@ -95,6 +95,7 @@ public enum ElementWriterSort {
     Polygon,
     Curve,
     ConnectLine,
+    ControlPoints,
     TextArt,
     TextArtPr,
     Outline,

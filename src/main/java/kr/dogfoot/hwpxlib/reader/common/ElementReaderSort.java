@@ -208,6 +208,8 @@ public enum ElementReaderSort {
     CurveSegment(ElementReaderType.Controls),
     ConnectLine(ElementReaderType.Controls),
     ConnectLinePoint(ElementReaderType.Controls),
+    ControlPoints(ElementReaderType.Controls),
+    PointForControlPoints(ElementReaderType.Controls),
     TextArt(ElementReaderType.Controls),
     TextArtPr(ElementReaderType.Controls),
     PointList(ElementReaderType.Controls),

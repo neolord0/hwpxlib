@@ -296,7 +296,8 @@ public class ElementNames {
     public static final String hp_connectLine = "hp:connectLine";
     public static final String hp_startPt = "hp:startPt";
     public static final String hp_endPt = "hp:endPt";
-
+    public static final String hp_controlPoints = "hp:controlPoints";
+    public static final String hp_point = "hp:point";
     // 글맵시 개체
     public static final String hp_textart = "hp:textart";
     public static final String hp_textartPr = "hp:textartPr";

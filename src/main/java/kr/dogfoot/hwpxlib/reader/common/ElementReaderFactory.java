@@ -40,6 +40,9 @@ import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.*;
+import kr.dogfoot.hwpxlib.reader.section_xml.object.connectline.ConnectLinePointReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.object.connectline.ControlPointsReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.object.connectline.PointForControlPointsReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.drawingobject.DrawTextReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.drawingobject.DrawingShadowReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.etc.*;
@@ -491,6 +494,10 @@ public class ElementReaderFactory {
                 return new ConnectLineReader();
             case ConnectLinePoint:
                 return new ConnectLinePointReader();
+            case ControlPoints:
+                return new ControlPointsReader();
+            case PointForControlPoints:
+                return new PointForControlPointsReader();
             case TextArt:
                 return new TextArtReader();
             case TextArtPr:
