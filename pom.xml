@@ -20,10 +20,9 @@
     <description>The hwpx library is a library that can read and write hwpx files used in the word processor developed by Hancom.</description>
     <url>https://github.com/neolord0/hwpxlib</url>
 
-
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>7</maven.compiler.source>
+        <maven.compiler.target>7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

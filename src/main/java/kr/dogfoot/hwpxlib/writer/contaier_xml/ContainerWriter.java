@@ -30,7 +30,8 @@ public class ContainerWriter extends ElementWriter {
                 .namespace(Namespaces.ocf)
                 .namespace(Namespaces.hpf);
 
-        if (!containerXMLFile.rootFiles().empty()) {
+        if (containerXMLFile.rootFiles() != null
+                && !containerXMLFile.rootFiles().empty()) {
             writeChild(ElementWriterSort.RootFiles, containerXMLFile.rootFiles());
         }
 

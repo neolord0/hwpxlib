@@ -87,7 +87,6 @@ public class HWPXWriter {
         if (data == null) {
             return;
         }
-
         zos.putNextEntry(new ZipEntry(entryName));
         byte[] bytes = data.getBytes(charset);
         zos.write(bytes, 0, bytes.length);
@@ -116,12 +115,17 @@ public class HWPXWriter {
 
     private void content_hpf() throws Exception {
         String packageXMLFilePath = hwpxFile.containerXMLFile().packageXMLFilePath();
-
-        writeChild(ElementWriterSort.Content, hwpxFile.contentHPFFile());
-        putIntoZip(packageXMLFilePath, xsb().toString(), StandardCharsets.UTF_8);
+        if (packageXMLFilePath != null) {
+            writeChild(ElementWriterSort.Content, hwpxFile.contentHPFFile());
+            putIntoZip(packageXMLFilePath, xsb().toString(), StandardCharsets.UTF_8);
+        }
     }
 
     private void contentFiles() throws IOException {
+        if (hwpxFile.contentHPFFile().manifest() == null) {
+            return;
+        }
+
         for (ManifestItem item : hwpxFile.contentHPFFile().manifest().items()) {
             if (item.id().equals(FileIDs.Settings)) {
                 writeChild(ElementWriterSort.Settings, hwpxFile.settingsXMLFile());
@@ -150,6 +154,10 @@ public class HWPXWriter {
     }
 
     private void etcContainedFile() throws Exception {
+        if (hwpxFile.containerXMLFile().rootFiles() == null) {
+            return;
+        }
+
         for (RootFile rootFile : hwpxFile.containerXMLFile().rootFiles().items()) {
             if (!MineTypes.HWPML_Package.equals(rootFile.mediaType())
                     && rootFile.attachedFile() != null) {
