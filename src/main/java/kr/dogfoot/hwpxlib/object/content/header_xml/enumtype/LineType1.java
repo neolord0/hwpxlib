@@ -16,6 +16,10 @@ public enum LineType1 implements EnumGetStr {
      */
     DOT("DOT"),
     /**
+     * 두꺼운 선
+     */
+    THICK("THICK"),
+    /**
      * 긴 점선
      */
     DASH("DASH"),

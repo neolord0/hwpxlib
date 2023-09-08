@@ -58,7 +58,7 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.hangul = hangul;
     }
 
-    public ValuesByLanguage hangulAnd(ValueType hangul) {
+    public ValuesByLanguage<ValueType> hangulAnd(ValueType hangul) {
         this.hangul = hangul;
         return this;
     }
@@ -71,7 +71,7 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.latin = latin;
     }
 
-    public ValuesByLanguage latinAnd(ValueType latin) {
+    public ValuesByLanguage<ValueType> latinAnd(ValueType latin) {
         this.latin = latin;
         return this;
     }
@@ -84,7 +84,7 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.hanja = hanja;
     }
 
-    public ValuesByLanguage hanjaAnd(ValueType hanja) {
+    public ValuesByLanguage<ValueType> hanjaAnd(ValueType hanja) {
         this.hanja = hanja;
         return this;
     }
@@ -97,7 +97,7 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.japanese = japanese;
     }
 
-    public ValuesByLanguage japaneseAnd(ValueType japanese) {
+    public ValuesByLanguage<ValueType> japaneseAnd(ValueType japanese) {
         this.japanese = japanese;
         return this;
     }
@@ -110,7 +110,7 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.other = other;
     }
 
-    public ValuesByLanguage otherAnd(ValueType other) {
+    public ValuesByLanguage<ValueType> otherAnd(ValueType other) {
         this.other = other;
         return this;
     }
@@ -123,7 +123,7 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.symbol = symbol;
     }
 
-    public ValuesByLanguage symbolAnd(ValueType symbol) {
+    public ValuesByLanguage<ValueType> symbolAnd(ValueType symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -136,7 +136,7 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.user = user;
     }
 
-    public ValuesByLanguage userAnd(ValueType user) {
+    public ValuesByLanguage<ValueType> userAnd(ValueType user) {
         this.user = user;
         return this;
     }
