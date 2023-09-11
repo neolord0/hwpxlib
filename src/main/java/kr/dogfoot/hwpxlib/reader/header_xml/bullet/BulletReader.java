@@ -48,7 +48,8 @@ public class BulletReader extends ElementReader {
                 img(bullet.img(), name, attrs);
                 break;
             case ElementNames.hh_paraHead:
-                paraHead(bullet.addNewParaHead(), name, attrs);
+                bullet.createParaHead();
+                paraHead(bullet.paraHead(), name, attrs);
                 break;
         }
    }

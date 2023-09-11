@@ -23,9 +23,8 @@ public class FromBullet extends FinderBase {
         Bullet bullet = (Bullet) from;
         pushPath(bullet);
 
-        for (ParaHead paraHead : bullet.paraHeads()) {
-            check(paraHead);
-        }
+        check(bullet.img());
+        check(bullet.paraHead());
 
         checkSwitchList(bullet.switchList());
         popPath();

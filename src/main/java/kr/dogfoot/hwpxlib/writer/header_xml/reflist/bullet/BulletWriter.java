@@ -39,8 +39,8 @@ public class BulletWriter extends ElementWriter {
             ImageBrushWriter.img(bullet.img(), xsb());
         }
 
-        for (ParaHead paraHead : bullet.paraHeads()) {
-            NumberingWriter.paraHead(paraHead, xsb());
+        if (bullet.paraHead() != null) {
+            NumberingWriter.paraHead(bullet.paraHead(),xsb());
         }
 
         xsb().closeElement();

@@ -4,6 +4,7 @@ import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHead;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.Heading;
 
 import java.util.ArrayList;
 
@@ -34,10 +35,9 @@ public class Bullet extends SwitchableObject {
     /**
      * 수준별 문단 머리 모양
      */
-    private final ArrayList<ParaHead> paraHeadList;
+    private ParaHead paraHead;
 
     public Bullet() {
-        paraHeadList = new ArrayList<ParaHead>();
     }
 
     @Override
@@ -106,46 +106,18 @@ public class Bullet extends SwitchableObject {
     }
 
     public void removeImg() {
-        img = new Image();
+        img = null;
     }
 
-    public int countOfParaHead() {
-        return paraHeadList.size();
-    }
-
-    public ParaHead getParaHead(int index) {
-        return paraHeadList.get(index);
-    }
-
-    public int getParaHeadIndex(ParaHead paraHead) {
-        int count = paraHeadList.size();
-        for (int index = 0; index < count; index++) {
-            if (paraHeadList.get(index) == paraHead) {
-                return index;
-            }
-        }
-        return -1;
-   }
-
-    public void addParaHead(ParaHead paraHead) {
-        paraHeadList.add(paraHead);
-    }
-
-    public ParaHead addNewParaHead() {
-        ParaHead paraHead = new ParaHead();
-        paraHeadList.add(paraHead);
+    public ParaHead paraHead() {
         return paraHead;
     }
 
-    public void insertParaHead(ParaHead paraHead, int position) {
-        paraHeadList.add(position, paraHead);
+    public void createParaHead() {
+        paraHead = new ParaHead();
     }
 
-    public void removeParaHead(int position) {
-        paraHeadList.remove(position);
-    }
-
-    public Iterable<ParaHead> paraHeads() {
-        return paraHeadList;
+    public void removeParaHead() {
+        paraHead = null;
     }
 }
