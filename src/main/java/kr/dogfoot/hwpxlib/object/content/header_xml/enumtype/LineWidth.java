@@ -13,7 +13,7 @@ public enum LineWidth implements EnumGetStr, EnumGetIndex {
     MM_0_4("0.4 mm", (byte) 6),
     MM_0_5("0.5 mm", (byte) 7),
     MM_0_6("0.6 mm", (byte) 8),
-    MM_0_7("0.7 mm", (byte) 7),
+    MM_0_7("0.7 mm", (byte) 9),
     MM_1_0("1.0 mm", (byte) 10),
     MM_1_5("1.5 mm", (byte) 11),
     MM_2_0("2.0 mm", (byte) 12),
