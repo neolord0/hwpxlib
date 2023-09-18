@@ -12,6 +12,13 @@
 	- 한글과컴퓨터에서 공개한 'OWPML' 문서 ( http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140 ) <br>
 	  ( “본 제품은 한글과컴퓨터의 HWP 문서 파일(.hwp) 공개 문서를 참고하여 개발하였습니다." )
 
+* 메이븐 레파지토리 설정
+    ```{.xml}
+    <dependency>
+        <groupId>kr.dogfoot</groupId>
+        <artifactId>hwpxlib</artifactId>
+    </dependency>
+    ```
 * hwp 파일에 대한 라이브러리는 https://github.com/neolord0/hwplib 을 참조해 주세요.
 
 2023.9.12
