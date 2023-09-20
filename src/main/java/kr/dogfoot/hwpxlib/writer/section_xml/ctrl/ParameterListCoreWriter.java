@@ -92,6 +92,7 @@ public class ParameterListCoreWriter extends ElementWriter {
         xsb()
                 .openElement(ElementNames.hp_stringParam)
                 .attribute(AttributeNames.name, stringParam.name())
+                .attribute(AttributeNames.xml_space, stringParam.xml_space())
                 .text(stringParam.value())
                 .closeElement();
     }

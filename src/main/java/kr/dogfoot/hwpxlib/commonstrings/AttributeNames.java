@@ -437,4 +437,5 @@ public class AttributeNames {
     public static final String masterPageCnt = "masterPageCnt";
     public static final String cnt = "cnt";
     public static final String charPrCnt = "charPrCnt";
+    public static final String xml_space = "xml:space";
 }

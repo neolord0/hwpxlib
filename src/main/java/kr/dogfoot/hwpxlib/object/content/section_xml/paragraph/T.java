@@ -44,7 +44,6 @@ public class T extends RunItem {
         return this;
     }
 
-
     public void addText(String text) {
         if (itemList != null && itemList.size() > 0) {
             itemList.add(new NormalText().textAnd(text));
