@@ -3,6 +3,9 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.e
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColorType;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
+
+import java.util.ArrayList;
 
 public class EffectsColor extends SwitchableObject {
     /**
@@ -40,9 +43,10 @@ public class EffectsColor extends SwitchableObject {
     /**
      * 색상 효과
      */
-    private ColorEffect effect;
+    private ArrayList<ColorEffect> effectList;
 
     public EffectsColor() {
+        effectList = new ArrayList<ColorEffect>();
     }
 
     @Override
@@ -150,15 +154,44 @@ public class EffectsColor extends SwitchableObject {
         system = null;
     }
 
-    public ColorEffect effect() {
+
+    public int countOfEffect() {
+        return effectList.size();
+    }
+
+    public ColorEffect getEffect(int index) {
+        return effectList.get(index);
+    }
+
+    public int getEffectIndex(ColorEffect effect) {
+        int count = effectList.size();
+        for (int index = 0; index < count; index++) {
+            if (effectList.get(index) == effect) {
+                return index;
+            }
+        }
+        return -1;
+    }
+
+    public void addEffect(ColorEffect effect) {
+        effectList.add(effect);
+    }
+
+    public ColorEffect addNewEffect() {
+        ColorEffect effect = new ColorEffect();
+        effectList.add(effect);
         return effect;
     }
 
-    public void createEffect() {
-        effect = new ColorEffect();
+    public void insertEffect(ColorEffect effect, int position) {
+        effectList.add(position, effect);
     }
 
-    public void removeEffect() {
-        effect = null;
+    public void removeEffect(int position) {
+        effectList.remove(position);
+    }
+
+    public Iterable<ColorEffect> effects() {
+        return effectList;
     }
 }

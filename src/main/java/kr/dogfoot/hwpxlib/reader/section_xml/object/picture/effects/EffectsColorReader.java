@@ -62,8 +62,7 @@ public class EffectsColorReader extends ElementReader {
                 system(effectsColor.system(), name, attrs);
                 break;
             case ElementNames.hp_effect:
-                effectsColor.createEffect();
-                effect(effectsColor.effect(), name, attrs);
+                effect(effectsColor.addNewEffect(), name, attrs);
                 break;
         }
     }

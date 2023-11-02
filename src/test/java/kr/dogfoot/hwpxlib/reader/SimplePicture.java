@@ -174,9 +174,9 @@ public class SimplePicture {
             Assert.assertEquals(effectsColor.rgb().r().shortValue(), 233);
             Assert.assertEquals(effectsColor.rgb().g().shortValue(), 174);
             Assert.assertEquals(effectsColor.rgb().b().shortValue(), 43);
-            Assert.assertNotNull(effectsColor.effect());
-            Assert.assertEquals(effectsColor.effect().type(), ColorEffectType.SAT_MOD);
-            Assert.assertEquals(effectsColor.effect().value(), "1.75");
+            Assert.assertNotNull(effectsColor.getEffect(0));
+            Assert.assertEquals(effectsColor.getEffect(0).type(), ColorEffectType.SAT_MOD);
+            Assert.assertEquals(effectsColor.getEffect(0).value(), "1.75");
         }
 
         EffectsSoftEdge softEdge = effects.softEdge();

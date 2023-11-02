@@ -47,8 +47,8 @@ public class EffectsColorWriter extends ElementWriter {
             system(effectsColor.system());
         }
 
-        if (effectsColor.effect() != null) {
-            effect(effectsColor.effect());
+        for (ColorEffect effect : effectsColor.effects()) {
+            effect(effect);
         }
 
         xsb().closeElement();

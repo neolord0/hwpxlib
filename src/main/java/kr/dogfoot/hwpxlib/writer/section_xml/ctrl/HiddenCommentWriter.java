@@ -23,7 +23,7 @@ public class HiddenCommentWriter extends ElementWriter {
         switchList(hiddenComment.switchList());
 
         xsb()
-                .openElement(ElementNames.hp_fieldBegin)
+                .openElement(ElementNames.hp_hiddenComment)
                 .elementWriter(this);
 
         if (hiddenComment.subList() != null) {

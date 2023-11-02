@@ -2,6 +2,7 @@ package kr.dogfoot.hwpxlib.tool.finder.section.object.picture;
 
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.ColorEffect;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.effects.EffectsColor;
 import kr.dogfoot.hwpxlib.tool.finder.Parameter;
 import kr.dogfoot.hwpxlib.tool.finder.comm.FinderBase;
@@ -26,7 +27,10 @@ public class FromEffectsColor extends FinderBase {
         check(effectsColor.cmyk());
         check(effectsColor.scheme());
         check(effectsColor.system());
-        check(effectsColor.effect());
+
+        for (ColorEffect effect : effectsColor.effects()) {
+            check(effect);
+        }
 
         checkSwitchList(effectsColor.switchList());
         popPath();
