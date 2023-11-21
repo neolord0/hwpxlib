@@ -19,6 +19,7 @@ public abstract class ExtractorBase {
     public abstract void extract(HWPXObject from) throws Exception;
 
     public void extractChild(HWPXObject child) throws Exception {
+
         ExtractorBase extractor = extractorManager.get(child._objectType());
         extractor.extract(child);
 

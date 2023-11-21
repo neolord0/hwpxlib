@@ -11,7 +11,6 @@ public class TestTextExtractor4 {
         HWPXFile hwpxFile = HWPXReader.fromFilepath("testFile/tool/textextractor/Table.hwpx");
         String result = TextExtractor.extract(hwpxFile,
                 TextExtractMethod.AppendControlTextAfterParagraphText,
-                null,
                 false,
                 new TextMarks()
                         .lineBreakAnd("\n")

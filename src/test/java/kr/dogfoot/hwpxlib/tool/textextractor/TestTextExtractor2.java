@@ -11,7 +11,6 @@ public class TestTextExtractor2 {
         HWPXFile hwpxFile = HWPXReader.fromFilepath("testFile/tool/textextractor/RectInPara.hwpx");
         String result = TextExtractor.extract(hwpxFile,
                 TextExtractMethod.AppendControlTextAfterParagraphText,
-                null,
                 false,
                 new TextMarks()
                         .lineBreakAnd("\n")
@@ -36,7 +35,6 @@ public class TestTextExtractor2 {
         HWPXFile hwpxFile = HWPXReader.fromFilepath("testFile/tool/textextractor/RectInPara.hwpx");
         String result = TextExtractor.extract(hwpxFile,
                 TextExtractMethod.InsertControlTextBetweenParagraphText,
-                null,
                 false,
                 new TextMarks()
                         .lineBreakAnd("\n")

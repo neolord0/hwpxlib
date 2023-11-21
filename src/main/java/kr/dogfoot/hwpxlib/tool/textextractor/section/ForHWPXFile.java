@@ -22,7 +22,6 @@ public class ForHWPXFile extends ExtractorBase {
     public void extract(HWPXObject from) throws Exception {
         HWPXFile hwpxFile = (HWPXFile) from;
         for (SectionXMLFile sectionXMLFile : hwpxFile.sectionXMLFileList().items()) {
-
             extractChild(sectionXMLFile);
         }
     }
