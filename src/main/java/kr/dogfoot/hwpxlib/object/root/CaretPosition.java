@@ -66,4 +66,17 @@ public class CaretPosition extends HWPXObject {
         this.pos = pos;
         return this;
     }
+
+    @Override
+    public CaretPosition clone() {
+        CaretPosition cloned = new CaretPosition();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    private void copyFrom(CaretPosition from) {
+        this.listIDRef = from.listIDRef;
+        this.paraIDRef = from.paraIDRef;
+        this.pos = from.pos;
+    }
 }

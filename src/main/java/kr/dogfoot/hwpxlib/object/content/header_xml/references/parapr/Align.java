@@ -26,7 +26,6 @@ public class Align extends HWPXObject {
         return ObjectType.hh_align;
     }
 
-
     public HorizontalAlign2 horizontal() {
         return horizontal;
     }
@@ -51,5 +50,17 @@ public class Align extends HWPXObject {
     public Align verticalAnd(VerticalAlign1 vertical) {
         this.vertical = vertical;
         return this;
+    }
+
+    @Override
+    public Align clone() {
+        Align cloned = new Align();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Align from) {
+        this.horizontal = from.horizontal;
+        this.vertical = from.vertical;
     }
 }

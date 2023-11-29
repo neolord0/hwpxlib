@@ -25,4 +25,17 @@ public class FloatParam extends Param<FloatParam> {
         this.value = value;
         return this;
     }
+
+    @Override
+    public FloatParam clone() {
+        FloatParam cloned = new FloatParam();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FloatParam from) {
+        this.value = from.value;
+
+        super.copyFrom(from);
+    }
 }

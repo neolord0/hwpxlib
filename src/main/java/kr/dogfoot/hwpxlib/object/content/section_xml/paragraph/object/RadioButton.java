@@ -16,4 +16,15 @@ public class RadioButton extends ButtonCore<Button> {
     public ObjectType _objectType() {
         return ObjectType.hp_radioBtn;
     }
+
+    @Override
+    public RadioButton clone() {
+        RadioButton cloned = new RadioButton();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(RadioButton from) {
+        super.copyFrom(from);
+    }
 }

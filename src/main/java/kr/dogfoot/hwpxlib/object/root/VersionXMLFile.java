@@ -91,4 +91,21 @@ public class VersionXMLFile extends SwitchableObject {
         this.appVersion = appVersion;
         return this;
     }
+
+    @Override
+    public VersionXMLFile clone() {
+        VersionXMLFile cloned = new VersionXMLFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(VersionXMLFile from) {
+        this.targetApplication = from.targetApplication;
+        this.version.copyFrom(from.version);
+        this.os = from.os;
+        this.application = from.application;
+        this.appVersion = from.appVersion;
+
+        super.copyFrom(from);
+    }
 }

@@ -115,4 +115,28 @@ public class Caption extends SwitchableObject {
     public void removeSubList() {
         subList = null;
     }
+
+    @Override
+    public Caption clone() {
+        Caption cloned = new Caption();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Caption from) {
+        this.side = from.side;
+        this.fullSz = from.fullSz;
+        this.width = from.width;
+        this.gap = from.gap;
+        this.lastWidth = from.lastWidth;
+
+        if (from.subList != null) {
+            subList = from.subList.clone();
+        } else {
+            subList = null;
+        }
+
+        super.copyFrom(from);
+   }
 }
+

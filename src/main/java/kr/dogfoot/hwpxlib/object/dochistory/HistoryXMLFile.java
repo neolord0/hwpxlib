@@ -71,4 +71,20 @@ public class HistoryXMLFile extends SwitchableObject {
         return entryList;
     }
 
+    public HistoryXMLFile clone() {
+        HistoryXMLFile cloned = new HistoryXMLFile();
+        cloned.copyFrom(this);
+
+        return cloned;
+    }
+
+    public void copyFrom(HistoryXMLFile from) {
+        this.version = from.version;
+
+        for (HistoryEntry historyEntry : from.entryList) {
+            entryList.add(historyEntry.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -140,4 +140,19 @@ public class Ctrl extends RunItem {
     public Iterable<CtrlItem> ctrlItems() {
         return itemList;
     }
+
+    @Override
+    public Ctrl clone() {
+        Ctrl cloned = new Ctrl();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Ctrl from) {
+        for (CtrlItem item : from.itemList) {
+            itemList.add((CtrlItem) item.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

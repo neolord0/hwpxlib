@@ -217,4 +217,27 @@ public abstract class FormObject<ChildType> extends ShapeObject<ChildType> {
     public void removeFormCharPr() {
         formCharPr = null;
     }
+
+    protected void copyFrom(FormObject from) {
+        this.name = from.name;
+        this.foreColor = from.foreColor;
+        this.backColor = from.backColor;
+        this.groupName = from.groupName;
+        this.tabStop = from.tabStop;
+        this.tabOrder = from.tabOrder;
+        this.enabled = from.enabled;
+        this.borderTypeIDRef = from.borderTypeIDRef;
+        this.drawFrame = from.drawFrame;
+        this.printable = from.printable;
+        this.editable = from.editable;
+        this.command = from.command;
+
+        if (from.formCharPr != null) {
+            formCharPr = from.formCharPr.clone();
+        } else {
+            formCharPr = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

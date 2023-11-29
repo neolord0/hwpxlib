@@ -68,4 +68,17 @@ public class Underline extends HWPXObject {
         this.color = color;
         return this;
     }
+
+    @Override
+    public Underline clone() {
+        Underline cloned = new Underline();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Underline from) {
+        this.type = from.type;
+        this.shape = from.shape;
+        this.color = from.color;
+    }
 }

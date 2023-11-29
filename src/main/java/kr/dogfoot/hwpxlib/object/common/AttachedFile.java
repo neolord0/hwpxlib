@@ -18,4 +18,14 @@ public class AttachedFile {
         this.data = data;
         return this;
     }
+
+    public AttachedFile clone() {
+        AttachedFile cloned = new AttachedFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(AttachedFile from) {
+        this.data = from.data;
+    }
 }

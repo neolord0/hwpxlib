@@ -136,4 +136,24 @@ public class Compose extends RunItem {
     public Iterable<ComposeCharPr> charPrs() {
         return charPrList;
     }
+
+    @Override
+    public Compose clone() {
+        Compose cloned = new Compose();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Compose from) {
+        this.circleType = from.circleType;
+        this.charSz = from.charSz;
+        this.composeType = from.composeType;
+        this.composeText = from.composeText;
+
+        for (ComposeCharPr composeCharPr : from.charPrList) {
+            charPrList.add(composeCharPr.clone());
+        }
+
+        super.copyFrom(this);
+    }
 }

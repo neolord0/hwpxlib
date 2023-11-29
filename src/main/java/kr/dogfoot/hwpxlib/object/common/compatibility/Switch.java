@@ -75,5 +75,26 @@ public class Switch extends HWPXObject {
     public void position(int position) {
         this.position = position;
     }
+
+    @Override
+    public Switch clone() {
+        Switch cloned = new Switch();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Switch from) {
+        for (Case caseObject : from.caseObjectList) {
+            caseObjectList.add(caseObject.clone());
+        }
+
+        if (from.defaultObject != null) {
+            defaultObject = from.defaultObject.clone();
+        } else {
+            defaultObject = null;
+        }
+
+        position = from.position;
+    }
 }
 

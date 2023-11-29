@@ -14,4 +14,15 @@ public class MarkpenEnd extends TItem {
     public ObjectType _objectType() {
         return ObjectType.hp_markpenEnd;
     }
+
+    @Override
+    public MarkpenEnd clone() {
+        MarkpenEnd cloned = new MarkpenEnd();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(MarkpenEnd from) {
+        // nothing
+    }
 }

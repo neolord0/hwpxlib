@@ -29,6 +29,7 @@ public class Heading extends HWPXObject {
         return ObjectType.hh_heading;
     }
 
+
     public ParaHeadingType type() {
         return type;
     }
@@ -66,5 +67,18 @@ public class Heading extends HWPXObject {
     public Heading levelAnd(Byte level) {
         this.level = level;
         return this;
+    }
+
+    @Override
+    public Heading clone() {
+        Heading cloned = new Heading();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Heading from) {
+        this.type = from.type;
+        this.idRef = from.idRef;
+        this.level = from.level;
     }
 }

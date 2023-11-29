@@ -40,4 +40,16 @@ public class EncryptionAlgorithm extends HWPXObject {
         this.initialisationVector = initialisationVector;
         return this;
     }
+
+    @Override
+    public EncryptionAlgorithm clone() {
+        EncryptionAlgorithm cloned = new EncryptionAlgorithm();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EncryptionAlgorithm from) {
+        this.algorithmName = from.algorithmName;
+        this.initialisationVector = from.initialisationVector;
+    }
 }

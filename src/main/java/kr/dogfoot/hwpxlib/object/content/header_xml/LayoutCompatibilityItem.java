@@ -40,4 +40,16 @@ public class LayoutCompatibilityItem extends HWPXObject {
         this.text = text;
         return this;
     }
+
+    @Override
+    public LayoutCompatibilityItem clone() {
+        LayoutCompatibilityItem cloned = new LayoutCompatibilityItem();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(LayoutCompatibilityItem from) {
+        this.name = from.name;
+        this.text = from.text;
+    }
 }

@@ -96,4 +96,46 @@ public class ParaMargin extends SwitchableObject {
     public void removeNext() {
         next = null;
     }
+
+    @Override
+    public ParaMargin clone() {
+        ParaMargin cloned = new ParaMargin();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ParaMargin from) {
+        if (from.intent != null) {
+            intent = from.intent.clone();
+        } else {
+            intent = null;
+        }
+
+        if (from.left != null) {
+            left = from.left.clone();
+        } else {
+            left = null;
+        }
+
+        if (from.right != null) {
+            right = from.right.clone();
+        } else {
+            right = null;
+        }
+
+        if (from.prev != null) {
+            prev = from.prev.clone();
+        } else {
+            prev = null;
+        }
+
+        if (from.next != null) {
+            next = from.next.clone();
+        } else {
+            next = null;
+        }
+
+        super.copyFrom(from);
+    }
 }
+

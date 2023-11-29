@@ -32,4 +32,21 @@ public class HiddenComment extends CtrlItem {
     public void removeSubList() {
         subList = null;
     }
+
+    @Override
+    public HiddenComment clone() {
+        HiddenComment cloned = new HiddenComment();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(HiddenComment from) {
+        if (from.subList != null) {
+            subList = from.subList.clone();
+        } else {
+            subList = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

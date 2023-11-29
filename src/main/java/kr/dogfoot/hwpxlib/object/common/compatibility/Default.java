@@ -7,4 +7,15 @@ public class Default extends InSwitchObject {
     public ObjectType _objectType() {
         return ObjectType.hp_default;
     }
+
+    @Override
+    public Default clone() {
+        Default cloned = new Default();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Default from) {
+        super.copyForm(from);
+    }
 }

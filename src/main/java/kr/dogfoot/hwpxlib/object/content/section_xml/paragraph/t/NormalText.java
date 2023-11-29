@@ -26,4 +26,15 @@ public class NormalText extends TItem {
         this.text = text;
         return this;
     }
+
+    @Override
+    public NormalText clone() {
+        NormalText cloned = new NormalText();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(NormalText from) {
+        this.text = from.text;
+    }
 }

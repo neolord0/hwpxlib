@@ -141,4 +141,23 @@ public class LineSeg extends HWPXObject {
         this.flags = flags;
         return this;
     }
+
+    @Override
+    public LineSeg clone() {
+        LineSeg cloned = new LineSeg();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    private void copyFrom(LineSeg from) {
+        this.textpos = from.textpos;
+        this.vertpos = from.vertpos;
+        this.vertsize = from.vertsize;
+        this.textheight = from.textheight;
+        this.baseline = from.baseline;
+        this.spacing = from.spacing;
+        this.horzpos = from.horzpos;
+        this.horzsize = from.horzsize;
+        this.flags = from.flags;
+    }
 }

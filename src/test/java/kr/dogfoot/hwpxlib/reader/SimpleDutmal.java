@@ -12,8 +12,8 @@ public class SimpleDutmal {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleDutmal.hwpx");
-        Dutmal dutmal = (Dutmal) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
+        Dutmal dutmal = (Dutmal) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(dutmal);
         Assert.assertEquals(dutmal.posType(), DutmalPosType.TOP);
         Assert.assertEquals(dutmal.szRatio().intValue(), 0);

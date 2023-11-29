@@ -14,4 +14,15 @@ public class InsertEnd extends TrackChangeCore<InsertEnd> {
     public ObjectType _objectType() {
         return ObjectType.hp_insertEnd;
     }
+
+    @Override
+    public InsertEnd clone() {
+        InsertEnd cloned = new InsertEnd();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(InsertEnd from) {
+        super.copyFrom(from);
+    }
 }

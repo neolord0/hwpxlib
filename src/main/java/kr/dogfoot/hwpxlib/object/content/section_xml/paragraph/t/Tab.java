@@ -30,6 +30,7 @@ public class Tab extends TItem {
         return ObjectType.hp_tab;
     }
 
+
     public Integer width() {
         return width;
     }
@@ -68,5 +69,18 @@ public class Tab extends TItem {
     public Tab typeAnd(TabItemType type) {
         this.type = type;
         return this;
+    }
+
+    @Override
+    public Tab clone() {
+        Tab cloned = new Tab();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Tab from) {
+        this.width = from.width;
+        this.leader = from.leader;
+        this.type = from.type;
     }
 }

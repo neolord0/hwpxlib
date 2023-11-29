@@ -25,4 +25,17 @@ public class IntegerParam extends Param<IntegerParam> {
         this.value = value;
         return this;
     }
+
+    @Override
+    public IntegerParam clone() {
+        IntegerParam cloned = new IntegerParam();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(IntegerParam from) {
+        this.value = from.value;
+
+        super.copyFrom(from);
+    }
 }

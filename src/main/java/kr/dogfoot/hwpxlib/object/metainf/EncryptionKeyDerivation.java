@@ -68,4 +68,18 @@ public class EncryptionKeyDerivation extends HWPXObject {
         this.salt = salt;
         return this;
     }
+
+    @Override
+    public EncryptionKeyDerivation clone() {
+        EncryptionKeyDerivation cloned = new EncryptionKeyDerivation();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EncryptionKeyDerivation from) {
+        this.keyDerivationName = from.keyDerivationName;
+        this.keySize = from.keySize;
+        this.iterationCount = from.iterationCount;
+        this.salt = from.salt;
+    }
 }

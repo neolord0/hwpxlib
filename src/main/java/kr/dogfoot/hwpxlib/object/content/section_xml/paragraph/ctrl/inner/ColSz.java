@@ -49,4 +49,16 @@ public class ColSz extends HWPXObject {
         this.gap = gap;
         return this;
     }
+
+    @Override
+    public ColSz clone() {
+        ColSz cloned = new ColSz();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ColSz from) {
+        this.width = from.width;
+        this.gap = from.gap;
+    }
 }

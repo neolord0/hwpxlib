@@ -65,4 +65,29 @@ public class Line extends DrawingObject<Line> {
     public void removeEndPt() {
         endPt = null;
     }
+
+    @Override
+    public Line clone() {
+        Line cloned = new Line();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Line from) {
+        this.isReverseHV = from.isReverseHV;
+
+        if (from.startPt != null) {
+            startPt = from.startPt.clone();
+        } else {
+            startPt = null;
+        }
+
+        if (from.endPt != null) {
+            endPt = from.endPt.clone();
+        } else {
+            endPt = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

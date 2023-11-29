@@ -13,4 +13,14 @@ public class SectionXMLFile extends ParaListCore {
     public ObjectType _objectType() {
         return ObjectType.hs_sec;
     }
+
+    public SectionXMLFile clone() {
+        SectionXMLFile cloned = new SectionXMLFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(SectionXMLFile from) {
+        super.copyFrom(from);
+    }
 }

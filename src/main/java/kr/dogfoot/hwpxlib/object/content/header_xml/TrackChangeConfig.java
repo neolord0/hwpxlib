@@ -15,6 +15,7 @@ public class TrackChangeConfig extends HWPXObject {
         return ObjectType.hh_trackchageConfig;
     }
 
+
     public Integer flags() {
         return flags;
     }
@@ -26,5 +27,16 @@ public class TrackChangeConfig extends HWPXObject {
     public TrackChangeConfig flagsAnd(Integer flags) {
         this.flags = flags;
         return this;
+    }
+
+    @Override
+    public TrackChangeConfig clone() {
+        TrackChangeConfig cloned = new TrackChangeConfig();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TrackChangeConfig from) {
+        this.flags = from.flags;
     }
 }

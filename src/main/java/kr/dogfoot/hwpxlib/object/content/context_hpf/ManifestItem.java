@@ -197,4 +197,31 @@ public class ManifestItem extends HWPXObject {
     public void removeAttachedFile() {
         attachedFile = null;
     }
+
+    @Override
+    public ManifestItem clone() {
+        ManifestItem cloned = new ManifestItem();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ManifestItem from) {
+        this.id = from.id;
+        this.href = from.href;
+        this.mediaType = from.mediaType;
+        this.fallback = from.fallback;
+        this.fallbackStyle = from.fallbackStyle;
+        this.requiredNamespace = from.requiredNamespace;
+        this.requiredModules = from.requiredModules;
+        this.encryption = from.encryption;
+        this.fileSize = from.fileSize;
+        this.isEmbedded = from.isEmbedded;
+        this.subPath = from.subPath;
+
+        if (from.attachedFile != null) {
+            attachedFile = from.attachedFile.clone();
+        } else {
+            attachedFile = null;
+        }
+    }
 }

@@ -101,4 +101,19 @@ public class DrawingShadow extends HWPXObject {
         this.alpha = alpha;
         return this;
     }
+
+    @Override
+    public DrawingShadow clone() {
+        DrawingShadow cloned = new DrawingShadow();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(DrawingShadow from) {
+        this.type = from.type;
+        this.color = from.color;
+        this.offsetX = from.offsetX;
+        this.offsetY = from.offsetY;
+        this.alpha = from.alpha;
+    }
 }

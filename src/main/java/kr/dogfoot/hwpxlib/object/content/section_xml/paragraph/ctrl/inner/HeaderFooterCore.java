@@ -61,4 +61,17 @@ public abstract class HeaderFooterCore<ChildType> extends CtrlItem {
     public void removeSubList() {
         subList = null;
     }
+
+    protected void copyFrom(HeaderFooterCore from) {
+        this.id = from.id;
+        this.applyPageType = from.applyPageType;
+
+        if (from.subList != null) {
+            subList = from.subList.clone();
+        } else {
+            subList = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -44,4 +44,16 @@ public class ColorEffect extends HWPXObject {
         this.value = value;
         return this;
     }
+
+    @Override
+    public ColorEffect clone() {
+        ColorEffect cloned = new ColorEffect();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ColorEffect from) {
+        this.type = from.type;
+        this.value = from.value;
+    }
 }

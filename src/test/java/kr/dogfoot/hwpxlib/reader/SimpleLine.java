@@ -19,6 +19,7 @@ public class SimpleLine {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleLine.hwpx");
+
         Line line = (Line) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(line);
         Assert.assertEquals(line.id(), "2141030297");

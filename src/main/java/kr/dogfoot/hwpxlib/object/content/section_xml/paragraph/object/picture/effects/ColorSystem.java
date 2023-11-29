@@ -57,4 +57,17 @@ public class ColorSystem extends HWPXObject {
         this.l = l;
         return this;
     }
+
+    @Override
+    public ColorSystem clone() {
+        ColorSystem cloned = new ColorSystem();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ColorSystem from) {
+        this.h = from.h;
+        this.s = from.s;
+        this.l = from.l;
+    }
 }

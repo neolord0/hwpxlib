@@ -154,4 +154,29 @@ public class TextArtPr extends SwitchableObject {
     public void removeShadow() {
         shadow = null;
     }
+
+    @Override
+    public TextArtPr clone() {
+        TextArtPr cloned = new TextArtPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TextArtPr from) {
+        this.fontName = from.fontName;
+        this.fontStyle = from.fontStyle;
+        this.fontType = from.fontType;
+        this.textShape = from.textShape;
+        this.lineSpacing = from.lineSpacing;
+        this.charSpacing = from.charSpacing;
+        this.align = from.align;
+
+        if (from.shadow != null) {
+            shadow = from.shadow.clone();
+        } else {
+            shadow = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

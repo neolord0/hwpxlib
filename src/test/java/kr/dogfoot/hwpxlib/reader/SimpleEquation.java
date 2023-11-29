@@ -14,6 +14,7 @@ public class SimpleEquation {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleEquation.hwpx");
+
         Equation equation  = (Equation) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(equation);
         Assert.assertEquals(equation.id(), "1137177714");

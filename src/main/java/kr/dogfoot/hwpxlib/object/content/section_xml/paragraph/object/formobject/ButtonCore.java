@@ -89,4 +89,14 @@ public abstract class ButtonCore<ChildType> extends FormObject<ChildType> {
         this.backStyle = backStyle;
         return this;
     }
+
+    protected void copyFrom(ButtonCore from) {
+        this.captionText = from.captionText;
+        this.value = from.value;
+        this.radioGroupName = from.radioGroupName;
+        this.triState = from.triState;
+        this.backStyle = from.backStyle;
+
+        super.copyFrom(from);
+    }
 }

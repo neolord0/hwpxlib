@@ -14,4 +14,15 @@ public class Footer extends HeaderFooterCore<Footer> {
     public ObjectType _objectType() {
         return ObjectType.hp_footer;
     }
+
+    @Override
+    public Footer clone() {
+        Footer cloned = new Footer();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Footer from) {
+        super.copyFrom(from);
+    }
 }

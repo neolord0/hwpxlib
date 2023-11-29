@@ -162,4 +162,40 @@ public class HistoryEntry extends SwitchableObject {
     public void removeBodyDiff() {
         bodyDiff = null;
     }
+
+    @Override
+    public HistoryEntry clone() {
+        HistoryEntry cloned = new HistoryEntry();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(HistoryEntry from) {
+        this.revisionNumber = from.revisionNumber;
+        this.revisionDate = from.revisionDate;
+        this.revisionAuthor = from.revisionAuthor;
+        this.revisionDesc = from.revisionDesc;
+        this.revisionLock = from.revisionLock;
+        this.autoSave = from.autoSave;
+
+        if (from.packageDiff != null) {
+            packageDiff = from.packageDiff.clone();
+        } else {
+            packageDiff = null;
+        }
+
+        if (from.headDiff != null) {
+            headDiff = from.headDiff.clone();
+        } else {
+            headDiff = null;
+        }
+
+        if (from.bodyDiff != null) {
+            bodyDiff = from.bodyDiff.clone();
+        } else {
+            bodyDiff = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

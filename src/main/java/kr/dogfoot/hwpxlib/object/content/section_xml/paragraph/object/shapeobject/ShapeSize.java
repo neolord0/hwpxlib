@@ -102,4 +102,19 @@ public class ShapeSize extends HWPXObject {
         this.protect = protect;
         return this;
     }
+
+    @Override
+    public ShapeSize clone() {
+        ShapeSize cloned = new ShapeSize();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ShapeSize from) {
+        this.width = from.width;
+        this.widthRelTo = from.widthRelTo;
+        this.height = from.height;
+        this.heightRelTo = from.heightRelTo;
+        this.protect = from.protect;
+    }
 }

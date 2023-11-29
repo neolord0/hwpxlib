@@ -20,6 +20,7 @@ public class ContentHPFFile extends SwitchableObject {
         return ObjectType.opf_package;
     }
 
+
     public String version() {
         return version;
     }
@@ -102,5 +103,44 @@ public class ContentHPFFile extends SwitchableObject {
 
     public void removeSpine() {
         spine = null;
+    }
+
+    @Override
+    public ContentHPFFile clone() {
+        ContentHPFFile cloned = new ContentHPFFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ContentHPFFile from) {
+        this.version = from.version;
+        this.uniqueIdentifier = from.uniqueIdentifier;
+        this.id = from.id;
+
+        if (from.metaData != null) {
+            this.metaData = from.metaData.clone();
+        } else {
+            this.metaData = null;
+        }
+
+        if (from.manifest != null) {
+            createManifest();
+            for (ManifestItem manifestItem : from.manifest.items()) {
+                manifest.add(manifestItem.clone());
+            }
+        } else {
+            removeManifest();
+        }
+
+        if (from.spine != null) {
+            createSpine();
+            for (SpineItemRef spineItemRef : from.spine.items()) {
+                spine.add(spineItemRef.clone());
+            }
+        } else {
+            removeSpine();
+        }
+
+        super.copyFrom(from);
     }
 }

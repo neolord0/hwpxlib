@@ -3,7 +3,6 @@ package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.picture.e
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ColorType;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
 
 import java.util.ArrayList;
 
@@ -194,4 +193,49 @@ public class EffectsColor extends SwitchableObject {
     public Iterable<ColorEffect> effects() {
         return effectList;
     }
+
+    @Override
+    public EffectsColor clone() {
+        EffectsColor cloned = new EffectsColor();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EffectsColor from) {
+        this.type = from.type;
+        this.schemeIdx = from.schemeIdx;
+        this.systemIdx = from.systemIdx;
+        this.presetIdx = from.presetIdx;
+
+        if (from.rgb != null) {
+            rgb = from.rgb.clone();
+        } else {
+            rgb = null;
+        }
+
+        if (from.cmyk != null) {
+            cmyk = from.cmyk.clone();
+        } else {
+            cmyk = null;
+        }
+
+        if (from.scheme != null) {
+            scheme = from.scheme.clone();
+        } else {
+            scheme = null;
+        }
+
+        if (from.system != null) {
+            system = from.system.clone();
+        } else {
+            system = null;
+        }
+
+        for (ColorEffect colorEffect : from.effectList) {
+            effectList.add(colorEffect.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }
+

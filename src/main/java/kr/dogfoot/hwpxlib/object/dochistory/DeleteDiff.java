@@ -21,6 +21,7 @@ public class DeleteDiff extends DiffItem<DeleteDiff> {
         return ObjectType.hhs_delete;
     }
 
+
     public HWPXObject deletedObject() {
         return deletedObject;
     }
@@ -32,5 +33,22 @@ public class DeleteDiff extends DiffItem<DeleteDiff> {
     public DeleteDiff deletedObjectAnd(HWPXObject deletedObject) {
         this.deletedObject = deletedObject;
         return this;
+    }
+
+    @Override
+    public HWPXObject clone() {
+        DeleteDiff cloned = new DeleteDiff();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(DeleteDiff from) {
+        if (from.deletedObject != null) {
+            deletedObject = from.deletedObject.clone();
+        } else {
+            deletedObject = null;
+        }
+
+        super.copyFrom(from);
     }
 }

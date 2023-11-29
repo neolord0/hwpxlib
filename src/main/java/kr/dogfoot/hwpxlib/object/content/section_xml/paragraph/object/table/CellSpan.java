@@ -49,4 +49,16 @@ public class CellSpan extends HWPXObject {
         this.rowSpan = rowSpan;
         return this;
     }
+
+    @Override
+    public CellSpan clone() {
+        CellSpan cloned = new CellSpan();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(CellSpan from) {
+        this.colSpan = from.colSpan;
+        this.rowSpan = from.rowSpan;
+    }
 }

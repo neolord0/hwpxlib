@@ -42,4 +42,16 @@ public class XAndYFloat extends HWPXObject {
         this.y = y;
         return this;
     }
+
+    @Override
+    public XAndYFloat clone() {
+        XAndYFloat cloned = new XAndYFloat(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(XAndYFloat from) {
+        this.x = from.x;
+        this.y = from.y;
+    }
 }

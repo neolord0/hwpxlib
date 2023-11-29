@@ -25,4 +25,17 @@ public class BooleanParam extends Param<BooleanParam> {
         this.value = value;
         return this;
     }
+
+    @Override
+    public BooleanParam clone() {
+        BooleanParam cloned = new BooleanParam();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(BooleanParam from) {
+        this.value = from.value;
+
+        super.copyFrom(from);
+    }
 }

@@ -49,4 +49,18 @@ public class FieldEnd extends CtrlItem {
         this.fieldid = fieldid;
         return this;
     }
+
+    @Override
+    public FieldEnd clone() {
+        FieldEnd cloned = new FieldEnd();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FieldEnd from) {
+        this.beginIDRef = from.beginIDRef;
+        this.fieldid = from.fieldid;
+
+        super.copyFrom(from);
+    }
 }

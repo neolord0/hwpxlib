@@ -131,4 +131,24 @@ public class ComboBox extends FormObject<ComboBox> {
     public Iterable<ListItem> listItems() {
         return listItemList;
     }
+
+    @Override
+    public ComboBox clone() {
+        ComboBox cloned = new ComboBox();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ComboBox from) {
+        this.listBoxRows = from.listBoxRows;
+        this.listBoxWidth = from.listBoxWidth;
+        this.editEnable = from.editEnable;
+        this.selectedValue = from.selectedValue;
+
+        for (ListItem listItem : from.listItemList) {
+            listItemList.add(listItem.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

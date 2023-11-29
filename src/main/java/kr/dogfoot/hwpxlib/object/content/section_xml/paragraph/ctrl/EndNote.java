@@ -14,4 +14,15 @@ public class EndNote extends FootNoteEndNoteCore<EndNote> {
     public ObjectType _objectType() {
         return ObjectType.hp_endNote;
     }
+
+    @Override
+    public EndNote clone() {
+        EndNote cloned = new EndNote();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EndNote from) {
+         super.copyFrom(from);
+    }
 }

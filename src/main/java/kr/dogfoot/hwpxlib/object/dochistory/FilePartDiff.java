@@ -90,4 +90,22 @@ public class FilePartDiff<ChildType> extends SwitchableObject {
     public Iterable<DiffItem> childDiffs() {
         return childDiffList;
     }
+
+    @Override
+    public FilePartDiff clone() {
+        FilePartDiff cloned = new FilePartDiff(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FilePartDiff from) {
+        this.href = from.href;
+        int count = from.childDiffList.size();
+        for (int index = 0; index < count; index++) {
+            DiffItem childDiff = (DiffItem) from.childDiffList.get(index);
+            childDiffList.add((DiffItem) childDiff.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -16,4 +16,15 @@ public class Button extends ButtonCore<Button> {
     public ObjectType _objectType() {
         return ObjectType.hp_btn;
     }
+
+    @Override
+    public Button clone() {
+        Button cloned = new Button();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Button from) {
+        super.copyFrom(from);
+    }
 }

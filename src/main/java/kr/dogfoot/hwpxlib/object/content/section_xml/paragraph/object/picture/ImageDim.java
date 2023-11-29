@@ -49,4 +49,16 @@ public class ImageDim extends HWPXObject {
         this.dimheight = dimheight;
         return this;
     }
+
+    @Override
+    public ImageDim clone() {
+        ImageDim cloned = new ImageDim();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ImageDim from) {
+        this.dimwidth = from.dimwidth;
+        this.dimheight = from.dimheight;
+    }
 }

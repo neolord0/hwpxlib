@@ -63,4 +63,17 @@ public class NoteSpacing extends HWPXObject {
         this.aboveLine = aboveLine;
         return this;
     }
+
+    @Override
+    public NoteSpacing clone() {
+        NoteSpacing cloned = new NoteSpacing();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(NoteSpacing from) {
+        this.betweenNotes = from.betweenNotes;
+        this.belowLine = from.belowLine;
+        this.aboveLine = from.aboveLine;
+    }
 }

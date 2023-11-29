@@ -101,4 +101,19 @@ public class StartNum extends HWPXObject {
         this.equation = equation;
         return this;
     }
+
+    @Override
+    public StartNum clone() {
+        StartNum cloned = new StartNum();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(StartNum from) {
+        this.pageStartsOn = from.pageStartsOn;
+        this.page = from.page;
+        this.pic = from.pic;
+        this.tbl = from.tbl;
+        this.equation = from.equation;
+    }
 }

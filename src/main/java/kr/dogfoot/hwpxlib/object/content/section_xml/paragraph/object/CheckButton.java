@@ -16,4 +16,15 @@ public class CheckButton extends ButtonCore<Button> {
     public ObjectType _objectType() {
         return ObjectType.hp_checkBtn;
     }
+
+    @Override
+    public CheckButton clone() {
+        CheckButton cloned = new CheckButton();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(CheckButton from) {
+        super.copyFrom(from);
+    }
 }

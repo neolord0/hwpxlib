@@ -76,24 +76,35 @@ public class T extends RunItem {
     }
 
     public int countOfItems() {
+        if (itemList == null) {
+            return 0;
+        }
         return itemList.size();
     }
 
     public TItem getItem(int index) {
+        if (itemList == null) {
+            return null;
+        }
+
         return itemList.get(index);
     }
 
     public int getItemIndex(TItem textItem) {
-        int count = itemList.size();
-        for (int index = 0; index < count; index++) {
-            if (itemList.get(index) == textItem) {
-                return index;
+        if (itemList != null) {
+            int count = itemList.size();
+            for (int index = 0; index < count; index++) {
+                if (itemList.get(index) == textItem) {
+                    return index;
+                }
             }
         }
         return -1;
     }
 
     public void addItem(TItem textItem) {
+        preprocess();
+
         itemList.add(textItem);
     }
 
@@ -227,4 +238,26 @@ public class T extends RunItem {
     public Iterable<TItem> items() {
         return itemList;
     }
+
+    @Override
+    public T clone() {
+        T cloned = new T();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(T from) {
+        this.charPrIDRef = from.charPrIDRef;
+        this.onlyText = from.onlyText;
+
+        if (from.itemList != null) {
+            itemList = new ArrayList<>();
+            for (TItem item : from.itemList) {
+                itemList.add((TItem) item.clone());
+            }
+        } else {
+            itemList = null;
+        }
+    }
 }
+

@@ -74,4 +74,19 @@ public class RenderingInfo extends SwitchableObject {
     public Iterable<Matrix> matrices() {
         return matrixList;
     }
+
+    @Override
+    public RenderingInfo clone() {
+        RenderingInfo cloned = new RenderingInfo();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(RenderingInfo from) {
+        for (Matrix matrix : from.matrixList) {
+            matrixList.add(matrix.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

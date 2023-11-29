@@ -98,4 +98,27 @@ public class PagePr extends SwitchableObject {
     public void removeMargin() {
         margin = null;
     }
+
+    @Override
+    public PagePr clone() {
+        PagePr cloned = new PagePr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(PagePr from) {
+        this.landscape = from.landscape;
+        this.width = from.width;
+        this.height = from.height;
+        this.gutterType = from.gutterType;
+
+        if (from.margin != null) {
+            margin = from.margin.clone();
+        } else {
+            margin = null;
+        }
+
+        super.copyFrom(from);
+    }
 }
+

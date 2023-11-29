@@ -57,4 +57,17 @@ public class Point extends HWPXObject {
         this.type = type;
         return this;
     }
+
+    @Override
+    public Point clone() {
+        Point cloned = new Point();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Point from) {
+        this.x = from.x;
+        this.y = from.y;
+        this.type = from.type;
+    }
 }

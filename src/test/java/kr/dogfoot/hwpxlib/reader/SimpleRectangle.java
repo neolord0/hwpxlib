@@ -23,8 +23,8 @@ public class SimpleRectangle {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleRectangle.hwpx");
-        Rectangle rectangle = (Rectangle) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
+        Rectangle rectangle = (Rectangle) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(rectangle);
         Assert.assertEquals(rectangle.id(), "1143196392");
         Assert.assertEquals(rectangle.zOrder().intValue(), 0);

@@ -11,6 +11,17 @@ public class ParameterSet extends ParameterListCore<ParameterSet> {
     public ObjectType _objectType() {
         return ObjectType.hp_parameterset;
     }
+
+    @Override
+    public ParameterSet clone() {
+        ParameterSet cloned = new ParameterSet();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ParameterSet from) {
+        super.copyFrom(from);
+    }
 }
 
 

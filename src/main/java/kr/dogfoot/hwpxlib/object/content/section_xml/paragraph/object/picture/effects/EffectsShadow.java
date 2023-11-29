@@ -185,4 +185,41 @@ public class EffectsShadow extends SwitchableObject {
     public void removeEffectsColor() {
         effectsColor = null;
     }
+
+    @Override
+    public EffectsShadow clone() {
+        EffectsShadow cloned = new EffectsShadow();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EffectsShadow from) {
+        this.style = from.style;
+        this.alpha = from.alpha;
+        this.radius = from.radius;
+        this.direction = from.direction;
+        this.distance = from.distance;
+        this.alignStyle = from.alignStyle;
+        this.rotationStyle = from.rotationStyle;
+
+        if (from.skew != null) {
+            skew = from.skew.clone();
+        } else {
+            skew = null;
+        }
+
+        if (from.scale != null) {
+            scale = from.scale.clone();
+        } else {
+            scale = null;
+        }
+
+        if (from.effectsColor != null) {
+            effectsColor = from.effectsColor.clone();
+        } else {
+            effectsColor = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

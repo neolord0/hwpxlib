@@ -58,5 +58,18 @@ public abstract class AutoNumNewNumCore<ChildType> extends CtrlItem {
     public void removeAutoNumFormat() {
         autoNumFormat = null;
     }
+
+    protected void copyFrom(AutoNumNewNumCore from) {
+        this.num = from.num;
+        this.numType = from.numType;
+
+        if (from.autoNumFormat != null) {
+            autoNumFormat = from.autoNumFormat.clone();
+        } else {
+            autoNumFormat = null;
+        }
+
+        super.copyFrom(from);
+    }
 }
 

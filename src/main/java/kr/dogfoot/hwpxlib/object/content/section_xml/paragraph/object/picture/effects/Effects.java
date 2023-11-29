@@ -79,4 +79,39 @@ public class Effects extends SwitchableObject {
     public void removeReflection() {
         reflection = null;
     }
+
+    @Override
+    public Effects clone() {
+        Effects cloned = new Effects();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Effects from) {
+        if (from.shadow != null) {
+            shadow = from.shadow.clone();
+        } else {
+            shadow = null;
+        }
+
+        if (from.glow != null) {
+            glow = from.glow.clone();
+        } else {
+            glow = null;
+        }
+
+        if  (from.softEdge != null) {
+            softEdge = from.softEdge.clone();
+        } else {
+            softEdge = null;
+        }
+
+        if (from.reflection != null) {
+            reflection = from.reflection.clone();
+        } else {
+            reflection = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -40,4 +40,16 @@ public class EncryptionStartKeyGeneration extends HWPXObject {
         this.keySize = keySize;
         return this;
     }
+
+    @Override
+    public EncryptionStartKeyGeneration clone() {
+        EncryptionStartKeyGeneration cloned = new EncryptionStartKeyGeneration();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EncryptionStartKeyGeneration from) {
+        this.startKeyGenerationName = from.startKeyGenerationName;
+        this.keySize = from.keySize;
+    }
 }

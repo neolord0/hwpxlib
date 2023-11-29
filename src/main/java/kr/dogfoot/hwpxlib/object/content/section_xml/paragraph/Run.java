@@ -258,7 +258,35 @@ public class Run extends SwitchableObject {
         itemList.remove(position);
     }
 
+    public void removeAllRunItems() {
+        itemList.clear();
+    }
+
     public Iterable<RunItem> runItems() {
         return itemList;
+    }
+
+    @Override
+    public Run clone() {
+        Run cloned = new Run();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Run from) {
+        this.charPrIDRef = from.charPrIDRef;
+        this.charTcId = from.charTcId;
+
+        if (from.secPr != null) {
+            secPr = from.secPr.clone();
+        } else {
+            secPr = null;
+        }
+
+        for (RunItem runItem : from.itemList) {
+            itemList.add((RunItem) runItem.clone());
+        }
+
+        super.copyFrom(from);
     }
 }

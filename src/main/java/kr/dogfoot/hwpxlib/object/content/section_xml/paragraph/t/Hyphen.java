@@ -14,4 +14,15 @@ public class Hyphen extends TItem {
     public ObjectType _objectType() {
         return ObjectType.hp_hyphen;
     }
+
+    @Override
+    public Hyphen clone() {
+        Hyphen cloned = new Hyphen();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Hyphen from) {
+        // nothing
+    }
 }

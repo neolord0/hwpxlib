@@ -47,4 +47,26 @@ public class FootNotePr extends NoteShape {
         placement = null;
     }
 
+    @Override
+    public FootNotePr clone() {
+        FootNotePr cloned = new FootNotePr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FootNotePr from) {
+        if (from.numbering != null) {
+            numbering = from.numbering.clone();
+        } else {
+            numbering = null;
+        }
+
+        if (from.placement != null) {
+            placement = from.placement.clone();
+        } else {
+            placement = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -49,4 +49,16 @@ public class AutoSpacing extends HWPXObject {
         this.eAsianNum = eAsianNum;
         return this;
     }
+
+    @Override
+    public AutoSpacing clone() {
+        AutoSpacing cloned = new AutoSpacing();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(AutoSpacing from) {
+        this.eAsianEng = from.eAsianEng;
+        this.eAsianNum = from.eAsianNum;
+    }
 }

@@ -95,4 +95,19 @@ public class AutoNumFormat extends HWPXObject {
         this.supscript = supscript;
         return this;
     }
+
+    @Override
+    public AutoNumFormat clone() {
+        AutoNumFormat cloned = new AutoNumFormat();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(AutoNumFormat from) {
+        this.type = from.type;
+        this.userChar = from.userChar;
+        this.prefixChar = from.prefixChar;
+        this.suffixChar = from.suffixChar;
+        this.supscript = from.supscript;
+    }
 }

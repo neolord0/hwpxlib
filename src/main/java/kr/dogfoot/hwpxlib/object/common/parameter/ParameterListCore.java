@@ -99,4 +99,14 @@ public abstract class ParameterListCore<ChildType> extends SwitchableObject {
     public Iterable<Param> params() {
         return parameterList;
     }
+
+    protected void copyFrom(ParameterListCore from) {
+        this.name = from.name;
+
+        int count = from.parameterList.size();
+        for (int index = 0; index < count; index++) {
+             Param param = (Param) from.parameterList.get(index);
+             parameterList.add((Param) param.clone());
+        }
+    }
 }

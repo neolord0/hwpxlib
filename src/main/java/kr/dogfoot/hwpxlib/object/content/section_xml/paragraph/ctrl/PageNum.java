@@ -68,4 +68,20 @@ public class PageNum extends CtrlItem {
         this.sideChar = sideChar;
         return this;
     }
+
+    @Override
+    public PageNum clone() {
+        PageNum cloned = new PageNum();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(PageNum from) {
+        this.pos = from.pos;
+        this.formatType = from.formatType;
+        this.sideChar = from.sideChar;
+
+        super.copyFrom(from);
+    }
 }
+

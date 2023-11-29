@@ -187,4 +187,26 @@ public class SubList extends ParaListCore {
         this.hasNumRef = hasNumRef;
         return this;
     }
+
+    @Override
+    public SubList clone() {
+        SubList cloned = new SubList();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(SubList from) {
+        this.id = from.id;
+        this.textDirection = from.textDirection;
+        this.lineWrap = from.lineWrap;
+        this.vertAlign = from.vertAlign;
+        this.linkListIDRef = from.linkListIDRef;
+        this.linkListNextIDRef = from.linkListNextIDRef;
+        this.textWidth = from.textWidth;
+        this.textHeight = from.textHeight;
+        this.hasTextRef = from.hasTextRef;
+        this.hasNumRef = from.hasNumRef;
+
+        super.copyFrom(from);
+    }
 }

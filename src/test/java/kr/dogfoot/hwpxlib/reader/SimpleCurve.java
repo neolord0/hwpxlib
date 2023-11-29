@@ -25,8 +25,8 @@ public class SimpleCurve {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleCurve.hwpx");
-        Curve curve = (Curve) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
+        Curve curve = (Curve) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(curve);
         Assert.assertEquals(curve.id(), "1143293629");
         Assert.assertEquals(curve.zOrder().intValue(), 0);

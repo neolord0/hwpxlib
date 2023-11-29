@@ -186,4 +186,27 @@ public class Gradation extends SwitchableObject {
     public Iterable<Color> colors() {
         return colorList;
     }
+
+    @Override
+    public Gradation clone() {
+        Gradation cloned = new Gradation();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Gradation from) {
+        this.type = from.type;
+        this.angle = from.angle;
+        this.centerX = from.centerX;
+        this.centerY = from.centerY;
+        this.step = from.step;
+        this.stepCenter = from.stepCenter;
+        this.alpha = from.alpha;
+
+        for (Color color : from.colorList) {
+            colorList.add(color.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

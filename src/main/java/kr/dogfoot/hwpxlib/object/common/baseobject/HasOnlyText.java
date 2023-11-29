@@ -29,5 +29,17 @@ public class HasOnlyText extends HWPXObject {
         buffer.append(text);
         return this;
     }
+
+    public HasOnlyText clone() {
+        HasOnlyText cloned = new HasOnlyText(this._objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(HasOnlyText from) {
+        addText(from.text());
+    }
 }
+
+
 

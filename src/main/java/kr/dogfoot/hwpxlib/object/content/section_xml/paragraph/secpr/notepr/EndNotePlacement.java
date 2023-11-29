@@ -50,4 +50,16 @@ public class EndNotePlacement extends HWPXObject {
         this.beneathText = beneathText;
         return this;
     }
+
+    @Override
+    public EndNotePlacement clone() {
+        EndNotePlacement cloned = new EndNotePlacement();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EndNotePlacement from) {
+        this.place = from.place;
+        this.beneathText = from.beneathText;
+    }
 }

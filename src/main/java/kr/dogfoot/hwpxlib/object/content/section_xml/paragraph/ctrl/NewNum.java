@@ -14,4 +14,15 @@ public class NewNum extends AutoNumNewNumCore<NewNum> {
     public ObjectType _objectType() {
         return ObjectType.hp_newNum;
     }
+
+    @Override
+    public NewNum clone() {
+        NewNum cloned = new NewNum();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(NewNum from) {
+        super.copyFrom(from);
+    }
 }

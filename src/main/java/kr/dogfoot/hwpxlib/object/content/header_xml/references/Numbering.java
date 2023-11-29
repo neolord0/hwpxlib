@@ -97,4 +97,22 @@ public class Numbering extends SwitchableObject {
     public Iterable<ParaHead> paraHeads() {
         return paraHeadList;
     }
+
+    @Override
+    public Numbering clone() {
+        Numbering cloned = new Numbering();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Numbering from) {
+        this.id = from.id;
+        this.start = from.start;
+
+        for (ParaHead paraHead : from.paraHeadList) {
+            paraHeadList.add(paraHead.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

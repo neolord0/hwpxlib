@@ -49,4 +49,23 @@ public class ImgBrush extends SwitchableObject {
     public void removeImg() {
         img = null;
     }
+
+    @Override
+    public ImgBrush clone() {
+        ImgBrush cloned = new ImgBrush();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ImgBrush from) {
+        this.mode = from.mode;
+
+        if (from.img != null) {
+            img = from.img.clone();
+        } else {
+            img = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

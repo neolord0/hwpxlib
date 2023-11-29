@@ -232,4 +232,70 @@ public class BorderFill extends SwitchableObject {
     public void removeFillBrush() {
         fillBrash = null;
     }
+
+    @Override
+    public BorderFill clone() {
+        BorderFill cloned = new BorderFill();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+
+    public void copyFrom(BorderFill from) {
+        this.id = from.id;
+        this.threeD = from.threeD;
+        this.shadow = from.shadow;
+        this.centerLine = from.centerLine;
+        this.breakCellSeparateLine = from.breakCellSeparateLine;
+
+        if (from.slash != null) {
+            slash = from.slash.clone();
+        } else {
+            slash = null;
+        }
+
+        if (from.backSlash != null) {
+            backSlash = from.backSlash.clone();
+        } else {
+            backSlash = null;
+        }
+
+        if (from.leftBorder != null) {
+            leftBorder = from.leftBorder.clone();
+        } else {
+            leftBorder = null;
+        }
+
+        if (from.rightBorder != null) {
+            rightBorder = from.rightBorder.clone();
+        } else {
+            rightBorder = null;
+        }
+
+        if (from.topBorder != null) {
+            topBorder = from.topBorder.clone();
+        } else {
+            topBorder = null;
+        }
+
+        if (from.bottomBorder != null) {
+            bottomBorder = from.bottomBorder.clone();
+        } else {
+            bottomBorder = null;
+        }
+
+        if (from.diagonal != null) {
+            diagonal = from.diagonal.clone();
+        } else {
+            diagonal = null;
+        }
+
+        if (from.fillBrash != null) {
+            fillBrash = from.fillBrash.clone();
+        } else {
+            fillBrash = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

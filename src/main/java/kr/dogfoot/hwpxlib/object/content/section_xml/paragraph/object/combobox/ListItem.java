@@ -24,6 +24,7 @@ public class ListItem extends HWPXObject {
         return ObjectType.hp_listItem;
     }
 
+
     public String displayText() {
         return displayText;
     }
@@ -48,5 +49,17 @@ public class ListItem extends HWPXObject {
     public ListItem valueAnd(String value) {
         this.value = value;
         return this;
+    }
+
+    @Override
+    public ListItem clone() {
+        ListItem cloned = new ListItem();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ListItem from) {
+        this.displayText = from.displayText;
+        this.value = from.value;
     }
 }

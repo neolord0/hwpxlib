@@ -55,6 +55,7 @@ public class FieldBegin extends CtrlItem {
         return ObjectType.hp_fieldBegin;
     }
 
+
     public String id() {
         return id;
     }
@@ -169,4 +170,37 @@ public class FieldBegin extends CtrlItem {
     public void removeSubList() {
         subList = null;
     }
+
+    @Override
+    public FieldBegin clone() {
+        FieldBegin cloned = new FieldBegin();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FieldBegin from) {
+        this.id = from.id;
+        this.type = from.type;
+        this.name = from.name;
+        this.editable = from.editable;
+        this.dirty = from.dirty;
+        this.zorder = from.zorder;
+        this.fieldid = from.fieldid;
+
+        if (from.parameters != null) {
+            parameters = from.parameters.clone();
+        } else {
+            parameters = null;
+        }
+
+        if (from.subList != null) {
+            subList = from.subList.clone();
+        } else {
+            subList = null;
+        }
+
+        super.copyFrom(from);
+    }
 }
+
+

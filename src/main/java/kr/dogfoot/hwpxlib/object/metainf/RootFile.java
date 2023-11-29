@@ -26,6 +26,7 @@ public class RootFile extends HWPXObject {
         return ObjectType.ocf_rootfile;
     }
 
+
     public String fullPath() {
         return fullPath;
     }
@@ -62,5 +63,23 @@ public class RootFile extends HWPXObject {
 
     public void removeAttachedFile() {
         attachedFile = null;
+    }
+
+    @Override
+    public RootFile clone() {
+        RootFile cloned = new RootFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(RootFile from) {
+        this.fullPath = from.fullPath;
+        this.mediaType = from.mediaType;
+
+        if (from.attachedFile != null) {
+            attachedFile = from.attachedFile.clone();
+        } else {
+            attachedFile = null;
+        }
     }
 }

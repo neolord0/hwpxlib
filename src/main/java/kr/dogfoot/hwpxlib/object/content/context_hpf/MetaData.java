@@ -84,4 +84,31 @@ public class MetaData extends SwitchableObject {
     public Iterable<Meta> metas() {
         return metaList;
     }
+
+    @Override
+    public MetaData clone() {
+        MetaData cloned = new MetaData();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(MetaData from) {
+        if (from.title != null) {
+            title = from.title.clone();
+        } else {
+            title = null;
+        }
+
+        if (from.language != null) {
+            language = from.language.clone();
+        } else {
+            language = null;
+        }
+
+        for (Meta meta : from.metaList) {
+            metaList.add(meta.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

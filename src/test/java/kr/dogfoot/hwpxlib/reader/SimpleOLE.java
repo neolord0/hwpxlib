@@ -22,6 +22,7 @@ public class SimpleOLE {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleOLE.hwpx");
+
         OLE ole = (OLE) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(ole);
         Assert.assertEquals(ole.id(), "1138838690");

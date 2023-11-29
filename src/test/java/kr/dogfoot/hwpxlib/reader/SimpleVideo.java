@@ -19,8 +19,8 @@ public class SimpleVideo {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleVideo.hwpx");
-        Video video = (Video) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
+        Video video = (Video) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(video);
         Assert.assertEquals(video.id(), "1138073078");
         Assert.assertEquals(video.zOrder().intValue(), 0);

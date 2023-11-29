@@ -171,4 +171,31 @@ public class Edit extends FormObject<Edit> {
     public void removeText() {
         text = null;
     }
+
+
+    @Override
+    public Edit clone() {
+        Edit cloned = new Edit();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Edit from) {
+        this.multiLine = from.multiLine;
+        this.passwordChar = from.passwordChar;
+        this.maxLength = from.maxLength;
+        this.scrollBars = from.scrollBars;
+        this.tabKeyBehavior = from.tabKeyBehavior;
+        this.numOnly = from.numOnly;
+        this.readOnly = from.readOnly;
+        this.alignText = from.alignText;
+
+        if (from.text != null) {
+            text = from.text.clone();
+        } else {
+            text = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

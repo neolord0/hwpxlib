@@ -30,4 +30,17 @@ public class PageNumCtrl extends CtrlItem {
         this.pageStartsOn = pageStartsOn;
         return this;
     }
+
+    @Override
+    public PageNumCtrl clone() {
+        PageNumCtrl cloned = new PageNumCtrl();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(PageNumCtrl from) {
+        this.pageStartsOn = from.pageStartsOn;
+
+        super.copyFrom(from);
+    }
 }

@@ -195,4 +195,37 @@ public class Para extends SwitchableObject {
     public void removeLineSegArray() {
         lineSegArray = null;
     }
+
+    @Override
+    public Para clone() {
+        Para cloned = new Para();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Para from) {
+        this.id = from.id;
+        this.paraPrIDRef = from.paraPrIDRef;
+        this.styleIDRef = from.styleIDRef;
+        this.pageBreak = from.pageBreak;
+        this.columnBreak = from.columnBreak;
+        this.merged = from.merged;
+        this.paraTcId = from.paraTcId;
+
+        for (Run run : from.runList) {
+            runList.add(run.clone());
+        }
+
+        if (from.lineSegArray != null) {
+            createLineSegArray();;
+            for (LineSeg lineSeg : from.lineSegArray.items()) {
+                lineSegArray.add(lineSeg.clone());
+            }
+        } else {
+            removeLineSegArray();
+        }
+
+        super.copyFrom(from);
+    }
+
 }

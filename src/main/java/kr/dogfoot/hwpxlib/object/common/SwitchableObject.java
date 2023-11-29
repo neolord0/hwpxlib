@@ -23,4 +23,14 @@ public abstract class SwitchableObject extends HWPXObject {
         switchList.add(newSwitch);
         return newSwitch;
     }
+
+    protected void copyFrom(SwitchableObject from) {
+        if (from.switchList != null) {
+            for (Switch sw : from.switchList) {
+                addNewSwitch().copyFrom(sw);
+            }
+        } else {
+            switchList = null;
+        }
+    }
 }

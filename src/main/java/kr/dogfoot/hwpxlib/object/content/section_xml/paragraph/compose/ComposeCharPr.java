@@ -32,4 +32,15 @@ public class ComposeCharPr extends HWPXObject {
         this.prIDRef = prIDRef;
         return this;
     }
+
+    @Override
+    public ComposeCharPr clone() {
+        ComposeCharPr cloned = new ComposeCharPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ComposeCharPr from) {
+        this.prIDRef = from.prIDRef;
+    }
 }

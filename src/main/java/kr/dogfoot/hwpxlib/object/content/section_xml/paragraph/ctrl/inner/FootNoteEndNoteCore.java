@@ -74,4 +74,18 @@ public abstract class FootNoteEndNoteCore<ChildType> extends CtrlItem {
     public void removeSubList() {
         subList = null;
     }
+
+    protected void copyFrom(FootNoteEndNoteCore from) {
+        this.number = from.number;
+        this.suffixChar = from.suffixChar;
+        this.instId = from.instId;
+
+        if (from.subList != null) {
+            subList = from.subList.clone();
+        } else {
+            subList = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

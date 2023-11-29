@@ -156,4 +156,48 @@ public abstract class ShapeComponent<ChildType> extends ShapeObject<ChildType> {
     public void removeRenderingInfo() {
         renderingInfo = null;
     }
+
+    protected void copyFrom(ShapeComponent from) {
+        this.href = from.href;
+        this.groupLevel = from.groupLevel;
+        this.instid = from.instid;
+
+        if (from.offset != null) {
+            offset = from.offset.clone();
+        } else {
+            offset = null;
+        }
+
+        if (from.orgSz != null) {
+            orgSz = from.orgSz.clone();
+        } else {
+            orgSz = null;
+        }
+
+        if (from.curSz != null) {
+            curSz = from.curSz.clone();
+        } else {
+            curSz = null;
+        }
+
+        if (from.flip != null) {
+            flip = from.flip.clone();
+        } else {
+            flip = null;
+        }
+
+        if (from.rotationInfo != null) {
+            rotationInfo = from.rotationInfo.clone();
+        } else {
+            rotationInfo = null;
+        }
+
+        if (from.renderingInfo != null) {
+            renderingInfo = from.renderingInfo.clone();
+        } else {
+            renderingInfo = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

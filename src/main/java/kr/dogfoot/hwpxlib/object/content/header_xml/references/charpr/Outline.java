@@ -33,4 +33,15 @@ public class Outline extends HWPXObject {
         this.type = type;
         return this;
     }
+
+    @Override
+    public Outline clone() {
+        Outline cloned = new Outline();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Outline from) {
+        this.type = from.type;
+    }
 }

@@ -406,4 +406,81 @@ public class SecPr extends SwitchableObject {
     public void removePresentation() {
         presentation = null;
     }
+
+    @Override
+    public SecPr clone() {
+        SecPr cloned = new SecPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(SecPr from) {
+        this.id = from.id;
+        this.textDirection = from.textDirection;
+        this.spaceColumns = from.spaceColumns;
+        this.tabStop = from.tabStop;
+        this.tabStopVal = from.tabStopVal;
+        this.tabStopUnit = from.tabStopUnit;
+        this.outlineShapeIDRef = from.outlineShapeIDRef;
+        this.memoShapeIDRef = from.memoShapeIDRef;
+        this.textVerticalWidthHead = from.textVerticalWidthHead;
+
+        if (from.grid != null) {
+            grid = from.grid.clone();
+        } else {
+            grid = null;
+        }
+
+        if (from.startNum != null) {
+            startNum = from.startNum.clone();
+        } else {
+            startNum = null;
+        }
+
+        if (from.visibility != null) {
+            visibility = from.visibility.clone();
+        } else {
+            visibility = null;
+        }
+
+        if (from.lineNumberShape != null) {
+            lineNumberShape = from.lineNumberShape.clone();
+        } else {
+            lineNumberShape = null;
+        }
+
+        if (from.pagePr != null) {
+            pagePr = from.pagePr.clone();
+        } else {
+            pagePr = null;
+        }
+
+        if (from.footNotePr != null) {
+            footNotePr = from.footNotePr.clone();
+        } else {
+            footNotePr = null;
+        }
+
+        if (from.endNotePr != null) {
+            endNotePr = from.endNotePr.clone();
+        } else {
+            endNotePr = null;
+        }
+
+        for (PageBorderFill pageBorderFill : from.pageBorderFillList) {
+            pageBorderFillList.add(pageBorderFill.clone());
+        }
+
+        for (MasterPage masterPage : from.masterPageList) {
+            masterPageList.add(masterPage.clone());
+        }
+
+        if (from.presentation != null) {
+            presentation = from.presentation.clone();
+        } else {
+            presentation = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

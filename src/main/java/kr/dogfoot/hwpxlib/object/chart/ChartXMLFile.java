@@ -39,4 +39,17 @@ public class ChartXMLFile extends SwitchableObject {
         this.data = data;
         return this;
     }
+
+    public ChartXMLFile clone() {
+        ChartXMLFile cloned = new ChartXMLFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ChartXMLFile from) {
+        this.path = from.path;
+        this.data = from.data;
+
+        super.copyFrom(from);
+    }
 }

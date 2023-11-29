@@ -50,4 +50,16 @@ public class FootNotePlacement extends HWPXObject {
         this.beneathText = beneathText;
         return this;
     }
+
+    @Override
+    public FootNotePlacement clone() {
+        FootNotePlacement cloned = new FootNotePlacement();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FootNotePlacement from) {
+        this.place = from.place;
+        this.beneathText = from.beneathText;
+    }
 }

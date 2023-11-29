@@ -71,4 +71,17 @@ public class Border extends HWPXObject {
         this.color = color;
         return this;
     }
+
+    @Override
+    public Border clone() {
+        Border cloned = new Border(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Border from) {
+        this.type = from.type;
+        this.width = from.width;
+        this.color = from.color;
+    }
 }

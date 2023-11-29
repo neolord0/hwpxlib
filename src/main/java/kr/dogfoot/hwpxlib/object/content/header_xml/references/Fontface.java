@@ -72,4 +72,21 @@ public class Fontface extends SwitchableObject {
     public Iterable<Font> fonts() {
         return fontList;
     }
+
+    @Override
+    public Fontface clone() {
+        Fontface cloned = new Fontface();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Fontface from) {
+        this.lang = from.lang;
+
+        for (Font font : from.fontList) {
+            fontList.add(font.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

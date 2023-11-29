@@ -19,6 +19,7 @@ public class SimpleContainer {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleContainer.hwpx");
+
         Container container = (Container) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(container);
         Assert.assertEquals(container.id(), "1138906163");

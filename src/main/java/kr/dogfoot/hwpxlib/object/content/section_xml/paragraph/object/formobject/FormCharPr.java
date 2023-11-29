@@ -80,4 +80,18 @@ public class FormCharPr extends HWPXObject {
         this.wordWrap = wordWrap;
         return this;
     }
+
+    @Override
+    public FormCharPr clone() {
+        FormCharPr cloned = new FormCharPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FormCharPr from) {
+        this.charPrIDRef = from.charPrIDRef;
+        this.followContext = from.followContext;
+        this.autoSz = from.autoSz;
+        this.wordWrap = from.wordWrap;
+    }
 }

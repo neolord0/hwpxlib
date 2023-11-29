@@ -24,4 +24,17 @@ public class Case extends InSwitchObject {
         this.requiredNamespace = requiredNamespace;
         return this;
     }
+
+    @Override
+    public Case clone() {
+        Case cloned = new Case();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Case from) {
+        requiredNamespace = from.requiredNamespace;
+
+        super.copyForm(from);
+    }
 }

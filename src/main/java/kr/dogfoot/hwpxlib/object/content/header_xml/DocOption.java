@@ -14,6 +14,7 @@ public class DocOption extends SwitchableObject {
         return ObjectType.hh_docOption;
     }
 
+
     public LinkInfo linkinfo() {
         return linkinfo;
     }
@@ -26,6 +27,23 @@ public class DocOption extends SwitchableObject {
     public DocOption removeLinkinfo() {
         linkinfo = null;
         return this;
+    }
+
+    @Override
+    public DocOption clone() {
+        DocOption cloned = new DocOption();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(DocOption from) {
+        if (from.linkinfo != null) {
+            linkinfo = from.linkinfo.clone();
+        } else {
+            linkinfo = null;
+        }
+
+        super.copyFrom(from);
     }
 
 }

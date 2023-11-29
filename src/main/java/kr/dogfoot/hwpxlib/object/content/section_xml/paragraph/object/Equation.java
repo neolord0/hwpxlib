@@ -135,4 +135,28 @@ public class Equation extends ShapeObject<Equation> {
     public void removeScript() {
         script = null;
     }
+
+    @Override
+    public Equation clone() {
+        Equation cloned = new Equation();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Equation from) {
+        this.version = from.version;
+        this.baseLine = from.baseLine;
+        this.textColor = from.textColor;
+        this.baseUnit = from.baseUnit;
+        this.lineMode = from.lineMode;
+        this.font = from.font;
+
+        if (from.script != null) {
+            script = from.script.clone();
+        } else {
+            script = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

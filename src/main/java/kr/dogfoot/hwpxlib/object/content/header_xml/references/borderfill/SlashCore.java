@@ -31,7 +31,6 @@ public class SlashCore extends HWPXObject {
         return _objectType;
     }
 
-
     public SlashType type() {
         return type;
     }
@@ -69,5 +68,18 @@ public class SlashCore extends HWPXObject {
     public SlashCore isCounterAnd(Boolean isCounter) {
         this.isCounter = isCounter;
         return this;
+    }
+
+    @Override
+    public SlashCore clone() {
+        SlashCore cloned = new SlashCore(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(SlashCore from) {
+        this.type = from.type;
+        this.Crooked = from.Crooked;
+        this.isCounter = from.isCounter;
     }
 }

@@ -150,4 +150,60 @@ public class Picture extends ShapeComponent<Picture> {
     public void removeEffects() {
         effects = null;
     }
+
+    @Override
+    public Picture clone() {
+        Picture cloned = new Picture();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Picture from) {
+        this.reverse = from.reverse;
+
+        if (from.lineShape != null) {
+            lineShape = from.lineShape.clone();
+        } else {
+            lineShape = null;
+        }
+
+        if (from.imgRect != null) {
+            imgRect = from.imgRect.clone();
+        } else {
+            imgRect = null;
+        }
+
+        if (from.imgClip != null) {
+            imgClip = from.imgClip.clone();
+        } else {
+            imgClip = null;
+        }
+
+        if (from.inMargin != null) {
+            inMargin = from.inMargin.clone();
+        } else {
+            inMargin = null;
+        }
+
+        if (from.imgDim != null) {
+            imgDim = from.imgDim.clone();
+        } else {
+            imgDim = null;
+        }
+
+        if (from.img != null) {
+            img = from.img.clone();
+        } else {
+            img = null;
+        }
+
+        if (from.effects != null) {
+            effects = from.effects.clone();
+        } else {
+            effects = null;
+        }
+
+        super.copyFrom(from);
+    }
 }
+

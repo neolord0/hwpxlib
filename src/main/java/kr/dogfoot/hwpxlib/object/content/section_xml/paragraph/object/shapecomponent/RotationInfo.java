@@ -29,6 +29,7 @@ public class RotationInfo extends HWPXObject {
         return ObjectType.hp_rotationInfo;
     }
 
+
     public Short angle() {
         return angle;
     }
@@ -79,5 +80,19 @@ public class RotationInfo extends HWPXObject {
     public RotationInfo rotateimageAnd(Boolean rotateimage) {
         this.rotateimage = rotateimage;
         return this;
+    }
+
+    @Override
+    public RotationInfo clone() {
+        RotationInfo cloned = new RotationInfo();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(RotationInfo from) {
+        this.angle = from.angle;
+        this.centerX = from.centerX;
+        this.centerY = from.centerY;
+        this.rotateimage = from.rotateimage;
     }
 }

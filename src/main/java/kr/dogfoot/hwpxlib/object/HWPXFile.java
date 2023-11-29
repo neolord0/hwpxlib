@@ -88,4 +88,32 @@ public class HWPXFile extends HWPXObject {
     public ObjectList<ChartXMLFile> chartXMLFileList() {
         return chartXMLFileList;
     }
+
+    public HWPXFile clone() {
+        HWPXFile cloned = new HWPXFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(HWPXFile from) {
+        versionXMLFile.copyFrom(from.versionXMLFile);
+        manifestXMLFile.copyFrom(from.manifestXMLFile);
+        containerXMLFile.copyFrom(from.containerXMLFile);
+        contentHPFFile.copyFrom(from.contentHPFFile);
+
+        headerXMLFile.copyFrom(from.headerXMLFile);
+        for (MasterPageXMLFile masterPageXMLFile : from.masterPageXMLFileList.items()) {
+            masterPageXMLFileList.add(masterPageXMLFile.clone());
+        }
+        for (SectionXMLFile sectionXMLFile : from.sectionXMLFileList.items()) {
+            sectionXMLFileList.add(sectionXMLFile.clone());
+        }
+        settingsXMLFile.copyFrom(from.settingsXMLFile);
+        for (HistoryXMLFile historyXMLFile : from.historyXMLFileList.items()) {
+            historyXMLFileList.add(historyXMLFile.clone());
+        }
+        for (ChartXMLFile chartXMLFile : from.chartXMLFileList.items()) {
+            chartXMLFileList.add(chartXMLFile.clone());
+        }
+   }
 }

@@ -82,4 +82,38 @@ public class ConnectLine extends DrawingObject<ConnectLine> {
     public void removeControlPoints() {
         controlPoints = null;
     }
+
+    @Override
+    public ConnectLine clone() {
+        ConnectLine cloned = new ConnectLine();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ConnectLine from) {
+        this.type = from.type;
+
+        if (from.startPt != null) {
+            startPt = from.startPt.clone();
+        } else {
+            startPt = null;
+        }
+
+        if (from.endPt != null) {
+            endPt = from.endPt.clone();
+        } else {
+            endPt = null;
+        }
+
+        if (from.controlPoints != null) {
+            createControlPoints();
+            for (Point point : from.controlPoints.items()) {
+                controlPoints.add(point.clone());
+            }
+        } else {
+            removeControlPoints();
+        }
+
+        super.copyFrom(from);
+    }
 }

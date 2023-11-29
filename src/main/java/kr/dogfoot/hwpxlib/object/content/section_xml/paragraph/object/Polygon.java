@@ -63,4 +63,19 @@ public class Polygon extends DrawingObject<Polygon> {
     public Iterable<Point> pts() {
         return ptList;
     }
+
+    @Override
+    public Polygon clone() {
+        Polygon cloned = new Polygon();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Polygon from) {
+        for (Point pt : from.ptList) {
+            ptList.add(pt.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -154,4 +154,22 @@ public class MemoPr extends HWPXObject {
         this.lineWidth = lineWidth;
         return this;
     }
+
+    @Override
+    public MemoPr clone() {
+        MemoPr cloned = new MemoPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(MemoPr from) {
+        this.id = from.id;
+        this.width = from.width;
+        this.lineType = from.lineType;
+        this.lineColor = from.lineColor;
+        this.fillColor = from.fillColor;
+        this.activeColor = from.activeColor;
+        this.memoType = from.memoType;
+        this.lineWidth = from.lineWidth;
+    }
 }

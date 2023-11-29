@@ -19,6 +19,7 @@ public class SimpleTable {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleTable.hwpx");
+
         Table table = (Table) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertEquals(table.id(), "1137126797");
         Assert.assertEquals(table.zOrder().intValue(), 0);

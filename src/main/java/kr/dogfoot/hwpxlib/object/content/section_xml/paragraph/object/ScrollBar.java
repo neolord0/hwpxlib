@@ -152,4 +152,24 @@ public class ScrollBar extends FormObject<ScrollBar> {
         this.type = type;
         return this;
     }
+
+    @Override
+    public ScrollBar clone() {
+        ScrollBar cloned = new ScrollBar();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ScrollBar from) {
+        this.delay = from.delay;
+        this.largeChange = from.largeChange;
+        this.smallChange = from.smallChange;
+        this.min = from.min;
+        this.max = from.max;
+        this.page = from.page;
+        this.value = from.value;
+        this.type = from.type;
+
+        super.copyFrom(from);
+    }
 }

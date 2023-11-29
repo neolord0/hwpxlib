@@ -14,6 +14,7 @@ public class Color extends HWPXObject {
         return ObjectType.hc_color;
     }
 
+
     public String value() {
         return value;
     }
@@ -25,5 +26,16 @@ public class Color extends HWPXObject {
     public Color valueAnd(String value) {
         this.value = value;
         return this;
+    }
+
+    @Override
+    public Color clone() {
+        Color cloned = new Color();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Color from) {
+        this.value = from.value;
     }
 }

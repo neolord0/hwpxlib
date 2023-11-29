@@ -63,4 +63,33 @@ public class FillBrush extends SwitchableObject {
     public void removeImgBrush() {
         imgBrush = null;
     }
+
+    @Override
+    public FillBrush clone() {
+        FillBrush cloned = new FillBrush();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FillBrush from) {
+        if (from.winBrush != null) {
+            winBrush = from.winBrush.clone();
+        } else {
+            winBrush = null;
+        }
+
+        if (from.gradation != null) {
+            gradation = from.gradation.clone();
+        } else {
+            gradation = null;
+        }
+
+        if (from.imgBrush != null) {
+            imgBrush = from.imgBrush.clone();
+        } else {
+            imgBrush = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

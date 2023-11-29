@@ -3,7 +3,6 @@ package kr.dogfoot.hwpxlib.tool.finder.header;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.Bullet;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHead;
 import kr.dogfoot.hwpxlib.tool.finder.Parameter;
 import kr.dogfoot.hwpxlib.tool.finder.comm.FinderBase;
 import kr.dogfoot.hwpxlib.tool.finder.comm.FinderManager;

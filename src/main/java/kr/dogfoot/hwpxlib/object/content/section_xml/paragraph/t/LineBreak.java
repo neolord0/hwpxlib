@@ -14,4 +14,15 @@ public class LineBreak extends TItem {
     public ObjectType _objectType() {
         return ObjectType.hp_lineBreak;
     }
+
+    @Override
+    public LineBreak clone() {
+        LineBreak cloned = new LineBreak();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    private void copyFrom(LineBreak from) {
+        // nothing
+    }
 }

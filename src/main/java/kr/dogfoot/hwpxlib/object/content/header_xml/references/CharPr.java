@@ -395,4 +395,114 @@ public class CharPr extends SwitchableObject {
     public void removeSubscript() {
         subscript = null;
     }
+
+    @Override
+    public CharPr clone() {
+        CharPr cloned = new CharPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(CharPr from) {
+        this.id = from.id;
+        this.height = from.height;
+        this.textColor = from.textColor;
+        this.shadeColor = from.shadeColor;
+        this.useFontSpace = from.useFontSpace;
+        this.useKerning = from.useKerning;
+        this.symMark = from.symMark;
+        this.borderFillIDRef = from.borderFillIDRef;
+
+        if (from.fontRef != null) {
+            fontRef = from.fontRef.clone();
+        } else {
+            fontRef = null;
+        }
+
+        if (from.ratio != null) {
+            ratio = from.ratio.clone();
+        } else {
+            ratio = null;
+        }
+
+        if (from.spacing != null) {
+            spacing = from.spacing.clone();
+        } else {
+            spacing = null;
+        }
+
+        if (from.relSz != null) {
+            relSz = from.relSz.clone();
+        } else {
+            relSz = null;
+        }
+
+        if (from.offset != null) {
+            offset = from.offset.clone();
+        } else {
+            offset = null;
+        }
+
+        if (from.italic != null) {
+            italic = from.italic.clone();
+        } else {
+            italic = null;
+        }
+
+        if (from.bold != null) {
+            bold = from.bold.clone();
+        } else {
+            bold = null;
+        }
+
+        if (from.underline != null) {
+            underline = from.underline.clone();
+        } else {
+            underline = null;
+        }
+
+        if (from.strikeout != null) {
+            strikeout = from.strikeout.clone();
+        } else {
+            strikeout = null;
+        }
+
+        if (from.outline != null) {
+            outline = from.outline.clone();
+        } else {
+            outline = null;
+        }
+
+        if (from.shadow != null) {
+            shadow = from.shadow.clone();
+        } else {
+            shadow = null;
+        }
+
+        if (from.emboss != null) {
+            emboss = from.emboss.clone();
+        } else {
+            emboss = null;
+        }
+
+        if (from.engrave != null) {
+            engrave = from.engrave.clone();
+        } else {
+            engrave = null;
+        }
+
+        if (from.supscript != null) {
+            supscript = from.supscript.clone();
+        } else {
+            supscript = null;
+        }
+
+        if (from.subscript != null) {
+            subscript = from.subscript.clone();
+        } else {
+            subscript = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

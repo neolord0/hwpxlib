@@ -184,4 +184,46 @@ public class EffectsReflection extends SwitchableObject {
     public void removePos() {
         pos = null;
     }
+
+    @Override
+    public EffectsReflection clone() {
+        EffectsReflection cloned = new EffectsReflection();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EffectsReflection from) {
+        this.alignStyle = from.alignStyle;
+        this.radius = from.radius;
+        this.direction = from.direction;
+        this.distance = from.distance;
+        this.rotationStyle = from.rotationStyle;
+        this.fadeDirection = from.fadeDirection;
+
+        if (from.skew != null) {
+            skew = from.skew.clone();
+        } else {
+            skew = null;
+        }
+
+        if (from.scale != null) {
+            scale = from.scale.clone();
+        } else {
+            scale = null;
+        }
+
+        if (from.alpha != null) {
+            alpha = from.alpha.clone();
+        } else {
+            alpha = null;
+        }
+
+        if (from.pos != null) {
+            pos = from.pos.clone();
+        } else {
+            pos = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

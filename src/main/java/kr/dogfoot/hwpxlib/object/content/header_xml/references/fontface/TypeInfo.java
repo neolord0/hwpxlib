@@ -186,4 +186,24 @@ public class TypeInfo extends HWPXObject {
         this.xHeight = xHeight;
         return this;
     }
+
+    @Override
+    public TypeInfo clone() {
+        TypeInfo cloned = new TypeInfo();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TypeInfo from) {
+        this.familyType = from.familyType;
+        this.serifStyle = from.serifStyle;
+        this.weight = from.weight;
+        this.proportion = from.proportion;
+        this.contrast = from.contrast;
+        this.strokeVariation = from.strokeVariation;
+        this.armStyle = from.armStyle;
+        this.letterform = from.letterform;
+        this.midline = from.midline;
+        this.xHeight = from.xHeight;
+    }
 }

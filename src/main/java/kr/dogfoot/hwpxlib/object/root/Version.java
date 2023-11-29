@@ -63,4 +63,18 @@ public class Version {
         this.buildNumber = buildNumber;
         return this;
     }
+
+    @Override
+    public Version clone() {
+        Version cloned = new Version();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Version from) {
+        this.major = from.major;
+        this.minor = from.minor;
+        this.micro = from.micro;
+        this.buildNumber = from.buildNumber;
+    }
 }

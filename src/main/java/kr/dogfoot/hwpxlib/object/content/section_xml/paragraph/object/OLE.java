@@ -136,4 +136,33 @@ public class OLE extends ShapeComponent<OLE> {
     public void removeLineShape() {
         lineShape = null;
     }
+
+    @Override
+    public OLE clone() {
+        OLE cloned = new OLE();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(OLE from) {
+        this.objectType = from.objectType;
+        this.binaryItemIDRef = from.binaryItemIDRef;
+        this.hasMoniker = from.hasMoniker;
+        this.drawAspect = from.drawAspect;
+        this.eqBaseLine = from.eqBaseLine;
+
+        if (from.extent != null) {
+            extent = from.extent.clone();
+        } else {
+            extent = null;
+        }
+
+        if (from.lineShape != null) {
+            lineShape = from.lineShape.clone();
+        } else {
+            lineShape = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

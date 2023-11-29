@@ -84,5 +84,19 @@ public class SubstFont extends HWPXObject {
         this.binaryItemIDRef = binaryItemIDRef;
         return this;
     }
+
+    @Override
+    public SubstFont clone() {
+        SubstFont cloned = new SubstFont();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(SubstFont from) {
+        this.face = from.face;
+        this.type = from.type;
+        this.isEmbedded = from.isEmbedded;
+        this.binaryItemIDRef = from.binaryItemIDRef;
+    }
 }
 

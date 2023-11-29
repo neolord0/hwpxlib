@@ -217,4 +217,53 @@ public class Tc extends SwitchableObject {
     public void removeSubList() {
         subList = null;
     }
+
+    @Override
+    public Tc clone() {
+        Tc cloned = new Tc();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Tc from) {
+        this.name = from.name;
+        this.header = from.header;
+        this.hasMargin = from.hasMargin;
+        this.protect = from.protect;
+        this.editable = from.editable;
+        this.dirty = from.dirty;
+        this.borderFillIDRef = from.borderFillIDRef;
+
+        if (from.cellAddr != null) {
+            cellAddr = from.cellAddr.clone();
+        } else {
+            cellAddr = null;
+        }
+
+        if (from.cellSpan != null) {
+            cellSpan = from.cellSpan.clone();
+        } else {
+            cellSpan = null;
+        }
+
+        if (from.cellSz != null) {
+            cellSz = from.cellSz.clone();
+        } else {
+            cellSz = null;
+        }
+
+        if (from.cellMargin != null) {
+            cellMargin = from.cellMargin.clone();
+        } else {
+            cellMargin = null;
+        }
+
+        if (from.subList != null) {
+            subList = from.subList.clone();
+        } else {
+            subList = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

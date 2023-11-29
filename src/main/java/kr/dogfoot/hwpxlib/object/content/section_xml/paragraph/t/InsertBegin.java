@@ -14,4 +14,15 @@ public class InsertBegin extends TrackChangeCore<InsertBegin> {
     public ObjectType _objectType() {
         return ObjectType.hp_insertBegin;
     }
+
+    @Override
+    public InsertBegin clone() {
+        InsertBegin cloned = new InsertBegin();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(InsertBegin from) {
+        super.copyFrom(from);
+    }
 }

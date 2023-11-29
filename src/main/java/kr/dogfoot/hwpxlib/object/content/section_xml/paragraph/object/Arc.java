@@ -82,4 +82,35 @@ public class Arc extends DrawingObject<Arc> {
     public void removeAx2() {
         ax2 = null;
     }
+
+    @Override
+    public Arc clone() {
+        Arc cloned = new Arc();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Arc from) {
+        this.type = from.type;
+
+        if (from.center != null) {
+            center = from.center.clone();
+        } else {
+            center = null;
+        }
+
+        if (from.ax1 != null) {
+            ax1 = from.ax1.clone();
+        } else {
+            ax1 = null;
+        }
+
+        if (from.ax2 != null) {
+            ax2 = from.ax2.clone();
+        } else {
+            ax2 = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

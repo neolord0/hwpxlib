@@ -48,4 +48,29 @@ public class Indexmark extends CtrlItem {
     public void removeSecondKey() {
         secondKey = null;
     }
+
+    @Override
+    public Indexmark clone() {
+        Indexmark cloned = new Indexmark();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Indexmark from) {
+        if (from.firstKey != null) {
+            firstKey = from.firstKey.clone();
+        } else {
+            firstKey = null;
+        }
+
+        if (from.secondKey != null) {
+            secondKey = from.secondKey.clone();
+        } else {
+            secondKey = null;
+        }
+
+        super.copyFrom(from);
+    }
 }
+
+

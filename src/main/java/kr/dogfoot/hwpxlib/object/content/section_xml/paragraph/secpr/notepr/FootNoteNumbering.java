@@ -50,4 +50,16 @@ public class FootNoteNumbering extends HWPXObject {
         this.newNum = newNum;
         return this;
     }
+
+    @Override
+    public FootNoteNumbering clone() {
+        FootNoteNumbering cloned = new FootNoteNumbering();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FootNoteNumbering from) {
+        this.type = from.type;
+        this.newNum = from.newNum;
+    }
 }

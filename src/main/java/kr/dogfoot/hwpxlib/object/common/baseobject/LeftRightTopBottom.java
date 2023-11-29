@@ -70,4 +70,18 @@ public class LeftRightTopBottom extends HWPXObject {
         this.bottom = bottom;
         return this;
     }
+
+    @Override
+    public LeftRightTopBottom clone() {
+        LeftRightTopBottom cloned = new LeftRightTopBottom(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(LeftRightTopBottom from) {
+        this.left = from.left;
+        this.right = from.right;
+        this.top = from.top;
+        this.bottom = from.bottom;
+    }
 }

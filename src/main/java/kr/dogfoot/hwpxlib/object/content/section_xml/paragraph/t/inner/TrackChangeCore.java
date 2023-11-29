@@ -45,7 +45,6 @@ public abstract class TrackChangeCore<ChildType> extends TItem {
         return (ChildType) this;
     }
 
-
     public Boolean paraend() {
         return paraend;
     }
@@ -57,5 +56,11 @@ public abstract class TrackChangeCore<ChildType> extends TItem {
     public ChildType paraendAnd(Boolean paraend) {
         this.paraend = paraend;
         return (ChildType) this;
+    }
+
+    protected void copyFrom(TrackChangeCore from) {
+        this.Id = from.Id;
+        this.TcId = from.TcId;
+        this.paraend = from.paraend;
     }
 }

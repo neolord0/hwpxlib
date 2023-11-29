@@ -22,6 +22,7 @@ public class SimplePicture {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimplePicture.hwpx");
+
         Picture picture = (Picture) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(picture);
         Assert.assertEquals(picture.id(), "1137988260");

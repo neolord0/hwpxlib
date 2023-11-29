@@ -38,4 +38,24 @@ public class ContainerXMLFile extends SwitchableObject {
         }
         return null;
     }
+
+    @Override
+    public ContainerXMLFile clone() {
+        ContainerXMLFile cloned = new ContainerXMLFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ContainerXMLFile from) {
+        if (from.rootFiles != null) {
+            createRootFiles();
+            for (RootFile rootFile : from.rootFiles.items()) {
+                rootFiles.add(rootFile.clone());
+            }
+        } else {
+            removeRootFiles();
+        }
+
+        super.copyFrom(from);
+    }
 }

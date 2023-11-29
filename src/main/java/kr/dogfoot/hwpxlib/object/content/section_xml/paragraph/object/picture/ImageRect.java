@@ -77,4 +77,40 @@ public class ImageRect extends SwitchableObject {
     public void removePt3() {
         pt3 = null;
     }
+
+    @Override
+    public ImageRect clone() {
+        ImageRect cloned = new ImageRect();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ImageRect from) {
+        if (from.pt0 != null) {
+            pt0 = from.pt0.clone();
+        } else {
+            pt0 = null;
+        }
+
+        if (from.pt1 != null) {
+            pt1 = from.pt1.clone();
+        } else {
+            pt1 = null;
+        }
+
+        if (from.pt2 != null) {
+            pt2 = from.pt2.clone();
+        } else {
+            pt2 = null;
+        }
+
+        if (from.pt3 != null) {
+            pt3 = from.pt3.clone();
+        } else {
+            pt3 = null;
+        }
+
+        super.copyFrom(from);
+    }
 }
+

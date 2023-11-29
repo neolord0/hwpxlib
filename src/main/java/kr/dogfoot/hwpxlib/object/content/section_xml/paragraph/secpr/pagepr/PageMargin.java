@@ -135,4 +135,21 @@ public class PageMargin extends HWPXObject {
         this.gutter = gutter;
         return this;
     }
+
+    @Override
+    public PageMargin clone() {
+        PageMargin cloned = new PageMargin();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(PageMargin from) {
+        this.left = from.left;
+        this.right = from.right;
+        this.top = from.top;
+        this.bottom = from.bottom;
+        this.header = from.header;
+        this.footer = from.footer;
+        this.gutter = from.gutter;
+    }
 }

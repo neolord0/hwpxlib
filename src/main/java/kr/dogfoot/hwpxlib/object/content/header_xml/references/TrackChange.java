@@ -135,4 +135,21 @@ public class TrackChange extends HWPXObject {
         this.parashapeID = parashapeID;
         return this;
     }
+
+    @Override
+    public TrackChange clone() {
+        TrackChange cloned = new TrackChange();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TrackChange from) {
+        this.id = from.id;
+        this.type = from.type;
+        this.date = from.date;
+        this.authorID = from.authorID;
+        this.hide = from.hide;
+        this.charshapeID = from.charshapeID;
+        this.parashapeID = from.parashapeID;
+    }
 }

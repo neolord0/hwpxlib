@@ -32,4 +32,15 @@ public class MarkpenBegin extends TItem {
         this.beginColor = beginColor;
         return this;
     }
+
+    @Override
+    public MarkpenBegin clone() {
+        MarkpenBegin cloned = new MarkpenBegin();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(MarkpenBegin from) {
+        this.beginColor = from.beginColor;
+    }
 }

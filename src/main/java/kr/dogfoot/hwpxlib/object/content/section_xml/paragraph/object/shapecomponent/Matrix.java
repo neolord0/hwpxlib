@@ -98,4 +98,20 @@ public class Matrix extends HWPXObject {
         this.e6 = e6;
         return this;
     }
+
+    @Override
+    public Matrix clone() {
+        Matrix cloned = new Matrix(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Matrix from) {
+        this.e1 = from.e1;
+        this.e2 = from.e2;
+        this.e3 = from.e3;
+        this.e4 = from.e4;
+        this.e5 = from.e5;
+        this.e6 = from.e6;
+    }
 }

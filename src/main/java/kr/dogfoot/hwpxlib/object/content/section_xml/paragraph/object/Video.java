@@ -84,4 +84,20 @@ public class Video extends ShapeComponent<Video> {
         this.tag = tag;
         return this;
     }
+
+    @Override
+    public Video clone() {
+        Video cloned = new Video();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Video from) {
+        this.videotype = from.videotype;
+        this.fileIDRef = from.fileIDRef;
+        this.imageIDRef = from.imageIDRef;
+        this.tag = from.tag;
+
+        super.copyFrom(from);
+    }
 }

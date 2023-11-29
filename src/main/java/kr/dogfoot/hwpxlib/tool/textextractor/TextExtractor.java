@@ -8,8 +8,6 @@ import kr.dogfoot.hwpxlib.tool.textextractor.comm.CannotStartFromException;
 import kr.dogfoot.hwpxlib.tool.textextractor.comm.ExtractorBase;
 import kr.dogfoot.hwpxlib.tool.textextractor.comm.ExtractorManager;
 
-import java.util.ArrayList;
-
 public class TextExtractor {
     public static String extract(HWPXFile hwpxFile,
                                  TextExtractMethod objectExtractMethod,

@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * 곡선
  */
 public class Curve extends DrawingObject<Curve> {
-    public final ArrayList<CurveSegment> segList;
+    private final ArrayList<CurveSegment> segList;
 
     public Curve() {
         segList = new ArrayList<CurveSegment>();
@@ -59,5 +59,20 @@ public class Curve extends DrawingObject<Curve> {
 
     public Iterable<CurveSegment> segs() {
         return segList;
+    }
+
+    @Override
+    public Curve clone() {
+        Curve cloned = new Curve();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Curve from) {
+        for (CurveSegment seg : from.segList) {
+            segList.add(seg.clone());
+        }
+
+        super.copyFrom(from);
     }
 }

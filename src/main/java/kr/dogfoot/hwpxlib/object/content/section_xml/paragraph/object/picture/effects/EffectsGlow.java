@@ -65,4 +65,24 @@ public class EffectsGlow extends SwitchableObject {
     public void removeEffectsColor() {
         effectsColor = null;
     }
+
+    @Override
+    public EffectsGlow clone() {
+        EffectsGlow cloned = new EffectsGlow();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EffectsGlow from) {
+        this.alpha = from.alpha;
+        this.radius = from.radius;
+
+        if (from.effectsColor != null) {
+            effectsColor = from.effectsColor.clone();
+        } else {
+            effectsColor = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -95,4 +95,34 @@ public class EncryptionData extends SwitchableObject {
     public void removeStartKeyGeneration() {
         startKeyGeneration = null;
     }
+
+    @Override
+    public EncryptionData clone() {
+        EncryptionData cloned = new EncryptionData();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EncryptionData from) {
+        this.checksumType = from.checksumType;
+        this.checksum = from.checksum;
+
+        if (from.algorithm != null) {
+            algorithm = from.algorithm.clone();
+        } else {
+            algorithm = null;
+        }
+        if (from.keyDerivation != null) {
+            keyDerivation = from.keyDerivation.clone();
+        } else {
+            keyDerivation = null;
+        }
+        if (from.startKeyGeneration != null) {
+            startKeyGeneration = from.startKeyGeneration.clone();
+        } else {
+            startKeyGeneration = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

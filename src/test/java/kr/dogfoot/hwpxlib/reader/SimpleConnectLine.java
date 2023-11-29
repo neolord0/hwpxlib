@@ -24,8 +24,8 @@ public class SimpleConnectLine {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleConnectLine.hwpx");
-        ConnectLine connectLine = (ConnectLine) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(3);
 
+        ConnectLine connectLine = (ConnectLine) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(3);
         Assert.assertNotNull(connectLine);
         Assert.assertEquals(connectLine.id(), "1143370512");
         Assert.assertEquals(connectLine.zOrder().intValue(), 2);

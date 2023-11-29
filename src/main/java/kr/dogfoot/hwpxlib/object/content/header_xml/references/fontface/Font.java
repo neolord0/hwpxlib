@@ -134,4 +134,33 @@ public class Font extends SwitchableObject {
     public void removeTypeInfo() {
         typeInfo = null;
     }
+
+    @Override
+    public Font clone() {
+        Font cloned = new Font();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Font from) {
+        this.id = from.id;
+        this.face = from.face;
+        this.type = from.type;
+        this.isEmbedded = from.isEmbedded;
+        this.binaryItemIDRef = from.binaryItemIDRef;
+
+        if (from.substFont != null) {
+            substFont = from.substFont.clone();
+        } else {
+            substFont = null;
+        }
+
+        if (from.typeInfo != null) {
+            typeInfo = from.typeInfo.clone();
+        } else {
+            typeInfo = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

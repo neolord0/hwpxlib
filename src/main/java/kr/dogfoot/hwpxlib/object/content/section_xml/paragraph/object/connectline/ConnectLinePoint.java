@@ -7,7 +7,7 @@ import kr.dogfoot.hwpxlib.object.common.ObjectType;
  * 시작점
  */
 public class ConnectLinePoint extends HWPXObject {
-    private final ObjectType objectType;;
+    private final ObjectType _objectType;;
     /**
      * x 좌표, 단위는 hwpunit
      */
@@ -26,12 +26,12 @@ public class ConnectLinePoint extends HWPXObject {
     private Short subjectIdx;
 
     public ConnectLinePoint(ObjectType objectType) {
-        this.objectType = objectType;
+        this._objectType = objectType;
     }
 
     @Override
     public ObjectType _objectType() {
-        return objectType;
+        return _objectType;
     }
 
     public Long x() {
@@ -84,5 +84,19 @@ public class ConnectLinePoint extends HWPXObject {
     public ConnectLinePoint subjectIdxAnd(Short subjectIdx) {
         this.subjectIdx = subjectIdx;
         return this;
+    }
+
+    @Override
+    public ConnectLinePoint clone() {
+        ConnectLinePoint cloned = new ConnectLinePoint(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ConnectLinePoint from) {
+        this.x = from.x;
+        this.y = from.y;
+        this.subjectIDRef = from.subjectIDRef;
+        this.subjectIdx = from.subjectIdx;
     }
 }

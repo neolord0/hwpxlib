@@ -229,4 +229,52 @@ public abstract class ShapeObject<ChildType> extends RunItem {
     public void removeParameterset() {
         parameterset = null;
     }
+
+    protected void copyFrom(ShapeObject from) {
+        this.id = from.id;
+        this.zOrder = from.zOrder;
+        this.numberingType = from.numberingType;
+        this.textWrap = from.textWrap;
+        this.textFlow = from.textFlow;
+        this.lock = from.lock;
+        this.dropcapstyle = from.dropcapstyle;
+
+        if (from.sz != null) {
+            sz = from.sz.clone();
+        } else {
+            sz = null;
+        }
+
+        if (from.pos != null) {
+            pos = from.pos.clone();
+        } else {
+            pos = null;
+        }
+
+        if (from.outMargin != null) {
+            outMargin = from.outMargin.clone();
+        } else {
+            outMargin = null;
+        }
+
+        if (from.caption != null) {
+            caption = from.caption.clone();
+        } else {
+            caption = null;
+        }
+
+        if (from.shapeComment != null) {
+            shapeComment = from.shapeComment.clone();
+        } else {
+            shapeComment = null;
+        }
+
+        if (from.parameterset != null) {
+            parameterset = from.parameterset.clone();
+        } else {
+            parameterset = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

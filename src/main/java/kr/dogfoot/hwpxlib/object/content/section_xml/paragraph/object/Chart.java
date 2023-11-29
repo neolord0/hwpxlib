@@ -46,4 +46,18 @@ public class Chart extends ShapeObject<Chart> {
         this.chartIDRef = chartIDRef;
         return this;
     }
+
+    @Override
+    public Chart clone() {
+        Chart cloned = new Chart();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Chart from) {
+        this.version = from.version;
+        this.chartIDRef = from.chartIDRef;
+
+        super.copyFrom(from);
+    }
 }

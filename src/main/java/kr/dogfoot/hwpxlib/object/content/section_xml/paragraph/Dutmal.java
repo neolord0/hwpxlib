@@ -134,4 +134,33 @@ public class Dutmal extends RunItem {
     public void removeSubText() {
         subText = null;
     }
+
+    @Override
+    public Dutmal clone() {
+        Dutmal cloned = new Dutmal();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Dutmal from) {
+        this.posType = from.posType;
+        this.szRatio = from.szRatio;
+        this.option = from.option;
+        this.styleIDRef = from.styleIDRef;
+        this.align = from.align;
+
+        if (from.mainText != null) {
+            mainText = from.mainText.clone();
+        } else {
+            mainText = null;
+        }
+
+        if (from.subText != null) {
+            subText = from.subText.clone();
+        } else {
+            subText = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

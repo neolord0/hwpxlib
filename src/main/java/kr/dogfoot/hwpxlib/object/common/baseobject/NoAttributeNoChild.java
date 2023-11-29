@@ -17,4 +17,15 @@ public class NoAttributeNoChild extends HWPXObject {
     public ObjectType _objectType() {
         return _objectType;
     }
+
+    @Override
+    public NoAttributeNoChild clone() {
+        NoAttributeNoChild cloned = new NoAttributeNoChild(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(NoAttributeNoChild from) {
+        // nothing
+    }
 }

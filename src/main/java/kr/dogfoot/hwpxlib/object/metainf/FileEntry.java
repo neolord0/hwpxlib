@@ -80,4 +80,23 @@ public class FileEntry extends SwitchableObject {
     public void removeEncryptionData() {
         encryptionData = null;
     }
+
+    @Override
+    public FileEntry clone() {
+        FileEntry cloned = new FileEntry();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(FileEntry from) {
+        this.fullPath = from.fullPath;
+        this.mediaType = from.mediaType;
+        this.size = from.size;
+
+        if (from.encryptionData != null) {
+            encryptionData = from.encryptionData.clone();
+        } else {
+            encryptionData = null;
+        }
+    }
 }

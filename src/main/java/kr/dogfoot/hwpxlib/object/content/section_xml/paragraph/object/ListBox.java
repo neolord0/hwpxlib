@@ -114,4 +114,23 @@ public class ListBox extends FormObject<ListBox> {
     public Iterable<ListItem> listItems() {
         return listItemList;
     }
+
+    @Override
+    public ListBox clone() {
+        ListBox cloned = new ListBox();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ListBox from) {
+        this.itemHeight = from.itemHeight;
+        this.topIdx = from.topIdx;
+        this.selectedValue = from.selectedValue;
+
+        for (ListItem item : from.listItemList) {
+            listItemList.add(item.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

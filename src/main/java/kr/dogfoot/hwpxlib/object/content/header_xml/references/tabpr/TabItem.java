@@ -83,4 +83,19 @@ public class TabItem extends HWPXObject {
         this.unit = unit;
         return this;
     }
+
+    @Override
+    public TabItem clone() {
+        TabItem cloned = new TabItem();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TabItem from) {
+        this.pos = from.pos;
+        this.type = from.type;
+        this.leader = from.leader;
+        this.unit = from.unit;
+    }
 }
+

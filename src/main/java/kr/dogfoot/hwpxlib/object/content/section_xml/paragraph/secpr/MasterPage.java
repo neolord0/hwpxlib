@@ -32,4 +32,15 @@ public class MasterPage extends HWPXObject {
         this.idRef = idRef;
         return this;
     }
+
+    @Override
+    public MasterPage clone() {
+        MasterPage cloned = new MasterPage();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    private void copyFrom(MasterPage from) {
+        this.idRef = from.idRef;
+    }
 }

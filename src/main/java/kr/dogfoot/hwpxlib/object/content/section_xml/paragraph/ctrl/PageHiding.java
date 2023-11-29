@@ -117,4 +117,22 @@ public class PageHiding extends CtrlItem {
         this.hidePageNum = hidePageNum;
         return this;
     }
+
+    @Override
+    public PageHiding clone() {
+        PageHiding cloned = new PageHiding();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(PageHiding from) {
+        this.hideHeader = from.hideHeader;
+        this.hideFooter = from.hideFooter;
+        this.hideMasterPage = from.hideMasterPage;
+        this.hideBorder = from.hideBorder;
+        this.hideFill = from.hideFill;
+        this.hidePageNum = from.hidePageNum;
+
+        super.copyFrom(from);
+    }
 }

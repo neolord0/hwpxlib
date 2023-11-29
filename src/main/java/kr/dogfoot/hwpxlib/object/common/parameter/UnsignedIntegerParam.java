@@ -25,4 +25,17 @@ public class UnsignedIntegerParam extends Param<IntegerParam> {
         this.value = value;
         return this;
     }
+
+    @Override
+    public UnsignedIntegerParam clone() {
+        UnsignedIntegerParam cloned = new UnsignedIntegerParam();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(UnsignedIntegerParam from) {
+        this.value = from.value;
+
+        super.copyFrom(from);
+    }
 }

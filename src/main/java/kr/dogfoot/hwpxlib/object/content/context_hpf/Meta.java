@@ -60,4 +60,18 @@ public class Meta extends HWPXObject {
         this.text = text;
         return this;
     }
+
+    @Override
+    public Meta clone() {
+        Meta cloned = new Meta();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Meta from) {
+        this.name = from.name;
+        this.content = from.content;
+        this.text = from.text;
+    }
 }
+

@@ -23,6 +23,7 @@ public class SimplePolygon {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimplePolygon.hwpx");
+
         Polygon polygon = (Polygon) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(polygon);
         Assert.assertEquals(polygon.id(), "1143268355");

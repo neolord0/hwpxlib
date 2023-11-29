@@ -184,4 +184,32 @@ public class ColPr extends CtrlItem {
     public void removeColLine() {
         colLine = null;
     }
+
+    @Override
+    public ColPr clone() {
+        ColPr cloned = new ColPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ColPr from) {
+        this.id = from.id;
+        this.type = from.type;
+        this.layout = from.layout;
+        this.colCount = from.colCount;
+        this.sameSz = from.sameSz;
+        this.sameGap = from.sameGap;
+
+        for (ColSz colSz : from.colSzList) {
+            colSzList.add(colSz.clone());
+        }
+
+        if (from.colLine != null) {
+            colLine = from.colLine.clone();
+        } else {
+            colLine = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

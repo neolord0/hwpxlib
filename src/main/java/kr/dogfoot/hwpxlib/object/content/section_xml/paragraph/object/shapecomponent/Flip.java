@@ -49,4 +49,17 @@ public class Flip extends HWPXObject {
         this.vertical = vertical;
         return this;
     }
+
+    @Override
+    public Flip clone() {
+        Flip cloned = new Flip();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Flip from) {
+        this.horizontal = from.horizontal;
+        this.vertical = from.vertical;
+    }
 }
+

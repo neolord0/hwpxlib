@@ -117,4 +117,20 @@ public class BeginNum extends HWPXObject {
         this.equation = equation;
         return this;
     }
+
+    @Override
+    public BeginNum clone() {
+        BeginNum cloned = new BeginNum();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(BeginNum from) {
+        this.page = from.page;
+        this.footnote = from.footnote;
+        this.endnote = from.endnote;
+        this.pic = from.pic;
+        this.tbl = from.tbl;
+        this.equation = from.equation;
+    }
 }

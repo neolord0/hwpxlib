@@ -152,4 +152,22 @@ public class Visibility extends HWPXObject {
         this.showLineNumber = showLineNumber;
         return this;
     }
+
+    @Override
+    public Visibility clone() {
+        Visibility cloned = new Visibility();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Visibility from) {
+        this.hideFirstHeader = from.hideFirstHeader;
+        this.hideFirstFooter = from.hideFirstFooter;
+        this.hideFirstMasterPage = from.hideFirstMasterPage;
+        this.border = from.border;
+        this.fill = from.fill;
+        this.hideFirstPageNum = from.hideFirstPageNum;
+        this.hideFirstEmptyLine = from.hideFirstEmptyLine;
+        this.showLineNumber = from.showLineNumber;
+    }
 }

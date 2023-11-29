@@ -21,8 +21,8 @@ public class SimpleComboBox {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleComboBox.hwpx");
-        ComboBox comboBox = (ComboBox) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
+        ComboBox comboBox = (ComboBox) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(comboBox);
         Assert.assertEquals(comboBox.listBoxRows().intValue(), 10);
         Assert.assertEquals(comboBox.listBoxWidth().intValue(), 0);
@@ -125,6 +125,6 @@ public class SimpleComboBox {
             }
 
             index++;
-       }
+        }
     }
 }

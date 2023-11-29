@@ -23,8 +23,8 @@ public class SimpleTextArt {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleTextArt.hwpx");
-        TextArt textArt = (TextArt) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
+        TextArt textArt = (TextArt) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(textArt);
         Assert.assertEquals(textArt.id(), "1143409969");
         Assert.assertEquals(textArt.zOrder().intValue(), 0);

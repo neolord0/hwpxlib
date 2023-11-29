@@ -32,4 +32,15 @@ public class EffectsSoftEdge extends HWPXObject {
         this.radius = radius;
         return this;
     }
+
+    @Override
+    public EffectsSoftEdge clone() {
+        EffectsSoftEdge cloned = new EffectsSoftEdge();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EffectsSoftEdge from) {
+        this.radius = from.radius;
+    }
 }

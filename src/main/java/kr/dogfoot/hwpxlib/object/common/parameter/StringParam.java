@@ -39,4 +39,18 @@ public class StringParam extends Param<StringParam> {
         this.xml_space = xml_space;
         return this;
     }
+
+    @Override
+    public StringParam clone() {
+        StringParam cloned = new StringParam();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(StringParam from) {
+        this.value = from.value;
+        this.xml_space = from.xml_space;
+
+        super.copyFrom(from);
+    }
 }

@@ -1,11 +1,8 @@
 package kr.dogfoot.hwpxlib.tool.textextractor;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.tool.textextractor.comm.TextBuilder;
 import kr.dogfoot.hwpxlib.tool.textextractor.paraHead.ParaHeadMaker;
-
-import java.util.ArrayList;
 
 public class Parameter {
     private final TextExtractMethod textExtractMethod;

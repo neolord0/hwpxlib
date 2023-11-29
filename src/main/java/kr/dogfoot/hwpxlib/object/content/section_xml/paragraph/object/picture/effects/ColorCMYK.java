@@ -71,4 +71,18 @@ public class ColorCMYK extends HWPXObject {
         this.k = k;
         return this;
     }
+
+    @Override
+    public ColorCMYK clone() {
+        ColorCMYK cloned = new ColorCMYK();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ColorCMYK from) {
+        this.c = from.c;
+        this.m = from.m;
+        this.y = from.y;
+        this.k = from.k;
+    }
 }

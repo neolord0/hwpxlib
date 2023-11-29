@@ -43,4 +43,16 @@ public class ValueAndUnit extends HWPXObject {
         this.unit = unit;
         return this;
     }
+
+    @Override
+    public ValueAndUnit clone() {
+        ValueAndUnit cloned = new ValueAndUnit(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ValueAndUnit from) {
+        this.value = from.value;
+        this.unit = from.unit;
+    }
 }

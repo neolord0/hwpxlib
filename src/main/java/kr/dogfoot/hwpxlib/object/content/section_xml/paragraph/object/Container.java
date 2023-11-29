@@ -119,4 +119,19 @@ public class Container extends ShapeComponent<Container> {
     public Iterable<ShapeComponent> children() {
         return childList;
     }
+
+    @Override
+    public Container clone() {
+        Container cloned = new Container();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Container from) {
+        for (ShapeComponent child : from.childList) {
+            childList.add((ShapeComponent) child.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

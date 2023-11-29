@@ -77,4 +77,18 @@ public class InsertDiff extends DiffItem<InsertDiff> {
         return childDiffList;
     }
 
+    @Override
+    public InsertDiff clone() {
+        InsertDiff cloned = new InsertDiff();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(InsertDiff from) {
+        for (DiffItem childDiff : from.childDiffList) {
+            childDiffList.add((DiffItem) childDiff.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

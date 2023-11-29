@@ -157,4 +157,111 @@ public class RefList extends SwitchableObject {
     public void removeTrackChangeAuthors() {
         trackChangeAuthors = null;
     }
+
+    @Override
+    public RefList clone() {
+        RefList cloned = new RefList();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(RefList from) {
+        if (from.fontfaces != null) {
+            fontfaces = from.fontfaces.clone();
+        } else {
+            fontfaces = null;
+        }
+
+        if (from.borderFills != null) {
+            createBorderFills();
+            for (BorderFill borderFill : from.borderFills.items()) {
+                borderFills.add(borderFill.clone());
+            }
+        } else {
+            borderFills = null;
+        }
+
+        if (from.charProperties != null) {
+            createCharProperties();
+            for (CharPr charPr : from.charProperties.items()) {
+                charProperties.add(charPr.clone());
+            }
+        } else {
+            charProperties = null;
+        }
+
+        if (from.tabProperties != null) {
+            createTabProperties();
+            for (TabPr tabPr : from.tabProperties.items()) {
+                tabProperties.add(tabPr.clone());
+            }
+        } else {
+            tabProperties = null;
+        }
+
+        if (from.numberings != null) {
+            createNumberings();
+            for (Numbering numbering : from.numberings.items()) {
+                numberings.add(numbering.clone());
+            }
+        } else {
+            numberings = null;
+        }
+
+        if (from.bullets != null) {
+            createBullets();
+            for (Bullet bullet : from.bullets.items()) {
+                bullets.add(bullet.clone());
+            }
+        } else {
+            bullets = null;
+        }
+
+        if (from.paraProperties != null) {
+            createParaProperties();
+            for  (ParaPr paraPr : from.paraProperties.items()) {
+                paraProperties.add(paraPr.clone());
+            }
+        } else {
+            paraProperties = null;
+        }
+
+        if (from.styles != null) {
+            createStyles();
+            for (Style style : from.styles.items()) {
+                styles.add(style.clone());
+            }
+        } else {
+            styles = null;
+        }
+
+        if (from.memoProperties != null) {
+            createMemoProperties();
+            for (MemoPr memoPr : from.memoProperties.items()) {
+                memoProperties.add(memoPr.clone());
+            }
+        } else {
+            memoProperties = null;
+        }
+
+        if (from.trackChanges != null) {
+            createTrackChanges();
+            for (TrackChange trackChange : from.trackChanges.items()) {
+                trackChanges.add(trackChange.clone());
+            }
+        } else {
+            trackChanges = null;
+        }
+
+        if (from.trackChangeAuthors != null) {
+            createTrackChangeAuthors();
+            for (TrackChangeAuthor trackChangeAuthor : from.trackChangeAuthors.items()) {
+                trackChangeAuthors.add(trackChangeAuthor.clone());
+            }
+        } else {
+            trackChangeAuthors = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

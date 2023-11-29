@@ -84,4 +84,18 @@ public class WinBrush extends HWPXObject {
         this.alpha = alpha;
         return this;
     }
+
+    @Override
+    public WinBrush clone() {
+        WinBrush cloned = new WinBrush();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(WinBrush from) {
+        this.faceColor = from.faceColor;
+        this.hatchColor = from.hatchColor;
+        this.hatchStyle = from.hatchStyle;
+        this.alpha = from.alpha;
+    }
 }

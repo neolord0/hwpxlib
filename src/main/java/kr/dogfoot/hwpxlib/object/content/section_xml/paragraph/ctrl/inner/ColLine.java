@@ -18,6 +18,7 @@ public class ColLine extends HWPXObject {
         return ObjectType.hp_colLine;
     }
 
+
     public LineType2 type() {
         return type;
     }
@@ -55,5 +56,18 @@ public class ColLine extends HWPXObject {
     public ColLine colorAnd(String color) {
         this.color = color;
         return this;
+    }
+
+    @Override
+    public ColLine clone() {
+        ColLine cloned = new ColLine();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ColLine from) {
+        this.type = from.type;
+        this.width = from.width;
+        this.color = from.color;
     }
 }

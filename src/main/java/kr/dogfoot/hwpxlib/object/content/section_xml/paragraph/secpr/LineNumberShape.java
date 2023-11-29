@@ -81,4 +81,18 @@ public class LineNumberShape extends HWPXObject {
         this.startNumber = startNumber;
         return this;
     }
+
+    @Override
+    public LineNumberShape clone() {
+        LineNumberShape cloned = new LineNumberShape();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(LineNumberShape from) {
+        this.restartType = from.restartType;
+        this.countBy= from.countBy;
+        this.distance = from.distance;
+        this.startNumber = from.startNumber;
+    }
 }

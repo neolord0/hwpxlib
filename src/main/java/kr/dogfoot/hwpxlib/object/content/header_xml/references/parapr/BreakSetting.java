@@ -137,4 +137,21 @@ public class BreakSetting extends HWPXObject {
         this.lineWrap = lineWrap;
         return this;
     }
+
+    @Override
+    public BreakSetting clone() {
+        BreakSetting cloned = new BreakSetting();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(BreakSetting from) {
+        this.breakLatinWord = from.breakLatinWord;
+        this.breakNonLatinWord = from.breakNonLatinWord;
+        this.widowOrphan = from.widowOrphan;
+        this.keepWithNext = from.keepWithNext;
+        this.keepLines = from.keepLines;
+        this.pageBreakBefore = from.pageBreakBefore;
+        this.lineWrap = from.lineWrap;
+    }
 }

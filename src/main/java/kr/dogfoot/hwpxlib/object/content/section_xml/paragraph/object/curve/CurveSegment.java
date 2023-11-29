@@ -98,4 +98,20 @@ public class CurveSegment extends HWPXObject {
         this.y2 = y2;
         return this;
     }
+
+    @Override
+    public CurveSegment clone() {
+        CurveSegment cloned = new CurveSegment();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(CurveSegment from) {
+        this.type = from.type;
+        this.x1 = from.x1;
+        this.y1 = from.y1;
+        this.x2 = from.x2;
+        this.y2 = from.y2;
+    }
 }
+

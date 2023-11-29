@@ -132,4 +132,30 @@ public class Presentation extends SwitchableObject {
     public void removeFillBrush() {
         fillBrush = null;
     }
+
+    @Override
+    public Presentation clone() {
+        Presentation cloned = new Presentation();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Presentation from) {
+        this.effect = from.effect;
+        this.soundIDRef = from.soundIDRef;
+        this.inventText = from.inventText;
+        this.autoshow = from.autoshow;
+        this.showtime = from.showtime;
+        this.applyto = from.applyto;
+
+        if (from.fillBrush != null) {
+            fillBrush = from.fillBrush.clone();
+        } else {
+            fillBrush = null;
+        }
+
+        super.copyFrom(from);
+    }
 }
+
+

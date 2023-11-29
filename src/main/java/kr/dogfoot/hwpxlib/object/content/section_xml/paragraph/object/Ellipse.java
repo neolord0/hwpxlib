@@ -1,5 +1,6 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object;
 
+import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.baseobject.Point;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.ArcType;
@@ -179,5 +180,63 @@ public class Ellipse extends DrawingObject<Ellipse> {
 
     public void removeEnd2() {
         end2 = null;
+    }
+
+    @Override
+    public HWPXObject clone() {
+        Ellipse cloned = new Ellipse();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Ellipse from) {
+        this.intervalDirty = from.intervalDirty;
+        this.hasArcPr = from.hasArcPr;
+        this.arcType = from.arcType;
+
+
+        if (from.center != null) {
+            center = from.center.clone();
+        } else {
+            center = null;
+        }
+
+        if (from.ax1 != null) {
+            ax1 = from.ax1.clone();
+        } else {
+            ax1 = null;
+        }
+
+        if (from.ax2 != null) {
+            ax2 = from.ax2.clone();
+        } else {
+            ax2 = null;
+        }
+
+        if (from.start1 != null) {
+            start1 = from.start1.clone();
+        } else {
+            start1 = null;
+        }
+
+        if (from.start2 != null) {
+            start2 = from.start2.clone();
+        } else {
+            start2 = null;
+        }
+
+        if (from.end1 != null) {
+            end1 = from.end1.clone();
+        } else {
+            end1 = null;
+        }
+
+        if (from.end2 != null) {
+            end2 = from.end2.clone();
+        } else {
+            end2 = null;
+        }
+
+        super.copyFrom(from);
     }
 }

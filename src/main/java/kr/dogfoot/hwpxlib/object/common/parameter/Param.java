@@ -17,4 +17,10 @@ public abstract class Param<ChildType> extends SwitchableObject {
         this.name = name;
         return (ChildType) this;
     }
+
+    public void copyFrom(Param from) {
+        this.name = from.name;
+
+        super.copyFrom(this);
+    }
 }

@@ -206,4 +206,25 @@ public class ShapePosition extends HWPXObject {
         this.horzOffset = horzOffset;
         return this;
     }
+
+    @Override
+    public ShapePosition clone() {
+        ShapePosition cloned = new ShapePosition();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ShapePosition from) {
+        this.treatAsChar = from.treatAsChar;
+        this.affectLSpacing = from.affectLSpacing;
+        this.flowWithText = from.flowWithText;
+        this.allowOverlap = from.allowOverlap;
+        this.holdAnchorAndSO =  from.holdAnchorAndSO;
+        this.vertRelTo = from.vertRelTo;
+        this.horzRelTo = from.horzRelTo;
+        this.vertAlign = from.vertAlign;
+        this.horzAlign = from.horzAlign;
+        this.vertOffset = from.vertOffset;
+        this.horzOffset = from.horzOffset;
+    }
 }

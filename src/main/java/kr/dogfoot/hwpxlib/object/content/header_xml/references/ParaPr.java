@@ -247,4 +247,65 @@ public class ParaPr extends SwitchableObject {
     public void removeAutoSpacing() {
         autoSpacing = null;
     }
+
+    @Override
+    public ParaPr clone() {
+        ParaPr cloned = new ParaPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ParaPr from) {
+        this.id = from.id;
+        this.tabPrIDRef = from.tabPrIDRef;
+        this.condense = from.condense;
+        this.fontLineHeight = from.fontLineHeight;
+        this.snapToGrid = from.snapToGrid;
+        this.suppressLineNumbers = from.suppressLineNumbers;
+        this.checked = from.checked;
+
+        if (from.align != null) {
+            align = from.align.clone();
+        } else {
+            align = null;
+        }
+
+        if (from.heading != null) {
+            heading = from.heading.clone();
+        } else {
+            heading = null;
+        }
+
+        if (from.breakSetting != null) {
+            breakSetting = from.breakSetting.clone();
+        } else {
+            breakSetting = null;
+        }
+
+        if (from.margin != null) {
+            margin = from.margin.clone();
+        } else {
+            margin = null;
+        }
+
+        if (from.lineSpacing != null) {
+            lineSpacing = from.lineSpacing.clone();
+        } else {
+            lineSpacing = null;
+        }
+
+        if (from.border != null) {
+            border = from.border.clone();
+        } else {
+            border = null;
+        }
+
+        if (from.autoSpacing != null) {
+            autoSpacing = from.autoSpacing.clone();
+        } else {
+            autoSpacing = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

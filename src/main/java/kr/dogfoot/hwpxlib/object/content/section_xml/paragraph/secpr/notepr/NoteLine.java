@@ -40,7 +40,6 @@ public class NoteLine extends HWPXObject {
         return ObjectType.hp_noteLine;
     }
 
-
     public Integer length() {
         return length;
     }
@@ -91,5 +90,19 @@ public class NoteLine extends HWPXObject {
     public NoteLine colorAnd(String color) {
         this.color = color;
         return this;
+    }
+
+    @Override
+    public NoteLine clone() {
+        NoteLine cloned = new NoteLine();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(NoteLine from) {
+        this.length = from.length;
+        this.type = from.type;
+        this.width = from.width;
+        this.color = from.color;
     }
 }

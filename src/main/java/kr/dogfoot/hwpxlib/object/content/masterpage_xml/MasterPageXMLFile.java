@@ -115,4 +115,24 @@ public class MasterPageXMLFile extends SwitchableObject {
     public void removeSubList() {
         subList = null;
     }
+
+    public MasterPageXMLFile clone() {
+        MasterPageXMLFile cloned = new MasterPageXMLFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(MasterPageXMLFile from) {
+        this.id = from.id;
+        this.type = from.type;
+        this.pageNumber = from.pageNumber;
+        this.pageDuplicate = from.pageDuplicate;
+        this.pageFront = from.pageFront;
+
+        if (from.subList != null) {
+            subList = from.subList.clone();
+        } else {
+            subList = null;
+        }
+    }
 }

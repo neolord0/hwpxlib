@@ -131,4 +131,57 @@ public class TextArt extends DrawingObject<TextArt> {
     public void removeOutline() {
         outline = null;
     }
+
+    @Override
+    public TextArt clone() {
+        TextArt cloned = new TextArt();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TextArt from) {
+        this.text = from.text;
+
+        if (from.pt0 != null) {
+            pt0 = from.pt0.clone();
+        } else {
+            pt0 = null;
+        }
+
+        if (from.pt1 != null) {
+            pt1 = from.pt1.clone();
+        } else {
+            pt1 = null;
+        }
+
+        if (from.pt2 != null) {
+            pt2 = from.pt2.clone();
+        } else {
+            pt2 = null;
+        }
+
+        if (from.pt3 != null) {
+            pt3 = from.pt3.clone();
+        } else {
+            pt3 = null;
+        }
+
+        if (from.textartPr != null) {
+            textartPr = from.textartPr.clone();
+        } else {
+            textartPr = null;
+        }
+
+        if (from.outline != null) {
+            createOutline();
+            for (Point point : from.outline.items()) {
+                outline.add(point.clone());
+            }
+        } else {
+            removeOutline();;
+        }
+
+        super.copyFrom(from);
+    }
+
 }

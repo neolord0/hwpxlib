@@ -56,4 +56,19 @@ public class Tr extends SwitchableObject {
     public Iterable<Tc> tcs() {
         return tcList;
     }
+
+    @Override
+    public Tr clone() {
+        Tr cloned = new Tr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Tr from) {
+        for (Tc tc : from.tcList) {
+            tcList.add(tc.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

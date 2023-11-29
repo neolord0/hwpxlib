@@ -20,6 +20,7 @@ public class SpineItemRef extends HWPXObject {
         return ObjectType.opf_itemref;
     }
 
+
     public String idref() {
         return idref;
     }
@@ -44,5 +45,17 @@ public class SpineItemRef extends HWPXObject {
     public SpineItemRef linearAnd(String linear) {
         this.linear = linear;
         return this;
+    }
+
+    @Override
+    public SpineItemRef clone() {
+        SpineItemRef cloned = new SpineItemRef();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(SpineItemRef from) {
+        this.idref = from.idref;
+        this.linear = from.linear;
     }
 }

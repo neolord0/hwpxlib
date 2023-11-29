@@ -57,4 +57,17 @@ public class ColorScheme extends HWPXObject {
         this.b = b;
         return this;
     }
+
+    @Override
+    public ColorScheme clone() {
+        ColorScheme cloned = new ColorScheme();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ColorScheme from) {
+        this.r = from.r;
+        this.g = from.g;
+        this.b = from.b;
+    }
 }

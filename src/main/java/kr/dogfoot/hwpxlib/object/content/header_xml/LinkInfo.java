@@ -54,4 +54,17 @@ public class LinkInfo extends HWPXObject {
         this.footnoteInherit = footnoteInherit;
         return this;
     }
+
+    @Override
+    public LinkInfo clone() {
+        LinkInfo cloned = new LinkInfo();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(LinkInfo from) {
+        this.path = from.path;
+        this.pageInherit = from.pageInherit;
+        this.footnoteInherit = from.footnoteInherit;
+    }
 }

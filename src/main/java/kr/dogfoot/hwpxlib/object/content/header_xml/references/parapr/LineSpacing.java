@@ -30,6 +30,7 @@ public class LineSpacing extends HWPXObject {
         return ObjectType.hh_lineSpacing;
     }
 
+
     public LineSpacingType type() {
         return type;
     }
@@ -67,5 +68,18 @@ public class LineSpacing extends HWPXObject {
     public LineSpacing unitAnd(ValueUnit2 unit) {
         this.unit = unit;
         return this;
+    }
+
+    @Override
+    public LineSpacing clone() {
+        LineSpacing cloned = new LineSpacing();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(LineSpacing from) {
+        this.type = from.type;
+        this.value = from.value;
+        this.unit = from.unit;
     }
 }

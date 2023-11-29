@@ -13,6 +13,7 @@ public class SimpleCompose {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleCompose.hwpx");
+
         Compose compose1 = (Compose) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         compose1(compose1);
 

@@ -36,6 +36,7 @@ public class CellZone extends HWPXObject {
         return ObjectType.hp_cellzone;
     }
 
+
     public Short startRowAddr() {
         return startRowAddr;
     }
@@ -99,5 +100,20 @@ public class CellZone extends HWPXObject {
     public CellZone borderFillIDRefAnd(String borderFillIDRef) {
         this.borderFillIDRef = borderFillIDRef;
         return this;
+    }
+
+    @Override
+    public CellZone clone() {
+        CellZone cloned = new CellZone();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(CellZone from) {
+        this.startRowAddr = from.startRowAddr;
+        this.startColAddr = from.startColAddr;
+        this.endRowAddr = from.endRowAddr;
+        this.endColAddr = from.endColAddr;
+        this.borderFillIDRef = from.borderFillIDRef;
     }
 }

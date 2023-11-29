@@ -89,4 +89,19 @@ public class ListParam extends Param<ListParam> {
     public Iterable<Param> params() {
         return parameterList;
     }
+
+    @Override
+    public ListParam clone() {
+        ListParam cloned = new ListParam();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ListParam from) {
+        for (Param param : from.parameterList) {
+            parameterList.add((Param) param.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -46,4 +46,27 @@ public class EndNotePr extends NoteShape {
     public void removePlacement() {
         placement = null;
     }
+
+    @Override
+    public EndNotePr clone() {
+        EndNotePr cloned = new EndNotePr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EndNotePr from) {
+        if (from.numbering != null) {
+            numbering = from.numbering.clone();
+        } else {
+            numbering = null;
+        }
+
+        if (from.placement != null) {
+            placement = from.placement.clone();
+        } else {
+            placement = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

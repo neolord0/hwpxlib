@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class ConfigItemSet extends SwitchableObject {
     private String name;
-    private ArrayList<ConfigItem> configItemList;
+    private final ArrayList<ConfigItem> configItemList;
 
     public ConfigItemSet() {
         configItemList = new ArrayList<ConfigItem>();
@@ -70,4 +70,22 @@ public class ConfigItemSet extends SwitchableObject {
     public Iterable<ConfigItem> configItems() {
         return configItemList;
     }
+
+    @Override
+    public ConfigItemSet clone() {
+        ConfigItemSet cloned = new ConfigItemSet();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ConfigItemSet from) {
+        this.name = from.name;
+
+        for (ConfigItem item : from.configItemList) {
+            configItemList.add(item.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }
+

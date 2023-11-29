@@ -24,11 +24,11 @@ public class Table extends ShapeObject<Table> {
      */
     private Boolean repeatHeader;
     /**
-     * 열 개수
+     * 행 개수
      */
     private Short rowCnt;
     /**
-     * 행 개수
+     * 열 개수
      */
     private Short colCnt;
     /**
@@ -234,5 +234,49 @@ public class Table extends ShapeObject<Table> {
 
     public void removeParameterSet() {
         parameterSet = null;
+    }
+
+    @Override
+    public Table clone() {
+        Table cloned = new Table();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Table from) {
+        this.pageBreak = from.pageBreak;
+        this.repeatHeader = from.repeatHeader;
+        this.rowCnt = from.rowCnt;
+        this.colCnt = from.colCnt;
+        this.cellSpacing = from.cellSpacing;
+        this.borderFillIDRef = from.borderFillIDRef;
+        this.noAdjust = from.noAdjust;
+
+        if (from.inMargin != null) {
+            inMargin = from.inMargin.clone();
+        } else {
+            inMargin = null;
+        }
+
+        if (from.cellzoneList != null) {
+            createCellzoneList();
+            for (CellZone cellZone : from.cellzoneList.items()) {
+                cellzoneList.add(cellZone.clone());
+            }
+        } else {
+            removeCellzoneList();
+        }
+
+        for (Tr tr : from.trList) {
+            trList.add(tr.clone());
+        }
+
+        if (from.parameterSet != null) {
+            parameterSet = from.parameterSet.clone();
+        } else {
+            parameterSet = null;
+        }
+
+        super.copyFrom(from);
     }
 }

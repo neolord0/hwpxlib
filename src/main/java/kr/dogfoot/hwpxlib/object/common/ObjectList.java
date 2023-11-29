@@ -3,7 +3,7 @@ package kr.dogfoot.hwpxlib.object.common;
 import java.util.ArrayList;
 
 public class ObjectList<ItemType> extends SwitchableObject {
-    private final ObjectType objectType;
+    private final ObjectType _objectType;
     private final ArrayList<ItemType> list;
     private final Class<ItemType> clazz;
 
@@ -12,14 +12,14 @@ public class ObjectList<ItemType> extends SwitchableObject {
     }
 
     public ObjectList(ObjectType objectType, Class<ItemType> clazz) {
-        this.objectType = objectType;
+        this._objectType = objectType;
         list = new ArrayList<ItemType>();
         this.clazz = clazz;
     }
 
     @Override
     public ObjectType _objectType() {
-        return objectType;
+        return _objectType;
     }
 
     public int count() {
@@ -77,5 +77,11 @@ public class ObjectList<ItemType> extends SwitchableObject {
 
     public boolean empty() {
         return list.size() == 0;
+    }
+
+    @Override
+    public ObjectList clone() {
+        // not supported
+        return null;
     }
 }

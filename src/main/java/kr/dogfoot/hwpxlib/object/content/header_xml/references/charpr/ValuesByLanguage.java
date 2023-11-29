@@ -49,7 +49,6 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         return _objectType;
     }
 
-
     public ValueType hangul() {
         return hangul;
     }
@@ -149,5 +148,22 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.other = other;
         this.symbol = symbol;
         this.user = user;
+    }
+
+    @Override
+    public ValuesByLanguage<ValueType> clone() {
+        ValuesByLanguage<ValueType> cloned = new ValuesByLanguage<ValueType>(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ValuesByLanguage<ValueType> from) {
+        this.hangul = from.hangul;
+        this.latin = from.latin;
+        this.hanja = from.hanja;
+        this.japanese = from.japanese;
+        this.other = from.other;
+        this.symbol = from.symbol;
+        this.user = from.user;
     }
 }

@@ -90,4 +90,22 @@ public class UpdateDiff extends DiffItem<UpdateDiff> {
     public Iterable<DiffItem> childDiffs() {
         return childDiffList;
     }
+
+    @Override
+    public UpdateDiff clone() {
+        UpdateDiff cloned = new UpdateDiff();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+
+    public void copyFrom(UpdateDiff from) {
+        this.oldValue = from.oldValue;
+
+        for (DiffItem childDiff : from.childDiffList) {
+            childDiffList.add((DiffItem) childDiff.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

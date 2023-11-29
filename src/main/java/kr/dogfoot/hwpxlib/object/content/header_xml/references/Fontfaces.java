@@ -90,4 +90,19 @@ public class Fontfaces extends SwitchableObject {
     public Fontface userFontface() {
         return getFontface(LanguageType.USER);
     }
+
+    @Override
+    public Fontfaces clone() {
+        Fontfaces cloned = new Fontfaces();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Fontfaces from) {
+        for (Fontface fontface : from.fontfaceList) {
+            fontfaceList.add(fontface.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

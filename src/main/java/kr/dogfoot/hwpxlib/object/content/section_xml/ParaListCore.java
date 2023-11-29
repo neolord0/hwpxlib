@@ -51,4 +51,12 @@ public abstract class ParaListCore extends SwitchableObject {
     public Iterable<Para> paras() {
         return paraList;
     }
+
+    protected void copyFrom(ParaListCore from) {
+        for (Para para : from.paraList) {
+            paraList.add(para.clone());
+        }
+
+        super.copyFrom(from);
+    }
 }

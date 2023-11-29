@@ -66,4 +66,17 @@ public class Grid extends HWPXObject {
         this.wonggojiFormat = wonggojiFormat;
         return this;
     }
+
+    @Override
+    public Grid clone() {
+        Grid cloned = new Grid();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Grid from) {
+        this.lineGrid = from.lineGrid;
+        this.charGrid = from.charGrid;
+        this.wonggojiFormat = from.wonggojiFormat;
+    }
 }

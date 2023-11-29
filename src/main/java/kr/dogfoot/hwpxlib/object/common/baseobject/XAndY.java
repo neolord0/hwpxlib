@@ -42,4 +42,17 @@ public class XAndY extends HWPXObject {
         this.y = y;
         return this;
     }
+
+    @Override
+    public XAndY clone() {
+        XAndY cloned = new XAndY(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(XAndY from) {
+        this.x = from.x;
+        this.y = from.y;
+    }
+
 }

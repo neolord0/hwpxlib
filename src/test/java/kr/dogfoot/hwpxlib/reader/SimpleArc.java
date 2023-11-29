@@ -22,8 +22,8 @@ public class SimpleArc {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleArc.hwpx");
-        Arc arc = (Arc) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(2);
 
+        Arc arc = (Arc) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(2);
         Assert.assertNotNull(arc);
         Assert.assertEquals(arc.id(), "1143253037");
         Assert.assertEquals(arc.zOrder().intValue(), 0);

@@ -41,4 +41,26 @@ public class CompatibleDocument extends SwitchableObject {
     public void removeLayoutCompatibility() {
         layoutCompatibility = null;
     }
+
+    @Override
+    public CompatibleDocument clone() {
+        CompatibleDocument cloned = new CompatibleDocument();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(CompatibleDocument from) {
+        this.targetProgram = from.targetProgram;
+
+        if (from.layoutCompatibility != null) {
+            createLayoutCompatibility();
+            for (LayoutCompatibilityItem layoutCompatibilityItem : from.layoutCompatibility.items()) {
+                layoutCompatibility.add(layoutCompatibilityItem.clone());
+            }
+        } else {
+            layoutCompatibility = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

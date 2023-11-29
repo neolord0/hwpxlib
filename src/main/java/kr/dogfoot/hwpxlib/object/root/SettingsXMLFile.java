@@ -47,4 +47,27 @@ public class SettingsXMLFile extends SwitchableObject {
     public void removeConfigItemSet() {
         configItemSet = null;
     }
+
+    @Override
+    public SettingsXMLFile clone() {
+        SettingsXMLFile cloned = new SettingsXMLFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(SettingsXMLFile from) {
+        if (from.caretPosition != null) {
+            caretPosition = from.caretPosition.clone();
+        } else {
+            caretPosition = null;
+        }
+
+        if (from.configItemSet != null) {
+            configItemSet = from.configItemSet.clone();
+        } else {
+            configItemSet = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

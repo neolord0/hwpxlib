@@ -51,4 +51,26 @@ public abstract class NoteShape extends SwitchableObject {
     public void removeNoteSpacing() {
         noteSpacing = null;
     }
+
+    protected void copyFrom(NoteShape from) {
+        if (from.autoNumFormat != null) {
+            autoNumFormat = from.autoNumFormat.clone();
+        } else {
+            autoNumFormat = null;
+        }
+
+        if (from.noteLine != null) {
+            noteLine = from.noteLine.clone();
+        } else {
+            noteLine = null;
+        }
+
+        if (from.noteSpacing != null) {
+            noteSpacing = from.noteSpacing.clone();
+        } else {
+            noteSpacing = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

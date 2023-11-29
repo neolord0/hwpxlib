@@ -30,4 +30,15 @@ public class ForbiddenWord extends HWPXObject {
         buffer.append(text);
         return this;
     }
+
+    @Override
+    public ForbiddenWord clone() {
+        ForbiddenWord cloned = new ForbiddenWord();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ForbiddenWord from) {
+        addText(from.text());
+    }
 }

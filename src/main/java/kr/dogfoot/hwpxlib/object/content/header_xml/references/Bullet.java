@@ -4,9 +4,6 @@ import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.borderfill.Image;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.numbering.ParaHead;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.parapr.Heading;
-
-import java.util.ArrayList;
 
 /**
  * 글머리표 문단 모양
@@ -119,5 +116,33 @@ public class Bullet extends SwitchableObject {
 
     public void removeParaHead() {
         paraHead = null;
+    }
+
+    @Override
+    public Bullet clone() {
+        Bullet cloned = new Bullet();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Bullet from) {
+        this.id = from.id;
+        this._char = from._char;
+        this.checkedChar = from.checkedChar;
+        this.useImage = from.useImage;
+
+        if (from.img != null) {
+            img = from.img.clone();
+        } else {
+            img = null;
+        }
+
+        if (from.paraHead != null) {
+            paraHead = from.paraHead.clone();
+        } else {
+            paraHead = null;
+        }
+
+        super.copyFrom(from);
     }
 }

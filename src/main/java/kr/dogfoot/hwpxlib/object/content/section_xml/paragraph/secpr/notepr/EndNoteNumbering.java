@@ -50,4 +50,16 @@ public class EndNoteNumbering extends HWPXObject {
         this.newNum = newNum;
         return this;
     }
+
+    @Override
+    public EndNoteNumbering clone() {
+        EndNoteNumbering cloned = new EndNoteNumbering();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(EndNoteNumbering from) {
+        this.type = from.type;
+        this.newNum = from.newNum;
+    }
 }

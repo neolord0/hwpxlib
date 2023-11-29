@@ -217,4 +217,26 @@ public class ParaHead extends HWPXObject {
         this.text = text;
         return this;
     }
+
+    @Override
+    public ParaHead clone() {
+        ParaHead cloned = new ParaHead();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ParaHead from) {
+        this.level = from.level;
+        this.start = from.start;
+        this.align = from.align;
+        this.useInstWidth = from.useInstWidth;
+        this.autoIndent = from.autoIndent;
+        this.widthAdjust = from.widthAdjust;
+        this.textOffsetType = from.textOffsetType;
+        this.textOffset = from.textOffset;
+        this.numFormat = from.numFormat;
+        this.charPrIDRef = from.charPrIDRef;
+        this.checkable = from.checkable;
+        this.text = from.text;
+    }
 }

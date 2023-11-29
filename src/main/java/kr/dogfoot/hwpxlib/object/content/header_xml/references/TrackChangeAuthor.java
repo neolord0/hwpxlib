@@ -83,4 +83,18 @@ public class TrackChangeAuthor extends HWPXObject {
         this.color = color;
         return this;
     }
+
+    @Override
+    public TrackChangeAuthor clone() {
+        TrackChangeAuthor cloned = new TrackChangeAuthor();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TrackChangeAuthor from) {
+        this.id = from.id;
+        this.name = from.name;
+        this.mark = from.mark;
+        this.color = from.color;
+    }
 }

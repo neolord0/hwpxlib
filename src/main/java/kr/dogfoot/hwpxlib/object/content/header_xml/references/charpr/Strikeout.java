@@ -50,5 +50,17 @@ public class Strikeout extends HWPXObject {
         this.color = color;
         return this;
     }
+
+    @Override
+    public Strikeout clone() {
+        Strikeout cloned = new Strikeout();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Strikeout from) {
+        this.shape = from.shape;
+        this.color = from.color;
+    }
 }
 

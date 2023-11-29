@@ -14,4 +14,15 @@ public class NBSpace extends TItem {
     public ObjectType _objectType() {
         return ObjectType.hp_nbSpace;
     }
+
+    @Override
+    public NBSpace clone() {
+        NBSpace cloned = new NBSpace();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(NBSpace from) {
+        // nothing
+    }
 }

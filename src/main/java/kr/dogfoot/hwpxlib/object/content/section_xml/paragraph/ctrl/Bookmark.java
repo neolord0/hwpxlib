@@ -33,4 +33,16 @@ public class Bookmark extends CtrlItem {
         return this;
     }
 
+    @Override
+    public Bookmark clone() {
+        Bookmark cloned = new Bookmark();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Bookmark from) {
+        this.name = from.name;
+
+        super.copyFrom(from);
+    }
 }

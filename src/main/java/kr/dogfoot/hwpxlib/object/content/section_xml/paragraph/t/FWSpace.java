@@ -14,4 +14,15 @@ public class FWSpace extends TItem {
     public ObjectType _objectType() {
         return ObjectType.hp_fwSpace;
     }
+
+    @Override
+    public FWSpace clone() {
+        FWSpace cloned = new FWSpace();
+        cloned.copyFrom(this);
+        return null;
+    }
+
+    public void copyFrom(FWSpace from) {
+        // nothing
+    }
 }

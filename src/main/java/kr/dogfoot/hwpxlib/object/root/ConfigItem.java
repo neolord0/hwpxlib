@@ -58,5 +58,17 @@ public class ConfigItem extends HWPXObject {
         this.value = value;
         return this;
     }
-}
 
+    @Override
+    public ConfigItem clone() {
+        ConfigItem cloned = new ConfigItem();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ConfigItem from) {
+        this.name = from.name;
+        this.type = from.type;
+        this.value = from.value;
+    }
+}

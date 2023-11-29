@@ -69,4 +69,32 @@ public abstract class DrawingObject<ChildType> extends ShapeComponent<ChildType>
     public void removeShadow() {
         shadow = null;
     }
+
+    protected void copyFrom(DrawingObject from) {
+        if (from.lineShape != null) {
+            lineShape = from.lineShape.clone();
+        } else {
+            lineShape = null;
+        }
+
+        if (from.fillBrush != null) {
+            fillBrush = from.fillBrush.clone();
+        } else {
+            fillBrush = null;
+        }
+
+        if (from.drawText != null) {
+            drawText = from.drawText.clone();
+        } else {
+            drawText = null;
+        }
+
+        if (from.shadow != null) {
+            shadow = from.shadow.clone();
+        } else {
+            shadow = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

@@ -137,4 +137,28 @@ public class PageBorderFill extends SwitchableObject {
     public void removeOffset() {
         offset = null;
     }
+
+    @Override
+    public PageBorderFill clone() {
+        PageBorderFill cloned = new PageBorderFill();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(PageBorderFill from) {
+        this.type = from.type;
+        this.borderFillIDRef = from.borderFillIDRef;
+        this.textBorder = from.textBorder;
+        this.headerInside = from.headerInside;
+        this.footerInside = from.footerInside;
+        this.fillArea = from.fillArea;
+
+        if (from.offset != null) {
+            offset = from.offset.clone();
+        } else {
+            offset = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

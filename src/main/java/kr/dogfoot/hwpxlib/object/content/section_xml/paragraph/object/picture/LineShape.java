@@ -224,4 +224,26 @@ public class LineShape extends HWPXObject {
         this.alpha = alpha;
         return this;
     }
+
+    @Override
+    public LineShape clone() {
+        LineShape cloned = new LineShape();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(LineShape from) {
+        this.color = from.color;
+        this.width = from.width;
+        this.style = from.style;
+        this.endCap = from.endCap;
+        this.headStyle = from.headStyle;
+        this.tailStyle = from.tailStyle;
+        this.headfill = from.headfill;
+        this.tailfill = from.tailfill;
+        this.headSz = from.headSz;
+        this.tailSz = from.tailSz;
+        this.outlineStyle = from.outlineStyle;
+        this.alpha = from.alpha;
+    }
 }

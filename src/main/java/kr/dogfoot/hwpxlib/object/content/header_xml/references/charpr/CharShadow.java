@@ -84,4 +84,18 @@ public class CharShadow extends HWPXObject {
         this.offsetY = offsetY;
         return this;
     }
+
+    @Override
+    public CharShadow clone() {
+        CharShadow cloned = new CharShadow();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(CharShadow from) {
+        this.type = from.type;
+        this.color = from.color;
+        this.offsetX = from.offsetX;
+        this.offsetY = from.offsetY;
+    }
 }

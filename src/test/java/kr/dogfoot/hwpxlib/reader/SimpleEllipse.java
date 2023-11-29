@@ -25,8 +25,8 @@ public class SimpleEllipse {
     @Test
     public void test() throws Exception {
         HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/SimpleEllipse.hwpx");
-        Ellipse ellipse = (Ellipse) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
 
+        Ellipse ellipse = (Ellipse) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(ellipse);
         Assert.assertEquals(ellipse.id(), "1143227146");
         Assert.assertEquals(ellipse.zOrder().intValue(), 0);

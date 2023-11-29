@@ -14,4 +14,15 @@ public class DeleteEnd extends TrackChangeCore<DeleteEnd> {
     public ObjectType _objectType() {
         return ObjectType.hp_deleteEnd;
     }
+
+    @Override
+    public DeleteEnd clone() {
+        DeleteEnd cloned = new DeleteEnd();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(DeleteEnd from) {
+        super.copyFrom(from);
+    }
 }

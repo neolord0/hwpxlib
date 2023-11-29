@@ -57,4 +57,18 @@ public class ColorRGB extends HWPXObject {
         this.b = b;
         return this;
     }
+
+
+    @Override
+    public ColorRGB clone() {
+        ColorRGB cloned = new ColorRGB();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ColorRGB from) {
+        this.r = from.r;
+        this.g = from.g;
+        this.b = from.b;
+    }
 }

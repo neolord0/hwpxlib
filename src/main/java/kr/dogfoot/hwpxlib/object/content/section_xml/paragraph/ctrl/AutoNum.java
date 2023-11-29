@@ -14,4 +14,15 @@ public class AutoNum extends AutoNumNewNumCore<AutoNum> {
     public ObjectType _objectType() {
         return ObjectType.hp_autoNum;
     }
+
+    @Override
+    public AutoNum clone() {
+        AutoNum autoNum = new AutoNum();
+        autoNum.copyFrom(this);
+        return autoNum;
+    }
+
+    public void copyFrom(AutoNum from) {
+        super.copyFrom(from);
+    }
 }

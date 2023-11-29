@@ -29,4 +29,15 @@ public class TitleMark extends TItem {
         this.ignore = ignore;
         return this;
     }
+
+    @Override
+    public TitleMark clone() {
+        TitleMark cloned = new TitleMark();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TitleMark from) {
+        this.ignore = from.ignore;
+    }
 }

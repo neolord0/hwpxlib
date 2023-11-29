@@ -143,4 +143,61 @@ public class HeaderXMLFile extends SwitchableObject {
     public void removeTrackChangeConfig() {
         trackChangeConfig = null;
     }
+
+    @Override
+    public HeaderXMLFile clone() {
+        HeaderXMLFile cloned = new HeaderXMLFile();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(HeaderXMLFile from) {
+        this.version = from.version;
+        this.secCnt = from.secCnt;
+
+        if (from.beginNum != null) {
+            beginNum = from.beginNum.clone();
+        } else {
+            beginNum = null;
+        }
+
+        if (from.refList != null) {
+            refList = from.refList.clone();
+        } else {
+            refList = null;
+        }
+
+        if (from.forbiddenWordList != null) {
+            createForbiddenWordList();
+            for (ForbiddenWord forbiddenWord : from.forbiddenWordList.items()) {
+                forbiddenWordList.add(forbiddenWord.clone());
+            }
+        } else {
+            forbiddenWordList = null;
+        }
+
+        if (from.compatibleDocument != null) {
+            compatibleDocument = from.compatibleDocument.clone();
+        } else {
+            compatibleDocument = null;
+        }
+
+        if (from.docOption != null) {
+            docOption = from.docOption.clone();
+        } else {
+            docOption = null;
+        }
+
+        if (from.metaTag != null) {
+            metaTag = from.metaTag.clone();
+        } else {
+            metaTag = null;
+        }
+
+        if (from.trackChangeConfig != null) {
+            trackChangeConfig = from.trackChangeConfig.clone();
+        } else {
+            trackChangeConfig = null;
+        }
+    }
 }

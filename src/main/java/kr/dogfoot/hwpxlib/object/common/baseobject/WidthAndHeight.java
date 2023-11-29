@@ -42,4 +42,16 @@ public class WidthAndHeight extends HWPXObject {
         this.height = height;
         return this;
     }
+
+    @Override
+    public WidthAndHeight clone() {
+        WidthAndHeight cloned = new WidthAndHeight(_objectType);
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(WidthAndHeight from) {
+        this.width = from.width;
+        this.height = from.height;
+    }
 }

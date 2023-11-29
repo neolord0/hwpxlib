@@ -101,4 +101,19 @@ public class Image extends HWPXObject {
         this.alpha = alpha;
         return this;
     }
+
+    @Override
+    public Image clone() {
+        Image cloned = new Image();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Image from) {
+        this.binaryItemIDRef = from.binaryItemIDRef;
+        this.bright = from.bright;
+        this.contrast = from.contrast;
+        this.effect = from.effect;
+        this.alpha = from.alpha;
+    }
 }

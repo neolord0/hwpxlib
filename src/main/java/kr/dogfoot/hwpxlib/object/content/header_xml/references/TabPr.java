@@ -114,4 +114,21 @@ public class TabPr extends SwitchableObject {
     public Iterable<TabItem> tabItems() {
         return tabItemList;
     }
+
+    @Override
+    public TabPr clone() {
+        TabPr cloned = new TabPr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(TabPr from) {
+        this.id = from.id;
+        this.autoTabLeft = from.autoTabLeft;
+        this.autoTabRight = from.autoTabRight;
+
+        for (TabItem tabItem : from.tabItemList) {
+            tabItemList.add(tabItem.clone());
+        }
+    }
 }

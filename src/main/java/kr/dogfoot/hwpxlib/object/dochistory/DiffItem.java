@@ -33,4 +33,10 @@ public abstract class DiffItem<ChildType> extends SwitchableObject {
         return (ChildType) this;
     }
 
+    protected void copyFrom(DiffItem from) {
+        this.path = from.path;
+        this.filePartDiffType = from.filePartDiffType;
+
+        super.copyFrom(from);
+    }
 }

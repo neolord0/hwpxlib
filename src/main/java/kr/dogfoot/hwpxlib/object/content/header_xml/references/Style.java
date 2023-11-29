@@ -169,4 +169,23 @@ public class Style extends HWPXObject {
         this.lockForm = lockForm;
         return this;
     }
+
+    @Override
+    public Style clone() {
+        Style cloned = new Style();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(Style from) {
+        this.id = from.id;
+        this.type = from.type;
+        this.name = from.name;
+        this.engName = from.engName;
+        this.paraPrIDRef = from.paraPrIDRef;
+        this.charPrIDRef = from.charPrIDRef;
+        this.nextStyleIDRef = from.nextStyleIDRef;
+        this.langID = from.langID;
+        this.lockForm = from.lockForm;
+    }
 }

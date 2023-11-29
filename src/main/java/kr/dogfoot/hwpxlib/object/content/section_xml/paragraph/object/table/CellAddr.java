@@ -49,4 +49,16 @@ public class CellAddr extends HWPXObject {
         this.rowAddr = rowAddr;
         return this;
     }
+
+    @Override
+    public CellAddr clone() {
+        CellAddr cloned = new CellAddr();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(CellAddr from) {
+        this.colAddr = from.colAddr;
+        this.rowAddr = from.rowAddr;
+    }
 }

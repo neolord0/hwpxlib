@@ -97,4 +97,31 @@ public class DrawText extends SwitchableObject {
     public void removeSubList() {
         subList = null;
     }
+
+    @Override
+    public DrawText clone() {
+        DrawText cloned = new DrawText();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(DrawText from) {
+        this.lastWidth = from.lastWidth;
+        this.name = from.name;
+        this.editable = from.editable;
+
+        if (from.textMargin != null) {
+            textMargin = from.textMargin.clone();
+        } else {
+            textMargin = null;
+        }
+
+        if (from.subList != null) {
+            subList = from.subList.clone();
+        } else {
+            subList = null;
+        }
+
+        super.copyFrom(from);
+    }
 }

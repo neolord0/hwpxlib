@@ -134,4 +134,21 @@ public class ParaBorder extends HWPXObject {
         this.ignoreMargin = ignoreMargin;
         return this;
     }
+
+    @Override
+    public ParaBorder clone() {
+        ParaBorder cloned = new ParaBorder();
+        cloned.copyFrom(this);
+        return cloned;
+    }
+
+    public void copyFrom(ParaBorder from) {
+        this.borderFillIDRef = from.borderFillIDRef;
+        this.offsetLeft = from.offsetLeft;
+        this.offsetRight = from.offsetRight;
+        this.offsetTop = from.offsetTop;
+        this.offsetBottom = from.offsetBottom;
+        this.connect = from.connect;
+        this.ignoreMargin = from.ignoreMargin;
+    }
 }
