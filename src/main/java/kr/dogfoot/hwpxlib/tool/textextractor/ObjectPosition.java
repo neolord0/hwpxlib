@@ -36,8 +36,16 @@ public class ObjectPosition {
         return ctrlItemIndex;
     }
 
+    public boolean equals(Object object) {
+        ObjectPosition that = (ObjectPosition) object;
+        return this.paraIndex == that.paraIndex
+                && this.runIndex == that.runIndex
+                && this.runItemIndex == that.runItemIndex
+                && this.ctrlItemIndex == that.ctrlItemIndex;
+    }
     public String debug() {
         return paraIndex + ";" + runIndex + ";" + runItemIndex + ";" + ctrlItemIndex;
     }
+
 
 }
