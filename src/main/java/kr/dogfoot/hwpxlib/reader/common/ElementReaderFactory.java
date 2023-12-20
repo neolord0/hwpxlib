@@ -91,6 +91,8 @@ public class ElementReaderFactory {
 
     private static ElementReader createElementReaderForBasic(ElementReaderSort sort) {
         switch (sort) {
+            case Unreadable:
+                return new UnreadableElementReader();
             case Empty:
                 return new NoAttributeNoChildReader();
             case Switch:
@@ -341,7 +343,7 @@ public class ElementReaderFactory {
                 return new NoteSpacingReader();
             case FootNoteNumbering:
                 return new FootNoteNumberingReader();
-            case FootNotePlacement:;
+            case FootNotePlacement:
                 return new FootNotePlacementReader();
             case EndNotePr:
                 return new EndNotePrReader();

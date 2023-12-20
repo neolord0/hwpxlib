@@ -3,6 +3,7 @@ package kr.dogfoot.hwpxlib.reader.common;
 public enum ElementReaderSort {
     Start_Of_Element(null),
 
+    Unreadable(ElementReaderType.Basic),
     Empty(ElementReaderType.Basic),
     Switch(ElementReaderType.Basic),
     Case(ElementReaderType.Basic),
@@ -234,7 +235,7 @@ public enum ElementReaderSort {
 
     End_Of_Element(null);
 
-    private ElementReaderType type;
+    private final ElementReaderType type;
 
     ElementReaderSort(ElementReaderType type) {
         this.type = type;

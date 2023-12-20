@@ -23,7 +23,6 @@ import java.util.zip.ZipFile;
 public class ContentFilesReader extends XMLFileReader {
     private final ArrayList<Chart> chartList;
     private HWPXFile hwpxFile;
-    private String topEntryName;
 
     public ContentFilesReader(ElementReaderManager entryReaderManager) {
         super(entryReaderManager);
@@ -46,8 +45,6 @@ public class ContentFilesReader extends XMLFileReader {
     @Override
     public void startElement(String uri, String localName, String name, Attributes attrs) {
         if (currentElementReader == null) {
-            topEntryName = name;
-
             switch (name) {
                 case ElementNames.hh_head:
                     ((HeadReader) setCurrentElementReader(ElementReaderSort.Head))
@@ -77,8 +74,13 @@ public class ContentFilesReader extends XMLFileReader {
 
                     super.startElement(uri, localName, name, attrs);
                     break;
+                default:
+                    setCurrentElementReader(ElementReaderSort.Unreadable);
 
+                    super.startElement(uri, localName, name, attrs);
+                    break;
             }
+
         } else {
             super.startElement(uri, localName, name, attrs);
         }
