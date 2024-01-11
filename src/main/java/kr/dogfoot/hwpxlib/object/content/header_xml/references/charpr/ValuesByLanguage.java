@@ -150,6 +150,16 @@ public class ValuesByLanguage<ValueType> extends HWPXObject {
         this.user = user;
     }
 
+    public void setAll(ValueType value) {
+        this.hangul = value;
+        this.latin = value;
+        this.hanja = value;
+        this.japanese = value;
+        this.other = value;
+        this.symbol = value;
+        this.user = value;
+    }
+
     @Override
     public ValuesByLanguage<ValueType> clone() {
         ValuesByLanguage<ValueType> cloned = new ValuesByLanguage<ValueType>(_objectType);
