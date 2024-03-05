@@ -60,6 +60,10 @@ public class Polygon extends DrawingObject<Polygon> {
         ptList.remove(position);
     }
 
+    public void removePt(Point pt) {
+        ptList.remove(pt);
+    }
+
     public Iterable<Point> pts() {
         return ptList;
     }

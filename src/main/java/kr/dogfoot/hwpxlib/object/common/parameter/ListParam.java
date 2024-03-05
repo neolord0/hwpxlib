@@ -86,6 +86,10 @@ public class ListParam extends Param<ListParam> {
         parameterList.remove(position);
     }
 
+    public void removeParam(Param parameter) {
+        parameterList.remove(parameter);
+    }
+
     public Iterable<Param> params() {
         return parameterList;
     }

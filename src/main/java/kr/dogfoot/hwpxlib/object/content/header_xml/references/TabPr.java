@@ -111,6 +111,10 @@ public class TabPr extends SwitchableObject {
         tabItemList.remove(position);
     }
 
+    public void removeTabItem(TabItem tabItem) {
+        tabItemList.remove(tabItem);
+    }
+
     public Iterable<TabItem> tabItems() {
         return tabItemList;
     }

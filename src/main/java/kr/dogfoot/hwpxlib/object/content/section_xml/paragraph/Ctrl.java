@@ -137,6 +137,10 @@ public class Ctrl extends RunItem {
         itemList.remove(position);
     }
 
+    public void removeCtrlItem(CtrlItem ctrlItem) {
+        itemList.remove(ctrlItem);
+    }
+
     public Iterable<CtrlItem> ctrlItems() {
         return itemList;
     }

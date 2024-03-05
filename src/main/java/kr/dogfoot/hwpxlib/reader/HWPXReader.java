@@ -108,6 +108,10 @@ public class HWPXReader {
         for (ManifestItem item : hwpxFile.contentHPFFile().manifest().items()) {
             if (MineTypes.XML.equals(item.mediaType())) {
                 contentFilesReader.read(hwpxFile, item.href(), zipFile);
+
+                if (contentFilesReader.stoppedParsing()) {
+                    addUnparsedXMLFile(item.href());
+                }
             } else if (item.hasAttachedFile()) {
                 item.createAttachedFile();
                 item.attachedFile().data(ZipFileReader.readBinary(item.href(), zipFile));
@@ -119,6 +123,11 @@ public class HWPXReader {
                     .pathAnd(chart.chartIDRef())
                     .data(ZipFileReader.readBinary(chart.chartIDRef(), zipFile));
         }
+    }
+
+    private void addUnparsedXMLFile(String href) throws IOException {
+        hwpxFile.addUnparsedXMLFile(href,
+                new String(ZipFileReader.readBinary(href, zipFile)));
     }
 
     private void etcContainedFile() throws IOException {

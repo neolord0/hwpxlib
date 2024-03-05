@@ -258,6 +258,10 @@ public class Run extends SwitchableObject {
         itemList.remove(position);
     }
 
+    public void removeRunItem(RunItem runItem) {
+        itemList.remove(runItem);
+    }
+
     public void removeAllRunItems() {
         itemList.clear();
     }

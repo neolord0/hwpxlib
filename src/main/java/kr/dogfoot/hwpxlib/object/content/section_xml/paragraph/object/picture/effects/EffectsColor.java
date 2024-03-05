@@ -190,6 +190,10 @@ public class EffectsColor extends SwitchableObject {
         effectList.remove(position);
     }
 
+    public void removeEffect(ColorEffect effect) {
+        effectList.remove(effect);
+    }
+
     public Iterable<ColorEffect> effects() {
         return effectList;
     }

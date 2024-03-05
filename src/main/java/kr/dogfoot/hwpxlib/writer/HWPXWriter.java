@@ -7,6 +7,7 @@ import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.chart.ChartXMLFile;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.context_hpf.ManifestItem;
+import kr.dogfoot.hwpxlib.object.etc.UnparsedXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.RootFile;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
@@ -63,6 +64,7 @@ public class HWPXWriter {
         contentFiles();
         chartFiles();
         etcContainedFile();
+        unparsedXMLFiles();
     }
 
     private void mineType() throws IOException {
@@ -79,6 +81,7 @@ public class HWPXWriter {
     private void writeChild(ElementWriterSort sort, HWPXObject child) {
         elementWriterManager.get(sort).write(child);
     }
+
     private XMLStringBuilder xsb() {
         return elementWriterManager.xsb();
     }
@@ -163,6 +166,12 @@ public class HWPXWriter {
                     && rootFile.attachedFile() != null) {
                 putIntoZip(rootFile.fullPath(), rootFile.attachedFile().data());
             }
+        }
+    }
+
+    private void unparsedXMLFiles() throws IOException {
+        for (UnparsedXMLFile unparsedXMLFile : hwpxFile.unparsedXMLFiles()) {
+            putIntoZip(unparsedXMLFile.href(), unparsedXMLFile.xml(), StandardCharsets.UTF_8);
         }
     }
 

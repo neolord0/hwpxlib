@@ -52,6 +52,10 @@ public class Switch extends HWPXObject {
         caseObjectList.remove(position);
     }
 
+    public void removeCaseObject(Case caseObject) {
+        caseObjectList.remove(caseObject);
+    }
+
     public Iterable<Case> caseObjects() {
         return caseObjectList;
     }

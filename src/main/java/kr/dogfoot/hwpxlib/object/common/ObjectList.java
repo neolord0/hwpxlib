@@ -67,6 +67,10 @@ public class ObjectList<ItemType> extends SwitchableObject {
         list.remove(position);
     }
 
+    public void remove(ItemType item) {
+        list.remove(item);
+    }
+
     public void removeAll() {
         this.list.clear();
     }

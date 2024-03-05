@@ -57,6 +57,10 @@ public class Curve extends DrawingObject<Curve> {
         segList.remove(position);
     }
 
+    public void removeSeg(CurveSegment seg) {
+        segList.remove(seg);
+    }
+
     public Iterable<CurveSegment> segs() {
         return segList;
     }

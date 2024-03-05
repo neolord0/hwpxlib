@@ -133,6 +133,10 @@ public class Compose extends RunItem {
         charPrList.remove(position);
     }
 
+    public void removeCharPr(ComposeCharPr charPr) {
+        charPrList.remove(charPr);
+    }
+
     public Iterable<ComposeCharPr> charPrs() {
         return charPrList;
     }

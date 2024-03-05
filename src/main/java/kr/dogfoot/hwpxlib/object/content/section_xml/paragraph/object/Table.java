@@ -220,6 +220,10 @@ public class Table extends ShapeObject<Table> {
         trList.remove(position);
     }
 
+    public void removeTr(Tr tr) {
+        trList.remove(tr);
+    }
+
     public Iterable<Tr> trs() {
         return trList;
     }

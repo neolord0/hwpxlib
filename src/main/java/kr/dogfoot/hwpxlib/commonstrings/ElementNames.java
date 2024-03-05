@@ -355,4 +355,5 @@ public class ElementNames {
     public static final String hhs_insert = "hhs:insert";
     public static final String hhs_update = "hhs:update";
     public static final String hhs_delete = "hhs:delete";
+    public static final String b_Sources = "b:Sources";
 }

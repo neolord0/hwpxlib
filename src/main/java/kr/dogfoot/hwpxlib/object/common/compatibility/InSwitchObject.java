@@ -31,6 +31,10 @@ public abstract class InSwitchObject extends HWPXObject {
         childList.remove(position);
     }
 
+    public void removeChild(HWPXObject child) {
+        childList.remove(child);
+    }
+
     public Iterable<HWPXObject> children() {
         return childList;
     }

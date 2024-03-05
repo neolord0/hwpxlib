@@ -169,6 +169,10 @@ public class ColPr extends CtrlItem {
         colSzList.remove(position);
     }
 
+    public void removeColSz(ColSz colSz) {
+        colSzList.remove(colSz);
+    }
+
     public Iterable<ColSz> colSzs() {
         return colSzList;
     }

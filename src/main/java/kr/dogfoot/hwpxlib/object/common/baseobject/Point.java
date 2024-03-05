@@ -47,6 +47,12 @@ public class Point extends HWPXObject {
         return this;
     }
 
+    public void set(Long x, Long y) {
+        this.x = x;
+        this.y = y;
+    }
+
+
     @Override
     public Point clone() {
         Point cloned = new Point(_objectType);

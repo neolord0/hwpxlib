@@ -116,6 +116,10 @@ public class Container extends ShapeComponent<Container> {
         childList.remove(position);
     }
 
+    public void removeChild(ShapeComponent child) {
+        childList.remove(child);
+    }
+
     public Iterable<ShapeComponent> children() {
         return childList;
     }

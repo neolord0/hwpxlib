@@ -99,6 +99,15 @@ public class Matrix extends HWPXObject {
         return this;
     }
 
+    public void set(Float e1, Float e2, Float e3, Float e4, Float e5, Float e6) {
+        this.e1 = e1;
+        this.e2 = e2;
+        this.e3 = e3;
+        this.e4 = e4;
+        this.e5 = e5;
+        this.e6 = e6;
+    }
+
     @Override
     public Matrix clone() {
         Matrix cloned = new Matrix(_objectType);

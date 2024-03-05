@@ -50,6 +50,10 @@ public class Fontfaces extends SwitchableObject {
         fontfaceList.remove(position);
     }
 
+    public void removeFontface(Fontface fontface) {
+        fontfaceList.remove(fontface);
+    }
+
     public Iterable<Fontface> fontfaces() {
         return fontfaceList;
     }

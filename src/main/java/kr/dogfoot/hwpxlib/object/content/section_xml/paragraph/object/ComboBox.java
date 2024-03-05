@@ -127,6 +127,9 @@ public class ComboBox extends FormObject<ComboBox> {
     public void removeListItem(int position) {
         listItemList.remove(position);
     }
+    public void removeListItem(ListItem listItem) {
+        listItemList.remove(listItem);
+    }
 
     public Iterable<ListItem> listItems() {
         return listItemList;

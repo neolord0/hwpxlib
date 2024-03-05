@@ -180,6 +180,10 @@ public class Para extends SwitchableObject {
         runList.remove(position);
     }
 
+    public void removeRun(Run run) {
+        runList.remove(run);
+    }
+
     public Iterable<Run> runs() {
         return runList;
     }

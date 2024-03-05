@@ -43,6 +43,11 @@ public class XAndYFloat extends HWPXObject {
         return this;
     }
 
+    public void set(Float x, Float y) {
+        this.x = x;
+        this.y = y;
+    }
+
     @Override
     public XAndYFloat clone() {
         XAndYFloat cloned = new XAndYFloat(_objectType);

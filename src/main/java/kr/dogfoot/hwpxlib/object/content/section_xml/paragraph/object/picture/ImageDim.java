@@ -10,11 +10,11 @@ public class ImageDim extends HWPXObject {
     /**
      * 너비, pixel * 75
      */
-    private Integer dimwidth;
+    private Long dimwidth;
     /**
      * 높이, pixel * 75
      */
-    private Integer dimheight;
+    private Long dimheight;
 
     public ImageDim() {
     }
@@ -24,28 +24,28 @@ public class ImageDim extends HWPXObject {
         return ObjectType.hp_imgDim;
     }
 
-    public Integer dimwidth() {
+    public Long dimwidth() {
         return dimwidth;
     }
 
-    public void dimwidth(Integer dimwidth) {
+    public void dimwidth(Long dimwidth) {
         this.dimwidth = dimwidth;
     }
 
-    public ImageDim dimwidthAnd(Integer dimwidth) {
+    public ImageDim dimwidthAnd(Long dimwidth) {
         this.dimwidth = dimwidth;
         return this;
     }
 
-    public Integer dimheight() {
+    public Long dimheight() {
         return dimheight;
     }
 
-    public void dimheight(Integer dimheight) {
+    public void dimheight(Long dimheight) {
         this.dimheight = dimheight;
     }
 
-    public ImageDim dimheightAnd(Integer dimheight) {
+    public ImageDim dimheightAnd(Long dimheight) {
         this.dimheight = dimheight;
         return this;
     }

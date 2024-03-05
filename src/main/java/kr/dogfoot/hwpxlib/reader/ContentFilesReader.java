@@ -74,6 +74,9 @@ public class ContentFilesReader extends XMLFileReader {
 
                     super.startElement(uri, localName, name, attrs);
                     break;
+                case ElementNames.b_Sources:
+                    stopParsing();
+                    break;
                 default:
                     setCurrentElementReader(ElementReaderSort.Unreadable);
 

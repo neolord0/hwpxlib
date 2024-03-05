@@ -48,6 +48,14 @@ public abstract class ParaListCore extends SwitchableObject {
         paraList.remove(position);
     }
 
+    public void removePara(Para para) {
+        paraList.remove(para);
+    }
+
+    public void removeAllParas() {
+        paraList.clear();
+    }
+
     public Iterable<Para> paras() {
         return paraList;
     }

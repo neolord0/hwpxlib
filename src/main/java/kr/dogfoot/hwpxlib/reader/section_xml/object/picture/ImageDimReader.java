@@ -23,10 +23,10 @@ public class ImageDimReader extends ElementReader {
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.dimwidth:
-                imgDim.dimwidth(ValueConvertor.toInteger(value));
+                imgDim.dimwidth(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.dimheight:
-                imgDim.dimheight(ValueConvertor.toInteger(value));
+                imgDim.dimheight(ValueConvertor.toLong(value));
                 break;
         }
     }

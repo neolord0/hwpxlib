@@ -43,6 +43,12 @@ public class StartAndEndFloat extends HWPXObject {
         return this;
     }
 
+    public void set(Float start, Float end) {
+        this.start = start;
+        this.end = end;
+    }
+
+
     @Override
     public StartAndEndFloat clone() {
         StartAndEndFloat cloned = new StartAndEndFloat(_objectType);

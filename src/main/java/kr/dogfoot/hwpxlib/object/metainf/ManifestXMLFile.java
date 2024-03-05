@@ -53,6 +53,10 @@ public class ManifestXMLFile extends SwitchableObject {
         fileEntryList.remove(position);
     }
 
+    public void removeFileEntry(FileEntry fileEntry) {
+        fileEntryList.remove(fileEntry);
+    }
+
     public Iterable<FileEntry> fileEntries() {
         return fileEntryList;
     }

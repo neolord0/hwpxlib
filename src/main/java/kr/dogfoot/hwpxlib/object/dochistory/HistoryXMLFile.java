@@ -67,6 +67,10 @@ public class HistoryXMLFile extends SwitchableObject {
         entryList.remove(position);
     }
 
+    public void removeEntry(HistoryEntry entry) {
+        entryList.remove(entry);
+    }
+
     public Iterable<HistoryEntry> entries() {
         return entryList;
     }

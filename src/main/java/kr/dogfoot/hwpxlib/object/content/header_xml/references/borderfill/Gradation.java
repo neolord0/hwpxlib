@@ -183,6 +183,10 @@ public class Gradation extends SwitchableObject {
         colorList.remove(position);
     }
 
+    public void removeColor(Color color) {
+        colorList.remove(color);
+    }
+
     public Iterable<Color> colors() {
         return colorList;
     }

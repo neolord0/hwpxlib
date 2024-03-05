@@ -9,10 +9,13 @@ import kr.dogfoot.hwpxlib.object.content.header_xml.HeaderXMLFile;
 import kr.dogfoot.hwpxlib.object.content.masterpage_xml.MasterPageXMLFile;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SectionXMLFile;
 import kr.dogfoot.hwpxlib.object.dochistory.HistoryXMLFile;
+import kr.dogfoot.hwpxlib.object.etc.UnparsedXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.ContainerXMLFile;
 import kr.dogfoot.hwpxlib.object.metainf.ManifestXMLFile;
 import kr.dogfoot.hwpxlib.object.root.SettingsXMLFile;
 import kr.dogfoot.hwpxlib.object.root.VersionXMLFile;
+
+import java.util.ArrayList;
 
 /**
  * HWPX 파일 전체를 나타내는 객체
@@ -29,6 +32,7 @@ public class HWPXFile extends HWPXObject {
     private final SettingsXMLFile settingsXMLFile;
     private final ObjectList<HistoryXMLFile> historyXMLFileList;
     private final ObjectList<ChartXMLFile> chartXMLFileList;
+    private final ArrayList<UnparsedXMLFile> unparsedXMLFileList;
 
     public HWPXFile() {
         versionXMLFile = new VersionXMLFile();
@@ -42,7 +46,9 @@ public class HWPXFile extends HWPXObject {
         settingsXMLFile = new SettingsXMLFile();
         historyXMLFileList = new ObjectList<HistoryXMLFile>(HistoryXMLFile.class);
         chartXMLFileList = new ObjectList<ChartXMLFile>(ChartXMLFile.class);
+        unparsedXMLFileList = new ArrayList<UnparsedXMLFile>();
     }
+
 
     @Override
     public ObjectType _objectType() {
@@ -89,6 +95,16 @@ public class HWPXFile extends HWPXObject {
         return chartXMLFileList;
     }
 
+    public void addUnparsedXMLFile(String href, String xml) {
+        unparsedXMLFileList.add(new UnparsedXMLFile()
+                .hrefAnd(href)
+                .xmlAnd(xml));
+    }
+
+    public UnparsedXMLFile[] unparsedXMLFiles() {
+        return unparsedXMLFileList.toArray(UnparsedXMLFile.ZeroArray);
+    }
+
     public HWPXFile clone() {
         HWPXFile cloned = new HWPXFile();
         cloned.copyFrom(this);
@@ -114,6 +130,9 @@ public class HWPXFile extends HWPXObject {
         }
         for (ChartXMLFile chartXMLFile : from.chartXMLFileList.items()) {
             chartXMLFileList.add(chartXMLFile.clone());
+        }
+        for (UnparsedXMLFile unparsedXMLFile : from.unparsedXMLFileList) {
+            unparsedXMLFileList.add(unparsedXMLFile.clone());
         }
    }
 }

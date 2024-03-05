@@ -53,6 +53,10 @@ public class Tr extends SwitchableObject {
         tcList.remove(position);
     }
 
+    public void removeTc(Tc tc) {
+        tcList.remove(tc);
+    }
+
     public Iterable<Tc> tcs() {
         return tcList;
     }

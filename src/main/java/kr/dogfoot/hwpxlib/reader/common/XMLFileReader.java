@@ -20,6 +20,7 @@ import java.util.zip.ZipFile;
 public abstract class XMLFileReader extends DefaultHandler {
     protected ElementReaderManager elementReaderManager;
     protected ElementReader currentElementReader;
+    private boolean stoppedParsing;
 
     protected XMLFileReader(ElementReaderManager entryReaderManager) {
         this.elementReaderManager = entryReaderManager;
@@ -27,6 +28,8 @@ public abstract class XMLFileReader extends DefaultHandler {
     }
 
     protected void read(InputStream io) throws ParserConfigurationException, SAXException, IOException {
+        stoppedParsing = false;
+
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
         parser.parse(io, this);
@@ -67,6 +70,10 @@ public abstract class XMLFileReader extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String name, Attributes attrs) {
+        if (stoppedParsing) {
+            return;
+        }
+
         if (!currentElementReader.started()) {
             currentElementReader.started(true);
             currentElementReader.startElement(attrs);
@@ -92,6 +99,10 @@ public abstract class XMLFileReader extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String name) {
+        if (stoppedParsing) {
+            return;
+        }
+
         currentElementReader.started(false);
         currentElementReader.endElement();
         elementReaderManager.release(currentElementReader);
@@ -105,6 +116,10 @@ public abstract class XMLFileReader extends DefaultHandler {
 
     @Override
     public void characters(char[] ch, int start, int length) {
+        if (stoppedParsing) {
+            return;
+        }
+
         if (currentElementReader != null) {
             currentElementReader.text(new String(ch, start, length));
         }
@@ -113,5 +128,13 @@ public abstract class XMLFileReader extends DefaultHandler {
     public void setCurrentElementReaderForEmpty(String name, Attributes attrs) {
         setCurrentElementReader(ElementReaderSort.Empty);
         startElement(name, attrs);
+    }
+
+    protected void stopParsing() {
+        stoppedParsing = true;
+    }
+
+    public boolean stoppedParsing() {
+        return stoppedParsing;
     }
 }

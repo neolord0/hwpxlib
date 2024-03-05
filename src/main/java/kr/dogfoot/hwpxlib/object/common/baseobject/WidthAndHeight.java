@@ -43,6 +43,11 @@ public class WidthAndHeight extends HWPXObject {
         return this;
     }
 
+    public void set(Long width, Long height) {
+        this.width = width;
+        this.height = height;
+    }
+
     @Override
     public WidthAndHeight clone() {
         WidthAndHeight cloned = new WidthAndHeight(_objectType);
