@@ -98,6 +98,10 @@ public class Numbering extends SwitchableObject {
         paraHeadList.remove(paraHead);
     }
 
+    public void removeAllParaHeads() {
+        paraHeadList.clear();
+    }
+
     public Iterable<ParaHead> paraHeads() {
         return paraHeadList;
     }

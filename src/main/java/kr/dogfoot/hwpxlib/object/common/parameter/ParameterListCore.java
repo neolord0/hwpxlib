@@ -100,6 +100,10 @@ public abstract class ParameterListCore<ChildType> extends SwitchableObject {
         parameterList.remove(parameter);
     }
 
+    public void removeAllParams() {
+        parameterList.clear();
+    }
+
     public Iterable<Param> params() {
         return parameterList;
     }

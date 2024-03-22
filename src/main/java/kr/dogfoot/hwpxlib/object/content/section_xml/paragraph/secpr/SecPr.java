@@ -351,6 +351,14 @@ public class SecPr extends SwitchableObject {
         pageBorderFillList.remove(position);
     }
 
+    public void removePageBorderFill(PageBorderFill pageBorderFill) {
+        pageBorderFillList.remove(pageBorderFill);
+    }
+
+    public void removeAllPageBorderFills() {
+        pageBorderFillList.clear();
+    }
+
     public Iterable<PageBorderFill> pageBorderFills() {
         return pageBorderFillList;
     }
@@ -389,6 +397,14 @@ public class SecPr extends SwitchableObject {
 
     public void removeMasterPage(int position) {
         masterPageList.remove(position);
+    }
+
+    public void removeMasterPage(MasterPage masterPage) {
+        masterPageList.remove(masterPage);
+    }
+
+    public void removeAllMasterPages() {
+        masterPageList.clear();
     }
 
     public Iterable<MasterPage> masterPages() {

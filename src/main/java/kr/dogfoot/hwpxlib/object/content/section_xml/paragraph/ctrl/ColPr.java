@@ -173,6 +173,10 @@ public class ColPr extends CtrlItem {
         colSzList.remove(colSz);
     }
 
+    public void removeAllColSz() {
+        colSzList.clear();
+    }
+
     public Iterable<ColSz> colSzs() {
         return colSzList;
     }

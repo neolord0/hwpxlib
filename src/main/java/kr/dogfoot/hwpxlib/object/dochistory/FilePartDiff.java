@@ -91,6 +91,10 @@ public class FilePartDiff<ChildType> extends SwitchableObject {
         childDiffList.remove(childDiff);
     }
 
+    public void removeAllChildDiffs() {
+        childDiffList.clear();
+    }
+
     public Iterable<DiffItem> childDiffs() {
         return childDiffList;
     }

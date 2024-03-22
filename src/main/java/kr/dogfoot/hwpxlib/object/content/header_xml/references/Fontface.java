@@ -73,6 +73,10 @@ public class Fontface extends SwitchableObject {
         fontList.remove(font);
     }
 
+    public void removeAllFonts() {
+        fontList.clear();
+    }
+
     public Iterable<Font> fonts() {
         return fontList;
     }

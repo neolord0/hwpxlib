@@ -61,6 +61,10 @@ public class ManifestXMLFile extends SwitchableObject {
         return fileEntryList;
     }
 
+    public void removeAllFileEntries() {
+        fileEntryList.clear();
+    }
+
     public ManifestXMLFile clone() {
         ManifestXMLFile cloned = new ManifestXMLFile();
         cloned.copyFrom(this);

@@ -91,6 +91,10 @@ public class UpdateDiff extends DiffItem<UpdateDiff> {
         childDiffList.remove(childDiff);
     }
 
+    public void removeAllChildDiffs() {
+        childDiffList.clear();
+    }
+
     public Iterable<DiffItem> childDiffs() {
         return childDiffList;
     }

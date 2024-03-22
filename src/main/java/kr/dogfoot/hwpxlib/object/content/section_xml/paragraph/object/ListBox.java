@@ -115,6 +115,10 @@ public class ListBox extends FormObject<ListBox> {
         listItemList.remove(listItem);
     }
 
+    public void removeAllListItems() {
+        listItemList.clear();
+    }
+
     public Iterable<ListItem> listItems() {
         return listItemList;
     }

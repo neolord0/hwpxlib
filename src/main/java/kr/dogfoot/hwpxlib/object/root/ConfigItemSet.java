@@ -71,6 +71,10 @@ public class ConfigItemSet extends SwitchableObject {
         configItemList.remove(configItem);
     }
 
+    public void removeAllConfigItems() {
+        configItemList.clear();
+    }
+
     public Iterable<ConfigItem> configItems() {
         return configItemList;
     }

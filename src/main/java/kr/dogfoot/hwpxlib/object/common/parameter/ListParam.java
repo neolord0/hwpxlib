@@ -90,6 +90,10 @@ public class ListParam extends Param<ListParam> {
         parameterList.remove(parameter);
     }
 
+    public void removeAllParams() {
+        parameterList.clear();
+    }
+
     public Iterable<Param> params() {
         return parameterList;
     }

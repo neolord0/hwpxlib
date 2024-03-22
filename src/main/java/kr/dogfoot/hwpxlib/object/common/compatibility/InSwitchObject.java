@@ -35,9 +35,15 @@ public abstract class InSwitchObject extends HWPXObject {
         childList.remove(child);
     }
 
+    public void removeAllChildren() {
+        childList.clear();
+    }
+
     public Iterable<HWPXObject> children() {
         return childList;
     }
+
+
 
     protected void copyForm(InSwitchObject from) {
         for (HWPXObject child : from.childList) {

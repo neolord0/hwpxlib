@@ -85,6 +85,10 @@ public class MetaData extends SwitchableObject {
         metaList.remove(meta);
     }
 
+    public void removeAllMetas() {
+        metaList.clear();
+    }
+
     public Iterable<Meta> metas() {
         return metaList;
     }

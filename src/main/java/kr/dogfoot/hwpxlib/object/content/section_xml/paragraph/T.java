@@ -241,6 +241,12 @@ public class T extends RunItem {
         }
     }
 
+    public void removeAllItems() {
+        if (itemList != null) {
+            itemList.clear();
+        }
+    }
+
     public Iterable<TItem> items() {
         return itemList;
     }

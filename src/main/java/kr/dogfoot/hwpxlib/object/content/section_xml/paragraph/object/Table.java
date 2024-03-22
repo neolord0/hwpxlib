@@ -224,6 +224,10 @@ public class Table extends ShapeObject<Table> {
         trList.remove(tr);
     }
 
+    public void removeAllTrs() {
+        trList.clear();
+    }
+
     public Iterable<Tr> trs() {
         return trList;
     }

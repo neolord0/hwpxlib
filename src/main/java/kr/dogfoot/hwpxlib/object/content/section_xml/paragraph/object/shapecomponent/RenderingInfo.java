@@ -75,6 +75,10 @@ public class RenderingInfo extends SwitchableObject {
         matrixList.remove(matrix);
     }
 
+    public void removeAllMatrix() {
+        matrixList.clear();
+    }
+
     public Iterable<Matrix> matrices() {
         return matrixList;
     }

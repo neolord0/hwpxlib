@@ -73,6 +73,14 @@ public class InsertDiff extends DiffItem<InsertDiff> {
         childDiffList.remove(position);
     }
 
+    public void removeChildDiff(DiffItem childDiff) {
+        childDiffList.remove(childDiff);
+    }
+
+    public void removeAllChildDiffs() {
+        childDiffList.clear();
+    }
+
     public Iterable<DiffItem> childDiffs() {
         return childDiffList;
     }

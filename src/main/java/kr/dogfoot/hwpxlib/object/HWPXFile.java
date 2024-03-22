@@ -105,6 +105,14 @@ public class HWPXFile extends HWPXObject {
         return unparsedXMLFileList.toArray(UnparsedXMLFile.ZeroArray);
     }
 
+    public void removeUnparsedXMLFile(UnparsedXMLFile unparsedXMLFile) {
+        unparsedXMLFileList.remove(unparsedXMLFile);
+    }
+
+    public void removeAllUnparsedXMLFiles() {
+        unparsedXMLFileList.clear();
+    }
+
     public HWPXFile clone() {
         HWPXFile cloned = new HWPXFile();
         cloned.copyFrom(this);

@@ -120,6 +120,10 @@ public class Container extends ShapeComponent<Container> {
         childList.remove(child);
     }
 
+    public void removeAllChildren() {
+        childList.clear();
+    }
+
     public Iterable<ShapeComponent> children() {
         return childList;
     }

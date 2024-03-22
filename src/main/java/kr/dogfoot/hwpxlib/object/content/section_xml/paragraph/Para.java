@@ -184,6 +184,10 @@ public class Para extends SwitchableObject {
         runList.remove(run);
     }
 
+    public void removeAllRuns() {
+        runList.clear();
+    }
+
     public Iterable<Run> runs() {
         return runList;
     }
