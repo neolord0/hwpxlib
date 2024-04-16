@@ -41,7 +41,7 @@ public class PresentationReader extends ElementReader {
                 presentation.autoshow(ValueConvertor.toBoolean(value));
                 break;
             case AttributeNames.showtime:
-                presentation.showtime(ValueConvertor.toInteger(value));
+                presentation.showtime(ValueConvertor.toLong(value));
                 break;
             case AttributeNames.applyto:
                 presentation.applyto(value);

@@ -28,7 +28,7 @@ public class Presentation extends SwitchableObject {
     /**
      * 전환 시간
      */
-    private Integer showtime;
+    private Long showtime;
     /**
      * 적용범뮈
      */
@@ -95,16 +95,16 @@ public class Presentation extends SwitchableObject {
         return this;
     }
 
-    public Integer showtime() {
+    public Long showtime() {
         return showtime;
     }
 
-    public Presentation showtimeAnd(Integer showtime) {
+    public Presentation showtimeAnd(Long showtime) {
         this.showtime = showtime;
         return this;
     }
 
-    public void showtime(Integer showtime) {
+    public void showtime(Long showtime) {
         this.showtime = showtime;
     }
 
