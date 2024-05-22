@@ -24,7 +24,7 @@ public class ParameterListCoreWriter extends ElementWriter {
         ParameterListCore parameterList = (ParameterListCore) object;
         switchList(parameterList.switchList());
 
-        switch(parameterList._objectType()) {
+        switch (parameterList._objectType()) {
             case hp_parameters:
                 xsb().openElement(ElementNames.hp_parameters);
                 break;
@@ -51,7 +51,7 @@ public class ParameterListCoreWriter extends ElementWriter {
     }
 
     private void param(Param param) {
-        switch(param._objectType()) {
+        switch (param._objectType()) {
             case hp_integerParam:
                 integerParam((IntegerParam) param);
                 break;

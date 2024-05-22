@@ -21,7 +21,7 @@ public class MetadataReader extends ElementReader {
 
     @Override
     public void childElement(String name, Attributes attrs) {
-        switch(name) {
+        switch (name) {
             case ElementNames.opf_title:
                 metaData.createTitle();
                 hasOnlyText(metaData.title(), name, attrs);
@@ -38,7 +38,7 @@ public class MetadataReader extends ElementReader {
 
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
-        switch(name) {
+        switch (name) {
             case ElementNames.opf_title:
                 HasOnlyText title = new HasOnlyText(ObjectType.opf_title);
                 hasOnlyText(title, name, attrs);
