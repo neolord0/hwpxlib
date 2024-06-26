@@ -90,8 +90,11 @@ public class HWPXReader {
     }
 
     private void manifestXML() throws Exception {
-        new ManifestXMLFileReader(entryReaderManager)
-                .read(hwpxFile.manifestXMLFile(), zipFile);
+        try {
+            new ManifestXMLFileReader(entryReaderManager)
+                    .read(hwpxFile.manifestXMLFile(), zipFile);
+        } catch (Exception e) {
+        }
     }
 
     private void contentHPF() throws Exception {
