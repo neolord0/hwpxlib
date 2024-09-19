@@ -21,10 +21,13 @@ public abstract class XMLFileReader extends DefaultHandler {
     protected ElementReaderManager elementReaderManager;
     protected ElementReader currentElementReader;
     private boolean stoppedParsing;
+    private StringBuilder textBuffer;
 
     protected XMLFileReader(ElementReaderManager entryReaderManager) {
         this.elementReaderManager = entryReaderManager;
         currentElementReader = null;
+
+        textBuffer = new StringBuilder();
     }
 
     protected void read(InputStream io) throws ParserConfigurationException, SAXException, IOException {
@@ -95,12 +98,19 @@ public abstract class XMLFileReader extends DefaultHandler {
                 currentElementReader.childElement(name, attrs);
             }
         }
+
+        textBuffer.setLength(0);
     }
 
     @Override
     public void endElement(String uri, String localName, String name) {
         if (stoppedParsing) {
             return;
+        }
+
+        if (currentElementReader != null) {
+            currentElementReader.text(textBuffer.toString());
+            textBuffer.setLength(0);
         }
 
         currentElementReader.started(false);
@@ -121,11 +131,12 @@ public abstract class XMLFileReader extends DefaultHandler {
         }
 
         if (currentElementReader != null) {
-            currentElementReader.text(new String(ch, start, length));
+            textBuffer.append(ch, start, length);
         }
     }
 
     public void setCurrentElementReaderForEmpty(String name, Attributes attrs) {
+
         setCurrentElementReader(ElementReaderSort.Empty);
         startElement(name, attrs);
     }
