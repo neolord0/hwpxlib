@@ -5,6 +5,7 @@ import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
+import kr.dogfoot.hwpxlib.util.StringUtil;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
@@ -36,7 +37,8 @@ public class SubListWriter extends ElementWriter {
                 .attribute(AttributeNames.textWidth, subList.textWidth())
                 .attribute(AttributeNames.textHeight, subList.textHeight())
                 .attribute(AttributeNames.hasTextRef, subList.hasTextRef())
-                .attribute(AttributeNames.hasNumRef, subList.hasNumRef());
+                .attribute(AttributeNames.hasNumRef, subList.hasNumRef())
+                .attribute(AttributeNames.metaTag, encodeMetaTag(subList.metaTag()));
 
         for (Para para : subList.paras()) {
             writeChild(ElementWriterSort.Para, para);
@@ -44,6 +46,12 @@ public class SubListWriter extends ElementWriter {
 
         xsb().closeElement();
         releaseMe();
+    }
+
+    private String encodeMetaTag(String metaTag) {
+        if (metaTag == null) return null;
+
+        return metaTag.replace("\"", "&quot;");
     }
 
     @Override

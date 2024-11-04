@@ -242,6 +242,7 @@ public class AttributeNames {
     public static final String textHeight = "textHeight";
     public static final String hasTextRef = "hasTextRef";
     public static final String hasNumRef = "hasNumRef";
+    public static final String metaTag = "metatag";
     public static final String beginIDRef = "beginIDRef";
     public static final String applyPageType = "applyPageType";
     public static final String number = "number";

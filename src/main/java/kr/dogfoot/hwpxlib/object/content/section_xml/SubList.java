@@ -49,6 +49,11 @@ public class SubList extends ParaListCore {
      * 해당 레벨의 번호에 대한 참조를 했는지 여부
      */
     private Boolean hasNumRef;
+    /**
+     * 메타 태그
+     */
+    private String metaTag;
+
 
     public SubList() {
     }
@@ -188,6 +193,19 @@ public class SubList extends ParaListCore {
         return this;
     }
 
+    public String metaTag() {
+        return metaTag;
+    }
+
+    public void metaTag(String metaTag) {
+        this.metaTag = metaTag;
+    }
+
+    public SubList metaTagAnd(String metaTag) {
+        this.metaTag = metaTag;
+        return this;
+    }
+
     @Override
     public SubList clone() {
         SubList cloned = new SubList();
@@ -206,6 +224,7 @@ public class SubList extends ParaListCore {
         this.textHeight = from.textHeight;
         this.hasTextRef = from.hasTextRef;
         this.hasNumRef = from.hasNumRef;
+        this.metaTag = from.metaTag;
 
         super.copyFrom(from);
     }

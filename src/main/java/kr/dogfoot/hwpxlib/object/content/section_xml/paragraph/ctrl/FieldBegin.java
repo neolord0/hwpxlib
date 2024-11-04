@@ -1,6 +1,7 @@
 package kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.FieldType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.CtrlItem;
@@ -46,6 +47,10 @@ public class FieldBegin extends CtrlItem {
      * 내부 문단 리스트
      */
     private SubList subList;
+    /**
+     * 메타 태그
+     */
+    private HasOnlyText metaTag;
 
     public FieldBegin() {
     }
@@ -169,6 +174,18 @@ public class FieldBegin extends CtrlItem {
 
     public void removeSubList() {
         subList = null;
+    }
+
+    public HasOnlyText metaTag() {
+        return metaTag;
+    }
+
+    public void createMetaTag() {
+        metaTag = new HasOnlyText(ObjectType.hp_metaTag);
+    }
+
+    public void removeMetaTag() {
+        metaTag = null;
     }
 
     @Override

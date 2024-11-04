@@ -59,6 +59,9 @@ public class SubListReader extends ElementReader {
             case AttributeNames.hasNumRef:
                 subList.hasNumRef(ValueConvertor.toBoolean(value));
                 break;
+            case AttributeNames.metaTag:
+                subList.metaTag(value);
+                break;
         }
     }
 

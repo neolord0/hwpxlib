@@ -3,13 +3,16 @@ package kr.dogfoot.hwpxlib.reader.section_xml.ctrl;
 import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.enumtype.FieldType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.FieldBegin;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.inner.Parameters;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
+import kr.dogfoot.hwpxlib.reader.common.baseobject.HasOnlyTextReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SubListReader;
 import kr.dogfoot.hwpxlib.reader.util.ValueConvertor;
 import org.xml.sax.Attributes;
@@ -64,6 +67,10 @@ public class FieldBeginReader extends ElementReader {
                 fieldBegin.createSubList();
                 subList(fieldBegin.subList(), name, attrs);
                 break;
+                case ElementNames.hp_metaTag:
+                fieldBegin.createMetaTag();
+                metaTag(fieldBegin.metaTag(), name, attrs);
+                break;
         }
     }
 
@@ -78,6 +85,10 @@ public class FieldBeginReader extends ElementReader {
                 SubList subList = new SubList();
                 subList(subList, name, attrs);
                 return subList;
+            case ElementNames.hp_metaTag:
+                HasOnlyText metaTag = new HasOnlyText(ObjectType.hp_metaTag);
+                metaTag(metaTag, name, attrs);
+                return metaTag;
         }
         return null;
     }
@@ -88,6 +99,14 @@ public class FieldBeginReader extends ElementReader {
 
         xmlFileReader().startElement(name, attrs);
     }
+
+    private void metaTag(HasOnlyText hasOnlyText, String name, Attributes attrs) {
+        ((HasOnlyTextReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.HasOnlyText))
+                .hasOnlyText(hasOnlyText);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
 
     @Override
     public SwitchableObject switchableObject() {

@@ -164,8 +164,9 @@ public enum ObjectType {
     hp_colPr,  // 단 설정
     hp_colSz,
     hp_colLine,
-    hp_fieldBegin, // 필드 시작
-    hp_fieldEnd,     // 필드 끝
+    hp_fieldBegin,  // 필드 시작
+    hp_metaTag,
+    hp_fieldEnd,    // 필드 끝
     hp_bookmark,    // 책갈피
     hp_header,    // 머리말
     hp_footer,    // 꼬리말

@@ -3,6 +3,7 @@ package kr.dogfoot.hwpxlib.writer.section_xml.ctrl;
 import kr.dogfoot.hwpxlib.commonstrings.AttributeNames;
 import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
+import kr.dogfoot.hwpxlib.object.common.baseobject.HasOnlyText;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.FieldBegin;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
@@ -42,6 +43,10 @@ public class FieldBeginWriter extends ElementWriter {
             writeChild(ElementWriterSort.SubList, fieldBegin.subList());
         }
 
+        if (fieldBegin.metaTag() != null) {
+            hasOnlyText(ElementNames.hp_metaTag, fieldBegin.metaTag());
+        }
+
         xsb().closeElement();
         releaseMe();
     }
@@ -54,6 +59,9 @@ public class FieldBeginWriter extends ElementWriter {
                 break;
             case hp_subList:
                 writeChild(ElementWriterSort.SubList, child);
+                break;
+            case hp_metaTag:
+                hasOnlyText(ElementNames.hp_metaTag, (HasOnlyText) child);
                 break;
         }
     }
