@@ -214,6 +214,7 @@ public class XMLStringBuilder {
             currentElementInfo().hadChild();
         }
 
+        text = text.replaceAll("&", "&amp;");
         text = text.replaceAll(">", "&gt;");
         text = text.replaceAll("<", "&lt;");
         text = text.replaceAll("\n", "\r\n");
