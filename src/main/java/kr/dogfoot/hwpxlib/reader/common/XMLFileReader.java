@@ -81,6 +81,11 @@ public abstract class XMLFileReader extends DefaultHandler {
             currentElementReader.started(true);
             currentElementReader.startElement(attrs);
         } else {
+            if (textBuffer.length() > 0) {
+                currentElementReader.text(textBuffer.toString());
+                textBuffer.setLength(0);
+            }
+
             currentElementReader.increaseChildIndex();
 
             if (ElementNames.hp_switch.equals(name)) {
@@ -109,8 +114,10 @@ public abstract class XMLFileReader extends DefaultHandler {
         }
 
         if (currentElementReader != null) {
-            currentElementReader.text(textBuffer.toString());
-            textBuffer.setLength(0);
+            if (textBuffer.length() > 0) {
+                currentElementReader.text(textBuffer.toString());
+                textBuffer.setLength(0);
+            }
         }
 
         currentElementReader.started(false);

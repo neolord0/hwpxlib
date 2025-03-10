@@ -15,7 +15,7 @@ public enum ArrowType implements EnumGetStr {
      */
     ARROW("ARROW"),
     /**
-     * 선 화살표(<)
+     * 선 화살표
      */
     SPEAR("SPEAR"),
     /**

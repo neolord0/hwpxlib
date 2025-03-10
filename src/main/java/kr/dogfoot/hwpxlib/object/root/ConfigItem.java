@@ -5,7 +5,7 @@ import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
 /**
- * <config-item/>
+ * config-item
  */
 public class ConfigItem extends HWPXObject {
     private String name;

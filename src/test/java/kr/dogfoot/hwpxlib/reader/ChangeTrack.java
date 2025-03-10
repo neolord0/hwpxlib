@@ -13,7 +13,7 @@ import org.junit.Test;
 public class ChangeTrack {
     @Test
     public void test() throws Exception {
-        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer//ChangeTrack.hwpx");
+        HWPXFile file = HWPXReader.fromFilepath("testFile/reader_writer/ChangeTrack.hwpx");
         T t = (T) file.sectionXMLFileList().get(0).getPara(0).getRun(0).getRunItem(1);
         Assert.assertNotNull(t);
 

@@ -2,20 +2,15 @@ package kr.dogfoot.hwpxlib.error;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
-import kr.dogfoot.hwpxlib.object.common.parameter.Param;
 import kr.dogfoot.hwpxlib.object.common.parameter.StringParam;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SectionXMLFile;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Ctrl;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Run;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.RunItem;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.ctrl.FieldBegin;
 import kr.dogfoot.hwpxlib.reader.HWPXReader;
-import kr.dogfoot.hwpxlib.writer.HWPXWriter;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.lang.reflect.Field;
 
 public class Error_20240919 {
     @Test
