@@ -22,14 +22,17 @@ public class HWPXReader {
 
     public static HWPXFile fromFile(File file) throws Exception {
         HWPXReader reader = new HWPXReader();
-        reader.openZipFile(file);
-        reader.checkMineType();
 
-        reader.createHWPXFileObject();
-
-        reader.read();
-
-        reader.closeZipFile();
+        // zipFile 을 생성하게 되면 저 깊숙한 내부에서 RandomAccessFile 을 사용한다.
+        // RandomAccessFile 을 안전하게 close 해 주려면, 예외 상황 발생시 zipFile 을 잘 닫아 주어야 한다.
+        try {
+            reader.openZipFile(file);
+            reader.checkMineType();
+            reader.createHWPXFileObject();
+            reader.read();
+        } finally {
+            reader.closeZipFile();
+        }
 
         return reader.hwpxFile;
     }
@@ -50,17 +53,29 @@ public class HWPXReader {
 
     public void checkMineType() throws IOException {
         ZipEntry zipEntry = zipFile.getEntry(ZipEntryName.MineType);
-        if (zipEntry != null) {
-            InputStream is = zipFile.getInputStream(zipEntry);
 
+        if ( zipEntry == null ) {
+            throw new IOException(ErrorMessage.Not_HWPX_File);
+        }
+
+        InputStream is = null;
+        try {
+            is = zipFile.getInputStream(zipEntry);
+        } catch (IOException e) {
+            // stream 을 읽어 오지 못했기 때문에, HWPX 파일인지 조차도 모르지만, 에러 정의가 부족해서 이것을 활용한다.
+            throw new IOException(ErrorMessage.Not_HWPX_File);
+        }
+
+        try {
             String text = new BufferedReader(
                     new InputStreamReader(is, StandardCharsets.UTF_8)).readLine();
 
             if (!MineTypes.HWPX.equals(text)) {
                 throw new IOException(ErrorMessage.Not_HWPX_File);
             }
-        } else {
-            throw new IOException(ErrorMessage.Not_HWPX_File);
+        } finally {
+            // Stream 을 사용하고 나면, 닫아 주는것을 잊지 말자.
+            is.close();
         }
     }
 
@@ -147,6 +162,8 @@ public class HWPXReader {
 
 
     private void closeZipFile() throws IOException {
-        zipFile.close();
+        if ( zipFile != null ) {
+            zipFile.close();
+        }
     }
 }
