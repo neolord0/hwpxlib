@@ -23,6 +23,13 @@ public abstract class XMLFileReader extends DefaultHandler {
     private boolean stoppedParsing;
     private StringBuilder textBuffer;
 
+    private static boolean namespaceAware = false;
+
+    static {
+        // 초기 값은 -D 옵션에서 받아 오도록 한다.
+        namespaceAware = Boolean.parseBoolean(System.getProperty("kr.dogfoot.hwpxlib.reader.xml.namespace-aware", "false"));
+    }
+
     protected XMLFileReader(ElementReaderManager entryReaderManager) {
         this.elementReaderManager = entryReaderManager;
         currentElementReader = null;
@@ -34,6 +41,7 @@ public abstract class XMLFileReader extends DefaultHandler {
         stoppedParsing = false;
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
+        factory.setNamespaceAware(namespaceAware);
         SAXParser parser = factory.newSAXParser();
         parser.parse(io, this);
     }
@@ -154,5 +162,10 @@ public abstract class XMLFileReader extends DefaultHandler {
 
     public boolean stoppedParsing() {
         return stoppedParsing;
+    }
+
+    // -D 옵션을 사용하지 않는곳에서도 runtime 으로 바꿀 수 있도록 허용 한다.
+    public static void setNamespaceAware(boolean namespaceAware) {
+        XMLFileReader.namespaceAware = namespaceAware;
     }
 }
