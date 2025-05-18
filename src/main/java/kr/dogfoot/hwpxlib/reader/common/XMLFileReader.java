@@ -23,6 +23,17 @@ public abstract class XMLFileReader extends DefaultHandler {
     private boolean stoppedParsing;
     private StringBuilder textBuffer;
 
+    private static boolean namespaceAware = false;
+
+    static {
+        // XML parser 가 class com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl 면 namespace aware 를 false로 설정해도 attribute 의 localName 이 제대로 나온다.
+        // 하지만
+        // XML parser 가 class org.apache.xerces.jaxp.SAXParserImpl 이면, namespace aware 를 true 로 설정해야 attribute 의 localName 이 제대로 나온다.
+        // 그러므로 parser 에 따라서 외부에서 값을 조정할 수 있도록 하자.
+        // 초기 값은 -D 옵션에서 받아 오도록 한다.
+        namespaceAware = Boolean.parseBoolean(System.getProperty("kr.dogfoot.hwpxlib.reader.xml.namespace-aware", "false"));
+    }
+
     protected XMLFileReader(ElementReaderManager entryReaderManager) {
         this.elementReaderManager = entryReaderManager;
         currentElementReader = null;
@@ -34,6 +45,7 @@ public abstract class XMLFileReader extends DefaultHandler {
         stoppedParsing = false;
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
+        factory.setNamespaceAware(namespaceAware);
         SAXParser parser = factory.newSAXParser();
         parser.parse(io, this);
     }
@@ -154,5 +166,10 @@ public abstract class XMLFileReader extends DefaultHandler {
 
     public boolean stoppedParsing() {
         return stoppedParsing;
+    }
+
+    // -D 옵션을 사용하지 않는곳에서도 runtime 으로 바꿀 수 있도록 허용 한다.
+    public static void setNamespaceAware(boolean namespaceAware) {
+        XMLFileReader.namespaceAware = namespaceAware;
     }
 }
