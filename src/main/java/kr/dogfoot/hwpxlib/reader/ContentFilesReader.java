@@ -30,16 +30,16 @@ public class ContentFilesReader extends XMLFileReader {
         chartList = new ArrayList<>();
     }
 
-    public void read(HWPXFile hwpxFile, InputStream io) throws ParserConfigurationException, IOException, SAXException {
+    public void read(HWPXFile hwpxFile, InputStream io, boolean xmlNamespaceAware) throws ParserConfigurationException, IOException, SAXException {
         this.hwpxFile = hwpxFile;
         currentElementReader = null;
-        read(io);
+        read(io, xmlNamespaceAware);
     }
 
-    public void read(HWPXFile hwpxFile, String filepath, ZipFile zipFile) throws ParserConfigurationException, IOException, SAXException {
+    public void read(HWPXFile hwpxFile, String filepath, ZipFile zipFile, boolean xmlNamespaceAware) throws ParserConfigurationException, IOException, SAXException {
         this.hwpxFile = hwpxFile;
         currentElementReader = null;
-        read(zipFile, filepath);
+        read(zipFile, filepath, xmlNamespaceAware);
     }
 
     @Override
@@ -79,7 +79,6 @@ public class ContentFilesReader extends XMLFileReader {
                     break;
                 default:
                     setCurrentElementReader(ElementReaderSort.Unreadable);
-
                     super.startElement(uri, localName, name, attrs);
                     break;
             }

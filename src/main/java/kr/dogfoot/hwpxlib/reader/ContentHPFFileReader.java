@@ -16,10 +16,10 @@ public class ContentHPFFileReader extends XMLFileReader {
         super(entryReaderManager);
     }
 
-    public void read(ContentHPFFile contentHPFFile, ZipFile zipFile, String filepath) throws ParserConfigurationException, IOException, SAXException {
+    public void read(ContentHPFFile contentHPFFile, ZipFile zipFile, String filepath, boolean xmlNamespaceAware) throws ParserConfigurationException, IOException, SAXException {
         ((PackageReader) setCurrentElementReader(ElementReaderSort.Package))
                 .contentHPFFile(contentHPFFile);
 
-        read(zipFile, filepath);
+        read(zipFile, filepath, xmlNamespaceAware);
     }
 }

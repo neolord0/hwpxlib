@@ -76,27 +76,24 @@ public class T extends RunItem {
     }
 
     public int countOfItems() {
-        if (itemList == null) {
-            return 0;
-        }
+        if (itemList == null) return 0;
+
         return itemList.size();
     }
 
     public TItem getItem(int index) {
-        if (itemList == null) {
-            return null;
-        }
+        if (itemList == null) return null;
 
         return itemList.get(index);
     }
 
     public int getItemIndex(TItem textItem) {
-        if (itemList != null) {
-            int count = itemList.size();
-            for (int index = 0; index < count; index++) {
-                if (itemList.get(index) == textItem) {
-                    return index;
-                }
+        if (itemList == null) return -1;
+
+        int count = itemList.size();
+        for (int index = 0; index < count; index++) {
+            if (itemList.get(index) == textItem) {
+                return index;
             }
         }
         return -1;
@@ -230,21 +227,21 @@ public class T extends RunItem {
     }
 
     public void removeItem(int position) {
-        if (itemList != null) {
-            itemList.remove(position);
-        }
+        if (itemList == null) return;
+
+        itemList.remove(position);
     }
 
     public void removeItem(TItem textItem) {
-        if (itemList != null) {
-            itemList.remove(textItem);
-        }
+        if (itemList == null) return;
+
+        itemList.remove(textItem);
     }
 
     public void removeAllItems() {
-        if (itemList != null) {
-            itemList.clear();
-        }
+        if (itemList == null) return;
+
+        itemList.clear();
     }
 
     public Iterable<TItem> items() {

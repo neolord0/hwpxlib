@@ -27,12 +27,12 @@ public enum PageBorderPositionCriterion implements EnumGetStr {
     }
 
     public static PageBorderPositionCriterion fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (PageBorderPositionCriterion item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (PageBorderPositionCriterion item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

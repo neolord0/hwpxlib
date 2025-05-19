@@ -29,11 +29,11 @@ public enum LineNumberRestartType implements EnumGetStr {
     }
 
     public static LineNumberRestartType fromString(String str) {
-        if (str != null) {
-            for (LineNumberRestartType item : values()) {
-                if (item.str.equals(str)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        for (LineNumberRestartType item : values()) {
+            if (item.str.equals(str)) {
+                return item;
             }
         }
         return null;

@@ -27,7 +27,7 @@ public class TestSwitch {
         ElementReaderManager manager = new ElementReaderManager();
         HWPXFile hwpxFile = new HWPXFile();
         ContentFilesReader contentFilesReader = new ContentFilesReader(manager);
-        contentFilesReader.read(hwpxFile, new FileInputStream("testFile/reader_writer/header_forTestSwitch.xml"));
+        contentFilesReader.read(hwpxFile, new FileInputStream("testFile/reader_writer/header_forTestSwitch.xml"), false);
         Assert.assertEquals(hwpxFile.headerXMLFile().refList().borderFills().count(), 2);
 
         {

@@ -20,10 +20,10 @@ public class VersionXMLFileReader extends XMLFileReader {
         versionXMLFile = null;
     }
 
-    public void read(VersionXMLFile versionXMLFile, ZipFile zipFile) throws ParserConfigurationException, IOException, SAXException {
+    public void read(VersionXMLFile versionXMLFile, ZipFile zipFile, boolean xmlNamespaceAware) throws ParserConfigurationException, IOException, SAXException {
         ((VersionReader) setCurrentElementReader(ElementReaderSort.Version))
                 .versionXMLFile(versionXMLFile);
 
-        read(zipFile, ZipEntryName.Version);
+        read(zipFile, ZipEntryName.Version, xmlNamespaceAware);
     }
 }

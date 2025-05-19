@@ -27,11 +27,11 @@ public enum LineCap implements EnumGetStr {
     }
 
     public static LineCap fromString(String str) {
-        if (str != null) {
-            for (LineCap item : values()) {
-                if (item.str.equals(str)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        for (LineCap item : values()) {
+            if (item.str.equals(str)) {
+                return item;
             }
         }
         return null;

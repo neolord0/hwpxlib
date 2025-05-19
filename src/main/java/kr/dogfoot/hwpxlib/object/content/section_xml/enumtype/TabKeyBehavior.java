@@ -27,12 +27,12 @@ public enum TabKeyBehavior implements EnumGetStr {
     }
 
     public static TabKeyBehavior fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (TabKeyBehavior item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (TabKeyBehavior item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

@@ -24,6 +24,7 @@ public class StringParamReader extends ElementReader {
             case AttributeNames.name:
                 stringParam.name(value);
                 break;
+            case AttributeNames.space:
             case AttributeNames.xml_space:
                 stringParam.xml_space(value);
                 break;

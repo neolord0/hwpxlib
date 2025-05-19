@@ -18,12 +18,12 @@ public enum ValueUnit2 implements EnumGetStr {
     }
 
     public static ValueUnit2 fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (ValueUnit2 item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (ValueUnit2 item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

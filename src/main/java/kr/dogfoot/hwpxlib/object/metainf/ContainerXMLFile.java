@@ -29,11 +29,11 @@ public class ContainerXMLFile extends SwitchableObject {
     }
 
     public String packageXMLFilePath() {
-        if ( rootFiles != null) {
-            for (RootFile rootFile : rootFiles.items()) {
-                if (MineTypes.HWPML_Package.equals(rootFile.mediaType())) {
-                    return rootFile.fullPath();
-                }
+        if (rootFiles == null) return null;
+
+        for (RootFile rootFile : rootFiles.items()) {
+            if (MineTypes.HWPML_Package.equals(rootFile.mediaType())) {
+                return rootFile.fullPath();
             }
         }
         return null;

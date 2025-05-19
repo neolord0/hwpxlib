@@ -17,10 +17,10 @@ public class ManifestXMLFileReader extends XMLFileReader {
         super(entryReaderManager);
     }
 
-    public void read(ManifestXMLFile manifestXMLFile, ZipFile zipFile) throws ParserConfigurationException, IOException, SAXException {
+    public void read(ManifestXMLFile manifestXMLFile, ZipFile zipFile, boolean xmlNamespaceAware) throws ParserConfigurationException, IOException, SAXException {
         ((ManifestReader) setCurrentElementReader(ElementReaderSort.Manifest))
                 .manifestXMLFile(manifestXMLFile);
 
-        read(zipFile, ZipEntryName.Manifest);
+        read(zipFile, ZipEntryName.Manifest, xmlNamespaceAware);
     }
 }

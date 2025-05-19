@@ -20,12 +20,12 @@ public enum OLEDrawAspect implements EnumGetStr {
     }
 
     public static OLEDrawAspect fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (OLEDrawAspect item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (OLEDrawAspect item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

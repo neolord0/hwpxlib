@@ -225,9 +225,8 @@ public class SecPr extends SwitchableObject {
      * @return 구역 내에서 정의된 바탕쪽 수
      */
     public int masterPageCnt() {
-        if (masterPageList == null) {
-            return 0;
-        }
+        if (masterPageList == null) return 0;
+
         return masterPageList.size();
     }
 

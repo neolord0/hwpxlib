@@ -36,12 +36,12 @@ public enum SlashType implements EnumGetStr {
     }
 
     public static SlashType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (SlashType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (SlashType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

@@ -40,12 +40,12 @@ public enum HatchStyle implements EnumGetStr {
     }
 
     public static HatchStyle fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (HatchStyle item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (HatchStyle item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

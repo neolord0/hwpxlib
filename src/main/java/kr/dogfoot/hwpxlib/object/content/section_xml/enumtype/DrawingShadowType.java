@@ -27,12 +27,12 @@ public enum DrawingShadowType implements EnumGetStr {
     }
 
     public static DrawingShadowType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (DrawingShadowType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (DrawingShadowType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

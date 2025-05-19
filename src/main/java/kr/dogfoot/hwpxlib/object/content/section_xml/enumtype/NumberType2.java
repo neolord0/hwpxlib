@@ -95,12 +95,12 @@ public enum NumberType2 implements EnumGetStr {
     }
 
     public static NumberType2 fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (NumberType2 item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (NumberType2 item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

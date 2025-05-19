@@ -39,12 +39,12 @@ public enum HorzAlign implements EnumGetStr {
     }
 
     public static HorzAlign fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (HorzAlign item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (HorzAlign item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

@@ -44,12 +44,12 @@ public enum LineType1 implements EnumGetStr {
     }
 
     public static LineType1 fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (LineType1 item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (LineType1 item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

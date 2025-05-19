@@ -32,12 +32,12 @@ public enum VerticalAlign1 implements EnumGetStr {
     }
 
     public static VerticalAlign1 fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (VerticalAlign1 item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (VerticalAlign1 item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

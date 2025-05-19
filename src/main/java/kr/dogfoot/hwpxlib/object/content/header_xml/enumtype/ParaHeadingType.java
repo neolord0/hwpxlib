@@ -32,12 +32,12 @@ public enum ParaHeadingType implements EnumGetStr  {
     }
 
     public static ParaHeadingType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (ParaHeadingType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (ParaHeadingType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

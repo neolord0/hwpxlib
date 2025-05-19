@@ -99,11 +99,11 @@ public enum PresentationEffect implements EnumGetStr {
     }
 
     public static PresentationEffect fromString(String str) {
-        if (str != null) {
-            for (PresentationEffect item : values()) {
-                if (item.str.equals(str)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        for (PresentationEffect item : values()) {
+            if (item.str.equals(str)) {
+                return item;
             }
         }
         return null;

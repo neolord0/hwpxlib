@@ -1,7 +1,6 @@
 package kr.dogfoot.hwpxlib.error;
 
 import kr.dogfoot.hwpxlib.object.HWPXFile;
-import kr.dogfoot.hwpxlib.object.content.header_xml.references.TabPr;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SectionXMLFile;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Run;
 import kr.dogfoot.hwpxlib.reader.HWPXReader;

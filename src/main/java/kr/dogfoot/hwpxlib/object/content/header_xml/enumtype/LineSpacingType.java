@@ -32,12 +32,12 @@ public enum LineSpacingType implements EnumGetStr {
     }
 
     public static LineSpacingType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (LineSpacingType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (LineSpacingType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

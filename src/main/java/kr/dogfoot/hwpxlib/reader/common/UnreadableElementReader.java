@@ -1,6 +1,7 @@
 package kr.dogfoot.hwpxlib.reader.common;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
+import org.xml.sax.Attributes;
 
 public class UnreadableElementReader extends ElementReader {
     @Override
@@ -8,8 +9,8 @@ public class UnreadableElementReader extends ElementReader {
         return ElementReaderSort.Unreadable;
     }
 
-    @Override
-    protected void setAttribute(String name, String value) {
+
+    public void childElement(String name, Attributes attrs) {
         xmlFileReader().setCurrentElementReader(ElementReaderSort.Unreadable);
     }
 

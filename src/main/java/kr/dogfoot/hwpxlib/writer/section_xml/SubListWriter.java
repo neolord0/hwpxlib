@@ -5,7 +5,6 @@ import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.SubList;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
-import kr.dogfoot.hwpxlib.util.StringUtil;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;

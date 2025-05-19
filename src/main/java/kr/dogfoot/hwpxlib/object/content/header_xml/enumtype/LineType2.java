@@ -72,12 +72,12 @@ public enum LineType2 implements EnumGetStr, EnumGetIndex {
     }
 
     public static LineType2 fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (LineType2 item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (LineType2 item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;
@@ -91,5 +91,4 @@ public enum LineType2 implements EnumGetStr, EnumGetIndex {
         }
         return null;
     }
-
 }

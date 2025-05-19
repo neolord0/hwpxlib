@@ -24,12 +24,12 @@ public enum LineBreakForNonLatin implements EnumGetStr {
     }
 
     public static LineBreakForNonLatin fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (LineBreakForNonLatin item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (LineBreakForNonLatin item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

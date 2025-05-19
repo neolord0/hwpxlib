@@ -32,7 +32,7 @@ public class Header_XML {
         ElementReaderManager manager = new ElementReaderManager();
         HWPXFile hwpxFile = new HWPXFile();
         ContentFilesReader contentFilesReader = new ContentFilesReader(manager);
-        contentFilesReader.read(hwpxFile, new FileInputStream("testFile/reader_writer/header.xml"));
+        contentFilesReader.read(hwpxFile, new FileInputStream("testFile/reader_writer/header.xml"), true);
 
         HeaderXMLFile header = hwpxFile.headerXMLFile();
         header = header.clone();

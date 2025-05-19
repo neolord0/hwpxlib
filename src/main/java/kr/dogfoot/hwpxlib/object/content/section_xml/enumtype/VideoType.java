@@ -24,11 +24,11 @@ public enum VideoType implements EnumGetStr {
     }
 
     public static VideoType fromString(String str) {
-        if (str != null) {
-             for (VideoType item : values()) {
-                if (item.str.equals(str)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        for (VideoType item : values()) {
+            if (item.str.equals(str)) {
+                return item;
             }
         }
         return null;

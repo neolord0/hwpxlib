@@ -71,12 +71,12 @@ public enum TextArtShape implements EnumGetStr {
     }
 
     public static TextArtShape fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (TextArtShape item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (TextArtShape item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

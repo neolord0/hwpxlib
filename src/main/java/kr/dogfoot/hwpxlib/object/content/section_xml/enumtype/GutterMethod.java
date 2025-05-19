@@ -31,12 +31,12 @@ public enum GutterMethod implements EnumGetStr {
     }
 
     public static GutterMethod fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (GutterMethod item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (GutterMethod item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

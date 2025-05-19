@@ -22,11 +22,12 @@ public enum OutlineStyle implements EnumGetStr {
     }
 
     public static OutlineStyle fromString(String str) {
-        if (str != null) {
-            for (OutlineStyle item : values()) {
-                if (item.str.equals(str)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (OutlineStyle item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

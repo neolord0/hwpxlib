@@ -28,12 +28,12 @@ public enum HeightRelTo implements EnumGetStr {
     }
 
     public static HeightRelTo fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (HeightRelTo item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (HeightRelTo item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

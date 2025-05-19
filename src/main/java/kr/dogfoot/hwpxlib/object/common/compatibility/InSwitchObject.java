@@ -43,8 +43,6 @@ public abstract class InSwitchObject extends HWPXObject {
         return childList;
     }
 
-
-
     protected void copyForm(InSwitchObject from) {
         for (HWPXObject child : from.childList) {
             addChild(child.clone());

@@ -17,10 +17,10 @@ public class ContainerXMLFileReader extends XMLFileReader {
         super(entryReaderManager);
     }
 
-    public void read(ContainerXMLFile containerXMLFile, ZipFile zipFile) throws ParserConfigurationException, IOException, SAXException {
+    public void read(ContainerXMLFile containerXMLFile, ZipFile zipFile, boolean xmlNamespaceAware) throws ParserConfigurationException, IOException, SAXException {
         ((ContainerReader) setCurrentElementReader(ElementReaderSort.Container))
                 .containerXMLFile(containerXMLFile);
 
-        read(zipFile, ZipEntryName.Container);
+        read(zipFile, ZipEntryName.Container, xmlNamespaceAware);
     }
 }

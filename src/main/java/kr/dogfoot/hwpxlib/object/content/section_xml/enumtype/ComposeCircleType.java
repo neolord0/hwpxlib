@@ -33,12 +33,12 @@ public enum ComposeCircleType implements EnumGetStr {
     }
 
     public static ComposeCircleType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (ComposeCircleType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (ComposeCircleType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

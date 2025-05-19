@@ -23,12 +23,12 @@ public enum DisplayScrollBar implements EnumGetStr {
     }
 
     public static DisplayScrollBar fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (DisplayScrollBar item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (DisplayScrollBar item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

@@ -20,12 +20,12 @@ public enum CenterLineSort implements EnumGetStr {
     }
 
     public static CenterLineSort fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (CenterLineSort item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (CenterLineSort item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

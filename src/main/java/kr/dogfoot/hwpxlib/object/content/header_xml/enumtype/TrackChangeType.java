@@ -39,11 +39,11 @@ public enum TrackChangeType implements EnumGetStr {
     }
 
     public static TrackChangeType fromString(String str) {
-        if (str != null) {
-            for (TrackChangeType item : values()) {
-                if (item.str.equalsIgnoreCase(str)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        for (TrackChangeType item : values()) {
+            if (item.str.equalsIgnoreCase(str)) {
+                return item;
             }
         }
         return null;

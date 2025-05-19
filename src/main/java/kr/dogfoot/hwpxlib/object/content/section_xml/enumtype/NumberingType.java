@@ -32,12 +32,12 @@ public enum NumberingType implements EnumGetStr {
     }
 
     public static NumberingType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (NumberingType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (NumberingType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

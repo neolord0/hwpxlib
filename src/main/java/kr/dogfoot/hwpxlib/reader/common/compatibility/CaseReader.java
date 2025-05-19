@@ -21,6 +21,7 @@ public class CaseReader extends ElementReader {
     protected void setAttribute(String name, String value) {
         switch (name) {
             case AttributeNames.hp_required_namespace:
+            case AttributeNames.required_namespace:
                 caseObject.requiredNamespace(value);
                 break;
         }

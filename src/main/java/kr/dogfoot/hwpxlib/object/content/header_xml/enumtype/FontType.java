@@ -28,12 +28,12 @@ public enum FontType implements EnumGetStr {
     }
 
     public static FontType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (FontType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (FontType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

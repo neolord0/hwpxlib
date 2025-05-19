@@ -31,12 +31,12 @@ public enum TablePageBreak implements EnumGetStr {
     }
 
     public static TablePageBreak fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (TablePageBreak item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (TablePageBreak item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

@@ -3,7 +3,6 @@ package kr.dogfoot.hwpxlib.error;
 import kr.dogfoot.hwpxlib.object.HWPXFile;
 import kr.dogfoot.hwpxlib.reader.HWPXReader;
 import kr.dogfoot.hwpxlib.writer.HWPXWriter;
-import kr.dogfoot.hwpxlib.writer.TestUtil;
 import org.junit.Assert;
 import org.junit.Test;
 

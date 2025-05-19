@@ -28,12 +28,12 @@ public enum PageStartON implements EnumGetStr {
     }
 
     public static PageStartON fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (PageStartON item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (PageStartON item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

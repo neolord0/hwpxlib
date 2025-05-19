@@ -21,12 +21,12 @@ public enum DutmalPosType implements EnumGetStr {
     }
 
     public static DutmalPosType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (DutmalPosType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (DutmalPosType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

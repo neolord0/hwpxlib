@@ -1,7 +1,5 @@
 package kr.dogfoot.hwpxlib.object.etc;
 
-import kr.dogfoot.hwpxlib.object.HWPXFile;
-
 public class UnparsedXMLFile {
     public static UnparsedXMLFile[] ZeroArray = new UnparsedXMLFile[0];
 

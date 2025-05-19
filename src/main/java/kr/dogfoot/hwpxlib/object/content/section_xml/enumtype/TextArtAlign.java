@@ -24,12 +24,12 @@ public enum TextArtAlign implements EnumGetStr {
     }
 
     public static TextArtAlign fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (TextArtAlign item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (TextArtAlign item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

@@ -40,11 +40,11 @@ public enum LineWidth implements EnumGetStr, EnumGetIndex {
     }
 
     public static LineWidth fromString(String str) {
-        if (str != null) {
-            for (LineWidth item : values()) {
-                if (item.str.equals(str)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        for (LineWidth item : values()) {
+            if (item.str.equals(str)) {
+                return item;
             }
         }
         return null;

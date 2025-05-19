@@ -70,15 +70,12 @@ public class ManifestItem extends HWPXObject {
     }
 
     public boolean hasAttachedFile() {
-        if (mediaType == null) {
-            return false;
-        }
+        if (mediaType == null) return false;
 
         if (mediaType.equals(MineTypes.OLE)
                 || mediaType.startsWith(MineTypes.Image_PreFix)
-                || mediaType.startsWith(MineTypes.Script_PreFix)) {
-            return true;
-        }
+                || mediaType.startsWith(MineTypes.Script_PreFix)) return true;
+
         return false;
     }
 

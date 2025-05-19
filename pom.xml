@@ -6,7 +6,7 @@
     <groupId>kr.dogfoot</groupId>
     <artifactId>hwpxlib</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
 
     <name>HWPX Library</name>
     <description>The hwpx library is a library that can read and write hwpx files used in the word processor developed by Hancom.</description>
@@ -79,7 +79,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.6.3</version>
+                <configuration>
+                    <doclint>none</doclint>
+                    <additionalOptions>
+                        <additionalOption>-html5</additionalOption>
+                    </additionalOptions>
+                    <failOnError>false</failOnError>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -105,37 +112,31 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.7.0</version>
+                <extensions>true</extensions>
                 <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
+    <repositories>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <name>Central Portal Snapshots</name>
+            <id>central-portal-snapshots</id>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
-    </distributionManagement>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -148,6 +149,12 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -29,12 +29,12 @@ public enum SymMarkSort implements EnumGetStr {
     }
 
     public static SymMarkSort fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (SymMarkSort item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (SymMarkSort item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

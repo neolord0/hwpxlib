@@ -32,11 +32,11 @@ public enum DropCapStyle implements EnumGetStr {
     }
 
     public static DropCapStyle fromString(String str) {
-        if (str != null) {
-            for (DropCapStyle item : values()) {
-                if (item.str.equals(str)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        for (DropCapStyle item : values()) {
+            if (item.str.equals(str)) {
+                return item;
             }
         }
         return null;

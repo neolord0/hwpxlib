@@ -19,12 +19,12 @@ public enum TargetProgramSort implements EnumGetStr {
     }
 
     public static TargetProgramSort fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (TargetProgramSort item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (TargetProgramSort item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;

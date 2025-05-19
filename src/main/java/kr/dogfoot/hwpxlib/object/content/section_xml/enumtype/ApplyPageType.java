@@ -31,12 +31,12 @@ public enum ApplyPageType implements EnumGetStr {
     }
 
     public static ApplyPageType fromString(String str) {
-        if (str != null) {
-            String STR = str.toUpperCase();
-            for (ApplyPageType item : values()) {
-                if (item.str.equals(STR)) {
-                    return item;
-                }
+        if (str == null) return null;
+
+        String STR = str.toUpperCase();
+        for (ApplyPageType item : values()) {
+            if (item.str.equals(STR)) {
+                return item;
             }
         }
         return null;
