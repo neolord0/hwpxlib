@@ -120,16 +120,16 @@ public abstract class XMLFileReader extends DefaultHandler {
                 currentElementReader.text(textBuffer.toString());
                 textBuffer.setLength(0);
             }
-        }
 
-        currentElementReader.started(false);
-        currentElementReader.endElement();
-        elementReaderManager.release(currentElementReader);
+            currentElementReader.started(false);
+            currentElementReader.endElement();
+            elementReaderManager.release(currentElementReader);
 
-        if (currentElementReader.previousReader() == null) {
-            currentElementReader = null;
-        } else {
-            currentElementReader = currentElementReader.previousReader().switchableObjectReader() ? currentElementReader.previousReader().previousReader() : currentElementReader.previousReader();
+            if (currentElementReader.previousReader() == null) {
+                currentElementReader = null;
+            } else {
+                currentElementReader = currentElementReader.previousReader().switchableObjectReader() ? currentElementReader.previousReader().previousReader() : currentElementReader.previousReader();
+            }
         }
     }
 
