@@ -28,9 +28,13 @@
 * hwp파일을 hwpx파일로 변환하는 라이브러리는 https://github.com/neolord0/hwp2hwpx 을 참조해 주세요.
 * hwpxlib의 확장 라이브러리는 https://github.com/neolord0/hwpxlib_ext 을 참조해 주세요.
 
+2025.05.23
+=========================================================================================
+* pull request #21 : TrackChageConfig에 configItemSet 객체 추가..
+
 2025.05.19
 =========================================================================================
-* SAXParser에 namsSpaceAware값을 true로 설정, POI에 추가된 SAXParser에서 namespace를 인식하지 못하는 문제 해결 (pull request #2) 
+* pull request #20 : SAXParser에 namsSpaceAware값을 true로 설정, POI에 추가된 SAXParser에서 namespace를 인식하지 못하는 문제 해결 
 * 소스 정리 
 * 1.0.6 버전 Maven 레파지토리에 업로드
 
