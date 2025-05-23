@@ -50,6 +50,7 @@ public enum ElementWriterSort {
     CompatibleDocument,
     LayoutCompatibility,
     DocOption,
+    TrackChangeConfig,
 
     Section,
     SubList,

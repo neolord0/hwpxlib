@@ -10,6 +10,7 @@ import kr.dogfoot.hwpxlib.writer.content_hpf.SpineWriter;
 import kr.dogfoot.hwpxlib.writer.header_xml.DocOptionWriter;
 import kr.dogfoot.hwpxlib.writer.header_xml.ForbiddenWordListWriter;
 import kr.dogfoot.hwpxlib.writer.header_xml.HeaderWriter;
+import kr.dogfoot.hwpxlib.writer.header_xml.TrackChangeConfigWriter;
 import kr.dogfoot.hwpxlib.writer.header_xml.compatibledocument.CompatibleDocumentWriter;
 import kr.dogfoot.hwpxlib.writer.header_xml.compatibledocument.LayoutCompatibilityWriter;
 import kr.dogfoot.hwpxlib.writer.header_xml.reflist.*;
@@ -137,6 +138,8 @@ public class ElementWriterFactory {
                 return new LayoutCompatibilityWriter(elementWriterManager);
             case DocOption:
                 return new DocOptionWriter(elementWriterManager);
+            case TrackChangeConfig:
+                return new TrackChangeConfigWriter(elementWriterManager);
             case Section:
                 return new SectionWriter(elementWriterManager);
             case SubList:

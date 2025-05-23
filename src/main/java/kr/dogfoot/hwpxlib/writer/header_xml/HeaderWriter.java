@@ -6,7 +6,6 @@ import kr.dogfoot.hwpxlib.commonstrings.Namespaces;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.header_xml.BeginNum;
 import kr.dogfoot.hwpxlib.object.content.header_xml.HeaderXMLFile;
-import kr.dogfoot.hwpxlib.object.content.header_xml.TrackChangeConfig;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
@@ -73,7 +72,7 @@ public class HeaderWriter extends ElementWriter {
         }
 
         if (headerXMLFile.trackChangeConfig() != null) {
-            trackChangeConfig(headerXMLFile.trackChangeConfig());
+            writeChild(ElementWriterSort.TrackChangeConfig, headerXMLFile.trackChangeConfig());
         }
 
         xsb().closeElement();
@@ -89,13 +88,6 @@ public class HeaderWriter extends ElementWriter {
                 .attribute(AttributeNames.pic, beginNum.pic())
                 .attribute(AttributeNames.tbl, beginNum.tbl())
                 .attribute(AttributeNames.equation, beginNum.equation())
-                .closeElement();
-    }
-
-    private void trackChangeConfig(TrackChangeConfig trackChangeConfig) {
-        xsb()
-                .openElement(ElementNames.hh_trackchageConfig)
-                .attribute(AttributeNames.flags, trackChangeConfig.flags())
                 .closeElement();
     }
 
@@ -118,7 +110,7 @@ public class HeaderWriter extends ElementWriter {
                 writeChild(ElementWriterSort.DocOption, child);
                 break;
             case hh_trackchageConfig:
-                trackChangeConfig((TrackChangeConfig) child);
+                writeChild(ElementWriterSort.TrackChangeConfig, child);
                 break;
         }
     }
