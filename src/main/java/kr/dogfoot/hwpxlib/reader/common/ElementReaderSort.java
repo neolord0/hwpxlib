@@ -162,6 +162,7 @@ public enum ElementReaderSort {
     LineSegArray(ElementReaderType.Section_MasterPage),
     LineSeg(ElementReaderType.Section_MasterPage),
     MasterPage(ElementReaderType.Section_MasterPage),
+    MasterPageFile(ElementReaderType.Section_MasterPage),
 
     ShapeSize(ElementReaderType.Controls),
     ShapePosition(ElementReaderType.Controls),

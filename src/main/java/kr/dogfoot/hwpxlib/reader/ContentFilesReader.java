@@ -7,7 +7,7 @@ import kr.dogfoot.hwpxlib.reader.common.ElementReaderManager;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.common.XMLFileReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.HeadReader;
-import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageReader;
+import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageFileReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.SecReader;
 import kr.dogfoot.hwpxlib.reader.settings_xml.SettingsReader;
 import kr.dogfoot.hwpxlib.reader.versionlog_xml.HistoryReader;
@@ -57,7 +57,7 @@ public class ContentFilesReader extends XMLFileReader {
                     super.startElement(uri, localName, name, attrs);
                     break;
                 case ElementNames.masterPage:
-                    ((MasterPageReader) setCurrentElementReader(ElementReaderSort.MasterPage))
+                    ((MasterPageFileReader) setCurrentElementReader(ElementReaderSort.MasterPageFile))
                             .masterPageXMLFile(hwpxFile.masterPageXMLFileList().addNew());
 
                     super.startElement(uri, localName, name, attrs);

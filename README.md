@@ -28,6 +28,10 @@
 * hwp파일을 hwpx파일로 변환하는 라이브러리는 https://github.com/neolord0/hwp2hwpx 을 참조해 주세요.
 * hwpxlib의 확장 라이브러리는 https://github.com/neolord0/hwpxlib_ext 을 참조해 주세요.
 
+2025.08.08
+=========================================================================================
+* 파일 읽기 시, MasterPageFile과 MasterPage 객체를 혼용하는 문제 해결 
+
 2025.05.23
 =========================================================================================
 * pull request #21 : TrackChageConfig에 configItemSet 객체 추가..

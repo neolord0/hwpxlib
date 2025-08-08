@@ -36,7 +36,8 @@ import kr.dogfoot.hwpxlib.reader.header_xml.trackchange.TrackChangesReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.trackchangeauthor.TrackChangeAuthorReader;
 import kr.dogfoot.hwpxlib.reader.header_xml.trackchangeauthor.TrackChangeAuthorsReader;
 import kr.dogfoot.hwpxlib.reader.manifest_xml.*;
-import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageReader;
+import kr.dogfoot.hwpxlib.reader.masterpage_xml.MasterPageFileReader;
+import kr.dogfoot.hwpxlib.reader.section_xml.secpr.MasterPageReader;
 import kr.dogfoot.hwpxlib.reader.section_xml.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.*;
 import kr.dogfoot.hwpxlib.reader.section_xml.object.*;
@@ -401,6 +402,8 @@ public class ElementReaderFactory {
                 return new LineSegReader();
             case MasterPage:
                 return new MasterPageReader();
+            case MasterPageFile:
+                return new MasterPageFileReader();
         }
         return null;
     }

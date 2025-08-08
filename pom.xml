@@ -6,7 +6,7 @@
     <groupId>kr.dogfoot</groupId>
     <artifactId>hwpxlib</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 
     <name>HWPX Library</name>
     <description>The hwpx library is a library that can read and write hwpx files used in the word processor developed by Hancom.</description>
