@@ -1,0 +1,27 @@
+{
+  "name": "hwpxlib",
+  "version": "1.0.0",
+  "description": "JavaScript library for reading and writing HWPX files (Hancom Word Processor XML format)",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "keywords": [
+    "hwpx",
+    "hancom",
+    "hangul",
+    "word-processor",
+    "document"
+  ],
+  "author": "hwpxlib-js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fast-xml-parser": "^4.3.2",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
