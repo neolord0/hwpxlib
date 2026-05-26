@@ -10,7 +10,7 @@ public class MarkpenBegin extends TItem {
     /**
      * 형광펜 색
      */
-    private String beginColor;
+    private String color;
 
     public MarkpenBegin() {
     }
@@ -20,16 +20,16 @@ public class MarkpenBegin extends TItem {
         return ObjectType.hp_markpenBegin;
     }
 
-    public String beginColor() {
-        return beginColor;
+    public String color() {
+        return color;
     }
 
-    public void beginColor(String beginColor) {
-        this.beginColor = beginColor;
+    public void color(String color) {
+        this.color = color;
     }
 
-    public MarkpenBegin beginColorAnd(String beginColor) {
-        this.beginColor = beginColor;
+    public MarkpenBegin colorAnd(String color) {
+        this.color = color;
         return this;
     }
 
@@ -41,6 +41,6 @@ public class MarkpenBegin extends TItem {
     }
 
     public void copyFrom(MarkpenBegin from) {
-        this.beginColor = from.beginColor;
+        this.color = from.color;
     }
 }

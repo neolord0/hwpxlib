@@ -29,11 +29,11 @@ public class MarkpenBeginReader extends ElementReader {
     @Override
     protected void setAttribute(String name, String value) {
         switch (name) {
-            case AttributeNames.beginColor:
+            case AttributeNames.color:
                 if (markpenBegin != null) {
-                    markpenBegin.beginColor(value);
+                    markpenBegin.color(value);
                 } else if (markpenBeginForRun != null) {
-                    markpenBeginForRun.beginColorAnd(value);
+                    markpenBeginForRun.color(value);
                 }
                 break;
         }

@@ -146,7 +146,7 @@ public class RunWriter extends ElementWriter {
     private void markpenBegin(MarkpenBeginForRun markpenBeginForRun) {
         xsb()
                 .openElement(ElementNames.hp_markpenBegin)
-                .attribute(AttributeNames.beginColor, markpenBeginForRun.beginColor())
+                .attribute(AttributeNames.color, markpenBeginForRun.color())
                 .closeElement();
     }
 }

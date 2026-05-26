@@ -100,7 +100,7 @@ public class TWriter extends ElementWriter {
     private void markpenBegin(MarkpenBegin markpenBegin) {
         xsb()
                 .openElement(ElementNames.hp_markpenBegin)
-                .attribute(AttributeNames.beginColor, markpenBegin.beginColor())
+                .attribute(AttributeNames.color, markpenBegin.color())
                 .closeElement();
     }
 

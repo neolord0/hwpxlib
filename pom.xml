@@ -97,7 +97,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- pgp 서명 -->
+            <!-- gpg 서명 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>

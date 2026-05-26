@@ -257,7 +257,6 @@ public class AttributeNames {
     public static final String hidePageNum = "hidePageNum";
     public static final String formatType = "formatType";
     public static final String sideChar = "sideChar";
-    public static final String beginColor = "beginColor";
     public static final String ignore = "ignore";
     public static final String Id = "Id";
     public static final String TcId = "TcId";

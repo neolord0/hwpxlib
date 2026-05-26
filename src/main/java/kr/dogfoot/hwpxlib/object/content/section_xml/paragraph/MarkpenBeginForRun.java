@@ -9,7 +9,7 @@ public class MarkpenBeginForRun extends RunItem {
     /**
      * 형광펜 색
      */
-    private String beginColor;
+    private String color;
 
     public MarkpenBeginForRun() {
     }
@@ -19,16 +19,16 @@ public class MarkpenBeginForRun extends RunItem {
         return ObjectType.hp_markpenBegin;
     }
 
-    public String beginColor() {
-        return beginColor;
+    public String color() {
+        return color;
     }
 
-    public void beginColor(String beginColor) {
-        this.beginColor = beginColor;
+    public void color(String color) {
+        this.color = color;
     }
 
-    public MarkpenBeginForRun beginColorAnd(String beginColor) {
-        this.beginColor = beginColor;
+    public MarkpenBeginForRun colorAnd(String color) {
+        this.color = color;
         return this;
     }
 
@@ -40,6 +40,6 @@ public class MarkpenBeginForRun extends RunItem {
     }
 
     public void copyFrom(MarkpenBeginForRun from) {
-        this.beginColor = from.beginColor;
+        this.color = from.color;
     }
 }
