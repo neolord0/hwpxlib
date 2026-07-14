@@ -37,7 +37,7 @@ public class SubListWriter extends ElementWriter {
                 .attribute(AttributeNames.textHeight, subList.textHeight())
                 .attribute(AttributeNames.hasTextRef, subList.hasTextRef())
                 .attribute(AttributeNames.hasNumRef, subList.hasNumRef())
-                .attribute(AttributeNames.metaTag, encodeMetaTag(subList.metaTag()));
+                .attribute(AttributeNames.metaTag, subList.metaTag());
 
         for (Para para : subList.paras()) {
             writeChild(ElementWriterSort.Para, para);
@@ -45,12 +45,6 @@ public class SubListWriter extends ElementWriter {
 
         xsb().closeElement();
         releaseMe();
-    }
-
-    private String encodeMetaTag(String metaTag) {
-        if (metaTag == null) return null;
-
-        return metaTag.replace("\"", "&quot;");
     }
 
     @Override

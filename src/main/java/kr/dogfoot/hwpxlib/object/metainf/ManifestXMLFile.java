@@ -75,6 +75,7 @@ public class ManifestXMLFile extends SwitchableObject {
         for (FileEntry fileEntry : from.fileEntryList) {
             fileEntryList.add(fileEntry.clone());
         }
+
         super.copyFrom(from);
     }
 }

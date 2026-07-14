@@ -134,5 +134,7 @@ public class MasterPageXMLFile extends SwitchableObject {
         } else {
             subList = null;
         }
+
+        super.copyFrom(from);
     }
 }

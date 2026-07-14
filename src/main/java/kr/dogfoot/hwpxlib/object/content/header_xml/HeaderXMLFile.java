@@ -199,5 +199,7 @@ public class HeaderXMLFile extends SwitchableObject {
         } else {
             trackChangeConfig = null;
         }
+
+        super.copyFrom(from);
     }
 }

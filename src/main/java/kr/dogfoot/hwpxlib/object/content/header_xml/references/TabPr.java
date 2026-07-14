@@ -138,5 +138,7 @@ public class TabPr extends SwitchableObject {
         for (TabItem tabItem : from.tabItemList) {
             tabItemList.add(tabItem.clone());
         }
+
+        super.copyFrom(from);
     }
 }

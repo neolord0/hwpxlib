@@ -98,5 +98,7 @@ public class FileEntry extends SwitchableObject {
         } else {
             encryptionData = null;
         }
+
+        super.copyFrom(from);
     }
 }
