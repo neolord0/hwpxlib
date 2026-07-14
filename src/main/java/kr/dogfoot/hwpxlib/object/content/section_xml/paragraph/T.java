@@ -267,6 +267,8 @@ public class T extends RunItem {
         } else {
             itemList = null;
         }
+
+        super.copyFrom(from);
     }
 }
 

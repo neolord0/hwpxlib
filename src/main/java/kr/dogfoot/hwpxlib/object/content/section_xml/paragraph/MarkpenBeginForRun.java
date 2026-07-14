@@ -41,5 +41,7 @@ public class MarkpenBeginForRun extends RunItem {
 
     public void copyFrom(MarkpenBeginForRun from) {
         this.color = from.color;
+
+        super.copyFrom(from);
     }
 }

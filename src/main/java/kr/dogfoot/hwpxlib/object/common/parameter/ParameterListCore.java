@@ -116,5 +116,7 @@ public abstract class ParameterListCore<ChildType> extends SwitchableObject {
              Param param = (Param) from.parameterList.get(index);
              parameterList.add((Param) param.clone());
         }
+        
+        super.copyFrom(from);
     }
 }
