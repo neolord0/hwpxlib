@@ -62,7 +62,17 @@ public enum NumberType1 implements EnumGetStr {
     /**
      * 원 한자 숫자
      */
-    CIRCLED_IDEOGRAPH("CIRCLED_IDEOGRAPH");
+    CIRCLED_IDEOGRAPH("CIRCLED_IDEOGRAPH"),
+    /**
+     * 갑, 을, 병
+     */
+    DECAGON_CIRCLE("DECAGON_CIRCLE"),
+    /**
+     * 한자 갑, 을, 병
+     */
+    DECAGON_CIRCLE_HANJA("DECAGON_CIRCLE_HANGUL"),
+    SYMBOL("SYMBOL"),
+    USER_CHAR("USER_CHAR");
 
     private String str;
 
