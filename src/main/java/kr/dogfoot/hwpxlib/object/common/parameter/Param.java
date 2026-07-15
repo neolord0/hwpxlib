@@ -2,7 +2,7 @@ package kr.dogfoot.hwpxlib.object.common.parameter;
 
 import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 
-public abstract class Param<ChildType> extends SwitchableObject {
+public abstract class Param<ChildType extends Param<ChildType>> extends SwitchableObject {
     private String name;
 
     public String name() {
@@ -15,10 +15,12 @@ public abstract class Param<ChildType> extends SwitchableObject {
 
     public ChildType nameAnd(String name) {
         this.name = name;
-        return (ChildType) this;
+        return self();
     }
 
-    public void copyFrom(Param from) {
+    protected abstract ChildType self();
+
+    public void copyFrom(Param<ChildType> from) {
         this.name = from.name;
 
         super.copyFrom(from);
