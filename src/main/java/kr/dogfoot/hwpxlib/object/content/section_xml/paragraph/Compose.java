@@ -162,6 +162,6 @@ public class Compose extends RunItem {
             charPrList.add(composeCharPr.clone());
         }
 
-        super.copyFrom(this);
+        super.copyFrom(from);
     }
 }
