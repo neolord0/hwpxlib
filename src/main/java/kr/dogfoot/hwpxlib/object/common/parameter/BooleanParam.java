@@ -13,6 +13,11 @@ public class BooleanParam extends Param<BooleanParam> {
         return ObjectType.hp_booleanParam;
     }
 
+    @Override
+    public BooleanParam self() {
+        return this;
+    }
+
     public Boolean value() {
         return value;
     }

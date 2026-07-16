@@ -16,6 +16,11 @@ public class ListParam extends Param<ListParam> {
         return ObjectType.hp_listParam;
     }
 
+    @Override
+    protected ListParam self() {
+        return this;
+    }
+
     public int cnt() {
         return countOfParam();
     }

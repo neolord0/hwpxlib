@@ -13,6 +13,11 @@ public class FloatParam extends Param<FloatParam> {
         return ObjectType.hp_floatParam;
     }
 
+    @Override
+    public FloatParam self() {
+        return this;
+    }
+
     public Float value() {
         return value;
     }

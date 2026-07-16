@@ -2,7 +2,7 @@ package kr.dogfoot.hwpxlib.object.common.parameter;
 
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 
-public class UnsignedIntegerParam extends Param<IntegerParam> {
+public class UnsignedIntegerParam extends Param<UnsignedIntegerParam> {
     private Long value;
 
     public UnsignedIntegerParam() {
@@ -11,6 +11,11 @@ public class UnsignedIntegerParam extends Param<IntegerParam> {
     @Override
     public ObjectType _objectType() {
         return ObjectType.hp_unsignedintegerParam;
+    }
+
+    @Override
+    public UnsignedIntegerParam self() {
+        return this;
     }
 
     public Long value() {

@@ -13,6 +13,11 @@ public class IntegerParam extends Param<IntegerParam> {
         return ObjectType.hp_integerParam;
     }
 
+    @Override
+    public IntegerParam self() {
+        return this;
+    }
+
     public Integer value() {
         return value;
     }

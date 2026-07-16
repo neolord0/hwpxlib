@@ -14,6 +14,11 @@ public class StringParam extends Param<StringParam> {
         return ObjectType.hp_stringParam;
     }
 
+    @Override
+    protected StringParam self() {
+        return this;
+    }
+
     public String value() {
         return value;
     }
