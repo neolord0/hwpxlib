@@ -19,7 +19,7 @@ public class FWSpace extends TItem {
     public FWSpace clone() {
         FWSpace cloned = new FWSpace();
         cloned.copyFrom(this);
-        return null;
+        return cloned;
     }
 
     public void copyFrom(FWSpace from) {
