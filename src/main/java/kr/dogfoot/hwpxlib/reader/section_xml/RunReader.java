@@ -7,6 +7,7 @@ import kr.dogfoot.hwpxlib.object.common.SwitchableObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.object.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.secpr.SecPr;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.MarkpenEnd;
 import kr.dogfoot.hwpxlib.reader.common.ElementReader;
 import kr.dogfoot.hwpxlib.reader.common.ElementReaderSort;
 import kr.dogfoot.hwpxlib.reader.section_xml.ctrl.CtrlReader;
@@ -130,6 +131,9 @@ public class RunReader extends ElementReader {
             case ElementNames.hp_markpenBegin:
                 markpenBegin(run.addNewMarkpenBegin(), name, attrs);
                 break;
+            case ElementNames.hp_markpenEnd:
+                markpenEnd(run.addNewMarkpenEnd(), name, attrs);
+                break;
          }
     }
 
@@ -248,6 +252,10 @@ public class RunReader extends ElementReader {
                 MarkpenBeginForRun markpenBeginForRun = new MarkpenBeginForRun();
                 markpenBegin(markpenBeginForRun, name, attrs);
                 return markpenBeginForRun;
+            case ElementNames.hp_markpenEnd:
+                MarkpenEnd markpenEnd = new MarkpenEnd();
+                markpenEnd(run.addNewMarkpenEnd(), name, attrs);
+                return markpenEnd;
         }
         return null;
     }
@@ -446,6 +454,12 @@ public class RunReader extends ElementReader {
     private void markpenBegin(MarkpenBeginForRun markpenBeginForRun, String name, Attributes attrs) {
         ((MarkpenBeginReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.MarkpenBegin))
                 .markpenBeginForRun(markpenBeginForRun);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
+    private void markpenEnd(MarkpenEndForRun markpenEndForRun, String name, Attributes attrs) {
+        xmlFileReader().setCurrentElementReader(ElementReaderSort.Empty);
 
         xmlFileReader().startElement(name, attrs);
     }

@@ -256,6 +256,12 @@ public class Run extends SwitchableObject {
         return markpenBegin;
     }
 
+    public MarkpenEndForRun addNewMarkpenEnd() {
+        MarkpenEndForRun markpenEnd = new MarkpenEndForRun();
+        itemList.add(markpenEnd);
+        return markpenEnd;
+    }
+
     public void insertRunItem(RunItem runItem, int position) {
         itemList.add(position, runItem);
     }

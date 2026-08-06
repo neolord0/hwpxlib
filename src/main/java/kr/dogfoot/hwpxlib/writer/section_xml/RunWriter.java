@@ -5,9 +5,9 @@ import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.common.ObjectType;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.MarkpenBeginForRun;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.MarkpenEndForRun;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Run;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.RunItem;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.MarkpenBegin;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterSort;
@@ -128,6 +128,9 @@ public class RunWriter extends ElementWriter {
             case hp_markpenBegin:
                 markpenBegin((MarkpenBeginForRun) runItem);
                 break;
+            case hp_markpenEnd:
+                markpenEnd((MarkpenEndForRun) runItem);
+                break;
         }
     }
 
@@ -147,6 +150,12 @@ public class RunWriter extends ElementWriter {
         xsb()
                 .openElement(ElementNames.hp_markpenBegin)
                 .attribute(AttributeNames.color, markpenBeginForRun.color())
+                .closeElement();
+    }
+
+    private void markpenEnd(MarkpenEndForRun markpenEndForRun) {
+        xsb()
+                .openElement(ElementNames.hp_markpenEnd)
                 .closeElement();
     }
 }
