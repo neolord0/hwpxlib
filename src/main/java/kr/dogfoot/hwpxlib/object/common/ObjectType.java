@@ -195,6 +195,7 @@ public enum ObjectType {
     hp_insertEnd,  // 삽입 끝
     hp_deleteBegin,  // 삭제 시작
     hp_deleteEnd, // 삭제 끝
+    hp_unknownch, // 알 수 없는 문자(?)
 
     // AbstractShapeObjectType
     hp_sz,

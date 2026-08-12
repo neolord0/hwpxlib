@@ -392,6 +392,8 @@ public class ElementReaderFactory {
                 return new MarkpenBeginReader();
             case TitleMark:
                 return new TitleMarkReader();
+            case UnknownChar:
+                return new UnknownCharReader();
             case Tab:
                 return new TabReader();
             case TrackChangeTag:

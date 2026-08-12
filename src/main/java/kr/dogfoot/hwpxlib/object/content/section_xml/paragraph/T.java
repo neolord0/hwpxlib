@@ -220,6 +220,14 @@ public class T extends RunItem {
         return deleteEnd;
     }
 
+    public UnknownChar addNewUnknownChar() {
+        preprocess();
+
+        UnknownChar unknownChar = new UnknownChar();
+        itemList.add(unknownChar);
+        return unknownChar;
+    }
+
     public void insertItem(TItem textItem, int position) {
         preprocess();
 
@@ -270,5 +278,6 @@ public class T extends RunItem {
 
         super.copyFrom(from);
     }
+
 }
 

@@ -190,6 +190,7 @@ public class ElementNames {
     public static final String hp_insertEnd = "hp:insertEnd";  // 삽입 끝
     public static final String hp_deleteBegin = "hp:deleteBegin";  // 삭제 시작
     public static final String hp_deleteEnd = "hp:deleteEnd"; // 삭제 끝
+    public static final String hp_unknownch = "hp:unknownch";  // 알 수 없는 문자
 
     // AbstractShapeObjectType
     public static final String hp_sz = "hp:sz";

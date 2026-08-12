@@ -80,8 +80,12 @@ public class TReader extends ElementReader {
             case ElementNames.hp_deleteEnd:
                 deleteEnd(t.addNewDeleteEnd(), name, attrs);
                 break;
+            case ElementNames.hp_unknownch:
+                unknownch(t.addNewUnknownChar(), name, attrs);
+                break;
         }
     }
+
 
     @Override
     public HWPXObject childElementInSwitch(String name, Attributes attrs) {
@@ -134,6 +138,10 @@ public class TReader extends ElementReader {
                 DeleteEnd deleteEnd = new DeleteEnd();
                 deleteEnd(deleteEnd, name, attrs);
                 return deleteEnd;
+            case ElementNames.hp_unknownch:
+                UnknownChar unknownChar = new UnknownChar();
+                unknownch(unknownChar, name, attrs);
+                return unknownChar;
         }
         return null;
     }
@@ -186,6 +194,14 @@ public class TReader extends ElementReader {
 
         xmlFileReader().startElement(name, attrs);
     }
+
+    private void unknownch(UnknownChar unknownChar, String name, Attributes attrs) {
+        ((UnknownCharReader) xmlFileReader().setCurrentElementReader(ElementReaderSort.UnknownChar))
+                .unknownChar(unknownChar);
+
+        xmlFileReader().startElement(name, attrs);
+    }
+
 
     @Override
     public SwitchableObject switchableObject() {

@@ -449,5 +449,5 @@ public class AttributeNames {
     public static final String labelrows = "labelrows";
     public static final String pagewidth = "pagewidth";
     public static final String pageheight = "pageheight";
-
+    public static final String unknownchar = "unknownchar";
 }

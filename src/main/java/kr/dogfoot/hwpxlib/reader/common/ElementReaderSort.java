@@ -157,6 +157,7 @@ public enum ElementReaderSort {
     T(ElementReaderType.Section_MasterPage),
     MarkpenBegin(ElementReaderType.Section_MasterPage),
     TitleMark(ElementReaderType.Section_MasterPage),
+    UnknownChar(ElementReaderType.Section_MasterPage),
     Tab(ElementReaderType.Section_MasterPage),
     TrackChangeTag(ElementReaderType.Section_MasterPage),
     LineSegArray(ElementReaderType.Section_MasterPage),

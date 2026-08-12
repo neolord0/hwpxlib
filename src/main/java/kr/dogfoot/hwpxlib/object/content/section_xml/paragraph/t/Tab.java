@@ -30,7 +30,6 @@ public class Tab extends TItem {
         return ObjectType.hp_tab;
     }
 
-
     public Integer width() {
         return width;
     }

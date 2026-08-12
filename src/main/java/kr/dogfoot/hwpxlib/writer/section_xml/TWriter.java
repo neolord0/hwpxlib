@@ -5,10 +5,7 @@ import kr.dogfoot.hwpxlib.commonstrings.ElementNames;
 import kr.dogfoot.hwpxlib.object.common.HWPXObject;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.T;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.TItem;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.MarkpenBegin;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.NormalText;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.Tab;
-import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.TitleMark;
+import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.*;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.t.inner.TrackChangeCore;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriter;
 import kr.dogfoot.hwpxlib.writer.common.ElementWriterManager;
@@ -89,6 +86,9 @@ public class TWriter extends ElementWriter {
             case hp_deleteEnd:
                 trackChange(ElementNames.hp_deleteEnd, (TrackChangeCore) item);
                 break;
+            case hp_unknownch:
+                unknownChar(ElementNames.hp_unknownch, (UnknownChar) item);
+                break;
 
         }
     }
@@ -126,6 +126,13 @@ public class TWriter extends ElementWriter {
                 .attribute(AttributeNames.Id, trackChange.Id())
                 .attribute(AttributeNames.TcId, trackChange.TcId())
                 .attribute(AttributeNames.paraend, trackChange.paraend())
+                .closeElement();
+    }
+
+    private void unknownChar(String name, UnknownChar unknownChar) {
+        xsb()
+                .openElement(name)
+                .attribute(AttributeNames.unknownchar, unknownChar.unknownChar())
                 .closeElement();
     }
 
