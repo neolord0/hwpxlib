@@ -66,7 +66,7 @@ public class TWriter extends ElementWriter {
                 noAttributeChild(ElementNames.hp_lineBreak);
                 break;
             case hp_hyphen:
-                noAttributeChild(ElementNames.hp_hyphen);
+                noAttributeChild(ElementNames.hp_hypen);
                 break;
             case hp_nbSpace:
                 noAttributeChild(ElementNames.hp_nbSpace);

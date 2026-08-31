@@ -183,7 +183,7 @@ public class ElementNames {
     public static final String hp_titleMark = "hp:titleMark";
     public static final String hp_tab = "hp:tab";
     public static final String hp_lineBreak = "hp:lineBreak";
-    public static final String hp_hyphen = "hp:hyphen";
+    public static final String hp_hypen = "hp:hypen";
     public static final String hp_nbSpace = "hp:nbSpace";
     public static final String hp_fwSpace = "hp:fwSpace";
     public static final String hp_insertBegin = "hp:insertBegin";  // 삽입 시작

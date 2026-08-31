@@ -56,7 +56,7 @@ public class TReader extends ElementReader {
                 t.addNewLineBreak();
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
-            case ElementNames.hp_hyphen:
+            case ElementNames.hp_hypen:
                 t.addNewHyphen();
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 break;
@@ -110,7 +110,7 @@ public class TReader extends ElementReader {
                 LineBreak lineBreak = new LineBreak();
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return lineBreak;
-            case ElementNames.hp_hyphen:
+            case ElementNames.hp_hypen:
                 Hyphen hyphen = new Hyphen();
                 xmlFileReader().setCurrentElementReaderForEmpty(name, attrs);
                 return hyphen;
